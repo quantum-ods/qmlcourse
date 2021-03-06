@@ -1,4 +1,5 @@
 # Created by https://www.toptal.com/developers/gitignore/api/emacs,python,jupyternotebooks,latex
+# 
 # Edit at https://www.toptal.com/developers/gitignore?templates=emacs,python,jupyternotebooks,latex
 
 ### Emacs ###
@@ -494,3 +495,8 @@ dmypy.json
 .prof
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs,python,jupyternotebooks,latex
+
+# Ignore any otput: tex, html, pdf, etc.
+*.html
+*.pdf
+*.tex
