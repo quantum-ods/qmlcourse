@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<!-- 2021-03-06 Sat 20:46 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Гейты</title>
+<meta name="author" content="Семен Синченко" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: auto; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Гейты</h1>
+<div id="table-of-contents">
+<h2>&#1057;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1085;&#1080;&#1077;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgdbe85c0">1. Описание лекции</a></li>
+<li><a href="#orge897ae2">2. Основные однокубитные гейты</a>
+<ul>
+<li><a href="#orgb410000">2.1. Гейты поворота вокруг оси</a>
+<ul>
+<li><a href="#org7ee2ac0">2.1.1. Гейт <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_ec286c16482f3ce7c1300dff1c168792e21e4d77.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object></a></li>
+<li><a href="#org9190b05">2.1.2. Другие гейты вращений</a></li>
+</ul>
+</li>
+<li><a href="#orga4ef833">2.2. Phase-shift гейт</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdbe85c0" class="outline-2">
+<h2 id="orgdbe85c0"><span class="section-number-2">1</span> Описание лекции</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Из этой лекции мы узнаем:
+</p>
+<ul class="org-ul">
+<li>Какие есть основные однокубитные гейты</li>
+<li>Как записывать многокубитные состояния</li>
+<li>Какие есть многокубитные гейты</li>
+<li>Конструирование многокубитных операторов</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge897ae2" class="outline-2">
+<h2 id="orge897ae2"><span class="section-number-2">2</span> Основные однокубитные гейты</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+В прошлый раз мы познакомились с операторами Паули, а также гейтом Адамара. Теперь давайте посмотрим какие еще однокубитные гейты часто применяются в квантовых вычислениях и квантовом машинном обучнении.
+</p>
+</div>
+
+<div id="outline-container-orgb410000" class="outline-3">
+<h3 id="orgb410000"><span class="section-number-3">2.1</span> Гейты поворота вокруг оси</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Повротные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:
+</p>
+
+<div class="org-center">
+
+<div id="orga860967" class="figure">
+<p><img src="./images/Blochcolor-alt.png" alt="Blochcolor-alt.png" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 1.: </span>Сфера Блоха</p>
+</div>
+</div>
+
+<p>
+Гейты <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_54fd7cd2f027736624578d09823880a2376c5956.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> осуществляют поворот на определенный угол <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_74695ac810e05464a903ff5bcfd74d0439d8af1a.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> вокруг соответствующей оси на сфере Блоха.
+</p>
+
+
+<p>
+Давайте внимательно рассмотрим это на примере гейта <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_ec286c16482f3ce7c1300dff1c168792e21e4d77.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>.
+</p>
+</div>
+
+
+
+<div id="outline-container-org7ee2ac0" class="outline-4">
+<h4 id="org7ee2ac0"><span class="section-number-4">2.1.1</span> Гейт <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_ec286c16482f3ce7c1300dff1c168792e21e4d77.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object></h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Сам гейт определяется следующим образом:
+</p>
+
+
+<div class="equation-container">
+<span class="equation">
+<object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_8e1d939433f6ae004a43bb635bd2efa6e43c9c4a.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</span>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> numpy <span style="color: #51afef;">as</span> np
+
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">ry</span>(state, phi):
+    <span style="color: #51afef;">return</span> np.array([
+        [np.cos(phi / <span style="color: #da8548; font-weight: bold;">2</span>), -np.sin(phi / <span style="color: #da8548; font-weight: bold;">2</span>)],
+        [np.sin(phi / <span style="color: #da8548; font-weight: bold;">2</span>), np.cos(phi /<span style="color: #da8548; font-weight: bold;">2</span>)]
+    ]) @ state
+</pre>
+</div>
+
+<p>
+Запишем наше состояние <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_7adc89969d9e5a2df9054c975483c48a5f50a926.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">basis</span> = np.array([<span style="color: #da8548; font-weight: bold;">1</span> + 0j, <span style="color: #da8548; font-weight: bold;">0</span> + 0j]).reshape((<span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">1</span>))
+</pre>
+</div>
+
+<p>
+Внимательно посмотрев на сферу Блоха, можно заметить, что повернув состояние из <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_7adc89969d9e5a2df9054c975483c48a5f50a926.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> на <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_82bd7ea6868ef685f3dadccfaaa00223b04fc864.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> и измерив значение <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_fae55e44082833a589a180496519ca317b638b97.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> мы получим 1, а повернув на <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_488d5339d540abcb51a5b559ae63b75fdb22c093.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> 0:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">def</span> <span style="color: #c678dd;">expval</span>(state, op):
+    <span style="color: #51afef;">return</span> state.conj().T @ op @ state
+
+<span style="color: #dcaeea;">pauli_x</span> = np.array([[<span style="color: #da8548; font-weight: bold;">0</span> + 0j, <span style="color: #da8548; font-weight: bold;">1</span> + 0j], [<span style="color: #da8548; font-weight: bold;">1</span> + 0j, <span style="color: #da8548; font-weight: bold;">0</span> + 0j]])
+
+np.allclose(expval(ry(basis, np.pi / <span style="color: #da8548; font-weight: bold;">2</span>), pauli_x), <span style="color: #da8548; font-weight: bold;">1.0</span>)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+
+np.allclose(expval(ry(basis, -np.pi / <span style="color: #da8548; font-weight: bold;">2</span>), pauli_x), -<span style="color: #da8548; font-weight: bold;">1.0</span>)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+</pre>
+</div>
+
+<p>
+Убедимся также, что вращение на угол, пропорциональный <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_a67439ef735f29a8ceec834ccfde399c6345f492.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> не меняет результата измерения. Возьмем случайное состояние:
+</p>
+
+<div class="equation-container">
+<span class="equation">
+<object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_c6204b8fdc8afef1a6d8284a006e78a9e1c12354.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</span>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">random_state</span> = np.array([<span style="color: #da8548; font-weight: bold;">0.42</span> + 0j, np.sqrt(<span style="color: #da8548; font-weight: bold;">1</span> - <span style="color: #da8548; font-weight: bold;">0.42</span>**<span style="color: #da8548; font-weight: bold;">2</span>) + 0j]).reshape((<span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">1</span>))
+</pre>
+</div>
+
+<p>
+Измерим его по осям <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_24c6a4ac2e33bcaa2b4f31e0d0e522c34a912da3.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> и <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_b1c93270f4741fa56656269ec4dcdd828bad5e8c.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>, затем повернем его на угол <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_a67439ef735f29a8ceec834ccfde399c6345f492.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> и измерм снова:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">pauli_z</span> = np.array([[<span style="color: #da8548; font-weight: bold;">1</span> + 0j, <span style="color: #da8548; font-weight: bold;">0</span> + 0j], [<span style="color: #da8548; font-weight: bold;">0</span> + 0j, 0j - <span style="color: #da8548; font-weight: bold;">1</span>]])
+
+expval(random_state, pauli_z)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[-0.6472+0.j]])</span>
+expval(random_state, pauli_x)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[0.76232025+0.j]])</span>
+
+expval(ry(random_state, <span style="color: #da8548; font-weight: bold;">2</span> * np.pi), pauli_z)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[-0.6472+0.j]])</span>
+expval(ry(random_state, <span style="color: #da8548; font-weight: bold;">2</span> * np.pi), pauli_x)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[0.76232025+0.j]])</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9190b05" class="outline-4">
+<h4 id="org9190b05"><span class="section-number-4">2.1.2</span> Другие гейты вращений</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Аналогичным образом определяются гейты <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_a7c7ef4e1bd7a554444f14715417e39e8daa8587.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> и <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_0e6aff38a666cae20be12c41b1df9ca1cee4b30c.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>:
+</p>
+
+<div class="equation-container">
+<span class="equation">
+<object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_4ed28f7d2f924b8a8cfba1dc973c1b96a9ff16d2.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</span>
+</div>
+
+<p>
+В общем случае эти гейты могут быть также записаны следующим образом:
+</p>
+
+<div class="equation-container">
+<span class="equation">
+<object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_cb1e90c26e359f032da2b2aa7dd7ce160d38b4ec.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</span>
+</div>
+<p>
+где <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_291153b8a6fa1dfbbdd8fabadc5355c3a4ab7cf2.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> &#x2013; это один из операторов Пуали <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_7ba97a6476ddaf0ec6ba0c8586564e1103cee7f9.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga4ef833" class="outline-3">
+<h3 id="orga4ef833"><span class="section-number-3">2.2</span> Phase-shift гейт</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Другой важный гейт &#x2013; это так называемый phase-shift гейт, или <object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_4ec045fab41f08a7b26bc444b9b647039b093dca.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object> гейт. Его матричная форма имеет следующий вид:
+</p>
+
+<div class="equation-container">
+<span class="equation">
+<object type="image/svg+xml" data="file:///home/sem/.emacs.d/.local/cache/org-latex/gates_RU_6289d483e16897675a1ee32fdd3f1363fc219eb5.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">&#1040;&#1074;&#1090;&#1086;&#1088;: Семен Синченко</p>
+<p class="date">Created: 2021-03-06 Sat 20:46</p>
+</div>
+</body>
+</html>
