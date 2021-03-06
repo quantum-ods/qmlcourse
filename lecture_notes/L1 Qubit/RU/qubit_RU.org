@@ -1,9 +1,13 @@
 #+TITLE: Кубит
 #+AUTHOR: Семен Синченко
 #+LANGUAGE: ru
+#+LATEX_HEADER: \usepackage{polyglossia}
 #+LATEX_HEADER: \setmainlanguage{russian}
 #+LATEX_HEADER: \setotherlanguage{english}
 #+LATEX_HEADER: \setmainfont{Times New Roman}
+#+LATEX_HEADER: \newfontfamily{\cyrillicfont}{Times New Roman}[Script=Cyrillic]
+#+LATEX_HEADER: \newfontfamily{\cyrillicfontsf}{Times New Roman}[Script=Cyrillic]
+#+LATEX_HEADER: \newfontfamily{\cyrillicfonttt}{Times New Roman}[Script=Cyrillic]
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \usepackage{physics}
 #+LATEX_HEADER: \usepackage{graphicx}
@@ -159,7 +163,7 @@ np.allclose(np.conj(R).T @ L, 0)
 # True
 #+end_src
 
-Заметьте, что в наших векторных пространствах скалярное произведение это $ab = \bra{a}\ket{b}$! Именно поэтому мы должны делать транспонирование и комплексное сопряжение первого вектора в паре.
+Заметьте, что в наших векторных пространствах скалярное произведение это $\vec{a}\vec{b} = \bra{a}\ket{b}$ (бра-кет)! Именно поэтому мы должны делать транспонирование и комплексное сопряжение первого вектора в паре.
 
 ** Сфера Блоха
 Обозначения $\ket{0}, \ket{1}, \ket{+}, \ket{-}, \ket{R}, \ket{L}$ выбраны не случайно -- они имеют геометрический смысл.
