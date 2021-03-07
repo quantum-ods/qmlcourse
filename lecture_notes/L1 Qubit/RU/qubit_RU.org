@@ -12,6 +12,10 @@
 #+LATEX_HEADER: \usepackage{physics}
 #+LATEX_HEADER: \usepackage{graphicx}
 #+LATEX_HEADER: \usepackage{hyperref}
+#+LATEX_HEADER: \usepackage{tikz}
+#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+#+HTML_HEAD_EXTRA: <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
 
 * Описание лекции
 Из этой лекции мы узнаем:
@@ -20,6 +24,53 @@
 - Что такое сфера Блоха
 - Какие можно делать операции над кубитами
 - Что такое измерение
+
+* Введение
+Это первая лекция основного блока нашего курса. Перед тем, как мы начнем детально разбирать, что такое кубит и что с ним можно сделать, давайте попробуем взглянуть на то, как выглядит в целом пайплайн квантовых схем.
+
+#+begin_export html
+<div align="center">
+<script type="text/tikz">
+\begin{tikzpicture}[node distance = 2cm]
+    \node[align=center] (init) [rectangle, minimum width=4.5cm, minimum height=1cm, draw=black, fill=orange!30] {Init};
+    \node[align=center] (first) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=init] {Unitary};
+    \node[align=center] (second) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=first] {Unitary};
+    \node[align=center] (third) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=second] {Unitary};
+    \node[align=center] (measurements) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=green!30, below of=third] {Measure};
+    \draw [thick,->,>=stealth] (init) -- (first);
+    \draw [thick,->,>=stealth] (first) -- (second);
+    \draw [thick,->,>=stealth] (second) -- (third);
+    \draw [thick,->,>=stealth] (third) -- (measurements);
+\end{tikzpicture}
+</script>
+</div>
+#+end_export
+
+#+begin_export latex
+\begin{center}
+
+\begin{tikzpicture}[node distance = 2cm]
+    \node[align=center] (init) [rectangle, minimum width=4.5cm, minimum height=1cm, draw=black, fill=orange!30] {Init};
+    \node[align=center] (first) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=init] {Unitary};
+    \node[align=center] (second) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=first] {Unitary};
+    \node[align=center] (third) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=second] {Unitary};
+    \node[align=center] (measurements) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=green!30, below of=third] {Measure};
+    \draw [thick,->,>=stealth] (init) -- (first);
+    \draw [thick,->,>=stealth] (first) -- (second);
+    \draw [thick,->,>=stealth] (second) -- (third);
+    \draw [thick,->,>=stealth] (third) -- (measurements);
+\end{tikzpicture}
+
+\end{center}
+#+end_export
+
+Любая квантовая схема включает в себя:
+- кубиты, инициализируемые в начальное состояние, обычно $\ket{0}$;
+- унитарные и обратимые операции над кубитами
+- измерение кубитов
+
+Именно разбору этих операций для одного кубита мы и посвятим сегодняшнюю лекцию. И начнем мы с того, а что же такое кубит и чем он отличается от бита классических компьютеров.
+
 
 * Что такое кубит
 
@@ -355,6 +406,13 @@ plus.conj().T @ pauli_z @ plus
 plus.conj().T @ pauli_x @ plus
 # array([[1.+0.j]])
 #+end_src
+
+** Вероятности битовых строк
+Последнее, чего хотелось бы коснуться в части измерений -- это битовых строк и метода Шрёдингера. Мы много говорили о вероятностной интерпретации волновой функции и аналогиях с классическим битов, но пока этого никак не касались. На самом деле, если мы возьмем все битовые строки размерности вектора волновой функции и отсортируем их в лексикографическом порядке (например, $0 < 1$, $00 < 01 < 10 < 11$, и т.д.), то для любой волновой функции вероятность каждой битовой строки получается следующим выражением:
+\begin{align*}
+\mathbf{P} = | \bra{s}\ket{\Psi} |^2,
+\end{align*}
+где $s$ - это единичный вектор, каждая компонента которого соответствует порядковой битовой строке. Другими словами, вероятность получить $i$-ю битовую строку равна квадрату $i$-го элемента амплитуды волновой функции. Кажется немного запутанным, но на самом деле все просто -- ведь $|\ket{\Psi}|^2$ это идейно и есть плотность вероятности.
 
 * Что мы узнали?
 - Состояние и значение для кубита не одно и то же
