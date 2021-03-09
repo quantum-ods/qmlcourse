@@ -1,28 +1,35 @@
 #+TITLE: Гейты
 #+AUTHOR: Семен Синченко
 #+LANGUAGE: ru
-#+LATEX_HEADER: \setmainlanguage{russian}
+#+LATEX_HEADER: \usepackage{polyglossia}
+#+LATEX_HEADER: \setmainlanguage[spelling=modern,babelshorthands=true]{russian}
 #+LATEX_HEADER: \setotherlanguage{english}
 #+LATEX_HEADER: \setmainfont{Times New Roman}
+#+LATEX_HEADER: \setromanfont{Times New Roman}
+#+LATEX_HEADER: \setsansfont{Arial}
+#+LATEX_HEADER: \setmonofont{Courier New}
+#+LATEX_HEADER: \newfontfamily{\cyrillicfont}{Times New Roman}[Script=Cyrillic]
+#+LATEX_HEADER: \newfontfamily{\cyrillicfontrm}{Times New Roman}[Script=Cyrillic]
+#+LATEX_HEADER: \newfontfamily{\cyrillicfonttt}{Courier New}
+#+LATEX_HEADER: \newfontfamily{\cyrillicfontsf}{Arial}
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \usepackage{physics}
 #+LATEX_HEADER: \usepackage{graphicx}
 #+LATEX_HEADER: \usepackage{hyperref}
 
-#+OPTIONS: tex:dvisvgm
 
 * Описание лекции
 Из этой лекции мы узнаем:
 - Какие есть основные однокубитные гейты
 - Как записывать многокубитные состояния
+- Как конструировать многокубитные операторов
 - Какие есть многокубитные гейты
-- Конструирование многокубитных операторов
 - Первое знакомство с PennyLane
 
 * Введение
 Квантовые гейты являются основными "строительными" блоками для любых квантовых схем, в том числе и тех, которые применяются для машинного обучения. Можно сказать, что это такой алфавит квантовых вычислений, он просто необходимо, чтобы сходу понимать, например, что изображено на подобных схемах:
 #+begin_center
-#+attr_latex: :width 0.35\textwidth
+#+attr_latex: :width 0.8\textwidth
 #+caption: Картинка взята из [[https://arxiv.org/abs/2102.05566][Layer-VQE]]
 [[./images/Layer-VQE.png]]
 #+end_center
@@ -34,8 +41,8 @@
 Повротные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:
 
 #+begin_center
-#+caption: Сфера Блоха
 #+attr_latex: :width 0.35\textwidth
+#+caption: Сфера Блоха
 [[./images/Blochcolor-alt.png]]
 #+end_center
 
@@ -236,7 +243,7 @@ i = np.eye(2, dtype=np.complex128)
 \mathbf{P}(\vec{s}) = | \bra{\Psi}\ket{\vec{s}} |^2
 \end{align*}
 
-Напомню, что по сути мы должны отсортировать наши битовые строки в лексикографическом порядке и вероятность $i$-й битовой строки будет равна квадрату $i$-го элемента вектора $\ket{\Psi}$.
+Напомню, что по сути мы должны отсортировать наши битовые строки в лексикографическом порядке и вероятность /i/-й битовой строки будет равна квадрату /i/-го элемента вектора $\ket{\Psi}$.
 
 ** Многокубитные операторы
 Как мы уже обсуждали, квантовые операторы должны переводить наше состояние в новое состояние в том же пространстве и сохранять нормировку, а еще должны быть обратимыми. И, значит, оператор для состояния из $N$ кубит это эрмитова матрица размерности $2^N \times 2^N$.
@@ -252,20 +259,8 @@ i = np.eye(2, dtype=np.complex128)
 1 & 0 \\
 0 & 1
 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
-\begin{bmatrix}
-1 & 0 \\
-0 & 1
-\end{bmatrix} & \begin{bmatrix}
-1 & 0 \\
-0 & 1
-\end{bmatrix} \\
-\begin{bmatrix}
-1 & 0 \\
-0 & 1
-\end{bmatrix} & -\begin{bmatrix}
-1 & 0 \\
-0 & 1
-\end{bmatrix}
+\hat{I} & \hat{I} \\
+\hat{I} & -\hat{I}
 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
 1 & 0 & 1 & 0 \\
 0 & 1 & 0 & 1 \\
@@ -273,3 +268,69 @@ i = np.eye(2, dtype=np.complex128)
 0 & 1 & 0 & -1
 \end{bmatrix}
 \end{align*}
+
+Учитывая, что многокубитные состояния конструируются аналогичным образом через произведение Кронекера, мы можем явно убедиться в вернсти нашего вывода:
+
+#+begin_src python
+np.allclose(np.kron(h @ basis, basis), np.kron(h, i) @ np.kron(basis, basis))
+# True
+#+end_src
+
+** Наблюдаемые для многокубитных гейтов
+Аналогичным образом можно сконструировать и наблюдаемые. Например, если мы хотим измерять одновременно два спина по оси $\mathbf{Z}$, то наблюдаемая будет выглядеть так:
+\begin{align*}
+\mathbf{ZZ} = \hat{sigma^z} @ \hat{sigma^Z} = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+#+begin_src python
+np.kron(basis, basis).conj().T @ np.kron(pauli_z, pauli_z) @ np.kron(basis, basis)
+# array([[1.+0.j]])
+#+end_src
+
+* Основные двухкубитные гейты
+Основные многокубитные гейты, которые предоставляют современные квантовые компьютеры, это двухкубитные гейты.
+
+** CNOT
+Квантовый гейт контролируемого инвертирования это гейт, которые действует на два кубита -- "рабочий" и "контрольный". В зависимости от того, имеет ли контрольный кубит значение 1 или 0, этот гейт инвертирует или не инвертирует рабочий кубит.
+
+#+begin_center
+#+attr_latex: :width 0.2\textwidth
+#+caption: CNOT
+[[./images/CNOT_gate.svg.png]]
+#+end_center
+
+В матричном виде этот оператор можно записать так:
+\begin{align*}
+\hat{CNOT} = \begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 1 & 0
+\end{bmatrix}
+\end{align*}
+
+#+begin_src python
+cnot = (1 + 0j) * np.array(
+    [
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 1, 0],
+    ]
+)
+
+np.allclose(cnot @ np.kron(basis, basis), np.kron(basis, basis))
+# True
+
+np.allclose(
+    cnot @ np.kron(pauli_x @ basis, basis), np.kron(pauli_x @ basis, pauli_x @ basis)
+)
+# True
+#+end_src
+
+Заметьте, тут мы воспользовались тем, что $\hat{\sigma^x}$ работает также как интертор кубитов -- он преврщает $\ket{0}$ в $\ket{1}$ и наоборот!
