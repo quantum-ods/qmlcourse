@@ -37,10 +37,10 @@
     \node[align=center] (second) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=first] {Unitary};
     \node[align=center] (third) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=second] {Unitary};
     \node[align=center] (measurements) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=green!30, below of=third] {Measure};
-    \draw [thick,->,>=stealth] (init) - (first);
-    \draw [thick,->,>=stealth] (first) - (second);
-    \draw [thick,->,>=stealth] (second) - (third);
-    \draw [thick,->,>=stealth] (third) - (measurements);
+    \draw [thick,->,>=stealth] (init) -- (first);
+    \draw [thick,->,>=stealth] (first) -- (second);
+    \draw [thick,->,>=stealth] (second) -- (third);
+    \draw [thick,->,>=stealth] (third) -- (measurements);
 \end{tikzpicture}
 </script>
 </div>
@@ -55,10 +55,10 @@
     \node[align=center] (second) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=first] {Unitary};
     \node[align=center] (third) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=red!30, below of=second] {Unitary};
     \node[align=center] (measurements) [rectangle, rounded corners, minimum width=4.5cm, minimum height=1cm, draw=black, fill=green!30, below of=third] {Measure};
-    \draw [thick,->,>=stealth] (init) - (first);
-    \draw [thick,->,>=stealth] (first) - (second);
-    \draw [thick,->,>=stealth] (second) - (third);
-    \draw [thick,->,>=stealth] (third) - (measurements);
+    \draw [thick,->,>=stealth] (init) -- (first);
+    \draw [thick,->,>=stealth] (first) -- (second);
+    \draw [thick,->,>=stealth] (second) -- (third);
+    \draw [thick,->,>=stealth] (third) -- (measurements);
 \end{tikzpicture}
 
 \end{center}
