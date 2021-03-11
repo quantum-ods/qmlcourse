@@ -1,0 +1,105 @@
+#+TITLE: QMLCourse.ai
+
+* Introduction
+** Basic Python (@Yorko)
+- Python
+- Virtual environments
+- Jupyter Notebooks
+
+** Linear Algebra with =NumPy= (@Yorko)
+- =NumPy=
+- Vector
+- Matrix
+- Hilbert Space
+- Conjugate, Transpose
+- Scalar product
+- Matrix product
+- Kronecker product
+- Eigenvectors + Eigenvalues
+
+** Classical Machine Learning (@Yorko)
+- Linear Models
+- Gradient Descent
+- SVM + Kernels
+- Neural Networks
+
+* Quantum Computations
+** Qubit (@SemyonSinchenko)
+- State
+- Qubit
+- Operators
+  - Pauli Matricies
+  - Hadamard
+- Measures
+- Expected Values
+
+** Gates (@SemyonSinchenko)
+- Single Qubit Gates
+  - RX, RY, RZ
+  - U1, U2, U3
+- Multiple qubits
+  - States
+  - Operators
+  - CNOT
+  - CY, CZ
+
+** Mixed states and density matrices (@Bortania)
+- Mixed states
+- Density operator
+- Entropy
+- Black holes (?)
+
+* NISQ
+** NISQ and NISQ-hardware (@ooovector)
+- NISQ
+- Hardware
+- Why not HHL/Shor/etc.?
+- Perspective
+
+* Quantum Machine Learning
+** PennyLane Intro (?)
+- PennyLane
+- Device
+- QNode
+- Gates
+
+* Variational Quantum Circuits
+** Variational circuits (@SemyonSinchenko)
+- Main idea
+- Quantum Classical learning
+- Features encoding
+
+** Gradients (@SemyonSinchenko)
+- Gradient
+- Parameter-shift rule
+- Natural Gradient
+- Barren Plateau
+
+* VQC for machine learning
+** Classification with VQC (@SemyonSinchenko)
+- VQC
+- Quantum Neural Networks
+- Irises
+
+** Hybrid SVM (@SemyonSinchenko)
+- VQC as kernels
+- Optimal observable
+- Quantum-classical SVM
+
+* Variational Quantum Eigensolver
+** Quantum Many Body Physics (someone from MSU)
+** Quantum Chemistry (?)
+** Variational Quantum Eigensolver (@SemyonSinchenko)
+- Main idea
+- What is anzatz?
+- Hardware-efficient anzatz
+- UUC-anzatz
+- Adaptive and layered anzatzs
+
+* Quantum Combinatorial Optimization
+** Classical Combinatorial Optimization (Yoriy Dorn)
+** QAOA (@SemyonSinchenko)
+- Main idea
+- Mixed Hamiltonian
+- Cost Hamiltonian
+- Examples
