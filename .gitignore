@@ -500,3 +500,6 @@ dmypy.json
 *.html
 *.pdf
 *.tex
+
+# Mac shit
+.DS_Store
