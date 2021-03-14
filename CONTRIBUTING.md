@@ -37,9 +37,19 @@ It is the topic of discussion and the files format may be changed any time if th
 - In Visual Studio Code `org-mode` is supported via [VSCode plugin](https://github.com/vscode-org-mode/vscode-org-mode)
 - Another ways to write in `org-mode` format are described [here](https://opensource.com/article/19/1/productivity-tool-org-mode)
 
+### Org-mode syntax
+
+The syntax of `org-mode` is quite similar to another mark-up languages (markdowm, reStructured, etc.) but allows more low-level options for `LaTeX` and `HTML`.
+
+About `org-mode`:
+
+- [LaTeX in org-mode](https://opensource.com/article/20/4/emacs-org-mode)
+- [org-mode syntax cheat sheet](https://nhigham.com/2017/11/02/org-mode-syntax-cheat-sheet/)
+- [official documentations](https://orgmode.org/org.html)
+
 ## Review
 
-Every Pull-Request should have at least 4 approves and at least 1 of them from core-members. If you see a pull-request and want to review it you can add yourself as reviewer. All reviews should be made via `Review changes` button in GitHub and all comments should be made in `File changed` tab not in the `conversation`.
+Every Pull-Request should have at least 4 approves and at least 1 of them from core-members. If you see a pull-request and want to review it you can add yourself as reviewer. All reviews should be made via `Review changes` button in GitHub and all comments should be made in `File changed` tab not in the `conversation`. You shouldn't write to the `conversation` commentaries about specific parts of pull-request. `Conversation` is only for discussion and comments about the whole pull-request.
 
 ### Core members
 
