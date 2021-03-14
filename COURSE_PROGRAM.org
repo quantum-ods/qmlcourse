@@ -61,7 +61,7 @@
 - Universal Quantum Computer
 
 * Quantum Machine Learning
-** PennyLane Intro (?)
+** PennyLane Intro (???)
 - PennyLane
 - Device
 - QNode
@@ -123,7 +123,11 @@
 - Cost Hamiltonian
 - Examples
 
-* Bleeding Edge of QML
+* Quantum Reinforcement Learning (???)
+** Quantum Classical RL (???)
+** Hardware implementation (???)
+
+* Bleeding Edge of QML (???)
 ** CV quantum computers (???)
 ** Articles review 1 (???)
 ** Articles review 2 (???)
