@@ -56,6 +56,10 @@
 - Why not HHL/Shor/etc.?
 - Perspective
 
+** Universal gates (@ooovector)
+- Groups of gates
+- Universal Quantum Computer
+
 * Quantum Machine Learning
 ** PennyLane Intro (?)
 - PennyLane
@@ -76,7 +80,7 @@
 - Barren Plateau
 
 * VQC for machine learning
-** Classification with VQC (@SemyonSinchenko)
+** Classification with VQC (@SemyonSinchenko or ???)
 - VQC
 - Quantum Neural Networks
 - Irises
@@ -87,8 +91,19 @@
 - Quantum-classical SVM
 
 * Variational Quantum Eigensolver
-** Quantum Many Body Physics (someone from MSU)
-** Quantum Chemistry (?)
+** Quantum Many Body Physics (Dmitrii Bazhanov)
+- About the problem
+- Importance
+- Examples
+- Spin glasses
+- ???
+
+** Quantum Chemistry (???)
+- About the problem
+- Importance
+- Hartri-Fock states
+- ???
+
 ** Variational Quantum Eigensolver (@SemyonSinchenko)
 - Main idea
 - What is anzatz?
@@ -97,9 +112,19 @@
 - Adaptive and layered anzatzs
 
 * Quantum Combinatorial Optimization
-** Classical Combinatorial Optimization (Yoriy Dorn)
-** QAOA (@SemyonSinchenko)
+** Classical Combinatorial Optimization (Yuriy Dorn)
+- Abot the problem
+- Max cut
+- K-community
+
+** QAOA (@SemyonSinchenko or ???)
 - Main idea
 - Mixed Hamiltonian
 - Cost Hamiltonian
 - Examples
+
+* Bleeding Edge of QML
+** CV quantum computers (???)
+** Articles review 1 (???)
+** Articles review 2 (???)
+** Articles review 3 (???)
