@@ -4,7 +4,8 @@
 
 1. [Environment](#environment)
 2. [Review](#review)
-3. [Pull-requests](#pull-requests)
+3. [Issues](#issues)
+4. [Pull-requests](#pull-requests)
 
 ## Environment
 
