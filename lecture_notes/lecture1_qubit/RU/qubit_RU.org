@@ -4,7 +4,7 @@
 #+LATEX_HEADER: \usepackage{polyglossia}
 #+LATEX_HEADER: \setmainlanguage[babelshorthands = true]{russian}
 #+LATEX_HEADER: \setotherlanguage{english}
-#+LATEX_HEADER: \setmainfont{Times Ne Roman}
+#+LATEX_HEADER: \setmainfont{Times New Roman}
 #+LATEX_HEADER: \newfontfamily{\cyrillicfont}[Ligatures = TeX, Script=Cyrillic]{Times New Roman}
 #+LATEX_HEADER: \newfontfamily{\cyrillicfontsf}[Ligatures = TeX, Script=Cyrillic]{Times New Roman}
 #+LATEX_HEADER: \newfontfamily{\cyrillicfonttt}[Ligatures = TeX, Script=Cyrillic]{Times New Roman}
