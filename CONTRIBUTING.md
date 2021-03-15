@@ -5,9 +5,9 @@
 1. [Contributor roles](#contributor-roles)
 1. [Environment](#environment)
 1. [GitHub intro](#github-intro)
-1. [Review](#review)
+1. [Content review](#content-review)
 1. [Issues](#issues)
-1. [Pull-requests](#pull-requests)
+1. [Pull Requests](#pull-requests)
 
 ## Contributor roles
 
