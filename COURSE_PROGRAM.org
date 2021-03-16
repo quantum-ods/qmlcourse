@@ -1,134 +1,116 @@
 #+TITLE: QMLCourse.ai
+#+AUTHOR: Semyon Sinchenko & ODS.ai
+#+LANGUAGE: en
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{physics}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{hyperref}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \tikzstyle{line} = [dashed, thin, ->, >=stealth]
+#+LATEX_HEADER: \tikzstyle{mainline} = [very thick,->]
 
-* Introduction
-** Basic Python (@Yorko)
-- Python
-- Virtual environments
-- Jupyter Notebooks
+* Course schema
 
-** Linear Algebra with =NumPy= (@Yorko)
-- =NumPy=
-- Vector
-- Matrix
-- Hilbert Space
-- Conjugate, Transpose
-- Scalar product
-- Matrix product
-- Kronecker product
-- Eigenvectors + Eigenvalues
+#+begin_export latex
+\begin{center}
 
-** Classical Machine Learning (@Yorko)
-- Linear Models
-- Gradient Descent
-- SVM + Kernels
-- Neural Networks
+\begin{tikzpicture}[align=center]
+    \path
+         % Introduction block
+         (0, 0) node[rectangle, draw=black, fill=white!30] (pyintro) {Python Intro}
+         +(4, 0) node[rectangle, draw=black, fill=white!30] (linalg) {Linalg \& NumPy}
+         +(-4, 0) node[rectangle, draw=black, fill=white!30] (ml) {Classical ML}
 
-* Quantum Computations
-** Qubit (@SemyonSinchenko)
-- State
-- Qubit
-- Operators
-  - Pauli Matricies
-  - Hadamard
-- Measures
-- Expected Values
+         % Qubit base lection
+         +(0, -1) node[rectangle, draw=black, fill=green!30] (qubit) {Qubit}
+         % Facultative qubit lection
+         +(-4, -1) node[rectangle, draw=black, fill=red!30] (physqubit) {Physics of qubit}
 
-** Gates (@SemyonSinchenko)
-- Single Qubit Gates
-  - RX, RY, RZ
-  - U1, U2, U3
-- Multiple qubits
-  - States
-  - Operators
-  - CNOT
-  - CY, CZ
+         % Gates base lecture
+         +(0, -3) node[rectangle, draw=black, fill=green!30] (gates) {Gates}
+         % Facultative gates lections
+         +(4, -2) node[rectangle, draw=black, fill=yellow!30] (hardware) {NISQ Hardware}
+         +(4, -4) node[rectangle, draw=black, fill=yellow!30] (algs) {Grover's algorithm}
+         +(-4, -3) node[rectangle, draw=black, fill=red!30] (mixedstates) {Mixed States and\\Density Operator}
 
-** Mixed states and density matrices (@Bortania)
-- Mixed states
-- Density operator
-- Entropy
-- Black holes (?)
+         % Pennylane base lection
+         +(0, -5) node[rectangle, draw=black, fill=green!30] (pennylane) {PennyLane}
+         % Facultative pennylane lection
+         +(4, -5) node[rectangle, draw=black, fill=yellow!30] (frameworks) {QC Frameworks}
 
-* NISQ
-** NISQ and NISQ-hardware (@ooovector)
-- NISQ
-- Hardware
-- Why not HHL/Shor/etc.?
-- Perspective
+         % VQC base lection
+         +(0, -6) node[rectangle, draw=black, fill=green!30] (vqc) {VQC}
+         % Facultative VQC lections
+         +(4, -6) node[rectangle, draw=black, fill=red!30] (univvqc) {VQC are\\universal\\approximations}
+         +(-4, -6) node[rectangle, draw=black, fill=red!30] (vqckernels) {VQC are\\kernels}
 
-** Universal gates (@ooovector)
-- Groups of gates
-- Universal Quantum Computer
+         % Gradients base lection
+         +(0, -8) node[rectangle, draw=black, fill=green!30] (gradients) {Gradients}
+         % Facultative Gradient lections
+         +(4, -8) node[rectangle, draw=black, fill=yellow!30] (highorder) {High-order\\derivatives}
+         +(-4, -8) node[rectangle, draw=black, fill=red!30] (natgrad) {Natural\\Gradient}
 
-* Quantum Machine Learning
-** PennyLane Intro (???)
-- PennyLane
-- Device
-- QNode
-- Gates
+         % Classifications base lection
+         +(0, -9) node[rectangle, draw=black, fill=green!30] (classification) {VQC based\\classification}
 
-* Variational Quantum Circuits
-** Variational circuits (@SemyonSinchenko)
-- Main idea
-- Quantum Classical learning
-- Features encoding
+         % Hybrid SVM base lection
+         +(0, -10) node[rectangle, draw=black, fill=green!30] (hybridsvm) {Hybrid SVM}
+         % Facultative SVM lection
+         +(4, -10) node[rectangle, draw=black, fill=yellow!30] (classicalsvm) {Classical\\SVM}
+         +(-4, -10) node[rectangle, draw=black, fill=red!30] (groversvm) {Hybrid SVM\\with Grover}
 
-** Gradients (@SemyonSinchenko)
-- Gradient
-- Parameter-shift rule
-- Natural Gradient
-- Barren Plateau
+         % Quantum tasks base lection
+         +(0, -12) node[rectangle, draw=black, fill=green!30] (qopt) {Optimization\\with QC}
+         +(4, -12) node[rectangle, draw=black, fill=yellow!30] (classopt) {Classical\\Optimization}
+         +(-4, -11) node[rectangle, draw=black, fill=red!30] (qmbp) {Quantum Simulations}
+         +(-4, -13) node[rectangle, draw=black, fill=red!30] (qchem) {Quantum Chemistry}
 
-* VQC for machine learning
-** Classification with VQC (@SemyonSinchenko or ???)
-- VQC
-- Quantum Neural Networks
-- Irises
+         % VQE & QAOA base lections
+         +(2, -15) node[rectangle, draw=black, fill=green!30] (vqe) {VQE}
+         +(-2, -15) node[rectangle, draw=black, fill=green!30] (qaoa) {QAOA}
+         % Facultative lections
+         +(4, -15) node[rectangle, draw=black, fill=red!30] (ucc) {UCC anzatz}
+         +(-4, -14) node[rectangle, draw=black, fill=red!30] (mixedham) {Mixed Hamiltonian}
+         +(-4, -16) node[rectangle, draw=black, fill=red!30] (costham) {Cost Hamiltonian};
+         
 
-** Hybrid SVM (@SemyonSinchenko)
-- VQC as kernels
-- Optimal observable
-- Quantum-classical SVM
+         % Lines
+         \draw [mainline] (pyintro) -- (qubit);
+         \draw [mainline] (ml) -- (qubit);
+         \draw [mainline] (linalg) -- (qubit);
+         \draw [mainline] (qubit) -- (gates);
+         \draw [line] (qubit) -- (physqubit);
+         \draw [mainline] (gates) -- (pennylane);
+         \draw [line] (gates) -| (hardware);
+         \draw [line] (gates) -| (algs);
+         \draw [line] (gates) -- (mixedstates);
+         \draw [mainline] (pennylane) -- (vqc);
+         \draw [line] (pennylane) -- (frameworks);
+         \draw [mainline] (vqc) -- (gradients);
+         \draw [line] (vqc) -- (univvqc);
+         \draw [line] (vqc) -- (vqckernels);
+         \draw [mainline] (gradients) -- (classification);
+         \draw [line] (gradients) -- (highorder);
+         \draw [line] (gradients) -- (natgrad);
+         \draw [mainline] (classification) -- (hybridsvm);
+         \draw [mainline] (hybridsvm) -- (qopt);
+         \draw [line] (hybridsvm) -- (classicalsvm);
+         \draw [line] (hybridsvm) -- (groversvm);
+         \draw [line] (qopt) -- (classopt);
+         \draw [line] (qopt) -| (qmbp);
+         \draw [line] (qopt) -| (qchem);
+         \draw [mainline] (qopt) |- (vqe);
+         \draw [mainline] (qopt) |- (qaoa);
+         \draw [line] (vqe) -- (ucc);
+         \draw [line] (qaoa) -| (mixedham);
+         \draw [line] (qaoa) -| (costham);
+\end{tikzpicture}
 
-* Variational Quantum Eigensolver
-** Quantum Many Body Physics (Dmitrii Bazhanov)
-- About the problem
-- Importance
-- Examples
-- Spin glasses
-- ???
+\end{center}
+#+end_export
 
-** Quantum Chemistry (???)
-- About the problem
-- Importance
-- Hartri-Fock states
-- ???
-
-** Variational Quantum Eigensolver (@SemyonSinchenko)
-- Main idea
-- What is anzatz?
-- Hardware-efficient anzatz
-- UUC-anzatz
-- Adaptive and layered anzatzs
-
-* Quantum Combinatorial Optimization
-** Classical Combinatorial Optimization (Yuriy Dorn)
-- Abot the problem
-- Max cut
-- K-community
-
-** QAOA (@SemyonSinchenko or ???)
-- Main idea
-- Mixed Hamiltonian
-- Cost Hamiltonian
-- Examples
-
-* Quantum Reinforcement Learning (???)
-** Quantum Classical RL (???)
-** Hardware implementation (???)
-
-* Bleeding Edge of QML (???)
-** CV quantum computers (???)
-** Articles review 1 (???)
-** Articles review 2 (???)
-** Articles review 3 (???)
+** How to read the schema?
+- *WHITE* -- introductory blocks which discover pre-requirements of the course;
+- *GREEN* -- main flow of the course with simple introductory lectures about QC and QML;
+- *YELLOW* -- facultative lectures that are highly recommended and which explain additional topics about QML and QC;
+- *RED* -- advanced level lecturess which deeply explain the math and the principles underlying QML;
