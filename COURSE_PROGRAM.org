@@ -5,109 +5,51 @@
 #+LATEX_HEADER: \usepackage{physics}
 #+LATEX_HEADER: \usepackage{graphicx}
 #+LATEX_HEADER: \usepackage{hyperref}
-#+LATEX_HEADER: \usepackage{tikz}
-#+LATEX_HEADER: \tikzstyle{line} = [dashed, thin, ->, >=stealth]
-#+LATEX_HEADER: \tikzstyle{mainline} = [very thick,->]
 
 * Course schema
 
-#+begin_export latex
-\begin{center}
+#+begin_src plantuml :file ./images/course_program.png
+"Python Intro" #White --> "Qubit" #Green
+"Linalg & NumPy" #White --> "Qubit"
+"Classical ML" #White --> "Qubit"
+"Qubit" -> "Physics of qubit" #Red
+"Qubit" --> "Gates" #Green
+"Gates" -> "NISQ Hardware" #Yellow
+"Gates" -> "Grover's algorithm" #Yellow
+"Gates" -> "Mixed states" #Yellow
+"Mixed states" -> "Quantum Information\n and Entropy" #Red
+"Gates" --> "PennyLane" #Green
+"PennyLane" -> "QC Frameworks" #Yellow
+"PennyLane" --> "VQC" #Green
+"VQC" -> "VQC\n as universal approximations" #Red
+"VQC" -> "VQC as kernels" #Red
+"VQC" --> "Gradients" #Green
+"Gradients" -> "High-order derivatives" #Yellow
+"High-order derivatives" -> "Quantum\nNatural Gradient" #Red
+"Gradients" --> "VQC based\nclassification" #Green
+"VQC based\nclassification" -> "Barren plateau\nin VQC training" #Yellow
+"VQC based\nclassification" --> "Hybrid SVM" #Green
+"Hybrid SVM" -> "Classical SVM math" #Yellow
+"Hybrid SVM" -> "SVM with Grover" #Red
+"Classical SVM math" -> "SVM with Grover"
+"Grover's algorithm" --> "SVM with Grover"
+"Hybrid SVM" --> "Optimization with QML" #Green
+"Optimization with QML" -> "Classical\nCombinatorial Optimization" #Yellow
+"Optimization with QML" -> "Quantum\nMany Body\nPhysics" #Red
+"Optimization with QML" -> "Quantum Chemistry" #Red
+"Optimization with QML" --> "VQE" #Green
+"VQE" -> "Adaptive and layered\nlearning" #Yellow
+"VQE" -> "UUC anzatz" #Red
+"Quantum Chemistry" --> "UUC anzatz"
+"Optimization with QML" --> "QAOA" #Green
+"QAOA" -> "Mixed Hamiltonian" #Yellow
+"QAOA" -> "Cost Hamiltonian" #Yellow
+"Classical\nCombinatorial Optimization" --> "Cost Hamiltonian"
+"QAOA" --> "Advanced Topics in QML" #Yellow
+"VQE" --> "Advanced Topics in QML"
+"Advanced Topics in QML" -> "State of the Art review" #Red
+#+end_src
 
-\begin{tikzpicture}[align=center]
-    \path
-         % Introduction block
-         (0, 0) node[rectangle, draw=black, fill=white!30] (pyintro) {Python Intro}
-         +(4, 0) node[rectangle, draw=black, fill=white!30] (linalg) {Linalg \& NumPy}
-         +(-4, 0) node[rectangle, draw=black, fill=white!30] (ml) {Classical ML}
-
-         % Qubit base lection
-         +(0, -1) node[rectangle, draw=black, fill=green!30] (qubit) {Qubit}
-         % Facultative qubit lection
-         +(-4, -1) node[rectangle, draw=black, fill=red!30] (physqubit) {Physics of qubit}
-
-         % Gates base lecture
-         +(0, -3) node[rectangle, draw=black, fill=green!30] (gates) {Gates}
-         % Facultative gates lections
-         +(4, -2) node[rectangle, draw=black, fill=yellow!30] (hardware) {NISQ Hardware}
-         +(4, -4) node[rectangle, draw=black, fill=yellow!30] (algs) {Grover's algorithm}
-         +(-4, -3) node[rectangle, draw=black, fill=red!30] (mixedstates) {Mixed States and\\Density Operator}
-
-         % Pennylane base lection
-         +(0, -5) node[rectangle, draw=black, fill=green!30] (pennylane) {PennyLane}
-         % Facultative pennylane lection
-         +(4, -5) node[rectangle, draw=black, fill=yellow!30] (frameworks) {QC Frameworks}
-
-         % VQC base lection
-         +(0, -6) node[rectangle, draw=black, fill=green!30] (vqc) {VQC}
-         % Facultative VQC lections
-         +(4, -6) node[rectangle, draw=black, fill=red!30] (univvqc) {VQC are\\universal\\approximations}
-         +(-4, -6) node[rectangle, draw=black, fill=red!30] (vqckernels) {VQC are\\kernels}
-
-         % Gradients base lection
-         +(0, -8) node[rectangle, draw=black, fill=green!30] (gradients) {Gradients}
-         % Facultative Gradient lections
-         +(4, -8) node[rectangle, draw=black, fill=yellow!30] (highorder) {High-order\\derivatives}
-         +(-4, -8) node[rectangle, draw=black, fill=red!30] (natgrad) {Natural\\Gradient}
-
-         % Classifications base lection
-         +(0, -9) node[rectangle, draw=black, fill=green!30] (classification) {VQC based\\classification}
-
-         % Hybrid SVM base lection
-         +(0, -10) node[rectangle, draw=black, fill=green!30] (hybridsvm) {Hybrid SVM}
-         % Facultative SVM lection
-         +(4, -10) node[rectangle, draw=black, fill=yellow!30] (classicalsvm) {Classical\\SVM}
-         +(-4, -10) node[rectangle, draw=black, fill=red!30] (groversvm) {Hybrid SVM\\with Grover}
-
-         % Quantum tasks base lection
-         +(0, -12) node[rectangle, draw=black, fill=green!30] (qopt) {Optimization\\with QC}
-         +(4, -12) node[rectangle, draw=black, fill=yellow!30] (classopt) {Classical\\Optimization}
-         +(-4, -11) node[rectangle, draw=black, fill=red!30] (qmbp) {Quantum Simulations}
-         +(-4, -13) node[rectangle, draw=black, fill=red!30] (qchem) {Quantum Chemistry}
-
-         % VQE & QAOA base lections
-         +(2, -15) node[rectangle, draw=black, fill=green!30] (vqe) {VQE}
-         +(-2, -15) node[rectangle, draw=black, fill=green!30] (qaoa) {QAOA}
-         % Facultative lections
-         +(4, -15) node[rectangle, draw=black, fill=red!30] (ucc) {UCC anzatz}
-         +(-4, -14) node[rectangle, draw=black, fill=red!30] (mixedham) {Mixed Hamiltonian}
-         +(-4, -16) node[rectangle, draw=black, fill=red!30] (costham) {Cost Hamiltonian};
-         
-
-         % Lines
-         \draw [mainline] (pyintro) -- (qubit);
-         \draw [mainline] (ml) -- (qubit);
-         \draw [mainline] (linalg) -- (qubit);
-         \draw [mainline] (qubit) -- (gates);
-         \draw [line] (qubit) -- (physqubit);
-         \draw [mainline] (gates) -- (pennylane);
-         \draw [line] (gates) -| (hardware);
-         \draw [line] (gates) -| (algs);
-         \draw [line] (gates) -- (mixedstates);
-         \draw [mainline] (pennylane) -- (vqc);
-         \draw [line] (pennylane) -- (frameworks);
-         \draw [mainline] (vqc) -- (gradients);
-         \draw [line] (vqc) -- (univvqc);
-         \draw [line] (vqc) -- (vqckernels);
-         \draw [mainline] (gradients) -- (classification);
-         \draw [line] (gradients) -- (highorder);
-         \draw [line] (gradients) -- (natgrad);
-         \draw [mainline] (classification) -- (hybridsvm);
-         \draw [mainline] (hybridsvm) -- (qopt);
-         \draw [line] (hybridsvm) -- (classicalsvm);
-         \draw [line] (hybridsvm) -- (groversvm);
-         \draw [line] (qopt) -- (classopt);
-         \draw [line] (qopt) -| (qmbp);
-         \draw [line] (qopt) -| (qchem);
-         \draw [mainline] (qopt) |- (vqe);
-         \draw [mainline] (qopt) |- (qaoa);
-         \draw [line] (vqe) -- (ucc);
-         \draw [line] (qaoa) -| (mixedham);
-         \draw [line] (qaoa) -| (costham);
-\end{tikzpicture}
-
-\end{center}
-#+end_export
 
 ** How to read the schema?
 - *WHITE* -- introductory blocks covering prerequisites for the rest of the course;
