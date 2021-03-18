@@ -173,7 +173,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 aa = np.random.uniform(0, 2 * np.pi, size=500)
-aa = np.random.uniform(0, 2 * np.pi, size=500)
+bb = np.random.uniform(0, 2 * np.pi, size=500)
 
 res = [angle_vqc(a, b) for a, b in zip(aa, bb)]
 
@@ -208,6 +208,44 @@ res_pl = [angle_vqc_pl(a, b) for a, b in zip(aa, bb)]
 np.allclose(res, res_pl)
 # True
 #+end_src
+
+** Важность многокубитных гейтов
+Очень хорошая идея при кодировании параметров использовать многокубитные гейты, так как именно они создают запутанные состояния и раскрывают все преимущества квантовых компьютеров! Давайте попробуем это сделать.
+
+#+begin_src python
+dev2 = qml.device("default.qubit", 2)
+
+@qml.qnode(dev2)
+def cnot_vqc(a, b):
+    qml.RY(a, wires=0)
+    qml.RY(b, wires=1)
+    qml.RZ(a, wires=0)
+    qml.RZ(b, wires=1)
+    qml.CZ(wires=[0, 1])
+    return qml.expval(qml.PauliZ(0) @ qml.PauliZ(1))
+#+end_src
+
+В этой схеме мы видим оператор $\hat{CZ}$, который как раз и создает нам запутанное состояние. Давайте посмотрим, как такая схема преобразует наше исходное пространство случайных точек.
+
+#+begin_src python
+res = [cnot_vqc(a, b) for a, b in zip(aa, bb)]
+
+f = plt.figure(figsize=(8, 7))
+clb = plt.scatter(aa, bb, c=res)
+plt.xlabel("a")
+plt.ylabel("b")
+plt.colorbar(clb)
+
+plt.show()
+#+end_src
+
+#+begin_center
+#+attr_latex: :width 0.7\textwidth
+#+caption: Визуализация результатов =cnot_vqc=
+[[./images/cnot_vqc.png]]
+#+end_center
+
+Можно заметить, что результат выглядит гораздо интереснее. В целом можно сказать, что кодирование данных является одним из важнейших выборов при проектировании *VQC* и мы еще много будем обсуждать различные способы того, как это можно сделать.
 
 * Что мы узнали из этой лекции
 Давайте кратко повторим, что мы узнали из этой лекции:
