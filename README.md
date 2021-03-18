@@ -8,4 +8,4 @@ Main repository of the course.
 
 ## Course Program
 
-- [Course Programm](http://htmlpreview.github.io/?https://github.com/SemyonSinchenko/qmlcourse.ai/blob/course_programm/COURSE_PROGRAM.html)
+- [Course Programm](http://htmlpreview.github.io/?https://github.com/SemyonSinchenko/qmlcourse.ai/blob/master/COURSE_PROGRAM.html)
