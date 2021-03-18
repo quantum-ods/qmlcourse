@@ -48,6 +48,7 @@
 "QAOA" --> "Advanced Topics in QML" #Yellow
 "VQE" --> "Advanced Topics in QML"
 "Advanced Topics in QML" -> "State of the Art review" #Red
+"Advanced Topics in QML" -> "Quantum RL" #Yellow
 #+end_src
 
 
