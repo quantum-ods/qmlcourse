@@ -501,5 +501,9 @@ _minted*
 *.log
 *.tex
 
+# Output
+*.html
+*.pdf
+
 # Mac shit
 .DS_Store
