@@ -114,18 +114,18 @@ np.allclose(expval(ry(basis, -np.pi / 2), pauli_x), -1.0)
 \begin{align*}
 \ket{\Psi} = \begin{bmatrix}
 0.42 \\
-\sqrt{1 -- 0.42^2}
+\sqrt{1 - 0.42^2}
 \end{bmatrix}
 \end{align*}
 
 #+begin_src python
-random_state = np.array([0.42 + 0j, np.sqrt(1 -- 0.42**2) + 0j]).reshape((2, 1))
+random_state = np.array([0.42 + 0j, np.sqrt(1 - 0.42**2) + 0j]).reshape((2, 1))
 #+end_src
 
 Измерим его по осям $\mathbf{X}$ и $\mathbf{Z}$, затем повернем его на угол $2\pi$ и измерим снова:
 
 #+begin_src python
-pauli_z = np.array([[1 + 0j, 0 + 0j], [0 + 0j, 0j -- 1]])
+pauli_z = np.array([[1 + 0j, 0 + 0j], [0 + 0j, 0j - 1]])
 
 expval(random_state, pauli_z)
 # array([[-0.6472+0.j]])
@@ -235,7 +235,7 @@ e^{1j\phi}\sin(\frac{\theta}{2}) & e^{1j(\phi + \lambda)}\cos(\frac{\theta}{2})
 np.allclose(u1(basis, np.pi / 6), basis)
 # True
 
-h = 1 / np.sqrt(2) * np.array([[1 + 0j, 1 + 0j], [1 + 0j, 0j -- 1]])
+h = 1 / np.sqrt(2) * np.array([[1 + 0j, 1 + 0j], [1 + 0j, 0j - 1]])
 np.allclose(u1(h @ basis, np.pi / 6), h @ basis)
 # False
 #+end_src
