@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<!-- 2021-03-23 Tue 18:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Гейты</title>
+<meta name="author" content="Семен Синченко" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: auto; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+
+<script>
+MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\(', '\)']]},
+  svg: {
+    fontCache: 'global'
+  },
+  loader: {load: ['[tex]/physics']},
+  tex: {packages: {'[+]': ['physics']}}
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js">
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Гейты</h1>
+<div id="table-of-contents">
+<h2>&#1057;&#1086;&#1076;&#1077;&#1088;&#1078;&#1072;&#1085;&#1080;&#1077;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4efbf01">1. Описание лекции</a></li>
+<li><a href="#orgfdd59f8">2. Введение</a></li>
+<li><a href="#org6ad9e2d">3. Основные однокубитные гейты</a>
+<ul>
+<li><a href="#org71ee1d0">3.1. T-гейт</a></li>
+<li><a href="#org9a5e471">3.2. Гейты поворота вокруг оси</a>
+<ul>
+<li><a href="#org837359d">3.2.1. Гейт \(\hat{RY}\)</a></li>
+<li><a href="#orgf656c9f">3.2.2. Другие гейты вращений</a></li>
+<li><a href="#orgc51f712">3.2.3. Общая форма записи однокубитных гейтов</a></li>
+</ul>
+</li>
+<li><a href="#org64bbed2">3.3. Phase-shift гейт</a></li>
+<li><a href="#org98735a2">3.4. \(\hat{U}_2\) и \(\hat{U}_3\)</a></li>
+<li><a href="#orga77ed1c">3.5. Еще пара слов об однокубитных гейтах</a>
+<ul>
+<li><a href="#org880e133">3.5.1. Единичный гейт</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org5f790ec">4. Многокубитные состояния и гейты</a>
+<ul>
+<li><a href="#org0adbfe5">4.1. Многокубитные состояния</a></li>
+<li><a href="#org6f0f0cc">4.2. Многокубитные операторы</a></li>
+<li><a href="#orgb4eecdc">4.3. Конструирование многокубитных операторов</a></li>
+<li><a href="#org793f6a7">4.4. Наблюдаемые для многокубитных гейтов</a></li>
+</ul>
+</li>
+<li><a href="#org8c5e245">5. Основные двухкубитные гейты</a>
+<ul>
+<li><a href="#org590a5c6">5.1. CNOT (CX)</a></li>
+<li><a href="#org04dce7c">5.2. Гейты CY и CZ</a></li>
+<li><a href="#org6a999e4">5.3. Гейт iSWAP</a></li>
+<li><a href="#org14db5f4">5.4. Гейт fSim</a></li>
+</ul>
+</li>
+<li><a href="#org1ffef05">6. Первое знакомство с PennyLane</a>
+<ul>
+<li><a href="#org9ff5816">6.1. Device</a></li>
+<li><a href="#org8b51664">6.2. QNode</a>
+<ul>
+<li><a href="#orgbfefdd8">6.2.1. Сначала на NumPy</a></li>
+<li><a href="#org725b4ec">6.2.2. Теперь через QNode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb50cf4b">7. Заключение</a></li>
+<li><a href="#org58eedd9">8. Задачи</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org4efbf01" class="outline-2">
+<h2 id="org4efbf01"><span class="section-number-2">1</span> Описание лекции</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Из этой лекции мы узнаем:
+</p>
+<ul class="org-ul">
+<li>Какие есть основные однокубитные гейты</li>
+<li>Как записывать многокубитные состояния</li>
+<li>Как конструировать многокубитные операторы</li>
+<li>Какие есть многокубитные гейты</li>
+<li>Первое знакомство с PennyLane</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfdd59f8" class="outline-2">
+<h2 id="orgfdd59f8"><span class="section-number-2">2</span> Введение</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Квантовые гейты являются основными <i>строительными</i> блоками для любых квантовых схем, в том числе и тех, которые применяются для машинного обучения. Можно сказать, что это такой алфавит квантовых вычислений, он просто необходим, чтобы сходу понимать, например, что изображено на подобных схемах:
+</p>
+<div class="org-center">
+
+<div id="org634ab65" class="figure">
+<p><img src="./images/Layer-VQE_enlarged.png" alt="Layer-VQE_enlarged.png" width="700px" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 1.: </span>Картинка взята из <a href="https://arxiv.org/abs/2102.05566">Layer-VQE</a></p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ad9e2d" class="outline-2">
+<h2 id="org6ad9e2d"><span class="section-number-2">3</span> Основные однокубитные гейты</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+В прошлый раз мы познакомились с операторами Паули, а также гейтом Адамара. Как для обычных квантовых алгоритмов, так и
+для QML-алгоритмов нужны и другие гейты, потому что одни только эти гейты не позволяют перейти во все возможные квантовые состояния.
+Теперь давайте посмотрим, какие еще однокубитные гейты часто применяются в квантовых вычислениях и квантовом машинном обучении.
+</p>
+</div>
+
+<div id="outline-container-org71ee1d0" class="outline-3">
+<h3 id="org71ee1d0"><span class="section-number-3">3.1</span> T-гейт</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+T-гейт очень популярен в универсальных квантовых вычислениях. Его матрица имеет вид
+</p>
+\begin{align*}
+\hat{T} = \begin{bmatrix}
+1 & 0 \\
+0 & \frac{1+i}{\sqrt{2}}
+\end{bmatrix}
+\end{align*}
+<p>
+Любой однокубитный гейт можно аппроксимировать последовательностью гейтов Адамара и T-гейтов. Чем точнее требуется аппроксимация, тем длиннее будет аппроксимирующая последовательность.
+</p>
+
+<p>
+Помимо важной роли в математике квантовых вычислений, гейт Адамара и T-гейт интересны тем, что именно на них построено большинство предложений по реализации квантовых вычислений с топологической защитой или с коррекцией ошибок. На сегодняшний день эти схемы реально пока не очень работают: никаких топологически защищённых кубитов продемонстрировано не было, а коррекция ошибок не выходит за пределы двух логических кубитов.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9a5e471" class="outline-3">
+<h3 id="org9a5e471"><span class="section-number-3">3.2</span> Гейты поворота вокруг оси</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Поворотные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:
+</p>
+
+<div class="org-center">
+
+<div id="org82e67cd" class="figure">
+<p><img src="./images/Blochcolor-alt.png" alt="Blochcolor-alt.png" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 2.: </span>Сфера Блоха</p>
+</div>
+</div>
+
+<p>
+Любой однокубитный гейт можно представить как вращение луча состояния \(\Psi\) на некоторый угол вокруг некоторой оси, проходящей через центр сферы Блоха.
+</p>
+
+<p>
+Гейты \(\hat{RX}(\phi), \hat{RY}(\phi), \hat{RZ}(\phi)\) осуществляют поворот на определенный угол \(\phi\) вокруг соответствующей оси на сфере Блоха.
+</p>
+
+
+<p>
+Давайте внимательно рассмотрим это на примере гейта \(\hat{RY}\).
+</p>
+</div>
+
+
+
+<div id="outline-container-org837359d" class="outline-4">
+<h4 id="org837359d"><span class="section-number-4">3.2.1</span> Гейт \(\hat{RY}\)</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+Сам гейт определяется следующим образом:
+</p>
+
+\begin{align*}
+\hat{RY(\phi)} = \begin{bmatrix}
+\cos(\frac{\phi}{2}) & -\sin(\frac{\phi}{2}) \\
+\sin(\frac{\phi}{2}) & \cos(\frac{\phi}{2})
+\end{bmatrix}
+\end{align*}
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> numpy <span style="color: #51afef;">as</span> np
+
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">ry</span>(state, phi):
+    <span style="color: #51afef;">return</span> np.array([
+        [np.cos(phi / <span style="color: #da8548; font-weight: bold;">2</span>), -np.sin(phi / <span style="color: #da8548; font-weight: bold;">2</span>)],
+        [np.sin(phi / <span style="color: #da8548; font-weight: bold;">2</span>), np.cos(phi /<span style="color: #da8548; font-weight: bold;">2</span>)]
+    ]) @ state
+</pre>
+</div>
+
+<p>
+Запишем наше состояние \(\ket{0}\)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">basis</span> = np.array([<span style="color: #da8548; font-weight: bold;">1</span> + 0j, <span style="color: #da8548; font-weight: bold;">0</span> + 0j]).reshape((<span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">1</span>))
+</pre>
+</div>
+
+<p>
+Внимательно посмотрев на сферу Блоха, можно заметить, что повернув состояние из \(\ket{0}\) на \(\pi\) и измерив значение \(\hat{\sigma^z}\) мы получим 1, а повернув на \(-\pi\) мы получим 0:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">def</span> <span style="color: #c678dd;">expval</span>(state, op):
+    <span style="color: #51afef;">return</span> state.conj().T @ op @ state
+
+<span style="color: #dcaeea;">pauli_x</span> = np.array([[<span style="color: #da8548; font-weight: bold;">0</span> + 0j, <span style="color: #da8548; font-weight: bold;">1</span> + 0j], [<span style="color: #da8548; font-weight: bold;">1</span> + 0j, <span style="color: #da8548; font-weight: bold;">0</span> + 0j]])
+
+np.allclose(expval(ry(basis, np.pi / <span style="color: #da8548; font-weight: bold;">2</span>), pauli_x), <span style="color: #da8548; font-weight: bold;">1.0</span>)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+
+np.allclose(expval(ry(basis, -np.pi / <span style="color: #da8548; font-weight: bold;">2</span>), pauli_x), -<span style="color: #da8548; font-weight: bold;">1.0</span>)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+</pre>
+</div>
+
+<p>
+Убедимся также, что вращение на угол, пропорциональный \(2\pi\), не меняет результата измерения. Возьмем случайное состояние:
+</p>
+\begin{align*}
+\ket{\Psi} = \begin{bmatrix}
+0.42 \\
+\sqrt{1 - 0.42^2}
+\end{bmatrix}
+\end{align*}
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">random_state</span> = np.array([<span style="color: #da8548; font-weight: bold;">0.42</span> + 0j, np.sqrt(<span style="color: #da8548; font-weight: bold;">1</span> - <span style="color: #da8548; font-weight: bold;">0.42</span>**<span style="color: #da8548; font-weight: bold;">2</span>) + 0j]).reshape((<span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">1</span>))
+</pre>
+</div>
+
+<p>
+Измерим его по осям \(\mathbf{X}\) и \(\mathbf{Z}\), затем повернем его на угол \(2\pi\) и измерим снова:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">pauli_z</span> = np.array([[<span style="color: #da8548; font-weight: bold;">1</span> + 0j, <span style="color: #da8548; font-weight: bold;">0</span> + 0j], [<span style="color: #da8548; font-weight: bold;">0</span> + 0j, 0j - <span style="color: #da8548; font-weight: bold;">1</span>]])
+
+expval(random_state, pauli_z)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[-0.6472+0.j]])</span>
+expval(random_state, pauli_x)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[0.76232025+0.j]])</span>
+
+expval(ry(random_state, <span style="color: #da8548; font-weight: bold;">2</span> * np.pi), pauli_z)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[-0.6472+0.j]])</span>
+expval(ry(random_state, <span style="color: #da8548; font-weight: bold;">2</span> * np.pi), pauli_x)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[0.76232025+0.j]])</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf656c9f" class="outline-4">
+<h4 id="orgf656c9f"><span class="section-number-4">3.2.2</span> Другие гейты вращений</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+Аналогичным образом определяются гейты \(\hat{RX}\) и \(\hat{RZ}\):
+</p>
+\begin{align*}
+\hat{RX}(\phi) = \begin{bmatrix}
+\cos(\frac{\phi}{2}) & -i\sin(\frac{\phi}{2}) \\
+-i\sin(\frac{\phi}{2}) & \cos(\frac{\phi}{2})
+\end{bmatrix} \qquad \hat{RZ}(\phi) = \begin{bmatrix}
+e^{-\frac{i\phi}{2}} & 0 \\
+0 & e^{\frac{i\phi}{2}}
+\end{bmatrix}
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-orgc51f712" class="outline-4">
+<h4 id="orgc51f712"><span class="section-number-4">3.2.3</span> Общая форма записи однокубитных гейтов</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<p>
+В общем случае однокубитные гейты могут быть также записаны следующим образом:
+</p>
+\begin{align*}
+\large \hat{R}^\vec{n}(\alpha) = e^{-\frac{i\alpha\hat{\vec{\sigma}}\vec{n}}{2}},
+\end{align*}
+<p>
+где \(\alpha\) &#x2013; это угол поворота, \(\vec{n}\) &#x2013; единичный вектор в направлении оси поворота, а \(\hat{\vec{\sigma}} = \{\sigma^x, \sigma^y, \sigma^z\}\) &#x2013; это вектор, составленный из операторов Паули. Если использовать покоординатную запись и \(\vec{n} = \{n_x, n_y, n_z\}\) задаёт ось вращения, то
+</p>
+
+\begin{align*}
+\large \hat{R}^\vec{n}(\alpha) = e^{-i\frac{\alpha}{2}\left(\hat{\sigma}^xn_x+\hat{\sigma}^yn_y+\hat{\sigma}^zn_z\right)}.
+\end{align*}
+
+<p>
+Забегая вперед, можно сказать, что именно гейты вращений &#x2013; это основа квантовых вариационных схем, главного инструмента этого курса.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org64bbed2" class="outline-3">
+<h3 id="org64bbed2"><span class="section-number-3">3.3</span> Phase-shift гейт</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Другой важный гейт &#x2013; это так называемый phase-shift гейт, или \(\hat{U}_1\) гейт. Его матричная форма имеет следующий вид:
+</p>
+\begin{align*}
+\hat{U}_1(\phi) = \begin{bmatrix}
+1 & 0 \\
+0 & e^{i\phi}
+\end{bmatrix}
+\end{align*}
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">def</span> <span style="color: #c678dd;">u1</span>(state, phi):
+    <span style="color: #51afef;">return</span> np.array([[<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">0</span>], [<span style="color: #da8548; font-weight: bold;">0</span>, np.exp(1j * phi)]]) @ state
+</pre>
+</div>
+
+<p>
+Легко видеть, что с точностью до глобального фазового множителя, который ни на что не влияет, Phase-shift-гейт &#x2013; это тот же \(\hat{RZ}(\phi)\).
+Забегая вперед, можно сказать, что этот гейт играет важную роль в квантовых ядерных методах.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org98735a2" class="outline-3">
+<h3 id="org98735a2"><span class="section-number-3">3.4</span> \(\hat{U}_2\) и \(\hat{U}_3\)</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Более редкие в QML гейты, которые однако все равно встречаются в статьях.
+</p>
+
+\begin{align*}
+\hat{U}_2(\phi, \lambda) = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & -e^{i\lambda} \\
+e^{i\phi} & e^{i(\phi + \lambda)}
+\end{bmatrix} = \hat{U}_1(\phi + \lambda)\hat{RZ}(-\lambda)\hat{RY}(\frac{\pi}{2})\hat{RZ}(\lambda)
+\end{align*}
+
+<p>
+Давайте убедимся в справедливости этого выражения:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">def</span> <span style="color: #c678dd;">rz</span>(state, phi):
+    <span style="color: #51afef;">return</span> np.array([[np.exp(-1j * phi / <span style="color: #da8548; font-weight: bold;">2</span>), <span style="color: #da8548; font-weight: bold;">0</span>], [<span style="color: #da8548; font-weight: bold;">0</span>, np.exp(1j * phi / <span style="color: #da8548; font-weight: bold;">2</span>)]]) @ state
+
+
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">u2_direct</span>(phi, l):
+    <span style="color: #51afef;">return</span> (
+        <span style="color: #da8548; font-weight: bold;">1</span>
+        / np.sqrt(<span style="color: #da8548; font-weight: bold;">2</span>)
+        * np.array([[<span style="color: #da8548; font-weight: bold;">1</span>, -np.exp(1j * l)], [np.exp(1j * phi), np.exp(1j * (phi + l))]])
+    )
+
+
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">u2_inferenced</span>(phi, l):
+    <span style="color: #51afef;">return</span> (
+        u1(np.eye(<span style="color: #da8548; font-weight: bold;">2</span>), phi + l)
+        @ rz(np.eye(<span style="color: #da8548; font-weight: bold;">2</span>), -l)
+        @ ry(np.eye(<span style="color: #da8548; font-weight: bold;">2</span>), np.pi / <span style="color: #da8548; font-weight: bold;">2</span>)
+        @ rz(np.eye(<span style="color: #da8548; font-weight: bold;">2</span>), l)
+    )
+
+
+np.allclose(u2_direct(np.pi / <span style="color: #da8548; font-weight: bold;">6</span>, np.pi / <span style="color: #da8548; font-weight: bold;">3</span>), u2_inferenced(np.pi / <span style="color: #da8548; font-weight: bold;">6</span>, np.pi / <span style="color: #da8548; font-weight: bold;">3</span>))
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+</pre>
+</div>
+
+<p>
+Схожим образом определяется \(\hat{U}_3(\theta, \phi, \lambda)\):
+</p>
+\begin{align*}
+\hat{U}_3(\theta, \phi, \lambda) = \begin{bmatrix}
+\cos(\frac{\theta}{2}) & -e^{1j\lambda}\sin(\frac{\theta}{2}) \\
+e^{1j\phi}\sin(\frac{\theta}{2}) & e^{1j(\phi + \lambda)}\cos(\frac{\theta}{2})
+\end{bmatrix} = \hat{U}_1(\phi + \lambda)\hat{RZ}(-\lambda)\hat{RY}(\theta)\hat{RZ}(\lambda)
+\end{align*}
+
+<p>
+Читатель может сам легко убедиться, что эти формы записи эквивалентны. Для этого надо написать примерно такой же код, какой мы писали раньше для \(\hat{U}_2\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga77ed1c" class="outline-3">
+<h3 id="orga77ed1c"><span class="section-number-3">3.5</span> Еще пара слов об однокубитных гейтах</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+На этом мы завершаем обзор основных однокубитных гейтов. Маленькое замечание &#x2013; гейты, связанные со свдигом фазы, никак не меняют состояние кубита, если оно сейчас \(\ket{0}\). Учитывая, что мы всегда предполагаем, что наше начальное состояние кубитов это именно \(\ket{0}\), то перед тем как применять, например, гейт \(\hat{U}_1\), рекомендуется применить гейт Адамара:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">np.allclose(u1(basis, np.pi / <span style="color: #da8548; font-weight: bold;">6</span>), basis)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+
+<span style="color: #dcaeea;">h</span> = <span style="color: #da8548; font-weight: bold;">1</span> / np.sqrt(<span style="color: #da8548; font-weight: bold;">2</span>) * np.array([[<span style="color: #da8548; font-weight: bold;">1</span> + 0j, <span style="color: #da8548; font-weight: bold;">1</span> + 0j], [<span style="color: #da8548; font-weight: bold;">1</span> + 0j, 0j - <span style="color: #da8548; font-weight: bold;">1</span>]])
+np.allclose(u1(h @ basis, np.pi / <span style="color: #da8548; font-weight: bold;">6</span>), h @ basis)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">False</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org880e133" class="outline-4">
+<h4 id="org880e133"><span class="section-number-4">3.5.1</span> Единичный гейт</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<p>
+Самое последнее об однокубитных гейтах &#x2013; это единичный гейт \(\hat{I}\):
+</p>
+\begin{align*}
+\hat{I} = \begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+\end{align*}
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">i</span> = np.eye(<span style="color: #da8548; font-weight: bold;">2</span>, dtype=np.complex128)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[1.+0.j, 0.+0.j],</span>
+<span style="color: #5B6268;">#        </span><span style="color: #5B6268;">[0.+0.j, 1.+0.j]])</span>
+</pre>
+</div>
+
+<p>
+Этот гейт не делает с кубитом ровным счетом ничего. Но он все равно нам понадобится, когда мы будем конструировать многокубитные операторы!
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5f790ec" class="outline-2">
+<h2 id="org5f790ec"><span class="section-number-2">4</span> Многокубитные состояния и гейты</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Очевидно, что с одним кубитом мы ничего интересного (ну кроме генератора истинно-случайных чисел) мы не сделаем. Давайте для начала разберемся, как выглядят состояния для многокубитных систем.
+</p>
+</div>
+<div id="outline-container-org0adbfe5" class="outline-3">
+<h3 id="org0adbfe5"><span class="section-number-3">4.1</span> Многокубитные состояния</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+В классическом компьютере 1 бит имеет два значения &#x2013; 0 и 1; 2 бита имеют 4 &#x2013; 00, 01, 10, 11; 3 бита 8 значений и т.д. По аналогии, состояние двух кубит &#x2013; это вектор в пространстве \(\mathbf{C}^4\); состояние трех кубит, соответственно, в пространстве \(\mathbf{C}^8\) и т.д., то есть состояние \(N\) кубит описывается вектором размерности \(2^N\) в комплексном пространстве. Вероятности каждой из возможных битовых строк (\(0000...00\), \(0000...01\), \(0000...10\), и т.д.) получаются по методу Шрёдингера, который мы обсуждали в конце прошлой лекции:
+</p>
+\begin{align*}
+\mathbf{P}(\vec{s}) = | \bra{\Psi}\ket{\vec{s}} |^2
+\end{align*}
+
+<p>
+Напомню, что по сути мы должны отсортировать наши битовые строки в лексикографическом порядке и вероятность <i>i</i>-й битовой строки будет равна квадрату <i>i</i>-го элемента вектора \(\ket{\Psi}\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f0f0cc" class="outline-3">
+<h3 id="org6f0f0cc"><span class="section-number-3">4.2</span> Многокубитные операторы</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Как мы уже обсуждали, квантовые операторы должны переводить наше состояние в новое состояние в том же пространстве и сохранять нормировку, а еще должны быть обратимыми. И, значит, оператор для состояния из \(N\) кубит &#x2013; это эрмитова матрица размерности \(2^N \times 2^N\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4eecdc" class="outline-3">
+<h3 id="orgb4eecdc"><span class="section-number-3">4.3</span> Конструирование многокубитных операторов</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Прежде чем мы начнем обсуждать двухкубитные операторы, давайте рассмотрим другую ситуацию. Представим, что у нас есть состояние из 2-х кубит и мы хотим подействовать на первый кубит, например, оператором Адамара. Как же тогда нам написать такой двухкубитный оператор? Ок, мы действуем на 1-й кубит оператором, а что происходит со вторым кубитом? А ничего не происходит, и это эквивалентно тому, что мы действуем на 2-й кубит единичным оператором. А финальный оператор \(2^2 \times 2^2\) записывается через <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0/">произведение Кронекера</a>:
+</p>
+
+\begin{align*}
+\hat{H} \otimes \hat{I} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix} \otimes \begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+\hat{I} & \hat{I} \\
+\hat{I} & -\hat{I}
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & -1
+\end{bmatrix}
+\end{align*}
+
+<p>
+Учитывая, что многокубитные состояния конструируются аналогичным образом через произведение Кронекера, мы можем явно убедиться в верности нашего вывода:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">np.allclose(np.kron(h @ basis, basis), np.kron(h, i) @ np.kron(basis, basis))
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org793f6a7" class="outline-3">
+<h3 id="org793f6a7"><span class="section-number-3">4.4</span> Наблюдаемые для многокубитных гейтов</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+Аналогичным образом можно сконструировать и наблюдаемые. Например, если мы хотим измерять одновременно два спина по оси \(\mathbf{Z}\), то наблюдаемая будет выглядеть так:
+</p>
+\begin{align*}
+\mathbf{ZZ} = \hat{\sigma^z} \otimes \hat{\sigma^z} = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+
+<div class="org-src-container">
+<pre class="src src-python">np.kron(basis, basis).conj().T @ np.kron(pauli_z, pauli_z) @ np.kron(basis, basis)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[1.+0.j]])</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8c5e245" class="outline-2">
+<h2 id="org8c5e245"><span class="section-number-2">5</span> Основные двухкубитные гейты</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Основные многокубитные гейты, которые предоставляют современные квантовые компьютеры, это двухкубитные гейты.
+</p>
+</div>
+
+<div id="outline-container-org590a5c6" class="outline-3">
+<h3 id="org590a5c6"><span class="section-number-3">5.1</span> CNOT (CX)</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Квантовый гейт контролируемого инвертирования &#x2013; это гейт, который действует на два кубита &#x2013; <i>рабочий</i> и <i>контрольный</i>. В зависимости от того, имеет ли контрольный кубит значение 1 или 0, этот гейт инвертирует или не инвертирует рабочий кубит.
+</p>
+
+<div class="org-center">
+
+<div id="org4a83213" class="figure">
+<p><img src="./images/CNOT_gate.svg.png" alt="CNOT_gate.svg.png" />
+</p>
+<p><span class="figure-number">&#1056;&#1080;&#1089;. 3.: </span>CNOT (CX)</p>
+</div>
+</div>
+
+<p>
+Иногда этот гейт также называют гейтом CX. В матричном виде этот оператор можно записать так:
+</p>
+\begin{align*}
+\hat{CNOT} = \begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 1 & 0
+\end{bmatrix}
+\end{align*}
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">cnot</span> = (<span style="color: #da8548; font-weight: bold;">1</span> + 0j) * np.array(
+    [
+        [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>],
+        [<span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>],
+        [<span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">1</span>],
+        [<span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">0</span>],
+    ]
+)
+
+np.allclose(cnot @ np.kron(basis, basis), np.kron(basis, basis))
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+
+np.allclose(
+    cnot @ np.kron(pauli_x @ basis, basis), np.kron(pauli_x @ basis, pauli_x @ basis)
+)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">True</span>
+</pre>
+</div>
+
+<p>
+Заметьте, тут мы воспользовались тем, что \(\hat{\sigma^x}\) работает так же, как инвертор кубитов &#x2013; он превращает \(\ket{0}\) в \(\ket{1}\) и наоборот!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org04dce7c" class="outline-3">
+<h3 id="org04dce7c"><span class="section-number-3">5.2</span> Гейты CY и CZ</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Схожие по принципу гейты &#x2013; это гейты \(\hat{CY}\) и \(\hat{CZ}\). В зависимости от значения <i>управляющего</i> кубита к <i>рабочему</i> кубиту применяют соответствующий оператор Паули:
+</p>
+
+\begin{align*}
+\hat{CY} = \begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & -i\\
+0 & 0 & i & 0
+\end{bmatrix} \qquad \hat{CZ} = \begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & -1
+\end{bmatrix}
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-org6a999e4" class="outline-3">
+<h3 id="org6a999e4"><span class="section-number-3">5.3</span> Гейт iSWAP</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Гейты \(\hat{CX}\), \(\hat{CY}\) и \(\hat{CZ}\) эквивалентны с точностью до однокубитных гейтов. Это означает, что любой из них можно получить добавив необходимые однокубитные гейты до и после другого гейта. Так, например,
+</p>
+
+\begin{align*}
+\hat{CZ} = \left(\hat{I}\times\hat{H}\right)\hat{CX}\left(\hat{I}\times\hat{H}\right).
+\end{align*}
+<p>
+Этим свойством обладают отнюдь не все двухкубитные гейты! Например, таковым является гейт iSWAP:
+</p>
+
+\begin{align*}
+\mathrm{iSWAP} = \begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 0 & -i & 0\\
+0 & -i & 0 & 0\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-org14db5f4" class="outline-3">
+<h3 id="org14db5f4"><span class="section-number-3">5.4</span> Гейт fSim</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Для разных архитектур квантовых процессоров &laquo;естественный&raquo; гейт может выглядеть по-разному. Так, например, в квантовом процессоре Google Sycamore естественным является так называемый fermionic simulation gate, или fSim. Это двухпараметрическое семейство гейтов вида
+</p>
+
+\begin{align*}
+\mathrm{fSim}(\theta, \phi) = \begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & \cos\theta & -i\sin\theta & 0\\
+0 & -i\sin\theta & \cos\theta & 0\\
+0 & 0 & 0 & e^{-i\phi}
+\end{bmatrix}.
+\end{align*}
+
+<p>
+Впрочем, и fSim-гейт не является эквивалентным всему множеству двухкубитных гейтов. В общем случае, чем больше кубитов,
+тем сложнее будет выглядеть декомпозиция произвольного гейта на физически реализуемые в железе.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1ffef05" class="outline-2">
+<h2 id="org1ffef05"><span class="section-number-2">6</span> Первое знакомство с PennyLane</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+На сегодня существует уже достаточно много фреймворков для программирования квантовых компьютеров. Для целей этого курса мы будем использовать <a href="https://pennylane.ai/">PennyLane</a>. Он предоставляет высокоуровневый <code>Python API</code> и создан специально для решения задач квантового машинного обучения.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #51afef;">import</span> pennylane <span style="color: #51afef;">as</span> qml
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9ff5816" class="outline-3">
+<h3 id="org9ff5816"><span class="section-number-3">6.1</span> Device</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Для объявления квантового устройства используется класс <code>Device</code>. <code>PennyLane</code> поддерживает работу с большинством существующих сегодня квантовых компьютеров, но для целей курса мы будем запускать все наши программы лишь на самом простом симуляторе идеального квантового компьютера:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">device</span> = qml.device(<span style="color: #98be65;">"default.qubit"</span>, <span style="color: #da8548; font-weight: bold;">2</span>)
+</pre>
+</div>
+
+<p>
+Первый аргумент тут &#x2013; указание устройства, а второй &#x2013; число кубит.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b51664" class="outline-3">
+<h3 id="org8b51664"><span class="section-number-3">6.2</span> QNode</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Основной <i>строительный блок</i> в <code>PennyLane</code> &#x2013; это <code>qnode</code>. Это функция, которая отмечена специальным декоратором и включает в себя несколько операций с кубитами. Результатом такой функции всегда является измерение. Напишем функцию, которая поворачивает первый кубит на \(45^o\), после чего измеряет оба кубита по оси \(\mathbf{Z}\).
+</p>
+</div>
+
+<div id="outline-container-orgbfefdd8" class="outline-4">
+<h4 id="orgbfefdd8"><span class="section-number-4">6.2.1</span> Сначала на NumPy</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #dcaeea;">state</span> = np.kron(basis, basis)
+<span style="color: #dcaeea;">op</span> = np.kron(ry(np.eye(<span style="color: #da8548; font-weight: bold;">2</span>), np.deg2rad(<span style="color: #da8548; font-weight: bold;">45</span>)), np.eye(<span style="color: #da8548; font-weight: bold;">2</span>, dtype=np.complex128))
+<span style="color: #dcaeea;">measure</span> = np.kron(pauli_z, pauli_z)
+
+(op @ state).conj().T @ measure @ (op @ state)
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">array([[0.70710678+0.j]])</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org725b4ec" class="outline-4">
+<h4 id="org725b4ec"><span class="section-number-4">6.2.2</span> Теперь через QNode</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ECBE7B;">@qml.qnode</span>(device)
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">test</span>(angle):
+    qml.RY(angle, wires=<span style="color: #da8548; font-weight: bold;">0</span>)
+    <span style="color: #51afef;">return</span> qml.expval(qml.PauliZ(<span style="color: #da8548; font-weight: bold;">0</span>) @ qml.PauliZ(<span style="color: #da8548; font-weight: bold;">1</span>))
+
+
+test(np.deg2rad(<span style="color: #da8548; font-weight: bold;">45</span>))
+<span style="color: #5B6268;"># </span><span style="color: #5B6268;">0.7071067811865475</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb50cf4b" class="outline-2">
+<h2 id="orgb50cf4b"><span class="section-number-2">7</span> Заключение</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Это последняя вводная лекция, где мы сами писали операторы и операции на чистом <code>NumPy</code>. Это могло казаться скучным, но зато должно помочь лучше понять ту математику, которая лежит под капотом у квантовых вычислений. Дальше мы будем пользоваться только <code>PennyLane</code> и будет отдельная лекция, которая рассказывает, как работать с этим фреймворком.
+</p>
+
+<ul class="org-ul">
+<li>Мы знаем что такое кубит</li>
+<li>Мы понимаем линейную алгебру, которая описывает квантовые вычисления</li>
+<li>Мы понимаем, как можно сконструировать нужный нам оператор и как применить его</li>
+<li>Мы знаем, что такое измерение и наблюдаемые</li>
+</ul>
+
+<p>
+Теперь мы готовы к тому, чтобы знакомиться с квантовыми вариационными схемами и переходить непосредственно к построению моделей квантового машинного обучения!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58eedd9" class="outline-2">
+<h2 id="org58eedd9"><span class="section-number-2">8</span> Задачи</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Как связаны ось и угол вращения на сфере Блоха с собственными значениями и собственными векторами матрицы однокубитного гейта? Для этого найдите собственные векторы и собственные значения гейта \(R^\vec{n}\left(\alpha\right)\).</li>
+<li>Вокруг какой оси и на какой угол вращает состояние гейт Адамара?</li>
+<li>Гейт SWAP меняет кубиты местами. Его унитарная матрица имеет вид</li>
+</ul>
+\begin{align*}
+\mathrm{SWAP} =
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}.
+\end{align*}
+<p>
+Попробуйте составить последовательность гейтов, реализующую \(\mathrm{SWAP}\), из гейтов \(\mathrm{iSWAP}\), \(\hat{CZ}\) и \(\hat{RZ}(\phi)\).</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">&#1040;&#1074;&#1090;&#1086;&#1088;: Семен Синченко</p>
+<p class="date">Created: 2021-03-23 Tue 18:49</p>
+</div>
+</body>
+</html>

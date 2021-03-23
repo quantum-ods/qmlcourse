@@ -497,8 +497,6 @@ dmypy.json
 # End of https://www.toptal.com/developers/gitignore/api/emacs,python,jupyternotebooks,latex
 
 # Ignore any otput: tex, html, pdf, etc.
-*.html
-*.pdf
 *.tex
 
 # Mac shit

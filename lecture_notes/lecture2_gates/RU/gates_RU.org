@@ -1,21 +1,18 @@
 #+TITLE: Гейты
 #+AUTHOR: Семен Синченко
-#+LANGUAGE: ru
-#+LATEX_HEADER: \usepackage{polyglossia}
-#+LATEX_HEADER: \setmainlanguage[spelling=modern,babelshorthands=true]{russian}
-#+LATEX_HEADER: \setotherlanguage{english}
-#+LATEX_HEADER: \setmainfont{Times New Roman}
-#+LATEX_HEADER: \setromanfont{Times New Roman}
-#+LATEX_HEADER: \setsansfont{Arial}
-#+LATEX_HEADER: \setmonofont{Courier New}
-#+LATEX_HEADER: \newfontfamily{\cyrillicfont}{Times New Roman}[Script=Cyrillic]
-#+LATEX_HEADER: \newfontfamily{\cyrillicfontrm}{Times New Roman}[Script=Cyrillic]
-#+LATEX_HEADER: \newfontfamily{\cyrillicfonttt}{Courier New}
-#+LATEX_HEADER: \newfontfamily{\cyrillicfontsf}{Arial}
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \usepackage{physics}
 #+LATEX_HEADER: \usepackage{graphicx}
 #+LATEX_HEADER: \usepackage{hyperref}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \usepackage{unicode-math}
+#+LATEX_HEADER: \usepackage{polyglossia}
+#+LATEX_HEADER: \setmainlanguage[babelshorthands = true]{russian}
+#+LATEX_HEADER: \setotherlanguage{english}
+#+LATEX_HEADER: \setmainfont{Times New Roman}
+#+LATEX_HEADER: \newfontfamily{\cyrillicfont}[Ligatures = TeX, Script=Cyrillic]{Times New Roman}
+#+LATEX_HEADER: \newfontfamily{\cyrillicfontsf}[Ligatures = TeX, Script=Cyrillic]{Times New Roman}
+#+LATEX_HEADER: \newfontfamily{\cyrillicfonttt}[Ligatures = TeX, Script=Cyrillic]{Times New Roman}
 
 
 * Описание лекции
@@ -29,7 +26,7 @@
 * Введение
 Квантовые гейты являются основными /строительными/ блоками для любых квантовых схем, в том числе и тех, которые применяются для машинного обучения. Можно сказать, что это такой алфавит квантовых вычислений, он просто необходим, чтобы сходу понимать, например, что изображено на подобных схемах:
 #+begin_center
-#+attr_latex: :width 700px
+#+attr_latex: :width 0.8\textwidth
 #+attr_html: :width 700px
 #+caption: Картинка взята из [[https://arxiv.org/abs/2102.05566][Layer-VQE]]
 [[./images/Layer-VQE_enlarged.png]]
