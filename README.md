@@ -12,7 +12,7 @@ Main repository of the course.
 
 - [Contributing Guide](./CONTRIBUTING.md)
 
-## Course Program <a name="program></a>
+## Course Program <a name="program"></a>
 
 ![](./course_program/program.png)
 
