@@ -37,36 +37,25 @@ Semyon Sinchenko, @sem.
 
 ### Core reviewers
 
-Supposed to be well familiar with quantum information & computation, preferably with experience in QML as well. Also, eager to provide critical feedback. 
-
-@gamlo, @Aleksandr Berezutskii, @Sergei Shirkin, @annakey. To be extended.
+Supposed to be well familiar with quantum information & computation, preferably with experience in QML as well. Also, eager to provide critical feedback.
 
 ### Reviewers
 
-Those who don't satisfy the requirements for core reviewers, but still want to review the content being generated. 
-
-By default that's everyone who is invited to the #org\_qml\_course Slack channel.
+Those who don't satisfy the requirements for core reviewers, but still want to review the content being generated. By default that's everyone who is invited to the #org\_qml\_course Slack channel.
 
 ### Authors
 
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks.  
-
-@stm (Python), sharthZ23 (Python, NumPy), @alex.ozerin (NumPy, math), @yorko (ML intro), @Pola Ron (quantum enthropy), @gamlo (hardware), @Sergei Shirkin (PennyLane). To be extended.
+Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks. 
 
 ### Editors
 
 Editors wait for a PR to be approved, and then introduce their changes fixing grammar, language, etc. 
-
-@nmarkova, @vitaliylyalin7000
 
 ### Orgs
 
 _Not to be confused with the `Org` text file format._ 
 
 These guys help organizing/promoting the course. 
-
-@yorko, @vtrohymenko
-
 
 ### Others
 
