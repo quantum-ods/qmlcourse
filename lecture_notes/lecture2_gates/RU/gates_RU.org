@@ -424,6 +424,7 @@ device = qml.device("default.qubit", 2)
 Основной /строительный блок/ в =PennyLane= -- это =qnode=. Это функция, которая отмечена специальным декоратором и включает в себя несколько операций с кубитами. Результатом такой функции всегда является измерение. Напишем функцию, которая поворачивает первый кубит на $45^o$, после чего измеряет оба кубита по оси $\mathbf{Z}$.
 
 *** Сначала на NumPy
+
 #+begin_src python
 state = np.kron(basis, basis)
 op = np.kron(ry(np.eye(2), np.deg2rad(45)), np.eye(2, dtype=np.complex128))
@@ -434,6 +435,7 @@ measure = np.kron(pauli_z, pauli_z)
 #+end_src
 
 *** Теперь через QNode
+
 #+begin_src python
 @qml.qnode(device)
 def test(angle):
