@@ -507,3 +507,6 @@ _minted*
 
 # Mac shit
 .DS_Store
+
+# Jupyter Book
+_build*

@@ -10,6 +10,7 @@ python = "^3.7"
 PennyLane = "^0.14.1"
 numpy = "^1.20.1"
 matplotlib = "^3.3.4"
+jupyter-book = "^0.10.1"
 
 [tool.poetry.dev-dependencies]
 

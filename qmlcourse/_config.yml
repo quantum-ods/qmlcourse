@@ -1,0 +1,32 @@
+title: QMLCourse.ai
+author: Sinchenko SA et al.
+logo: "logo.svg"
+
+description: >-
+  An adaptive and practical course about Quantum Machine Learning in NISQ-era and related topics.
+
+execute:
+  execute_notebooks: cache
+
+html:
+  home_page_in_navbar: true
+
+notebook_interface: "notebook"
+
+repository:
+  url: https://github.com/SemyonSinchenko/qmlcourse.ai
+  path_to_book: "qmlcourse"
+
+latex:
+  latex_engine: "xelatex"
+  latex_documents:
+    target.name: qmlcourse.tex
+
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
+
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - physics

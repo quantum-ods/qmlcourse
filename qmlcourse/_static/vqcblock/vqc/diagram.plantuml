@@ -1,0 +1,17 @@
+@startuml
+rectangle "<latex>\mathbf{X}</latex>" as x #Green
+rectangle "<latex>\hat{U}(X)</latex>" as ux #Red
+rectangle "<latex>\hat{U}(\theta)</latex>" as ut #Red
+rectangle "<latex>\hat{M}</latex>" as measure #Red
+rectangle "<latex>L(y, \hat{y})</latex>" as loss #Green
+rectangle "<latex>\frac{dL}{d\theta}</latex>" as grad #Green
+rectangle "<latex>\theta_{n+1} = \theta_n - \gamma G</latex>" as upd #Green
+
+x --> ux
+ux --> ut
+ut --> measure
+measure --> loss
+loss -> grad
+upd <-- grad
+ut <- upd
+@enduml

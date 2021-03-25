@@ -1,0 +1,12 @@
+@startuml
+rectangle "Initialization" as init #Green
+rectangle "Unitary" as unit1 #Yellow
+rectangle "Unitary" as unit2 #Yellow
+rectangle "Unitary" as unit3 #Yellow
+rectangle "Measurements" as measure #Blue
+
+init --> unit1
+unit1 -> unit2
+unit2 -> unit3
+unit3 --> measure
+@enduml
