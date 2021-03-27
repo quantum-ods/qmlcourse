@@ -1,0 +1,17 @@
+- file: book/index
+
+- part: Квантовые вычисления
+  chapters:
+    - file: book/qcblock/qcintro
+    - file: book/qcblock/qubit
+    - file: book/qcblock/gates
+
+- part: Вариационные схемы
+  chapters:
+    - file: book/vqcblock/vqcintro
+    - file: book/vqcblock/vqc
+
+- part: О курсе
+  chapters:
+    - file: book/authors
+    - file: book/aknowledgments

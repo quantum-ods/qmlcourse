@@ -15,12 +15,12 @@ notebook_interface: "notebook"
 
 repository:
   url: https://github.com/SemyonSinchenko/qmlcourse.ai
-  path_to_book: "qmlcourse"
+  path_to_book: "qmlcourseRU"
 
 latex:
   latex_engine: "xelatex"
   latex_documents:
-    target.name: qmlcourse.tex
+    target.name: qmlcourseRU.tex
 
 sphinx:
   config:
@@ -29,4 +29,3 @@ sphinx:
 parse:
   myst_enable_extensions:
     - amsmath
-    - physics

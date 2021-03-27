@@ -14,7 +14,7 @@ Main repository of the course.
 
 ## Course Program <a name="program"></a>
 
-![](./course_program/program.png)
+![](./qmlcourseRU/_static/index/program.png)
 
 ### How to read the schema? <a name="schema"></a>
 

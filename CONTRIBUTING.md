@@ -3,17 +3,19 @@
 ## Table of contents
 
 1. [Prerequisites](#prerequisites)
-1. [Contributor roles](#contributor-roles)
-1. [Environment](#environment)
-1. [GitHub intro](#github-intro)
-1. [Content review](#content-review)
-1. [Issues](#issues)
-1. [Pull Requests](#pull-requests)
-
+2. [Contributor roles](#contributor-roles)
+3. [Environment](#environment)
+4. [GitHub intro](#github-intro)
+5. [Content review](#content-review)
+6. [Issues](#issues)
+7. [Pull Requests](#pull-requests)
+8. [List of Authors](#authors)
+9. [Intellectual property](#rights)
+10. [Small changes](#misspells)
 
 ## Prerequisites
 
-A **general requirement** for all members is to be familiar with GitHub and get familiar with the `Org` text file format (see [Environment](#environment)).
+A **general requirement** for all members is to be familiar with GitHub and get familiar with the `markdowm` mark-up language (see [Environment](#environment)).
 
 Still, if you are not comfortable with GitHub at all but are able to provide valuable feedback, pls use comments to a Pull Request. See [Content review](#content-review).
 
@@ -26,10 +28,8 @@ We see the following roles for contributors to the course:
 - Reviewers
 - Authors
 - Editors
-- Orgs 
+- Orgs
 - Others
-
-
 
 ### Benevolent Dictator
 
@@ -41,83 +41,67 @@ Supposed to be well familiar with quantum information & computation, preferably 
 
 ### Reviewers
 
-Those who don't satisfy the requirements for core reviewers, but still want to review the content being generated. By default that's everyone who is invited to the #org\_qml\_course Slack channel.
+Those who don't satisfy the requirements for core reviewers, but still want to review the content being generated. By default that's everyone who is invited to the #org_qml_course Slack channel.
 
 ### Authors
 
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks. 
+Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks.
 
 ### Editors
 
-Editors wait for a PR to be approved, and then introduce their changes fixing grammar, language, etc. 
+Editors wait for a PR to be approved, and then introduce their changes fixing grammar, language, etc.
 
 ### Orgs
 
-_Not to be confused with the `Org` text file format._ 
-
-These guys help organizing/promoting the course. 
+These guys help organizing/promoting the course.
 
 ### Others
 
-We might have some other crowd-sourced help like helping with the course web-site or course assignments. To be elaborated.  
+We might have some other crowd-sourced help like helping with the course web-site or course assignments. To be elaborated.
 
 ## Environment
 
-This repository contains org-files with lectures. Semyon chose an `org-mode` because:
+All the course is been developing as [Jupyter Book](https://jupyterbook.org/intro.html).
 
-- `org-mode` has native support of `LaTeX` code-blocks and `LaTeX` packages;
-- `org-mode` has native support of `HTML` blocks and extra-headers;
-- `org-mode` allows different code blocks for different export formats;
-- Semyon used to write notes in `org-mode`
+### MyST markdown
 
-It is the topic of discussion and the files format may be changed any time if there are enough reasons.
+`Jupyter Book` use the own dialect of markdown named `MyST`. We prefer `MyST` construction over raw `HTML` blocks and **there should be a significant reason to use raw HTML**. Detailed description of `MyST` opportunities could be found [here](https://jupyterbook.org/reference/cheatsheet.html).
 
-`pandoc` could be used as a universal exporter for `org-mode` files.
+### Diagrams and Figures
 
-### Export org-file to pdf
+I chose the PlantUML as a standard for all the diagrams. The reason is the simple and understandable syntax and a good quality of final images. You should prefer `<latex></latex>` over `<math></math>` for math equations inside blocks of the diagram.
 
-`pandoc --pdf-engine xelatex -f org input.org -o output.pdf`
+Matplotlib figures should be included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducable.
 
-### Export org-file to html
+### Building the project
 
-`pandoc -s --mathjax=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js -t html5 input.org -o output.html`
+Before making a Pull-Request try to build the book by the following command:
 
-### Environment configuration
+```{shell}
+jupyter-book build qmlcourseRU
+```
 
-- For Emacs editor, `org-mode` is a native format. It is supported by popular Emacs configuration kits:
+_If you have a problem with build command try to pass in this comman the full path to the folder_
 
-  - [Spacemacs](https://www.spacemacs.org/)
-  - [Doom Emacs](https://github.com/hlissner/doom-emacs)
+### Chapters and headers
 
-- In Visual Studio Code, `org-mode` is supported via [VSCode plugin](https://github.com/vscode-org-mode/vscode-org-mode)
-- Other ways of writing in `org-mode` format are described [here](https://opensource.com/article/19/1/productivity-tool-org-mode)
-
-### Org-mode syntax
-
-The syntax of `org-mode` is quite similar to other mark-up languages (markdowm, reStructured, etc.) but allows more low-level options for `LaTeX` and `HTML`.
-
-About `org-mode`:
-
-- [LaTeX in org-mode](https://opensource.com/article/20/4/emacs-org-mode)
-- [org-mode syntax cheat sheet](https://nhigham.com/2017/11/02/org-mode-syntax-cheat-sheet/)
-- [official documentations](https://orgmode.org/org.html)
-
+Chapters and headers in markdown must exactly follow the main structure of the book. Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
 
 ## GitHub intro
 
 If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
 
-
 ## Content review
 
-Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master` branch. For example, see [Pull Request #1](https://github.com/SemyonSinchenko/qmlcourse.ai/pull/1) with lecture #1 material. 
+Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master` branch. For example, see [Pull Request #1](https://github.com/SemyonSinchenko/qmlcourse.ai/pull/1) with lecture #1 material.
 
 Every PR needs to have at least 4 approvals and at least 1 of them from a Core Reviewer. If you see a Pull Request and want to review it you can add yourself as a reviewer.
 
 The review process depends on whether a reviewer is familiar with GitHub or not.
 
 ### Reviewing without commits (no git fluency required)
-Go to a Pull Request with lecture content (e.g. [this one](https://github.com/SemyonSinchenko/qmlcourse.ai/pull/3/files) for lecture 2), further visit the `Files Changed` tab and add your reviewer comments to specific lines. 
+
+Go to a Pull Request with lecture content (e.g. [this one](https://github.com/SemyonSinchenko/qmlcourse.ai/pull/3/files) for lecture 2), further visit the `Files Changed` tab and add your reviewer comments to specific lines.
 
 Example:
 
@@ -127,21 +111,18 @@ All comments should be made in the `File changed` tab not in the `Conversation`.
 
 ### Reviews as commits (basic git fluency required)
 
-We don't want to mess up the process with too many brnaches. Thus, each lecture gets its own feature branch, the review is done via a PT to `master`, and all modifications are introduced as commits to the same feature branch and thus shows up in the same PR. 
+We don't want to mess up the process with too many branches. Thus, each lecture gets its own feature branch, the review is done via a PT to `master`, and all modifications are introduced as commits to the same feature branch and thus shows up in the same PR.
 
 The preferred way to commit your changes is to:
 
- - Write a message like "I need 2 hours for a review" in the `Conversation` tab. Thus you mention that you are the person modifyig the content right now
- - Introduce your changes, mainly to `org` files
- - Commit changes to the same feature branch 
- - Tell others that you are done with your review
+- Write a message like "I need 2 hours for a review" in the `Conversation` tab. Thus you mention that you are the person modifyig the content right now
+- Introduce your changes, mainly to `org` files
+- Commit changes to the same feature branch
+- Tell others that you are done with your review
 
 Example:
- 
+
  <img src="https://habrastorage.org/webt/1f/fa/ob/1ffaobyn99cuc58fa19pvse_pvw.png" />
-
- 
-
 
 ## Issues
 
@@ -151,3 +132,17 @@ Example:
 ## Pull Requests
 
 - If you were assigned to an issue, you need to create a new branch. When you finish your work you make a Pull Request where you tag the initial issue.
+
+## List of authors <a name="authors"></a>
+
+If you make a Pull-Request or review or another contribution to the course you should add yourself to a full list of the authors. This list is placed in a markdown file ([Russia version](./qmlcourseRU/book/authors.md)) and is a part of a book. The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block. Such a Pull-Request should be form the branch with name like `authors/add_author_{you git account here}` and could be merged after only one approve from one of core reviewers.
+
+## Intellectual property rights <a name="rights"></a>
+
+The course is under the CC-like license. All the media content need to be under CC license. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed with someone of co-founder of the course first.
+
+The same is about blocks of text: all the text of our lectures must be original only text! If you want to use quote it is OK only with citations of the source (we use BibTex bibliography).
+
+## Misspells
+
+If you found a misspells in the text you can create a branch with name like `/misspell/{lecture_name}` and make a Pull-Request directly to the master. In this case enough to have only one review from co-founders or core-reviewers.
