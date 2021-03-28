@@ -15,7 +15,7 @@
 
 ## Prerequisites
 
-A **general requirement** for all members is to be familiar with GitHub and get familiar with the `markdowm` mark-up language (see [Environment](#environment)).
+A **general requirement** for all members is to be familiar with GitHub and get familiar with the `markdown` mark-up language (see [Environment](#environment)).
 
 Still, if you are not comfortable with GitHub at all but are able to provide valuable feedback, pls use comments to a Pull Request. See [Content review](#content-review).
 
@@ -116,7 +116,7 @@ We don't want to mess up the process with too many branches. Thus, each lecture 
 The preferred way to commit your changes is to:
 
 - Write a message like "I need 2 hours for a review" in the `Conversation` tab. Thus you mention that you are the person modifyig the content right now
-- Introduce your changes, mainly to `org` files
+- Introduce your changes, mainly to `.md` files
 - Commit changes to the same feature branch
 - Tell others that you are done with your review
 
@@ -135,13 +135,13 @@ Example:
 
 ## List of authors <a name="authors"></a>
 
-If you make a Pull-Request or review or another contribution to the course you should add yourself to a full list of the authors. This list is placed in a markdown file ([Russia version](./qmlcourseRU/book/authors.md)) and is a part of a book. The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block. Such a Pull-Request should be form the branch with name like `authors/add_author_{you git account here}` and could be merged after only one approve from one of core reviewers.
+If you make a Pull-Request or review or another contribution to the course you should add yourself to a full list of the authors. This list is placed in a markdown file ([Russian version](./qmlcourseRU/book/authors.md)) and is a part of a book. The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block. Such a Pull-Request should be form the branch with name like `authors/add_author_{you git account here}` and could be merged after only one approve from one of core reviewers.
 
 ## Intellectual property rights <a name="rights"></a>
 
 The course is under the CC-like license. All the media content need to be under CC license. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed with someone of co-founder of the course first.
 
-The same is about blocks of text: all the text of our lectures must be original only text! If you want to use quote it is OK only with citations of the source (we use BibTex bibliography).
+The same is about blocks of text: all the text of our lectures must be original only text! If you want to use quote it is OK only with citations of the reference (we use BibTex bibliography).
 
 ## Misspells
 
