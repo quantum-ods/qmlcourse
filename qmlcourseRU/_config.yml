@@ -29,3 +29,4 @@ sphinx:
 parse:
   myst_enable_extensions:
     - amsmath
+    - physics
