@@ -71,6 +71,17 @@ All the course is been developing as [Jupyter Book](https://jupyterbook.org/intr
 
 I chose the PlantUML as a standard for all the diagrams. The reason is the simple and understandable syntax and a good quality of final images. You should prefer `<latex></latex>` over `<math></math>` for math equations inside blocks of the diagram.
 
+Any PlantUML diagram can be exported to `.png` with [PlantUML tool](https://plantuml.com/). You can download Java `.jar` file from the official site or install binary package. [Installation instructions](https://plantuml.com/starting).
+
+- `apt install plantuml` for Ubuntu
+- `choco install plantuml` for Windows
+- `??????` for Mac
+
+You can find the documentation on the [official site](https://plantuml.com/sitemap-language-specification). If you make any changes in the raw `.plantuml` file you should:
+
+1. export it in `.png` file (`plantuml filename.plantuml` or `java -jar path_to_plantuml filename.plantuml`)
+2. rebuild the whole book (`jupyter-book build qmlcourseRU`)
+
 Matplotlib figures should be included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducable.
 
 ### Building the project
@@ -81,7 +92,7 @@ Before making a Pull-Request try to build the book by the following command:
 jupyter-book build qmlcourseRU
 ```
 
-_If you have a problem with build command try to pass in this comman the full path to the folder_
+_If you have a problem with build command try to pass in this command the full path to the folder_
 
 ### Chapters and headers
 
