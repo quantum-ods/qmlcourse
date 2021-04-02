@@ -6,70 +6,70 @@ package "Prerequisites" #Bisque {
 }
 
 package "Quantum Computing" as qci #Bisque {
-        rectangle "Qubit" as qubit #Green
-        rectangle "Gates" as gates #Green
-        rectangle "Physics of qubit" as physq #Red
-        rectangle "Mixed Stated" as mixed #Yellow
-        rectangle "Grover" as grover #Yellow
-        rectangle "Shor" as shor #Red
+        rectangle "Qubit" as qubit #40B464
+        rectangle "Gates" as gates #40B464
+        rectangle "Physics of qubit" as physq #E0535C
+        rectangle "Mixed Stated" as mixed #FFC864
+        rectangle "Grover" as grover #FFC864
+        rectangle "Shor" as shor #E0535C
 }
 
 package "NISQ Hardware" #Bisque {
-        rectangle "Hardware reivew" as review #Green
-        rectangle "Perspectives in NISQ-era" as nisq #Green
+        rectangle "Hardware reivew" as review #40B464
+        rectangle "Perspectives in NISQ-era" as nisq #40B464
 }
 
 package "Programming QC" #Bisque {
-        rectangle "PennyLane" as pennylane #Green
-        rectangle "Qiskit & Aqua" as qiskit #Yellow
-        rectangle "Cirq & TFQ" as cirq #Yellow
+        rectangle "PennyLane" as pennylane #40B464
+        rectangle "Qiskit & Aqua" as qiskit #FFC864
+        rectangle "Cirq & TFQ" as cirq #FFC864
 }
 
 package "VQC" #Bisque {
-        rectangle "VQC" as vqc #Green
-        rectangle "VQC as kernels" as kernelvqc #Yellow
-        rectangle "Universality of VQC" as univvqc #Red
+        rectangle "VQC" as vqc #40B464
+        rectangle "VQC as kernels" as kernelvqc #FFC864
+        rectangle "Universality of VQC" as univvqc #E0535C
 }
 
 package "Gradients" #Bisque {
-        rectangle "Gradients" as grad #Green
-        rectangle "High-order gradients" as hograd #Yellow
-        rectangle "QNG" as qng #Red
+        rectangle "Gradients" as grad #40B464
+        rectangle "High-order gradients" as hograd #FFC864
+        rectangle "QNG" as qng #E0535C
 }
 
 package "Classification" #Bisque {
-        rectangle "VQC classification" as vqcc #Green
-        rectangle "Barren plateaus" as barren #Yellow
-        rectangle "Data encoding" as encoding #Yellow
+        rectangle "VQC classification" as vqcc #40B464
+        rectangle "Barren plateaus" as barren #FFC864
+        rectangle "Data encoding" as encoding #FFC864
 }
 
 package "Quantum SVM" #Bisque {
-        rectangle "Hybrid SVM" as hsvm #Green
-        rectangle "Classical SVM math" as csvm #Yellow
-        rectangle "SVM with Grover" as gsvm #Red
+        rectangle "Hybrid SVM" as hsvm #40B464
+        rectangle "Classical SVM math" as csvm #FFC864
+        rectangle "SVM with Grover" as gsvm #E0535C
 }
 
 package "Problems for QML" #Bisque {
-        rectangle "Combinatorial Optimization" as copt #Green
-        rectangle "Quantum\nMany-Body physics" as qmbp #Red
-        rectangle "Quantum Chemistry" as qchem #Red
+        rectangle "Combinatorial Optimization" as copt #40B464
+        rectangle "Quantum\nMany-Body physics" as qmbp #E0535C
+        rectangle "Quantum Chemistry" as qchem #E0535C
 }
 
 package "VQE" #Bisque {
-        rectangle "VQE" as vqe #Green
-        rectangle "Adaptive VQE" as avqe #Yellow
-        rectangle "Layered VQC" as lvqe #Yellow
-        rectangle "UUC anzatz" as uuc #Red
+        rectangle "VQE" as vqe #40B464
+        rectangle "Adaptive VQE" as avqe #FFC864
+        rectangle "Layered VQC" as lvqe #FFC864
+        rectangle "UUC anzatz" as uuc #E0535C
 }
 
 package "QAOA" #Bisque {
-        rectangle "QAOA" as qaoa #Green
-        rectangle "Cost/Mixed Hamiltonians" as hams #Yellow
+        rectangle "QAOA" as qaoa #40B464
+        rectangle "Cost/Mixed Hamiltonians" as hams #FFC864
 }
 
 package "D-Wave" #Bisque {
-        rectangle "D-Wave & Sampling" as dwave #Green
-        rectangle "Probabilistic Learning\n with D-Wave" as probml #Red
+        rectangle "D-Wave & Sampling" as dwave #40B464
+        rectangle "Probabilistic Learning\n with D-Wave" as probml #E0535C
 }
 
 package "Jobs and Perspectives" as jobs #Bisque {
@@ -78,12 +78,12 @@ package "Jobs and Perspectives" as jobs #Bisque {
 }
 
 package "Advanced Topics" as adv #Bisque {
-        rectangle "SotA review" as sota #Green
-        rectangle "Qauntum RL" as qrl #Yellow
-        rectangle "Advanced QRL" as aqrl #Red
-        rectangle "CV quantum computers" as svqc #Red
-        rectangle "LSTM VQC" as lstm #Yellow
-        rectangle "Convolutional VQC" as convvqc #Yellow
+        rectangle "SotA review" as sota #40B464
+        rectangle "Qauntum RL" as qrl #FFC864
+        rectangle "Advanced QRL" as aqrl #E0535C
+        rectangle "CV quantum computers" as svqc #E0535C
+        rectangle "LSTM VQC" as lstm #FFC864
+        rectangle "Convolutional VQC" as convvqc #FFC864
 }
 
 

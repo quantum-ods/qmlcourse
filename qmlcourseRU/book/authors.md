@@ -61,6 +61,7 @@
 
 ```{dropdown} **К**
 [Карелин Николай](https://github.com/karelin)
+
 [Кашницкий Юрий](https://github.com/Yorko)
 ```
 
