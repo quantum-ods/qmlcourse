@@ -11,6 +11,11 @@
     - file: book/vqcblock/vqcintro
     - file: book/vqcblock/vqc
 
+- part: Квантовые градиенты
+  chapters:
+    - file: book/gradsblock/gradsintro
+    - file: book/gradsblock/gradients
+
 - part: О курсе
   chapters:
     - file: book/authors
