@@ -19,6 +19,8 @@
 
 1. [Юрий Кашницкий](https://github.com/Yorko)
 2. [Виктор Трохименко](https://github.com/vtrokhymenko)
+3. [Борис Зимка](https://github.com/zimka)
+4. [Николай Карелин](https://github.com/karelin)
 
 ## Полный список авторов
 
