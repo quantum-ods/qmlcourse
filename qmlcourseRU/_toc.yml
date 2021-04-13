@@ -6,6 +6,11 @@
     - file: book/qcblock/qubit
     - file: book/qcblock/gates
 
+- part: Фреймворки
+  chapters:
+    - file: book/progblock/progintro.md
+    - file: book/progblock/pennylane.ipynb
+
 - part: Вариационные схемы
   chapters:
     - file: book/vqcblock/vqcintro
