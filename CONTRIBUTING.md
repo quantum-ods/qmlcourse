@@ -61,17 +61,17 @@ We might have some other crowd-sourced help like helping with the course web-sit
 
 ## Environment
 
-All the course is been developing as [Jupyter Book](https://jupyterbook.org/intro.html).
+All course content is being developed as a [Jupyter Book](https://jupyterbook.org/intro.html).
 
 ### MyST markdown
 
-`Jupyter Book` use the own dialect of markdown named `MyST`. We prefer `MyST` construction over raw `HTML` blocks and **there should be a significant reason to use raw HTML**. Detailed description of `MyST` opportunities could be found [here](https://jupyterbook.org/reference/cheatsheet.html).
+`Jupyter Book` uses the own dialect of markdown named `MyST`. We prefer `MyST` construction over raw `HTML` blocks and **there should be a significant reason to use raw HTML** instead. Detailed description of `MyST` opportunities could be found [here](https://jupyterbook.org/reference/cheatsheet.html).
 
 ### Diagrams and Figures
 
 I chose the PlantUML as a standard for all the diagrams. The reason is the simple and understandable syntax and a good quality of final images. You should prefer `<latex></latex>` over `<math></math>` for math equations inside blocks of the diagram.
 
-Any PlantUML diagram can be exported to `.png` with [PlantUML tool](https://plantuml.com/). You can download Java `.jar` file from the official site or install binary package. [Installation instructions](https://plantuml.com/starting).
+Any PlantUML diagram can be exported to `.png` with the [PlantUML tool](https://plantuml.com/). You can download Java `.jar` file from the official site or install binary package. [Installation instructions](https://plantuml.com/starting).
 
 - `apt install plantuml` for Ubuntu
 - `choco install plantuml` for Windows
@@ -82,17 +82,17 @@ You can find the documentation on the [official site](https://plantuml.com/sitem
 1. export it in `.png` file (`plantuml filename.plantuml` or `java -jar path_to_plantuml filename.plantuml`)
 2. rebuild the whole book (`jupyter-book build qmlcourseRU`)
 
-Matplotlib figures should be included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducable.
+Matplotlib figures should be included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducible.
 
 ### Building the project
 
-Before making a Pull-Request try to build the book by the following command:
+Before making a Pull-Request try to build the book with the following command:
 
 ```{shell}
 jupyter-book build qmlcourseRU
 ```
 
-_If you have a problem with build command try to pass in this command the full path to the folder_
+_If you have problems with the build command try to pass the full path to the folder_
 
 ### Chapters and headers
 
@@ -150,10 +150,10 @@ If you make a Pull-Request or review or another contribution to the course you s
 
 ## Intellectual property rights <a name="rights"></a>
 
-The course is under the CC-like license. All the media content need to be under CC license. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed with someone of co-founder of the course first.
+The course is under the CC-like license. All the media content needs to be under the CC license as well. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed first with one of the co-founders of the course.
 
-The same is about blocks of text: all the text of our lectures must be original only text! If you want to use quote it is OK only with citations of the reference (we use BibTex bibliography).
+The same holds for blocks of text: all the text of our lectures must be original only text! If you want to use quote it is OK only with citations of the reference (we use BibTex bibliography).
 
-## Misspells
+## Typos
 
-If you found a misspells in the text you can create a branch with name like `/misspell/{lecture_name}` and make a Pull-Request directly to the master. In this case enough to have only one review from co-founders or core-reviewers.
+If you found a typo in the text you can create a branch with name like `/misspell/{lecture_name}` and make a Pull-Request directly to the master. In this case it'd suffice to have only one review from co-founders or core-reviewers.

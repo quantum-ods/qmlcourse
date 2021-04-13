@@ -13,7 +13,7 @@
 1. [Семен Синченко](https://github.com/SemyonSinchenko)
 2. [Илья Беседин](https://github.com/ooovector)
 3. [Сергей Ширкин](https://github.com/doktrster)
-4. [Александр Березутский](https://github.com/meandmytram)
+4. [Александр Березуцкий](https://github.com/meandmytram)
 
 ## Основные ревьюеры
 
@@ -29,7 +29,7 @@
 ```
 
 ```{dropdown} **Б**
-[Березутский Александр](https://github.com/meandmytram)
+[Березуцкий Александр](https://github.com/meandmytram)
 ```
 
 ```{dropdown} **В**
