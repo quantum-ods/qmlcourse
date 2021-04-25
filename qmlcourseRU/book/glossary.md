@@ -1,103 +1,98 @@
-# А
+(glossary)=
 
-## Алгоритм Гровера (Grover's algorithm)
+# Глоссарий
 
-* Б
+```{glossary}
+Алгоритм Гровера (Grover's algorithm)
 
-## Бра-вектор (bra-vector)
+Алгоритм квантового приближения для задачи оптимизации
+    (QAOA, quantum approximate optimization algorithm), https://www.osp.ru/os/2019/03/13055118, https://habr.com/ru/post/513474/
 
-# В
+Бра-вектор (bra-vector)
 
-## вариационная квантовая схема (VQC; Variational Quantum Circuits)
+Вариационная квантовая схема (VQC; Variational Quantum Circuits)
 
-## вариационное машинное обучение (variational machine learning)
+Вариационное машинное обучение (variational machine learning)
 
-# Г
+Гейты (Quantum gates)
 
-## Гейты (Quantum gates)
+Гейт Адамара (Hadamard gate)
 
-### Адамара (Hadamard gate)
+Гейт C-NOT
 
-### C-NOT
+Гейт NOT
 
-### NOT
+T-гейт
 
-### T-гейт
+Гейты поворота
 
-### Гейты поворота
+Phase-shift гейт
 
-### Phase-shift гейт
+Единичный гейт
 
-### Единичный гейт
+Гейт iSWAP
 
-### iSWAP
+fSim
 
-### fSim
+Измерение (Quantum measurement)
 
-# И
+Квантовая информация (квантовая информатика; Quantum Information)
 
-## Измерение (Quantum measurement)
+Квантовый оператор (Quantum operator)
 
-# К
+Квантово-классическое обучение (Quantum-classical machine learning)
 
-## Квантовая информация (квантовая информатика; Quantum Information)
+Квантовое состояние (Quantum state)
 
-## Квантовый оператор (Quantum operator)
+Кет-вектор (ket-vector)
 
-## Квантово-классическое обучение (Quantum-classical machine learning)
+Кот Шредингера (Schrödinger's cat) 
 
-## Квантовое состояние (Quantum state)
+[Кубит](https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B1%D0%B8%D1%82)
+    Также кюбит или q-бит, англ. Qubit, от quantum bit. Минимальная единица информации на квантовом компьютере.
+    Как и (классический) бит, кубит допускает два состояния, которые обычно обозначаются кет-векторами $\ket{0}$ и $\ket{1}$,
+    а на уровне реализации кубит -- это двухуровневая квантовая система, такая как две поляризации фотона или спина электрона.
 
-## Кет-вектор (ket-vector)
+Матрица (оператор) плотности (Density matrix / Density operator)
 
-## Кубит (Qubit)
+Метод квантового локального подбора
+    (QLS, quantum local search), https://www.osp.ru/os/2019/03/13055118
 
-# М
+Многокубитные гейты (Multiqubit gates)
 
-## Матрица плотности (Density matrix)
+[Нотация Дирака](https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B0_%D0%B8_%D0%BA%D0%B5%D1%82)
+    Англ. Dirac notation, формализм (система обозначения) для описания кантовых состояний на основе бра- и кет-векторов
+    (англ. bra-ket от bracket, скобка). В этой системе обозначений $\ket{\Psi}$ обозначает вектор состояния,
+    $\bra{\Psi}$ -- сопряженный вектор состояния, а $\bra{\Psi} \hat{H} \ket{\Psi}$ -- среднее (математическое ожидаемое)
+    значения наблюдаемой для оператора $\hat{H}$ в состоянии $\ket{\Psi}$ (также говорят о свертке оператора $\hat{H}$ с
+    бра-вектором $\bra{\Psi}$ и кет-вектором $\ket{\Psi}$).
+    Система обозначений Дирака позволяет отделить отделить вектора состояния $\ket{\Psi}$ от самого состояния $\Psi$ или
+    конкретного математического описания (в виде волновой функции или вектора).
 
-## Многокубитные гейты (Multiqubit gates)
+Операторы (матрицы) Паули (Pauli operators / Pauli matrices)
 
-# Н
+Правило сдвига параметров (*) (Parameter-shift rule)
 
-## Нотация Дирака (Dirac notation)
+Смешанные состояние (Mixed states)
 
-# О
+Собственное векторы (Eigenvector)
 
-## Операторы (матрицы) Паули (Pauli operators / Pauli matrices)
+Собственное значение (Eigenvalue)
 
-# П
+Соотношение (принцип) неопределенности (Uncertainty relation / Uncertainty principle)
 
-## Правило сдвига параметров (*) (Parameter-shift rule)
+Суперпозиция (Superposition)
 
-# С
+Сфера Блоха (Bloch sphere)
 
-## Смешанные состояние (Mixed states)
+Унитарный оператор (Unitary operator)
 
-## Собственное векторы (Eigenvector)
+«Шумные» квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)
+    Термин введен Прескиллом в работе https://arxiv.org/abs/1801.00862 для описания сегодняшнего состояния квантовых вычислений,
+    когда "настоящие" квантовые вычисления (на миллионах кубит) еще невозможны, но совеменные квантовые компьютеры уже могут
+    выполнять вычисления, которые невозможны на обычных, классических компьютерах.
+    См. также краткое обсуждение в https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology,
+    и перевод на термина русский https://www.osp.ru/os/2019/03/13055130
 
-## Собственное значение (Eigenvalue)
-
-## Соотношение (принцип) неопределенности (Uncertainty relation / Uncertainty principle)
-
-## Суперпозиция (Superposition)
-
-## Сфера Блоха (Bloch sphere)
-
-# У
-
-## Унитарный оператор (Unitary operator)
-
-# Ш
-
-## «Шумные» квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)
-
-Термин введен Прескиллом в работе https://arxiv.org/abs/1801.00862 для описания сегодняшнего состояния квантовых вычислений,
-когда "настоящие" квантовые вычисления (на миллионах кубит) еще невозможны, но совеменные квантовые компьютеры уже могут
-выполнять вычисления, которые невозможны на обычных, классических компьютерах.
-См. также краткое обсуждение в https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology,
-и перевод на термина русский https://www.osp.ru/os/2019/03/13055130
-
-# Э
-
-## Энтропия (Entropy)
+Энтропия (Entropy)
+```
