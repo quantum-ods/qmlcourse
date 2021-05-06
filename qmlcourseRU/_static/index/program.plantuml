@@ -15,7 +15,7 @@ package "Quantum Computing" as qci #Bisque {
 }
 
 package "NISQ Hardware" #Bisque {
-        rectangle "Hardware reivew" as review #40B464
+        rectangle "Hardware review" as review #40B464
         rectangle "Perspectives in NISQ-era" as nisq #40B464
 }
 
@@ -79,7 +79,7 @@ package "Jobs and Perspectives" as jobs #Bisque {
 
 package "Advanced Topics" as adv #Bisque {
         rectangle "SotA review" as sota #40B464
-        rectangle "Qauntum RL" as qrl #FFC864
+        rectangle "Quantum RL" as qrl #FFC864
         rectangle "Advanced QRL" as aqrl #E0535C
         rectangle "CV quantum computers" as svqc #E0535C
         rectangle "LSTM VQC" as lstm #FFC864
