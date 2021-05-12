@@ -18,10 +18,10 @@ Main repository of the course.
 
 ### How to read the schema? <a name="schema"></a>
 
-- **WHITE** -- introductory blocks covering prerequisites for the rest of the course;
-- **GREEN** -- main flow of the course with simple introductory lectures on QC and QML;
-- **YELLOW** -- facultative lectures that are highly recommended and which explain additional topics about QML and QC;
-- **RED** -- advanced level lectures which deeply explain the math and the principles underlying QML.
+- **WHITE** - introductory blocks covering prerequisites for the rest of the course;
+- **GREEN** - main flow of the course with simple introductory lectures on QC and QML;
+- **YELLOW** - highly recommended facultative lectures which explain additional topics about QML and QC;
+- **RED** - advanced level lectures which deeply explain the math and the principles underlying QML.
 
 ## Our Team <a name="team"></a>
 
