@@ -75,7 +75,7 @@ Any PlantUML diagram can be exported to `.png` with the [PlantUML tool](https://
 
 - `apt install plantuml` for Ubuntu
 - `choco install plantuml` for Windows
-- `??????` for Mac
+- `brew install plantuml ` for Mac
 
 You can find the documentation on the [official site](https://plantuml.com/sitemap-language-specification). If you make any changes in the raw `.plantuml` file you should:
 
