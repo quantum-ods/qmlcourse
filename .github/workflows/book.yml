@@ -28,7 +28,7 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          poetry run jupyter-book build ./qmlourseRU
+          poetry run jupyter-book build ./qmlcourseRU
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.5.9
