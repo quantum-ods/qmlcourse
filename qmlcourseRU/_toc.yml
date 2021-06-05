@@ -21,6 +21,11 @@
     - file: book/gradsblock/gradsintro
     - file: book/gradsblock/gradients
 
+- part: Квантовый SVM
+  chapters:
+    - file: book/qsvmblock/qsvmintro
+    - file: book/qsvmblock/hybridsvm
+
 - part: О курсе
   chapters:
     - file: book/authors
