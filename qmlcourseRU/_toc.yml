@@ -1,0 +1,27 @@
+- file: book/index
+
+- part: Квантовые вычисления
+  chapters:
+    - file: book/qcblock/qcintro
+    - file: book/qcblock/qubit
+    - file: book/qcblock/gates
+
+- part: Фреймворки
+  chapters:
+    - file: book/progblock/progintro.md
+    - file: book/progblock/pennylane.ipynb
+
+- part: Вариационные схемы
+  chapters:
+    - file: book/vqcblock/vqcintro
+    - file: book/vqcblock/vqc
+
+- part: Квантовые градиенты
+  chapters:
+    - file: book/gradsblock/gradsintro
+    - file: book/gradsblock/gradients
+
+- part: О курсе
+  chapters:
+    - file: book/authors
+    - file: book/acknowledgments
