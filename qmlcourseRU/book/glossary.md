@@ -3,20 +3,32 @@
 # Глоссарий
 
 ```{glossary}
-Алгоритм Гровера (Grover's algorithm)
+Алгоритм Гровера
+    Англ. Grover's algorithm
 
 Алгоритм квантового приближения для задачи оптимизации
-    (QAOA, quantum approximate optimization algorithm), https://www.osp.ru/os/2019/03/13055118, https://habr.com/ru/post/513474/
+    Англ., quantum approximate optimization algorithm (QAOA), см. https://www.osp.ru/os/2019/03/13055118 и https://habr.
+    com/ru/post/513474/
 
-Бра-вектор (bra-vector)
+Бра-вектор
+    Англ. bra-vector
 
-Вариационная квантовая схема (VQC; Variational Quantum Circuits)
+Вакуумное состояние 
+    Англ. Vacuum state, также используется название "основное состояние" (basic state). Так часто называется 
+    квантовое состояние с вектором $\ket{0}$. Термин заимствован из квантовой оптики, чаще всего не имеет ничего
+    общего с "обыденным" понятием "вакуума". 
 
-Вариационное машинное обучение (variational machine learning)
+Вариационная квантовая схема
+    Англ. Variational Quantum Circuits (VQC)
 
-Гейты (Quantum gates)
+Вариационное машинное обучение
+    Англ. variational machine learning
 
-Гейт Адамара (Hadamard gate)
+Гейты
+    Англ. Quantum gates
+
+Гейт Адамара
+    Англ. Hadamard gate
 
 Гейт C-NOT
 
@@ -34,31 +46,41 @@ Phase-shift гейт
 
 fSim
 
-Измерение (Quantum measurement)
+Измерение
+    Англ. Quantum measurement
 
-Квантовая информация (квантовая информатика; Quantum Information)
+Квантовая информация
+    Также используется термин "квантовая информатика", англ. Quantum Information
 
-Квантовый оператор (Quantum operator)
+Квантовый оператор
+    Англ. Quantum operator
 
-Квантово-классическое обучение (Quantum-classical machine learning)
+Квантово-классическое обучение
+    Англ. Quantum-classical machine learning
 
-Квантовое состояние (Quantum state)
+Квантовое состояние
+    Англ. Quantum state
 
-Кет-вектор (ket-vector)
+Кет-вектор
+    Англ. ket-vector
 
-Кот Шредингера (Schrödinger's cat) 
+Кот Шредингера
+    Англ. Schrödinger's cat 
 
 [Кубит](https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B1%D0%B8%D1%82)
-    Также кюбит или q-бит, англ. Qubit, от quantum bit. Минимальная единица информации на квантовом компьютере.
-    Как и (классический) бит, кубит допускает два состояния, которые обычно обозначаются кет-векторами $\ket{0}$ и $\ket{1}$,
-    а на уровне реализации кубит -- это двухуровневая квантовая система, такая как две поляризации фотона или спина электрона.
+    Также "кюбит" или "q-бит", англ. Qubit, от quantum bit. Минимальная единица информации на квантовом компьютере.
+    Как и (классический) бит, кубит допускает два состояния, которые обычно обозначаются кет-векторами $\ket{0}$ и 
+    $\ket{1}$, а на уровне реализации кубит -- это двухуровневая квантовая система, такая как две поляризации 
+    фотона или спина электрона.
 
-Матрица (оператор) плотности (Density matrix / Density operator)
+Матрица плотности
+    Также используется термин "оператор плотности", англ. Density matrix или Density operator
 
 Метод квантового локального подбора
-    (QLS, quantum local search), https://www.osp.ru/os/2019/03/13055118
+    Англ. quantum local search (QLS), https://www.osp.ru/os/2019/03/13055118
 
-Многокубитные гейты (Multiqubit gates)
+Многокубитные гейты
+    Англ. Multiqubit gates
 
 [Нотация Дирака](https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B0_%D0%B8_%D0%BA%D0%B5%D1%82)
     Англ. Dirac notation, формализм (система обозначения) для описания кантовых состояний на основе бра- и кет-векторов
@@ -69,30 +91,42 @@ fSim
     Система обозначений Дирака позволяет отделить отделить вектора состояния $\ket{\Psi}$ от самого состояния $\Psi$ или
     конкретного математического описания (в виде волновой функции или вектора).
 
-Операторы (матрицы) Паули (Pauli operators / Pauli matrices)
+Операторы Паули
+    Также используется термин "матрицы Паули", англ. Pauli operators или Pauli matrices
 
-Правило сдвига параметров (*) (Parameter-shift rule)
+Правило сдвига параметров
+    (*) Англ. Parameter-shift rule
 
-Смешанные состояние (Mixed states)
+Смешанные состояние
+    Англ. Mixed states
 
-Собственное векторы (Eigenvector)
+Собственное векторы
+    Англ. Eigenvector
 
-Собственное значение (Eigenvalue)
+Собственное значение
+    Англ. Eigenvalue
 
-Соотношение (принцип) неопределенности (Uncertainty relation / Uncertainty principle)
+Соотношение неопределенности
+    Также используется термин "принцип неопределенности", англ. Uncertainty relation или Uncertainty principle
 
-Суперпозиция (Superposition)
+Суперпозиция
+    Англ. Superposition
 
-Сфера Блоха (Bloch sphere)
+Сфера Блоха
+    Англ. Bloch sphere
 
-Унитарный оператор (Unitary operator)
+Унитарный оператор
+    Англ. Unitary operator
 
-«Шумные» квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)
+"Шумные" квантовые компьютеры промежуточного масштаба
+    Англ. Noisy intermediate-scale quantum (NISQ), также часто пишут о NISQ Hardware.
     Термин введен Прескиллом в работе https://arxiv.org/abs/1801.00862 для описания сегодняшнего состояния квантовых вычислений,
     когда "настоящие" квантовые вычисления (на миллионах кубит) еще невозможны, но совеменные квантовые компьютеры уже могут
     выполнять вычисления, которые невозможны на обычных, классических компьютерах.
     См. также краткое обсуждение в https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology,
     и перевод на термина русский https://www.osp.ru/os/2019/03/13055130
+    Также используется перевод "зашумленные квантовые системы умеренного масштаба", см. https://www.osp.ru/os/2019/03/13055118
 
-Энтропия (Entropy)
+Энтропия
+    Англ. Entropy
 ```
