@@ -7,8 +7,7 @@
     Англ. Grover's algorithm
 
 Алгоритм квантового приближения для задачи оптимизации
-    Англ., quantum approximate optimization algorithm (QAOA), см. https://www.osp.ru/os/2019/03/13055118 и https://habr.
-    com/ru/post/513474/
+    (QAOA, quantum approximate optimization algorithm), [https://www.osp.ru/os/2019/03/13055118](https://www.osp.ru/os/2019/03/13055118), [https://habr.com/ru/post/513474/](https://habr.com/ru/post/513474/)
 
 Бра-вектор
     Англ. bra-vector
@@ -67,22 +66,21 @@ fSim
 Кот Шредингера
     Англ. Schrödinger's cat 
 
-[Кубит](https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B1%D0%B8%D1%82)
-    Также "кюбит" или "q-бит", англ. Qubit, от quantum bit. Минимальная единица информации на квантовом компьютере.
-    Как и (классический) бит, кубит допускает два состояния, которые обычно обозначаются кет-векторами $\ket{0}$ и 
-    $\ket{1}$, а на уровне реализации кубит -- это двухуровневая квантовая система, такая как две поляризации 
-    фотона или спина электрона.
+[Кубит](https://ru.wikipedia.org/wiki/Кубит)
+    Также кюбит или q-бит, англ. Qubit, от quantum bit. Минимальная единица информации на квантовом компьютере.
+    Как и (классический) бит, кубит допускает два состояния, которые обычно обозначаются кет-векторами $\ket{0}$ и $\ket{1}$,
+    а на уровне реализации кубит -- это двухуровневая квантовая система, такая как две поляризации фотона или спина электрона.
 
 Матрица плотности
     Также используется термин "оператор плотности", англ. Density matrix или Density operator
 
 Метод квантового локального подбора
-    Англ. quantum local search (QLS), https://www.osp.ru/os/2019/03/13055118
+    (QLS, quantum local search), [https://www.osp.ru/os/2019/03/13055118](https://www.osp.ru/os/2019/03/13055118)
 
 Многокубитные гейты
     Англ. Multiqubit gates
 
-[Нотация Дирака](https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B0_%D0%B8_%D0%BA%D0%B5%D1%82)
+[Нотация Дирака](https://ru.wikipedia.org/wiki/Бра_и_кет)
     Англ. Dirac notation, формализм (система обозначения) для описания кантовых состояний на основе бра- и кет-векторов
     (англ. bra-ket от bracket, скобка). В этой системе обозначений $\ket{\Psi}$ обозначает вектор состояния,
     $\bra{\Psi}$ -- сопряженный вектор состояния, а $\bra{\Psi} \hat{H} \ket{\Psi}$ -- среднее (математическое ожидаемое)
@@ -100,7 +98,7 @@ fSim
 Смешанные состояние
     Англ. Mixed states
 
-Собственное векторы
+Собственный вектор (Eigenvector)
     Англ. Eigenvector
 
 Собственное значение
@@ -118,14 +116,12 @@ fSim
 Унитарный оператор
     Англ. Unitary operator
 
-"Шумные" квантовые компьютеры промежуточного масштаба
-    Англ. Noisy intermediate-scale quantum (NISQ), также часто пишут о NISQ Hardware.
-    Термин введен Прескиллом в работе https://arxiv.org/abs/1801.00862 для описания сегодняшнего состояния квантовых вычислений,
+«Шумные» квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)
+    Термин введен Прескиллом в работе [https://arxiv.org/abs/1801.00862](https://arxiv.org/abs/1801.00862) для описания сегодняшнего состояния квантовых вычислений,
     когда "настоящие" квантовые вычисления (на миллионах кубит) еще невозможны, но совеменные квантовые компьютеры уже могут
     выполнять вычисления, которые невозможны на обычных, классических компьютерах.
-    См. также краткое обсуждение в https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology,
-    и перевод на термина русский https://www.osp.ru/os/2019/03/13055130
-    Также используется перевод "зашумленные квантовые системы умеренного масштаба", см. https://www.osp.ru/os/2019/03/13055118
+    См. также краткое обсуждение в [https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology](https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology),
+    и перевод на термина русский [https://www.osp.ru/os/2019/03/13055130](https://www.osp.ru/os/2019/03/13055130)
 
 Энтропия
     Англ. Entropy
