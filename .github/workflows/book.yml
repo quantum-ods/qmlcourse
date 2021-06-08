@@ -2,7 +2,8 @@ name: deploy-book
 
 # Only run this when the master branch changes
 on:
-  workflow_dispatch
+  workflow_dispatch:
+  pull_request:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
@@ -33,4 +34,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/html
-          publish_branch: release/books
