@@ -15,6 +15,8 @@
       title: ⬜ О блоке
     - file: book/progblock/pennylane.ipynb
       title: 🟩 PennyLane
+    - file: book/progblock/tfq.md
+      title: 🟧 Cirq & TFQ
 
 - part: Вариационные схемы
   chapters:
