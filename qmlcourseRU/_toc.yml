@@ -20,6 +20,7 @@
   chapters:
     - file: book/gradsblock/gradsintro
     - file: book/gradsblock/gradients
+    - file: book/gradsblock/hogradients
 
 - part: Квантовый SVM
   chapters:
