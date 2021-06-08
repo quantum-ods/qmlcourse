@@ -32,7 +32,7 @@ Main repository of the course.
 ```bibtex
 @misc{qmlcourse2021,
   author = {Sinchenko SA et al.},
-  title = {QMLCourse.ai},
+  title = {QMLCourse},
   year = {2021},
   publisher = {GitHub},
   journal = {GitHub repository},
