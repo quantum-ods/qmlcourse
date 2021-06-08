@@ -31,3 +31,4 @@
   chapters:
     - file: book/authors
     - file: book/acknowledgments
+    - file: book/glossary
