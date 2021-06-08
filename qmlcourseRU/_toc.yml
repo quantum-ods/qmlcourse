@@ -21,6 +21,7 @@
     - file: book/gradsblock/gradsintro
     - file: book/gradsblock/gradients
     - file: book/gradsblock/hogradients
+      title: 🟧 Градиенты высших порядков
 
 - part: Квантовый SVM
   chapters:
