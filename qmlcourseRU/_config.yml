@@ -7,6 +7,7 @@ description: >-
 
 execute:
   execute_notebooks: cache
+  cache: public/_build/.jupyter_cache/
   timeout: -1
 
 html:
