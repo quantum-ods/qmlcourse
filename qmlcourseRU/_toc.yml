@@ -1,4 +1,5 @@
 - file: book/index
+  title: ⬜ Приветствие
 
 - part: Квантовые вычисления
   chapters:
