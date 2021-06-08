@@ -98,6 +98,18 @@ _If you have problems with the build command try to pass the full path to the fo
 
 Chapters and headers in markdown must exactly follow the main structure of the book. Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
 
+### Glossary terms
+
+Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common 
+glossary, `glossary.md`.
+
+On first use of a term in main book text, please refer to glossary using the format:
+```markdown
+{term}`chapter text<glossary term>`
+```
+(with this notation, the chapter will contain text "chapter text" and build script will create reference to 
+"glossary term").
+
 ## GitHub intro
 
 If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
