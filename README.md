@@ -1,5 +1,9 @@
 # QMLCourse
 
+**COURSE IS UNDER ACTIVE DEVELOPMENT!!!**
+
+**[The latest build (Russian version only)](https://semyonsinchenko.github.io/qmlcourse/book/index.html)**
+
 Main repository of the course.
 
 1. [Contributing Guide](#guide)
