@@ -1,9 +1,9 @@
-title: QMLCourse.ai
+title: QMLCourse
 author: Sinchenko SA et al.
 logo: "logo.svg"
 
 description: >-
-  An adaptive and practical course about Quantum Machine Learning in NISQ-era and related topics.
+  An adaptive and practical course about Quantum Machine Learning in the NISQ-era and related topics.
 
 execute:
   execute_notebooks: cache
@@ -15,7 +15,7 @@ html:
 notebook_interface: "notebook"
 
 repository:
-  url: https://github.com/SemyonSinchenko/qmlcourse.ai
+  url: https://github.com/SemyonSinchenko/qmlcourse
   path_to_book: "qmlcourseRU"
 
 latex:
