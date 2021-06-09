@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: 'gh-pages'
+          ref: 'gh-pages'
 
       # Install dependencies
       - name: Set up Python 3.8
