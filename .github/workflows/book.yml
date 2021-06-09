@@ -18,7 +18,7 @@ jobs:
           path: ./gh-pages        
       - name: Copy cache dir
         run: |
-          cp -r ./gh-pages/_build/ ./qmlcourseRU/
+          cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
 
       # Install dependencies
       - name: Set up Python 3.8
