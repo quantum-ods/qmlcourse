@@ -30,7 +30,8 @@ jobs:
           poetry run jupyter-book build ./qmlcourseRU
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.5.9
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU/_build/html
+          publish_dir: ./qmlcourseRU
+          destination_dir: public
