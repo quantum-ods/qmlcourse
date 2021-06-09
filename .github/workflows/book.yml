@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - uses: actions/checkout@v2
-        with:
-          ref: 'gh-pages'
-          path: ./qmlcourseRU1
+#       - uses: actions/checkout@v2
+#         with:
+#           ref: 'gh-pages'
+#           path: ./qmlcourseRU1
 
       # Install dependencies
       - name: Set up Python 3.8
@@ -32,11 +32,12 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          poetry run jupyter-book build ./qmlcourseRU1
+          poetry run jupyter-book build ./qmlcourseRU
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU1
-#           destination_dir: public
+          publish_dir: ./qmlcourseRU
+          destination_dir: qmlcourseRU
+          publish_branch: feature/devops
