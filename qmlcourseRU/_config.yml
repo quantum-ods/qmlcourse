@@ -7,6 +7,7 @@ description: >-
 
 execute:
   execute_notebooks: cache
+  run_in_temp: true
   timeout: -1
 
 html:
@@ -14,9 +15,9 @@ html:
 
 notebook_interface: "notebook"
 
-repository:
-  url: https://github.com/SemyonSinchenko/qmlcourse.ai
-  path_to_book: "qmlcourseRU"
+# repository:
+#   url: https://github.com/SemyonSinchenko/qmlcourse.ai
+#   path_to_book: "qmlcourseRU"
 
 latex:
   latex_engine: "xelatex"
