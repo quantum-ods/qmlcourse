@@ -15,9 +15,9 @@ html:
 
 notebook_interface: "notebook"
 
-repository:
-  url: https://github.com/SemyonSinchenko/qmlcourse.ai
-  path_to_book: "qmlcourseRU"
+# repository:
+#   url: https://github.com/SemyonSinchenko/qmlcourse.ai
+#   path_to_book: "qmlcourseRU"
 
 latex:
   latex_engine: "xelatex"
