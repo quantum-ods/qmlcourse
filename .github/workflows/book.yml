@@ -12,10 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-#       - uses: actions/checkout@v2
-#         with:
-#           ref: 'gh-pages'
-#           path: ./qmlcourseRU1
+      - uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
+          path: ./gh-pages        
+      - name: Copy cache dir
+        run: |
+          cp -r ./gh-pages/_build/ ./qmlcourseRU/
 
       # Install dependencies
       - name: Set up Python 3.8
@@ -39,5 +42,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU
-          destination_dir: qmlcourseRU
-          publish_branch: feature/devops
+#           destination_dir: qmlcourseRU
+#           publish_branch: feature/devops
