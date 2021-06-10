@@ -41,6 +41,7 @@
 
 - part: О курсе
   chapters:
+    - file: book/bibliography
     - file: book/authors
     - file: book/acknowledgments
     - file: book/glossary
