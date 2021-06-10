@@ -2,9 +2,8 @@ name: deploy-book
 
 # Only run this when the master branch changes
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+  pull_request:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
@@ -12,6 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - uses: actions/checkout@v2
+        with:
+          ref: 'gh-pages'
+          path: ./gh-pages        
+      - name: Copy cache dir
+        run: |
+          cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
 
       # Install dependencies
       - name: Set up Python 3.8
@@ -31,7 +38,9 @@ jobs:
           poetry run jupyter-book build ./qmlcourseRU
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.5.9
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU/_build/html
+          publish_dir: ./qmlcourseRU
+#           destination_dir: qmlcourseRU
+#           publish_branch: feature/devops
