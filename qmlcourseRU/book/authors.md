@@ -22,6 +22,9 @@
 3. [Борис Зимка](https://github.com/zimka)
 4. [Николай Карелин](https://github.com/karelin)
 
+## Техническая поддержка
+1. [Дмитрий Коржов](https://github.com/dkorzhov)
+
 ## Полный список авторов
 
 ```{dropdown} **А**
