@@ -79,3 +79,14 @@ print(sim.run(circuit, repetitions=25))
 Тут мы просто видим последовательность наших измерений.
 
 ## Квантовое машинное обучение
+
+### Импорты
+
+Мы будем использовать `Tensorflow` и `Tensorflow Quantum`.
+
+```{code-cell} ipython3
+import tensorflow as tf
+import tensorflow_quantum as tfq
+```
+
+`Tensorflow Quantum` позволяет "превращать" параметризированные схемы `Cirq` в слои нейронных сетей `Tensorflow`.
