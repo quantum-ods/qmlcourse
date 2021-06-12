@@ -1,10 +1,13 @@
 # QMLCourse
 
-**COURSE IS UNDER ACTIVE DEVELOPMENT!!!**
+| Note: the course is under active development and, for now, is Russian-only!|
+| --- |
 
-**[The latest build (Russian version only)](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html)**
+Main links (Russian-only):
+- **[The latest build](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html)** of a Jupyter Book with course content
+- **[ODS.ai track "qmlcourse"](https://ods.ai/tracks/qmlcourse)** – this will be the main page of the course
 
-Main repository of the course.
+This is the main repository of the course.
 
 1. [Contributing Guide](#guide)
 2. [Course Program](#program)
