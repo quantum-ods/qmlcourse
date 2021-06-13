@@ -32,3 +32,6 @@ parse:
   myst_enable_extensions:
     - amsmath
     - physics
+
+bibtex_bibfiles:
+  - _bibliography/references.bib

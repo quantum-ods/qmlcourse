@@ -21,6 +21,7 @@
 2. [Виктор Трохименко](https://github.com/vtrokhymenko)
 3. [Борис Зимка](https://github.com/zimka)
 4. [Николай Карелин](https://github.com/karelin)
+5. [Евгений Желтоножский](https://github.com/Randl)
 
 ## Редакторы
 
@@ -53,7 +54,7 @@
 ```
 
 ```{dropdown} **Е**
-
+[Евгений Желтоножский](https://github.com/Randl)
 ```
 
 ```{dropdown} **Ж**

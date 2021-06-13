@@ -3,26 +3,45 @@
 - part: Квантовые вычисления
   chapters:
     - file: book/qcblock/qcintro
+      title: ⬜ О блоке
     - file: book/qcblock/qubit
+      title: 🟩 Квантовый бит
     - file: book/qcblock/gates
+      title: 🟩 Квантовые гейты
 
 - part: Фреймворки
   chapters:
     - file: book/progblock/progintro.md
+      title: ⬜ О блоке
     - file: book/progblock/pennylane.ipynb
+      title: 🟩 PennyLane
 
 - part: Вариационные схемы
   chapters:
     - file: book/vqcblock/vqcintro
+      title: ⬜ О блоке
     - file: book/vqcblock/vqc
+      title: 🟩 Вариационные схемы
 
 - part: Квантовые градиенты
   chapters:
     - file: book/gradsblock/gradsintro
+      title: ⬜ О блоке
     - file: book/gradsblock/gradients
+      title: 🟩 Градиенты квантовых схем
+    - file: book/gradsblock/hogradients
+      title: 🟧 Градиенты высших порядков
+
+- part: Квантовый SVM
+  chapters:
+    - file: book/qsvmblock/qsvmintro
+      title: ⬜ О блоке
+    - file: book/qsvmblock/hybridsvm
+      title: 🟩 Гибридный SVM
 
 - part: О курсе
   chapters:
+    - file: book/bibliography
     - file: book/authors
     - file: book/acknowledgments
     - file: book/glossary
