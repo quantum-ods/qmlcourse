@@ -23,15 +23,6 @@ jobs:
         run: |
           cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
 
-      #Use cache
-      - name: Copy cache dir for dependecies
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-poetry-modules
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}  
-
       # Install dependencies
       - name: Set up Python 3.8
         uses: actions/setup-python@v1
@@ -40,6 +31,15 @@ jobs:
 
       - name: Set up poetry
         uses: Gr1N/setup-poetry@v4
+
+      #Use cache
+      - name: Copy cache dir for dependecies
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-poetry-modules
+        with:
+          path: .venv
+          key: venv1-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}          
 
       - name: Install dependencies
         run: |
