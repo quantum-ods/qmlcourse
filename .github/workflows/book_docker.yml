@@ -20,6 +20,9 @@ jobs:
       - name: Copy cache dir
         run: |
           cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
+          
+      - name: Docker python poetry
+        uses: dkorzhov/actions-poetry@1.0        
 
       # # Build the book
       # - name: Build the book
