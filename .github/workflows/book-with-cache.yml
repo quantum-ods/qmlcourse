@@ -42,7 +42,7 @@ jobs:
           cache-name: cache-poetry-modules
         with:
           path: .venv
-          key: venv1-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}          
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}          
 
       - name: Install dependencies
         run: |
