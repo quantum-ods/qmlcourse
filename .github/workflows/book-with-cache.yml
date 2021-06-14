@@ -29,12 +29,8 @@ jobs:
         env:
           cache-name: cache-poetry-modules
         with:
-          path: ~/.poetry
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('poetry.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-      
+          path: .venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}  
 
       # Install dependencies
       - name: Set up Python 3.8
