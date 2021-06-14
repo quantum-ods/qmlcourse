@@ -30,7 +30,10 @@ jobs:
           python-version: 3.8
 
       - name: Set up poetry
-        uses: Gr1N/setup-poetry@v4
+        uses: snok/install-poetry@v1.1.6
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
 
       #Use cache
       - name: Copy cache dir for dependecies
