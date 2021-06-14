@@ -1,5 +1,10 @@
 - file: book/index
 
+- part: Основы Python
+  chapters:
+   - file: book/pythonblock/pythonintro.md
+   - file: book/pythonblock/python_l1.md
+
 - part: Квантовые вычисления
   chapters:
     - file: book/qcblock/qcintro
