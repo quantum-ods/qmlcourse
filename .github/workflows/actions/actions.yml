@@ -1,6 +1,0 @@
-# action.yml
-name: 'Docker python poetry'
-description: 'Build python poetry'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'

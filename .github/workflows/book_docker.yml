@@ -9,6 +9,7 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    container: dkorzhov/actions-poetry@1.0
     steps:
       - uses: actions/checkout@v2
       
