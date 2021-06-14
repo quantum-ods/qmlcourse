@@ -3,7 +3,9 @@
 - part: Основы Python
   chapters:
    - file: book/pythonblock/pythonintro.md
+     title: ⬜ О блоке
    - file: book/pythonblock/python_l1.md
+     title: ⬜ Вводная лекция про Python
 
 - part: Квантовые вычисления
   chapters:
