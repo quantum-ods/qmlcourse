@@ -8,9 +8,12 @@ on:
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
-    runs-on: ubuntu-latest
-    container: docker/actions-poetry@1.0
+    runs-on: ubuntu-latest 
+    container: dkorzhov/actions-poetry@1.0
     steps:
+      - name: Docker python poetry
+        uses: dkorzhov/actions-poetry@1.0
+
       - uses: actions/checkout@v2
       
       - uses: actions/checkout@v2
@@ -21,8 +24,7 @@ jobs:
         run: |
           cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
           
-      - name: Docker python poetry
-        uses: dkorzhov/actions-poetry@1.0        
+      
 
       # # Build the book
       # - name: Build the book
