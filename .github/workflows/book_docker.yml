@@ -7,13 +7,15 @@ on:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
-  deploy-book:
-    runs-on: ubuntu-latest 
-    container: dkorzhov/actions-poetry@1.0
+  build-containre:
+    runs-on: ubuntu-latest
     steps:
       - name: Docker python poetry
         uses: dkorzhov/actions-poetry@1.0
-
+  deploy-book-docker:
+    runs-on: ubuntu-latest 
+    container: dkorzhov/actions-poetry@1.0
+    steps:
       - uses: actions/checkout@v2
       
       - uses: actions/checkout@v2
