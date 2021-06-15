@@ -57,32 +57,34 @@ $$
 
 ## Parameter-shift для гейтов Паули
 
-Так как матрица $H$ может быть декомпозирована на гейты Паули, то сам оператор $U_i$ может быть также записан так:
+```{note}
+Тут мы для простоты предложим, что $U_1$ это просто оператор вращения, иначе выкладки станут совсем сложными.
+```
+
+Тогда сам оператор $U_i$ может быть также записан так:
 
 $$
 U_i = e^{-\frac{i}{2}P_i\theta_i}
 $$
 
-```{note}
-Тут мы для простоты предложим, что $U_1$ это просто оператор вращения, иначе выкладки станут совсем сложными.
-```
-
 Запишем результат математического ожидания через состояние $\Psi_i$, которое пришло на вход $i$-го гейта в нашей последовательности:
 
 $$
-\langle M(\theta) \rangle = Tr(M U_{k, ..., 1} \Psi_i U_{k, ..., 1}^\dagger)
+\langle M(\theta) \rangle = Tr(M U_{k, ..., 1} \rho_i U_{k, ..., 1}^\dagger)
 $$
 
-Тогда частная производная от математического ожидания по $i$-му параметру $\theta_i$ записывается (подробнее в {cite}`parametershift`) через коммутатор исходного состояния $\ket{\Psi_i}$, которое "пришло" на вход гейта $U_i$ и того оператора Паули $P_i$, который мы используем в $U_i$:
+где $\rho$ это матрица плотности ($\ket{\Psi}\bra{\Psi}$). Подробнее о матрицах плотности можно почитать в ранней продвинутой лекции про смешанные состояния.
+
+Тогда частная производная от математического ожидания по $i$-му параметру $\theta_i$ записывается (подробнее в {cite}`parametershift`) через коммутатор исходного состояния $\rho$, которое "пришло" на вход гейта $U_i$ и того оператора Паули $P_i$, который мы используем в $U_i$:
 
 $$
-\frac{\partial \langle M \rangle}{\partial \theta_i} = -\frac{i}{2}Tr(M U_{k, ..., i}[P_i, U_{i-1, ..., 1}\Psi_i U_{i-1, ..., 1}^\dagger]U_{k, ..., i}^\dagger)
+\frac{\partial \langle M \rangle}{\partial \theta_i} = -\frac{i}{2}Tr(M U_{k, ..., i}[P_i, U_{i-1, ..., 1}\rho_i U_{i-1, ..., 1}^\dagger]U_{k, ..., i}^\dagger)
 $$
 
 Этот коммутатор может быть переписан следующим образом:
 
 $$
-[P_i, \Psi] = i[U_i \Bigl( \frac{\pi}{2} \Bigr ) \Psi_i U_i^\dagger \Bigl ( \frac{\pi}{2} \Bigr ) - U_i \Bigl( -\frac{\pi}{2} \Bigr ) \Psi_i U_i^\dagger \Bigl ( -\frac{\pi}{2} \Bigr )]
+[P_i, \rho] = i[U_i \Bigl( \frac{\pi}{2} \Bigr ) \rho_i U_i^\dagger \Bigl ( \frac{\pi}{2} \Bigr ) - U_i \Bigl( -\frac{\pi}{2} \Bigr ) \rho_i U_i^\dagger \Bigl ( -\frac{\pi}{2} \Bigr )]
 $$
 
 Тогда соответствующий градиент $\frac{\partial}{\partial \theta_i}$ можно записать через смещения на $\pm\frac{\pi}{2}$:
@@ -90,8 +92,8 @@ $$
 $$
 \begin{gathered}
 \frac{\partial \langle M \rangle}{\partial \theta_i} = \frac{\langle M_i^+ \rangle - \langle M_i^- \rangle}{2} \\
-\langle M_i^{\pm} \rangle = \frac{1}{2} Tr [M U_{k, ..., i+1} U_i(\pm \frac{\pi}{2})\Psi_i^` U_i^\dagger (\pm \frac{\pi}{2}) U_{k, ..., i+1}^\dagger] \\
-\Psi_i^` = U_{j, ..., 1} \Psi_i U_{j, ..., 1}^\dagger
+\langle M_i^{\pm} \rangle = \frac{1}{2} Tr [M U_{k, ..., i+1} U_i(\pm \frac{\pi}{2})\rho_i^` U_i^\dagger (\pm \frac{\pi}{2}) U_{k, ..., i+1}^\dagger] \\
+\rho_i^` = U_{j, ..., 1} \rho_i U_{j, ..., 1}^\dagger
 \end{gathered}
 $$
 

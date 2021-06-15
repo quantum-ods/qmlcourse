@@ -21,8 +21,14 @@
 2. [Виктор Трохименко](https://github.com/vtrokhymenko)
 3. [Борис Зимка](https://github.com/zimka)
 4. [Николай Карелин](https://github.com/karelin)
+5. [Евгений Желтоножский](https://github.com/Randl)
+
+## Редакторы
+
+1. [Наталья Маркова](https://github.com/nsmarkova)
 
 ## Техническая поддержка
+
 1. [Дмитрий Коржов](https://github.com/dkorzhov)
 
 ## Полный список авторов
@@ -48,7 +54,7 @@
 ```
 
 ```{dropdown} **Е**
-
+[Евгений Желтоножский](https://github.com/Randl)
 ```
 
 ```{dropdown} **Ж**
@@ -75,7 +81,7 @@
 ```
 
 ```{dropdown} **М**
-
+[Маркова Наталья](https://github.com/nsmarkova)
 ```
 
 ```{dropdown} **Н**
