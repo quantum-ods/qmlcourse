@@ -26,7 +26,7 @@ kernelspec:
 
 ### Импорты и схема
 
-Для начала импорты.
+Для начала импортируем 	`cirq`.
 
 ```{code-cell} ipython3
 import cirq
