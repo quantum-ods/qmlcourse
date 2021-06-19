@@ -1,5 +1,12 @@
 - file: book/index
 
+- part: Основы Python
+  chapters:
+   - file: book/pythonblock/pythonintro.md
+     title: ⬜ О блоке
+   - file: book/pythonblock/python_l1.md
+     title: ⬜ Вводная лекция про Python
+
 - part: Квантовые вычисления
   chapters:
     - file: book/qcblock/qcintro
@@ -15,6 +22,8 @@
       title: ⬜ О блоке
     - file: book/progblock/pennylane.ipynb
       title: 🟩 PennyLane
+    - file: book/progblock/tfq.md
+      title: 🟧 Cirq & TFQ
 
 - part: Вариационные схемы
   chapters:
