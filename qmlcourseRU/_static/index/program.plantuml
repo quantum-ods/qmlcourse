@@ -59,7 +59,7 @@ package "VQE" #Bisque {
         rectangle "VQE" as vqe #40B464
         rectangle "Adaptive VQE" as avqe #FFC864
         rectangle "Layered VQC" as lvqe #FFC864
-        rectangle "UUC ansatz" as uuc #E0535C
+        rectangle "UCC ansatz" as uuc #E0535C
 }
 
 package "QAOA" #Bisque {
