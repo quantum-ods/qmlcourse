@@ -26,13 +26,22 @@ kernelspec:
 
 ### Импорты и схема
 
-Для начала импортируем 	`cirq`.
+Для начала импортируем `cirq`.
 
 ```{code-cell} ipython3
 import cirq
 ```
 
-`Cirq` рассчитан на работу с квантовым компьютером от компании _Google_, который представляет собой решетку кубитов (**NK: желательно дать ссылку**). Поэтому в нем все строится вокруг работы с решеткой кубитов -- объектом `cirq.GridQubit`. Давайте создадим кубит на решетке, который имеет координаты $(0, 0)$:
+`Cirq` рассчитан на работу с квантовым компьютером от компании _Google_, который представляет собой решетку кубитов. Например, вот так выглядит решетка кубитов квантового компьютера `Sycamore`:
+
+```{figure} /_static/progblock/tfq/sycamore.png
+:width: 400px
+:name: sycamore_lattice
+
+Изображение из {cite}`sycamore`
+```
+
+Поэтому в нем все строится вокруг работы с решеткой кубитов -- объектом `cirq.GridQubit`. Давайте создадим кубит на решетке, который имеет координаты $(0, 0)$:
 
 ```{code-cell} ipython3
 qubit = cirq.GridQubit(0, 0)
@@ -97,7 +106,7 @@ import tensorflow_quantum as tfq
 from sklearn.datasets import make_classification
 import numpy as np
 
-x, y = make_classification(n_samples=50, n_features=2, n_informative=2, 
+x, y = make_classification(n_samples=50, n_features=2, n_informative=2,
                            random_state=42, n_redundant=0)
 
 def normalize(x):
