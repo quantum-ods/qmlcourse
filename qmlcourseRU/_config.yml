@@ -35,3 +35,8 @@ parse:
 
 bibtex_bibfiles:
   - _bibliography/references.bib
+
+repository:
+  url: https://github.com/SemyonSinchenko/qmlcourse
+  path_to_book: "qmlcourseRU"
+  branch: master
