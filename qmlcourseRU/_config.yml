@@ -12,6 +12,9 @@ execute:
 
 html:
   home_page_in_navbar: true
+  use_repository_button: true
+  use_issues_button: true
+  baseurl: https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html
 
 notebook_interface: "notebook"
 
@@ -38,5 +41,5 @@ bibtex_bibfiles:
 
 repository:
   url: https://github.com/SemyonSinchenko/qmlcourse
-  path_to_book: "qmlcourseRU"
+  path_to_book: qmlcourseRU
   branch: master
