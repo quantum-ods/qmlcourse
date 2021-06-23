@@ -15,6 +15,8 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
+    - file: book/qcblock/deutschs_algorithm
+      title: 🟩 Задача Дойча
 
 - part: Фреймворки
   chapters:
