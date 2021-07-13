@@ -114,7 +114,7 @@ $$
 
 $$
 \begin{gathered}
-(\cos{\frac{\theta}{2}}\mathbf{1} - i\sin{\frac{\theta}{2}}H)\hat{M}(\cos{\frac{\theta}{2}}\mathbf{1} - i\sin{\frac{\theta}{2}}H) = \\
+(\cos{\frac{\theta}{2}}\mathbf{1} + i\sin{\frac{\theta}{2}}H)\hat{M}(\cos{\frac{\theta}{2}}\mathbf{1} - i\sin{\frac{\theta}{2}}H) = \\
 \cos^2{\frac{\theta}{2}}\hat{M} + i \sin{\frac{\theta}{2}}\cos{\frac{\theta}{2}}H\hat{M} - i \sin {\frac{\theta}{2}}\cos{\frac{\theta}{2}}\hat{M}H + \sin^2{\frac{\theta}{2}}H\hat{M}H = \\
 \frac{1}{2} \cos{\theta}\hat{M}+\frac{1}{2}\hat{M}+\frac{i}{2} \sin{\theta}H\hat{M} - \frac{i}{2}\sin{\theta}\hat{M}H + \frac{1}{2}H\hat{M}H - \frac{1}{2}\cos{\theta}H\hat{M}H = \\
 \frac{1}{2}(\hat{M} + H\hat{M}H) + \frac{1}{2}(\hat{M} - H\hat{M}H)\cos{\theta} + \frac{i}{2}(H\hat{M} - \hat{M}H)\sin{\theta}
