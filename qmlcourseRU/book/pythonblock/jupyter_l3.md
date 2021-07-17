@@ -227,4 +227,4 @@ plt.show();
 ## Бонус-материал
 
 Если вам захочется узнать больше о трюках в ноутбуках, о недостатках и преимуществах по сравнению с альтернативами - предлагаем посмотреть выступление Joel Grus:
-<iframe width="560" height="315" align="middle" style='' src="https://www.youtube.com/embed/7jiPeIFXb6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center"><iframe width="560" height="315" style='' src="https://www.youtube.com/embed/7jiPeIFXb6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
