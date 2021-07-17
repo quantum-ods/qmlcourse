@@ -226,5 +226,7 @@ plt.show();
 
 ## Бонус-материал
 
+Полная официальная документация по Jupyter находится по [ссылке тут](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html).
+
 Если вам захочется узнать больше о трюках в ноутбуках, о недостатках и преимуществах по сравнению с альтернативами - предлагаем посмотреть выступление Joel Grus:
 <p align="center"><iframe width="560" height="315" style='' src="https://www.youtube.com/embed/7jiPeIFXb6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
