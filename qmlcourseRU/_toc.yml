@@ -6,6 +6,8 @@
      title: ⬜ О блоке
    - file: book/pythonblock/python_l1.md
      title: ⬜ Вводная лекция про Python
+   - file: book/pythonblock/python_l4.md
+     title: ⬜ Переменные и вывод
 
 - part: Квантовые вычисления
   chapters:
