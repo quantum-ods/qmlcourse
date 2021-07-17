@@ -55,7 +55,7 @@ kernelspec:
 ```
 Пример:  ```Text attributes _italic_,**bold**, `monospace`.```
 
-С помощью Markdown можно разнообразить код, вставить формулы (как в [LaTeX](https://ru.wikipedia.org/wiki/LaTeX) формате), ссылки на статьи и многое другое. Попробуйте скопировать код из примера выше в Markdown-ячейку и нажать кнопку `Run`: 
+С помощью Markdown можно разнообразить код, вставить формулы (в том числе в [LaTeX](https://ru.wikipedia.org/wiki/LaTeX) формате, если он вам знаком), ссылки на статьи и многое другое. Попробуйте скопировать код из примера выше в Markdown-ячейку и нажать кнопку `Run`: 
 
 ```{figure} /_static/pythonblock/jupyter_l3/jupyter_ui_2.png
 :name: jupyter_ui_2
