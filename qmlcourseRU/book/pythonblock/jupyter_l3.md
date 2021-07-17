@@ -223,3 +223,8 @@ plt.show();
 - Если вы долго ждёте выполнения Code-блока  - можно `Stop`нуть ядро, если не помогает - `Restart`нуть
 - Ядро - это процесс, выполняющий код, и после перезагрузки оно не сохраняет переменные
 - `TAB` - ваш друг, позволяющий избегать опечаток, а также реже пользоваться документацией
+
+## Бонус-материал
+
+Если вам захочется узнать больше о трюках в ноутбуках, о недостатках и преимуществах по сравнению с альтернативами - предлагаем посмотреть выступление Joel Grus:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7jiPeIFXb6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
