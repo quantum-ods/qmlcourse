@@ -1,4 +1,4 @@
-title: QMLCourse.ai
+title: QMLCourse
 author: Sinchenko SA et al.
 logo: "logo.svg"
 
@@ -7,16 +7,20 @@ description: >-
 
 execute:
   execute_notebooks: cache
+  run_in_temp: true
   timeout: -1
 
 html:
   home_page_in_navbar: true
+  use_repository_button: true
+  use_issues_button: true
+  baseurl: https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html
 
 notebook_interface: "notebook"
 
-repository:
-  url: https://github.com/SemyonSinchenko/qmlcourse.ai
-  path_to_book: "qmlcourseRU"
+# repository:
+#   url: https://github.com/SemyonSinchenko/qmlcourse.ai
+#   path_to_book: "qmlcourseRU"
 
 latex:
   latex_engine: "xelatex"
@@ -31,3 +35,11 @@ parse:
   myst_enable_extensions:
     - amsmath
     - physics
+
+bibtex_bibfiles:
+  - _bibliography/references.bib
+
+repository:
+  url: https://github.com/SemyonSinchenko/qmlcourse
+  path_to_book: qmlcourseRU
+  branch: master

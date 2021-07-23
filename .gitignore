@@ -510,3 +510,6 @@ _minted*
 
 # Jupyter Book
 _build*
+
+# VSCode settings dir
+.vscode
