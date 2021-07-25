@@ -43,6 +43,7 @@ Content generators, to be agreed with Benevolent Dictator. See [Issues](https://
 * @gamlo (hardware)
 * @Sergei Shirkin (PennyLane)
 * @sem (multiple lectures)
+* @zimka (quantum chemistry)
 
 See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) for updates, this list is not indended to be  always up-to-date.  
 
