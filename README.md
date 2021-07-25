@@ -9,32 +9,76 @@ Main links (Russian-only):
 
 This is the main repository of the course.
 
-1. [Contributing Guide](#guide)
-2. [Course Program](#program)
-   1. [How-to go through the course?](#schema)
-3. [Our Team](#team)
+1. [Contributing Guide](#contributing-guide)
+2. [Course Program](#course-program)
+3. [Team](#team)
 4. [Bibtex Citations](#bibtex)
 
-## Contributing Guide <a name="guide"></a>
+## Contributing Guide
 
 - [Contributing Guide](./CONTRIBUTING.md)
 
-## Course Program <a name="program"></a>
+## Course Program
 
 ![](./qmlcourseRU/_static/index/program.png)
 
-### How to read the schema? <a name="schema"></a>
+### How to read the schema?
 
 - **WHITE** - introductory blocks covering prerequisites for the rest of the course;
 - **GREEN** - main flow of the course with simple introductory lectures on QC and QML;
 - **YELLOW** - highly recommended facultative lectures which explain additional topics about QML and QC;
 - **RED** - advanced level lectures which deeply explain the math and the principles underlying QML.
 
-## Our Team <a name="team"></a>
+## Team
 
-- [Our Team](./Team.md)
+### Contributor roles
 
-## Bibtex <a name="bibtex"></a>
+Here we list all team members according to their contributor roles. Refer to [CONTRIBUTING.md](https://github.com/SemyonSinchenko/qmlcourse.ai/blob/master/CONTRIBUTING.md) for the definition of all contributor roles.
+
+### Benevolent Dictator
+
+Semyon Sinchenko, @sem
+
+### Core reviewers
+
+* @gamlo
+* @Sergei Shirkin
+* @Pola Ron
+
+To be extended based on the actual commitment and qualification of all contributors.
+
+### Reviewers
+
+By default that's everyone who is invited to the #org\_qml\_course Slack channel.
+
+### Authors
+
+Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks.
+Also, we have
+
+* @stm (Python)
+* @maruschin (Python)
+* @sharthZ23 (Python, NumPy)
+* @alex.ozerin (NumPy, math)
+* @yorko (ML intro)
+* @Pola Ron (quantum enthropy)
+* @gamlo (hardware)
+* @Sergei Shirkin (PennyLane)
+* @sem (multiple lectures)
+
+See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) for updates, this list is not indended to be  always up-to-date.  
+
+### Editors
+
+* @nmarkova
+* @vitaliylyalin7000
+
+### Orgs
+
+* @yorko
+* @vtrohymenko
+
+## Bibtex
 
 ```bibtex
 @misc{qmlcourse2021,
