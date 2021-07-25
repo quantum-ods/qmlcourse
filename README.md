@@ -19,7 +19,7 @@ This is the main repository of the course.
 
 - [Contributing Guide](./CONTRIBUTING.md)
 
-# Discussions
+## Discussions
 
 - Some ideas, suggestions, remarks, etc. yuo can write at the separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions)
 
