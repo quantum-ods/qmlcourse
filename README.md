@@ -10,8 +10,8 @@ Main links (Russian-only):
 This is the main repository of the course.
 
 1. [Contributing Guide](#contributing-guide)
-2. [Course Program](#course-program)
 3. [Discussions](#discussions)
+2. [Course Program](#course-program)
 4. [Team](#team)
 5. [Bibtex Citations](#bibtex)
 
