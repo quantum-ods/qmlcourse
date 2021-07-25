@@ -11,12 +11,17 @@ This is the main repository of the course.
 
 1. [Contributing Guide](#contributing-guide)
 2. [Course Program](#course-program)
-3. [Team](#team)
-4. [Bibtex Citations](#bibtex)
+3. [Discussions](#discussions)
+4. [Team](#team)
+5. [Bibtex Citations](#bibtex)
 
 ## Contributing Guide
 
 - [Contributing Guide](./CONTRIBUTING.md)
+
+# Discussions
+
+- Some ideas, suggestions, remarks, etc. yuo can write at the separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions)
 
 ## Course Program
 
@@ -53,8 +58,9 @@ By default that's everyone who is invited to the #org\_qml\_course Slack channel
 
 ### Authors
 
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks.
-Also, we have
+Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not indended to be always up-to-date.
+
+Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname orgs to add you to the channel.
 
 * @stm (Python)
 * @maruschin (Python)
@@ -65,8 +71,6 @@ Also, we have
 * @gamlo (hardware)
 * @Sergei Shirkin (PennyLane)
 * @sem (multiple lectures)
-
-See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) for updates, this list is not indended to be  always up-to-date.  
 
 ### Editors
 
