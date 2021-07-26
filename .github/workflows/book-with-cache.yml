@@ -9,7 +9,7 @@ on:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'feature/devops'
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
