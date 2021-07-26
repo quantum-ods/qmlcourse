@@ -154,7 +154,7 @@ Example:
 
 ## Pull Requests
 
-- If you were assigned to an issue, you need to create a new branch
+- If you were assigned to an issue, you need to create a new branch from the `master`
 - When you finish your work you make a Pull Request (into `master` branch) where you tag the initial issue and assign youself (right in the panel)
 
 ## List of authors <a name="authors"></a>
