@@ -8,7 +8,7 @@
     <img alt="shield_discussions" src="https://img.shields.io/github/discussions/SemyonSinchenko/qmlcourse">
   </a>
   <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
-    <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=jupyterbook&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+    <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
   </a>
   <a href="https://ods.ai/tracks/qmlcourse">
     <img alt="shield_website_ods" src="https://img.shields.io/website?up_color=orange&up_message=ods.ai%20course&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
@@ -18,15 +18,11 @@
 | Note: the course is under active development and, for now, is Russian-only!|
 | --- |
 
-Main links (Russian-only):
-- **[The latest build](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html)** of a Jupyter Book with course content
-- **[ODS.ai track "qmlcourse"](https://ods.ai/tracks/qmlcourse)** – this will be the main page of the course
-
 This is the main repository of the course.
 
 1. [Contributing Guide](#contributing-guide)
-3. [Discussions](#discussions)
-2. [Course Program](#course-program)
+2. [Discussions](#discussions)
+3. [Course Program](#course-program)
 4. [Team](#team)
 5. [Bibtex Citations](#bibtex)
 
