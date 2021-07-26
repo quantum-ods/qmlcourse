@@ -100,14 +100,14 @@ Chapters and headers in markdown must exactly follow the main structure of the b
 
 ### Glossary terms
 
-Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common 
+Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common
 glossary, `glossary.md`.
 
 On first use of a term in main book text, please refer to glossary using the format:
 ```markdown
 {term}`chapter text<glossary term>`
 ```
-(with this notation, the chapter will contain text "chapter text" and build script will create reference to 
+(with this notation, the chapter will contain text "chapter text" and build script will create reference to
 "glossary term").
 
 ## GitHub intro
