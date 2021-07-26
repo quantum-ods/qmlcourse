@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - uses: actions/checkout@v2
         with:
           ref: 'gh-pages'
@@ -36,7 +36,7 @@ jobs:
       - name: Build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
-      
+
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.8.0
