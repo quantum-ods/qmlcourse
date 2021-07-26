@@ -1,5 +1,20 @@
 # QMLCourse
 
+<p align="left">
+  <a href="https://github.com/SemyonSinchenko/qmlcourse/blob/master/LICENSE">
+    <img alt="shield_license" src="https://img.shields.io/badge/license-CC--BY--4.0-brightgreen">
+  </a>
+  <a href="https://github.com/SemyonSinchenko/qmlcourse/discussions">
+    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/SemyonSinchenko/qmlcourse">
+  </a>
+  <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
+    <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=jupyterbook&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+  </a>
+  <a href="https://ods.ai/tracks/qmlcourse">
+    <img alt="shield_website_ods" src="https://img.shields.io/website?up_color=orange&up_message=ods.ai%20course&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
+  </a>
+</p>
+
 | Note: the course is under active development and, for now, is Russian-only!|
 | --- |
 
