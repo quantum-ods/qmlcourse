@@ -7,6 +7,13 @@
    - file: book/pythonblock/python_l1.md
      title: ⬜ Вводная лекция про Python
 
+- part: Основы машинного обучения
+  chapters:
+   - file: book/mlblock/ml_intro
+     title: ⬜ О блоке
+   - file: book/mlblock/ml_l1
+     title: ⬜ Машинное обучение как паззл
+     
 - part: Квантовые вычисления
   chapters:
     - file: book/qcblock/qcintro
