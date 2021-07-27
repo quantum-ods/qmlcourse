@@ -1,3 +1,5 @@
+<img src="./qmlcourseRU/logo.svg" align="left"></img> 
+
 # QMLCourse
 
 <p align="left">
@@ -14,6 +16,10 @@
     <img alt="shield_website_ods" src="https://img.shields.io/website?up_color=critical&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
   </a>
 </p>
+
+</br>
+
+## About
 
 | Note: the course is under active development and, for now, is Russian-only!|
 | --- |
