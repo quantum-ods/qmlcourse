@@ -40,10 +40,10 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ### How to read the schema?
 
-- **WHITE** – introductory blocks covering prerequisites for the rest of the course;
-- **GREEN** – the main flow of the course with simple introductory lectures on QC and QML;
-- **YELLOW** – highly recommended facultative lectures which explain additional topics about QML and QC;
-- **RED** – advanced-level lectures that deeply explain the math and the principles underlying QML.
+- **WHITE** &mdash; introductory blocks covering prerequisites for the rest of the course;
+- **GREEN** &mdash; the main flow of the course with simple introductory lectures on QC and QML;
+- **YELLOW** &mdash; highly recommended facultative lectures which explain additional topics about QML and QC;
+- **RED** &mdash; advanced-level lectures that deeply explain the math and the principles underlying QML.
 
 ## Team
 
