@@ -20,8 +20,9 @@ jobs:
 
   deploy-book:
     runs-on: ubuntu-latest
-#     if: failure() != true
+    if: failure() != true
     needs: [pre-commit]
+    
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
