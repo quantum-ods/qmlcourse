@@ -91,7 +91,7 @@ Before you can run hooks, you need to have the pre-commit package manager instal
 Install poetry (package manager for Python projects)
 
 ```{shell}
-pip install --user poetry
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 ```
 
 Install dependency and pre-commit
