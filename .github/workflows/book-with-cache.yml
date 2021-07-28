@@ -9,7 +9,6 @@ on:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
-    if: github.base_ref== 'master'
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
@@ -19,7 +18,6 @@ jobs:
 
   deploy-book:
     runs-on: ubuntu-latest
-    if: failure() != true
     needs: [pre-commit]
     steps:
       - name: Checkout branch for build
