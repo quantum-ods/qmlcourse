@@ -8,8 +8,10 @@ on:
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   test:
-    - name: Test var
-      run: echo {{ github.head_ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test var
+        run: echo " ${{ github.head_ref }} "
 
   pre-commit:
     runs-on: ubuntu-latest
