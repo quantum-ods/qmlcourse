@@ -7,11 +7,6 @@ repos:
       - id: check-docstring-first
       - id: check-json
       - id: check-xml
-      - id: check-yaml
-      - id: debug-statements
-      - id: detect-private-key
-      - id: name-tests-test
-      - id: requirements-txt-fixer
       - id: end-of-file-fixer
       - id: trailing-whitespace
         args: ["--markdown-linebreak-ext=md"]
