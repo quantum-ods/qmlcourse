@@ -102,7 +102,7 @@ poetry install
 
 Run pre-commit hooks
 ```{shell}
-pre-commit run --all-files
+poetry run pre-commit run --all-files
 ```
 
 ### Building the project
