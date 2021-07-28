@@ -84,27 +84,6 @@ You can find the documentation on the [official site](https://plantuml.com/sitem
 
 Matplotlib figures should be included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducible.
 
-### Run pre-commit hooks before building
-
-Before you can run hooks, you need to have the pre-commit package manager installed.
-
-Install poetry (package manager for Python projects)
-
-```{shell}
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-```
-
-Install dependency and pre-commit
-
-```{shell}
-poetry install
-```
-
-Run pre-commit hooks
-```{shell}
-poetry run pre-commit run --all-files
-```
-
 ### Building the project
 
 Before making a Pull-Request try to build the book with the following command:
