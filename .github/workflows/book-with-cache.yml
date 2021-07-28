@@ -7,6 +7,10 @@ on:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+  test:
+    - name: Test var
+      run: echo {{ github.head_ref }}
+
   pre-commit:
     runs-on: ubuntu-latest
     if: github.head_ref == 'refs/heads/master'
