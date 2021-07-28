@@ -1,4 +1,4 @@
-name: deploy-book-cache
+name: pre-coomit-deploy-book
 
 # Only run this when the master branch changes
 on:
@@ -7,13 +7,25 @@ on:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - uses: pre-commit/action@v2.0.3
+      with:
+        extra_args: --all-files
+
   deploy-book:
     runs-on: ubuntu-latest
+    if: failure() != true
+    needs: [pre-commit]
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
-
-      - name: Checkout branch with cache
+      
+      - name: Checkout branch with cache     
         uses: actions/checkout@v2
         with:
           ref: 'gh-pages'
@@ -42,7 +54,7 @@ jobs:
           cache-name: cache-poetry-modules
         with:
           path: .venv
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}          
 
       - name: Install dependencies
         run: |
@@ -57,3 +69,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU
+          
