@@ -178,6 +178,27 @@ Example:
 - If you were assigned to an issue, you need to create a new branch from the `master`
 - When you finish your work you make a Pull Request (into `master` branch) where you tag the initial issue and assign youself (right in the panel)
 
+### Run pre-commit hooks before building
+
+Before you can run hooks, you need to have the pre-commit package manager installed.
+
+Install poetry (package manager for Python projects)
+
+```{shell}
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+```
+
+Install dependency and pre-commit
+
+```{shell}
+poetry install
+```
+
+Run pre-commit hooks
+```{shell}
+poetry run pre-commit run --all-files
+```
+
 ## List of authors <a name="authors"></a>
 
 If you make a Pull-Request or review or another contribution to the course you should add yourself to a full list of the authors. This list is placed in a markdown file ([Russian version](./qmlcourseRU/book/authors.md)) and is a part of a book. The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block. Such a Pull-Request should be form the branch with name like `authors/add_author_{you git account here}` and could be merged after only one approve from one of core reviewers.
