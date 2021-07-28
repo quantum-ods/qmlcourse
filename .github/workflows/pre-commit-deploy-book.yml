@@ -1,4 +1,4 @@
-name: pre-coomit-deploy-book
+name: pre-commit-deploy-book
 
 # Only run this when the master branch changes
 on:
@@ -10,12 +10,13 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
+    
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2.2.2
-    - uses: pre-commit/action@v2.0.3
-      with:
-        extra_args: --all-files
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2.2.2
+      - uses: pre-commit/action@v2.0.3
+        with:
+          extra_args: --all-files
 
   deploy-book:
     runs-on: ubuntu-latest
@@ -59,10 +60,11 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
-      # Build the book
+          
       - name: Build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
+
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.8.0
