@@ -1,5 +1,4 @@
-exclude: '.github/|.pre-commit-config.yaml|.gitignore'
-repos:  
+repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
