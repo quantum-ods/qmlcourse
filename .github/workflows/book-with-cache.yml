@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test var
-        run: echo " ${{ github.head_ref }} "
+        run: echo " ${{ github.base_ref }} "
 
   pre-commit:
     runs-on: ubuntu-latest
