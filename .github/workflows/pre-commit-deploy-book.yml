@@ -9,7 +9,7 @@ on:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+#     if: github.ref == 'refs/heads/master'
     
     steps:
       - uses: actions/checkout@v2
@@ -19,8 +19,8 @@ jobs:
           extra_args: --all-files
 
   deploy-book:
-#     if: failure() != true
     needs: [ pre-commit ]
+#     if: failure() != true
     runs-on: ubuntu-latest
     
     steps:
