@@ -21,8 +21,9 @@
 
 ## About
 
-| Note: the course is under active development and, for now, is Russian-only!|
-| --- |
+| Note: the course is under active development and, for now, is Russian-only! |
+| --------------------------------------------------------------------------- |
+
 
 This is the main repository of the course.
 
@@ -63,15 +64,15 @@ Semyon Sinchenko, @sem
 
 ### Core reviewers
 
-* @gamlo
-* @Sergei Shirkin
-* @Pola Ron
+- @gamlo
+- @Sergei Shirkin
+- @Pola Ron
 
 To be extended based on the actual commitment and qualification of all contributors.
 
 ### Reviewers
 
-By default that's everyone who is invited to the #org\_qml\_course Slack channel.
+By default that's everyone who is invited to the #org_qml_course Slack channel.
 
 ### Authors
 
@@ -79,25 +80,26 @@ Content generators, to be agreed with Benevolent Dictator. See [Issues](https://
 
 Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
 
-* @stm (Python)
-* @maruschin (Python)
-* @sharthZ23 (Python, NumPy)
-* @alex.ozerin (NumPy, math)
-* @yorko (ML intro)
-* @Pola Ron (quantum entropy)
-* @gamlo (hardware)
-* @Sergei Shirkin (PennyLane)
-* @sem (multiple lectures)
+- @stm (Python)
+- @maruschin (Python)
+- @sharthZ23 (Python, NumPy)
+- @alex.ozerin (NumPy, math)
+- @yorko (ML intro)
+- @Pola Ron (quantum entropy)
+- @gamlo (hardware)
+- @Sergei Shirkin (PennyLane)
+- @sem (multiple lectures)
+- @zimka (quantum chemistry)
 
 ### Editors
 
-* @nmarkova
-* @vitaliylyalin7000
+- @nmarkova
+- @vitaliylyalin7000
 
 ### Orgs
 
-* @yorko
-* @vtrohymenko
+- @yorko
+- @vtrohymenko
 
 ## Bibtex
 

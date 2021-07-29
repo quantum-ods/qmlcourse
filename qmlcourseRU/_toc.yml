@@ -54,6 +54,14 @@
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
 
+- part: Проблемы квантового машинного обучения
+  chapters:
+    - file: book/problemsblock/quantchembasic
+      title: 🟩 Квантовая химия (Введение)
+    - file: book/problemsblock/quantchemadvancedscf
+      title: 🟧 Квантовая химия (SCF)
+
+
 - part: О курсе
   chapters:
     - file: book/bibliography
