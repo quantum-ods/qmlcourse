@@ -15,6 +15,7 @@ scikit-learn = "^0.24.1"
 cirq = "^0.11.0"
 tensorflow = "2.4.2"
 tensorflow-quantum = "^0.5.1"
+pre-commit = "^2.13.0"
 
 [tool.poetry.dev-dependencies]
 
