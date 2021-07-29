@@ -2,10 +2,14 @@
 
 - part: Основы Python
   chapters:
-   - file: book/pythonblock/pythonintro.md
-     title: ⬜ О блоке
-   - file: book/pythonblock/python_l1.md
-     title: ⬜ Вводная лекция про Python
+    - file: book/pythonblock/pythonintro.md
+      title: ⬜ О блоке
+    - file: book/pythonblock/python_l1.md
+      title: ⬜ Вводная лекция про Python
+    - file: book/pythonblock/python_l4.md
+      title: ⬜ Переменные, типы и вывод
+    - file: book/pythonblock/jupyter_l3.md
+      title: ⬜ Ориентация в Jupyter
 
 - part: Квантовые вычисления
   chapters:
@@ -15,6 +19,8 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
+    - file: book/qcblock/deutschs_algorithm
+      title: 🟩 Алгоритм Дойча
 
 - part: Фреймворки
   chapters:
