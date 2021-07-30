@@ -13,7 +13,7 @@
      title: ⬜ О блоке
    - file: book/mlblock/ml_l1
      title: ⬜ Машинное обучение как паззл
-     
+
 - part: Квантовые вычисления
   chapters:
     - file: book/qcblock/qcintro
