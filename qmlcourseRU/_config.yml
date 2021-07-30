@@ -11,6 +11,7 @@ execute:
   timeout: -1
 
 html:
+  favicon: _static/qmlcourse_favicon.ico
   home_page_in_navbar: true
   use_repository_button: true
   use_issues_button: true
