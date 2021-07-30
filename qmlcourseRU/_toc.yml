@@ -16,7 +16,7 @@
    - file: book/mlblock/ml_intro
      title: ⬜ О блоке
    - file: book/mlblock/ml_l1
-     title: ⬜ Машинное обучение как паззл
+     title: ⬜ Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
