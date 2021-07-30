@@ -1,3 +1,5 @@
+<img src="./qmlcourseRU/logo.svg" align="left"></img>
+
 # QMLCourse
 
 <p align="left">
@@ -15,8 +17,13 @@
   </a>
 </p>
 
-| Note: the course is under active development and, for now, is Russian-only!|
-| --- |
+</br>
+
+## About
+
+| Note: the course is under active development and, for now, is Russian-only! |
+| --------------------------------------------------------------------------- |
+
 
 This is the main repository of the course.
 
@@ -28,11 +35,11 @@ This is the main repository of the course.
 
 ## Contributing Guide
 
-- [Contributing Guide](./CONTRIBUTING.md)
+[Contributing Guide](./CONTRIBUTING.md)
 
 ## Discussions
 
-- Some ideas, suggestions, remarks, etc. yuo can write at the separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions)
+Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions)
 
 ## Course Program
 
@@ -40,10 +47,10 @@ This is the main repository of the course.
 
 ### How to read the schema?
 
-- **WHITE** - introductory blocks covering prerequisites for the rest of the course;
-- **GREEN** - main flow of the course with simple introductory lectures on QC and QML;
-- **YELLOW** - highly recommended facultative lectures which explain additional topics about QML and QC;
-- **RED** - advanced level lectures which deeply explain the math and the principles underlying QML.
+- **WHITE** &mdash; introductory blocks covering prerequisites for the rest of the course;
+- **GREEN** &mdash; the main flow of the course with simple introductory lectures on QC and QML;
+- **YELLOW** &mdash; highly recommended facultative lectures which explain additional topics about QML and QC;
+- **RED** &mdash; advanced-level lectures that deeply explain the math and the principles underlying QML.
 
 ## Team
 
@@ -57,41 +64,42 @@ Semyon Sinchenko, @sem
 
 ### Core reviewers
 
-* @gamlo
-* @Sergei Shirkin
-* @Pola Ron
+- @gamlo
+- @Sergei Shirkin
+- @Pola Ron
 
 To be extended based on the actual commitment and qualification of all contributors.
 
 ### Reviewers
 
-By default that's everyone who is invited to the #org\_qml\_course Slack channel.
+By default that's everyone who is invited to the #org_qml_course Slack channel.
 
 ### Authors
 
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not indended to be always up-to-date.
+Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
 
-Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname orgs to add you to the channel.
+Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
 
-* @stm (Python)
-* @maruschin (Python)
-* @sharthZ23 (Python, NumPy)
-* @alex.ozerin (NumPy, math)
-* @yorko (ML intro)
-* @Pola Ron (quantum enthropy)
-* @gamlo (hardware)
-* @Sergei Shirkin (PennyLane)
-* @sem (multiple lectures)
+- @stm (Python)
+- @maruschin (Python)
+- @sharthZ23 (Python, NumPy)
+- @alex.ozerin (NumPy, math)
+- @yorko (ML intro)
+- @Pola Ron (quantum entropy)
+- @gamlo (hardware)
+- @Sergei Shirkin (PennyLane)
+- @sem (multiple lectures)
+- @zimka (quantum chemistry)
 
 ### Editors
 
-* @nmarkova
-* @vitaliylyalin7000
+- @nmarkova
+- @vitaliylyalin7000
 
 ### Orgs
 
-* @yorko
-* @vtrohymenko
+- @yorko
+- @vtrohymenko
 
 ## Bibtex
 

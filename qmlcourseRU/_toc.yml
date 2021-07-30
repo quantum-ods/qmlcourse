@@ -2,10 +2,14 @@
 
 - part: Основы Python
   chapters:
-   - file: book/pythonblock/pythonintro.md
-     title: ⬜ О блоке
-   - file: book/pythonblock/python_l1.md
-     title: ⬜ Вводная лекция про Python
+    - file: book/pythonblock/pythonintro.md
+      title: ⬜ О блоке
+    - file: book/pythonblock/python_l1.md
+      title: ⬜ Вводная лекция про Python
+    - file: book/pythonblock/python_l4.md
+      title: ⬜ Переменные, типы и вывод
+    - file: book/pythonblock/jupyter_l3.md
+      title: ⬜ Ориентация в Jupyter
 
 - part: Основы машинного обучения
   chapters:
@@ -56,6 +60,14 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+
+- part: Проблемы квантового машинного обучения
+  chapters:
+    - file: book/problemsblock/quantchembasic
+      title: 🟩 Квантовая химия (Введение)
+    - file: book/problemsblock/quantchemadvancedscf
+      title: 🟧 Квантовая химия (SCF)
+
 
 - part: О курсе
   chapters:
