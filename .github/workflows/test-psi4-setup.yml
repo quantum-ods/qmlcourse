@@ -58,7 +58,7 @@ jobs:
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: Remove dependencies for Windows
-        if: ${{ github.runner_os == 'Windows'}}
+        if: ${{ runner.os == 'Windows'}}
         run: |
           poetry remove tensorflow-quantum      
 
