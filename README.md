@@ -31,7 +31,9 @@ This is the main repository of the course.
 2. [Discussions](#discussions)
 3. [Course Program](#course-program)
 4. [Team](#team)
-5. [Bibtex Citations](#bibtex)
+5. [Join ODS](#join-ods)
+6. [Bibtex Citations](#bibtex)
+7. [Legal Issues](#legal-issues)
 
 ## Contributing Guide
 
@@ -39,7 +41,7 @@ This is the main repository of the course.
 
 ## Discussions
 
-Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions)
+Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions).
 
 ## Course Program
 
@@ -54,19 +56,21 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Team
 
+There is a not full list of core-members. The first is the nockname in the ODS slack and second is the GitHub account.
+
 ### Contributor roles
 
 Here we list all team members according to their contributor roles. Refer to [CONTRIBUTING.md](https://github.com/SemyonSinchenko/qmlcourse.ai/blob/master/CONTRIBUTING.md) for the definition of all contributor roles.
 
 ### Benevolent Dictator
 
-Semyon Sinchenko, @sem
+Semyon Sinchenko, @sem ([GitHub](https://github.com/SemyonSinchenko))
 
 ### Core reviewers
 
-- @gamlo
-- @Sergei Shirkin
-- @Pola Ron
+- @evgeniyzh ([GitHub](https://github.com/Randl))
+- @gamlo ([GitHub](https://github.com/ooovector))
+- @Sergei Shirkin ([GitHub](https://github.com/SergeiShirkin))
 
 To be extended based on the actual commitment and qualification of all contributors.
 
@@ -80,26 +84,33 @@ Content generators, to be agreed with Benevolent Dictator. See [Issues](https://
 
 Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
 
-- @stm (Python)
-- @maruschin (Python)
-- @sharthZ23 (Python, NumPy)
-- @alex.ozerin (NumPy, math)
-- @yorko (ML intro)
-- @Pola Ron (quantum entropy)
-- @gamlo (hardware)
-- @Sergei Shirkin (PennyLane)
-- @sem (multiple lectures)
-- @zimka (quantum chemistry)
+- @stm ([GitHub](https://github.com/stalkermustang)): Python
+- @maruschin ([GitHub](https://github.com/)): Python
+- @sharthZ23 ([GitHub](https://github.com/)): Python, NumPy
+- @alex.ozerin ([GitHub](https://github.com/)): NumPy, math
+- @yorko ([GitHub](https://github.com/Yorko)): ML intro, advanced SVM
+- @nkarelin ([GitHub](https://github.com/karelin)): quantum entropy and mixed states
+- @gamlo ([GitHub](https://github.com/ooovector)): hardware
+- @Sergei Shirkin ([GitHub](https://github.com/SergeiShirkin)): PennyLane, Deutsch, Grover
+- @sem ([GitHub](https://github.com/SemyonSinchenko)): multiple lectures
+- @zimka ([GitHub](https://github.com/zimka)): quantum chemistry
 
 ### Editors
 
-- @nmarkova
-- @vitaliylyalin7000
+- @nmarkova([GitHub](https://github.com/nsmarkova))
 
 ### Orgs
 
-- @yorko
-- @vtrohymenko
+- @yorko([GitHub](https://github.com/Yorko))
+- @vtrohymenko([GitHub](https://github.com/vtrohymenko))
+
+### DevOps
+
+- _not in ODS slack_ [GitHub](https://github.com/SergeiShirkin)
+
+## Join ODS
+
+To join the ODS-community Slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that we add you to the closed channel in the ODS Slack.
 
 ## Bibtex
 
@@ -113,3 +124,7 @@ Also, all authors for some updates are participants special channel into communi
   howpublished = {\url{https://github.com/SemyonSinchenko/qmlcourse.ai}},
 }
 ```
+
+## Legal Issues
+
+You can communicate course orgs wia [email](mailto:qmlcourse.ods@gmail.com). Please email us first if you found an intellectual property rights violation in the course materials or if you want using the course materials not under the CC-BY-4.0 License.
