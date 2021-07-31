@@ -56,7 +56,7 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Team
 
-There is a not full list of core-members. The first is the nockname in the ODS slack and second is the GitHub account.
+There is a not full list of core-members. The first is the nickname in the ODS slack and second is the GitHub account.
 
 ### Contributor roles
 
@@ -85,15 +85,16 @@ Content generators, to be agreed with Benevolent Dictator. See [Issues](https://
 Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
 
 - @stm ([GitHub](https://github.com/stalkermustang)): Python
-- @maruschin ([GitHub](https://github.com/)): Python
-- @sharthZ23 ([GitHub](https://github.com/)): Python, NumPy
-- @alex.ozerin ([GitHub](https://github.com/)): NumPy, math
+- @maruschin ([GitHub](https://github.com/maruschin)): Python
+- @sharthZ23 ([GitHub](https://github.com/sharthZ23)): Python, NumPy
+- @alex.ozerin ([GitHub](https://github.com/m12sl)): NumPy, math
 - @yorko ([GitHub](https://github.com/Yorko)): ML intro, advanced SVM
 - @nkarelin ([GitHub](https://github.com/karelin)): quantum entropy and mixed states
 - @gamlo ([GitHub](https://github.com/ooovector)): hardware
 - @Sergei Shirkin ([GitHub](https://github.com/SergeiShirkin)): PennyLane, Deutsch, Grover
 - @sem ([GitHub](https://github.com/SemyonSinchenko)): multiple lectures
 - @zimka ([GitHub](https://github.com/zimka)): quantum chemistry
+- @Aleksandr Berezutskii ([GitHub](https://github.com/meandmytram)): D-Wave, Barren plateau
 
 ### Editors
 
@@ -110,7 +111,7 @@ Also, all authors for some updates are participants special channel into communi
 
 ## Join ODS
 
-To join the ODS-community Slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that we add you to the closed channel in the ODS Slack.
+To join the ODS-community slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that we add you to the closed channel in the ODS Slack.
 
 ## Bibtex
 
