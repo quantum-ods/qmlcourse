@@ -6,7 +6,7 @@ check_file() {
   local has_ending=0
   local has_beginning=0
 
-  [[ ! $filepath =~ ^(\.?[a-z0-9-]+\/)+(ru|index|en)\.md$ ]] \
+  [[ ! $filepath =~ ^(\.?[a-zA-Z0-9-]+\/)+(ru|index|en)\.md$ ]] \
     && echo "$filepath bad_branch_name Check a directory tree, branch should be named only with lowercase letters (a-z), numbers (0-9) and hyphens (-), file should be named as %locale%.md (ru.md, e.g.)" \
     && HAS_ERROR=1
 
