@@ -7,7 +7,7 @@ on:
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: macOS-latest
     name: Test psi4 setup
     steps:
       - uses: actions/checkout@v2
