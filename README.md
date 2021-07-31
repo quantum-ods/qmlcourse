@@ -128,4 +128,4 @@ To join the ODS-community slack you need to fill the form [here](https://ods.ai/
 
 ## Legal Issues
 
-You can communicate course orgs wia [email](mailto:qmlcourse.ods@gmail.com). Please email us first if you found an intellectual property rights violation in the course materials or if you want using the course materials not under the CC-BY-4.0 License.
+You can communicate with course orgs via [email](mailto:qmlcourse.ods@gmail.com). Please email us first if you found an intellectual property rights violation in the course materials or if you want to use the course materials, not under the CC-BY-4.0 License.
