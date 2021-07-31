@@ -57,6 +57,11 @@ jobs:
           path: .venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
+      - name: Remove dependencies for Windows
+        if: ${{ runner.os == 'Windows'}}
+        run: |
+          poetry remove tensorflow-quantum      
+
       - name: Install dependencies
         run: |
           poetry install
@@ -75,11 +80,4 @@ jobs:
       - run: conda --version
       - run: which python
       - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: psi4 --test          
-
-      # Push the book's HTML to github-pages
-      - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU
+      - run: psi4 --test
