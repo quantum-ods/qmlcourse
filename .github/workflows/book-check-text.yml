@@ -10,7 +10,6 @@ jobs:
   yaspeller:
     name: Spell check
     runs-on: ubuntu-latest
-    allow-failure: true
     steps:
       - uses: actions/checkout@v2
       - name: Spell check
@@ -19,7 +18,7 @@ jobs:
           echo "::add-matcher::.github/problem-matchers/yaspeller.json"
           set -o pipefail; npx yaspeller -c .yaspellerrc.json . 2>&1 >/dev/null | grep -v "\-\-\-\-\-" | grep -v "Typos"
           echo "::remove-matcher owner=yaspeller::"
-        # continue-on-error: true
+        continue-on-error: true
 
   editor-config:          
     name: Editor Config check

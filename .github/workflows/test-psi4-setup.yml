@@ -43,7 +43,7 @@ jobs:
           python-version: 3.8
 
       - name: Set up poetry
-        uses: snok/install-poetry@v1.1.6
+        uses: snok/install-poetry@v1.1.7
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
@@ -65,13 +65,6 @@ jobs:
         run: |
           poetry run jupyter-book build ./qmlcourseRU
 
-      # Push the book's HTML to github-pages
-      - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU
-
       # Test setup psi4
       - name: Setup conda
         uses: s-weigand/setup-conda@v1
@@ -82,4 +75,11 @@ jobs:
       - run: conda --version
       - run: which python
       - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: psi4 --test
+      - run: psi4 --test          
+
+      # Push the book's HTML to github-pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU
