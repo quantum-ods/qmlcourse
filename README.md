@@ -103,7 +103,7 @@ Also, all authors for some updates are participants special channel into communi
 ### Orgs
 
 - @yorko([GitHub](https://github.com/Yorko))
-- @vtrohymenko([GitHub](https://github.com/vtrohymenko))
+- @vtrohimenko([GitHub](https://github.com/vtrokhymenko))
 
 ### DevOps
 
