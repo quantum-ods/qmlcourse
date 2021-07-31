@@ -56,7 +56,7 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Team
 
-There is a not full list of core-members. The first is the nickname in the ODS slack and second is the GitHub account.
+There is a not full list of core members. The first is the nickname in the ODS slack and the second is the GitHub account.
 
 ### Contributor roles
 
