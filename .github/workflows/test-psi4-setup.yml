@@ -62,6 +62,7 @@ jobs:
           CONDA_ENV_PATH=$(conda info --json | jq '.envs_dirs[0]')
           echo $CONDA_ENV_PATH
           poetry config virtualenvs.path $CONDA_ENV_PATH
+          poetry config --list
           # poetry config virtualenvs.create 0
 
       - name: Remove dependencies for Windows
@@ -77,6 +78,5 @@ jobs:
         run: |
           poetry run jupyter-book build ./qmlcourseRU
 
-      # - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: poetry chemtools
+      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
       - run: poetry psi4 --test
