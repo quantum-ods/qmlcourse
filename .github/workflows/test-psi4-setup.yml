@@ -1,0 +1,74 @@
+name: test-psi4-setup
+
+# Only run this when the master branch changes
+on:
+  workflow_dispatch:
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    # needs: [pre-commit]
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: Checkout branch with cache
+        uses: actions/checkout@v2
+        with:
+          ref: "gh-pages"
+          path: ./gh-pages
+
+      - name: Copy cache for build book
+        run: |
+          cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
+
+      # Install dependencies
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.8
+
+      - name: Set up poetry
+        uses: snok/install-poetry@v1.1.7
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      #Use cache
+      - name: Copy cache dir for dependecies
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-poetry-modules
+        with:
+          path: .venv
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Remove dependencies for Windows
+        if: ${{ runner.os == 'Windows'}}
+        run: |
+          poetry remove tensorflow-quantum
+
+      - name: Install dependencies
+        run: |
+          poetry install
+
+      - name: Build the book
+        run: |
+          poetry run jupyter-book build ./qmlcourseRU
+
+      # Test setup psi4
+      - name: Setup conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge
+      - run: conda --version
+      - run: which python
+      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
+      - run: psi4 --test
