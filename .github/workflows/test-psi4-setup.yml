@@ -46,7 +46,6 @@ jobs:
         with:
           virtualenvs-create: true
           virtualenvs-in-project: false
-          virtualenvs-path: /usr/share/miniconda/envs
 
       #Use cache
       - name: Copy cache dir for dependecies
