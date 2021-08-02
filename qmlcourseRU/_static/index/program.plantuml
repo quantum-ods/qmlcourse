@@ -1,4 +1,8 @@
 @startuml
+package "Introduction" #Bisque {
+        rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+}
+
 package "Prerequisites" #Bisque {
         rectangle "Python Intro" as python #White
         rectangle "Numpy & Linalg" as numpy #White
@@ -86,6 +90,9 @@ package "Advanced Topics" as adv #Bisque {
         rectangle "Convolutional VQC" as convvqc #FFC864
 }
 
+intro1 --> python
+intro1 --> numpy
+intro1 --> ml
 
 python --> qubit
 numpy --> qubit
