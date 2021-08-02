@@ -77,7 +77,7 @@ jobs:
 
       - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
       - run: ls -la /usr/share/miniconda/pkgs
-      - run: ls -la /home/runner/.cache/pypoetry/virtualenvs
+      - run: ls -la /home/runner/.cache/pypoetry/
       - run: poetry psi4 --test          
 
       - name: Build the book
