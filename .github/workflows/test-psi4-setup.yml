@@ -70,7 +70,6 @@ jobs:
           poetry remove tensorflow-quantum
 
       - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: |
           poetry install
 
