@@ -33,12 +33,6 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Set up poetry
-        uses: snok/install-poetry@v1.1.7
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: false
-
       # Test setup psi4
       - name: Setup conda
         uses: s-weigand/setup-conda@v1
@@ -46,6 +40,13 @@ jobs:
           activate-conda: true
           python-version: 3.8
           conda-channels: anaconda, conda-forge          
+
+      - name: Set up poetry
+        uses: snok/install-poetry@v1.1.7
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: false
+          virtualenvs-path: /usr/share/miniconda/envs
 
       #Use cache
       - name: Copy cache dir for dependecies
