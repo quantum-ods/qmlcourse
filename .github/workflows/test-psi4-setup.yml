@@ -13,7 +13,6 @@ jobs:
       matrix:
         # os: [ubuntu-latest, windows-latest, macOS-latest]
         os: [ubuntu-latest]
-    # needs: [pre-commit]
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -50,6 +49,7 @@ jobs:
 
       #Use cache
       - name: Copy cache dir for dependecies
+        id: cached-poetry-dependencies
         uses: actions/cache@v2
         env:
           cache-name: cache-poetry-modules
@@ -63,7 +63,7 @@ jobs:
           echo $CONDA_ENV_PATH
           poetry config virtualenvs.path $CONDA_ENV_PATH
           poetry config virtualenvs.create 0
-
+          poetry new project
 
       - name: Remove dependencies for Windows
         if: ${{ runner.os == 'Windows'}}
@@ -71,6 +71,7 @@ jobs:
           poetry remove tensorflow-quantum
 
       - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: |
           poetry install
 
