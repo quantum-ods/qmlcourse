@@ -36,7 +36,7 @@ jobs:
       - name: Set up poetry
         uses: snok/install-poetry@v1.1.7
         with:
-          virtualenvs-create: false
+          virtualenvs-create: true
           virtualenvs-in-project: false
 
       # Test setup psi4
@@ -57,12 +57,12 @@ jobs:
           path: .venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-      # - name: Conda env path
-      #   run: |
-      #     CONDA_ENV_PATH=$(conda info --json | jq '.envs_dirs[0]')
-      #     echo $CONDA_ENV_PATH
-      #     poetry config virtualenvs.path $CONDA_ENV_PATH
-      #     poetry config virtualenvs.create 0
+      - name: Conda env path
+        run: |
+          CONDA_ENV_PATH=$(conda info --json | jq '.envs_dirs[0]')
+          echo $CONDA_ENV_PATH
+          poetry config virtualenvs.path $CONDA_ENV_PATH
+          # poetry config virtualenvs.create 0
 
       - name: Remove dependencies for Windows
         if: ${{ runner.os == 'Windows'}}
