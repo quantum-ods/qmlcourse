@@ -75,10 +75,11 @@ jobs:
         run: |
           poetry install
 
+      # - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
+      - run: pip install psi4=1.4rc3
+      - run: poetry psi4 --test          
+
       - name: Build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
 
-      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: ls -la /usr/share/miniconda/envs
-      - run: poetry psi4 --test
