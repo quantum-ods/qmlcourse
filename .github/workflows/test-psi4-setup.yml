@@ -59,11 +59,11 @@ jobs:
 
       - name: Conda env path
         run: |
-          CONDA_ENV_PATH=$(conda info --json | jq '.envs_dirs[0]')
-          echo $CONDA_ENV_PATH
-          poetry config virtualenvs.path "/usr/share/miniconda/envs"
+          # CONDA_ENV_PATH=$(conda info --json | jq '.envs_dirs[0]')
+          # echo $CONDA_ENV_PATH
+          # poetry config virtualenvs.path "/usr/share/miniconda/envs"
           poetry config --list
-          ls -la /usr/share/miniconda/envs
+          # ls -la /usr/share/miniconda/envs
           # poetry config virtualenvs.create 0
 
       - name: Remove dependencies for Windows
