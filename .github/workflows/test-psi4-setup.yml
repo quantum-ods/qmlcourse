@@ -79,6 +79,8 @@ jobs:
       - run: ls -la /usr/share/miniconda/pkgs
       - run: ls -la /home/runner/.cache/pypoetry/
       - run: ls -la /home/runner/.cache/pip/
+      - run: ls -la /home/runner/.cache/cache
+      - run: ls -la /home/runner/.cache/artifacts
       - run: poetry psi4 --test          
 
       - name: Build the book
