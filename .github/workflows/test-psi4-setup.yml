@@ -60,8 +60,8 @@ jobs:
       - name: Conda env path
         run: |
           CONDA_ENV_PATH=$(conda info --json | jq '.envs_dirs[0]')
-          poetry config settings.virtualenvs.path $CONDA_ENV_PATH
-          poetry config settings.virtualenvs.create 0
+          poetry config virtualenvs.path $CONDA_ENV_PATH
+          poetry config virtualenvs.create 0
 
 
       - name: Remove dependencies for Windows
