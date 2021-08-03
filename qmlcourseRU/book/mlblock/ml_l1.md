@@ -90,8 +90,8 @@ kernelspec:
 
 Допустим, стоит задача определения аномалий на рентгенограммах грудной клетки. В идеале мы хотели мы сразу по таким изображениям обнаруживать симптомы симптомов COVID-19 у пациента. Но заголовок этого примера выдает желаемое за действительное, и, конечно, сразу по снимкам диагностировать не получится.  
 
-```{figure} /_static/mlblock/COVID_detection_ct.png
-:width: 800px
+```{figure} /_static/mlblock/covid_detection_ct.png
+:width: 1000px
 :name: COVID_detection_ct
 
 Пример данных [соревнования](https://www.kaggle.com/c/siim-COVID19-detection) по определению аномалий на рентгенограммах грудной клетки. [Источник](https://www.kaggle.com/andradaolteanu/siim-COVID-19-box-detect-dcm-metadata)
@@ -99,8 +99,8 @@ kernelspec:
 
 Поэтому в такой задаче надо аккуратно определить _Целевой признак_. В данном случае их несколько. Согласно [описанию источника данных](https://www.kaggle.com/c/siim-covid19-detection/data) соревнования, комитет врачей-радиологов проанализировал 6334 рентгенограмм и пометил их метками: 'Negative for Pneumonia' (нет пневмонии), 'Typical Appearance' (нормально), 'Indeterminate Appearance' (неразборчиво) и 'Atypical Appearance' (ненормально). Надо четко понимать, что возможности обученной модели будут ограничены имеющейся разметкой и поэтому заголовок "детекция симптомов COVID-19" слегка "желтоват", в реальности модель детекции сможет выделять участок изображения (bounding box) и помечать это вектором из 4-х значений, соответствующих описанным целевым признакам в обучающей выборке.
 
-```{figure} /_static/mlblock/COVID_detection_prediction.png
-:width: 800px
+```{figure} /_static/mlblock/covid_detection_prediction.png
+:width: 1000px
 :name: COVID_detection_prediction
 
 Прогноз модели детекции, обученной на данных [соревнования](https://www.kaggle.com/c/siim-COVID19-detection) по определению аномалий на рентгенограммах грудной клетки. [Источник](https://www.kaggle.com/yujiariyasu/catch-up-on-positive-samples-plot-submission-csv)
