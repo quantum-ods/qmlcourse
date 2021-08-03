@@ -135,9 +135,32 @@ else:
 
 Логическое **НЕ** (отрицание) является унарным (то есть **с одним операндом**) оператором и имеет вид `not`, за которым следует единственный операнд. Логическое НЕ возвращает `True`, **если операнд равен** `False` и **наоборот**.
 
-Эти правила необходимо запомнить для успешного создания сложных условий с целью разделения логики, заложенной в `Python`-коде.
+Эти правила необходимо запомнить для успешного создания сложных условий с целью разделения логики, заложенной в `Python`-коде. 
 
-Теперь попробуем их применить на практике:
+Проиллюстрируем правила в коде на простых примерах. Обратите внимание на то, как можно объявлять `bool`-переменные -- это не сложнее, чем создание целочисленного значения:
+
+```{code-cell} ipython3
+true_value = True
+false_value = False
+
+# False потому, что один из операндов является False
+some_value = true_value and false_value
+print(some_value)
+
+# True потому, что хотя бы один из операндов равен True
+some_value = true_value or false_value
+print(some_value)
+
+# отрицание True (истины) есть False (ложь)
+some_value = not true_value
+print(some_value == false_value)
+
+# пример сложного условия - порядок лучше в явном виде задавать скобками
+hard_condition = (not true_value or false_value) or (true_value != false_value)
+print(hard_condition)
+```
+
+Теперь попробуем их применить на приближенных к практике примерам:
 
 ```{code-cell} ipython3
 x = -3.6
@@ -161,9 +184,9 @@ print('Is x small? ', x_is_small)
 print('Is x large? ', x_is_large)
 
 # так тоже можно писать - на манер неравенств в математике
-anoither_x_is_small = -3 < x < 3
-print(anoither_x_is_small)
-print(anoither_x_is_small == x_is_small)
+another_x_is_small = -3 < x < 3
+print(another_x_is_small)
+print(another_x_is_small == x_is_small)
 ```
 
 Так как вторая переменная `x_is_large` -- это отрицание (`not`) первой (`x_is_small`), то они **никогда** не будут равны.
