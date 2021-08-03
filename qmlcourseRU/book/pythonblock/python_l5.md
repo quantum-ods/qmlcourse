@@ -160,7 +160,7 @@ hard_condition = (not true_value or false_value) or (true_value != false_value)
 print(hard_condition)
 ```
 
-Теперь попробуем их применить на приближенных к практике примерам:
+Теперь попробуем их применить на приближенных к практике примерах:
 
 ```{code-cell} ipython3
 x = -3.6
