@@ -11,10 +11,12 @@
       title: ⬜ О блоке
     - file: book/pythonblock/python_l1.md
       title: ⬜ Вводная лекция про Python
-    - file: book/pythonblock/python_l4.md
-      title: ⬜ Переменные, типы и вывод
     - file: book/pythonblock/jupyter_l3.md
       title: ⬜ Ориентация в Jupyter
+    - file: book/pythonblock/python_l4.md
+      title: ⬜ Переменные, типы и вывод
+    - file: book/pythonblock/python_l5.md
+      title: ⬜ Условия и сравнения
 
 - part: Квантовые вычисления
   chapters:
