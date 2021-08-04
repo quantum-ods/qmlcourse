@@ -44,7 +44,7 @@ jobs:
         with:
           update-conda: true
           python-version: 3.8
-          conda-channels: anaconda, conda-forge          
+          conda-channels: anaconda, conda-forge
 
       #Use cache
       - name: Copy cache dir for dependecies
