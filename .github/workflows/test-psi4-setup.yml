@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # os: [ubuntu-latest, windows-latest, macOS-latest]
+        #os: [ubuntu-latest, windows-latest, macOS-latest]
         os: [ubuntu-latest]
     steps:
       - name: Checkout branch for build
@@ -33,38 +33,28 @@ jobs:
         with:
           python-version: 3.8
 
-      # Test setup psi4
-      - name: Setup conda
-        uses: s-weigand/setup-conda@v1
-        with:
-          activate-conda: true
-          python-version: 3.8
-          conda-channels: anaconda, conda-forge          
-
       - name: Set up poetry
         uses: snok/install-poetry@v1.1.7
         with:
           virtualenvs-create: true
-          virtualenvs-in-project: false
+          virtualenvs-in-project: true
+
+      # Test setup conda
+      - name: Setup conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge          
 
       #Use cache
       - name: Copy cache dir for dependecies
-        id: cached-poetry-dependencies
         uses: actions/cache@v2
         env:
           cache-name: cache-poetry-modules
         with:
           path: .venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Conda env path
-        run: |
-          # CONDA_ENV_PATH=$(conda info --json | jq '.envs_dirs[0]')
-          # echo $CONDA_ENV_PATH
-          # poetry config virtualenvs.path "/usr/share/miniconda/envs"
-          poetry config --list
-          ls -la /usr/share/miniconda/pkgs
-          # poetry config virtualenvs.create 0
 
       - name: Remove dependencies for Windows
         if: ${{ runner.os == 'Windows'}}
@@ -76,14 +66,8 @@ jobs:
           poetry install
 
       - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: ls -la /usr/share/miniconda/pkgs
-      - run: ls -la /home/runner/.cache/pypoetry/
-      - run: ls -la /home/runner/.cache/pip/
-      - run: ls -la /home/runner/.cache/pypoetry/cache
-      - run: ls -la /home/runner/.cache/pypoetry/artifacts
-      - run: poetry psi4 --test          
+      - run: poetry run psi4 --test
 
       - name: Build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
-
