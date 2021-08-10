@@ -1,5 +1,6 @@
 title: QMLCourse
-author: Sinchenko SA et al.
+author: ODS Quantum Community
+copyright: "2021"
 logo: "logo.svg"
 
 description: >-
@@ -7,16 +8,22 @@ description: >-
 
 execute:
   execute_notebooks: cache
+  run_in_temp: true
   timeout: -1
 
 html:
+  favicon: _static/qmlcourse_favicon.ico
   home_page_in_navbar: true
+  use_repository_button: true
+  use_issues_button: true
+  baseurl: https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html
+  google_analytics_id: UA-51362752-1
 
 notebook_interface: "notebook"
 
-repository:
-  url: https://github.com/SemyonSinchenko/qmlcourse
-  path_to_book: "qmlcourseRU"
+# repository:
+#   url: https://github.com/SemyonSinchenko/qmlcourse.ai
+#   path_to_book: "qmlcourseRU"
 
 latex:
   latex_engine: "xelatex"
@@ -31,3 +38,11 @@ parse:
   myst_enable_extensions:
     - amsmath
     - physics
+
+bibtex_bibfiles:
+  - _bibliography/references.bib
+
+repository:
+  url: https://github.com/SemyonSinchenko/qmlcourse
+  path_to_book: qmlcourseRU
+  branch: master

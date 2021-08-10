@@ -1,5 +1,5 @@
 # Created by https://www.toptal.com/developers/gitignore/api/emacs,python,jupyternotebooks,latex
-# 
+#
 # Edit at https://www.toptal.com/developers/gitignore?templates=emacs,python,jupyternotebooks,latex
 
 ### Emacs ###
@@ -510,3 +510,6 @@ _minted*
 
 # Jupyter Book
 _build*
+
+# VSCode settings dir
+.vscode

@@ -1,8 +1,12 @@
 @startuml
+package "Introduction" #Bisque {
+        rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+}
+
 package "Prerequisites" #Bisque {
-        rectangle "Python Intro" as python #White
-        rectangle "Numpy & Linalg" as numpy #White
-        rectangle "Classical ML/DL" as ml #White
+        rectangle "Python Intro" as python #14D2EF
+        rectangle "Numpy & Linalg" as numpy #14D2EF
+        rectangle "Classical ML/DL" as ml #14D2EF
 }
 
 package "Quantum Computing" as qci #Bisque {
@@ -59,7 +63,7 @@ package "VQE" #Bisque {
         rectangle "VQE" as vqe #40B464
         rectangle "Adaptive VQE" as avqe #FFC864
         rectangle "Layered VQC" as lvqe #FFC864
-        rectangle "UUC anzatz" as uuc #E0535C
+        rectangle "UCC ansatz" as uuc #E0535C
 }
 
 package "QAOA" #Bisque {
@@ -86,6 +90,9 @@ package "Advanced Topics" as adv #Bisque {
         rectangle "Convolutional VQC" as convvqc #FFC864
 }
 
+intro1 --> python
+intro1 --> numpy
+intro1 --> ml
 
 python --> qubit
 numpy --> qubit

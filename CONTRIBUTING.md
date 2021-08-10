@@ -98,6 +98,18 @@ _If you have problems with the build command try to pass the full path to the fo
 
 Chapters and headers in markdown must exactly follow the main structure of the book. Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
 
+### Glossary terms
+
+Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common
+glossary, `glossary.md`.
+
+On first use of a term in main book text, please refer to glossary using the format:
+```markdown
+{term}`chapter text<glossary term>`
+```
+(with this notation, the chapter will contain text "chapter text" and build script will create reference to
+"glossary term").
+
 ## GitHub intro
 
 If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
@@ -142,7 +154,29 @@ Example:
 
 ## Pull Requests
 
-- If you were assigned to an issue, you need to create a new branch. When you finish your work you make a Pull Request where you tag the initial issue.
+- If you were assigned to an issue, you need to create a new branch from the `master`
+- When you finish your work you make a Pull Request (into `master` branch) where you tag the initial issue and assign youself (right in the panel)
+
+### Run pre-commit hooks before building
+
+Before you can run hooks, you need to have the pre-commit package manager installed.
+
+Install poetry (package manager for Python projects)
+
+```{shell}
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+```
+
+Install dependency and pre-commit
+
+```{shell}
+poetry install
+```
+
+Run pre-commit hooks
+```{shell}
+poetry run pre-commit run --all-files
+```
 
 ## List of authors <a name="authors"></a>
 
