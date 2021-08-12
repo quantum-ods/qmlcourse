@@ -10,22 +10,22 @@
     - file: book/pythonblock/pythonintro.md
       title: ⬜ О блоке
     - file: book/pythonblock/python_l1.md
-      title: ⬜ Вводная лекция про Python
+      title: 🟦 Вводная лекция про Python
     - file: book/pythonblock/jupyter_l3.md
-      title: ⬜ Ориентация в Jupyter
+      title: 🟦 Ориентация в Jupyter
     - file: book/pythonblock/python_l4.md
-      title: ⬜ Переменные, типы и вывод
+      title: 🟦 Переменные, типы и вывод
     - file: book/pythonblock/python_l5.md
-      title: ⬜ Условия и сравнения
+      title: 🟦 Условия и сравнения
     - file: book/pythonblock/python_l6.md
-      title: ⬜ Списки и циклы
+      title: 🟦 Списки и циклы
 
 - part: Основы машинного обучения
   chapters:
    - file: book/mlblock/ml_intro
      title: ⬜ О блоке
    - file: book/mlblock/ml_l1
-     title: ⬜ Машинное обучение как пазл
+     title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:

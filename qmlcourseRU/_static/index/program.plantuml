@@ -4,9 +4,9 @@ package "Introduction" #Bisque {
 }
 
 package "Prerequisites" #Bisque {
-        rectangle "Python Intro" as python #White
-        rectangle "Numpy & Linalg" as numpy #White
-        rectangle "Classical ML/DL" as ml #White
+        rectangle "Python Intro" as python #14D2EF
+        rectangle "Numpy & Linalg" as numpy #14D2EF
+        rectangle "Classical ML/DL" as ml #14D2EF
 }
 
 package "Quantum Computing" as qci #Bisque {
