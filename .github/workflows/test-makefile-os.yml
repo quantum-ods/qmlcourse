@@ -1,4 +1,4 @@
-name: test-makefile-os-linux
+name: test-makefile-os-ubuntu-macos
 
 # Only run this when the master branch changes
 on:
