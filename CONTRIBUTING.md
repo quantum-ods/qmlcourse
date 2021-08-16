@@ -180,29 +180,28 @@ poetry run pre-commit run --all-files
 
 ### Run spell-checker
 
-Before make a Pull Request, you need to run book checker test.
-During this process, github action will make spell check.
+Prior to opening a Pull Request, you need to run book checker test. During this process, GitHub Action will perform spell checkung.
 
-Spell check use `yaspeller`.
-`Yaspeller` is Search tool typos in the text, files and websites.
-Yaspeller use API Yandex.Speller.
+Spell check use `yaspeller`. `Yaspeller` is a search tool for typos in the text, files and websites. It uses API Yandex.Speller.
 
-For run spell check, you need:
-1. Open GitHub Actions for your project.
-2. Choose `book-check-text` workflow.
-3. Click on button `Run workflow` (on the right) and choose your branch name.
+To run spell check, you need to:
+
+1. Open GitHub Actions for your project;
+2. Select the `book-check-text` workflow;
+3. Click on the button `Run workflow` (on the right) and choose your branch name.
+4
 <img src="https://habrastorage.org/webt/nf/hv/vx/nfhvvx2skeudhoecaqczqmhxhb4.png" />
 
 If you have mistakes after spell check was finished, you need:
+
 1. Get a log from this job. 
-Actions Page - `book-check-text` - click on your workflow with mistake - click `Spell check`
+Actions Page -> `book-check-text` -> click on your workflow with mistake -> click `Spell check`
 <img src="https://habrastorage.org/webt/qn/ja/cf/qnjacfv9tclhxkhmmknffqrw0lq.png" />
 <img src="https://habrastorage.org/webt/xt/vs/eo/xtvseofzzdk5gjlrksc4gno0mms.png" />
 
-2. Investigate this logs and each mistakes.
-3. If you did own mistake you need to fix it in your code.
-4. If you think this word is correct - add this word in dictionary. 
-file `.yaspellerrc.json` - part `dictionary` or part `ignoreText`
+2. Investigate this logs and each mistake;
+3. If that's indeed a typo, you need to fix it in source files
+4. If you think this word is correct, add this word to the dictionary file `.yaspellerrc.json` -- part `dictionary` or part `ignoreText`
 5. About remaining mistakes ask your curator.
 
 
