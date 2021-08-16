@@ -10,7 +10,7 @@
     "ignoreUppercase": true,
     "ignoreUrls": true,
     "ignoreCapitalization": true,
-    "checkYo": true,
+    "checkYo": false,
     "ignoreText": [
       ["– .*\\]", "g"],
       ["следующие люди:.*", "g"]
@@ -222,6 +222,7 @@
       "Кашницк.*",
       "сниппет.*",
       "сайентист",
-      "Дойч.*"
+      "Дойч.*",
+      "прототипирован.*"
     ]
   }
