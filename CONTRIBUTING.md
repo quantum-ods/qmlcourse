@@ -194,7 +194,7 @@ To run spell check, you need to:
 
 If you have mistakes after spell check was finished, you need:
 
-1. Get a log from this job. 
+1. Get a log from this job.
 Actions Page -> `book-check-text` -> click on your workflow with mistake -> click `Spell check`
 <img src="https://habrastorage.org/webt/qn/ja/cf/qnjacfv9tclhxkhmmknffqrw0lq.png" />
 <img src="https://habrastorage.org/webt/xt/vs/eo/xtvseofzzdk5gjlrksc4gno0mms.png" />
