@@ -4,7 +4,7 @@ copyright: "2021"
 logo: "logo.svg"
 
 description: >-
-  An adaptive and practical course about Quantum Machine Learning in NISQ-era and related topics.
+  An adaptive and practical course about Quantum Machine Learning in the NISQ-era and related topics.
 
 execute:
   execute_notebooks: cache
