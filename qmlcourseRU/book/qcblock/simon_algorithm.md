@@ -145,11 +145,10 @@ $$|00\rangle \otimes | F^*(00) \rangle + |01\rangle  \otimes | F^*(01) \rangle +
 А что произойдёт в действительности? Мы создали ещё по одной суперпозиции -- для каждого запутанного состояния!
 
 $$
-\frac{1}{4} \left[ |00\rangle \otimes \sum_{x=0}^{2^{n-1}}(-1)^{00 \cdot X_0 X_1} F^*(x_0 x_1) +
+\frac{1}{4} [ |00\rangle \otimes \sum_{x=0}^{2^{n-1}}(-1)^{00 \cdot X_0 X_1} F^*(x_0 x_1) +
 |01\rangle \otimes \sum_{x=0}^{2^{n-1}}(-1)^{01 \cdot X_0 X_1} F^*(x_0 x_1) + \\
 |10\rangle \otimes \sum_{x=0}^{2^{n-1}}(-1)^{10 \cdot X_0 X_1} F^*(x_0 x_1)  +
-|11\rangle \otimes \sum_{x=0}^{2^{n-1}}(-1)^{11 \cdot X_0 X_1} F^*(x_0 x_1)  \right]
-\end{aligned}
+|11\rangle \otimes \sum_{x=0}^{2^{n-1}}(-1)^{11 \cdot X_0 X_1} F^*(x_0 x_1)  ]
 $$
 
 
