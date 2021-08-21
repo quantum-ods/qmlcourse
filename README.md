@@ -108,7 +108,7 @@ Also, all authors for some updates are participants special channel into communi
 
 ### DevOps
 
-- _not in ODS slack_ [GitHub](https://github.com/dkorzhov)
+- @Korzhov Dmitry ([GitHub](https://github.com/dkorzhov))
 
 ## Join ODS
 
