@@ -40,7 +40,7 @@ average_grade = average_grade / 30
 # разные способы объявления списков
 first_list = []
 second_list = list()
-third_list = list(1,2, 'stroka', 3.14)
+third_list = list([1,2, 'stroka', 3.14])
 fourth_lust = [15, 2.2, ['another_list', False]]
 
 print(type(second_list), type(fourth_lust))
@@ -203,7 +203,7 @@ for cur_grade in math_journal:
     if cur_grade >= 4:
         counter += 1
 
-print(f'Всего хорошистов и отличников по математике {counter} человек')
+print(f'Всего хорошистов и отличников по математике {counter} человека')
 ```
 
 ```{code-cell} ipython3
@@ -224,7 +224,7 @@ cur_grade = math_journal[2]
 if cur_grade >= 4:
     counter += 1
 
-print(f'Всего хорошистов и отличников по математике {counter} человек')
+print(f'Всего хорошистов и отличников по математике {counter} человека')
 ```
 
 Понятно, что первый кусок кода обобщается на любой случай - хоть оценок десять, хоть тысяча. Второе решение не масштабируется, появляется **много одинакового кода, в котором легко ошибиться** (не поменять индекс, к примеру).
