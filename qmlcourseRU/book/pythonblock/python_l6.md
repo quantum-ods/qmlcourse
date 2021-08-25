@@ -40,8 +40,8 @@ average_grade = average_grade / 30
 # разные способы объявления списков
 first_list = []
 second_list = list()
-third_list = list([1,2, 'stroka', 3.14])
-fourth_lust = [15, 2.2, ['another_list', False]]
+third_list = list([1,2, "stroka", 3.14])
+fourth_lust = [15, 2.2, ["another_list", False]]
 
 print(type(second_list), type(fourth_lust))
 print(first_list, fourth_lust)
@@ -121,11 +121,11 @@ math_journal = [1, 2, 3, 4, 5]
 
 # возьмем последнюю оценку
 last_grade = math_journal[-1]
-print('Последняя оценка: ', last_grade)
+print(f"Последняя оценка: {last_grade}")
 
 # а теперь - предпоследнюю
 prev = math_journal[-2]
-print('Предпоследняя оценка: ', prev)
+print(f"Предпоследняя оценка: {prev}")
 
 # конечно, взятие по индексам можно использовать в ранее разобранном синтаксисе
 
@@ -148,28 +148,28 @@ math_journal = [1, 2, 3, 4, 5]
 
 # как взять первые 3 оценки?
 first_3_grades = math_journal[:3]
-print(f'{first_3_grades = }')
+print(f"{first_3_grades = }")
 
 # как взять последние две оценки?
 last_2_grades = math_journal[-2:]
-print(f'{last_2_grades = }')
+print(f"{last_2_grades = }")
 
 # сделаем срез на 4 оценки, начиная со второй (с индексом 1)
 start_index = 1
 some_slice = math_journal[start_index : start_index + 4]
-print(f'{some_slice = }')
+print(f"{some_slice = }")
 
 # возьмем столько объектов из начала, сколько объектов в some_slice
 yet_another_slice = math_journal[:len(some_slice)]
 
 # а вот так можно проверить, попадает ли объект в список
-print('Верно ли, что единица входит в some_slice? ', 1 in some_slice)
-print('Верно ли, что единица входит в yet_another_slice? ', 1 in yet_another_slice)
+print("Верно ли, что единица входит в some_slice? {1 in some_slice}")
+print("Верно ли, что единица входит в yet_another_slice? {1 in yet_another_slice}")
 ```
 
 ```{tip}
 Можно сделать пустой срез, и тогда Python вернет пустой список без объектов. Можете проверить сами:
-`['1', '2', '3'][10:20]`
+`["1", "2", "3"][10:20]`
 ```
 
 Давайте проговорим основные моменты, которые **крайне важно понять**:
@@ -205,7 +205,7 @@ for cur_grade in math_journal:
     if cur_grade >= 4:
         counter += 1
 
-print(f'Всего хорошистов и отличников по математике {counter} человека')
+print(f"Всего хорошистов и отличников по математике {counter} человека")
 ```
 
 ```{code-cell} ipython3
@@ -226,7 +226,7 @@ cur_grade = math_journal[2]
 if cur_grade >= 4:
     counter += 1
 
-print(f'Всего хорошистов и отличников по математике {counter} человека')
+print(f"Всего хорошистов и отличников по математике {counter} человека")
 ```
 
 Понятно, что первый кусок кода обобщается на любой случай - хоть оценок десять, хоть тысяча. Второе решение не масштабируется, появляется **много одинакового кода, в котором легко ошибиться** (не поменять индекс, к примеру).
@@ -242,7 +242,7 @@ for student_index in range(len(math_journal)):
     if curent_student_grade >= 4:
         good_student_indexes.append(student_index)
 
-print('Преуспевающие по математике студенты находятся на позициях: ', good_student_indexes)
+print(f"Преуспевающие по математике студенты находятся на позициях: {good_student_indexes}")
 ```
 
 В примере `student_index` принимает последовательно все значения от `0` до `7` включительно. `len(math_journal)` равняется `8`, а значит восьмерка сама не будет включена в набор индексов для перебора. На каждой итерации `curent_student_grade` меняет свое значение, после чего происходит проверка. Если бы была необходимость пробежаться только по студентам, начиная с третьего, то нужно было бы указать `range(2, len(math_journal))` (двойка вместо тройки потому, что индексация с нуля, ведь мы перебираем индексы массива).
