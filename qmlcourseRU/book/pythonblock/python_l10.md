@@ -111,7 +111,7 @@ print(f"{type(example_list) = }")
 a = Int(3)
 b = Int(4)
 
-a.add(b.value)
+a.add(b)
 print(f"После простого сложения: {a.value = }, {b.value = }")
 
 c = a.add(b)
