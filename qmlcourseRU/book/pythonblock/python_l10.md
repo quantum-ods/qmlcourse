@@ -33,7 +33,7 @@ kernelspec:
 
 ```{figure} /_static/pythonblock/oop_l10/class_and_obj1.png
 :name: class_and_obj1
-:width: 350px
+:width: 250px
 
 Так можно проиллюстрировать соотношение "класс - объекты". Сверху указаны общие прототипы (прямоугольник, звезда, треугольник), снизу - уникальные экземпляры, со своим цветом и деталями.
 ```
@@ -48,7 +48,7 @@ print(f"Метод append имеет тип {example_list.append}")
 example_list.append("чем-то")
 
 # а вот так можно обратиться к атрибуту конкретного объекта
-attr_value = x.__doc__
+attr_value = example_list.__doc__
 print(f"Значение атрибута: {attr_value}")
 ```
 
