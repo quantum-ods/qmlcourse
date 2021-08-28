@@ -100,14 +100,14 @@ Chapters and headers in markdown must exactly follow the main structure of the b
 
 ### Glossary terms
 
-Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common 
+Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common
 glossary, `glossary.md`.
 
 On first use of a term in main book text, please refer to glossary using the format:
 ```markdown
 {term}`chapter text<glossary term>`
 ```
-(with this notation, the chapter will contain text "chapter text" and build script will create reference to 
+(with this notation, the chapter will contain text "chapter text" and build script will create reference to
 "glossary term").
 
 ## GitHub intro
@@ -154,7 +154,56 @@ Example:
 
 ## Pull Requests
 
-- If you were assigned to an issue, you need to create a new branch. When you finish your work you make a Pull Request where you tag the initial issue.
+- If you were assigned to an issue, you need to create a new branch from the `master`
+- When you finish your work you make a Pull Request (into `master` branch) where you tag the initial issue and assign youself (right in the panel)
+
+### Run pre-commit hooks before building
+
+Before you can run hooks, you need to have the pre-commit package manager installed.
+
+Install poetry (package manager for Python projects)
+
+```{shell}
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+```
+
+Install dependency and pre-commit
+
+```{shell}
+poetry install
+```
+
+Run pre-commit hooks
+```{shell}
+poetry run pre-commit run --all-files
+```
+
+### Run spell-checker
+
+Prior to opening a Pull Request, you need to run book checker test. During this process, GitHub Action will perform spell checkung.
+
+Spell check use `yaspeller`. `Yaspeller` is a search tool for typos in the text, files and websites. It uses API Yandex.Speller.
+
+To run spell check, you need to:
+
+1. Open GitHub Actions for your project;
+2. Select the `book-check-text` workflow;
+3. Click on the button `Run workflow` (on the right) and choose your branch name.
+4
+<img src="https://habrastorage.org/webt/nf/hv/vx/nfhvvx2skeudhoecaqczqmhxhb4.png" />
+
+If you have mistakes after spell check was finished, you need:
+
+1. Get a log from this job.
+Actions Page -> `book-check-text` -> click on your workflow with mistake -> click `Spell check`
+<img src="https://habrastorage.org/webt/qn/ja/cf/qnjacfv9tclhxkhmmknffqrw0lq.png" />
+<img src="https://habrastorage.org/webt/xt/vs/eo/xtvseofzzdk5gjlrksc4gno0mms.png" />
+
+2. Investigate this logs and each mistake;
+3. If that's indeed a typo, you need to fix it in source files
+4. If you think this word is correct, add this word to the dictionary file `.yaspellerrc.json` -- part `dictionary` or part `ignoreText`
+5. About remaining mistakes ask your curator.
+
 
 ## List of authors <a name="authors"></a>
 

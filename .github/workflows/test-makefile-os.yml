@@ -1,0 +1,27 @@
+name: test-makefile-os-ubuntu-macos
+
+# Only run this when the master branch changes
+on:
+  workflow_dispatch:
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: make install-${{ matrix.os }}
+
+      - name: Build the book
+        run: |
+          make build

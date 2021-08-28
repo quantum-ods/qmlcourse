@@ -1,22 +1,25 @@
-name: deploy-book-cache
+name: test-psi4-setup
 
 # Only run this when the master branch changes
 on:
   workflow_dispatch:
-  pull_request:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
-      
-      - name: Checkout branch with cache     
+
+      - name: Checkout branch with cache
         uses: actions/checkout@v2
         with:
-          ref: 'gh-pages'
+          ref: "gh-pages"
           path: ./gh-pages
 
       - name: Copy cache for build book
@@ -25,15 +28,23 @@ jobs:
 
       # Install dependencies
       - name: Set up Python 3.8
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2.2.2
         with:
           python-version: 3.8
 
       - name: Set up poetry
-        uses: snok/install-poetry@v1.1.6
+        uses: snok/install-poetry@v1.1.7
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
+
+      # Test setup conda
+      - name: Setup conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge
 
       #Use cache
       - name: Copy cache dir for dependecies
@@ -42,18 +53,20 @@ jobs:
           cache-name: cache-poetry-modules
         with:
           path: .venv
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}          
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Remove dependencies for Windows
+        if: ${{ runner.os == 'Windows'}}
+        run: |
+          poetry remove tensorflow-quantum
 
       - name: Install dependencies
         run: |
           poetry install
-      # Build the book
+
+      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
+      - run: poetry run psi4 --test
+
       - name: Build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
-      # Push the book's HTML to github-pages
-      - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU

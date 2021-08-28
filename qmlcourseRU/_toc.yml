@@ -1,11 +1,29 @@
 - file: book/index
 
+- part: Введение
+  chapters:
+    - file: book/intro1block/intro1.md
+      title: 🟦 О квантовых компьютерах
+
 - part: Основы Python
   chapters:
-   - file: book/pythonblock/pythonintro.md
+    - file: book/pythonblock/pythonintro.md
+      title: ⬜ О блоке
+    - file: book/pythonblock/python_l1.md
+      title: 🟦 Вводная лекция про Python
+    - file: book/pythonblock/jupyter_l3.md
+      title: 🟦 Ориентация в Jupyter
+    - file: book/pythonblock/python_l4.md
+      title: 🟦 Переменные, типы и вывод
+    - file: book/pythonblock/python_l5.md
+      title: 🟦 Условия и сравнения
+
+- part: Основы машинного обучения
+  chapters:
+   - file: book/mlblock/ml_intro
      title: ⬜ О блоке
-   - file: book/pythonblock/python_l1.md
-     title: ⬜ Вводная лекция про Python
+   - file: book/mlblock/ml_l1
+     title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
@@ -49,6 +67,14 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+
+- part: Проблемы квантового машинного обучения
+  chapters:
+    - file: book/problemsblock/quantchembasic
+      title: 🟩 Квантовая химия (Введение)
+    - file: book/problemsblock/quantchemadvancedscf
+      title: 🟧 Квантовая химия (SCF)
+
 
 - part: О курсе
   chapters:
