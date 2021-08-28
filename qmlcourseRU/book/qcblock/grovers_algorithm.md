@@ -210,7 +210,7 @@ def U_iteration():
 
 ```{code-cell} ipython3
 @qml.qnode(dev)
-def circuit(N):
+def circuit(N: int):
     U_start()
     for t in range(N):
         U_iteration()
