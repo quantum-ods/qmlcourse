@@ -11,6 +11,15 @@ on:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2.2.2
+      - uses: pre-commit/action@v2.0.3
+        with:
+          extra_args: --all-files
+
   deploy-book:
     runs-on: ubuntu-latest
     env:
