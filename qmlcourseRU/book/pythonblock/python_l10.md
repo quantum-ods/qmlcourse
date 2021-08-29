@@ -188,7 +188,7 @@ class Object:
 def one_system_cycle(system: System, objects = None):
     if objects is not None:
         system.second_action(objects)
-        # убираем один посдений объект
+        # убираем один последний объект
         objects = objects[:-1]
     else:
         objects = [Object(val) for val in range(5)]
