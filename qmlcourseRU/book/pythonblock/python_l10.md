@@ -169,7 +169,7 @@ class System:
         ]
 
     def first_action(self, object):
-        # взаимодействие с одним объектом: умвеличение энергии, изменение состояния системы
+        # взаимодействие с одним объектом: увеличение энергии, изменение состояния системы
         self.gamma -= object.energy
         self.energy += object.energy
         self.system_state = [param - alpha * self.energy for param in self.system_state]
