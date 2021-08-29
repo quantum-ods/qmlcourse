@@ -172,7 +172,7 @@ class System:
         # взаимодействие с одним объектом: увеличение энергии, изменение состояния системы
         self.gamma -= object.energy
         self.energy += object.energy
-        self.system_state = [param - alpha * self.energy for param in self.system_state]
+        self.system_state = [param - self.alpha * self.energy for param in self.system_state]
 
     def second_action(self, list_of_object):
         # взаимодействие с несколькими объектами - увеличение их энергии
