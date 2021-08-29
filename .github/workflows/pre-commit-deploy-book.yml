@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       DisableCache:
-        description: 'Disable cache'     
+        description: 'Disable cache'
         required: false
         default: 'false'
   pull_request:
