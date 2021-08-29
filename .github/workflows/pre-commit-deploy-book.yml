@@ -22,6 +22,7 @@ jobs:
 
   deploy-book:
     runs-on: ubuntu-latest
+    needs: [pre-commit]
     env:
       TF_CPP_MIN_LOG_LEVEL: 3
     steps:
