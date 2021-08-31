@@ -1,8 +1,12 @@
 name: pre-commit-deploy-book
 
-# Only run this when the master branch changes
 on:
   workflow_dispatch:
+    inputs:
+      DisableCache:
+        description: 'Disable cache'
+        required: false
+        default: 'false'
   pull_request:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
@@ -19,6 +23,8 @@ jobs:
   deploy-book:
     runs-on: ubuntu-latest
     needs: [pre-commit]
+    env:
+      TF_CPP_MIN_LOG_LEVEL: 3
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -30,6 +36,7 @@ jobs:
           path: ./gh-pages
 
       - name: Copy cache for build book
+        if: ${{ github.event.inputs.DisableCache != 'true' }}
         run: |
           cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
 

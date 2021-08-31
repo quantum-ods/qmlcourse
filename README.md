@@ -99,12 +99,12 @@ Also, all authors for some updates are participants special channel into communi
 
 ### Editors
 
-- @nmarkova([GitHub](https://github.com/nsmarkova))
+- @nmarkova ([GitHub](https://github.com/nsmarkova))
 
 ### Orgs
 
-- @yorko([GitHub](https://github.com/Yorko))
-- @vtrohimenko([GitHub](https://github.com/vtrokhymenko))
+- @yorko ([GitHub](https://github.com/Yorko))
+- @vtrohimenko ([GitHub](https://github.com/vtrokhymenko))
 
 ### DevOps
 
