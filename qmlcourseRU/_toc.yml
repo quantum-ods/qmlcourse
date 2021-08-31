@@ -21,6 +21,8 @@
       title: 🟦 Списки и циклы
     - file: book/pythonblock/python_l7_dicts.md
       title: 🟦 Словари
+    - file: book/pythonblock/python_l10.md
+      title: 🟦 Объекты и классы
 
 - part: Основы машинного обучения
   chapters:
