@@ -41,8 +41,6 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/hhl_algorithm
-      title: 🟥 Алгоритм HHL
 
 - part: Фреймворки
   chapters:
