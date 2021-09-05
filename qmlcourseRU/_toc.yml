@@ -38,7 +38,7 @@
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
     - file: book/qcblock/grovers_algorithm
-      title: 🟩 Алгоритм Гровера
+      title: 🟧 Алгоритм Гровера
 
 - part: Фреймворки
   chapters:
