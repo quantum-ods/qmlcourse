@@ -10,6 +10,8 @@ kernelspec:
   name: python3
 ---
 
+(python_l7_dicts=)
+
 
 # Словари
 
