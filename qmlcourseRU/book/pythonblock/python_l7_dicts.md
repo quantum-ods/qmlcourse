@@ -50,9 +50,13 @@ dates['Кунг Фьюри']
 
 Если указать неверный ключ в `[]`, Python будет ругаться, выбросит исключение `KeyError` и перестанет выполнять код. Чуть ниже посмотрим, как можно избежать таких ситуаций.
 
-```python
+```{code-cell} ipython3
 # пока этого ключа нет в словаре, будет ошибка при обращении
-dates['Капитан Ямайка']
+# поэтому используем перехват ошибок
+try:
+    print(dates['Капитан Ямайка'])
+except KeyError as e:
+    print(f'Ключа действительно нет: {e}')
 ```
 
 ### Изменение и добавление значений
@@ -102,14 +106,14 @@ else:
 empty_dict = {}  
 
 # None
-empty_dict.get('ключ')
+print(empty_dict.get('ключ'))
 ```
 
 Вторым аргументом метода `get()` можно указать значение, которое должно возвращаться вместо None, когда ключ не был найден:
 
 ```{code-cell} ipython3
 # теперь будет возвращено значение -1
-empty_dict.get('ключ', -1)
+print(empty_dict.get('ключ', -1))
 ```
 
 ### Что такое "длина словаря"?
@@ -136,9 +140,10 @@ del словарь[название_ключа]
 
 Предположим, коллега из самого первого примера уволился и больше нет смысла хранить его день рождения:
 
-```python
+```{code-cell} ipython3
 # из словаря dates удаляется ключ 'Наташа Романова'
 del dates['Наташа Романова']
+print(dates.get('Наташа Романова'))
 ```
 
 2. `pop()` -- метод, который достает значение, хранящееся по переданному ключу, и **сразу** удаляет ключ из словаря:
@@ -192,6 +197,8 @@ new_members = {'Harry Potter': '1st year'}
 # метод update() также работает in place, поэтому после выполнения данной
 # строки кода, в словаре quidditch_team станет три ключа
 quidditch_team.update(new_members)
+
+print(quidditch_team['Harry Potter'])
 ```
 
 А что, если в `update()` передать пары, ключ которых уже был в словаре? Значения по дублирующимся ключам будут **перезаписаны** на новые:
@@ -202,6 +209,8 @@ member_update = [('Harry Potter', '2nd year')]
 
 # значение, соответствующее 'Harry Potter', будет переписано
 quidditch_team.update(new_members)
+
+print(quidditch_team['Harry Potter'])
 ```
 
 ## Доступ к ключам и значениям
@@ -228,13 +237,14 @@ for player in quidditch_team:
 При помощи метода `values()` можно получить все значения, хранящиеся по всем ключам словаря:
 
 ```{code-cell} ipython3
+# можно создать переменную со всеми значениями словаря
 school_years = quidditch_team.values()
 ```
 
 Приведем пример с циклом:
 
 ```{code-cell} ipython3
-# словарь в качестве значений хранит имена годы обучения
+# словарь в качестве значений хранит годы обучения
 for year in quidditch_team.values():
 
     # на каждой итерации будет год обучения игрока
@@ -264,9 +274,11 @@ week = {7: 'weekend', 6: 'weekend', 1: 'workday'}
 
 # в sorted_week окажутся ключи, отсортированные в порядке возрастания
 sorted_week = sorted(week)
+print(f'Порядок возрастания: {sorted_week}')
 
 # а тут -- наоборот
 reverse_sorted_week = reversed(week)
+print(f'Наоборот: {reverse_sorted_week}')
 ```
 
 Не забудьте, когда в функции передается просто название переменной со словарем, работа идет только над множеством ключей.
@@ -301,7 +313,7 @@ _В англоязычной литературе изменяемые типы 
 counter = 100
 
 # полученное вами значение адреса может отличаться
-print(hex(id(counter)))
+print(counter, hex(id(counter)))
 ```
 ```{figure} /_static/pythonblock/dicts_l7/Python-Immutable-Example-1.png
 :name: mutable_example1
@@ -349,9 +361,10 @@ id(a) == id(b)
 ```{code-cell} ipython3
 # создадим список и напечатаем его адрес
 ratings = [1, 2, 3]
-print(hex(id(ratings)))
+print(f'Было: {hex(id(ratings))}')
+
 ratings.append(4)
-print(hex(id(ratings)))
+print(f'Стало: {hex(id(ratings))} - ничего не поменялось!')
 ```
 
 ```{figure} /_static/pythonblock/dicts_l7/Python-Mutable-Example.png
