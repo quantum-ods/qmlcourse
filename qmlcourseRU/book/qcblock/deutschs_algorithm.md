@@ -198,7 +198,6 @@ $|\psi\rangle = \frac{1}{2}((-1)^{f(0)}|0\rangle + (-1)^{f(1)}|1\rangle)(|0\rang
 ```{code-cell} ipython3
 import pennylane as qml
 from pennylane import numpy as np
-import numpy as np
 
 dev = qml.device('default.qubit', shots=1, wires=2)
 ```
