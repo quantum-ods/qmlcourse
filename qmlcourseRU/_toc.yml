@@ -72,6 +72,13 @@
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
 
+- part: Квантовые нейронные сети
+  chapters:
+    - file: book/qnnblock/qnnintro
+      title: ⬜ О блоке
+    - file: book/qnnblock/qnn
+      title: 🟧 Квантовые нейронные сети
+
 - part: Проблемы квантового машинного обучения
   chapters:
     - file: book/problemsblock/quantchembasic
