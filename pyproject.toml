@@ -6,7 +6,7 @@ authors = ["SemyonSinchenko <semyonsinchenko@yahoo.com>"]
 license = "CCBY-4.0"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 PennyLane = "^0.17.0"
 numpy = "^1.19.2"
 matplotlib = "^3.3.4"
