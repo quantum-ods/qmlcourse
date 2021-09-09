@@ -9,6 +9,9 @@
   <a href="https://github.com/SemyonSinchenko/qmlcourse/discussions">
     <img alt="shield_discussions" src="https://img.shields.io/github/discussions/SemyonSinchenko/qmlcourse">
   </a>
+  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit-deploy-book.yml">
+    <img alt="pre_commit_deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit-deploy-book.yml/badge.svg">
+  </a>
   <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
     <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
   </a>
