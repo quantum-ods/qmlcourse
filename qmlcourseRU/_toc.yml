@@ -22,10 +22,10 @@
 
 - part: Основы машинного обучения
   chapters:
-   - file: book/mlblock/ml_intro
-     title: ⬜ О блоке
-   - file: book/mlblock/ml_l1
-     title: 🟦 Машинное обучение как пазл
+    - file: book/mlblock/ml_intro
+      title: ⬜ О блоке
+    - file: book/mlblock/ml_l1
+      title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
@@ -77,7 +77,7 @@
     - file: book/qnnblock/qnnintro
       title: ⬜ О блоке
     - file: book/qnnblock/qnn
-      title: 🟧 Квантовые нейронные сети
+      title: 🟩 Квантовые нейронные сети
 
 - part: Проблемы квантового машинного обучения
   chapters:
@@ -85,7 +85,6 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
-
 
 - part: О курсе
   chapters:
