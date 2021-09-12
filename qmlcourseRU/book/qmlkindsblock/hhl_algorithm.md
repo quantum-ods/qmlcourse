@@ -238,9 +238,9 @@ $$
 $$
 \begin{aligned}
 &c = \frac{1}{16} \\
-&\frac{1}{\sqrt{2}}|001\rangle\left|u*{0}\right\rangle\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 8)^{2}}}|0\rangle+\frac{1 / 16}{1 / 8}|1\rangle\right) +\\
-&+\frac{1}{\sqrt{2}}|100\rangle\left(u*{1}\right)\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 2)^{2}}}|0\rangle+\frac{1 / 16}{1 / 2}|1\rangle\right) \\
-&\frac{1}{\sqrt{2}}|000\rangle\left|u*{0}\right\rangle \frac{1}{2}|1\rangle+\frac{1}{\sqrt{2}}|000\rangle\left(u*{1}\right\rangle \frac{1}{8}(1) \\
+&\frac{1}{\sqrt{2}}|001\rangle\left|u_{0}\right\rangle\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 8)^{2}}}|0\rangle+\frac{1 / 16}{1 / 8}|1\rangle\right) +\\
+&+\frac{1}{\sqrt{2}}|100\rangle\left(u_{1}\right)\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 2)^{2}}}|0\rangle+\frac{1 / 16}{1 / 2}|1\rangle\right) \\
+&\frac{1}{\sqrt{2}}|000\rangle\left|u_{0}\right\rangle \frac{1}{2}|1\rangle+\frac{1}{\sqrt{2}}|000\rangle\left(u_{1}\right\rangle \frac{1}{8}(1) \\
 &\Rightarrow \sqrt{\frac{17}{128}}
 \end{aligned}
 $$
