@@ -20,10 +20,10 @@
 
 - part: Основы машинного обучения
   chapters:
-   - file: book/mlblock/ml_intro
-     title: ⬜ О блоке
-   - file: book/mlblock/ml_l1
-     title: 🟦 Машинное обучение как пазл
+    - file: book/mlblock/ml_intro
+      title: ⬜ О блоке
+    - file: book/mlblock/ml_l1
+      title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
@@ -35,8 +35,6 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/hhl_algorithm
-      title: 🟥 Алгоритм HHL
 
 - part: Фреймворки
   chapters:
@@ -46,6 +44,13 @@
       title: 🟩 PennyLane
     - file: book/progblock/tfq.md
       title: 🟧 Cirq & TFQ
+
+- part: Квантовое машинное обучение
+  chapters:
+    - file: book/qmlkindsblock/qmlkindsintro.md
+      title: ⬜ О блоке
+    - file: book/qmlkindsblock/hhl_algorithm
+      title: 🟥 Алгоритм HHL
 
 - part: Вариационные схемы
   chapters:
@@ -76,7 +81,6 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
-
 
 - part: О курсе
   chapters:

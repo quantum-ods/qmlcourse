@@ -16,7 +16,24 @@ kernelspec:
 
 Мы с вами растём и умнеем не по дням, а по часам, – с настоящим квантовым ускорением – и сегодня пришла пора поговорить о знаменитом алгоритме Харроу, Хиссадима и Ллойда, более известном как HHL-алгоритме, способном решать системы линейных уравнений.
 
-Очень надеюсь, что к данному занятию у вас уже есть представление об алгоритме фазовой оценки (QPE), использующем обратное квантовое преобразование Фурье, на котором и базируется HHL. Глубокое понимание всех тонкостей этого алгоритма потребует от вас уверенного владения математическим аппаратом. За детальным описанием вы всегда можете обратиться к статьям ["Quantum linear systems algorithms: a primer"](https://arxiv.org/abs/1802.08227), ["Quantum algorithm for solving linear systems of equations"](https://arxiv.org/abs/0811.3171v3), и ["Homomorphic Encryption Experiments on IBM's Cloud Quantum Computing Platform"](https://arxiv.org/abs/1612.02886v2). Приготовьтесь потратить время и умственные ресурсы, если алгоритм вас зацепит и вы решите в нём как следует покопаться. Мы же поможем вам заинтересоваться, рассмотрим основные принципы и небольшой пример.
+Очень надеюсь, что к данному занятию у вас уже есть представление об алгоритме фазовой оценки (QPE), использующем обратное квантовое преобразование Фурье, на котором и базируется HHL. Глубокое понимание всех тонкостей этого алгоритма потребует от вас уверенного владения математическим аппаратом. За детальным описанием вы всегда можете обратиться к статьям {cite}`dervovic2018quantum`, {cite}`Harrow_2009`, {cite}`huang2017homomorphic`. Приготовьтесь потратить время и умственные ресурсы, если алгоритм вас зацепит и вы решите в нём как следует покопаться. Мы же поможем вам заинтересоваться, рассмотрим основные принципы и небольшой пример.
+
+```{note}
+Именно HHL-алгоритм произвел настоящую революцию в области квантового машинного обучения. Ведь решение систем линейных уравнений так или иначе находится "под капотом" почти любого известного алгоритма машинного обучения. И действительно:
+- Классические линейная и логистическая регрессия сводятся именно к этой задаче;
+- Задача SVM может быть переформулирована в терминах решений систем линейных уравнений;
+- Задача нахождения обартной матрицы (часто используется в глубоком обучении) внутри обычно решается через решение линейной системы;
+И это только малая часть примеров!
+
+Так что знакомство с QML не будет полным без ознакомления с этим прекрасным, но очень сложным алгоритмом!
+```
+
+```{figure} /_static/qmlkindsblock/hhl_algorithm/614px-Seth_Lloyd.jpg
+:name: lloyd
+:width: 400px
+
+Сет Ллойд, профессор MIT и один из создателей HHL-алгоритма
+```
 
 Представим обычную систему линейных уравнений:
 
@@ -37,7 +54,7 @@ $$x = A^{-1}b$$
 
 Оказывается, что и это всё можно провернуть с помощью известных квантовых преобразований. Принципиальный вид нашей схемы представлен следующим образом:
 
-```{figure} /_static/qcblock/hhl_algorithm/hhl_curcuit.png
+```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_curcuit.png
 :name: hhl_curcuit
 :width: 800px
 
@@ -71,8 +88,7 @@ $$
 
 Представьте океан с хаотичным движением кучи маленьких волн. Каждую такую волну можно рассматривать как вектор, у которого есть направление и скорость – т.е. его длина (обозначенные зелёным цветом).
 
-
-```{figure} /_static/qcblock/hhl_algorithm/ocean_and_vectors.png
+```{figure} /_static/qmlkindsblock/hhl_algorithm/ocean_and_vectors.png
 :name: ocean_and_vectors
 :width: 600px
 
@@ -85,9 +101,8 @@ $$Ax = \lambda x$$
 
 Таким образом, искомый вектор $х$ -- не что иное как:
 
-$$|x\rangle = A^{-1} |b \rangle = \sum_{j=0}^{N-1} \lambda_{j}^{-1}b_j | u_{j}\rangle
 $$
-
+$$
 
 Итак, фазовая оценка. Мы применяем к кубитам второго регистра матрицы Адамара, тем самым приводим их в суперпозицию. Следом запускаем оператор $U$:
 
@@ -99,15 +114,14 @@ $$
 
 U «находит» собственные значения $А$ и записывает их в виде фазы в том случае, если кубит второго регистра находится в состоянии $|1\rangle$:
 
-
-```{figure} /_static/qcblock/hhl_algorithm/hhl_curcuit2.png
+```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_curcuit2.png
 :name: hhl_curcuit2
 :width: 800px
 ```
 
 Таким образом, состояние второго регистра приходит в вид:
 
-$$\large |0\rangle + e^{2\pi i 2^{m-1} \psi} |1\rangle + |0\rangle + e^{2\pi i 2^{m-2} \psi} |1\rangle + \dots +  |0\rangle + e^{2\pi i 2^{0} \psi} |1\rangle = \sum_{l=0}^{2^{m-1}} e^{2\pi i \psi l} |l\rangle
+$$
 $$
 
 Однако просто записать фазу недостаточно. При измерении мы можем получить единицу, но как узнать её вероятность? Измерение не даст нам этой цифры, а ноль и вовсе неинформативен.
@@ -115,7 +129,7 @@ $$
 
 Так что на выходе после QPE мы имеем:
 
-```{figure} /_static/qcblock/hhl_algorithm/qft_output.png
+```{figure} /_static/qmlkindsblock/hhl_algorithm/qft_output.png
 :name: qft_output
 :width: 600px
 
@@ -131,15 +145,16 @@ $$
 
 После вращения и обратного QPE состояния будут следующими:
 
+$$
 \begin{aligned}
-&\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{c^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b_j\left|\lambda_{j}\right\rangle_{n}\left|u_{j}\right\rangle_{m} \\
-&\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{c^{r}}{\lambda_{i}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b_{j}|0\rangle_{n}\left|u_{j}\right\rangle_{m}
+&\sum*{j=0}^{N-1}\left(\sqrt{1-\frac{c^{2}}{\lambda*{j}^{2}}}|0\rangle+\frac{c}{\lambda*j}|1\rangle\right) b_j\left|\lambda*{j}\right\rangle*{n}\left|u*{j}\right\rangle*{m} \\
+&\sum*{j=0}^{N-1}\left(\sqrt{1-\frac{c^{r}}{\lambda*{i}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b*{j}|0\rangle*{n}\left|u*{j}\right\rangle\_{m}
 \end{aligned}
+$$
 
 В конце мы измеряем верхний кубит и если получаем единицу, то знаем, что в нижнем регистре хранится искомый $х$ с учётом нормировки:
 
-
-```{figure} /_static/qcblock/hhl_algorithm/hhl_curcuit3.png
+```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_curcuit3.png
 :name: hhl_curcuit3
 :width: 800px
 ```
@@ -173,7 +188,6 @@ x_{1}+\frac{3}{5} x_{2}=0 \\
 $$
 
 $$
-\large
 \begin{aligned}
 &\lambda_{0}=\frac{2}{5},\left|u_{0}\right\rangle=\left[\begin{array}{c}
 -1 \\
@@ -188,22 +202,22 @@ $$
 
 Вектор $b$ мы легко можем представить через собственные вектора $u_j$:
 
-
-```{figure} /_static/qcblock/hhl_algorithm/b_u_j_composition.png
+```{figure} /_static/qmlkindsblock/hhl_algorithm/b_u_j_composition.png
 :name: b_u_j_composition
 :width: 400px
 ```
 
 Зададим параметр $t$ и проанализируем фазу:
 
-$$\large
+$$
 \mathord{\sqsupset} \ t = 2\pi \frac{5}{16}
 $$
 
-$$\large
-e^{2\pi i \psi} = e^{i \lambda_j t}, \psi = \frac{\lambda_j t}{2\pi}$$
+$$
+e^{2\pi i \psi} = e^{i \lambda_j t}, \psi = \frac{\lambda_j t}{2\pi}
+$$
 
-```{figure} /_static/qcblock/hhl_algorithm/hhl_example.png
+```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_example.png
 :name: hhl_example.png
 :width: 400px
 ```
@@ -213,24 +227,20 @@ e^{2\pi i \psi} = e^{i \lambda_j t}, \psi = \frac{\lambda_j t}{2\pi}$$
 $$
 \begin{aligned}
 &{\left[|b\rangle_{m}=\sum_{j=0}^{1} \frac{1}{\sqrt{2}}\left|u_{j}\right\rangle\right]} \\
-&\frac{1}{\sqrt{2}}\left(|001\rangle\left|u_{0}\right\rangle+|100\rangle\left|u_{1}\right\rangle\right)
+&\frac{1}{\sqrt{2}}\left(|001\rangle\left|u*{0}\right\rangle+|100\rangle\left|u*{1}\right\rangle\right)
 \end{aligned}
 $$
 
 Подберём константу и произведём вращение:
 
-$$\large
-c =  \frac{1}{16}
-
-\begin{aligned}
-&\frac{1}{\sqrt{2}}|001\rangle\left|u_{0}\right\rangle\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 8)^{2}}}|0\rangle+\frac{1 / 16}{1 / 8}|1\rangle\right) +\\
-&+\frac{1}{\sqrt{2}}|100\rangle\left(u_{1}\right)\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 2)^{2}}}|0\rangle+\frac{1 / 16}{1 / 2}|1\rangle\right) \\
-&\frac{1}{\sqrt{2}}|000\rangle\left|u_{0}\right\rangle \frac{1}{2}|1\rangle+\frac{1}{\sqrt{2}}|000\rangle\left(u_{1}\right\rangle \frac{1}{8}(1)
-\end{aligned}
-
-\Rightarrow \sqrt{\frac{17}{128}}
 $$
-
-
+\begin{aligned}
+&c = \frac{1}{16} \\
+&\frac{1}{\sqrt{2}}|001\rangle\left|u*{0}\right\rangle\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 8)^{2}}}|0\rangle+\frac{1 / 16}{1 / 8}|1\rangle\right) +\\
+&+\frac{1}{\sqrt{2}}|100\rangle\left(u*{1}\right)\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 2)^{2}}}|0\rangle+\frac{1 / 16}{1 / 2}|1\rangle\right) \\
+&\frac{1}{\sqrt{2}}|000\rangle\left|u*{0}\right\rangle \frac{1}{2}|1\rangle+\frac{1}{\sqrt{2}}|000\rangle\left(u*{1}\right\rangle \frac{1}{8}(1) \\
+&\Rightarrow \sqrt{\frac{17}{128}}
+\end{aligned}
+$$
 
 В конце мы производим измерение верхнего кубита и при получении единицы можем быть уверены, что нижний регистр содержит искомое решение с учётом нормировки.
