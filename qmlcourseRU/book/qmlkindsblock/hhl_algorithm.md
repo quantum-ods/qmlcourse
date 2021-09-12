@@ -150,7 +150,7 @@ $$
 $$
 \begin{aligned}
 &\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{c^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b_j\left|\lambda_{j}\right\rangle_{n}\left|u_{j}\right\rangle_{m} \\
-&\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{c^{r}}{\lambda*{i}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b_{j}|0\rangle_{n}\left|u_{j}\right\rangle\_{m}
+&\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{c^{r}}{\lambda_{i}^{2}}}|0\rangle+\frac{c}{\lambda_j}|1\rangle\right) b_{j}|0\rangle_{n}\left|u_{j}\right\rangle\_{m}
 \end{aligned}
 $$
 
