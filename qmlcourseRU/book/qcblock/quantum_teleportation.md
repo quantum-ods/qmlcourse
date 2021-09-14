@@ -44,13 +44,13 @@ $$(I \otimes CNOT(2,3))\frac{1}{\sqrt{2}}|\psi\rangle(|0\rangle + |1\rangle)|0\r
 
 3. Алиса применяет CNOT между первым и вторым кубитами. Вспоминая, что $ |\psi\rangle = \alpha|0\rangle + \beta|1\rangle $:
 
-$$|\psi_{3}\rangle = \frac{1}{\sqrt{2}}[\alpha(|000\rangle + |011\rangle) + \beta(|110\rangle + |101\rangle)] =$$
+$$|\psi_{3}\rangle = (I \otimes CNOT(1, 2))|\psi_{2}\rangle =$$ 
 
-$$(I \otimes CNOT(1, 2))|\psi_{2}\rangle = \frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle)$$
+$$(I \otimes CNOT(1, 2))\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =$$
 
+$$ = \frac{1}{\sqrt{2}}[\alpha(|000\rangle + |011\rangle) + \beta(|110\rangle + |101\rangle)] $$
 
-
-4. Алиса (да, опять она) применяет гейт Адамара на своём первом кубите:
+4. Алиса применяет гейт Адамара на своём первом кубите:
 
 $$ |\psi_4\rangle = (H \otimes I \otimes I)|\psi_{3}\rangle = $$
 
@@ -92,18 +92,14 @@ $$
 Приведём данную схему:
 
 ```{code-cell} ipython3
-import numpy as np
-from qiskit import QuantumCircuit
-from qiskit import IBMQ, Aer, transpile, assemble
-from qiskit.visualization import plot_histogram, plot_bloch_multivector, array_to_latex
-from qiskit.extensions import Initialize
-from qiskit.ignis.verification import marginal_counts
-from qiskit.quantum_info import random_statevector
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
 
-# создаём схему
+# создаём необходимые регистры
 qr = QuantumRegister(3, name="q")
 crz = ClassicalRegister(1, name="crz")
 crx = ClassicalRegister(1, name="crx")
+
+# создаём схему
 qc = QuantumCircuit(qr, crz, crx)
 
 # Шаг 1
