@@ -69,6 +69,11 @@ jobs:
         run: |
           poetry run jupyter-book build ./qmlcourseRU
 
+      - name: Build PDF file
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml          
+
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.8.0
