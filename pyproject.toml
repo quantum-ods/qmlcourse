@@ -16,6 +16,7 @@ cirq = "^0.11.0"
 tensorflow = "2.5.1"
 tensorflow-quantum = "^0.5.1"
 pre-commit = "^2.13.0"
+pyppeteer  = "^0.2.6"
 
 [tool.poetry.dev-dependencies]
 
