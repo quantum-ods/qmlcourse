@@ -13,7 +13,7 @@
     <img alt="pre_commit_deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit-deploy-book.yml/badge.svg">
   </a>
   <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
-    <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+    <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
   </a>
   <a href="https://ods.ai/tracks/qmlcourse">
     <img alt="shield_website_ods" src="https://img.shields.io/website?up_color=critical&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
@@ -35,8 +35,9 @@ This is the main repository of the course.
 3. [Course Program](#course-program)
 4. [Team](#team)
 5. [Join ODS](#join-ods)
-6. [Bibtex Citations](#bibtex)
-7. [Legal Issues](#legal-issues)
+6. [Similar Projects](#similar-projects)
+7. [Bibtex Citations](#bibtex)
+8. [Legal Issues](#legal-issues)
 
 ## Contributing Guide
 
@@ -116,6 +117,11 @@ Also, all authors for some updates are participants special channel into communi
 ## Join ODS
 
 To join the ODS-community slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that, we add you to the closed channel in the ODS Slack.
+
+## Similar projects
+
+- [QuantumAlgorithms.org](https://github.com/Scinawa/quantumalgorithms.org) [ENG]: lecture notes for students about quantum algorithms and quantum machine learning. Compared to this project our lectures are more practice and programming-oriented. In our course, there are more entry-level and sci-pop lectures but in QuantumAlgorithms.org there are more hard math and strong proofs of theorems. Also, we pay less attention to fully-quantum algorithms and ML but pay more attention to the variational and hybrid quantum-classical things.
+- [Qiskit-textbook](https://github.com/qiskit-community/qiskit-textbook) [ENG]: a textbook about learning quantum computing with qiskit. Compared to this project our course is more about ML, not the quantum protocols and algorithms. Also, we use `PennyLane` as the main quantum framework because it could be used with different backends including `Qiskit` and `CirQ`.
 
 ## Bibtex
 
