@@ -83,7 +83,7 @@ jobs:
       - name: Delete pdf file
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          rm ./qmlcourseRU/_build/pdf/book.pdf          
+          rm ./qmlcourseRU/_build/pdf/book.pdf
 
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
