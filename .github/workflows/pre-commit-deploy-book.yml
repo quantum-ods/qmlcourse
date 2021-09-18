@@ -73,17 +73,31 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
+          mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/all_book.pdf
+
+      - name: Use toc.yaml files for PDF
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          for file in "./qmlcourseRU/toc"/*
+          do
+            file=${file//.\/qmlcourseRU\/toc\//}
+            file_name=${file//.yml/}
+            echo "$file"
+            cp ./qmlcourseRU/toc/$file ./qmlcourseRU/_toc.yml
+            poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
+            mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/$file_name.pdf
+          done
 
       - uses: actions/upload-artifact@v2
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
           name: bookPDF
-          path: ./qmlcourseRU/_build/pdf/book.pdf
+          path: ./qmlcourseRU/_build/pdf/*.pdf
 
       - name: Delete pdf file
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          rm ./qmlcourseRU/_build/pdf/book.pdf
+          rm ./qmlcourseRU/_build/pdf/*.pdf
 
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
