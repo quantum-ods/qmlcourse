@@ -10,11 +10,26 @@
     - file: book/pythonblock/pythonintro.md
       title: ⬜ О блоке
     - file: book/pythonblock/python_l1.md
-      title: ⬜ Вводная лекция про Python
-    - file: book/pythonblock/python_l4.md
-      title: ⬜ Переменные, типы и вывод
+      title: 🟦 Вводная лекция про Python
     - file: book/pythonblock/jupyter_l3.md
-      title: ⬜ Ориентация в Jupyter
+      title: 🟦 Ориентация в Jupyter
+    - file: book/pythonblock/python_l4.md
+      title: 🟦 Переменные, типы и вывод
+    - file: book/pythonblock/python_l5.md
+      title: 🟦 Условия и сравнения
+    - file: book/pythonblock/python_l6.md
+      title: 🟦 Списки и циклы
+    - file: book/pythonblock/python_l10.md
+      title: 🟦 Объекты и классы
+    - file: book/pythonblock/python_l11.md
+      title: 🟦 Финальная лекция
+
+- part: Основы машинного обучения
+  chapters:
+   - file: book/mlblock/ml_intro
+     title: ⬜ О блоке
+   - file: book/mlblock/ml_l1
+     title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
@@ -26,6 +41,8 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
+    - file: book/qcblock/grovers_algorithm
+      title: 🟧 Алгоритм Гровера
 
 - part: Фреймворки
   chapters:

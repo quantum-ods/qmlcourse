@@ -12,7 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-    # needs: [pre-commit]
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -39,6 +38,14 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
 
+      # Test setup conda
+      - name: Setup conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge
+
       #Use cache
       - name: Copy cache dir for dependecies
         uses: actions/cache@v2
@@ -57,18 +64,9 @@ jobs:
         run: |
           poetry install
 
+      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
+      - run: poetry run psi4 --test
+
       - name: Build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
-
-      # Test setup psi4
-      - name: Setup conda
-        uses: s-weigand/setup-conda@v1
-        with:
-          update-conda: true
-          python-version: 3.8
-          conda-channels: anaconda, conda-forge
-      - run: conda --version
-      - run: which python
-      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: psi4 --test
