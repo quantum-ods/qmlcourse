@@ -73,7 +73,7 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
-          
+
       - uses: actions/upload-artifact@v2
         if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
