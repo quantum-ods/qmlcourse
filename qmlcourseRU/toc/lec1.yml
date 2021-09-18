@@ -1,0 +1,6 @@
+- file: book/index
+
+- part: Введение
+  chapters:
+    - file: book/intro1block/intro1.md
+      title: 🟦 О квантовых компьютерах
