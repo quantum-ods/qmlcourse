@@ -40,7 +40,7 @@
   chapters:
     - file: book/hwblock/hwintro
       title: ⬜ О блоке
-    - file: book/qcblock/scqubits
+    - file: book/hwblock/scqubits
       title: 🟩 Сверхпроводниковые кубиты
 
 - part: Фреймворки
