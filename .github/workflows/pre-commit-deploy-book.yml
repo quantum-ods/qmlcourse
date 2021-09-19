@@ -113,7 +113,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/pdf/
-          destination_dir: pdf
+          destination_dir: _pdf
 
       # - name: Delete pdf file
       #   if: ${{ github.event_name == 'workflow_dispatch' }}
