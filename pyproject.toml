@@ -17,6 +17,7 @@ tensorflow = "2.5.1"
 tensorflow-quantum = "^0.5.1"
 pre-commit = "^2.13.0"
 pyppeteer  = "^0.2.6"
+pyyaml  = "^5.4.1"
 
 [tool.poetry.dev-dependencies]
 
