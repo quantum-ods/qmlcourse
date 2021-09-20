@@ -12,82 +12,97 @@ package "Prerequisites" #Bisque {
 package "Quantum Computing" as qci #Bisque {
         rectangle "Qubit" as qubit #40B464
         rectangle "Gates" as gates #40B464
-        rectangle "Physics of qubit" as physq #E0535C
-        rectangle "Mixed Stated" as mixed #FFC864
+        usecase "Mixed Stated" as mixed #FFC864
+}
+
+package "Basic Quantum Algorithms" as qalgo #Bisque {
+        rectangle "Deutsch" as deutsch #40B464
+        usecase "Other Algorithms Review" as advanced_algos #40B464
         rectangle "Grover" as grover #FFC864
-        rectangle "Shor" as shor #E0535C
+        rectangle "Quantum Teleportation" as qtp #FFC864
+        rectangle "Saimon" as saimon #FFC864
+        usecase "Shor" as shor #E0535C
+        usecase "Superdense coding" as superdense_coding #FFC864
 }
 
 package "NISQ Hardware" #Bisque {
-        rectangle "Hardware review" as review #40B464
-        rectangle "Perspectives in NISQ-era" as nisq #40B464
+        usecase "Hardware review" as review #40B464
+        usecase "Perspectives in NISQ-era" as nisq #40B464
+        usecase "Photonic Quantum Computers" as photonic #E0535C
+        usecase "CV Quantum Computers" as cvq #E0535C
 }
 
 package "Programming QC" #Bisque {
+        usecase "Frameworks Comparision" as progcomparision #40B464
         rectangle "PennyLane" as pennylane #40B464
-        rectangle "Qiskit & Aqua" as qiskit #FFC864
+        usecase "Qiskit & Aqua" as qiskit #FFC864
         rectangle "Cirq & TFQ" as cirq #FFC864
+}
+
+package "Quantum ML" #Bisque {
+        usecase "Kinds of QML" as qml_general #14D2EF
+        rectangle "HHL" as hhl #E0535C
+        usecase "Quantum KNN" as qknn #E0535C
+        usecase "Quantum Clustering" as qclustering #E0535C
+        usecase "Quantum RBM" as qrbm #E0535C
 }
 
 package "VQC" #Bisque {
         rectangle "VQC" as vqc #40B464
-        rectangle "VQC as kernels" as kernelvqc #FFC864
-        rectangle "Universality of VQC" as univvqc #E0535C
+        usecase "VQC as kernels" as kernelvqc #FFC864
+        usecase "Universality of VQC" as univvqc #E0535C
 }
 
 package "Gradients" #Bisque {
         rectangle "Gradients" as grad #40B464
         rectangle "High-order gradients" as hograd #FFC864
-        rectangle "QNG" as qng #E0535C
+        usecase "QNG" as qng #E0535C
 }
 
-package "Classification" #Bisque {
-        rectangle "VQC classification" as vqcc #40B464
-        rectangle "Barren plateaus" as barren #FFC864
-        rectangle "Data encoding" as encoding #FFC864
+package "Quantum Neural Networks" #Bisque {
+        rectangle "QNN" as qnn #40B464
+        usecase "Barren plateaus" as barren #FFC864
+        usecase "Data encoding" as encoding #FFC864
+        usecase "Convolutional VQC" as convvqc #FFC864
+        usecase "LSTM VQC" as lstm #FFC864
 }
 
 package "Quantum SVM" #Bisque {
         rectangle "Hybrid SVM" as hsvm #40B464
         rectangle "Classical SVM math" as csvm #FFC864
-        rectangle "SVM with Grover" as gsvm #E0535C
+        usecase "SVM with Grover" as gsvm #E0535C
 }
 
 package "Problems for QML" #Bisque {
-        rectangle "Combinatorial Optimization" as copt #40B464
-        rectangle "Quantum\nMany-Body physics" as qmbp #E0535C
+        usecase "Combinatorial Optimization" as copt #40B464
         rectangle "Quantum Chemistry" as qchem #E0535C
 }
 
 package "VQE" #Bisque {
-        rectangle "VQE" as vqe #40B464
-        rectangle "Adaptive VQE" as avqe #FFC864
-        rectangle "Layered VQC" as lvqe #FFC864
-        rectangle "UCC ansatz" as uuc #E0535C
+        usecase "VQE" as vqe #40B464
+        usecase "Layered VQC" as lvqe #FFC864
+        usecase "UCC ansatz" as uuc #E0535C
 }
 
 package "QAOA" #Bisque {
-        rectangle "QAOA" as qaoa #40B464
-        rectangle "Cost/Mixed Hamiltonians" as hams #FFC864
+        usecase "QAOA" as qaoa #40B464
+        usecase "Cost/Mixed Hamiltonians" as hams #FFC864
 }
 
 package "D-Wave" #Bisque {
-        rectangle "D-Wave & Sampling" as dwave #40B464
-        rectangle "Probabilistic Learning\n with D-Wave" as probml #E0535C
+        usecase "D-Wave & Sampling" as dwave #40B464
+        usecase "Probabilistic Learning\n with D-Wave" as probml #E0535C
 }
 
 package "Jobs and Perspectives" as jobs #Bisque {
-        rectangle "Academic positions" as academic #White
-        rectangle "Industrial positions" as industrial #White
+        usecase "Academic positions" as academic #White
+        usecase "Industrial positions" as industrial #White
 }
 
 package "Advanced Topics" as adv #Bisque {
         rectangle "SotA review" as sota #40B464
         rectangle "Quantum RL" as qrl #FFC864
         rectangle "Advanced QRL" as aqrl #E0535C
-        rectangle "CV quantum computers" as svqc #E0535C
-        rectangle "LSTM VQC" as lstm #FFC864
-        rectangle "Convolutional VQC" as convvqc #FFC864
 }
 
 intro1 --> python
@@ -99,19 +114,34 @@ numpy --> qubit
 ml --> qubit
 
 qubit --> gates
-qubit -> physq
 mixed <- qubit
-gates -> grover
-shor <- gates
+gates --> deutsch
 
-gates --> review
-review -> nisq
+deutsch --> advanced_algos
+advanced_algos -> grover
+shor <- advanced_algos
+advanced_algos -> qtp
+saimon <- advanced_algos
+superdense_coding <- advanced_algos
 
-gates --> pennylane
-cirq <- pennylane
-pennylane -> qiskit
+advanced_algos --> review
+review --> nisq
+photonic <- review
+review -> cvq
 
-pennylane --> vqc
+nisq --> progcomparision
+progcomparision --> pennylane
+cirq <- progcomparision
+progcomparision -> qiskit
+
+pennylane --> qml_general
+
+qml_general -> hhl
+qknn <- qml_general
+qml_general -> qclustering
+qrbm <- qml_general
+
+qml_general --> vqc
 kernelvqc <- vqc
 vqc -> univvqc
 
@@ -119,22 +149,22 @@ vqc --> grad
 qng <- grad
 grad -> hograd
 
-grad --> vqcc
-barren <- vqcc
-vqcc -> encoding
+grad --> qnn
+barren <- qnn
+qnn -> encoding
+lstm <- qnn
+qnn -> convvqc
 
-vqcc --> hsvm
+qnn --> hsvm
 csvm <- hsvm
 hsvm -> gsvm
 
 hsvm --> copt
-qmbp <- copt
 copt -> qchem
 
 copt --> vqe
 uuc <- vqe
-vqe -> avqe
-avqe -> lvqe
+vqe -> lvqe
 
 copt --> qaoa
 qaoa -> hams
@@ -145,7 +175,8 @@ dwave -> probml
 
 dwave --> jobs
 
-dwave -->adv
-qrl --> aqrl
+dwave --> sota
+sota --> qrl
+qrl -> aqrl
 
 @enduml
