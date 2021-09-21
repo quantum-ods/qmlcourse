@@ -8,7 +8,7 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        shell: pwsh    
+        shell: pwsh
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -26,4 +26,5 @@ jobs:
         run: make install-windows
 
       - name: Build
-        run: make build-windows          
+        run: make build-windows
+  
