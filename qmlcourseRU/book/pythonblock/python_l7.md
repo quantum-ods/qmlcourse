@@ -411,10 +411,10 @@ print(f"{flowers = }\n{anime = }\n{literature = }")
 
 ```{code-cell} ipython3
 # доступ к элементу, если ключа нет - ошибка
-print(f"{flowers['violets'] = }")
+print(f'{flowers["violets"] = }')
 
 # при помощи get()
-print(f"{flowers.get('magnolias') = }")
+print(f'{flowers.get("magnolias") = }')
 ```
 
 ```{code-cell} ipython3
