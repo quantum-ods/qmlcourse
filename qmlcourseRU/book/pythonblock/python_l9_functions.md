@@ -174,7 +174,7 @@ except NameError as ne:
 - глобальные (**G**lobal) - все объекты, определенные на уровне скрипта
 - встроенные (**B**uilt-in) - неймспейс содержит все встроенные объекты (функции, исключения и т.д.), поиск в нем осуществляется последним
 ```{figure} /_static/pythonblock/functions_l9/legb.png
-:name: class_and_obj1
+:name: legb
 :width: 500px
 ```
 
