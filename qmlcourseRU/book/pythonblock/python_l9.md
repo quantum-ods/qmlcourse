@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-(python_l9_functions=)
+(python_l9=)
 
 # Функции
 
