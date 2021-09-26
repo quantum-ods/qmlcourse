@@ -5,7 +5,6 @@ repos:
       - id: check-added-large-files
       - id: check-docstring-first
       - id: check-json
-        exclude: .yaspellerrc.json
       - id: check-xml
       - id: end-of-file-fixer
       - id: trailing-whitespace
