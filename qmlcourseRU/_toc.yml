@@ -21,11 +21,11 @@
       title: 🟦 Списки и циклы
     - file: book/pythonblock/python_l7.md
       title: 🟦 Словари
-    - file: book/pythonblock/python_l9.md
+    - file: book/pythonblock/python_l8.md
       title: 🟦 Функции
-    - file: book/pythonblock/python_l10.md
+    - file: book/pythonblock/python_l9.md
       title: 🟦 Объекты и классы
-    - file: book/pythonblock/python_l11.md
+    - file: book/pythonblock/python_l10.md
       title: 🟦 Финальная лекция
 
 - part: Основы машинного обучения
