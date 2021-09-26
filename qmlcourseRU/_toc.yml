@@ -19,6 +19,8 @@
       title: 🟦 Условия и сравнения
     - file: book/pythonblock/python_l6.md
       title: 🟦 Списки и циклы
+    - file: book/pythonblock/python_l7.md
+      title: 🟦 Словари
     - file: book/pythonblock/python_l9.md
       title: 🟦 Функции
     - file: book/pythonblock/python_l10.md
