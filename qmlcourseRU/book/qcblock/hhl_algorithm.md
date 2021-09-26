@@ -226,7 +226,7 @@ $$
 
 $$
 \begin{aligned}
-&{QPE(|0\rangle_{a}|0\rangle_{r}|b\rangle_{m})=\sum_{j=0}^{1} \frac{1}{\sqrt{2}} \left |0\rangle_{a} |\lambda_{j} \rangle_{r} |u_{j}\right\rangle} = \frac{1}{\sqrt{2}}\left(|0\rangle_{a} |001\rangle\left|u_{0}\right\rangle + |0\rangle_{a} |100\rangle\left|u_{1}\right\rangle\right)
+&{QPE(|0\rangle_{a}|0\rangle_{r}|b\rangle_{m})=\sum_{j=0}^{1} \frac{1}{\sqrt{2}} \left |0\rangle_{a} |\lambda_{j} \rangle_{r} |u_{j}\right\rangle} = \frac{1}{\sqrt{2}}\left(|0\rangle_{a} |001\rangle_r \left|u_{0}\right\rangle + |0\rangle_{a} |100\rangle_r \left|u_{1}\right\rangle\right)
 \end{aligned}
 $$
 
@@ -234,11 +234,15 @@ $$
 
 $$\large
 \begin{aligned}
-&\frac{1}{\sqrt{2}} \left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 8)^{2}}}|0\rangle+\frac{1 / 16}{1 / 8}|1\rangle\right)|001\rangle\left|u_{0}\right\rangle +\\
-&+\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 2)^{2}}}|0\rangle+\frac{1 / 16}{1 / 2}|1\rangle\right)\frac{1}{\sqrt{2}}|100\rangle\left(u_{1}\right) =\\
-& =\frac{1}{\sqrt{2}}|1\rangle|000\rangle\left|u_{0}\right\rangle \frac{1}{2}+\frac{1}{\sqrt{2}}|1\rangle|000\rangle\left(u_{1}\right\rangle \frac{1}{8}
+&\frac{1}{\sqrt{2}} \left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 8)^{2}}}|0\rangle+\frac{1 / 16}{1 / 8}|1\rangle\right)|001\rangle_r \left|u_{0}\right\rangle_m +\\
+&+\frac{1}{\sqrt{2}}\left(\sqrt{1-\frac{(1 / 16)^{2}}{(1 / 2)^{2}}}|0\rangle_a+\frac{1 / 16}{1 / 2}|1\rangle_a\right)|100\rangle_r |u_{1}\rangle_m
 \end{aligned}
-
 $$
 
-В конце мы производим измерение верхнего кубита и при получении единицы можем быть уверены, что нижний регистр содержит искомое решение с учётом нормировки.
+В конце мы производим измерение верхнего кубита (с индексом $a$) и при получении единицы можем быть уверены, что нижний регистр содержит искомое решение с учётом нормировки:
+
+$$\large
+\begin{aligned}
+\frac{1}{\sqrt{2}}\frac{1}{2}|1\rangle_a|000\rangle_r\left|u_{0}\right\rangle_m + \frac{1}{\sqrt{2}}\frac{1}{8}|1\rangle_a|000\rangle_r\left(u_{1}\right\rangle_m
+\end{aligned}
+$$
