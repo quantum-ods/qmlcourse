@@ -104,7 +104,7 @@ $$
 Для того, чтобы узнать собственное значение оператора $U$, получения фазы (Quantum Phase Estimation - QPE), результатом которого получится следующее состояние:
 
 $$
-\large  QPE(|0\rangle|u\rangle) = 
+\large  QPE(U, |0\rangle|u\rangle) = 
 $$
 $$
 \large\frac{1}{2^{m/2}}( |0\rangle + e^{2\pi i 2^{m-1} \psi} |1\rangle) \otimes (|0\rangle + e^{2\pi i 2^{m-2} \psi} |1\rangle) \otimes \dots \otimes  (|0\rangle + e^{2\pi i 2^{0} \psi} |1\rangle) \otimes |u\rangle = 
@@ -112,6 +112,15 @@ $$
 
 $$
 \large \frac{1}{2^{m/2}}\sum_{j=0}^{2^{m-1}} e^{2\pi i \psi j} |j\rangle |u\rangle = |\psi_{u}\rangle |u\rangle
+$$
+
+Параметр $t$ в случае $U = e^{iAt}$ появляется из-за:
+
+$$\large
+e^{2\pi i \psi} = e^{i \lambda_j t}
+$$
+$$\large
+\psi = \frac{\lambda_j t}{2\pi}
 $$
 
 Алгоритм обратного квантового Фурье переводит фазу в конкретный вектор.
@@ -195,6 +204,7 @@ x_{1}+\frac{3}{5} x_{2}=0 \\
 \end{array}\right.
 $$
 
+Собственные значения и соответствующие собственные векторы:
 $$
 \large
 \begin{aligned}
@@ -214,12 +224,15 @@ $$
 $$\large
 \ t = 2\pi \frac{5}{16}
 $$
-
 $$\large
 e^{2\pi i \psi} = e^{i \lambda_j t}
 $$
 $$\large
 \psi = \frac{\lambda_j t}{2\pi}
+$$
+
+$$
+\frac{\lambda_0 t}{2\pi} = \frac{1}{8}\text{,} \;\;\;\;\;\;\;\;  \frac{\lambda_1 t}{2\pi} = \frac{1}{2}
 $$
 
 Как мы видим, для перевода угла $\psi$ в векторную форму, нам понадобятся три кубита. После преобразования QPE мы имеем следующее состояние:
