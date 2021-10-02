@@ -4,7 +4,7 @@ SHELL = /bin/bash
 export PATH := $(HOME)/.poetry/bin:$(PATH)
 
 install-ubuntu-latest: install-python-poetry-ubuntu  install-psi4 install-python-dependencies
-install-macOS-latest: install-python-poetry-macOS install-psi4 install-python-dependencies
+install-macos-latest: install-python-poetry-macos install-psi4 install-python-dependencies
 install-windows: install-python-poetry-windows
 
 install-python-poetry-ubuntu:
@@ -16,7 +16,7 @@ install-python-poetry-ubuntu:
 
 	curl "http://vergil.chemistry.gatech.edu/psicode-download/Psi4conda-1.4rc3-py38-Linux-x86_64.sh" -o Psi4conda-1.4rc3-py38.sh --keepalive-time 2
 
-install-python-poetry-macOS:
+install-python-poetry-macos:
 	brew update
 	ln -s -f /usr/local/bin/python3.8 /usr/local/bin/python3
 	brew install poetry
@@ -47,3 +47,4 @@ install-python-poetry-windows:
 build-windows:
 	cmd //C "%USERPROFILE%\.poetry\bin\poetry run psi4 --test"
 	cmd //C "%USERPROFILE%\.poetry\bin\poetry run jupyter-book build ./qmlcourseRU"
+	
