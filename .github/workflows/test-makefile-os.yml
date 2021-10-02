@@ -27,7 +27,7 @@ jobs:
 
       - name: Build the book
         run: |
-          make build
+          make build-linux-macos
   deploy-book-macos:
     if: contains(github.event.inputs.os, 'macos-latest')
     runs-on: ${{ matrix.os }}
@@ -44,7 +44,7 @@ jobs:
 
       - name: Build the book
         run: |
-          make build
+          make build-linux-macos
   deploy-book-windows:
     if: contains(github.event.inputs.os, 'windows-latest')
     runs-on: windows-latest
