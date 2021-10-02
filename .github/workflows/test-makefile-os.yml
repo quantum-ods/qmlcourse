@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macOS-latest]   
+        os: [ubuntu-latest, macOS-latest]
     steps:
       - name: Checkout branch for build
         if: contains(github.event.inputs.os, matrix.os)
@@ -33,7 +33,6 @@ jobs:
         if: contains(github.event.inputs.os, matrix.os)
         run: |
           make build
-          
   deploy-book-windows:
     if: contains(github.event.inputs.os, 'windows-latest')
     runs-on: windows-latest
