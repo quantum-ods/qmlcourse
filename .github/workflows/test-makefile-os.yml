@@ -44,7 +44,7 @@ jobs:
 
       - name: Build the book
         run: |
-          make build          
+          make build
   deploy-book-windows:
     if: contains(github.event.inputs.os, 'windows-latest')
     runs-on: windows-latest
