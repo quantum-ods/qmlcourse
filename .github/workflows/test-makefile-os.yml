@@ -7,38 +7,47 @@ on:
       os:
         description: 'Choose OS for test'
         required: false
-        default: 'ubuntu-latest, macOS-latest, windows-latest'
+        default: 'ubuntu-latest, macos-latest, windows-latest'
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
-  deploy-book-linux-macOS:
+  deploy-book-linux:
+    if: contains(github.event.inputs.os, 'windows-latest')
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest]
     steps:
       - name: Checkout branch for build
-        if: contains(github.event.inputs.os, matrix.os)
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        if: contains(github.event.inputs.os, matrix.os)
         run: make install-${{ matrix.os }}
 
       - name: Build the book
-        if: contains(github.event.inputs.os, matrix.os)
         run: |
           make build
+  deploy-book-macos:
+    if: contains(github.event.inputs.os, 'macos-latest')
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: make install-${{ matrix.os }}
+
+      - name: Build the book
+        run: |
+          make build          
   deploy-book-windows:
     if: contains(github.event.inputs.os, 'windows-latest')
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: pwsh
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
