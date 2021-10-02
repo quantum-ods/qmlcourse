@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        
+
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
       - name: Build the book
         run: |
           make build-linux-macos
-          
+
   deploy-book-macos:
     if: contains(github.event.inputs.os, 'macos-latest')
     runs-on: ${{ matrix.os }}
@@ -38,7 +38,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest]
-        
+
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -49,11 +49,11 @@ jobs:
       - name: Build the book
         run: |
           make build-linux-macos
-          
+
   deploy-book-windows:
     if: contains(github.event.inputs.os, 'windows-latest')
     runs-on: windows-latest
-    
+
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
