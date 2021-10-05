@@ -1,4 +1,5 @@
 - file: book/index
+- file: book/prerequisite
 
 - part: Введение
   chapters:
