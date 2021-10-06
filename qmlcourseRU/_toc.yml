@@ -4,6 +4,8 @@
   chapters:
     - file: book/intro1block/intro1.md
       title: 🟦 О квантовых компьютерах
+    - file: book/prerequisite.md
+      title: ⬜ Пререквизиты курса
 
 - part: Основы Python
   chapters:
