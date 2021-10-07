@@ -4,8 +4,6 @@
   chapters:
     - file: book/intro1block/intro1.md
       title: 🟦 О квантовых компьютерах
-    - file: book/prerequisite.md
-      title: ⬜ Пререквизиты курса
 
 - part: Основы Python
   chapters:
@@ -81,6 +79,8 @@
   chapters:
     - file: book/qsvmblock/qsvmintro
       title: ⬜ О блоке
+    - file: book/qsvmblock/classic_svm
+      title: 🟩 Классический SVM
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
 
