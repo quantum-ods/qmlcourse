@@ -14,6 +14,7 @@
 2. [Илья Беседин](https://github.com/ooovector)
 3. [Сергей Ширкин](https://github.com/doktrster)
 4. [Александр Березутский](https://github.com/meandmytram)
+5. [Котенков Игорь](https://github.com/stalkermustang)
 
 ## Основные ревьюеры
 
@@ -74,6 +75,8 @@
 [Карелин Николай](https://github.com/karelin)
 
 [Кашницкий Юрий](https://github.com/Yorko)
+
+[Котенков Игорь](https://github.com/stalkermustang)
 ```
 
 ```{dropdown} **Л**

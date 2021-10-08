@@ -1,5 +1,44 @@
 - file: book/index
 
+- part: Введение
+  chapters:
+    - file: book/intro1block/intro1.md
+      title: 🟦 О квантовых компьютерах
+    - file: book/prerequisite.md
+      title: ⬜ Пререквизиты курса
+
+- part: Основы Python
+  chapters:
+    - file: book/pythonblock/pythonintro.md
+      title: ⬜ О блоке
+    - file: book/pythonblock/python_l1.md
+      title: 🟦 Вводная лекция про Python
+    - file: book/pythonblock/python_l2.md
+      title: 🟦 Установка инструментов
+    - file: book/pythonblock/jupyter_l3.md
+      title: 🟦 Ориентация в Jupyter
+    - file: book/pythonblock/python_l4.md
+      title: 🟦 Переменные, типы и вывод
+    - file: book/pythonblock/python_l5.md
+      title: 🟦 Условия и сравнения
+    - file: book/pythonblock/python_l6.md
+      title: 🟦 Списки и циклы
+    - file: book/pythonblock/python_l7.md
+      title: 🟦 Словари
+    - file: book/pythonblock/python_l8.md
+      title: 🟦 Функции
+    - file: book/pythonblock/python_l9.md
+      title: 🟦 Объекты и классы
+    - file: book/pythonblock/python_l10.md
+      title: 🟦 Финальная лекция
+
+- part: Основы машинного обучения
+  chapters:
+   - file: book/mlblock/ml_intro
+     title: ⬜ О блоке
+   - file: book/mlblock/ml_l1
+     title: 🟦 Машинное обучение как пазл
+
 - part: Квантовые вычисления
   chapters:
     - file: book/qcblock/qcintro
@@ -10,6 +49,10 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/mixedstates
       title: 🟨 Смешанные состояния
+    - file: book/qcblock/deutschs_algorithm
+      title: 🟩 Алгоритм Дойча
+    - file: book/qcblock/grovers_algorithm
+      title: 🟧 Алгоритм Гровера
 
 - part: Фреймворки
   chapters:
@@ -17,6 +60,8 @@
       title: ⬜ О блоке
     - file: book/progblock/pennylane.ipynb
       title: 🟩 PennyLane
+    - file: book/progblock/tfq.md
+      title: 🟧 Cirq & TFQ
 
 - part: Вариационные схемы
   chapters:
@@ -40,6 +85,14 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+
+- part: Проблемы квантового машинного обучения
+  chapters:
+    - file: book/problemsblock/quantchembasic
+      title: 🟩 Квантовая химия (Введение)
+    - file: book/problemsblock/quantchemadvancedscf
+      title: 🟧 Квантовая химия (SCF)
+
 
 - part: О курсе
   chapters:

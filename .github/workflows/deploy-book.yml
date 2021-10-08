@@ -1,0 +1,69 @@
+name: deploy-book
+
+on:
+  workflow_dispatch:
+    inputs:
+      DisableCache:
+        description: 'Disable cache'
+        required: false
+        default: 'false'
+  pull_request:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy_book:
+    runs-on: ubuntu-latest
+    env:
+      TF_CPP_MIN_LOG_LEVEL: 3
+
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: Checkout branch with cache
+        uses: actions/checkout@v2
+        with:
+          ref: "gh-pages"
+          path: ./gh-pages
+
+      - name: Copy cache for build book
+        if: ${{ github.event.inputs.DisableCache != 'true' }}
+        run: |
+          cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
+
+      # Install dependencies
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.8
+
+      - name: Set up poetry
+        uses: snok/install-poetry@v1.1.6
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      #Use cache
+      - name: Copy cache dir for dependecies
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-poetry-modules
+        with:
+          path: .venv
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        run: |
+          poetry install
+
+      - name: Build the book
+        run: |
+          poetry run jupyter-book build ./qmlcourseRU
+
+      # Push the book's HTML to github-pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU
