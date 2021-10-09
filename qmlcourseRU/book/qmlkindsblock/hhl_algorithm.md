@@ -16,7 +16,7 @@ kernelspec:
 
 Сегодня пришла пора поговорить о знаменитом алгоритме Харроу, Хиссадима и Ллойда, более известном как HHL-алгоритме, способном решать системы линейных уравнений.
 
-Очень надеюсь, что к данному занятию у вас уже есть представление об алгоритме фазовой оценки (QPE), использующем обратное квантовое преобразование Фурье, на котором и базируется HHL. Глубокое понимание всех тонкостей этого алгоритма потребует от вас уверенного владения математическим аппаратом. За детальным описанием вы всегда можете обратиться к статьям ["Quantum linear systems algorithms: a primer"](https://arxiv.org/abs/1802.08227), ["Quantum algorithm for solving linear systems of equations"](https://arxiv.org/abs/0811.3171v3), и ["Homomorphic Encryption Experiments on IBM's Cloud Quantum Computing Platform"](https://arxiv.org/abs/1612.02886v2). Приготовьтесь потратить время и умственные ресурсы, если алгоритм вас зацепит и вы решите в нём как следует покопаться. Мы же поможем вам заинтересоваться, рассмотрим основные принципы и небольшой пример.
+Очень надеюсь, что к данному занятию у вас уже есть представление об алгоритме фазовой оценки (QPE), использующем обратное квантовое преобразование Фурье, на котором и базируется HHL. Глубокое понимание всех тонкостей этого алгоритма потребует от вас уверенного владения математическим аппаратом. За детальным описанием вы всегда можете обратиться к статьям {cite}`dervovic2018quantum`, {cite}`Harrow_2009`, и {cite}`huang2017homomorphic`. Приготовьтесь потратить время и умственные ресурсы, если алгоритм вас зацепит и вы решите в нём как следует покопаться. Мы же поможем вам заинтересоваться, рассмотрим основные принципы и небольшой пример.
 
 ```{note}
 Именно HHL-алгоритм произвел настоящую революцию в области квантового машинного обучения. Ведь решение систем линейных уравнений так или иначе находится "под капотом" почти любого известного алгоритма машинного обучения. И действительно:
@@ -26,6 +26,13 @@ kernelspec:
 И это только малая часть примеров!
 
 Так что знакомство с QML не будет полным без ознакомления с этим прекрасным, но очень сложным алгоритмом!
+```
+
+```{figure} /_static/qmlkindsblock/hhl_algorithm/614px-Seth_Lloyd.jpg
+:name: lloyd
+:width: 400px
+
+Сет Ллойд, профессор MIT и один из создателей HHL-алгоритма
 ```
 
 ## Задача
@@ -137,14 +144,13 @@ $$
 
 Алгоритм обратного квантового Фурье переводит фазу в конкретный вектор.
 
-
-
-
 Принципиальная схема QPE выглядит следующим образом:
 
 ```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_circuit2.svg
 :name: hhl_curcuit2
 :width: 800px
+
+Схема алгоритма QPE
 ```
 
 Итак, мы подготовились, вспомнили много хорошего, теперь пошагово распишем наш алгоритм.
@@ -156,37 +162,40 @@ $$\large |0\rangle_{a}|0\rangle_{r}|b\rangle_{m}$$
 
 Т.е. наше состояние будет храниться в трёх регистрах, в каждом из которых содержится столько кубитов, сколько нужно для решения задачи.
 
-Шаг 1. Применение QPE с использованием преобразования $e^{iAt}$, после чего мы получим собственное значение оператора $A$ во втором регистре:
+1. Применение QPE с использованием преобразования $e^{iAt}$, после чего мы получим собственное значение оператора $A$ во втором регистре:
 
-$$
-|0\rangle_{a}|0\rangle_{r}|b\rangle_{m} \rightarrow \sum_{j=0}^{N-1}b_j|0\rangle_{a}|\lambda_j\rangle_r|u_j\rangle_m
-$$
+    $$
+    |0\rangle_{a}|0\rangle_{r}|b\rangle_{m} \rightarrow \sum_{j=0}^{N-1}b_j|0\rangle_{a}|\lambda_j\rangle_r|u_j\rangle_m
+    $$
 
-Шаг 2. Поворачиваем первый кубит с индексом $a$, используя специальный оператор вращения $R$:
+2. Поворачиваем первый кубит с индексом $a$, используя специальный оператор вращения $R$:
 
-$$
-R|0\rangle_{a} = \sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle_{a} + \frac{C}{\lambda_{j}}|1\rangle_{a}\right),
-$$
+    $$
+    R|0\rangle_{a} = \sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle_{a} + \frac{C}{\lambda_{j}}|1\rangle_{a}\right),
+    $$
 
-где $C$ - константа, которая должна быть меньше минимального из лямбда: $|C| < \lambda_{min}$ [Почему?].
+    где $C$ - константа, которая должна быть меньше минимального из лямбда: $|C| < \lambda_{min}$ [Почему?].
 
-Переводим первый кубит $|0\rangle_a$:
-$$
-\sum_{j=0}^{N-1}b_j|0\rangle_{a}|\lambda_j\rangle_r|u_j\rangle_m \rightarrow
-$$
-$$
-\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{C}{\lambda_j}|1\rangle\right)b_j\left|\lambda_{j}\right\rangle_{n}\left|u_{j}\right\rangle_{m}
-$$
+    Переводим первый кубит $|0\rangle_a$:
 
-Шаг 3. Применяем $QPE^{\dagger}$ (т.е. обратное получение фазы) и получаем следующее состояние:
-$$
-\sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{C}{\lambda_j}|1\rangle\right)b_{j}|0\rangle_{n}\left|u_{j}\right\rangle_{m}
-$$
-В конце мы измеряем верхний кубит и если получаем единицу, то знаем, что в нижнем регистре хранится искомый $|х\rangle$ с учётом нормировки:
+    $$
+    \sum_{j=0}^{N-1}b_j|0\rangle_{a}|\lambda_j\rangle_r|u_j\rangle_m \rightarrow
+    $$
+    $$
+    \sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{C}{\lambda_j}|1\rangle\right)b_j\left|\lambda_{j}\right\rangle_{n}\left|u_{j}\right\rangle_{m}
+    $$
 
-$$
-|x\rangle \approx \sum_{j=0}^{N-1}C(\frac{b_j}{\lambda_j})|u_j\rangle
-$$
+3. Применяем $QPE^{\dagger}$ (т.е. обратное получение фазы) и получаем следующее состояние:
+
+    $$
+    \sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{C}{\lambda_j}|1\rangle\right)b_{j}|0\rangle_{n}\left|u_{j}\right\rangle_{m}
+    $$
+   
+    В конце мы измеряем верхний кубит и если получаем единицу, то знаем, что в нижнем регистре хранится искомый $|х\rangle$ с учётом нормировки:
+
+    $$
+    |x\rangle \approx \sum_{j=0}^{N-1}C(\frac{b_j}{\lambda_j})|u_j\rangle
+    $$
 
 ## Пример
 
@@ -194,42 +203,43 @@ $$
 
 Итак, пусть задача выглядит так :
 
-$$
-\large
-\begin{aligned}
-&A=\left(\begin{array}{ll}
-1 & \frac{3}{5} \\
-\frac{3}{5} & 1
-\end{array}\right) \\
-&|b\rangle=|1\rangle=\left[\begin{array}{l}
-0 \\
-1
-\end{array}\right]
-\end{aligned}
-$$
+  $$
+  \large
+  \begin{aligned}
+  &A=\left(\begin{array}{ll}
+  1 & \frac{3}{5} \\
+  \frac{3}{5} & 1
+  \end{array}\right) \\
+  &|b\rangle=|1\rangle=\left[\begin{array}{l}
+  0 \\
+  1
+  \end{array}\right]
+  \end{aligned}
+  $$
 
-$$
-\large
-\left\{\begin{array}{l}
-x_{1}+\frac{3}{5} x_{2}=0 \\
-\frac{3}{5} x_{1}+x_{2}=1
-\end{array}\right.
-$$
+  $$
+  \large
+  \left\{\begin{array}{l}
+  x_{1}+\frac{3}{5} x_{2}=0 \\
+  \frac{3}{5} x_{1}+x_{2}=1
+  \end{array}\right.
+  $$
 
 Собственные значения и соответствующие собственные векторы:
-$$
-\large
-\begin{aligned}
-&\lambda_{0}=\frac{2}{5},\left|u_{0}\right\rangle=\left[\begin{array}{c}
--1 \\
-1
-\end{array}\right] \\
-&\lambda_{1}=\frac{8}{5},\left|u_{1}\right\rangle=\left[\begin{array}{l}
-1 \\
-1
-\end{array}\right]
-\end{aligned}
-$$
+
+  $$
+  \large
+  \begin{aligned}
+  &\lambda_{0}=\frac{2}{5},\left|u_{0}\right\rangle=\left[\begin{array}{c}
+  {-}1 \\
+  \;\;1
+  \end{array}\right] \\
+  &\lambda_{1}=\frac{8}{5},\left|u_{1}\right\rangle=\left[\begin{array}{l}
+  \;\;1\; \\
+  \;\;1\;
+  \end{array}\right]
+  \end{aligned}
+  $$
 
 Зададим параметр $t$ и проанализируем фазу:
 
@@ -249,7 +259,7 @@ $$
 
 Как мы видим, для перевода угла $\psi$ в векторную форму, нам понадобятся три кубита. После преобразования QPE мы имеем следующее состояние:
 
-$$
+$$\large
 \begin{aligned}
 &{QPE(|0\rangle_{a}|0\rangle_{r}|b\rangle_{m})=\sum_{j=0}^{1} \frac{1}{\sqrt{2}} \left |0\rangle_{a} |\lambda_{j} \rangle_{r} |u_{j}\right\rangle} = \frac{1}{\sqrt{2}}\left(|0\rangle_{a} |001\rangle_r \left|u_{0}\right\rangle + |0\rangle_{a} |100\rangle_r \left|u_{1}\right\rangle\right)
 \end{aligned}
