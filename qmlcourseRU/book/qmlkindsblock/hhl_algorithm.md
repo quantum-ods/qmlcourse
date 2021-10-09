@@ -39,7 +39,7 @@ kernelspec:
 
 Представим обычную систему линейных уравнений:
 
-$$
+$$\large
 \left\{\begin{array}{l}
 a_{11} x_{1}+a_{12} x_{2} = b_{1} \\
 a_{21} x_{1}+a_{22} x_{2} = b_{2}
@@ -48,24 +48,25 @@ $$
 
 Что в операторной форме можно переписать как:
 
-$$A\vec{x} = \vec{b}$$
+$$\large A\vec{x} = \vec{b}$$
 
 где $A$ - эрмитова матрица.
 
 Мы будем решать задачу на квантовом компьютере, то нам нужно перейти к квантовым состояниям:
 
-$$A|x\rangle = |b\rangle$$
+$$\large A|x\rangle = |b\rangle$$
 
 
 
-Чтобы найти искомый вектор $|x\rangle$, всё что нам по сути нужно сделать - это найти обратный к $А$ оператор (обозначаемый $A^{-1}$), который находится из равенства:
-$$AA^{-1} = A^{-1}A = I$$
+Чтобы найти искомый вектор $|x\rangle$, всё что нам по сути нужно сделать - это найти обратный к $A$ оператор (обозначаемый $A^{-1}$), который находится из равенства:
+
+$$\large AA^{-1} = A^{-1}A = I$$
 
 Распишем применительно к нашей задаче поиска вектора $|b\rangle$:
 
-$$A|x\rangle = |b\rangle$$
-$$A^{-1}A|x\rangle = A^{-1}|b\rangle$$
-$$|x\rangle = A^{-1}|b\rangle$$
+$$\large A|x\rangle = |b\rangle$$
+$$\large A^{-1}A|x\rangle = A^{-1}|b\rangle$$
+$$\large |x\rangle = A^{-1}|b\rangle$$
 
 Оказывается, что и это всё можно провернуть с помощью известных квантовых преобразований. Принципиальный вид нашей схемы представлен следующим образом:
 
@@ -84,61 +85,63 @@ $$|x\rangle = A^{-1}|b\rangle$$
 
 Мы будем использовать оператор $U = e^{iAt}$, и нужно, чтобы он был обратим – для этого $А$ должна быть эрмитовой.
 
-Вспомним, что  эрмитову матрицу $А$ можно представить в виде суммы собственных векторов, умноженных на собственные значения, т.е. в виде спектрального разложения:
+Вспомним, что  эрмитову матрицу $A$ можно представить в виде суммы собственных векторов, умноженных на собственные значения, т.е. в виде спектрального разложения:
 
-$$
-\begin{aligned}
-&A=\sum_{j=0}^{N-1} \lambda_{j}\left|u_{j}\right\rangle\left\langle u_{j}\right| \\
-&A^{-1}=\sum_{j=0}^{N-1} \lambda_{j}^{-1}\left|u_{j}\right\rangle\left\langle u_{j}\right|
-\end{aligned}
-$$
+  $$\large
+  \begin{aligned}
+  &A=\sum_{j=0}^{N-1} \lambda_{j}\left|u_{j}\right\rangle\left\langle u_{j}\right| \\
+  &A^{-1}=\sum_{j=0}^{N-1} \lambda_{j}^{-1}\left|u_{j}\right\rangle\left\langle u_{j}\right|
+  \end{aligned}
+  $$
 
 Тогда векторы $|b\rangle$ и $|x\rangle$ мы можем также представить через собственные векторы $A$:
 
-$$
-|b\rangle = \sum_{j=0}^{N-1} b_{j} | u_j \rangle, \ A|x\rangle = \lambda |x\rangle
-$$
+  $$\large
+  |b\rangle = \sum_{j=0}^{N-1} b_{j} | u_j \rangle, \ A|u_j\rangle = \lambda |u_j\rangle
+  $$
 
 Чтобы понять, почему это тоже ключевой момент, давайте вспомним, что значит собственный вектор и собственное значение матрицы.
 
-Собственным вектором $|x\rangle$ оператора $A$ называется такой ненулевой вектор, для которого выполняется:
+Собственным вектором $|u\rangle$ оператора $A$ называется такой ненулевой вектор, для которого выполняется:
 
-$$A|x\rangle = \lambda |x\rangle$$
+  $$\large A|u\rangle = \lambda |u\rangle$$
 
 $\lambda$ - собственное значение оператора $A$.
 
 Таким образом, искомый вектор $|x\rangle$ - не что иное, как:
 
-$$|x\rangle = A^{-1} |b \rangle = \sum_{j=0}^{N-1} \lambda_{j}^{-1}b_j | u_{j}\rangle
-$$
+  $$\large
+  |x\rangle = A^{-1} |b \rangle = \sum_{j=0}^{N-1} \lambda_{j}^{-1}b_j | u_{j}\rangle
+  $$
 
 Итак, фазовая оценка. Мы применяем к кубитам второго регистра матрицы Адамара, тем самым приводим их в суперпозицию. Следом запускаем оператор $U$:
 
-$$
-U = e^{iAt} = \sum_{j=0}^{N-1} e^{i \lambda_j t} \left| u_j \rangle \langle u_j \right|
-$$
+  $$\large
+  U = e^{iAt} = \sum_{j=0}^{N-1} e^{i \lambda_j t} \left| u_j \rangle \langle u_j \right|
+  $$
 
 Для того, чтобы узнать собственное значение оператора $U$, получения фазы (Quantum Phase Estimation - QPE), результатом которого получится следующее состояние:
 
-$$
-\large  QPE(U, |0\rangle|u\rangle) = 
-$$
-$$
-\large\frac{1}{2^{m/2}}( |0\rangle + e^{2\pi i 2^{m-1} \psi} |1\rangle) \otimes (|0\rangle + e^{2\pi i 2^{m-2} \psi} |1\rangle) \otimes \dots \otimes  (|0\rangle + e^{2\pi i 2^{0} \psi} |1\rangle) \otimes |u\rangle = 
-$$
+  $$\large  
+  QPE(U, |0\rangle|u\rangle) = 
+  $$
+  $$\large
+  \frac{1}{2^{m/2}}( |0\rangle + e^{2\pi i 2^{m-1} \psi} |1\rangle) \otimes (|0\rangle + e^{2\pi i 2^{m-2} \psi} |1\rangle) \otimes \dots \otimes  (|0\rangle + e^{2\pi i 2^{0} \psi} |1\rangle) \otimes |u\rangle = 
+  $$
 
-$$
-\large \frac{1}{2^{m/2}}\sum_{j=0}^{2^{m-1}} e^{2\pi i \psi j} |j\rangle |u\rangle = |\psi_{u}\rangle |u\rangle
-$$
+  $$\large 
+  \frac{1}{2^{m/2}}\sum_{j=0}^{2^{m-1}} e^{2\pi i \psi j} |j\rangle |u\rangle = |\psi_{u}\rangle |u\rangle
+  $$
 
 Параметр $t$ это нормировочная константа в случае $U = e^{iAt}$:
 
-$$\large
-e^{2\pi i \psi} = e^{i \lambda_j t}
-$$
-$$\large
-\psi = \frac{\lambda_j t}{2\pi}
-$$
+  $$\large
+  e^{2\pi i \psi} = e^{i \lambda_j t}
+  $$
+
+  $$\large
+  \psi = \frac{\lambda_j t}{2\pi}
+  $$
 
 Параметр $t$ подбирается с учётом того, что на выходе алгоритма QPE собственные значения $\lambda_j$ нормализуются к виду $0 \leq \lambda_j \leq 1$   и обычно мы располагаем огриниченным числом кубитов, которое можно использовать для аппроксимации.
 
@@ -164,13 +167,13 @@ $$\large |0\rangle_{a}|0\rangle_{r}|b\rangle_{m}$$
 
 1. Применение QPE с использованием преобразования $e^{iAt}$, после чего мы получим собственное значение оператора $A$ во втором регистре:
 
-    $$
+    $$\large
     |0\rangle_{a}|0\rangle_{r}|b\rangle_{m} \rightarrow \sum_{j=0}^{N-1}b_j|0\rangle_{a}|\lambda_j\rangle_r|u_j\rangle_m
     $$
 
 2. Поворачиваем первый кубит с индексом $a$, используя специальный оператор вращения $R$:
 
-    $$
+    $$\large
     R|0\rangle_{a} = \sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle_{a} + \frac{C}{\lambda_{j}}|1\rangle_{a}\right),
     $$
 
@@ -178,22 +181,22 @@ $$\large |0\rangle_{a}|0\rangle_{r}|b\rangle_{m}$$
 
     Переводим первый кубит $|0\rangle_a$:
 
-    $$
+    $$\large
     \sum_{j=0}^{N-1}b_j|0\rangle_{a}|\lambda_j\rangle_r|u_j\rangle_m \rightarrow
     $$
-    $$
+    $$\large
     \sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{C}{\lambda_j}|1\rangle\right)b_j\left|\lambda_{j}\right\rangle_{n}\left|u_{j}\right\rangle_{m}
     $$
 
 3. Применяем $QPE^{\dagger}$ (т.е. обратное получение фазы) и получаем следующее состояние:
 
-    $$
+    $$\large
     \sum_{j=0}^{N-1}\left(\sqrt{1-\frac{C^{2}}{\lambda_{j}^{2}}}|0\rangle+\frac{C}{\lambda_j}|1\rangle\right)b_{j}|0\rangle_{n}\left|u_{j}\right\rangle_{m}
     $$
    
-    В конце мы измеряем верхний кубит и если получаем единицу, то знаем, что в нижнем регистре хранится искомый $|х\rangle$ с учётом нормировки:
+    В конце мы измеряем верхний кубит и если получаем единицу, то знаем, что в нижнем регистре хранится искомый $|x\rangle$ с учётом нормировки:
 
-    $$
+    $$\large
     |x\rangle \approx \sum_{j=0}^{N-1}C(\frac{b_j}{\lambda_j})|u_j\rangle
     $$
 
@@ -203,8 +206,7 @@ $$\large |0\rangle_{a}|0\rangle_{r}|b\rangle_{m}$$
 
 Итак, пусть задача выглядит так :
 
-  $$
-  \large
+  $$\large
   \begin{aligned}
   &A=\left(\begin{array}{ll}
   1 & \frac{3}{5} \\
@@ -217,8 +219,7 @@ $$\large |0\rangle_{a}|0\rangle_{r}|b\rangle_{m}$$
   \end{aligned}
   $$
 
-  $$
-  \large
+  $$\large
   \left\{\begin{array}{l}
   x_{1}+\frac{3}{5} x_{2}=0 \\
   \frac{3}{5} x_{1}+x_{2}=1
