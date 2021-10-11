@@ -67,7 +67,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU
-    
+
       - name: Build PDF file
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
@@ -81,4 +81,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/pdf/
           destination_dir: pdf
-      
