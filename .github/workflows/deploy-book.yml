@@ -67,3 +67,17 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU
+
+      - name: Build PDF file
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
+          mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/all_book.pdf
+
+      - name: Deploy only pdf files
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU/_build/pdf/
+          destination_dir: pdf
