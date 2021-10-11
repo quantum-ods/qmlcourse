@@ -4,6 +4,8 @@
   chapters:
     - file: book/intro1block/intro1.md
       title: 🟦 О квантовых компьютерах
+    - file: book/prerequisite.md
+      title: ⬜ Пререквизиты курса
 
 - part: Основы Python
   chapters:
@@ -11,6 +13,8 @@
       title: ⬜ О блоке
     - file: book/pythonblock/python_l1.md
       title: 🟦 Вводная лекция про Python
+    - file: book/pythonblock/python_l2.md
+      title: 🟦 Установка инструментов
     - file: book/pythonblock/jupyter_l3.md
       title: 🟦 Ориентация в Jupyter
     - file: book/pythonblock/python_l4.md
@@ -19,9 +23,13 @@
       title: 🟦 Условия и сравнения
     - file: book/pythonblock/python_l6.md
       title: 🟦 Списки и циклы
-    - file: book/pythonblock/python_l10.md
+    - file: book/pythonblock/python_l7.md
+      title: 🟦 Словари
+    - file: book/pythonblock/python_l8.md
+      title: 🟦 Функции
+    - file: book/pythonblock/python_l9.md
       title: 🟦 Объекты и классы
-    - file: book/pythonblock/python_l11.md
+    - file: book/pythonblock/python_l10.md
       title: 🟦 Финальная лекция
 
 - part: Основы машинного обучения
@@ -76,6 +84,13 @@
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
 
+- part: Квантовые нейронные сети
+  chapters:
+    - file: book/qnnblock/qnnintro.md
+      title: ⬜ О блоке
+    - file: book/qnnblock/qconv.ipynb
+      title: 🟩 Квантовые сверточные сети
+
 - part: Проблемы квантового машинного обучения
   chapters:
     - file: book/problemsblock/quantchembasic
@@ -85,10 +100,10 @@
 
 - part: Железо квантовых компьютеров
   chapters:
-  - file: book/hwblock/hwintro
-    title: ⬜ О блоке
-  - file: book/hwblock/scqubits
-    title: 🟩 Сверхпроводниковые кубиты
+    - file: book/hwblock/hwintro
+      title: ⬜ О блоке
+    - file: book/hwblock/scqubits
+      title: 🟩 Сверхпроводниковые кубиты
 
 - part: О курсе
   chapters:
