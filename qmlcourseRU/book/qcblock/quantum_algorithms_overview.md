@@ -30,7 +30,7 @@ kernelspec:
 
 ```{figure} /_static/qcblock/quantum_algorithms_overview/problem_classes.png
 :name: problem_classes
-:width: 800px
+:width: 400px
 
 Классы задач по временной сложности
 ```
