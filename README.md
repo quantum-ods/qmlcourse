@@ -16,7 +16,7 @@
     <img alt="deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
 </p>
-</br></br></br>
+</br></br>
 <p align="left">
   <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
     <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
