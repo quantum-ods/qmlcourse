@@ -1,4 +1,4 @@
-<img src="./qmlcourseRU/logo.svg" align="left" width="195" height="195"></img>
+<img src="./qmlcourseRU/logo.svg" align="left"></img>
 
 # QMLCourse
 
@@ -16,7 +16,7 @@
     <img alt="deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
 </p>
-
+</br></br></br>
 <p align="left">
   <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
     <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
@@ -28,8 +28,6 @@
     <img alt="shield_downlod_all_pdf_book" src="https://img.shields.io/website?style=for-the-badge&up_color=yellow&up_message=download%20course%20book&url=https%3A%2F%2Fgithub.com%2FSemyonSinchenko%2Fqmlcourse%2Fraw%2Fgh-pages%2Fpdf%2Fall_book.pdf">
   </a>
 </p>
- 
-</br>
 
 ## About
 
