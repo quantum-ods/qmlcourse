@@ -102,8 +102,10 @@
   chapters:
     - file: book/hwblock/hwintro
       title: ⬜ О блоке
+    - file: book/hwblock/hwreview
+      title: 🟩 Обзор
     - file: book/hwblock/scqubits
-      title: 🟩 Сверхпроводниковые кубиты
+      title: 🟧 Сверхпроводниковые кубиты
 
 - part: О курсе
   chapters:
