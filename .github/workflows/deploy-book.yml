@@ -76,7 +76,6 @@ jobs:
 
       - name: Deploy only pdf files
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'workflow_dispatch' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/pdf/
