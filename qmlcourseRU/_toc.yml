@@ -47,10 +47,17 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
-    - file: book/qcblock/deutschs_algorithm
+
+- part: Базовые квантовые алгоритмы
+  chapters:
+    - file: book/qcalgo/qcalgointro
+      title: ⬜ О блоке
+    - file: book/qcalgo/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/grovers_algorithm
+    - file: book/qcalgo/grovers_algorithm
       title: 🟧 Алгоритм Гровера
+    - file: book/qcalgo/quantum_teleportation
+      title: 🟩 Квантовая телепортация
 
 - part: Железо квантовых компьютеров
   chapters:
