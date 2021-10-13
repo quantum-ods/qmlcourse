@@ -115,7 +115,13 @@ ml --> qubit
 
 qubit --> gates
 mixed <- qubit
-gates --> deutsch
+
+gates --> progcomparision
+progcomparision --> pennylane
+cirq <- progcomparision
+progcomparision -> qiskit
+
+pennylane --> deutsch
 
 deutsch --> advanced_algos
 advanced_algos -> grover
@@ -129,12 +135,7 @@ review --> nisq
 photonic <- review
 review -> cvq
 
-nisq --> progcomparision
-progcomparision --> pennylane
-cirq <- progcomparision
-progcomparision -> qiskit
-
-pennylane --> qml_general
+nisq --> qml_general
 
 qml_general -> hhl
 qknn <- qml_general
