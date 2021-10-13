@@ -70,6 +70,13 @@
     - file: book/progblock/tfq.md
       title: 🟧 Cirq & TFQ
 
+- part: Квантовое машинное обучение
+  chapters:
+    - file: book/qmlkindsblock/qmlkindsintro.md
+      title: ⬜ О блоке
+    - file: book/qmlkindsblock/hhl_algorithm
+      title: 🟥 Алгоритм HHL
+
 - part: Вариационные схемы
   chapters:
     - file: book/vqcblock/vqcintro
