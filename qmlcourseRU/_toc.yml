@@ -49,6 +49,8 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
+    - file: book/qcblock/quantum_algorithms_overview
+      title: 🟩 Обзор квантовых алгоритмов
     - file: book/qcblock/grovers_algorithm
       title: 🟧 Алгоритм Гровера
 
