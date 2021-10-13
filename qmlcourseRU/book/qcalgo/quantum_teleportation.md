@@ -35,65 +35,64 @@ $$ |\beta_{11}\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)$$
 
 Изначально, вся система из трёх кубитов будет иметь следующее состояние: $ |\psi_{0}\rangle = |\psi\rangle|0\rangle|0\rangle $ . Т.е. первый кубит находится в состоянии $ |\psi\rangle $, которое затем будет передаваться с помощью второго кубита на третий.
 
-
 ```{admonition} Алиса и Боб
 Первые два шага являются подготовительными. Поэтому Боб находится рядом и ждёт, пока Алиса проведёт необходимые операции.
 ```
 
 1. Алиса применяет гейт Адамара ко второму кубиту:
 
-    $$ |\psi_{1}\rangle = (I \otimes H \otimes I)|\psi_{0}\rangle = (I \otimes H \otimes I) |\psi\rangle|0\rangle|0\rangle  = \frac{1}{\sqrt{2}}|\psi\rangle(|0\rangle + |1\rangle)|0\rangle $$
+   $$ |\psi_{1}\rangle = (I \otimes H \otimes I)|\psi_{0}\rangle = (I \otimes H \otimes I) |\psi\rangle|0\rangle|0\rangle  = \frac{1}{\sqrt{2}}|\psi\rangle(|0\rangle + |1\rangle)|0\rangle $$
 
 2. Далее Алиса использует гейт CNOT для того, чтобы запутать второй кубит с третьим:
 
-    $$  |\psi_{2}\rangle = (I \otimes CNOT(2,3))|\psi_{1}\rangle =$$
-    $$(I \otimes CNOT(2,3))\frac{1}{\sqrt{2}}|\psi\rangle(|0\rangle + |1\rangle)|0\rangle = \frac{1}{\sqrt{2}}|\psi\rangle(|0\rangle|0\rangle + |1\rangle|1\rangle)$$
+   $$  |\psi_{2}\rangle = (I \otimes CNOT(2,3))|\psi_{1}\rangle =$$
+   $$(I \otimes CNOT(2,3))\frac{1}{\sqrt{2}}|\psi\rangle(|0\rangle + |1\rangle)|0\rangle = \frac{1}{\sqrt{2}}|\psi\rangle(|0\rangle|0\rangle + |1\rangle|1\rangle)$$
 
-    ```{admonition} Алиса и Боб 
-    Теперь состояния готовы. Сейчас Боб, забрав третий кубит с собой, отправляется по своим делам. И Алиса, в случае необходимости, сможет передать ему послание.
-    ```
+   ```{admonition} Алиса и Боб
+   Теперь состояния готовы. Сейчас Боб, забрав третий кубит с собой, отправляется по своим делам. И Алиса, в случае необходимости, сможет передать ему послание.
+   ```
 
 3. Алиса применяет CNOT между первым и вторым кубитами. Вспоминая, что $ |\psi\rangle = \alpha|0\rangle + \beta|1\rangle $:
 
-    $$|\psi_{3}\rangle = (I \otimes CNOT(1, 2))|\psi_{2}\rangle =$$ 
+   $$|\psi_{3}\rangle = (I \otimes CNOT(1, 2))|\psi_{2}\rangle =$$
 
-    $$(I \otimes CNOT(1, 2))\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =$$
+   $$(I \otimes CNOT(1, 2))\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =$$
 
-    $$ = \frac{1}{\sqrt{2}}[\alpha(|000\rangle + |011\rangle) + \beta(|110\rangle + |101\rangle)] $$
+   $$ = \frac{1}{\sqrt{2}}[\alpha(|000\rangle + |011\rangle) + \beta(|110\rangle + |101\rangle)] $$
 
 4. Алиса применяет гейт Адамара на своём первом кубите:
 
-    $$ |\psi_4\rangle = (H \otimes I \otimes I)|\psi_{3}\rangle = $$
-    $$\frac{1}{2} [|00\rangle(\alpha|0\rangle + \beta|1\rangle) +$$
-    $$ |01\rangle(\alpha|1\rangle + \beta|0\rangle)+ $$
-    $$ |10\rangle(\alpha|0\rangle - \beta|1\rangle)+ $$
-    $$ |11\rangle(\alpha|1\rangle - \beta|0\rangle)] $$
+   $$ |\psi_4\rangle = (H \otimes I \otimes I)|\psi_{3}\rangle = $$
+   $$\frac{1}{2} [|00\rangle(\alpha|0\rangle + \beta|1\rangle) +$$
+   $$ |01\rangle(\alpha|1\rangle + \beta|0\rangle)+ $$
+   $$ |10\rangle(\alpha|0\rangle - \beta|1\rangle)+ $$
+   $$ |11\rangle(\alpha|1\rangle - \beta|0\rangle)] $$
 
-    ```{admonition} Внимание 
-    Видно, что в каждой строчке у нас получаются разные состояния, по первым двум кубитам мы можем определить, в каком будет третий. Обратите внимание на общий множитель $\frac{1}{2}$ в первой строчке, не пропустите.
-    ```
+   ```{admonition} Внимание
+   Видно, что в каждой строчке у нас получаются разные состояния, по первым двум кубитам мы можем определить, в каком будет третий. Обратите внимание на общий множитель $\frac{1}{2}$ в первой строчке, не пропустите.
+   ```
 
 5. Алисе нужно теперь измерить первые 2 кубита и станет ясно, в какое из четырёх состояний перейдёт кубит Боба:
 
-    $$\large
-    \begin{array} {|r|r|}
-    \hline 00 & \alpha|0\rangle + \beta|1\rangle \\ 
-    \hline 01 & \alpha|1\rangle + \beta|0\rangle \\ 
-    \hline 10 & \alpha|0\rangle - \beta|1\rangle \\ 
-    \hline 11 & \alpha|1\rangle - \beta|0\rangle \\ 
-    \hline  
-    \end{array}
-    $$
+   $$
+   \begin{array} {|r|r|}
+   \hline 00 & \alpha|0\rangle + \beta|1\rangle \\
+   \hline 01 & \alpha|1\rangle + \beta|0\rangle \\
+   \hline 10 & \alpha|0\rangle - \beta|1\rangle \\
+   \hline 11 & \alpha|1\rangle - \beta|0\rangle \\
+   \hline
+   \end{array}
+   $$
 
 6. В зависимости от полученных по классическому каналу данных, Боб должен применить одну из операций для того, чтобы восстановить исходное состояние:
 
-$$\large
+$$
 \begin{array} {|r|r|}
-\hline 00 & I \\ 
-\hline 01 & X \\ 
-\hline 10 & Z \\ 
-\hline 11 & ZX \\ 
-\hline  
+\hline 00 & I \\
+\hline 01 & X \\
+\hline 10 & Z \\
+\hline 11 & ZX \\
+\hline
 \end{array}
 $$
 
@@ -127,7 +126,7 @@ qc.measure(qr[0],crz)
 qc.measure(qr[1],crx)
 
 # Шаг 6 - применяются гейт X и гейт Z в завиимости от того, какое из измерений даёт результат 1.
-qc.x(qr[2]).c_if(crx, 1) 
+qc.x(qr[2]).c_if(crx, 1)
 qc.z(qr[2]).c_if(crz, 1)
 
 qc.draw()
