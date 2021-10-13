@@ -34,10 +34,10 @@
 
 - part: Основы машинного обучения
   chapters:
-   - file: book/mlblock/ml_intro
-     title: ⬜ О блоке
-   - file: book/mlblock/ml_l1
-     title: 🟦 Машинное обучение как пазл
+    - file: book/mlblock/ml_intro
+      title: ⬜ О блоке
+    - file: book/mlblock/ml_l1
+      title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
@@ -51,6 +51,15 @@
       title: 🟩 Алгоритм Дойча
     - file: book/qcblock/grovers_algorithm
       title: 🟧 Алгоритм Гровера
+
+- part: Железо квантовых компьютеров
+  chapters:
+    - file: book/hwblock/hwintro
+      title: ⬜ О блоке
+    - file: book/hwblock/hwreview
+      title: 🟩 Обзор
+    - file: book/hwblock/scqubits
+      title: 🟥 Сверхпроводниковые кубиты
 
 - part: Фреймворки
   chapters:
@@ -97,7 +106,6 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
-
 
 - part: О курсе
   chapters:
