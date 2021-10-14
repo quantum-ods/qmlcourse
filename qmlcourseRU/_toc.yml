@@ -107,6 +107,13 @@
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
 
+- part: Variationals Quantum Eigensolver
+  chapters:
+    - file: book/vqeblock/vqeintro
+      title: ⬜ О блоке
+    - file: book/vqeblock/vqe
+      title: 🟩 Основы VQE
+
 - part: О курсе
   chapters:
     - file: book/bibliography
