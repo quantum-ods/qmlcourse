@@ -23,14 +23,18 @@ $$
 \mathbf{v} = v_1 \mathbf{e}_1 + v_2 \mathbf{e}_2 + ... + v_n \mathbf{e}_n = \begin{pmatrix} v_1 \\ v_2 \\ ... \\ v_n \end{pmatrix}
 $$
 
-Рисовать обычный вектор как столбец -- договоренность, согласованная со всей последующей математикой.
+## Операции с векторами
 
-С векторами можно делать несколько арифметических действий: складывать и умножать на скаляр:
+Как было сказано ранее в формальном определении, существует две основные операции над векторами:
 
+- сложение:
 $$
-\lambda \mathbf{v} = \lambda v_1 \mathbf{e}_1 + \lambda v_2 \mathbf{e}_2 + ... + \lambda v_n \mathbf{e}_n = \lambda  \begin{pmatrix} v_1 \\ v_2 \\ ... \\ v_n \end{pmatrix} = \begin{pmatrix} \lambda v_1 \\ \lambda v_2 \\ ... \\ \lambda v_n \end{pmatrix}\\
+\lambda \mathbf{v} = \lambda v_1 \mathbf{e}_1 + \lambda v_2 \mathbf{e}_2 + ... + \lambda v_n \mathbf{e}_n = \lambda  \begin{pmatrix} v_1 \\ v_2 \\ ... \\ v_n \end{pmatrix} = \begin{pmatrix} \lambda v_1 \\ \lambda v_2 \\ ... \\ \lambda v_n \end{pmatrix}
+$$
 
-\mathbf{a} + \mathbf{b} = (a_1 + b_1) \mathbf{e}_1 + ... + (a_n + b_n) \mathbf{e}_n
+- умножения вектора на число (скаляр):
+$$
+\mathbf{a} + \mathbf{b} = (a_1 + b_1) \mathbf{e}_1 + ... + (a_n + b_n) \mathbf{e}_n = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ ... \\ b_n \end{pmatrix} = \begin{pmatrix} a_1 + b_1 \\ a_2 + b_2 \\ ... \\ a_n + b_n \end{pmatrix}
 $$
 
 
