@@ -143,5 +143,3 @@ np.allclose & dtypes
 - broadcasting
 - floating point things
 - numpy fun
-
-
