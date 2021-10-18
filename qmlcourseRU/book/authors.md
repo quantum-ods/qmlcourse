@@ -12,8 +12,9 @@
 
 1. [Семен Синченко](https://github.com/SemyonSinchenko)
 2. [Илья Беседин](https://github.com/ooovector)
-3. [Сергей Ширкин](https://github.com/doktrster)
+3. [Сергей Ширкин](https://github.com/SergeiShirkin)
 4. [Александр Березутский](https://github.com/meandmytram)
+5. [Котенков Игорь](https://github.com/stalkermustang)
 
 ## Основные ревьюеры
 
@@ -74,6 +75,8 @@
 [Карелин Николай](https://github.com/karelin)
 
 [Кашницкий Юрий](https://github.com/Yorko)
+
+[Котенков Игорь](https://github.com/stalkermustang)
 ```
 
 ```{dropdown} **Л**
@@ -125,7 +128,7 @@
 ```
 
 ```{dropdown} **Ш**
-[Ширкин Сергей](https://github.com/doktrster)
+[Ширкин Сергей](https://github.com/SergeiShirkin)
 ```
 
 ```{dropdown} **Э**

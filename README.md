@@ -9,15 +9,25 @@
   <a href="https://github.com/SemyonSinchenko/qmlcourse/discussions">
     <img alt="shield_discussions" src="https://img.shields.io/github/discussions/SemyonSinchenko/qmlcourse">
   </a>
-  <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
-    <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit.yml">
+    <img alt="pre_commit" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
-  <a href="https://ods.ai/tracks/qmlcourse">
-    <img alt="shield_website_ods" src="https://img.shields.io/website?up_color=critical&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml">
+    <img alt="deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
 </p>
-
-</br>
+</br></br>
+<p align="left">
+  <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
+    <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+  </a>
+  <a href="https://ods.ai/tracks/qmlcourse">
+    <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=red&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+  </a>
+  <a href="https://github.com/SemyonSinchenko/qmlcourse/raw/gh-pages/pdf/all_book.pdf">
+    <img alt="shield_downlod_all_pdf_book" src="https://img.shields.io/website?style=for-the-badge&up_color=yellow&up_message=download%20course%20book&url=https%3A%2F%2Fgithub.com%2FSemyonSinchenko%2Fqmlcourse%2Fraw%2Fgh-pages%2Fpdf%2Fall_book.pdf">
+  </a>
+</p>
 
 ## About
 
@@ -32,8 +42,9 @@ This is the main repository of the course.
 3. [Course Program](#course-program)
 4. [Team](#team)
 5. [Join ODS](#join-ods)
-6. [Bibtex Citations](#bibtex)
-7. [Legal Issues](#legal-issues)
+6. [Similar Projects](#similar-projects)
+7. [Bibtex Citations](#bibtex)
+8. [Legal Issues](#legal-issues)
 
 ## Contributing Guide
 
@@ -113,6 +124,13 @@ Also, all authors for some updates are participants special channel into communi
 ## Join ODS
 
 To join the ODS-community slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that, we add you to the closed channel in the ODS Slack.
+
+## Similar projects
+
+- [QuantumAlgorithms.org](https://github.com/Scinawa/quantumalgorithms.org) [ENG]: lecture notes for students about quantum algorithms and quantum machine learning. Compared to this project our lectures are more practice and programming-oriented. In our course, there are more entry-level and sci-pop lectures but in QuantumAlgorithms.org there are more hard math and strong proofs of theorems. Also, we pay less attention to fully-quantum algorithms and ML but pay more attention to the variational and hybrid quantum-classical things.
+- [Qiskit-textbook](https://github.com/qiskit-community/qiskit-textbook) [ENG]: a textbook about learning quantum computing with qiskit. Compared to this project our course is more about ML, not the quantum protocols and algorithms. Also, we use `PennyLane` as the main quantum framework because it could be used with different backends including `Qiskit` and `CirQ`.
+- [CERN Introductory Course](https://home.cern/news/announcement/computing/online-introductory-lectures-quantum-computing-6-november) [ENG]: A series of weekly lectures on the basics of quantum computing. The talks focus on the practical aspects of quantum computing and are organised by CERN openlab and the CERN Quantum Technology Initiative. They are given by Elias Fernandez-Combarro Alvarez, an associate professor in the Computer Science Department at the University of Oviedo in Spain since 2009 and a cooperation associate at CERN since earlier this year. Compared to that lectures our course is more practice and programming oriented. Also our course is open source and maintained by community compared to the CERN course which is maintained by the author Dr. Alvarez.
+- [CERN Introductory Course (adopted version in russian)](https://russol.info/quantum) [RU]: The same as above but in russian and better adopted for entry-level poeple. Lectures are splitted to short parts and notes are commented and illustrated.
 
 ## Bibtex
 

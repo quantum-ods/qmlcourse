@@ -198,7 +198,6 @@ $|\psi\rangle = \frac{1}{2}((-1)^{f(0)}|0\rangle + (-1)^{f(1)}|1\rangle)(|0\rang
 ```{code-cell} ipython3
 import pennylane as qml
 from pennylane import numpy as np
-import numpy as np
 
 dev = qml.device('default.qubit', shots=1, wires=2)
 ```
@@ -255,7 +254,7 @@ def circuit(black_boxe_name):
 black_box_name = random_black_box()
 ```
 
-А затем запустим алгоритм Дойча и выведем результат его работы. Собственное значение $1$ оператора $Z$ будет соответствовать состоянию $|0\rangle$ (функция несбалансирована), а собственное значение $-1$ - состоянию $|1\rangle$ (функция сбалансирована):
+А затем запустим алгоритм Дойча и выведем результат его работы. Собственное значение $1$ оператора $Z$ будет соответствовать состоянию $|0\rangle$ (функция несбалансированна), а собственное значение $-1$ - состоянию $|1\rangle$ (функция сбалансирована):
 
 ```{code-cell} ipython3
 result = circuit(black_box_name)
