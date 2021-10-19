@@ -111,10 +111,53 @@ kernelspec:
 
       = \begin{cases}
         2^n, \text{ если } z \cdot s = 0 \\
-        0, \text{ если}  z \cdot s = 1
+        0, \text{ если }  z \cdot s = 1
       \end{cases}
     $$
 
+    $$
+      \sum_{z \in \{0, 1 \}^2} \left\| \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot x} (1 + (-1)^{z \cdot s})}{2} |f(x)\rangle \right\|^2 = 2^{n-1} 2 ^{n} = 2^{2n-1}
+    $$
+
+    $$
+      p(z) = \begin{cases}
+        \frac{1}{2^{n-1}}, \text{ если } z \cdot s = 0 \\
+        0, \text{ если }  z \cdot s = 1
+      \end{cases}
+    $$
+
+    Пусть мы замеряем первый регистр $k$ раз и получаем $z_0, z_1, z_2, ..., z_{k-1}$. Теперь мы знаем, что $z_i \cdot s = 0$ для всех $i \in [0, k-1]$.
+
+    Теперь приступаем к вычислению строки $s$.
+
+## Постобработка
+
+Итак, для того, чтобы найти $\vec{s} = (s_0, s_1, s_2, ..., s_{n-1})^T$, нам потребуется $n$ линейно независимых векторов $\vec{z_i}$, для которых выполняется $\vec{z_i} \cdot \vec{s} = 0$.
+
+Пусть заданы **бинарные векторы** $\vec{z_0}, \vec{z_1}, ..., \vec{z_{n-1}}$ и булевы значения $b_0, b_1, ..., b_{n-1}$. Тогда множество векторов $\{\vec{z_i} \} i \in \{0, ..., n-1\}$  **линейно независимо**
+, если:
+
+$$
+  (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}) = \vec{0}
+$$
+
+имеет только тривиальные решения $b_0 = b_1 = ... = b_{n-1} = 0$. Иначе, векторы $\vec{z_i}, i \in \{0, ..., n-1\}$ **линейно зависимы**.
+
+Отсюда следует $\vec{ z_{i} } \neq \vec{0}, i \in [0, ..., n-1] $ .
+
+Пусть $z_0, z_1, ..., z_{n-1}$ линейно зависимы, тогда, хотя бы $1$ из $n$ линейных уравнений $\vec{z_0} \cdot \vec{s} = 0, \vec{z_1} \cdot \vec{s} = 0, ..., \vec{z_{n-1}} \cdot \vec{s} = 0$, могут быть сокращены.
+
+$$
+  0 = \vec{0} \cdot \vec{s}
+  = (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}) \cdot \vec{s} \\
+  
+  = (b_0 \wedge \vec{z_0}) \cdot \vec{s} \oplus (b_1 \wedge \vec{z_1}) \cdot \vec{s} \oplus (b_2 \wedge \vec{z_2}) \cdot \vec{s} \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}) \cdot \vec{s} \\
+
+  = b_0 \wedge (\vec{z_0} \cdot \vec{s}) \oplus b_1 \wedge (\vec{z_1} \cdot \vec{s}) \oplus b_2 \wedge (\vec{z_2} \cdot \vec{s}) \oplus ... \oplus b_{n-1} \wedge (\vec{z_{n-1}} \cdot \vec{s}) \\
+
+$$
+
+Также, из-за того, что $z_0, z_1, ..., z_{n-1}$ линейно зависимы, можно утверждать, что $b_i \neq 0 (b_i = 1)$
 ## Квантовая схема, реализующая алгоритм Саймона
 
 Чем же хороша магия алгоритма Саймона? Давайте увидим своими глазами.
