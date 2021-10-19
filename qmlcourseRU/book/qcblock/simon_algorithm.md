@@ -158,6 +158,28 @@ $$
 $$
 
 Также, из-за того, что $z_0, z_1, ..., z_{n-1}$ линейно зависимы, можно утверждать, что $b_i \neq 0 (b_i = 1)$
+
+$$
+  \vec{z_i} \cdot \vec{s} = b_i \wedge \vec{z_i} \cdot \vec{s} = (b_i \wedge (\vec{z_i} \cdot \vec{s})) \oplus 0 \\
+  = (b_i \wedge (\vec{z_i} \cdot \vec{s})) \oplus (b_0 \wedge (\vec{z_0} \cdot \vec{s})) \oplus
+  (b_1 \wedge (\vec{z_1} \cdot \vec{s})) \oplus (b_2 \wedge (\vec{z_2} \cdot \vec{s})) \oplus ... \oplus (b_{n-1} \wedge (\vec{z_{n-1}} \cdot \vec{s}))  \\
+
+  = (b_i \wedge (\vec{z_i} \cdot \vec{s})) \oplus (b_i \wedge (\vec{z_i} \cdot \vec{s})) \oplus \bigoplus_{j \neq i}(b_j \wedge (\vec{z_j} \cdot \vec{s})) \\
+
+  = 0 \oplus  \bigoplus_{j \neq i}(b_j \wedge (\vec{z_j} \cdot \vec{s})) \\
+
+  =   \bigoplus_{j \neq i}(b_j \wedge (\vec{z_j} \cdot \vec{s})) \\
+
+  =   \bigoplus_{j \neq i}(b_j \wedge 0) \\
+
+  =   \bigoplus_{j \neq i} 0 \\
+
+  = 0 \\
+
+$$
+
+Т.е. мы сократили $(\vec{z_i} \cdot s)$.
+
 ## Квантовая схема, реализующая алгоритм Саймона
 
 Чем же хороша магия алгоритма Саймона? Давайте увидим своими глазами.
@@ -225,3 +247,10 @@ $$
 А теперь попробуйте воспользоваться тем фактом, что $f(a \oplus b) = f(a) \otimes b$ и ответить на вопрос, какие состояния примут верхние кубиты после измерения и почему? Что получится, если наш искомый $M$ окажется равным $|01\rangle$? А если он имеет другое состояние?
 
 Далее вас ждёт совершенно классический поиск, который не должен вызвать у вас трудности как у программистов, тем более волшебников. Произведя немного нудный, но нехитрый анализ, вы без труда ответите на выше поставленные вопросы, а также выясните, сколько раз нужно вызвать алгоритм Саймона.
+
+
+## Ссылки
+
+[https://leimao.github.io/blog/Simon-Algorithm/](!https://leimao.github.io/blog/Simon-Algorithm/)
+
+[Simon's problem](!https://en.wikipedia.org/wiki/Simon%27s_problem)
