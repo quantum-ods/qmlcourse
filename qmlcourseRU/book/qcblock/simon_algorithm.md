@@ -23,6 +23,8 @@ kernelspec:
 
   $$\large f(x) = f(y) \Leftrightarrow x \oplus y \in \{0^n, s\}$$
 
+Функция $f(x)$ представляет собой чёрный ящик.
+
 Задача состоит в том, чтобы **найти $s$ выполнив при этом как можно меньшее количество вызовов $f(x)$ .**
 
 # Алгоритм Саймона
@@ -52,15 +54,66 @@ kernelspec:
     ```
 
 
-
 5. Производим измерение на первом регистре. И здесь возможны 2 варианта исхода:
 
     1. $ x \oplus y = 0^n $
 
     2. $ x \oplus y = s, \text{ при этом } s \neq 0^n $
 
-  Т.е. во втором случае мы сможем получить значение искомой строки $s$.
+    Т.е. во втором случае мы сможем получить значение искомой строки $s$.
 
+    Здесь мы рассмотрим оба случая отдельно.
+
+    Вероятность получить первый случай $ x \oplus y = 0^n $ равна:
+
+    $$ \sum_{z \in \{0, 1\}^n}|z\rangle \otimes \frac{1}{2^n} \sum_{k \in \{0, 1\}^n}(-1^{k \cdot z}) |f(k) \rangle $$
+
+    $$ p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{z \cdot k } |f(k)\rangle \right) \right\|^2 = \frac{1}{2^n}$$
+
+    Имеет место **равномерное распределение**.
+
+    Гораздо интереснее случай $ x \oplus y = s $, $ s \neq 0^n$. В данном случае функция $f$ преобразует два различных входных значения $x_1, x_2 \in \{0,1\}^n$ в одно $f(x_1) = f(x_2) = s \in \{0, 1\}^n$ .
+    Также в данном случае справедливо $x_1 \oplus x_2 = s$, что переписывается в виде $x_1 \oplus s = x_2$ .
+
+    $$ p_y = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{x \cdot y } |f(x)\rangle \right) \right\|^2 =
+     \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{x_1 \cdot y } (-1)^{x_2 \cdot y })|z\rangle \right) \right\|^2$$
+
+    $$ |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot x} (1 + (-1)^{z \cdot s})}{2} |z\rangle \oplus |f(x)\rangle= \\ 
+    
+    \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot x} (1 + (-1)^{z \cdot s})}{2} |f(x)\rangle \\
+    $$
+
+    Здесь необходимо пояснить и расписать.
+
+    $$\langle f(x),f(y)\rangle = 
+    \begin{cases}
+      1, \text{ если } x = y \text{ или } x = y \oplus s \\
+      0, \text{ иначе}
+    \end{cases}
+    $$
+
+    $$
+      \left\| \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot x} (1 + (-1)^{z \cdot s})}{2} |f(x)\rangle \right\|^2 = \\
+      
+      = \left\langle \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot x} (1 + (-1)^{z \cdot s})}{2} |f(x)\rangle, \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot x} (1 + (-1)^{z \cdot s})}{2} |f(x)\rangle  \right\rangle^2 \\
+
+      = \sum_{x \in \{0, 1 \}^n} \sum_{y \in \{0, 1 \}^n} \frac{(-1)^{z \cdot x} (1 + (-1)^{z \cdot s})}{2}\frac{(-1)^{z \cdot y} (1 + (-1)^{z \cdot s})}{2}  \langle f(x)|f(y)\rangle \\
+
+      = \sum_{x \in \{0, 1 \}^n} \sum_{y \in \{0, 1 \}^n} \frac{(-1)^{z \cdot (x \oplus y)} (1 + (-1)^{z \cdot s})^2}{4}  \langle f(x)|f(y)\rangle \\
+
+      = \sum_{x \in \{0, 1 \}^n} \sum_{y \in \{0, 1 \}^n} \frac{(-1)^{z \cdot s} (1 + (-1)^{z \cdot s})^2}{4}  \langle f(x)|f(y)\rangle \\
+
+      = \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot s} (1 + (-1)^{z \cdot s})^2}{4}  \langle f(x)|f(x)\rangle + \frac{(-1)^{z \cdot s} (1 + (-1)^{z \cdot s})^2}{4}  \langle f(x)|f(x + c)\rangle \\
+
+      = \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot s} (1 + (-1)^{z \cdot s})^2}{2} \\
+
+      = \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{z \cdot s} (1 + (-1)^{z \cdot s})^2}{2}\\
+
+      = \begin{cases}
+        2^n, \text{ если } z \cdot s = 0 \\
+        0, \text{ если}  z \cdot s = 1
+      \end{cases}
+    $$
 
 ## Квантовая схема, реализующая алгоритм Саймона
 
