@@ -9,6 +9,9 @@
   <a href="https://github.com/SemyonSinchenko/qmlcourse/discussions">
     <img alt="shield_discussions" src="https://img.shields.io/github/discussions/SemyonSinchenko/qmlcourse">
   </a>
+  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit-deploy-book.yml">
+    <img alt="pre_commit_deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit-deploy-book.yml/badge.svg">
+  </a>
   <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
     <img alt="shield_website_jb" src="https://img.shields.io/website?up_color=orange&up_message=build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
   </a>
@@ -99,16 +102,16 @@ Also, all authors for some updates are participants special channel into communi
 
 ### Editors
 
-- @nmarkova([GitHub](https://github.com/nsmarkova))
+- @nmarkova ([GitHub](https://github.com/nsmarkova))
 
 ### Orgs
 
-- @yorko([GitHub](https://github.com/Yorko))
-- @vtrohimenko([GitHub](https://github.com/vtrokhymenko))
+- @yorko ([GitHub](https://github.com/Yorko))
+- @vtrohimenko ([GitHub](https://github.com/vtrokhymenko))
 
 ### DevOps
 
-- _not in ODS slack_ [GitHub](https://github.com/dkorzhov)
+- @Korzhov Dmitry ([GitHub](https://github.com/dkorzhov))
 
 ## Join ODS
 

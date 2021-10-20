@@ -17,6 +17,8 @@
       title: 🟦 Переменные, типы и вывод
     - file: book/pythonblock/python_l5.md
       title: 🟦 Условия и сравнения
+    - file: book/pythonblock/python_l10.md
+      title: 🟦 Объекты и классы
 
 - part: Основы машинного обучения
   chapters:
@@ -35,8 +37,8 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/simon_algorithm
-      title: 🟩 Алгоритм Саймона
+    - file: book/qcblock/grovers_algorithm
+      title: 🟧 Алгоритм Гровера
 
 - part: Фреймворки
   chapters:

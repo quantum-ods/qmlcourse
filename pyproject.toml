@@ -6,14 +6,14 @@ authors = ["SemyonSinchenko <semyonsinchenko@yahoo.com>"]
 license = "CCBY-4.0"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-PennyLane = "^0.14.1"
+python = "^3.8"
+PennyLane = "^0.17.0"
 numpy = "^1.19.2"
 matplotlib = "^3.3.4"
 jupyter-book = "^0.10.1"
 scikit-learn = "^0.24.1"
 cirq = "^0.11.0"
-tensorflow = "2.4.2"
+tensorflow = "2.5.1"
 tensorflow-quantum = "^0.5.1"
 pre-commit = "^2.13.0"
 
