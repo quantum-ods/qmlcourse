@@ -211,7 +211,7 @@ Numpy даёт возможность выполнить операцию обр
 
 ```{code-cell} ipython3
 a = np.array([[1., 2.], [3., 4.]])
-inv = numpy.linalg.inv(a)
+inv = np.linalg.inv(a)
 print(f'{inv=}')
 ```
 
