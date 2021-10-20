@@ -31,7 +31,7 @@ print(f"{b = }")
 c = np.eye(3)
 print(f"{c = }")
 
-q = np.random.random((1, 100))
+q = np.random.random((1, 20))
 print(f"{q = }")
 ```
 
@@ -63,19 +63,22 @@ a = np.arange(16).reshape(4, 4)
 print(f"{a = }")
 
 # просто по индексам
-print(f"a_{0,1}: {a[0, 1] = }, {a[0][1] = }")
+print(f"\n{a[0, 1] = }")
+print(f"{a[0][1] = }")
 
 # по слайсам
-print("a_{1,1..3}", a[0, 1:3])
-print(f"a_{2}: {a[2] = }, {a[2, :] = }, {a[2, ...] = }")
+print(f"\n{a[0, 1:3] = }")
+print(f"{a[2] = }")
+print(f"{a[2, :] = }")
+print(f"{a[2, ...] = }")
 
 # по маске
 mask = (a % 3 == 0)
-print(f"{mask = }")
+print(f"\n{mask = }")
 print(f"{a[mask] = }")
 
 first_rows = np.array([True, True, False, False])
-print(f"{a[first_rows] = }")
+print(f"\n{a[first_rows] = }")
 ```
 
 Для работы с размерностями часто используются еще три конструкции: `None`, `...` (ellipsis, многоточие) и `:` (двоеточие).
@@ -85,19 +88,20 @@ a = np.arange(16).reshape(4, 4)
 print(f"{a = }")
 
 # None добавляет ось размерности 1
-print(f"{a[None].shape = }")
+print(f"\n{a[None].shape = }")
 print(f"{a[:, :, None].shape = }")
 
 # : превращается в slice (None), берет все элементы вдоль размерности
-print(f"{a[2, :] = }")
+print(f"\n{a[2, :] = }")
 print(f"{a[2, 0:None] = }")
 
 # ... ellipsis, превращается в необходимое число двоеточий :,:,:
-print(f"{a[...] = }")
+print(f"\n{a[...] = }")
 
 # также ... удобен когда мы не знаем настоящий шейп массива или нужно не трогать несколько подряд идущих размерностей
 z = np.arange(27).reshape(3, 3, 3)
-print(f"{z[0, ..., 1] = }, {z[0, :, 1] = }")
+print(f"\n{z[0, ..., 1] = }")
+print(f"{z[0, :, 1] = }")
 ```
 
 В целом, в numpy очень здорово реализованы методы `__getitem__`/`__setitem__`.
@@ -148,7 +152,7 @@ print(f"{broad = }")
 a = np.array([1, 2, 3])
 k = 2
 broad = a - k
-print(f"{broad = }")
+print(broad)
 ```
 
 В numpy приняты следующие правила работы с массивами разного размера:
@@ -183,7 +187,7 @@ f16 = np.float16("0.1")
 f32 = np.float32("0.1")
 f64 = np.float64("0.1")
 print(f"{f16 = }, {f32 = }, {f64 = }")
-print(f16 == f32 == f64)
+print(f"{f16 == f32 == f64 = }")
 ```
 
 Из-за этого для сравнения массивов с типом float используют `np.allclose`.
@@ -208,7 +212,7 @@ Numpy позволяет решить систему линейных уравн
 a = np.array([[7, 4], [9, 8]])
 b = np.array([5, 3])
 solution = np.linalg.solve(a, b)
-print(f"{solution = }")
+print(solution)
 ```
 
 ### Обращение матриц.
@@ -218,7 +222,7 @@ Numpy даёт возможность выполнить операцию обр
 ```{code-cell} ipython3
 a = np.array([[1., 2.], [3., 4.]])
 inv = np.linalg.inv(a)
-print(f"{inv = }")
+print(inv)
 ```
 
 ### Собственные вектора и числа
