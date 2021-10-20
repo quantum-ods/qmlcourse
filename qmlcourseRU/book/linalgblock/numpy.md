@@ -156,18 +156,17 @@ print(broad)
 ```
 
 В numpy приняты следующие правила работы с массивами разного размера:
-
 1. Размерности сравниваются справа налево
 2. Два массива совместимы в размерности, если она одинаковая, либо у одного из массивов единичная.
 3. Вдоль отсутствующих размерностей происходит расширение повторением (`np.repeat`).
 
-![.](https://i.stack.imgur.com/JcKv1.png)
-
-```{admonition} Link to the source
-https://mathematica.stackexchange.com/questions/99171/how-to-implement-the-general-array-broadcasting-method-from-numpy
+```{figure} /_static/linalgblock/numpy_work_with_arrays.png
+:name: numpy_work_with_arrays
 ```
 
-Be aware, автоматический броадкастинг легко приводит к ошибкам, так что лучше делать его самостоятельно в явной форме.
+```{attention} Be aware
+Автоматический броадкастинг легко приводит к ошибкам, так что лучше делать его самостоятельно в явной форме.
+```
 
 
 ## floating point things
