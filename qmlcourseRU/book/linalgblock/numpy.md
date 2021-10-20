@@ -192,7 +192,7 @@ Numpy даёт возможность выполнить операцию обр
 
 ```{code-cell} ipython3
 a = np.array([[1., 2.], [3., 4.]])
-print(numpy.linalg.inv(a)) # array([[-2. ,  1. ], [ 1.5, -0.5]])
+print(np.linalg.inv(a)) # array([[-2. ,  1. ], [ 1.5, -0.5]])
 ```
 
 ### Собственные вектора и числа
