@@ -81,10 +81,11 @@ print(f"{a[first_rows] = }")
 Для работы с размерностями часто используются еще три конструкции: `None`, `...` (ellipsis, многоточие) и `:` (двоеточие).
 
 ```{code-cell} ipython3
+a = np.arange(16).reshape(4, 4)
 print(f"{a = }")
 
 # None добавляет ось размерности 1
-print(f"{a[None].shape = "})
+print(f"{a[None].shape = }")
 print(f"{a[:, :, None].shape = }")
 
 # : превращается в slice (None), берет все элементы вдоль размерности
