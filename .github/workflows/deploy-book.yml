@@ -1,4 +1,4 @@
-name: pre-commit-deploy-book
+name: deploy-book
 
 on:
   workflow_dispatch:
@@ -8,23 +8,15 @@ on:
         required: false
         default: 'false'
   pull_request:
+  push:
+    branches: [ master ]
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
-  pre-commit:
+  deploy_book:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2.2.2
-      - uses: pre-commit/action@v2.0.3
-        with:
-          extra_args: --all-files
-
-  deploy-book:
-    runs-on: ubuntu-latest
-    needs: [pre-commit]
     env:
       TF_CPP_MIN_LOG_LEVEL: 3
+
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -75,3 +67,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU
+
+      - name: Build PDF file
+        run: |
+          poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
+          mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/all_book.pdf
+
+      - name: Deploy only pdf files
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU/_build/pdf/
+          destination_dir: pdf
