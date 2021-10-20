@@ -76,7 +76,7 @@ print(a.shape)
 print(a[None].shape)
 print(a[:, :, None].shape)
 
-# : превращается в слайс slice(None), берет все элементы вдоль размерности
+# : превращается в slice (None), берет все элементы вдоль размерности
 print(a[2, :])
 print(a[2, 0:None])
 
