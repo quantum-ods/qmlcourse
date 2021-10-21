@@ -54,7 +54,7 @@ $$
 b_\alpha | \psi_\alpha \rangle  \otimes | \Psi \rangle=\frac{1}{\sqrt{N}}| \Psi \rangle. 
 $$
 
-$b^\dagger_\alpha$ называется оператором создания (creation), а $b_\alpha$ -- уничтожения (annihilation). Заметим, что
+. где $b^\dagger_\alpha$ называется оператором создания (creation), а $b_\alpha$ -- уничтожения (annihilation). Заметим, что
 эти операторы не эрмитовы, т.е., $b^\dagger_\alpha \neq b_\alpha$. Нормализация операторов выбрана таким образом, что
 собственные значения (эрмитова) оператора $b^\dagger_\alpha b_\alpha$ -- количество частиц в состоянии $\alpha$.
 
