@@ -1,117 +1,141 @@
-- file: book/index
-
-- part: Введение
+format: jb-book
+root: book/index
+parts:
+- caption: "\u0412\u0432\u0435\u0434\u0435\u043D\u0438\u0435"
   chapters:
-    - file: book/intro1block/intro1.md
-      title: 🟦 О квантовых компьютерах
-    - file: book/prerequisite.md
-      title: ⬜ Пререквизиты курса
-
-- part: Основы Python
+  - file: book/intro1block/intro1.md
+    title: "\U0001F7E6 \u041E \u043A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0445\
+      \ \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0430\u0445"
+  - file: book/prerequisite.md
+    title: "\u2B1C \u041F\u0440\u0435\u0440\u0435\u043A\u0432\u0438\u0437\u0438\u0442\
+      \u044B \u043A\u0443\u0440\u0441\u0430"
+- caption: "\u041E\u0441\u043D\u043E\u0432\u044B Python"
   chapters:
-    - file: book/pythonblock/pythonintro.md
-      title: ⬜ О блоке
-    - file: book/pythonblock/python_l1.md
-      title: 🟦 Вводная лекция про Python
-    - file: book/pythonblock/python_l2.md
-      title: 🟦 Установка инструментов
-    - file: book/pythonblock/jupyter_l3.md
-      title: 🟦 Ориентация в Jupyter
-    - file: book/pythonblock/python_l4.md
-      title: 🟦 Переменные, типы и вывод
-    - file: book/pythonblock/python_l5.md
-      title: 🟦 Условия и сравнения
-    - file: book/pythonblock/python_l6.md
-      title: 🟦 Списки и циклы
-    - file: book/pythonblock/python_l7.md
-      title: 🟦 Словари
-    - file: book/pythonblock/python_l8.md
-      title: 🟦 Функции
-    - file: book/pythonblock/python_l9.md
-      title: 🟦 Объекты и классы
-    - file: book/pythonblock/python_l10.md
-      title: 🟦 Финальная лекция
-
-- part: Основы машинного обучения
+  - file: book/pythonblock/pythonintro.md
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/pythonblock/python_l1.md
+    title: "\U0001F7E6 \u0412\u0432\u043E\u0434\u043D\u0430\u044F \u043B\u0435\u043A\
+      \u0446\u0438\u044F \u043F\u0440\u043E Python"
+  - file: book/pythonblock/python_l2.md
+    title: "\U0001F7E6 \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0438\
+      \u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u043E\u0432"
+  - file: book/pythonblock/jupyter_l3.md
+    title: "\U0001F7E6 \u041E\u0440\u0438\u0435\u043D\u0442\u0430\u0446\u0438\u044F\
+      \ \u0432 Jupyter"
+  - file: book/pythonblock/python_l4.md
+    title: "\U0001F7E6 \u041F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0435\
+      , \u0442\u0438\u043F\u044B \u0438 \u0432\u044B\u0432\u043E\u0434"
+  - file: book/pythonblock/python_l5.md
+    title: "\U0001F7E6 \u0423\u0441\u043B\u043E\u0432\u0438\u044F \u0438 \u0441\u0440\
+      \u0430\u0432\u043D\u0435\u043D\u0438\u044F"
+  - file: book/pythonblock/python_l6.md
+    title: "\U0001F7E6 \u0421\u043F\u0438\u0441\u043A\u0438 \u0438 \u0446\u0438\u043A\
+      \u043B\u044B"
+  - file: book/pythonblock/python_l7.md
+    title: "\U0001F7E6 \u0421\u043B\u043E\u0432\u0430\u0440\u0438"
+  - file: book/pythonblock/python_l8.md
+    title: "\U0001F7E6 \u0424\u0443\u043D\u043A\u0446\u0438\u0438"
+  - file: book/pythonblock/python_l9.md
+    title: "\U0001F7E6 \u041E\u0431\u044A\u0435\u043A\u0442\u044B \u0438 \u043A\u043B\
+      \u0430\u0441\u0441\u044B"
+  - file: book/pythonblock/python_l10.md
+    title: "\U0001F7E6 \u0424\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F \u043B\
+      \u0435\u043A\u0446\u0438\u044F"
+- caption: "\u041E\u0441\u043D\u043E\u0432\u044B \u043C\u0430\u0448\u0438\u043D\u043D\
+    \u043E\u0433\u043E \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u044F"
   chapters:
-    - file: book/mlblock/ml_intro
-      title: ⬜ О блоке
-    - file: book/mlblock/ml_l1
-      title: 🟦 Машинное обучение как пазл
-
-- part: Квантовые вычисления
+  - file: book/mlblock/ml_intro
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/mlblock/ml_l1
+    title: "\U0001F7E6 \u041C\u0430\u0448\u0438\u043D\u043D\u043E\u0435 \u043E\u0431\
+      \u0443\u0447\u0435\u043D\u0438\u0435 \u043A\u0430\u043A \u043F\u0430\u0437\u043B"
+- caption: "\u041A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0435 \u0432\u044B\u0447\
+    \u0438\u0441\u043B\u0435\u043D\u0438\u044F"
   chapters:
-    - file: book/qcblock/qcintro
-      title: ⬜ О блоке
-    - file: book/qcblock/qubit
-      title: 🟩 Квантовый бит
-    - file: book/qcblock/gates
-      title: 🟩 Квантовые гейты
-    - file: book/qcblock/deutschs_algorithm
-      title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/quantum_algorithms_overview
-      title: 🟩 Обзор квантовых алгоритмов
-    - file: book/qcblock/grovers_algorithm
-      title: 🟧 Алгоритм Гровера
-
-- part: Железо квантовых компьютеров
+  - file: book/qcblock/qcintro
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/qcblock/qubit
+    title: "\U0001F7E9 \u041A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0439 \u0431\
+      \u0438\u0442"
+  - file: book/qcblock/gates
+    title: "\U0001F7E9 \u041A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0435 \u0433\
+      \u0435\u0439\u0442\u044B"
+  - file: book/qcblock/deutschs_algorithm
+    title: "\U0001F7E9 \u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C \u0414\u043E\
+      \u0439\u0447\u0430"
+  - file: book/qcblock/quantum_algorithms_overview
+    title: "\U0001F7E9 \u041E\u0431\u0437\u043E\u0440 \u043A\u0432\u0430\u043D\u0442\
+      \u043E\u0432\u044B\u0445 \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u043E\
+      \u0432"
+  - file: book/qcblock/grovers_algorithm
+    title: "\U0001F7E7 \u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C \u0413\u0440\
+      \u043E\u0432\u0435\u0440\u0430"
+- caption: "\u0416\u0435\u043B\u0435\u0437\u043E \u043A\u0432\u0430\u043D\u0442\u043E\
+    \u0432\u044B\u0445 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u043E\
+    \u0432"
   chapters:
-    - file: book/hwblock/hwintro
-      title: ⬜ О блоке
-    - file: book/hwblock/hwreview
-      title: 🟩 Обзор
-    - file: book/hwblock/scqubits
-      title: 🟥 Сверхпроводниковые кубиты
-
-- part: Фреймворки
+  - file: book/hwblock/hwintro
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/hwblock/hwreview
+    title: "\U0001F7E9 \u041E\u0431\u0437\u043E\u0440"
+  - file: book/hwblock/scqubits
+    title: "\U0001F7E5 \u0421\u0432\u0435\u0440\u0445\u043F\u0440\u043E\u0432\u043E\
+      \u0434\u043D\u0438\u043A\u043E\u0432\u044B\u0435 \u043A\u0443\u0431\u0438\u0442\
+      \u044B"
+- caption: "\u0424\u0440\u0435\u0439\u043C\u0432\u043E\u0440\u043A\u0438"
   chapters:
-    - file: book/progblock/progintro.md
-      title: ⬜ О блоке
-    - file: book/progblock/pennylane.ipynb
-      title: 🟩 PennyLane
-    - file: book/progblock/tfq.md
-      title: 🟧 Cirq & TFQ
-
-- part: Вариационные схемы
+  - file: book/progblock/progintro.md
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/progblock/pennylane.ipynb
+    title: "\U0001F7E9 PennyLane"
+  - file: book/progblock/tfq.md
+    title: "\U0001F7E7 Cirq & TFQ"
+- caption: "\u0412\u0430\u0440\u0438\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0435\
+    \ \u0441\u0445\u0435\u043C\u044B"
   chapters:
-    - file: book/vqcblock/vqcintro
-      title: ⬜ О блоке
-    - file: book/vqcblock/vqc
-      title: 🟩 Вариационные схемы
-
-- part: Квантовые градиенты
+  - file: book/vqcblock/vqcintro
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/vqcblock/vqc
+    title: "\U0001F7E9 \u0412\u0430\u0440\u0438\u0430\u0446\u0438\u043E\u043D\u043D\
+      \u044B\u0435 \u0441\u0445\u0435\u043C\u044B"
+- caption: "\u041A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0435 \u0433\u0440\u0430\
+    \u0434\u0438\u0435\u043D\u0442\u044B"
   chapters:
-    - file: book/gradsblock/gradsintro
-      title: ⬜ О блоке
-    - file: book/gradsblock/gradients
-      title: 🟩 Градиенты квантовых схем
-    - file: book/gradsblock/hogradients
-      title: 🟧 Градиенты высших порядков
-
-- part: Квантовый SVM
+  - file: book/gradsblock/gradsintro
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/gradsblock/gradients
+    title: "\U0001F7E9 \u0413\u0440\u0430\u0434\u0438\u0435\u043D\u0442\u044B \u043A\
+      \u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0445 \u0441\u0445\u0435\u043C"
+  - file: book/gradsblock/hogradients
+    title: "\U0001F7E7 \u0413\u0440\u0430\u0434\u0438\u0435\u043D\u0442\u044B \u0432\
+      \u044B\u0441\u0448\u0438\u0445 \u043F\u043E\u0440\u044F\u0434\u043A\u043E\u0432"
+- caption: "\u041A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0439 SVM"
   chapters:
-    - file: book/qsvmblock/qsvmintro
-      title: ⬜ О блоке
-    - file: book/qsvmblock/hybridsvm
-      title: 🟩 Гибридный SVM
-
-- part: Квантовые нейронные сети
+  - file: book/qsvmblock/qsvmintro
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/qsvmblock/hybridsvm
+    title: "\U0001F7E9 \u0413\u0438\u0431\u0440\u0438\u0434\u043D\u044B\u0439 SVM"
+- caption: "\u041A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0435 \u043D\u0435\u0439\
+    \u0440\u043E\u043D\u043D\u044B\u0435 \u0441\u0435\u0442\u0438"
   chapters:
-    - file: book/qnnblock/qnnintro.md
-      title: ⬜ О блоке
-    - file: book/qnnblock/qconv.ipynb
-      title: 🟩 Квантовые сверточные сети
-
-- part: Проблемы квантового машинного обучения
+  - file: book/qnnblock/qnnintro.md
+    title: "\u2B1C \u041E \u0431\u043B\u043E\u043A\u0435"
+  - file: book/qnnblock/qconv.ipynb
+    title: "\U0001F7E9 \u041A\u0432\u0430\u043D\u0442\u043E\u0432\u044B\u0435 \u0441\
+      \u0432\u0435\u0440\u0442\u043E\u0447\u043D\u044B\u0435 \u0441\u0435\u0442\u0438"
+- caption: "\u041F\u0440\u043E\u0431\u043B\u0435\u043C\u044B \u043A\u0432\u0430\u043D\
+    \u0442\u043E\u0432\u043E\u0433\u043E \u043C\u0430\u0448\u0438\u043D\u043D\u043E\
+    \u0433\u043E \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u044F"
   chapters:
-    - file: book/problemsblock/quantchembasic
-      title: 🟩 Квантовая химия (Введение)
-    - file: book/problemsblock/quantchemadvancedscf
-      title: 🟧 Квантовая химия (SCF)
-
-- part: О курсе
+  - file: book/problemsblock/quantchembasic
+    title: "\U0001F7E9 \u041A\u0432\u0430\u043D\u0442\u043E\u0432\u0430\u044F \u0445\
+      \u0438\u043C\u0438\u044F (\u0412\u0432\u0435\u0434\u0435\u043D\u0438\u0435)"
+  - file: book/problemsblock/quantchemadvancedscf
+    title: "\U0001F7E7 \u041A\u0432\u0430\u043D\u0442\u043E\u0432\u0430\u044F \u0445\
+      \u0438\u043C\u0438\u044F (SCF)"
+- caption: "\u041E \u043A\u0443\u0440\u0441\u0435"
   chapters:
-    - file: book/bibliography
-    - file: book/authors
-    - file: book/acknowledgments
-    - file: book/glossary
+  - file: book/bibliography
+  - file: book/authors
+  - file: book/acknowledgments
+  - file: book/glossary
