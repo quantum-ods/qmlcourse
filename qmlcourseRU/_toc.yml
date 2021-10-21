@@ -32,6 +32,11 @@
     - file: book/pythonblock/python_l10.md
       title: 🟦 Финальная лекция
 
+- part: Линейная алгебра и numpy
+  chapters:
+    - file: book/linalgblock/numpy.md
+      title: 🟦 Numpy fun
+
 - part: Основы машинного обучения
   chapters:
     - file: book/mlblock/ml_intro
