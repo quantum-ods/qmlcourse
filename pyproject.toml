@@ -7,7 +7,7 @@ license = "CCBY-4.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-PennyLane = "^0.17.0"
+PennyLane = "^0.18.0"
 numpy = "^1.19.2"
 matplotlib = "^3.3.4"
 jupyter-book = "^0.10.1"
@@ -17,6 +17,8 @@ tensorflow = "2.5.1"
 tensorflow-quantum = "^0.5.1"
 pre-commit = "^2.13.0"
 pyppeteer  = "^0.2.6"
+pyyaml  = "^5.4.1"
+qiskit = "^0.31.0"
 
 [tool.poetry.dev-dependencies]
 
