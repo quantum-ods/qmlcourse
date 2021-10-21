@@ -203,22 +203,23 @@ print(f"{np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = }")
 
 ```{code-cell} ipython3
 # матрица с единицами по диагонали и с нулями в остальных ячейках.
-print(f'{np.eye(2, dtype=int) = }')
+print(f"{np.eye(2, dtype=int) = }")
 # есть возможность указать индекс диагонали
-print(f'{np.eye(3, k=-1, dtype=int) = }')
+print(f"{np.eye(3, k=-1, dtype=int) = }")
 
 # в Numpy есть свой генератор случайных чисел и векторов
-print(f'{np.random.beta(1, 2) = }')
-print(f'{np.random.randint(1, 5, (2, 3)) = }')
+print(f"{np.random.beta(1, 2) = }")
+print(f"{np.random.randint(1, 5, (2, 3)) = }")
 
 # Numpy позволяет заменить значений основной диагонали матрицы.
 # Внимание, эта функция работает in-place
 a = np.random.randint(1, 5, (3, 3))
+print(f"{a = }")
 np.fill_diagonal(a, 4)
-print(f'{a = }')
+print(f"{a = }")
 
 # Можно сделать и наоборот - получить вектор значений диагонали матрица
-print(f'{np.diag(a) = }')
+print(f"{np.diag(a) = }")
 
 ```
 
