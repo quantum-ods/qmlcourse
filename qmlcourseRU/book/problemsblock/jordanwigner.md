@@ -127,8 +127,8 @@ Oператор $\prod_{j_i} (1-2c^\dagger_j c_j)$ равен $\pm 1$ в зав�
 
 $$ 
 \{ c_j, (1-2c^\dagger_j c_j) \} = c_j (1-2c^\dagger_j c_j) +  c_j (1-2c^\dagger_j c_j)c_j  =
-c_j  -2\underbrace_{c_jc^\dagger_j}_{1-c^\dagger_j c_j} c_j +  c_j -2c^\dagger_j \underbrace_{c_jc_j}_{0} = 
-c_j  - 2c_j + 2 c^\dagger_j \underbrace_{c_jc_j}_{0} +  c_j  = 0,
+c_j  -2\underbrace{c_jc^\dagger_j}_{1-c^\dagger_j c_j} c_j +  c_j -2c^\dagger_j \underbrace{c_jc_j}_{0} = 
+c_j  - 2c_j + 2 c^\dagger_j \underbrace{c_jc_j}_{0} +  c_j  = 0,
 $$
 
 и, следовательно с нитью $\prod_{j_i} (1-2c^\dagger_j c_j) $ (интуивно, если сначала разрушить фермион, то четность
