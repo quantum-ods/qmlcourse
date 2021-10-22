@@ -6,12 +6,14 @@ on:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+
   deploy-book:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
@@ -35,6 +37,7 @@ jobs:
       - name: Set up poetry
         uses: snok/install-poetry@v1.1.7
         with:
+          version: v1.2.1
           virtualenvs-create: true
           virtualenvs-in-project: true
 
@@ -46,7 +49,7 @@ jobs:
           python-version: 3.8
           conda-channels: anaconda, conda-forge
 
-      #Use cache
+      # Use cache
       - name: Copy cache dir for dependecies
         uses: actions/cache@v2
         env:
@@ -63,9 +66,11 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
+          conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
 
-      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: poetry run psi4 --test
+      - name: poetry run psi4 --test
+        run: |
+          poetry run psi4 --test
 
       - name: Build the book
         run: |
