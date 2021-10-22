@@ -18,10 +18,10 @@ install-python-poetry-ubuntu:
 install-python-poetry-macos:
 	brew update
 	brew install pyenv poetry
-	
+
 	pyenv install 3.8.10
 	pyenv local 3.8.10
-	
+
 #	curl "http://vergil.chemistry.gatech.edu/psicode-download/Psi4conda-1.4rc3-py38-MacOSX-x86_64.sh" -o Psi4conda-1.4rc3-py38.sh --keepalive-time 2
 
 install-python-dependencies:
