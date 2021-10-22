@@ -12,6 +12,7 @@ on:
     branches: [ master ]
 
 jobs:
+
   deploy_book:
     runs-on: ubuntu-latest
     env:
