@@ -13,7 +13,7 @@ install-python-poetry-ubuntu:
 	sudo apt install python3-distutils -y
 	curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
 
-	curl "http://vergil.chemistry.gatech.edu/psicode-download/Psi4conda-1.4rc3-py38-Linux-x86_64.sh" -o Psi4conda-1.4rc3-py38.sh --keepalive-time 2
+#	curl "http://vergil.chemistry.gatech.edu/psicode-download/Psi4conda-1.4rc3-py38-Linux-x86_64.sh" -o Psi4conda-1.4rc3-py38.sh --keepalive-time 2
 
 install-python-poetry-macos:
 	brew update
