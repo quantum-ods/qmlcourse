@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-(jupyter_l3)=
+(python_l3)=
 
 # Знакомство с инструментарием: Jupyter
 
