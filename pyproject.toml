@@ -19,7 +19,6 @@ pre-commit = "^2.13.0"
 pyppeteer  = "^0.2.6"
 pyyaml  = "^5.4.1"
 qiskit = "^0.31.0"
-jupyter = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 
