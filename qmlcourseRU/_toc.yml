@@ -34,23 +34,15 @@
 
 - part: Линейная алгебра и numpy
   chapters:
-    - file: book/linalgblock/intro.md
-      title: ⬜ О блоке
-    - file: book/linalgblock/vectors.md
-      title: 🟦 Вводная лекция про вектора
-    - file: book/linalgblock/algebra.md
-      title: 🟦 Алгебра
-    - file: book/linalgblock/bra-ket.md
-      title: 🟦 Нотация Дирака
     - file: book/linalgblock/numpy.md
       title: 🟦 Numpy fun
 
 - part: Основы машинного обучения
   chapters:
-   - file: book/mlblock/ml_intro
-     title: ⬜ О блоке
-   - file: book/mlblock/ml_l1
-     title: 🟦 Машинное обучение как пазл
+    - file: book/mlblock/ml_intro
+      title: ⬜ О блоке
+    - file: book/mlblock/ml_l1
+      title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
@@ -60,10 +52,6 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
-    - file: book/qcblock/deutschs_algorithm
-      title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/grovers_algorithm
-      title: 🟧 Алгоритм Гровера
 
 - part: Фреймворки
   chapters:
@@ -73,6 +61,35 @@
       title: 🟩 PennyLane
     - file: book/progblock/tfq.md
       title: 🟧 Cirq & TFQ
+
+- part: Базовые квантовые алгоритмы
+  chapters:
+    - file: book/qcalgo/qcalgointro
+      title: ⬜ О блоке
+    - file: book/qcalgo/quantum_algorithms_overview
+      title: 🟩 Обзор квантовых алгоритмов
+    - file: book/qcalgo/deutschs_algorithm
+      title: 🟩 Алгоритм Дойча
+    - file: book/qcalgo/quantum_teleportation
+      title: 🟩 Квантовая телепортация
+    - file: book/qcalgo/grovers_algorithm
+      title: 🟧 Алгоритм Гровера
+
+- part: Железо квантовых компьютеров
+  chapters:
+    - file: book/hwblock/hwintro
+      title: ⬜ О блоке
+    - file: book/hwblock/hwreview
+      title: 🟩 Обзор
+    - file: book/hwblock/scqubits
+      title: 🟥 Сверхпроводниковые кубиты
+
+- part: Квантовое машинное обучение
+  chapters:
+    - file: book/qmlkindsblock/qmlkindsintro.md
+      title: ⬜ О блоке
+    - file: book/qmlkindsblock/hhl_algorithm
+      title: 🟥 Алгоритм HHL
 
 - part: Вариационные схемы
   chapters:
@@ -94,10 +111,15 @@
   chapters:
     - file: book/qsvmblock/qsvmintro
       title: ⬜ О блоке
-    - file: book/qsvmblock/classic_svm
-      title: 🟩 Классический SVM
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+
+- part: Квантовые нейронные сети
+  chapters:
+    - file: book/qnnblock/qnnintro.md
+      title: ⬜ О блоке
+    - file: book/qnnblock/qconv.ipynb
+      title: 🟩 Квантовые сверточные сети
 
 - part: Проблемы квантового машинного обучения
   chapters:
@@ -106,6 +128,12 @@
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
 
+- part: D-Wave -- квантовый отжиг и семплирование
+  chapters:
+    - file: book/dwaveblock/dwaveintro
+      title: 🟩 D-Wave (Введение)
+    - file: book/dwaveblock/dwave
+      title: 🟩  Квантовый отжиг и семплирование
 
 - part: О курсе
   chapters:
