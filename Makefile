@@ -39,13 +39,13 @@ install-windows:
 	cmd /C py -V
 
 	cmd /C py "%TMP%\get-poetry.py"
-	cmd /C "C:\tools\miniconda3\Scripts\conda install psi4=1.4rc4.dev1 python=3.8 -c psi4/label/dev -c conda-forge"
+#	cmd /C "C:\tools\miniconda3\Scripts\conda install psi4=1.4rc4.dev1 python=3.8 -c psi4/label/dev -c conda-forge"
+#	cmd /C "%USERPROFILE%\.poetry\bin\poetry remove tensorflow-quantum"
 
-	cmd /C "%USERPROFILE%\.poetry\bin\poetry remove tensorflow-quantum"
 	cmd /C "%USERPROFILE%\.poetry\bin\poetry install"
 
 build-windows:
-	cmd /C "%USERPROFILE%\.poetry\bin\poetry run psi4 --test"
+#	cmd /C "%USERPROFILE%\.poetry\bin\poetry run psi4 --test"
 	cmd /C "%USERPROFILE%\.poetry\bin\poetry run jupyter-book build ./qmlcourseRU"
 
 # install-psi4:
