@@ -42,6 +42,8 @@
       title: 🟦 Алгебра
     - file: book/linalgblock/bra-ket.md
       title: 🟦 Нотация Дирака
+    - file: book/linalgblock/numpy.md
+      title: 🟦 Numpy fun
 
 - part: Основы машинного обучения
   chapters:
