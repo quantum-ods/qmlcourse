@@ -7,7 +7,6 @@ on:
         description: 'Disable cache'
         required: false
         default: 'false'
-  pull_request:
   push:
     branches: [ master ]
 
