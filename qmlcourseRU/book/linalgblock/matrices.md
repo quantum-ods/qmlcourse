@@ -11,7 +11,7 @@
 
 Рассмотрим произвольную матрицу $\mathbf{A}$:
 $$
-\begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix}
+\mathbf{A} = \begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix}
 $$
 
 Элемент матрицы $\mathbf{A}$, стоящий на пересечение строки $i$ и столбца $j$ будем обозначать $a_{ij}$.
@@ -24,12 +24,17 @@ $$
 
 - сложение:
 $$
-\begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix} + \begin{pmatrix} b_{11} & b_{12} & ... & b_{1m} \\ b_{21} & b_{22} & ... & b_{2m} \\ ... & ... & ... & ... \\ b_{n1} & b_{n2} & ... & b_{nm} \end{pmatrix} = \begin{pmatrix} a_{11} + b_{11} & a_{12} + b_{12} & ... & a_{1m} + b_{1m} \\ a_{21} + b_{21} & a_{22} + b_{22} & ... & a_{2m} + b_{2m} \\ ... & ... & ... & ... \\ a_{n1} + b_{n1} & a_{n2} + b_{n2} & ... & a_{nm} + b_{nm} \end{pmatrix}
+\mathbf{A} + \mathbf{B} = \begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix} + \begin{pmatrix} b_{11} & b_{12} & ... & b_{1m} \\ b_{21} & b_{22} & ... & b_{2m} \\ ... & ... & ... & ... \\ b_{n1} & b_{n2} & ... & b_{nm} \end{pmatrix} = \begin{pmatrix} a_{11} + b_{11} & a_{12} + b_{12} & ... & a_{1m} + b_{1m} \\ a_{21} + b_{21} & a_{22} + b_{22} & ... & a_{2m} + b_{2m} \\ ... & ... & ... & ... \\ a_{n1} + b_{n1} & a_{n2} + b_{n2} & ... & a_{nm} + b_{nm} \end{pmatrix}
 $$
 
 - умножения матрицы на число (скаляр):
 $$
-\lambda \cdot \begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix} = \begin{pmatrix} \lambda \cdot a_{11} & \lambda \cdot a_{12} & ... & \lambda \cdot a_{1m} \\ \lambda \cdot a_{21} & \lambda \cdot a_{22} & ... & \lambda \cdot a_{2m} \\ ... & ... & ... & ... \\ \lambda \cdot a_{n1} & \lambda \cdot a_{n2} & ... & \lambda \cdot a_{nm} \end{pmatrix}
+\lambda \cdot \mathbf{A} = \lambda \cdot \begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix} = \begin{pmatrix} \lambda \cdot a_{11} & \lambda \cdot a_{12} & ... & \lambda \cdot a_{1m} \\ \lambda \cdot a_{21} & \lambda \cdot a_{22} & ... & \lambda \cdot a_{2m} \\ ... & ... & ... & ... \\ \lambda \cdot a_{n1} & \lambda \cdot a_{n2} & ... & \lambda \cdot a_{nm} \end{pmatrix}
+$$
+
+- транспонирование (строки и столбцы меняются местами):
+$$
+\mathbf{A} = \begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix} \rightarrow \mathbf{A}^{T} = \begin{pmatrix} a_{11} & a_{21} & ... & a_{m1} \\ a_{12} & a_{22} & ... & a_{m2} \\ ... & ... & ... & ... \\ a_{1n} & a_{2n} & ... & a_{mn} \end{pmatrix}
 $$
 
 Но наибольший интерес представляет операция умножения матриц, которая определяется не самым интуитивным способом. 
