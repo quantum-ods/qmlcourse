@@ -34,6 +34,16 @@
 
 - part: Линейная алгебра и numpy
   chapters:
+    - file: book/linalgblock/intro.md
+      title: ⬜ О блоке
+    - file: book/linalgblock/vectors.md
+      title: 🟦 Вводная лекция про вектора
+    - file: book/linalgblock/algebra.md
+      title: 🟦 Алгебра
+    - file: book/linalgblock/bra-ket.md
+      title: 🟦 Нотация Дирака
+    - file: book/linalgblock/matrices.md
+      title: 🟦 Mатрицы
     - file: book/linalgblock/numpy.md
       title: 🟦 Numpy fun
 
