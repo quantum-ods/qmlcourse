@@ -1,109 +1,120 @@
 @startuml
-package "Introduction" #Bisque {
-        rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+package "Week 1" {
+        package "Introduction" #Bisque {
+                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+        }
+
+        package "Prerequisites" #Bisque {
+                rectangle "Python Intro" as python #14D2EF
+                rectangle "Numpy & Linalg" as numpy #14D2EF
+                rectangle "Classical ML/DL" as ml #14D2EF
+        }
 }
 
-package "Prerequisites" #Bisque {
-        rectangle "Python Intro" as python #14D2EF
-        rectangle "Numpy & Linalg" as numpy #14D2EF
-        rectangle "Classical ML/DL" as ml #14D2EF
+package "Week 2" {
+        package "Quantum Computing" as qci #Bisque {
+                rectangle "Qubit" as qubit #40B464
+                rectangle "Gates" as gates #40B464
+                rectangle "Mixed Stated" as mixed #FFC864
+        }
+
+        package "Programming QC" #Bisque {
+                rectangle "Frameworks Comparision" as progcomparision #40B464
+                rectangle "PennyLane" as pennylane #40B464
+                rectangle "Qiskit & Aqua" as qiskit #FFC864
+                rectangle "Cirq & TFQ" as cirq #FFC864
+        }
 }
 
-package "Quantum Computing" as qci #Bisque {
-        rectangle "Qubit" as qubit #40B464
-        rectangle "Gates" as gates #40B464
-        usecase "Mixed Stated" as mixed #FFC864
+package "Week 3" {
+        package "Basic Quantum Algorithms" as qalgo #Bisque {
+                rectangle "Deutsch" as deutsch #40B464
+                rectangle "Other Algorithms Review" as advanced_algos #40B464
+                rectangle "Grover" as grover #FFC864
+                rectangle "Quantum Teleportation" as qtp #40B464
+                rectangle "Simon" as saimon #FFC864
+        }
+
+        package "NISQ Hardware" #Bisque {
+                rectangle "Hardware review" as review #40B464
+                rectangle "Superconducting qubits" as schard #E0535C
+        }
 }
 
-package "Basic Quantum Algorithms" as qalgo #Bisque {
-        rectangle "Deutsch" as deutsch #40B464
-        usecase "Other Algorithms Review" as advanced_algos #40B464
-        rectangle "Grover" as grover #FFC864
-        rectangle "Quantum Teleportation" as qtp #FFC864
-        rectangle "Saimon" as saimon #FFC864
-        usecase "Shor" as shor #E0535C
-        usecase "Superdense coding" as superdense_coding #FFC864
+package "Week 4" {
+        package "Quantum ML" #Bisque {
+                rectangle "Kinds of QML" as qml_general #14D2EF
+                rectangle "HHL" as hhl #E0535C
+                rectangle "Quantum KNN" as qknn #E0535C
+        }
+
+        package "VQC" #Bisque {
+                rectangle "VQC" as vqc #40B464
+        }
+
+        package "Gradients" #Bisque {
+                rectangle "Gradients" as grad #40B464
+                rectangle "High-order gradients" as hograd #FFC864
+        }
 }
 
-package "NISQ Hardware" #Bisque {
-        usecase "Hardware review" as review #40B464
-        usecase "Perspectives in NISQ-era" as nisq #40B464
-        usecase "Photonic Quantum Computers" as photonic #E0535C
-        usecase "CV Quantum Computers" as cvq #E0535C
+package "Week 5" {
+        package "Quantum Neural Networks" #Bisque {
+                rectangle "QNN" as qnn #40B464
+                rectangle "Barren plateaus" as barren #FFC864
+                rectangle "Convolutional VQC" as convvqc #FFC864
+        }
+
+        package "Quantum SVM" #Bisque {
+                rectangle "Hybrid SVM" as hsvm #40B464
+                rectangle "Classical SVM math" as csvm #FFC864
+        }
 }
 
-package "Programming QC" #Bisque {
-        usecase "Frameworks Comparision" as progcomparision #40B464
-        rectangle "PennyLane" as pennylane #40B464
-        usecase "Qiskit & Aqua" as qiskit #FFC864
-        rectangle "Cirq & TFQ" as cirq #FFC864
+package "Week 6" {
+        package "Problems for QML" #Bisque {
+                usecase "Ising model" as ising #40B464
+                usecase "Combinatorial Optimization" as copt #40B464
+                rectangle "Quantum Chemistry" as qchem #40B464
+                rectangle "Advanced Chemistry" as aqchem #FFC864
+        }
+
+        package "From problems to QML" #Bisque {
+                usecase "NP-problems as Ising model" as npising #40B464
+                usecase "Jordan-Wigner transformation" as jordan #40B464
+                usecase "Eigenvalues problem" as eigenvals #40B464
+        }
 }
 
-package "Quantum ML" #Bisque {
-        usecase "Kinds of QML" as qml_general #14D2EF
-        rectangle "HHL" as hhl #E0535C
-        usecase "Quantum KNN" as qknn #E0535C
-        usecase "Quantum Clustering" as qclustering #E0535C
-        usecase "Quantum RBM" as qrbm #E0535C
+package "Week 7" {
+        package "VQE" #Bisque {
+                rectangle "VQE" as vqe #40B464
+                rectangle "TSP with VQE" as tspvqe #40B464
+        }
+
+        package "QAOA" #Bisque {
+                usecase "QAOA" as qaoa #40B464
+                usecase "Cost/Mixed Hamiltonians" as hams #FFC864
+        }
 }
 
-package "VQC" #Bisque {
-        rectangle "VQC" as vqc #40B464
-        usecase "VQC as kernels" as kernelvqc #FFC864
-        usecase "Universality of VQC" as univvqc #E0535C
+package "Week 8" {
+        package "D-Wave" #Bisque {
+                usecase "D-Wave & Sampling" as dwave #40B464
+        }
+
+        package "Advanced Topics" as adv #Bisque {
+                rectangle "SotA review" as sota #40B464
+        }
 }
 
-package "Gradients" #Bisque {
-        rectangle "Gradients" as grad #40B464
-        rectangle "High-order gradients" as hograd #FFC864
-        usecase "QNG" as qng #E0535C
+package "Week 9" {
+        package "Jobs and Perspectives" as jobs #Bisque {
+                usecase "Academic positions" as academic #White
+                usecase "Industrial positions" as industrial #White
+        }
 }
 
-package "Quantum Neural Networks" #Bisque {
-        rectangle "QNN" as qnn #40B464
-        usecase "Barren plateaus" as barren #FFC864
-        usecase "Data encoding" as encoding #FFC864
-        usecase "Convolutional VQC" as convvqc #FFC864
-        usecase "LSTM VQC" as lstm #FFC864
-}
-
-package "Quantum SVM" #Bisque {
-        rectangle "Hybrid SVM" as hsvm #40B464
-        rectangle "Classical SVM math" as csvm #FFC864
-        usecase "SVM with Grover" as gsvm #E0535C
-}
-
-package "Problems for QML" #Bisque {
-        usecase "Combinatorial Optimization" as copt #40B464
-        rectangle "Quantum Chemistry" as qchem #E0535C
-}
-
-package "VQE" #Bisque {
-        usecase "VQE" as vqe #40B464
-        usecase "Layered VQC" as lvqe #FFC864
-        usecase "UCC ansatz" as uuc #E0535C
-}
-
-package "QAOA" #Bisque {
-        usecase "QAOA" as qaoa #40B464
-        usecase "Cost/Mixed Hamiltonians" as hams #FFC864
-}
-
-package "D-Wave" #Bisque {
-        usecase "D-Wave & Sampling" as dwave #40B464
-        usecase "Probabilistic Learning\n with D-Wave" as probml #E0535C
-}
-
-package "Jobs and Perspectives" as jobs #Bisque {
-        usecase "Academic positions" as academic #White
-        usecase "Industrial positions" as industrial #White
-}
-
-package "Advanced Topics" as adv #Bisque {
-        rectangle "SotA review" as sota #40B464
-        rectangle "Quantum RL" as qrl #FFC864
-        rectangle "Advanced QRL" as aqrl #E0535C
-}
 
 intro1 --> python
 intro1 --> numpy
@@ -115,68 +126,64 @@ ml --> qubit
 
 qubit --> gates
 mixed <- qubit
-gates --> deutsch
 
-deutsch --> advanced_algos
-advanced_algos -> grover
-shor <- advanced_algos
-advanced_algos -> qtp
-saimon <- advanced_algos
-superdense_coding <- advanced_algos
-
-advanced_algos --> review
-review --> nisq
-photonic <- review
-review -> cvq
-
-nisq --> progcomparision
+gates --> progcomparision
 progcomparision --> pennylane
 cirq <- progcomparision
 progcomparision -> qiskit
 
-pennylane --> qml_general
+pennylane --> deutsch
+
+deutsch --> advanced_algos
+advanced_algos -> grover
+advanced_algos -> qtp
+saimon <- advanced_algos
+
+advanced_algos --> review
+review -> schard
+
+review --> qml_general
 
 qml_general -> hhl
 qknn <- qml_general
-qml_general -> qclustering
-qrbm <- qml_general
 
 qml_general --> vqc
-kernelvqc <- vqc
-vqc -> univvqc
 
 vqc --> grad
-qng <- grad
 grad -> hograd
 
 grad --> qnn
 barren <- qnn
-qnn -> encoding
-lstm <- qnn
 qnn -> convvqc
 
 qnn --> hsvm
 csvm <- hsvm
-hsvm -> gsvm
 
+hsvm --> ising
 hsvm --> copt
-copt -> qchem
+hsvm --> qchem
+qchem -> aqchem
+qchem --> jordan
+ising --> npising
+ising --> jordan
+copt --> npising
 
-copt --> vqe
-uuc <- vqe
-vqe -> lvqe
+npising --> eigenvals
+jordan --> eigenvals
 
-copt --> qaoa
+eigenvals --> vqe
+eigenvals --> qaoa
+
+vqe --> tspvqe
+
 qaoa -> hams
 
 qaoa --> dwave
 vqe --> dwave
-dwave -> probml
 
-dwave --> jobs
+dwave --> academic
+dwave --> industrial
 
 dwave --> sota
-sota --> qrl
-qrl -> aqrl
 
 @enduml
