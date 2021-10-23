@@ -37,14 +37,25 @@
 
 This is the main repository of the course.
 
-1. [Contributing Guide](#contributing-guide)
-2. [Discussions](#discussions)
-3. [Course Program](#course-program)
-4. [Team](#team)
-5. [Join ODS](#join-ods)
-6. [Similar Projects](#similar-projects)
-7. [Bibtex Citations](#bibtex)
-8. [Legal Issues](#legal-issues)
+- [QMLCourse](#qmlcourse)
+  - [About](#about)
+  - [Contributing Guide](#contributing-guide)
+  - [Discussions](#discussions)
+  - [Course Program](#course-program)
+    - [How to read the schema?](#how-to-read-the-schema)
+  - [Team](#team)
+    - [Contributor roles](#contributor-roles)
+    - [Benevolent Dictator](#benevolent-dictator)
+    - [Core reviewers](#core-reviewers)
+    - [Reviewers](#reviewers)
+    - [Authors](#authors)
+    - [Editors](#editors)
+    - [Orgs](#orgs)
+    - [DevOps](#devops)
+  - [Join ODS](#join-ods)
+  - [Similar projects](#similar-projects)
+  - [Bibtex](#bibtex)
+  - [Legal Issues](#legal-issues)
 
 ## Contributing Guide
 
@@ -100,6 +111,7 @@ Also, all authors for some updates are participants special channel into communi
 - @maruschin ([GitHub](https://github.com/maruschin)): Python
 - @sharthZ23 ([GitHub](https://github.com/sharthZ23)): Python, NumPy
 - @alex.ozerin ([GitHub](https://github.com/m12sl)): NumPy, math
+- @dayyass ([GitHub](https://github.com/dayyass)): Linear Algebra
 - @artgor ([GitHub](https://github.com/Erlemar)): NumPy
 - @yorko ([GitHub](https://github.com/Yorko)): ML intro, advanced SVM
 - @nkarelin ([GitHub](https://github.com/karelin)): quantum entropy and mixed states
