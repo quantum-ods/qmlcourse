@@ -37,25 +37,14 @@
 
 This is the main repository of the course.
 
-- [QMLCourse](#qmlcourse)
-  - [About](#about)
-  - [Contributing Guide](#contributing-guide)
-  - [Discussions](#discussions)
-  - [Course Program](#course-program)
-    - [How to read the schema?](#how-to-read-the-schema)
-  - [Team](#team)
-    - [Contributor roles](#contributor-roles)
-    - [Benevolent Dictator](#benevolent-dictator)
-    - [Core reviewers](#core-reviewers)
-    - [Reviewers](#reviewers)
-    - [Authors](#authors)
-    - [Editors](#editors)
-    - [Orgs](#orgs)
-    - [DevOps](#devops)
-  - [Join ODS](#join-ods)
-  - [Similar projects](#similar-projects)
-  - [Bibtex](#bibtex)
-  - [Legal Issues](#legal-issues)
+1. [Contributing Guide](#contributing-guide)
+2. [Discussions](#discussions)
+3. [Course Program](#course-program)
+4. [Team](#team)
+5. [Join ODS](#join-ods)
+6. [Similar Projects](#similar-projects)
+7. [Bibtex Citations](#bibtex)
+8. [Legal Issues](#legal-issues)
 
 ## Contributing Guide
 
