@@ -100,7 +100,6 @@ Also, all authors for some updates are participants special channel into communi
 - @maruschin ([GitHub](https://github.com/maruschin)): Python
 - @sharthZ23 ([GitHub](https://github.com/sharthZ23)): Python, NumPy
 - @alex.ozerin ([GitHub](https://github.com/m12sl)): NumPy, math
-- @dayyass ([GitHub](https://github.com/dayyass)): Linear Algebra
 - @artgor ([GitHub](https://github.com/Erlemar)): NumPy
 - @yorko ([GitHub](https://github.com/Yorko)): ML intro, advanced SVM
 - @nkarelin ([GitHub](https://github.com/karelin)): quantum entropy and mixed states
