@@ -18,11 +18,11 @@ jobs:
       - name: Checkout branch for build
         uses: actions/checkout@v2
 
-      - name: Checkout branch with cache
-        uses: actions/checkout@v2
-        with:
-          ref: "gh-pages"
-          path: ./gh-pages
+#       - name: Checkout branch with cache
+#         uses: actions/checkout@v2
+#         with:
+#           ref: "gh-pages"
+#           path: ./gh-pages
 
       - name: Copy cache for build book
         run: |
