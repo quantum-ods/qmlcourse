@@ -57,10 +57,10 @@ jobs:
           path: .venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-      - name: Remove dependencies for Windows
-        if: ${{ runner.os == 'Windows'}}
-        run: |
-          poetry remove tensorflow-quantum
+#       - name: Remove dependencies for Windows
+#         if: ${{ runner.os == 'Windows'}}
+#         run: |
+#           poetry remove tensorflow-quantum
 
       - name: Install dependencies
         run: |
