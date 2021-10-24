@@ -43,7 +43,7 @@
     - file: book/linalgblock/bra-ket.md
       title: 🟦 Нотация Дирака
     - file: book/linalgblock/matrices.md
-      title: 🟦 Mатрицы
+      title: 🟦 Матрицы
     - file: book/linalgblock/numpy.md
       title: 🟦 Numpy fun
 
