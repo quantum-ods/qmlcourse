@@ -52,7 +52,7 @@ jobs:
 
   deploy-book-windows:
     if: contains(github.event.inputs.os, 'windows-latest')
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout branch for build
