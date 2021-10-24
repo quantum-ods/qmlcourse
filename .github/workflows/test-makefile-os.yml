@@ -13,7 +13,7 @@ on:
 jobs:
 
   deploy-book-linux:
-    if: contains(github.event.inputs.os, 'windows-latest')
+    if: contains(github.event.inputs.os, 'ubuntu-latest')
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
