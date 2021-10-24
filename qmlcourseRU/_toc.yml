@@ -133,7 +133,7 @@
     - file: book/dwaveblock/dwaveintro
       title: ⬜ О блоке "D-Wave"
     - file: book/dwaveblock/dwave
-      title: 🟩  Квантовый отжиг и семплирование
+      title: 🟩 Квантовый отжиг и семплирование
 
 - part: О курсе
   chapters:
