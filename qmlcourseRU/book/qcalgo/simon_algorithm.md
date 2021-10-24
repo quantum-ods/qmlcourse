@@ -49,12 +49,14 @@ kernelspec:
 
 3. Применяем оператор $U_f$:
     
-    $$ U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle $$
+    $$ 
+      U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle 
+    $$
 
    
 4. Снова применяем матрицы Адамара на первом регистре:
 
-    $$ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{x \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle}) \sum_{z=0}^{2^n-1}|z\rangle |f(x) \rangle $$
+    $$ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{x \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle}) \sum_{z \in \{ 0, 1\}^n}|z\rangle |f(x) \rangle $$
 
     где $\langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i $. 
 
@@ -98,65 +100,105 @@ kernelspec:
           \end{cases}
         $$
 
-Выполняем алгоритм $n$ раз. После чего у нас будет система $n$ линейно независимых уравнений.
+  Выполняем алгоритм $n$ раз. После чего у нас будет система $n$ линейно независимых уравнений.
 
 Теперь приступаем к вычислению строки $s$.
 
-## Постобработка
+
+6. Постобработка
 
 Итак, для того, чтобы найти $\vec{s} = (s_0, s_1, s_2, ..., s_{n-1})^T$, нам потребуется $n$ линейно независимых векторов $\vec{z_i}$, для которых выполняется $\langle \vec{z_i}, \vec{s} \rangle = 0$.
 
-В нашем же случае получится $n-1$ уравнение. Будем использовать метод, похожий на метод Гаусса.
-
-
-
-Пусть заданы **бинарные векторы** $\vec{z_0}, \vec{z_1}, ..., \vec{z_{n-1}}$ и булевы значения $b_0, b_1, ..., b_{n-1}$. Тогда множество векторов $\{\vec{z_i} \} i \in \{0, ..., n-1\}$  **линейно независимо**
-, если:
-
-$$
-  (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}) = \vec{0}
-$$
-
-имеет только тривиальные решения $b_0 = b_1 = ... = b_{n-1} = 0$. Иначе, векторы $\vec{z_i}, i \in \{0, ..., n-1\}$ **линейно зависимы**.
-
-Отсюда следует $\vec{ z_{i} } \neq \vec{0}, i \in [0, ..., n-1] $ .
-
-Пусть $z_0, z_1, ..., z_{n-1}$ линейно зависимы, тогда, хотя бы $1$ из $n$ линейных уравнений $\langle \vec{z_0}, \vec{s} \rangle = 0, \langle \vec{z_1}, \vec{s} \rangle = 0, ..., \langle \vec{z_{n-1}}, \vec{s} \rangle = 0$, могут быть сокращены.
-
-$$
-  0 = \langle \vec{0}, \vec{s} \rangle
-  = \langle (b_0 \wedge \vec{z_0}) \oplus (b_1 \wedge \vec{z_1}) \oplus (b_2 \wedge \vec{z_2}) \oplus ... \oplus (b_{n-1} \wedge \vec{z_{n-1}}), \vec{s} \rangle \\
-
-  = \langle (b_0 \wedge \vec{z_0}), \vec{s} \rangle \oplus \langle (b_1 \wedge \vec{z_1}), \vec{s} \rangle \oplus \langle (b_2 \wedge \vec{z_2}), \vec{s} \rangle \oplus ... \oplus \langle (b_{n-1} \wedge \vec{z_{n-1}}), \vec{s} \rangle \\
-
-  = b_0 \wedge (\langle \vec{z_0}, \vec{s}\rangle) \oplus b_1 \wedge (\langle \vec{z_1}, \vec{s} \rangle) \oplus b_2 \wedge (\langle \vec{z_2}, \vec{s}\rangle) \oplus ... \oplus b_{n-1} \wedge (\langle \vec{z_{n-1}}, \vec{s}\rangle) \\
-
-$$
-
-Также, из-за того, что $z_0, z_1, ..., z_{n-1}$ линейно зависимы, можно утверждать, что $b_i \neq 0 (b_i = 1)$:
-
-$$
-  \langle \vec{z_i}, \vec{s}\rangle = b_i \wedge \langle \vec{z_i}, \vec{s}\rangle = (b_i \wedge (\langle \vec{z_i}, \vec{s} \rangle)) \oplus 0 \\
-  = (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle)) \oplus (b_0 \wedge (\langle \vec{z_0}, \vec{s}\rangle)) \oplus
-  (b_1 \wedge (\langle\vec{z_1}, \vec{s}\rangle)) \oplus (b_2 \wedge (\langle \vec{z_2}, \vec{s}\rangle)) \oplus ... \oplus (b_{n-1} \wedge (\langle \vec{z_{n-1}}, \vec{s}\rangle ))  \\
-
-  = (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle )) \oplus (b_i \wedge (\langle \vec{z_i}, \vec{s}\rangle)) \oplus \bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\
-
-  = 0 \oplus  \bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\
-
-  =\bigoplus_{j \neq i}(b_j \wedge (\langle \vec{z_j}, \vec{s}\rangle)) \\
-
-  =\bigoplus_{j \neq i}(b_j \wedge 0) \\
-
-  = \bigoplus_{j \neq i} 0 \\
-
-  = 0\\
-
-$$
-
-Т.е. мы сократили $\langle \vec{z_i}, s\rangle$.
-
+После того, как получена система из $n$ линейно независимых уравнений, решение можно найти методом Гауаса.
 # Пример
+
+Давайте возьмём n = 3, строка $s = 100$, и функцию $f$, которая соответствует критерию $f(x) = f(y) \Leftrightarrow x \oplus s = y$. 
+
+Обычно функция $f(x)$ задана наперёд. Ну а мы выберем её простейшей: $f(x) = x \oplus s$ .
+
+Давайте посмотрим таблицу истинности всех нужных переменных.
+
+$$\large
+\begin{array} {|r|r|r|}
+\hline x & x \oplus s & f(x) \\ 
+\hline 000 & 100 & 000 \\ 
+\hline 001 & 101 & 001 \\ 
+\hline 010 & 110 & 010 \\ 
+\hline 011 & 111 & 011 \\ 
+\hline 100 & 000 & 000 \\ 
+\hline 101 & 001 & 001 \\ 
+\hline 110 & 010 & 010 \\ 
+\hline 111 & 011 & 011 \\ 
+\hline  
+\end{array}
+$$
+
+Сразу же нарисуем схему на Qiskit:
+
+```{code-cell} ipython3
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+# Работаем в пространстве размерности n = 3.
+n = 3
+
+# Создаём необходимые регистры
+qr1 = QuantumRegister(n, name="q1")
+qr2 = QuantumRegister(n, name="q2")
+cr1 = ClassicalRegister(n, name="c1")
+
+# Шаг 1. Создаём квантовую схему (инициализация состояния)
+qc = QuantumCircuit(qr1, qr2, cr1)
+
+# Шаг 1. Применяем гейт Адамара ко всем кубитам первого регистра
+qc.h(range(n))
+
+# Шаг 2. Применяем U_f
+qc.cx(qr1[0],qr2[0])
+
+# Шаг 3. Ещё раз применяем гейт адамара к каждому из кубитов
+qc.h(range(n))
+
+# Шаг 4. Производим измерение первого регистра
+qc.measure(qr1, cr1)
+
+# Рисуем схему
+qc.draw()
+```
+
+
+Теперь пройдём по всем шагам алгоритма:
+
+1. Инициализация всех регистров в $0$ состоянии:
+
+    $$|\psi_0\rangle = |000\rangle_{1} |000\rangle_{2}$$
+
+2. Применяем Адамар к первому регистру:
+   
+    $$ 
+    (H^n \otimes I)(|\psi_0\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2} 
+    $$
+
+3. Применяем оракл U_f:
+
+    $$
+      U_f(|\psi_1) = |\psi_2\rangle = \\
+
+      \frac{1}{\sqrt{8}} (|000\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |001\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |010\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |011\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |100\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
+      + |101\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
+      + |110\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
+      + |111\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} )
+      
+    $$
+
+4. Ещё один раз применяем гейты Адамара на первый регистр:
+
+  $$ 
+    (H^n \otimes I)(|\psi_2\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2} 
+  $$
 
 
 # Приложение
