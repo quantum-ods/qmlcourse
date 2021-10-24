@@ -11,6 +11,6 @@ repos:
         args: ["--markdown-linebreak-ext=md"]
 
   - repo: https://github.com/hcodes/yaspeller.git
-    rev: v7.0.0
+    rev: v7.2.0
     hooks:
       - id: yaspeller
