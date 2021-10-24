@@ -136,7 +136,7 @@ make install-ubuntu-latest
 make build-linux-macos
 ```
 
-```{hint} Что какая команда длелает
+```{hint}
 Первая команда установит `Python`, [`poetry`](https://python-poetry.org) - это еще один менеджер, который отвечает за управление библиотеками `Python` и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет [jupyter book](https://jupyterbook.org/intro.html), то что по ссылке https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html (так что можете не выполнять если не хотите, трава и так будет расти)
 ```
 
@@ -147,7 +147,7 @@ make build-linux-macos
 poetry run jupyter notebook
 ```
 
-```{hint} Окружение
+```{hint}
 Для того, чтобы запустить что-либо в текущем окружении, вам нужно начинать писать команду с `poetry run` (как в примере выше), ибо все ваши установленные библиотеки (которые в свою очередь устанавливаются как `poetry add <name_lib>`) не будут подгружаться
 ```
 
