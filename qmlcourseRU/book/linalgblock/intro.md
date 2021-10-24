@@ -7,3 +7,12 @@
 - обсудим основные понятия и идеи, такие как **векторы** и **матрицы**;
 - познакомимся с инструментами для работы с векторами и матрицами;
 - попробуем что-нибудь посчитать!
+
+Обозначения:
+- $a$ - число (скаляр)
+- $\mathbf{a}$ - вектор
+- $\mathbf{A}$ - матрица
+
+Полезные материалы:
+ - MathProfi: [Аналитическая геометрия](http://mathprofi.ru/vektory_dlya_chainikov.html)
+ - 3Blue1Brown: [Essence of linear algebra](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
