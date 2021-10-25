@@ -38,7 +38,7 @@
 
 ## Как можно помочь?
 
-Помочь можно словом и делом. Если знаете людей, интересующихся квантовыми вычислениями – замолвите словечко. Курс разрабатывается сообществом OpenDataScience, такими же «больными», как и организаторы (@sem @yorko @vtrohimenko). Если горите желанием в чем-то помочь, то создавайте Issue, а лучше сразу Pull Request в [репозитории курса](http://github.com/SemyonSinchenko/qmlcourse/) ([Contributing guide](https://github.com/SemyonSinchenko/qmlcourse/blob/master/CONTRIBUTING.md)).
+Помочь можно словом и делом. Если знаете людей, интересующихся квантовыми вычислениями – замолвите словечко. Курс разрабатывается сообществом OpenDataScience, такими же «больными», как и организаторы ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). Если горите желанием в чем-то помочь, то создавайте Issue, а лучше сразу Pull Request в [репозитории курса](http://github.com/SemyonSinchenko/qmlcourse/) ([Contributing guide](https://github.com/SemyonSinchenko/qmlcourse/blob/master/CONTRIBUTING.md)).
 
 **Желаем успехов!**
 
