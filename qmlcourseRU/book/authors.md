@@ -15,6 +15,7 @@
 3. [Сергей Ширкин](https://github.com/SergeiShirkin)
 4. [Александр Березутский](https://github.com/meandmytram)
 5. [Котенков Игорь](https://github.com/stalkermustang)
+6. [Дмитрий Бажанов](https://github.com/dbazhanov)
 
 ## Основные ревьюеры
 
@@ -39,6 +40,7 @@
 ```
 
 ```{dropdown} **Б**
+[Бажанов Дмитрий](https://github.com/dbazhanov)
 [Березуцкий Александр](https://github.com/meandmytram)
 ```
 

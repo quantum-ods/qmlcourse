@@ -137,6 +137,10 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
+    - file: book/problemsblock/ising
+      title: 🟩 Модель Изинга (Введение)
+    - file: book/problemsblock/advising
+      title: 🟧 Модель Изинга (Метод трансфер-матрицы)
 
 - part: О курсе
   chapters:
