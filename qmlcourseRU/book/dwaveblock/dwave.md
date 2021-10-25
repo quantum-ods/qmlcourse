@@ -151,7 +151,7 @@ neighbors = [('AB', 'BC'), ('AB', 'NT'), ('AB', 'SK'), ('BC', 'NT'), ('BC', 'YT'
 
 Теперь займемся ограничениями. Следующая функция выражает ограничение того, что соседние вершины в графе не могут быть одного и того же цвета. Область ее определения и значения -- булевы переменные.
 ```{code-cell} ipython3
-def not_both_1(v, u):
+def not_both_1(v: bool, u: bool) -> bool:
     return not (v and u)
 ```
 
@@ -198,7 +198,7 @@ else:
 
 Построим визуализацию нашего решения в виде графа с раскрашенными вершинами
 ```{code-cell} ipython3
-def plot_map(sample):
+def plot_map(sample: dict):
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
