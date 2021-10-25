@@ -7,11 +7,11 @@ on:
         description: 'Disable cache'
         required: false
         default: 'false'
-  pull_request:
   push:
     branches: [ master ]
 
 jobs:
+
   deploy_book:
     runs-on: ubuntu-latest
     env:
