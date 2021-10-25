@@ -37,7 +37,7 @@
     - file: book/linalgblock/intro.md
       title: ⬜ О блоке
     - file: book/linalgblock/vectors.md
-      title: 🟦 Вводная лекция про вектора
+      title: 🟦 Векторы
     # - file: book/linalgblock/algebra.md
     #   title: 🟦 Алгебра
     # - file: book/linalgblock/bra-ket.md
