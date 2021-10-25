@@ -62,7 +62,7 @@ kernelspec:
 :width: 600px
 :name: schrodingers_cat
 
-Код Шредингера
+Кот Шредингера
 ```
 
 ### Состояние кубита
