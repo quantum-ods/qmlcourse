@@ -10,7 +10,7 @@ on:
   push:
     branches: [ master ]
   # TODO: remove before merging to master
-  pull_request: 
+  pull_request:
 
 jobs:
 
