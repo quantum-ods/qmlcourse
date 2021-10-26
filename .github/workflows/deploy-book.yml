@@ -9,6 +9,8 @@ on:
         default: 'false'
   push:
     branches: [ master ]
+  # TODO: remove before merging to master
+  pull_request: 
 
 jobs:
 
@@ -59,6 +61,7 @@ jobs:
 
       - name: Build the book
         run: |
+          export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
           poetry run jupyter-book build ./qmlcourseRU
 
       # Push the book's HTML to github-pages
