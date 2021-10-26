@@ -15,7 +15,7 @@
       title: 🟦 Вводная лекция про Python
     - file: book/pythonblock/python_l2.md
       title: 🟦 Установка инструментов
-    - file: book/pythonblock/jupyter_l3.md
+    - file: book/pythonblock/python_l3.md
       title: 🟦 Ориентация в Jupyter
     - file: book/pythonblock/python_l4.md
       title: 🟦 Переменные, типы и вывод
@@ -34,6 +34,16 @@
 
 - part: Линейная алгебра и numpy
   chapters:
+    - file: book/linalgblock/intro.md
+      title: ⬜ О блоке
+    - file: book/linalgblock/vectors.md
+      title: 🟦 Векторы
+    # - file: book/linalgblock/algebra.md
+    #   title: 🟦 Алгебра
+    # - file: book/linalgblock/bra-ket.md
+    #   title: 🟦 Нотация Дирака
+    - file: book/linalgblock/matrices.md
+      title: 🟦 Матрицы
     - file: book/linalgblock/numpy.md
       title: 🟦 Numpy fun
 
