@@ -203,9 +203,9 @@ else:
     print(sample)
 ```
 
-Мы получили словарь `sample`, который будет выглядеть следующим образом: "код провинции + цвет: 0/1". Это -- семпл из состояния, полученного при решении данной задачи методом квантового отжига. Построим визуализацию нашего решения в виде графа с раскрашенными вершинами.
+Мы получили словарь `sample`, который будет выглядеть следующим образом: его ключи будут кодировать провинцию и цвет, а значение -- бинарная переменная, означающая раскрашена ли провинция этим цветом. Этот словарь -- семпл из состояния, полученного при решении данной задачи методом квантового отжига. Построим визуализацию нашего решения в виде графа с раскрашенными вершинами.
 ```{code-cell} ipython3
-def plot_map(sample: dict):
+def plot_map(sample: dict, provinces: list[str], neighbors: list[tuple[str]]):
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
@@ -218,7 +218,7 @@ def plot_map(sample: dict):
     nx.draw_circular(G, with_labels=True, node_color=node_colors, node_size=3000, cmap=plt.cm.rainbow)
     plt.show()
 
-plot_map(sample)
+plot_map(sample, provinces, neighbors)
 ```
 
 ```{figure} /_static/dwaveblock/dwave/fig_3.png
