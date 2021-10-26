@@ -25,7 +25,7 @@ kernelspec:
 
   $$\large f(x) = f(y) \Leftrightarrow x \oplus y = s$$
 
-То есть, если мы для двух различных строк $x$ и $y$ имеем одинаковое значение $f(x) = f(y)$, то $x \oplus y$ равняется некоторой неизвестной строке $s$. 
+То есть, если мы для двух различных строк $x$ и $y$ имеем одинаковое значение $f(x) = f(y)$, то $x \oplus y$ равняется некоторой неизвестной строке $s$.
 Функция $f(x)$ представляет собой чёрный ящик.
 
 Задача состоит в том, чтобы **найти $s$ выполнив при этом как можно меньшее количество вызовов $f(x)$ .**
@@ -40,7 +40,7 @@ kernelspec:
 В принципе, есть небольшие вариации в реализации алгоритма, мы рассмотрим наиболее простую (все необходимые ссылки в конце приведены):
 
 1. Сначала приготовления. Вначале мы приготовим 2 набора квантовых регистров в следующем состоянии:
-   
+
     $$|\psi_0\rangle = |0\rangle|0\rangle$$
 
 2. Применяем матрицы Адамара на первом регистре:
@@ -48,25 +48,25 @@ kernelspec:
     $$ (H^n \otimes I^n) |\psi_0\rangle = (H^n \otimes I^n) |0\rangle |0\rangle = |\psi_1 \rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle $$
 
 3. Применяем оператор $U_f$:
-    
-    $$ 
-      U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle 
+
+    $$
+      U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle
     $$
 
-4. Производим измерение на втором регистре. Измеренное значение будет соответствовать либо $x$ либо $y = x \oplus b$ . А первый регистр примет значение: 
+4. Производим измерение на втором регистре. Измеренное значение будет соответствовать либо $x$ либо $y = x \oplus b$ . А первый регистр примет значение:
 
-    $$ 
+    $$
       |\psi \rangle_3 = \frac{1}{\sqrt{2}} \left( |x\rangle_1 + |y\rangle_1\rangle \right)
     $$
-   
+
 5. Снова применяем матрицы Адамара на первом регистре:
 
     $$ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{z \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle} + -1^{\langle y, z\rangle}) |z\rangle $$
 
-    где $\langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i $. 
+    где $\langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i $.
 
     ```{note}
-    Для чисел $x = 110111$ и $z = 010101$ получим 
+    Для чисел $x = 110111$ и $z = 010101$ получим
 
       $\langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1$.
 
@@ -92,8 +92,8 @@ kernelspec:
         Этот случай гораздо интереснее. Функция $f$ преобразует два различных входных значения $x_1, x_2 \in \{0,1\}^n$ в одно $f(x_1) = f(x_2) = s \in \{0, 1\}^n$ .
         Также, справедливо $x_1 \oplus x_2 = s$, что переписывается в виде $x_1 \oplus s = x_2$ .
 
-        $$ |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle= \\ 
-        
+        $$ |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle= \\
+
         \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle \\
         $$
 
@@ -118,7 +118,7 @@ kernelspec:
 
 ## Пример
 
-Давайте возьмём n = 3, строка $s = 100$, и функцию $f$, которая соответствует критерию $f(x) = f(y) \Leftrightarrow x \oplus s = y$. 
+Давайте возьмём n = 3, строка $s = 100$, и функцию $f$, которая соответствует критерию $f(x) = f(y) \Leftrightarrow x \oplus s = y$.
 
 Обычно функция $f(x)$ задана наперёд. Ну а мы выберем её простейшей: $f(x) = x \oplus s$ .
 
@@ -126,15 +126,15 @@ kernelspec:
 
 $$\large
 \begin{array} {|r|r|r|}
-\hline x & x \oplus s & f(x) \\ 
-\hline 000 & 100 & 000 \\ 
-\hline 001 & 101 & 001 \\ 
-\hline 010 & 110 & 010 \\ 
-\hline 011 & 111 & 011 \\ 
-\hline 100 & 000 & 000 \\ 
-\hline 101 & 001 & 001 \\ 
-\hline 110 & 010 & 010 \\ 
-\hline 111 & 011 & 011 \\ 
+\hline x & x \oplus s & f(x) \\
+\hline 000 & 100 & 000 \\
+\hline 001 & 101 & 001 \\
+\hline 010 & 110 & 010 \\
+\hline 011 & 111 & 011 \\
+\hline 100 & 000 & 000 \\
+\hline 101 & 001 & 001 \\
+\hline 110 & 010 & 010 \\
+\hline 111 & 011 & 011 \\
 \hline  
 \end{array}
 $$
@@ -183,9 +183,9 @@ qc.draw()
     $$|\psi_0\rangle = |000\rangle_{1} |000\rangle_{2}$$
 
 2. Применяем Адамар к первому регистру:
-   
-    $$ 
-    (H^n \otimes I)(|\psi_0\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2} 
+
+    $$
+    (H^n \otimes I)(|\psi_0\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2}
     $$
 
 3. Применяем оракл U_f:
@@ -201,7 +201,7 @@ qc.draw()
       + |101\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
       + |110\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
       + |111\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} )
-      
+
     $$
 
 4. Измеряем второй регистр. С вероятностью $\frac{1}{2}$ мы получим либо значение $|000\rangle$ или $|100\rangle$.
@@ -214,7 +214,7 @@ qc.draw()
     $$
       |\psi_4\rangle = \frac{1}{4} \left[ \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle + |1\rangle) \right) \\
         + \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle - |1\rangle) \right) \\  
-        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right)  \\ 
+        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right)  \\
         + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \right) \right]
     $$
 
@@ -228,7 +228,7 @@ qc.draw()
 
 1. Расчёт вероятностей.
 
-    $$ \langle f(x), f(y)\rangle = \langle f(x), f(y) \rangle = 
+    $$ \langle f(x), f(y)\rangle = \langle f(x), f(y) \rangle =
     \begin{cases}
       1, \text{ если } x = y \text{ или } x = y \oplus s \\
       0, \text{ иначе}
@@ -237,7 +237,7 @@ qc.draw()
 
     $$
       \left\| \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2} |f(x)\rangle \right\|^2 = \\
-      
+
       = \left\langle \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2} |f(x)\rangle, \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2} |f(x)\rangle  \right\rangle^2 \\
 
       = \sum_{x \in \{0, 1 \}^n} \sum_{y \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2}\frac{(-1)^{\langle z, y \rangle} (1 + (-1)^{\langle z, s\rangle})}{2}  \langle f(x) , f(y)\rangle \\
