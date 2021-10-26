@@ -1,4 +1,4 @@
-name: test-makefile-os-linux-ubuntu-windows
+name: test-makefile-os
 
 # Only run this when the master branch changes
 on:
@@ -27,11 +27,12 @@ jobs:
       - name: Install dependencies
         run: make install-${{ matrix.os }}
         
-      - name: export token for dwave
-        run: export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
+      # - name: export token for dwave
+      #   run: export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
 
       - name: Build the book
         run: |
+          export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
           make build-linux-macos
 
   deploy-book-macos:
