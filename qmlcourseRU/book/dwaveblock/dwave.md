@@ -181,16 +181,23 @@ for neighbor in neighbors:
 bqm = dwavebinarycsp.stitch(csp)
 ```
 
+Создадим наш семплер, передав в него `API Token`:
+
+```{code-cell} ipython3
+import os
+base_sampler = DWaveSampler(token=os.environ["DWAVE_TOKEN"])
+```
+
 Дадим задание нашему квантовому семплеру с количеством семплов $1000$.
 ```{code-cell} ipython3
-sampler = EmbeddingComposite(DWaveSampler())  
+sampler = EmbeddingComposite(base_sampler)
 sampleset = sampler.sample(bqm, num_reads=1000, label='Canada Map Coloring')
 ```
 
 Проверим, что было найдено решение задачи,
 ```{code-cell} ipython3
-sample = sampleset.first.sample  
-if not csp.check(sample):  
+sample = sampleset.first.sample
+if not csp.check(sample):
     print("Failed to color map. Try sampling again.")
 else:
     print(sample)
