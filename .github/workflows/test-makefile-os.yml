@@ -28,7 +28,7 @@ jobs:
         run: make install-${{ matrix.os }}
         
       - name: export token for dwave
-        run: export DWAVE_TOKEN = ${{ secrets.DWAVE_TOKEN }}
+        run: export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
 
       - name: Build the book
         run: |
