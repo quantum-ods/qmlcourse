@@ -9,8 +9,6 @@ on:
         default: 'false'
   push:
     branches: [ master ]
-  # TODO: remove before merging to master
-  pull_request:
 
 jobs:
 

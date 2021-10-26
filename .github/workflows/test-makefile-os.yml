@@ -24,11 +24,14 @@ jobs:
       - name: Checkout branch for build
         uses: actions/checkout@v2
 
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
       - name: Install dependencies
         run: make install-${{ matrix.os }}
-
-      # - name: export token for dwave
-      #   run: export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
 
       - name: Build the book
         run: |
@@ -47,6 +50,12 @@ jobs:
       - name: Checkout branch for build
         uses: actions/checkout@v2
 
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
       - name: Install dependencies
         run: make install-${{ matrix.os }}
 
@@ -61,6 +70,12 @@ jobs:
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
 
       - name: Install chocolatey
         run: |
