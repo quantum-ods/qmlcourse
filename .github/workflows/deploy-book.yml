@@ -59,11 +59,14 @@ jobs:
         run: |
           poetry install
 
-      - name: Build the book
+      - name: export some tokens
         env:
-          TOKEN_DWAVE: ${{ secrets.DWAVE_TOKEN }}
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
-          export DWAVE_TOKEN="$TOKEN_DWAVE"
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
+      - name: Build the book
+        run: |
           poetry run jupyter-book build ./qmlcourseRU
 
       # Push the book's HTML to github-pages
