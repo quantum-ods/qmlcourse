@@ -205,7 +205,11 @@ else:
 
 Мы получили словарь `sample`, который будет выглядеть следующим образом: его ключи будут кодировать провинцию и цвет, а значения -- бинарные переменные, означающие раскрашена ли провинция этим цветом. Этот словарь -- семпл из состояния, полученного при решении данной задачи методом квантового отжига. Построим визуализацию нашего решения в виде графа с раскрашенными вершинами.
 ```{code-cell} ipython3
-def plot_map(sample: dict[str, bool], provinces: list[str], neighbors: list[tuple[str]]):
+from typing import List
+from typing import Tuple
+
+
+def plot_map(sample: dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]):
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
