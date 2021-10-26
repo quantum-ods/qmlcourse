@@ -18,7 +18,6 @@ pyppeteer  = "^0.2.6"
 pyyaml  = "^5.4.1"
 qiskit = "^0.31.0"
 dwave-system = "^1.10.0"
-dwave-ocean-sdk = "^4.2.0"
 dwavebinarycsp = "^0.1.3"
 networkx = "^2.6.3"
 
