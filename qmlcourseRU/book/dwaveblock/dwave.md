@@ -207,9 +207,10 @@ else:
 ```{code-cell} ipython3
 from typing import List
 from typing import Tuple
+from typing import Dict
 
 
-def plot_map(sample: dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]):
+def plot_map(sample: Dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]):
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
