@@ -15,7 +15,7 @@
 3. [Сергей Ширкин](https://github.com/SergeiShirkin)
 4. [Александр Березутский](https://github.com/meandmytram)
 5. [Котенков Игорь](https://github.com/stalkermustang)
-6. [Токарев Игорь](https://github.com/polyzer)
+6. [Игорь Токарев](https://github.com/polyzer)
 
 ## Основные ревьюеры
 

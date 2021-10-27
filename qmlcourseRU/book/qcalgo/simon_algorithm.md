@@ -32,6 +32,13 @@ kernelspec:
 
 ## Описание алгоритма
 
+Сразу определим операцию на двух бинарных строках $x$, $z$: 
+
+$$
+  \langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i 
+$$
+
+
 ```{figure} /_static/qcalgo/simon_algorithm/simon_principal.svg
 :name: simon_principal
 :width: 400px
@@ -39,7 +46,7 @@ kernelspec:
 
 В принципе, есть небольшие вариации в реализации алгоритма, мы рассмотрим наиболее простую (все необходимые ссылки в конце приведены):
 
-1. Сначала приготовления. Вначале мы приготовим 2 набора квантовых регистров в следующем состоянии:
+1. Сначала приготовления. Вначале мы приготовим 2 набора квантовых регистров (каждый размерности $n$) в следующем состоянии:
 
     $$|\psi_0\rangle = |0\rangle|0\rangle$$
 
@@ -230,46 +237,82 @@ qc.draw()
 
 1. Расчёт вероятностей.
 
-    $$ \langle f(x), f(y)\rangle = \langle f(x), f(y) \rangle =
-    \begin{cases}
-      1, \text{ если } x = y \text{ или } x = y \oplus s \\
-      0, \text{ иначе}
-    \end{cases}
-    $$
+    1. Случай, когда $x \oplus z = 0^n$ :
 
-    $$
-      \left\| \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2} |f(x)\rangle \right\|^2 = \\
+        $$
+          \sum_{z \in \{0,1\}^n} |z\rangle \otimes \left( \frac{1}{2^n} \sum_{x \in \{0,1\}^n} ((-1)^{\langle x, z \rangle} |f(x)\rangle) \right)
+        $$
+  
+        Вероятность получить какую-либо из $2^n$ строк одинакова:
 
-      = \left\langle \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2} |f(x)\rangle, \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2} |f(x)\rangle  \right\rangle^2 \\
+        $$ 
+          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}
+        $$
 
-      = \sum_{x \in \{0, 1 \}^n} \sum_{y \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2}\frac{(-1)^{\langle z, y \rangle} (1 + (-1)^{\langle z, s\rangle})}{2}  \langle f(x) , f(y)\rangle \\
+        Утверждение данное выше следует из того, что $f(x)$ отличается от $x$ лишь порядком во всём множестве строк $\{0,1\}^n$:  
+        
+        $$ 
+          \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |x\rangle \right) \right\|^2
+        $$
 
-      = \sum_{x \in \{0, 1 \}^n} \sum_{y \in \{0, 1 \}^n} \frac{(-1)^{\langle z, (x \oplus y) \rangle} (1 + (-1)^{\langle z, s \rangle})^2}{4}  \langle f(x) , f(y)\rangle \\
+    2. Случай, когда $x \oplus z = s \neq 0^n$:
 
-      = \sum_{x \in \{0, 1 \}^n} \sum_{y \in \{0, 1 \}^n} \frac{(-1)^{\langle z, s \rangle} (1 + (-1)^{\langle z, s \rangle})^2}{4}  \langle f(x) , f(y)\rangle \\
+        Определим $A = f(\{0,1\}^n)$ - образ функции $f$, $l \in A$ - т.е. это какое-то значение функции $f$. Здесь у нас имеются два таких значения $x_1 \in \{0, 1\}^n $, $x_2 \in \{0, 1\}^n $ , что для них выполняется $ x_2 = s \oplus x_1 $.
 
-      = \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, s \rangle} (1 + (-1)^{\langle z, s \rangle})^2}{4}  \langle f(x)|f(x)\rangle + \frac{(-1)^{\langle z, s \rangle} (1 + (-1)^{\langle z, s \rangle})^2}{4}  \langle f(x) , f(x + c)\rangle \\
+        $$ 
+          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |l\rangle \right) \right\|^2 = \frac{1}{2^n}
+        $$
 
-      = \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, s \rangle} (1 + (-1)^{\langle z, s \rangle})^2}{2} \\
+        Перепишем коэффициенты $(-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2, z \rangle}$:
 
-      = \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, s \rangle} (1 + (-1)^{\langle z,  s \rangle})^2}{2}\\
+        $$
+          (-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2, z \rangle} = (-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2 \oplus s, z \rangle}
+        $$
 
-      = \begin{cases}
-        2^n, \text{ если } \langle z, s \rangle = 0 \\
-        0, \text{ если }  \langle z, s \rangle = 1
-      \end{cases}
-    $$
+        Перепишем коэффициенты $\langle (x_1 \oplus s, z \rangle = \langle (x_1, z \rangle \oplus \langle (x_2, z \rangle$:
 
-    $$
-      \sum_{z \in \{0, 1 \}^2} \left\| \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s \rangle})}{2} |f(x)\rangle \right\|^2 = 2^{n-1} 2 ^{n} = 2^{2n-1}
-    $$
+        $$
+          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle})
+        $$
 
-    $$
-      p(z) = \begin{cases}
-        \frac{1}{2^{n-1}}, \text{ если } \langle z, s \rangle = 0 \\
-        0, \text{ если }  \langle z, s \rangle = 1
-      \end{cases}
-    $$
+        И собирая все полученные условия:
+
+        $$ 
+          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |l\rangle \right) \right\|^2 = \frac{1}{2^n}
+        $$
+
+        Сейчас разберёмся со случаем, когда $\langle z, s \rangle = 1$, $(-1)^{\langle z, s \rangle} = -1$
+
+        $$
+          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = (-1)^{\langle x_1, z \rangle} (1 - 1) = 0
+        $$
+
+        И вероятность в таком случае равняется 0
+
+        $$
+          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |l\rangle \right) \right\|^2 = 0
+        $$
+
+        Сейчас разберёмся со случаем, когда $\langle z, s \rangle = 0$, $(-1)^{\langle z, s \rangle} = 1$
+
+        $$
+          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = (-1)^{\langle x_1, z \rangle} 2
+        $$
+
+        Вычисление вероятности 
+
+        $$
+          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} 2 |l\rangle \right\|^2 = \\
+          \left\| \frac{2}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2 = \left\| \frac{2}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2 = \left\| \frac{1}{2^{n-1}} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2
+        $$
+
+        $$
+          p(z) = \begin{cases}
+            \frac{1}{2^{n-1}}, \text{ если } \langle z, s \rangle = 0 \\
+            0, \text{ если }  \langle z, s \rangle = 1
+          \end{cases}
+        $$
+
 
 
 # Ссылки
