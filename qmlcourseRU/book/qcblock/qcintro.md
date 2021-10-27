@@ -12,8 +12,6 @@
 - о квантовой физике, на которой базируется концепция кубита;
 - о смешанных состояниях, операторе плотности и энтропии фон Неймана.
 
-
-
 ```{figure} /_static/qcblock/vqgan_clip_quantum_mind.png
 :name: vqgan_clip_quantum_mind
 :width: 600px
