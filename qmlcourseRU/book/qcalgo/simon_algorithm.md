@@ -32,12 +32,13 @@ kernelspec:
 
 ## Описание алгоритма
 
-Сразу определим операцию на двух бинарных строках $x$, $z$: 
+Сразу определим операцию на двух бинарных строках (они же бинарные векторы) $x = x_0 x_1 x_2 ... x_{2^n-1}$, $z = z_1 z_2 z_3 ... z_{2^n-1}$: 
 
 $$
   \langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i 
 $$
 
+Принципиальная схема алгоритма Саймона:
 
 ```{figure} /_static/qcalgo/simon_algorithm/simon_principal.svg
 :name: simon_principal
@@ -60,7 +61,7 @@ $$
       U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle
     $$
 
-4. Производим измерение на втором регистре. Измеренное значение будет соответствовать либо $x$ либо $y = x \oplus b$ . А первый регистр примет значение:
+4. Производим измерение на втором регистре. Измеренное значение будет соответствовать либо $x$ либо $y = x \oplus s$ . А первый регистр примет значение:
 
     $$
       |\psi \rangle_3 = \frac{1}{\sqrt{2}} \left( |x\rangle_1 + |y\rangle_1\rangle \right)
@@ -99,18 +100,25 @@ $$
         Этот случай гораздо интереснее. Функция $f$ преобразует два различных входных значения $x_1, x_2 \in \{0,1\}^n$ в одно $f(x_1) = f(x_2) = s \in \{0, 1\}^n$ .
         Также, справедливо $x_1 \oplus x_2 = s$, что переписывается в виде $x_1 \oplus s = x_2$ .
 
-        $$ |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle= \\
+        $$ |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle=
+        $$
 
-        \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle \\
+        $$
+        \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle
         $$
 
         $$ p(z) = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, z\rangle} |f(x)\rangle \right) \right\|^2 =
-        \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{\langle x_1, z\rangle} + (-1)^{\langle x_2, z\rangle})|z\rangle \right) \right\|^2 \\
+        \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{\langle x_1, z\rangle} + (-1)^{\langle x_2, z\rangle})|z\rangle \right) \right\|^2
+        $$
+
+        $$
         = \begin{cases}
             \frac{1}{2^{n-1}}, \text{ если } \langle z, s \rangle = 0 \\
             0, \text{ если }  \langle z, s \rangle = 1
           \end{cases}
         $$
+
+    Расчёты вероятностей можно найти в приложениях (Приложение 1).
 
     Выполняем алгоритм $n$ раз. После чего у нас будет система $n$ линейно независимых уравнений.
 
@@ -195,10 +203,10 @@ qc.draw()
     (H^n \otimes I)(|\psi_0\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2}
     $$
 
-3. Применяем оракл U_f:
+3. Применяем оракул $U_f$:
 
     $$
-      U_f(|\psi_1) = |\psi_2\rangle = \\
+      U_f(|\psi_1\rangle = |\psi_2\rangle = \\
 
       \frac{1}{\sqrt{8}} (|000\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
       + |001\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
@@ -218,16 +226,14 @@ qc.draw()
 
 5. Ещё один раз применяем гейты Адамара на первый регистр:
 
-    $$
-      |\psi_4\rangle = \frac{1}{4} \left[ \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle + |1\rangle) \right) \\
-        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle - |1\rangle) \right) \\  
-        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right)  \\
-        + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \right) \right]
-    $$
+    $$ |\psi_4 \rangle = \frac{1}{4} [ \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle + |1\rangle) \right) $$
+    $$ + \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle - |1\rangle) \right) $$
+    $$ + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right) $$
+    $$ + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \right) ] $$
 
 6. Производим измерение первого регистра, записывая результат.
 
-Выполняем шаги $n$ раз.
+    Выполняем 1 - 6 $n$ раз.
 
 7. Здесь решаем систему уравнений.
 
@@ -302,7 +308,10 @@ qc.draw()
         Вычисление вероятности 
 
         $$
-          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} 2 |l\rangle \right\|^2 = \\
+          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} 2 |l\rangle \right\|^2 =
+        $$
+
+        $$
           \left\| \frac{2}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2 = \left\| \frac{2}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2 = \left\| \frac{1}{2^{n-1}} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2
         $$
 
@@ -313,12 +322,8 @@ qc.draw()
           \end{cases}
         $$
 
-
-
 # Ссылки
 
 [Simon Algorithm](https://leimao.github.io/blog/Simon-Algorithm/)
-
 [Simon's problem](https://en.wikipedia.org/wiki/Simon%27s_problem)
-
 [Qiskit Simon algorithm](https://qiskit.org/textbook/ch-algorithms/simon.html)
