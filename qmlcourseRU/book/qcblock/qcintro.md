@@ -14,7 +14,7 @@
 
 
 
-```{figure} /_static/mlblock/vqgan_clip_quantum_mind.png
+```{figure} /_static/qcblock/vqgan_clip_quantum_mind.png
 :name: vqgan_clip_quantum_mind
 :width: 600px
 
