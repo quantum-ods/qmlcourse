@@ -75,21 +75,22 @@ $$
 $$
 \hat{U}^{\dagger}\hat{U}=\hat{U}\hat{U}^{\dagger}=I
 $$
-напомним, что операция $\hat{U}^\dagger$ (другое частое обозначение в работах - звездочка или H $\hat{U}^{*}=\hat{U}^{H}$) в матричных терминах является последовательным применением операции транспонирования и последующего сопряжения элементов этой матрицы $\hat{U}^\dagger = \overline{\hat{U}}^T$ (порядок этих операций, естественно не влияет на результат). В numpy - это метод H
+напомним, что операция $\hat{U}^\dagger$ (другое частое обозначение в работах - звездочка или H $\hat{U}^{*}=\hat{U}^{H}$) в матричных терминах является последовательным применением операции транспонирования и последующего сопряжения элементов этой матрицы $\hat{U}^\dagger = \overline{\hat{U}}^T$ (порядок этих операций, естественно не влияет на результат).
 
 ```{code-cell} ipython3
 import numpy as np
 import scipy as sp
+from scipy import linalg
 U_hat = np.array([
     [1 + 0j, 0 + 0j],
     [0 + 0j, 1 + 0j]
     ])
-U_hat_star = U_hat.H()
-U_hat_star_byhands = np.conjugate(np.transpose(U_hat))
+U_hat_star_byhands = U_hat.conj().T
+U_hat_star_long = np.conjugate(np.transpose(U_hat))
 
 print(np.allclose(U_hat_star, U_hat_star_byhands))
 ```
-Также в python для многих операций есть соответствующие методы вместо функций и их сокращения, например U.transpose() тоже самое, что U.T, а U.H() - U.H
+Также в python для многих операций есть соответствующие методы вместо функций и их сокращения, например U.transpose() тоже самое, что U.T, а U.conjugate() - U.conj()
 
 Важное свойство, что любой эрмитов оператор U можно привести к унитарному оператору с помощью взятия матричной экспоненты от матрицы оператора умноженного на мнимую единицу:
 
@@ -117,24 +118,27 @@ $$
 S \exp(-i \Lambda  + i \Lambda) S^\dagger = S \exp(O) S^\dagger = S I S^\dagger = I
 $$
 В конце мы еще раз воспользовались тем, что S - унитарная. Абсолютно также доказывается, что $\hat{U}\hat{U}^{\dagger}$
-
-Давайте продемонстрируем доказанный факт на примере матрицы дискретного преобразования Фурье без нормировочного коэффициента $\frac{1}{N}$, $N=3$:
+``` note
+Кстати, любая матрица вида $HH^{\dagger}$ является эрмитовой
+```
+Давайте продемонстрируем доказанный факт на примере матрицы дискретного преобразования Фурье без нормировочного коэффициента $\frac{1}{N}$, $N=3$ преобразованной к $DD^{dagger}:
 
 ```{code-cell} ipython3
 N=3
-w = np.sqrt(np.exp(-np.i*2*np.pi/N))
-U = np.array([
+w = np.sqrt(np.exp(-1j*2*np.pi/N))
+D = np.array([
     [1, 1, 1],
     [1, w, w**2],
     [1, w**2, w**4]
     ])
 print(U)
-print(U@U.H)
-print(np.allclose(U@U.H, np.eye(N)))
-U_hat = sp.linalg.expm(np.i*U)
+U = D@D.conj().T
+print(D)
+print(np.allclose(U@U.H, np.eye(N))) # no
 
-print(np.allclose(U_hat@U_hat.H, np.eye(N)))
-print(np.allclose(U_hat.H@U_hat, np.eye(N)))
+U_hat = linalg.expm(np.i*U)
+print(np.allclose(U_hat@U_hat.conj().T, np.eye(N)))
+print(np.allclose(U_hat.conj().T@U_hat, np.eye(N)))
 ```
 
 - Пример: оператор проектор
