@@ -6,9 +6,9 @@
 
 
 
-```{figure} /_static/mlblock/vqgan_clip_quantum_mind.png
-:name: vqgan_clip_quantum_mind
+```{figure} /_static/mlblock/vqgan_clip_neural_network.png
+:name: vqgan_clip_neural_network
 :width: 600px
 
-Как "видит" квантовый мир пара нейросетей VQGAN и CLIP, сгенерировано в [Google Colab](https://colab.research.google.com/drive/1L8oL-vLJXVcRzCFbPwOoMkPKJ8-aYdPN)
+Нейронные сети "глазами" других нейросетей – VQGAN и CLIP, сгенерировано в [Google Colab](https://colab.research.google.com/drive/1L8oL-vLJXVcRzCFbPwOoMkPKJ8-aYdPN)
 ```
