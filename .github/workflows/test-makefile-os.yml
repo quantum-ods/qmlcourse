@@ -1,4 +1,4 @@
-name: test-makefile-os-linux-ubuntu-windows
+name: test-makefile-os
 
 # Only run this when the master branch changes
 on:
@@ -24,11 +24,18 @@ jobs:
       - name: Checkout branch for build
         uses: actions/checkout@v2
 
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
       - name: Install dependencies
         run: make install-${{ matrix.os }}
 
       - name: Build the book
         run: |
+          export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
           make build-linux-macos
 
   deploy-book-macos:
@@ -42,6 +49,12 @@ jobs:
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
 
       - name: Install dependencies
         run: make install-${{ matrix.os }}
@@ -57,6 +70,12 @@ jobs:
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
 
       - name: Install chocolatey
         run: |

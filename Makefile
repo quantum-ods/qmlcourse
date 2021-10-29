@@ -17,7 +17,7 @@ install-python-poetry-ubuntu:
 
 install-python-poetry-macos:
 	brew update
-	brew install pyenv poetry
+	brew install zlib pyenv poetry
 
 	pyenv install 3.8.10
 	pyenv local 3.8.10
