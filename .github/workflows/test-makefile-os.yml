@@ -13,12 +13,12 @@ on:
 jobs:
 
   deploy-book-linux:
-    if: contains(github.event.inputs.os, 'windows-latest')
-    runs-on: ${{ matrix.os }}
+    if: contains(github.event.inputs.os, 'ubuntu-latest')
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout branch for build
@@ -33,11 +33,11 @@ jobs:
 
   deploy-book-macos:
     if: contains(github.event.inputs.os, 'macos-latest')
-    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [macos-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout branch for build
