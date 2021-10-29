@@ -75,7 +75,7 @@ $$
 Представим данную систему в матричном виде:
 
 $$
-\mathbf{A} \mathbf{x} = \mathbf{b} \rightarrow \begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix} \begin{pmatrix} x_{1} \\ x_{2} \\ ... \\ x_{n} \end{pmatrix} = \begin{pmatrix} b_{1} \\ b_{2} \\ ... \\ b_{n} \end{pmatrix}
+\mathbf{A} \mathbf{x} = \mathbf{b} \rightarrow \begin{pmatrix} a_{11} & a_{12} & ... & a_{1m} \\ a_{21} & a_{22} & ... & a_{2m} \\ ... & ... & ... & ... \\ a_{n1} & a_{n2} & ... & a_{nm} \end{pmatrix} \begin{pmatrix} x_{1} \\ x_{2} \\ ... \\ x_{m} \end{pmatrix} = \begin{pmatrix} b_{1} \\ b_{2} \\ ... \\ b_{n} \end{pmatrix}
 $$
 
 ## Норма матрицы
