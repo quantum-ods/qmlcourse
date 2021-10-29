@@ -273,7 +273,7 @@ h = 1 / np.sqrt(2) * np.array([
 ##### Унитарность
 
 ```{code-cell} ipython3
-print(np.allclose(np.conj(h) @ h, np.eye(2)))
+print(np.allclose(np.conj(h).T @ h, np.eye(2)))
 ```
 
 ##### Правильное действие
