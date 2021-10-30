@@ -132,13 +132,14 @@ D = np.array([
     [1, w**2, w**4]
     ])
 print(U)
-U = D@D.conj().T
+
+U = D @ D.conj().T
 print(D)
-print(np.allclose(U@U.H, np.eye(N))) # no
+print(np.allclose(U @ U.H, np.eye(N))) # no
 
 U_hat = linalg.expm(np.i*U)
-print(np.allclose(U_hat@U_hat.conj().T, np.eye(N)))
-print(np.allclose(U_hat.conj().T@U_hat, np.eye(N)))
+print(np.allclose(U_hat @ U_hat.conj().T, np.eye(N)))
+print(np.allclose(U_hat.conj().T @ U_hat, np.eye(N)))
 ```
 
 - Пример: оператор проектор
@@ -163,7 +164,9 @@ M(v,\theta) = \begin{pmatrix}
  & \cos \theta + (1 - \cos \theta) z^2
 \end{pmatrix}
 $$
-Например, если бы хотим повернуть относительно оси x на $90^\degree$: $x=1$, $y=0$, $z=0$, $\theta = \frac{\pi}{2} наша матрица будет иметь вид:
+
+Например, если мы хотим повернуть относительно оси x на $90^\degree$: $x=1$, $y=0$, $z=0$, $\theta = \frac{\pi}{2}, наша матрица будет иметь вид:
+
 $$
 M = \begin{pmatrix}
 1 & 0 & 0 \\
@@ -197,11 +200,11 @@ $$
 
 - Символ Леви-Чивиты
 
-[TODO](https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB_%D0%9B%D0%B5%D0%B2%D0%B8-%D0%A7%D0%B8%D0%B2%D0%B8%D1%82%D1%8B)
+[_Символ Леви-Чивиты_](https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB_%D0%9B%D0%B5%D0%B2%D0%B8-%D0%A7%D0%B8%D0%B2%D0%B8%D1%82%D1%8B)
 
 - Произведение Кронекера
 
-[TODO](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0)
+[_Произведение Кронекера_](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0)
 
 ## Что мы узнали
 
