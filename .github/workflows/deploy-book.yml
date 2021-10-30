@@ -9,7 +9,6 @@ on:
         default: 'false'
   push:
     branches: [ master ]
-  pull_request:
 
 jobs:
 
@@ -58,6 +57,9 @@ jobs:
         run: |
           poetry install
 
+      # todo: replace with a more sane solution
+      - name: install tensorflow_quantum # https://www.tensorflow.org/quantum/install
+        run: |
           poetry run pip install --upgrade pip
 
           poetry run pip install -U tensorflow==2.5.1
