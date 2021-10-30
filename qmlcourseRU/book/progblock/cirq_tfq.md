@@ -32,6 +32,8 @@ kernelspec:
 `poetry run pip install tensorflow-quantum==0.5.1`
 
 Обладателям компьютеров на системе `Windows` мы можем лишь предложить использовать [`WSL2`](https://docs.microsoft.com/en-us/windows/wsl/about) или `Docker`. В целом эта лекция факультативная и нигде далее `TFQ` у нас не используется.
+
+Больше информации можно найти в [разделе про установку](https://www.tensorflow.org/quantum/install) в официальной документации этой библиотеки.
 ```
 
 Для начала импортируем `cirq`.
@@ -99,6 +101,8 @@ print(sim.run(circuit, repetitions=25))
 Мы будем использовать `Tensorflow` и `Tensorflow Quantum`.
 
 ```{code-cell} ipython3
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 import tensorflow as tf
 import tensorflow_quantum as tfq
 ```
