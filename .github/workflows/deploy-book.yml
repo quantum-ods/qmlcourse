@@ -57,7 +57,7 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
-          pip install tensorflow==2.5.1 tensorflow_quantum==0.5.1
+          poetry run pip install tensorflow==2.5.1 tensorflow_quantum==0.5.1
 
 
       - name: export some tokens
