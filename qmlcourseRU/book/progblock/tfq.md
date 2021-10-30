@@ -75,19 +75,16 @@ sim = cirq.Simulator()
 Как мы знаем, результат измерения такой схемы равен 50% для состояния $\ket{0}$, то есть если мы будем сэмплировать, то должны получать $\sim 0.5$. Проверим это с разным числом сэмплов:
 
 ```{code-cell} ipython3
-print("5 сэмплов:")
-print(sim.sample(circuit, repetitions=5).mean())
-print("\n100 сэмплов:")
-print(sim.sample(circuit, repetitions=100).mean())
-print("\n1000 сэмплов:")
-print(sim.sample(circuit, repetitions=1000).mean())
+print(f"5 сэмплов: {sim.sample(circuit, repetitions=5).mean()}")
+print(f"\n100 сэмплов: {sim.sample(circuit, repetitions=100).mean()}")
+print(f"\n1000 сэмплов: {sim.sample(circuit, repetitions=1000).mean()}")
 ```
 
 ```{note}
-Метод `sim.sample` озвращает хорошо знакомый всем специалистам в области Data Science объект `pandas.DataFrame`. Для тех, кто слышит про такой впервые рекомендуем обратиться к вводным лекциям про `Python` и классическое машинное обучение.
+Метод `sim.sample` возвращает хорошо знакомый всем специалистам в области Data Science объект `pandas.DataFrame`
 ```
 
-Также у нас есть опция запустить схему через метод `run`. Может показаться, что это то же самое, но на самом деле в отличие от `sample` метод `run` возвращает результат в несколько ином виде, а еще он позволяет запускать программу на реальном квантовом компьютере `Goolge` или их новых квантовых симуляторах на TPU:
+Также у нас есть опция запустить схему через метод `run`. Может показаться, что это то же самое, но на самом деле в отличие от `sample`, метод `run` возвращает результат в несколько ином виде; а еще он позволяет запускать программу на реальном квантовом компьютере `Goolge` или их новых квантовых симуляторах на TPU:
 
 ```{code-cell} ipython3
 print(sim.run(circuit, repetitions=25))
@@ -114,8 +111,7 @@ import tensorflow_quantum as tfq
 from sklearn.datasets import make_classification
 import numpy as np
 
-x, y = make_classification(n_samples=50, n_features=2, n_informative=2,
-                           random_state=42, n_redundant=0)
+x, y = make_classification(n_samples=50, n_features=2, n_informative=2, random_state=42, n_redundant=0)
 
 def normalize(x):
     x_min = x.min()
@@ -218,10 +214,7 @@ cirq_inputs = tf.keras.Input(shape=(), dtype=tf.dtypes.string)
 - квантовый слой
 
 ```{code-cell} ipython3
-quantum_layer = tfq.layers.PQC(
-    trainable_circuit,
-    ops
-)(cirq_inputs)
+quantum_layer = tfq.layers.PQC(trainable_circuit, ops)(cirq_inputs)
 ```
 
 - классический слой и выходной слой
@@ -281,6 +274,7 @@ plt.show()
 ```{code-cell} ipython3
 preds_after_training = model(x_input).numpy()
 plt.figure(figsize=(6, 4))
+
 cb = plt.scatter(x[:, 0], x[:, 1], c=preds_after_training)
 plt.colorbar(cb)
 plt.show()
