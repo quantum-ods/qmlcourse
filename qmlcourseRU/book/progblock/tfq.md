@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-(tfq)=
+(cirq_tfq)=
 
 # Cirq & TFQ
 
