@@ -9,6 +9,7 @@ on:
         default: 'false'
   push:
     branches: [ master ]
+  pull_request:
 
 jobs:
 
@@ -56,6 +57,12 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
+
+          poetry run pip install --upgrade pip
+
+          poetry run pip install -U tensorflow==2.5.1
+          poetry run pip install -U tensorflow_quantum
+          poetry run pip install -U tfq-nightly
 
       - name: export some tokens
         env:
