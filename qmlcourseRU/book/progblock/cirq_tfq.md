@@ -81,7 +81,7 @@ print(f"\n1000 сэмплов: {sim.sample(circuit, repetitions=1000).mean()}")
 ```
 
 ```{note}
-Метод `sim.sample` возвращает хорошо знакомый всем специалистам в области Data Science объект `pandas.DataFrame`
+Метод `sim.sample` возвращает хорошо знакомый всем специалистам в области Data Science объект `pandas.DataFrame`.
 ```
 
 Также у нас есть опция запустить схему через метод `run`. Может показаться, что это то же самое, но на самом деле в отличие от `sample`, метод `run` возвращает результат в несколько ином виде; а еще он позволяет запускать программу на реальном квантовом компьютере `Goolge` или их новых квантовых симуляторах на TPU:
@@ -111,7 +111,7 @@ import tensorflow_quantum as tfq
 from sklearn.datasets import make_classification
 import numpy as np
 
-x, y = make_classification(n_samples=50, n_features=2, n_informative=2, random_state=42, n_redundant=0)
+x, y = make_classification(n_samples=50, n_features=2, n_i
 
 def normalize(x):
     x_min = x.min()

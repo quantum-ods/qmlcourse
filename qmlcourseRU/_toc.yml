@@ -71,7 +71,7 @@
       title: 🟩 Обзор фреймворков
     - file: book/progblock/pennylane.ipynb
       title: 🟩 PennyLane
-    - file: book/progblock/tfq.md
+    - file: book/progblock/cirq_tfq.md
       title: 🟧 Cirq & TFQ
 
 - part: Базовые квантовые алгоритмы
