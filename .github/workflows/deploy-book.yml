@@ -58,7 +58,7 @@ jobs:
         run: |
           poetry install
 
-          poetry run install --upgrade pip
+          poetry run pip install --upgrade pip
           poetry run pip install -U sympy==1.5 tensorflow==2.5.1 tensorflow_quantum==0.5.1 tensorflow_estimator==2.5.0 tfq-nightly
 
       - name: export some tokens
