@@ -92,7 +92,7 @@
 ```
 
 ```{dropdown} **О**
-
+[Овсянникова Александра](https://github.com/alexmorphine)
 ```
 
 ```{dropdown} **П**
