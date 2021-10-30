@@ -14,15 +14,17 @@
 2. [Илья Беседин](https://github.com/ooovector)
 3. [Сергей Ширкин](https://github.com/SergeiShirkin)
 4. [Александр Березутский](https://github.com/meandmytram)
-5. [Котенков Игорь](https://github.com/stalkermustang)
+5. [Игорь Котенков](https://github.com/stalkermustang)
+6. [Алексей Пронкин](https://github.com/alexey-pronkin)
+7. [Юрий Кашницкий](https://github.com/alexey-pronkin)
 
 ## Основные ревьюеры
 
-1. [Юрий Кашницкий](https://github.com/Yorko)
-2. [Виктор Трохименко](https://github.com/vtrokhymenko)
-3. [Борис Зимка](https://github.com/zimka)
-4. [Николай Карелин](https://github.com/karelin)
-5. [Евгений Желтоножский](https://github.com/Randl)
+1. [Евгений Желтоножский](https://github.com/Randl)
+2. [Юрий Кашницкий](https://github.com/Yorko)
+3. [Виктор Трохименко](https://github.com/vtrokhymenko)
+4. [Борис Зимка](https://github.com/zimka)
+5. [Николай Карелин](https://github.com/karelin)
 
 ## Редакторы
 
@@ -39,7 +41,7 @@
 ```
 
 ```{dropdown} **Б**
-[Березуцкий Александр](https://github.com/meandmytram)
+[Березутский Александр](https://github.com/meandmytram)
 ```
 
 ```{dropdown} **В**
@@ -96,6 +98,7 @@
 ```
 
 ```{dropdown} **П**
+[Пронкин Алексей](https://github.com/alexey-pronkin)
 
 ```
 
