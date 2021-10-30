@@ -257,6 +257,7 @@ plt.show()
 - запустим обучение
 
 ```{code-cell} ipython3
+%%time
 model.fit(x=x_input, y=y, epochs=200, verbose=0)
 ```
 
