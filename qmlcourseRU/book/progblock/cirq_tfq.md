@@ -115,7 +115,7 @@ import tensorflow_quantum as tfq
 from sklearn.datasets import make_classification
 import numpy as np
 
-x, y = make_classification(n_samples=50, n_features=2, n_i
+x, y = make_classification(n_samples=50, n_features=2, n_informative=2, random_state=42, n_redundant=0)
 
 def normalize(x):
     x_min = x.min()
