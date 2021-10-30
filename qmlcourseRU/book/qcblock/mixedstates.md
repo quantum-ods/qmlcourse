@@ -291,7 +291,7 @@ $$
 В случае "чистого состояния" энтропия также может быть записана через собственные значения матрицы плотности:
 
 $$
-S = -Tr(\sum_j e_j \ket{y_j}\bra{y_j}\text{  }ln(\sum_j e_j \ket{y_j}\bra{y_j})) = -\sum_j e_j\text{ }ln\text{  }e_j
+S = -Tr(\sum_j e_j \ket{y_j}\bra{y_j}\ \cdot ln(\sum_j e_j \ket{y_j}\bra{y_j})) = -\sum_j e_j\ \cdot ln(e_j)
 $$(rho:eig)
 
 где $e_j$ -- собственное значение, соответствующее собственному вектору $y_j$.
