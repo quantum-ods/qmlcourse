@@ -67,6 +67,8 @@
   chapters:
     - file: book/progblock/progintro.md
       title: ⬜ О блоке
+    - file: book/progblock/progreview
+      title: 🟩 Обзор фреймворков
     - file: book/progblock/pennylane.ipynb
       title: 🟩 PennyLane
     - file: book/progblock/tfq.md
