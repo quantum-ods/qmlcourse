@@ -145,15 +145,15 @@ D = np.array([
     [1, w, w**2],
     [1, w**2, w**4]
     ])
-print(U)
+print(f"{U = }")
 
 U = D @ D.conj().T
-print(D)
-print(np.allclose(U @ U.H, np.eye(N))) # no
+print(f"{D = }")
+print(f"{np.allclose(U @ U.H, np.eye(N)) = }") # no
 
 U_hat = linalg.expm(np.i*U)
-print(np.allclose(U_hat @ U_hat.conj().T, np.eye(N)))
-print(np.allclose(U_hat.conj().T @ U_hat, np.eye(N)))
+print(f"{np.allclose(U_hat @ U_hat.conj().T, np.eye(N)) = }")
+print(f"{np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = }")
 ```
 
 - Пример: оператор проектор
