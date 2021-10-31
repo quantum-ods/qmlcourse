@@ -264,9 +264,9 @@ $$
 
 ## Рекомендации литературы
 
-- Quantum Mechanics: The Theoretical Minimum Illustrated Edition by Leonard Susskind, Art Friedman $\cite{susskind2014quantum}$ или его русский перевод $/cite{susskind2014quantum-ru}$. Книга сочетает в себе довольно строгий формализм вместе с интуицией квантовой механики. Главы построены в виде конкретных примеров или задач, которые понимают, зачем та или иная теория необходима.
-- Mathematics for machine learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong $\cite{deisenroth2020mathematics}$ - отличная книжка чтобы освежить воспоминания о базовых алгоритмах в машинном обучении и о математике, которая применяется в них. [_Доступна бесплатная электронная версия_](https://mml-book.github.io/book/mml-book.pdf).
-- Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville $\cite{Goodfellow-et-al-2016}$ - отличная книжка, чтобы разобраться в основах глубокого обучения, чем-то может заменить предыдущую книгу, отличный старт, если вы хотите разобраться в автоэнкодерах или в других нейросетевых моделях.
+- Quantum Mechanics: The Theoretical Minimum Illustrated Edition by Leonard Susskind, Art Friedman {cite}`susskind2014quantum` или его русский перевод {cite}`susskind2014quantum-ru`. Книга сочетает в себе довольно строгий формализм вместе с интуицией квантовой механики. Главы построены в виде конкретных примеров или задач, которые понимают, зачем та или иная теория необходима.
+- Mathematics for machine learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong {cite}`deisenroth2020mathematics` - отличная книжка чтобы освежить воспоминания о базовых алгоритмах в машинном обучении и о математике, которая применяется в них. [_Доступна бесплатная электронная версия_](https://mml-book.github.io/book/mml-book.pdf).
+- Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville {cite}`Goodfellow-et-al-2016` - отличная книжка, чтобы разобраться в основах глубокого обучения, чем-то может заменить предыдущую книгу, отличный старт, если вы хотите разобраться в автоэнкодерах или в других нейросетевых моделях.
 [_Доступна бесплатная электронная версия_](https://www.deeplearningbook.org/).
 
 ## Что мы узнали
