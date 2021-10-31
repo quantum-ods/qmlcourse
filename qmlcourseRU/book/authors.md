@@ -98,8 +98,8 @@
 ```
 
 ```{dropdown} **П**
+[Пацкова Екатерина](https://github.com/patsko8a)
 [Пронкин Алексей](https://github.com/alexey-pronkin)
-
 ```
 
 ```{dropdown} **Р**
