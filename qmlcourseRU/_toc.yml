@@ -73,6 +73,8 @@
       title: 🟩 PennyLane
     - file: book/progblock/cirq_tfq
       title: 🟧 Cirq & TFQ
+    - file: book/progblock/qiskit
+      title: 🟧 Qiskit
 
 - part: Базовые квантовые алгоритмы
   chapters:
