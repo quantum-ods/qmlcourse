@@ -86,13 +86,15 @@ $$
 
     1. $ x \oplus y = s = 0^n $
 
-        Вероятность получить первый случай $ x \oplus y = 0^n $ равна:
+        Учитывая $ x \oplus y = 0^n $ и то, что состояние всей системы описывается
 
         $$ \sum_{z \in \{0, 1\}^n}|z\rangle \otimes \frac{1}{2^n} \sum_{x \in \{0, 1\}^n}(-1^{\langle x, z\rangle}) |f(x) \rangle $$
 
+        иеем вероятность получить строку $z$ на первом регистре
+
         $$ p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}$$
 
-        Имеет место **равномерное распределение**.
+        т.е. имеет место **равномерное распределение**.
 
 
     2. $ x \oplus y = s \neq 0^n $
@@ -107,7 +109,7 @@ $$
         \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle
         $$
 
-        $$ p(z) = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, z\rangle} |f(x)\rangle \right) \right\|^2 =
+        $$ p_z = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, z\rangle} |f(x)\rangle \right) \right\|^2 =
         \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{\langle x_1, z\rangle} + (-1)^{\langle x_2, z\rangle})|z\rangle \right) \right\|^2
         $$
 
@@ -261,7 +263,7 @@ qc.draw()
 
     2. Случай, когда $x \oplus z = s \neq 0^n$:
 
-        Определим $A = f(\{0,1\}^n)$ - образ функции $f$, $l \in A$ - т.е. это какое-то значение функции $f$. Здесь у нас имеются два таких значения $x_1 \in \{0, 1\}^n $, $x_2 \in \{0, 1\}^n $ , что для них выполняется $ x_2 = s \oplus x_1 $.
+        Определим $A = f(\{0,1\}^n)$ - образ функции $f$, $f(x_i) = \ell \in A$ - т.е. это какое-то значение функции $f$. Здесь у нас имеются два таких значения $x_1 \in \{0, 1\}^n $, $x_2 \in \{0, 1\}^n $ , что для них выполняется $ x_2 = s \oplus x_1 $.
 
         $$ 
           p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
