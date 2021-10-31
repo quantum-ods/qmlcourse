@@ -62,6 +62,8 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
+    - file: book/qcblock/mixedstates
+      title: 🟨 Смешанные состояния
 
 - part: Фреймворки
   chapters:
