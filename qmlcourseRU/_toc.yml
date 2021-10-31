@@ -100,6 +100,8 @@
       title: ⬜ О блоке
     - file: book/qmlkindsblock/hhl_algorithm
       title: 🟥 Алгоритм HHL
+    - file: book/qmlkindsblock/qknn
+      title: 🟥 Алгоритм QKNN
 
 - part: Вариационные схемы
   chapters:
