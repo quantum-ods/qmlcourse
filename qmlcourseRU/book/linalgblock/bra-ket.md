@@ -33,14 +33,19 @@ kernelspec:
 
 Напомним, что в гильбертовом пространстве у нас есть к пространству $H$ сопряженное пространство $H^{\dagger}$.
 Тогда можно рассмотреть обозначение Ket для элемента $v$ из $H$ как вектор столбец
+
 $$
 \ket{v} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{pmatrix}
 $$
+
 и обозначение Bra для элемента $u$ из сопряженного пространства $H^*$ как сопряженную вектор строку
+
 $$
 \bra{u}= \begin{pmatrix} u_1^* & u_2^* & \cdots & u_N^* \end{pmatrix}
 $$
+
 тогда bra-ket u и v просто задает скалярное произведение между этими элементами:
+
 $$
 \bra{u} \ket{v} = u_1^* v_1 + u_2^* v_2 + \cdots + u_N^* v_N =
 \begin{pmatrix} u_1^* & u_2^* & \cdots & u_N^* \end{pmatrix}
@@ -52,6 +57,7 @@ $$
 - Внешнее произведение (outer-product)
 
 Также имеет смысл и переставленная запись, которая называется внешним произведением:
+
 $$
 \ket{u} \bra{v} = \begin{pmatrix} u_1^* & u_2^* & \cdots & u_N^* \end{pmatrix} \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{pmatrix} = \begin{pmatrix}
   u_1^* v_1 & u_1^* v_2 & \cdots & u_1^* v_N \\
@@ -60,11 +66,13 @@ $$
   u_N^* v_1 & \cdots & \cdots & u_N^* v_N
 \end{pmatrix}
 $$
+
 по сути это матрица N x N, то есть новый оператор в гильбертовом пространстве. Не все перестановки имеют смысл, например, нельзя записать $\bra{v} \bra{v}$ или $\ket{u} \ket{v}$.
 
 - Эрмитов оператор
 
 Оператор U называется [_эрмитовым_](https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B8%D1%82%D0%BE%D0%B2_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80), если он удовлетворяет равенству $(Uv,u) = (v,Uu)$ для всех $u$, $v$ из $H$ или в матричном виде:
+
 $$
 U=U^{\dagger}
 $$
@@ -72,9 +80,11 @@ $$
 - Унитарный оператор
 
 Унитарный оператор $\hat{U}:H \rightarrow H$ на гильбертовом пространстве $H$ это линейный оператор, который удовлетворяет следующему равенству $(Uv, Uu) = (u,v)$ для любых $v \in H$, $u \in H$. Или в матричной форме:
+
 $$
 \hat{U}^{\dagger}\hat{U}=\hat{U}\hat{U}^{\dagger}=I
 $$
+
 напомним, что операция $\hat{U}^\dagger$ (другое частое обозначение в работах - звездочка или H $\hat{U}^{*}=\hat{U}^{H}$) в матричных терминах является последовательным применением операции транспонирования и последующего сопряжения элементов этой матрицы $\hat{U}^\dagger = \overline{\hat{U}}^T$ (порядок этих операций, естественно не влияет на результат).
 
 ```{code-cell} ipython3
@@ -110,13 +120,17 @@ $$
 Доказательство:
 Проверим определение унитарной матрицы: $\hat{U}^{\dagger}\hat{U} = (S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger$.
 Пользуясь тем, что эрмитово сопряжение переставляет матрицы и является обратной операцией к себе же и так как S - унитарная матрица (то есть $S S^{\dagger}=I$) получаем:
+
 $$
 (S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger = \exp(-i*\Lambda) S^\dagger  S \exp (i*\Lambda)  S^\dagger
 $$
+
 Заметим, что теперь у нас уже скалярная экспонента, которая применяется к элементам диагональной матрицы и мы можем воспользоваться тем, что произведение экспонент превращается в экспоненту от суммы степеней
+
 $$
 S \exp(-i \Lambda  + i \Lambda) S^\dagger = S \exp(O) S^\dagger = S I S^\dagger = I
 $$
+
 В конце мы еще раз воспользовались тем, что S - унитарная. Абсолютно также доказывается, что $\hat{U}\hat{U}^{\dagger}$
 ``` note
 Кстати, любая матрица вида $HH^{\dagger}$ является эрмитовой
@@ -149,6 +163,7 @@ print(np.allclose(U_hat.conj().T @ U_hat, np.eye(N)))
 - Пример: оператор поворота
 
 Оператор поворота по оси вращения $v=(x,y,z)$ на угол $\theta$ является
+
 $$
 M(v,\theta) = \begin{pmatrix}
    \cos \theta + (1 - \cos \theta) x^2
@@ -190,6 +205,7 @@ D=\begin{pmatrix}
 $$
 
 тогда производная многочлена $p = a_0 + a_1 t  + \cdots + a_n t^{n} = \begin{pmatrix} a_0 & a_1 & \cdots & a_n \end{pmatrix} \begin{pmatrix} 1 \\ t \\ \vdots \\ t^{n} \end{pmatrix}$
+
 $$
 \mathcal{D}(p)  = \begin{pmatrix} a_0 & a_1 & \cdots & a_n \end{pmatrix} D \begin{pmatrix} 1 \\ t \\ \vdots \\ t^{n-1} \end{pmatrix} = a_1 + 2 a_2 t+\cdots+n a_n t^{n-1}
 $$
@@ -204,21 +220,29 @@ $$
 
 Проще всего его необходимость можно продемонстрировать на примере двух игр: Орел/Решка и бросок кубика.
 Мы можем записать состояния этих игр через вероятности событий и давайте возьмем монетку со смешенным центром тяжести и такой же кубик:
+
 $\text{coin} = \begin{pmatrix} \frac{1}{3} && \frac{2}{3} \end{pmatrix}$ для нашей монетки и $\text{dice}=\begin{pmatrix} \frac{1}{4} && \frac{1}{5} && \frac{1}{7} && \frac{1}{11} && \frac{1}{13} && \frac{4791}{20020} \end{pmatrix}$ для нашей игральной кости. Тогда, допустим мы захотим сыграть в игру, когда сначала подкидывается монетка, а потом - игральный кубик нам будет удобно записать это в виде либо очень длинного вектора:
+
 $$
 \text{game}_{\text{vec}} = \begin{pmatrix} \frac{1}{3} \times \frac{1}{4} && \frac{1}{3} \times \frac{1}{5} && \frac{1}{3} \times \frac{1}{7} && \frac{1}{3} \times \frac{1}{11} && \frac{1}{3} \times \frac{1}{13} && \frac{1}{3} \times \frac{4791}{20020}&& \frac{2}{3} \times \frac{1}{4} && \frac{2}{3} \times \frac{1}{5} && \frac{2}{3} \times \frac{1}{7} && \frac{2}{3} \times \frac{1}{11} && \frac{2}{3} \times \frac{1}{13} && \frac{2}{3} \times \frac{4791}{20020} \end{pmatrix}
 $$
+
 Или в виде матрицы, где по строкам будут события монетки, а по столбцам - кубика:
+
 $$
 \text{game}_{\text{matrix}} = \begin{pmatrix} \frac{1}{3} \times \frac{1}{4} && \frac{1}{3} \times \frac{1}{5} && \frac{1}{3} \times \frac{1}{7} && \frac{1}{3} \times \frac{1}{11} && \frac{1}{3} \times \frac{1}{13} && \frac{1}{3} \times \frac{4791}{20020}\\
  \frac{2}{3} \times \frac{1}{4} && \frac{2}{3} \times \frac{1}{5} && \frac{2}{3} \times \frac{1}{7} && \frac{2}{3} \times \frac{1}{11} && \frac{2}{3} \times \frac{1}{13} && \frac{2}{3} \times \frac{4791}{20020} \end{pmatrix}
 $$
+
 С помощью произведения Кронекера (или повторимся - тензорного произведения) похожие огромные вектора и матрицы можно очень компактно записать:
+
 $$
 \text{game}_{\text{vec}} = \text{coin} \otimes \text{dice} \\
 \text{game}_{\text{matrix}} = \text{coin}^T \otimes \text{dice}
 $$
+
 В общем случае,
+
 $$
 A \otimes B = \begin{pmatrix} a_{11} B & \cdots & a_{1n}B \\ \vdots & \ddots & \vdots \\ a_{m1} B & \cdots & a_{mn} B \end{pmatrix} =\begin{pmatrix}
    a_{11} b_{11} & a_{11} b_{12} & \cdots & a_{11} b_{1q} & \cdots & \cdots & a_{1n} b_{11} & a_{1n} b_{12} & \cdots & a_{1n} b_{1q} \\
@@ -233,13 +257,10 @@ A \otimes B = \begin{pmatrix} a_{11} B & \cdots & a_{1n}B \\ \vdots & \ddots & \
    a_{m1} b_{p1} & a_{m1} b_{p2} & \cdots & a_{m1} b_{pq} & \cdots & \cdots & a_{mn} b_{p1} & a_{mn} b_{p2} & \cdots & a_{mn} b_{pq}
 \end{pmatrix}
 $$
+
 основные его свойства вы можете прочитать в статье: [_Произведение Кронекера_](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0)
 
 Есть и другие нужные тензорные операции, например, чуть больший список вы можете найти в [_статье_](https://habr.com/ru/post/369925/) или в рекомендованной литературе по квантовой механике.
-
-- Символ Леви-Чивиты
-
-[_Символ Леви-Чивиты_](https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB_%D0%9B%D0%B5%D0%B2%D0%B8-%D0%A7%D0%B8%D0%B2%D0%B8%D1%82%D1%8B)
 
 ## Рекомендации литературы
 
