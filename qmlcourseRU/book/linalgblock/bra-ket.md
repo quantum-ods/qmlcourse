@@ -52,7 +52,7 @@ $$
 \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{pmatrix}
 $$
 
-Часто, например, требуется показать два граничных  состояния кубита $|0>$, $|1>$, тогда мы можем записать их просто как вектора столбцы: $\ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ и $\ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. В следующей лекции этот вопрос будет рассмотрен детальнее.
+Часто, например, требуется показать два граничных  состояния кубита $\ket{0}>$, $\ket{1}$, тогда мы можем записать их просто как вектора столбцы: $\ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ и $\ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. В следующей лекции этот вопрос будет рассмотрен детальнее.
 
 - Внешнее произведение (outer-product)
 
@@ -98,7 +98,7 @@ U_hat = np.array([
 U_hat_star_byhands = U_hat.conj().T
 U_hat_star_long = np.conjugate(np.transpose(U_hat))
 
-print(np.allclose(U_hat_star, U_hat_star_byhands))
+print(np.allclose(U_hat_star_long, U_hat_star_byhands))
 ```
 Также в python для многих операций есть соответствующие методы вместо функций и их сокращения, например U.transpose() тоже самое, что U.T, а U.conjugate() - U.conj()
 
