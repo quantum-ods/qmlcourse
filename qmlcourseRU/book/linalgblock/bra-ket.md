@@ -64,7 +64,7 @@ $$
 
 - Эрмитов оператор
 
-Оператор U называется [эрмитовым](https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B8%D1%82%D0%BE%D0%B2_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80), если он удовлетворяет равенству $(Uv,u) = (v,Uu)$ для всех $u$, $v$ из $H$ или в матричном виде:
+Оператор U называется [_эрмитовым_](https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B8%D1%82%D0%BE%D0%B2_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80), если он удовлетворяет равенству $(Uv,u) = (v,Uu)$ для всех $u$, $v$ из $H$ или в матричном виде:
 $$
 U=U^{\dagger}
 $$
@@ -198,13 +198,55 @@ $$
 
 Мы с вами рассматривали операторы, через конечные матрицы, но на самом деле Гильбертово пространство было придумано как раз, чтобы можно было работать с бесконечномерными векторами и применять непрерывные операторы. Можно считать, что есть некоторый дуализм между непрерывным оператором и пределом бесконечной матрицы. Иногда удобнее работать с матрицей, а иногда - с абстрактным оператором.
 
+- Произведение Кронекера
+
+Давайте рассмотрим еще одну интересную операцию, которая называется тензорным произведением или произведением Кронекера.
+
+Проще всего его необходимость можно продемонстрировать на примере двух игр: Орел/Решка и бросок кубика.
+Мы можем записать состояния этих игр через вероятности событий и давайте возьмем монетку со смешенным центром тяжести и такой же кубик:
+$\text{coin} = \begin{pmatrix} \frac{1}{3} && \frac{2}{3} \end{pmatrix}$ для нашей монетки и $\text{dice}=\begin{pmatrix} \frac{1}{4} && \frac{1}{5} && \frac{1}{7} && \frac{1}{11} && \frac{1}{13} && \frac{4791}{20020} \end{pmatrix}$ для нашей игральной кости. Тогда, допустим мы захотим сыграть в игру, когда сначала подкидывается монетка, а потом - игральный кубик нам будет удобно записать это в виде либо очень длинного вектора:
+$$
+\text{game}_{\text{vec}} = \begin{pmatrix} \frac{1}{3} \times \frac{1}{4} && \frac{1}{3} \times \frac{1}{5} && \frac{1}{3} \times \frac{1}{7} && \frac{1}{3} \times \frac{1}{11} && \frac{1}{3} \times \frac{1}{13} && \frac{1}{3} \times \frac{4791}{20020}&& \frac{2}{3} \times \frac{1}{4} && \frac{2}{3} \times \frac{1}{5} && \frac{2}{3} \times \frac{1}{7} && \frac{2}{3} \times \frac{1}{11} && \frac{2}{3} \times \frac{1}{13} && \frac{2}{3} \times \frac{4791}{20020} \end{pmatrix}
+$$
+Или в виде матрицы, где по строкам будут события монетки, а по столбцам - кубика:
+$$
+\text{game}_{\text{matrix}} = \begin{pmatrix} \frac{1}{3} \times \frac{1}{4} && \frac{1}{3} \times \frac{1}{5} && \frac{1}{3} \times \frac{1}{7} && \frac{1}{3} \times \frac{1}{11} && \frac{1}{3} \times \frac{1}{13} && \frac{1}{3} \times \frac{4791}{20020}\\
+ \frac{2}{3} \times \frac{1}{4} && \frac{2}{3} \times \frac{1}{5} && \frac{2}{3} \times \frac{1}{7} && \frac{2}{3} \times \frac{1}{11} && \frac{2}{3} \times \frac{1}{13} && \frac{2}{3} \times \frac{4791}{20020} \end{pmatrix}
+$$
+С помощью произведения Кронекера (или повторимся - тензорного произведения) похожие огромные вектора и матрицы можно очень компактно записать:
+$$
+\text{game}_{\text{vec}} = \text{coin} \otimes \text{dice} \\
+\text{game}_{\text{matrix}} = \text{coin}^T \otimes \text{dice}
+$$
+В общем случае,
+$$
+A \otimes B = \begin{pmatrix} a_{11} B & \cdots & a_{1n}B \\ \vdots & \ddots & \vdots \\ a_{m1} B & \cdots & a_{mn} B \end{pmatrix} =\begin{pmatrix}
+   a_{11} b_{11} & a_{11} b_{12} & \cdots & a_{11} b_{1q} & \cdots & \cdots & a_{1n} b_{11} & a_{1n} b_{12} & \cdots & a_{1n} b_{1q} \\
+   a_{11} b_{21} & a_{11} b_{22} & \cdots & a_{11} b_{2q} & \cdots & \cdots & a_{1n} b_{21} & a_{1n} b_{22} & \cdots & a_{1n} b_{2q} \\
+   \vdots & \vdots & \ddots & \vdots & & & \vdots & \vdots & \ddots & \vdots \\
+   a_{11} b_{p1} & a_{11} b_{p2} & \cdots & a_{11} b_{pq} & \cdots & \cdots & a_{1n} b_{p1} & a_{1n} b_{p2} & \cdots & a_{1n} b_{pq} \\
+   \vdots & \vdots & & \vdots & \ddots & & \vdots & \vdots & & \vdots \\
+   \vdots & \vdots & & \vdots & & \ddots & \vdots & \vdots & & \vdots \\
+   a_{m1} b_{11} & a_{m1} b_{12} & \cdots & a_{m1} b_{1q} & \cdots & \cdots & a_{mn} b_{11} & a_{mn} b_{12} & \cdots & a_{mn} b_{1q} \\
+   a_{m1} b_{21} & a_{m1} b_{22} & \cdots & a_{m1} b_{2q} & \cdots & \cdots & a_{mn} b_{21} & a_{mn} b_{22} & \cdots & a_{mn} b_{2q} \\
+   \vdots & \vdots & \ddots & \vdots & & & \vdots & \vdots & \ddots & \vdots \\
+   a_{m1} b_{p1} & a_{m1} b_{p2} & \cdots & a_{m1} b_{pq} & \cdots & \cdots & a_{mn} b_{p1} & a_{mn} b_{p2} & \cdots & a_{mn} b_{pq}
+\end{pmatrix}
+$$
+основные его свойства вы можете прочитать в статье: [_Произведение Кронекера_](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0)
+
+Есть и другие нужные тензорные операции, например, чуть больший список вы можете найти в [_статье_](https://habr.com/ru/post/369925/) или в рекомендованной литературе по квантовой механике.
+
 - Символ Леви-Чивиты
 
 [_Символ Леви-Чивиты_](https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB_%D0%9B%D0%B5%D0%B2%D0%B8-%D0%A7%D0%B8%D0%B2%D0%B8%D1%82%D1%8B)
 
-- Произведение Кронекера
+## Рекомендации литературы
 
-[_Произведение Кронекера_](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0)
+- Quantum Mechanics: The Theoretical Minimum Illustrated Edition by Leonard Susskind, Art Friedman $\cite{susskind2014quantum}$ или его русский перевод $/cite{susskind2014quantum-ru}$. Книга сочетает в себе довольно строгий формализм вместе с интуицией квантовой механики. Главы построены в виде конкретных примеров или задач, которые понимают, зачем та или иная теория необходима.
+- Mathematics for machine learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong $\cite{deisenroth2020mathematics}$ - отличная книжка чтобы освежить воспоминания о базовых алгоритмах в машинном обучении и о математике, которая применяется в них. [_Доступна бесплатная электронная версия_](https://mml-book.github.io/book/mml-book.pdf).
+- Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville $\cite{Goodfellow-et-al-2016}$ - отличная книжка, чтобы разобраться в основах глубокого обучения, чем-то может заменить предыдущую книгу, отличный старт, если вы хотите разобраться в автоэнкодерах или в других нейросетевых моделях.
+[_Доступна бесплатная электронная версия_](https://www.deeplearningbook.org/).
 
 ## Что мы узнали
 
