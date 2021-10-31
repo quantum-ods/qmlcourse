@@ -21,6 +21,8 @@ dwave-system = "^1.10.0"
 dwavebinarycsp = "^0.1.3"
 networkx = "^2.6.3"
 penaltymodel-maxgap = "^0.5.5"
+sympy = "1.5"
+pylatexenc = "^2.10"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -60,15 +60,21 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
+    - file: book/qcblock/mixedstates
+      title: 🟨 Смешанные состояния
 
 - part: Фреймворки
   chapters:
     - file: book/progblock/progintro.md
       title: ⬜ О блоке
+    - file: book/progblock/progreview
+      title: 🟩 Обзор фреймворков
     - file: book/progblock/pennylane.ipynb
       title: 🟩 PennyLane
-    - file: book/progblock/cirq_tfq.md
+    - file: book/progblock/cirq_tfq
       title: 🟧 Cirq & TFQ
+    - file: book/progblock/qiskit
+      title: 🟧 Qiskit
 
 - part: Базовые квантовые алгоритмы
   chapters:
