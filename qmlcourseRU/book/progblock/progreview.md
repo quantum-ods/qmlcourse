@@ -74,9 +74,9 @@ for p in [0 : points-1] {
 ```python3
 from pyquil import get_qc, Program
 from pyquil.gates import CNOT, H, MEASURE
- 
+
 qvm = get_qc('2q-qvm')
- 
+
 p = Program()
 p += H(0)
 p += CNOT(0, 1)
