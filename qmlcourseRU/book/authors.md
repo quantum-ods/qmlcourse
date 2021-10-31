@@ -96,7 +96,7 @@
 ```
 
 ```{dropdown} **П**
-
+[Пацкова Екатерина](https://github.com/patsko8a)
 ```
 
 ```{dropdown} **Р**
