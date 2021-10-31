@@ -129,7 +129,7 @@ $$
 
     Итак, для того, чтобы найти $s = (s_0, s_1, s_2, ..., s_{n-1})^T$, нам потребуется $n$ линейно независимых векторов $\vec{z_i}$, для которых выполняется $\langle \vec{z_i}, s \rangle = 0$.
 
-    После того, как получена система из $n$ линейно независимых уравнений, решение можно найти методом Гауаса.
+    После того, как получена система из $n$ линейно независимых уравнений, решение можно найти методом Гауcса.
 
 ## Пример
 
@@ -264,7 +264,7 @@ qc.draw()
         Определим $A = f(\{0,1\}^n)$ - образ функции $f$, $l \in A$ - т.е. это какое-то значение функции $f$. Здесь у нас имеются два таких значения $x_1 \in \{0, 1\}^n $, $x_2 \in \{0, 1\}^n $ , что для них выполняется $ x_2 = s \oplus x_1 $.
 
         $$ 
-          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |l\rangle \right) \right\|^2 = \frac{1}{2^n}
+          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
         $$
 
         Перепишем коэффициенты $(-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2, z \rangle}$:
@@ -282,7 +282,7 @@ qc.draw()
         И собирая все полученные условия:
 
         $$ 
-          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |l\rangle \right) \right\|^2 = \frac{1}{2^n}
+          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
         $$
 
         Сейчас разберёмся со случаем, когда $\langle z, s \rangle = 1$, $(-1)^{\langle z, s \rangle} = -1$
@@ -294,7 +294,7 @@ qc.draw()
         И вероятность в таком случае равняется 0
 
         $$
-          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |l\rangle \right) \right\|^2 = 0
+          p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = 0
         $$
 
         Сейчас разберёмся со случаем, когда $\langle z, s \rangle = 0$, $(-1)^{\langle z, s \rangle} = 1$
@@ -306,15 +306,15 @@ qc.draw()
         Вычисление вероятности 
 
         $$
-          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} 2 |l\rangle \right\|^2 =
+          p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} 2 |\ell\rangle \right\|^2 =
         $$
 
         $$
-          \left\| \frac{2}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2 = \left\| \frac{2}{2^n} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2 = \left\| \frac{1}{2^{n-1}} \sum_{l \in A} (-1)^{\langle x_1, z \rangle} |l\rangle \right\|^2
+          \left\| \frac{2}{2^n} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} |\ell\rangle \right\|^2 = \left\| \frac{2}{2^n} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} |\ell\rangle \right\|^2 = \left\| \frac{1}{2^{n-1}} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} |\ell\rangle \right\|^2
         $$
 
         $$
-          p(z) = \begin{cases}
+          p_z = \begin{cases}
             \frac{1}{2^{n-1}}, \text{ если } \langle z, s \rangle = 0 \\
             0, \text{ если }  \langle z, s \rangle = 1
           \end{cases}
@@ -323,5 +323,7 @@ qc.draw()
 # Ссылки
 
 [Simon Algorithm](https://leimao.github.io/blog/Simon-Algorithm/)
+
 [Simon's problem](https://en.wikipedia.org/wiki/Simon%27s_problem)
+
 [Qiskit Simon algorithm](https://qiskit.org/textbook/ch-algorithms/simon.html)
