@@ -106,6 +106,7 @@ Also, all authors for some updates are participants special channel into communi
 - @sem ([GitHub](https://github.com/SemyonSinchenko)): multiple lectures
 - @zimka ([GitHub](https://github.com/zimka)): quantum chemistry
 - @Aleksandr Berezutskii ([GitHub](https://github.com/meandmytram)): D-Wave, Barren plateau
+- @evgeniyzh ([GitHub](https://github.com/Randl)): Jordan-Wigner
 
 ### Editors
 

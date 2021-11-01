@@ -15,6 +15,7 @@
 3. [Сергей Ширкин](https://github.com/SergeiShirkin)
 4. [Александр Березутский](https://github.com/meandmytram)
 5. [Котенков Игорь](https://github.com/stalkermustang)
+6. [Евгений Желтоножский](https://github.com/Randl)
 
 ## Основные ревьюеры
 
@@ -22,7 +23,6 @@
 2. [Виктор Трохименко](https://github.com/vtrokhymenko)
 3. [Борис Зимка](https://github.com/zimka)
 4. [Николай Карелин](https://github.com/karelin)
-5. [Евгений Желтоножский](https://github.com/Randl)
 
 ## Редакторы
 
