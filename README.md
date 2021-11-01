@@ -135,9 +135,9 @@ To join the ODS-community slack you need to fill the form [here](https://ods.ai/
 
 ```bibtex
 @misc{qmlcourse2021,
-  author = {Sinchenko, Semyon A. and Kashnitsky, Yury and Trokhymenko, Viktor and  Besedin, Ilya and Shirkin, Sergei 
-  and Berezutskii, Aleksandr and Kotenkov, Igor and Zheltonozhskii, Evgenii and Zimka, Boris and Karelin, Nikolay and
-    Markova, Natalya and Korzhov, Dmitry and Ovsyannikova, Alexandra and Patskova, Ekaterina},
+  author = {Sinchenko, Semyon A. and Kashnitsky, Yury and Trokhymenko, Viktor and  Besedin, Ilya and Shirkin, Sergei
+  and Berezutskii, Aleksandr and Kotenkov, Igor and Zheltonozhskii, Evgenii and Zimka, Boris and Karelin, Nikolay
+  and Markova, Natalya and Korzhov, Dmitry and Ovsyannikova, Alexandra and Patskova, Ekaterina},
   title = {Quantum Machine Learning Course},
   year = {2021},
   publisher = {GitHub},
