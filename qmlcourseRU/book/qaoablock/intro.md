@@ -1,4 +1,4 @@
-(ml_intro)=
+(intro)=
 
 # О блоке "Quantum Approximate Optimization Algorithm"
 
