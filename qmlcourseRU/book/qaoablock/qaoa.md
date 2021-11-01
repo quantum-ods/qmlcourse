@@ -1,15 +1,3 @@
----
-jupytext:
-formats: md:myst
-text_representation:
-extension: .md
-format_name: myst
-kernelspec:
-display_name: Python 3
-language: python
-name: python3
----
-
 (qaoa)=
 
 # Quantum Approximate Optimization Algorithm
@@ -20,10 +8,10 @@ name: python3
 
 ## Введение
 
-Алгоритм квантовой приближенной оптимизации -– алгоритм поиска оптимального решения для комбинаторных задач. В частности, алгоритм применяется в расчете рисков инвестиционных портфелей, когда ведется работа с огромным объемом данных и нужно подобрать оптимальную комбинацию многих параметров таким образом, чтобы риск был минимальным.
+Алгоритм квантовой приближенной оптимизации -- алгоритм поиска оптимального решения для комбинаторных задач. В частности, алгоритм применяется в расчете рисков инвестиционных портфелей, когда ведется работа с огромным объемом данных и нужно подобрать оптимальную комбинацию многих параметров таким образом, чтобы риск был минимальным.
 Фактически данный алгоритм помогает найти оптимум заданной функции с приближённым решением, точность которого зависит от "глубины" слоев, их мы рассмотрим чуть позже.
 
-Схема алгоритма QAOA использует унитарный оператор $U(\beta,\gamma)$, принимающий некоторые параметров $\beta$, $\gamma$ и описывается уже знакомым квантовым состоянием $\ket{\Psi}$. Цель поиска -- найти те самые оптимальные $\beta_opt$ и $\gamma_opt$.
+Схема алгоритма QAOA использует унитарный оператор $U(\beta,\gamma)$, принимающий некоторые параметров $\beta$, $\gamma$ и описывается уже знакомым квантовым состоянием $\ket{\Psi}$. Цель поиска -- найти те самые оптимальные $\beta_{opt}$ и $\gamma_{opt}$.
 
 Оператор $U$ состоит из двух частей:
 
@@ -42,16 +30,17 @@ name: python3
 Гамильтониан $U_{phase}$ совершает вращение относительно осей $Z$ или $Y$ с помощью соответствующих матриц Паули:
 
 $$
-H_p = Z \ or \ Y \quad axis \ rotation
+H_p = Z \ or \ Y \ axis \ rotation
 $$
 
-```{figure} /_static/qaoalock/hamiltonian_u_phase.png
+```{figure} /_static/qaoablock/hamiltonian_u_phase.png
 :name: hamiltonian_u_phase
+:width: 444px
 
 Гамильтониан $U_{phase}$
 ```
 
-$U_{mixed}$ в классическом случае использует матрицу $X-NOT$.
+$U_{mixed}$ в классическом случае использует матрицу $XNOT$.
 
 Операторы применяются к начальному состоянию $\ket{\Psi_0}$ последовательно $р$ раз (или, иначе говоря, используются $p$ слоев):
 
@@ -61,7 +50,7 @@ $$
 
 Общая схема для $n$ кубитов выглядит следующим образом:
 
-```{figure} /_static/qaoalock/general_scheme_for_n_qubits.png
+```{figure} /_static/qaoablock/general_scheme_for_n_qubits.png
 :name: general_scheme_for_n_qubits
 
 Общая схема для $n$ кубитов
@@ -70,12 +59,13 @@ $$
 Итак, алгоритм состоит со следующих основных этапов:
 
 1. Приготовление начального состояния $\ket{\Psi_0}$ из $n$ кубитов с последующим применением к каждому кубиту матриц Адамара для осуществления суперпозиции всевозможных состояний:
-
-  ```{figure} /_static/qaoalock/the_1t_step_alg.png
+  
+  ```{figure} /_static/qaoablock/the_1t_step_alg.png
   :name: the_1t_step_alg
+  :width: 222px
   ```
 
-3. Применяем оператор вращения фазы
+2. Применяем оператор вращения фазы
 
   $$
   H_p = \sum_{i \neq j}^{n-1} e^{-i \gamma Z_i Z_j}
@@ -87,8 +77,9 @@ $$
   H_p = (I_0 \oplus Z_1 \oplus I_2 \oplus Z_3)
   $$
 
-  ```{figure} /_static/qaoalock/the_2d_step_alg.png
+  ```{figure} /_static/qaoablock/the_2d_step_alg.png
   :name: the_2d_step_alg
+  :width: 444px
   ```
 
   Напоминаем, как выглядит данный оператор в матричном виде: $Z = \begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$.
@@ -105,8 +96,9 @@ $$
   H_{mixed} = (I \oplus I \oplus X \oplus Z)
   $$
 
-  ```{figure} /_static/qaoalock/the_3d_step_alg.png
+  ```{figure} /_static/qaoablock/the_3d_step_alg.png
   :name: the_3d_step_alg
+  :width: 444px
   ```
 
   $$
@@ -114,20 +106,21 @@ $$
   $$
 
 В данном алгоритме используется адиабатический метод эволюции состояния $\ket{\Psi_0}$ с переменным гамильтонианом: на каждой итерации параметры $\beta$ и $\gamma$ понемногу изменяются.
-Далее производится измерение финального состояния в $Z$-базисе и вычисление $\bra{\Psi(\beta,\gamma)H_{phase}\ket{(\beta,\gamma)}$. Минимум будет соответствовать оптимальным $\beta$ и $\gamma$.
+Далее производится измерение финального состояния в $Z$-базисе и вычисление $\bra{\Psi(\beta,\gamma)}H_{phase}\ket{\Psi(\beta,\gamma)}$. Минимум будет соответствовать оптимальным $\beta$ и $\gamma$.
 
 
 ## Quantum Alternating Operator Ansatz
 
-Применение "анзаца" в QAOA заключается в модернизации оператора смешивания $U_{mix}$ и предполагает использование не $X$, а $C-NOT$. На рисунках ниже представлена абстрактная визуализация "смешивания" и обозначение оператора:
+Применение "анзаца" в QAOA заключается в модернизации оператора смешивания $U_{mix}$ и предполагает использование не $X$, а $CNOT$. На рисунках ниже представлена абстрактная визуализация "смешивания" и обозначение оператора:
 
-```{figure} /_static/qaoalock/ansatz_mixing.png
+```{figure} /_static/qaoablock/ansatz_mixing.png
 :name: ansatz_mixing
+:width: 444px
 
 "Смешивание"
 ```
 
-```{figure} /_static/qaoalock/ansatz_operator_designation.png
+```{figure} /_static/qaoablock/ansatz_operator_designation.png
 :name: ansatz_operator_designation
 
 Обозначение оператора
@@ -135,8 +128,9 @@ $$
 
 Пример схемы, реализующий QAOAz:
 
-```{figure} /_static/qaoalock/ansatz_sample.png
+```{figure} /_static/qaoablock/ansatz_sample.png
 :name: ansatz_sample
+:width: 444px
 ```
 ## Что мы узнали из лекции
 
