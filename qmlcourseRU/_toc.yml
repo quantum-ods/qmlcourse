@@ -144,11 +144,11 @@
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
 
-- part:
-  chapter:
+- part: QAOA
+  chapters:
     - file: book/qaoablock/intro
       title: ⬜ О блоке
-    - file: book/qaoablock/intro
+    - file: book/qaoablock/qaoa
       title: 🟩 QAOA
 
 - part: D-Wave – квантовый отжиг и семплирование
