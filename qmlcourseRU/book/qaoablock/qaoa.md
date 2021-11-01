@@ -71,47 +71,47 @@ $$
 
 1. Приготовление начального состояния $\ket{\Psi_0}$ из $n$ кубитов с последующим применением к каждому кубиту матриц Адамара для осуществления суперпозиции всевозможных состояний:
 
-    ```{figure} /_static/qaoalock/the_1t_step_alg.png
-    :name: the_1t_step_alg
-    ```
+  ```{figure} /_static/qaoalock/the_1t_step_alg.png
+  :name: the_1t_step_alg
+  ```
 
 3. Применяем оператор вращения фазы
 
-    $$
-    H_p = \sum_{i \neq j}^{n-1} e^{-i \gamma Z_i Z_j}
-    $$
+  $$
+  H_p = \sum_{i \neq j}^{n-1} e^{-i \gamma Z_i Z_j}
+  $$
 
-    например вот так:
+  например вот так:
 
-    $$
-    H_p = (I_0 \oplus Z_1 \oplus I_2 \oplus Z_3)
-    $$
+  $$
+  H_p = (I_0 \oplus Z_1 \oplus I_2 \oplus Z_3)
+  $$
 
-    ```{figure} /_static/qaoalock/the_2d_step_alg.png
-    :name: the_2d_step_alg
-    ```
+  ```{figure} /_static/qaoalock/the_2d_step_alg.png
+  :name: the_2d_step_alg
+  ```
 
-    Напоминаем, как выглядит данный оператор в матричном виде: $Z = \begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$.
+  Напоминаем, как выглядит данный оператор в матричном виде: $Z = \begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$.
 
 3. Применяем смешивающий оператор
 
-    $$
-    H_{mixed} = \sum_{i=0}^{n-1} e^{-i \beta X_i}
-    $$
+  $$
+  H_{mixed} = \sum_{i=0}^{n-1} e^{-i \beta X_i}
+  $$
 
-    к примеру, так:
+  к примеру, так:
 
-    $$
-    H_{mixed} = (I \oplus I \oplus X \oplus Z)
-    $$
+  $$
+  H_{mixed} = (I \oplus I \oplus X \oplus Z)
+  $$
 
-    ```{figure} /_static/qaoalock/the_3d_step_alg.png
-    :name: the_3d_step_alg
-    ```
+  ```{figure} /_static/qaoalock/the_3d_step_alg.png
+  :name: the_3d_step_alg
+  ```
 
-    $$
-    Z = \begin{bmatrix} 0 & 1 \\ 1 & 0\end{bmatrix}
-    $$
+  $$
+  Z = \begin{bmatrix} 0 & 1 \\ 1 & 0\end{bmatrix}
+  $$
 
 В данном алгоритме используется адиабатический метод эволюции состояния $\ket{\Psi_0}$ с переменным гамильтонианом: на каждой итерации параметры $\beta$ и $\gamma$ понемногу изменяются.
 Далее производится измерение финального состояния в $Z$-базисе и вычисление $\bra{\Psi(\beta,\gamma)H_{phase}\ket{(\beta,\gamma)}$. Минимум будет соответствовать оптимальным $\beta$ и $\gamma$.
