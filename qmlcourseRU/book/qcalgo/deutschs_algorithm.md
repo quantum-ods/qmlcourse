@@ -249,7 +249,7 @@ black_boxes_dict = {"f1": f1, "f2": f2, "f3": f3, "f4": f4}
 А вот таким образом мы будем случайно выбирать название функции для черного ящика:
 
 ```{code-cell} ipython3
-def random_black_box(black_boxes_dict):
+def random_black_box():
     black_boxes_dict_list_keys = list(black_boxes_dict.keys())
     n = np.random.randint(0, len(black_boxes_dict_list_keys))
 
