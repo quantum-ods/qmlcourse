@@ -260,7 +260,7 @@ def random_black_box():
 
 ```{code-cell} ipython3
 @qml.qnode(dev)
-def circuit(black_boxes_dict, black_boxe_name):
+def circuit(black_boxe_name):
     qml.Hadamard(wires=0)
     qml.PauliX(wires=1)
     qml.Hadamard(wires=1)
@@ -282,7 +282,7 @@ black_box_name = random_black_box()
 А затем запустим алгоритм Дойча и выведем результат его работы. Собственное значение $1$ оператора $Z$ будет соответствовать состоянию $|0\rangle$ (функция несбалансированна), а собственное значение $-1$ -- состоянию $|1\rangle$ (функция сбалансирована):
 
 ```{code-cell} ipython3
-result = circuit(black_boxes_dict, black_box_name)
+result = circuit(black_box_name)
 print(result)
 ```
 
