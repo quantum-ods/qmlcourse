@@ -217,7 +217,7 @@ $$
 
 ```{code-cell} ipython3
 import pennylane as qml
-import numpy as np
+from pennylane import numpy as np
 
 dev = qml.device("default.qubit", shots=1, wires=2)
 ```
