@@ -167,17 +167,16 @@ $$
 
 Здесь ситуация сложнее, так как $f(x)$ будет зависеть от состояния первого кубита. Поэтому мы раскроем скобки, а значения функции подставим позже:
 
-$$
+$
 |\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) =
-\frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=
-$$
-$$
+\frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=$
+
+$
 =\frac{1}{2}(|0\rangle |0 \oplus 0\rangle - |0\rangle |1 \oplus 0\rangle + |1\rangle |0 \oplus 1\rangle - |1\rangle |1 \oplus 1\rangle) =
-\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) = 
-$$
-$$
-=\frac{1}{2}(|00\rangle - |01\rangle - |10\rangle + |11\rangle) = \frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)
-$$
+\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) =$
+
+$
+=\frac{1}{2}(|00\rangle - |01\rangle - |10\rangle + |11\rangle) = \frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)$
 
 Видно, что первый кубит поменял свое состояние - теперь он в суперпозиции $\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)$, так что далее к нему можно применить оператор Адамара, после которого он перейдет в состояние $|1\rangle$.
 
@@ -185,17 +184,16 @@ $$
 
 Здесь будет похожая ситуация:
 
-$$
+$
 |\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) =
-\frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=
-$$
-$$
+\frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=$
+
+$
 =\frac{1}{2}(|0\rangle |0 \oplus 1\rangle - |0\rangle |1 \oplus 1\rangle + |1\rangle |0 \oplus 0\rangle - |1\rangle |1 \oplus 0\rangle) =
-\frac{1}{2}(|01\rangle - |00\rangle + |10\rangle - |11\rangle) =
-$$
-$$
-=-\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) =-\frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)
-$$
+\frac{1}{2}(|01\rangle - |00\rangle + |10\rangle - |11\rangle) =$
+
+$
+=-\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) =-\frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)$
 
 Получили то же состояние $|\psi\rangle$, что и для $f_3$, с точностью до фазового множителя. Соответственно, здесь первый кубит после применения оператора Адамара также будет измерен с результатом $1$.
 
