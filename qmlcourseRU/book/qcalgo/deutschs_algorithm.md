@@ -249,7 +249,7 @@ black_boxes_dict = {"f1": f1, "f2": f2, "f3": f3, "f4": f4}
 А вот таким образом мы будем случайно выбирать название функции для черного ящика:
 
 ```{code-cell} ipython3
-def random_black_box():
+def random_black_box(black_boxes_dict):
     black_boxes_dict_list_keys = list(black_boxes_dict.keys())
     n = np.random.randint(0, len(black_boxes_dict_list_keys))
 
@@ -276,7 +276,7 @@ def circuit(black_boxe_name):
 Выберем случайным образом функцию:
 
 ```{code-cell} ipython3
-black_box_name = random_black_box()
+black_box_name = random_black_box(black_boxes_dict)
 ```
 
 А затем запустим алгоритм Дойча и выведем результат его работы. Собственное значение $1$ оператора $Z$ будет соответствовать состоянию $|0\rangle$ (функция несбалансированна), а собственное значение $-1$ -- состоянию $|1\rangle$ (функция сбалансирована):
