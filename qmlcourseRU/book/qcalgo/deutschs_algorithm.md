@@ -203,7 +203,11 @@ $$
 |\psi\rangle = \frac{1}{2}((-1)^{f(0)}|0\rangle + (-1)^{f(1)}|1\rangle)(|0\rangle - |1\rangle)
 $$
 
-**Задание**: с помощью квантовых операторов попробуйте создать $U_f$ для всех четырех $f(x)$. (Задание рекомендуется сделать до прочтения программистской части по алгоритму Дойча, так как там содержится ответ).
+```{admonition} Задание
+С помощью квантовых операторов попробуйте создать $U_f$ для всех четырех $f(x)$.
+
+Задание рекомендуется сделать до прочтения программистской части по алгоритму Дойча, так как там содержится ответ.
+```
 
 ## Алгоритм Дойча в коде
 
@@ -215,7 +219,7 @@ $$
 import pennylane as qml
 from pennylane import numpy as np
 
-dev = qml.device('default.qubit', shots=1, wires=2)
+dev = qml.device("default.qubit", shots=1, wires=2)
 ```
 
 Теперь создадим функции для черного ящика. Обратите внимание, что здесь уже учтено сложение по модулю $2$ результата функции с состоянием второго кубита:
@@ -239,41 +243,36 @@ def f4():
 Создадим словарь с функциями и их названиями:
 
 ```{code-cell} ipython3
-black_boxes_dict = {'f1': f1, 'f2': f2, 'f3': f3, 'f4': f4}
+black_boxes_dict = {"f1": f1, "f2": f2, "f3": f3, "f4": f4}
 ```
 
-А вот таким образом мы будем случайно выбирать название функции для черного ящика:
-
-```{code-cell} ipython3
-def random_black_box():
-    black_boxes = ['f1', 'f2', 'f3', 'f4']
-    n = np.random.randint(0, 4)
-    return black_boxes[n]
-```
-
-А теперь самое важное - сам алгоритм Дойча:
+А теперь самое важное -- сам алгоритм Дойча:
 
 ```{code-cell} ipython3
 @qml.qnode(dev)
-def circuit(black_boxe_name):
+def circuit(black_boxes_dict, black_boxe_name):
     qml.Hadamard(wires=0)
     qml.PauliX(wires=1)
     qml.Hadamard(wires=1)
+
     black_boxes_dict[black_box_name]()
     qml.Hadamard(wires=0)
+
     return qml.sample(qml.PauliZ([0]))
 ```
 
-Итак, подготовительные действия завершены, можно приступать к демонстрации работы алгоритма. Для начала выберем случайным образом функцию:
+Итак, подготовительные действия завершены, можно приступать к демонстрации работы алгоритма.
+
+Выберем случайным образом функцию:
 
 ```{code-cell} ipython3
-black_box_name = random_black_box()
+black_box_name = np.random.choice(list(black_boxes_dict.keys()))
 ```
 
 А затем запустим алгоритм Дойча и выведем результат его работы. Собственное значение $1$ оператора $Z$ будет соответствовать состоянию $|0\rangle$ (функция несбалансированна), а собственное значение $-1$ - состоянию $|1\rangle$ (функция сбалансирована):
 
 ```{code-cell} ipython3
-result = circuit(black_box_name)
+result = circuit(black_boxes_dict, black_box_name)
 print(result)
 ```
 
