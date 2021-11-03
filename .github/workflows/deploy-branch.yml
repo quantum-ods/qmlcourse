@@ -13,8 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       # Another magic action
-      - name: get branch name
-        uses: nelonoel/branch-name@v1.0.1
+      - uses: nelonoel/branch-name@v1.0.1
         run: |
           npm ci
           echo ${BRANCH_NAME}
