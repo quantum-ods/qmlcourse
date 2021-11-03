@@ -50,7 +50,7 @@ jobs:
 
       - name: build the book
         run: |
-          export DWAVE_TOKEN="$DWAVE_TOKEN"
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
       - name: deploy
