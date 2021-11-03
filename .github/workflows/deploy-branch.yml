@@ -29,23 +29,23 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
 
-      # Install dependencies
-      - name: Install dependencies
-        run: |
-          poetry install
+      # # Install dependencies
+      # - name: Install dependencies
+      #   run: |
+      #     poetry install
 
-      # todo: replace with a more sane solution
-      - name: install tensorflow_quantum
-        run: |
-          poetry run pip install --upgrade pip
-          poetry run pip install -U tensorflow==2.5.1
-          poetry run pip install -U tensorflow_quantum
-          poetry run pip install -U tfq-nightly
+      # # todo: replace with a more sane solution
+      # - name: install tensorflow_quantum
+      #   run: |
+      #     poetry run pip install --upgrade pip
+      #     poetry run pip install -U tensorflow==2.5.1
+      #     poetry run pip install -U tensorflow_quantum
+      #     poetry run pip install -U tfq-nightly
 
       - name: export some envs & tokens
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-          CURRENT_BRANCH: "${ BRANCH_NAME }"
+          CURRENT_BRANCH: ${BRANCH_NAME}
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
           SSH_KEY_PATH: "/home/runner/.ssh/key.pem"
           AWS_HOST: 54.89.156.216
