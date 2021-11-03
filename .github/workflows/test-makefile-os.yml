@@ -1,27 +1,93 @@
-name: test-makefile-os-ubuntu-macos
+name: test-makefile-os
 
 # Only run this when the master branch changes
 on:
   workflow_dispatch:
+    inputs:
+      os:
+        description: 'Choose OS for test'
+        required: false
+        default: 'ubuntu-latest, macos-latest, windows-latest'
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
-  deploy-book:
-    runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
+
+  deploy-book-linux:
+    if: contains(github.event.inputs.os, 'ubuntu-latest')
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
 
       - name: Install dependencies
         run: make install-${{ matrix.os }}
 
       - name: Build the book
         run: |
-          make build
+          export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
+          make build-linux-macos
+
+  deploy-book-macos:
+    if: contains(github.event.inputs.os, 'macos-latest')
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
+      - name: Install dependencies
+        run: make install-${{ matrix.os }}
+
+      - name: Build the book
+        run: |
+          make build-linux-macos
+
+  deploy-book-windows:
+    if: contains(github.event.inputs.os, 'windows-latest')
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
+      - name: Install chocolatey
+        run: |
+          Set-ExecutionPolicy Bypass -Scope Process -Force;
+          .\ChocolateyInstallNonAdmin.ps1
+
+      - name: Install make
+        run: |
+          choco install make curl miniconda3
+
+      - name: Install dependencies
+        run: make install-windows
+
+      - name: Build
+        run: make build-windows
