@@ -40,6 +40,7 @@ jobs:
 
       - name: add SSH key-file
         run: |
+          mkdir -p /home/runner/.ssh
           echo "${{ secrets.AWS_SSH_KEY }}" > /home/runner/.ssh/key.pem
           chmod 600 /home/runner/.ssh/key.pem
 
