@@ -513,3 +513,7 @@ _build*
 
 # VSCode settings dir
 .vscode
+# Docker errors
+docker_errors
+# Docker volume
+docker_volume
