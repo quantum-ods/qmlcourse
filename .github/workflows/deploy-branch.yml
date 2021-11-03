@@ -59,8 +59,8 @@ jobs:
       - name: add SSH key-file
         run: |
           mkdir -p /home/runner/.ssh
-          echo $AWS_SSH_KEY > $SSH_KEY
-          chmod 600 $SSH_KEY
+          echo $AWS_SSH_KEY > /home/runner/.ssh/key.pem
+          chmod 600 /home/runner/.ssh/key.pem
 
       - name: build the book
         run: |
