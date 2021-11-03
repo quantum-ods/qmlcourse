@@ -2,6 +2,7 @@ import os
 import sys
 import time
 from subprocess import PIPE, Popen
+from git import Repo
 
 import jinja2
 import paramiko
@@ -9,7 +10,10 @@ import paramiko
 if __name__ == "__main__":
     course_root = sys.argv[1]
 
-    branch_name = os.environ["CURRENT_BRANCH"].replace("/", "_")
+    # branch_name = os.environ["CURRENT_BRANCH"].replace("/", "_")
+    repo = Repo('./')
+    branch_name = repo.active_branch.name.replace("/", "_")
+
     host = os.environ["AWS_HOST"]
     user = os.environ["AWS_USER"]
     ssh_key = os.environ["SSH_KEY"]

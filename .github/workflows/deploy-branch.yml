@@ -12,12 +12,6 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
-      # Another magic action
-      - uses: nelonoel/branch-name@v1.0.1
-      - run: |
-          npm ci
-          echo ${BRANCH_NAME}
-
       # Set up PY38
       - name: Set up Python 3.8
         uses: actions/setup-python@v2.2.2
@@ -57,8 +51,6 @@ jobs:
 
       - name: deploy
         run: |
-          export CURRENT_BRANCH="${BRANCH_NAME}"
-
           export AWS_HOST="54.89.156.216"
           export AWS_USER="ubuntu"
           export SSH_KEY="/home/runner/.ssh/key.pem"
