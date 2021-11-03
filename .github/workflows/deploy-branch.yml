@@ -45,13 +45,14 @@ jobs:
       - name: export some envs & tokens
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-          CURRENT_BRANCH: "${BRANCH_NAME}"
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
-          SSH_KEY_PATH: "/home/runner/.ssh/key.pem"
-          AWS_HOST: 54.89.156.216
-          AWS_USER: "ubuntu"
         run: |
-          echo ${CURRENT_BRANCH}
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+          export CURRENT_BRANCH="${BRANCH_NAME}""
+          export AWS_SSH_KEY="$AWS_SSH_KEY"
+          export SSH_KEY_PATH="/home/runner/.ssh/key.pem"
+          export AWS_HOST=54.89.156.216
+          export AWS_USER="ubuntu"
 
       - name: add SSH key-file
         run: |
