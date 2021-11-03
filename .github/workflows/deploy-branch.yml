@@ -12,8 +12,11 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
-      - name: Branch name
-        run: echo ${GITHUB_REF##*/}
+      - run: echo "${GITHUB_REF#refs/heads/}"
+      - run: echo ${GITHUB_REF##*/}
+      
+      - run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / -)"
+      - run: ${{ github.ref }}
 
       # # Set up PY38
       # - name: Set up Python 3.8
