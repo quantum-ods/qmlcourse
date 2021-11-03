@@ -20,26 +20,26 @@
     U_{\text{phase}}(\gamma) = e^{-i{\gamma}H_{\text{phase}}}
     $$
 
-- смешивающий кубиты $U_{mixer}$
+- смешивающий кубиты $U_{\text{mixer}}$
 
     $$
-    U_{\text{mixer}}(\beta) = e^{-i{\beta}H_{mixer}}
+    U_{\text{mixer}}(\beta) = e^{-i{\beta}H_{\text{mixer}}}
     $$
 
-Оператор $U_{phase}$ совершает вращение относительно осей $Z$ или $Y$ с помощью соответствующих матриц Паули:
+Оператор $U_{\text{phase}}$ совершает вращение относительно осей $Z$ или $Y$ с помощью соответствующих матриц Паули:
 
 $$
-H_{\text{phase}} = Z \ or \ Y \ axis \ rotation
+H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 $$
 
 ```{figure} /_static/qaoablock/hamiltonian_u_phase.png
 :name: hamiltonian_u_phase
 :width: 444px
 
-Оператор $U_{phase}$
+Оператор $U_{\text{phase}}$
 ```
 
-$U_{mixed}$ в классическом случае использует матрицу $XNOT$.
+$U_{\text{mixed}}$ в классическом случае использует матрицу $XNOT$.
 
 Операторы применяются к начальному состоянию $\ket{\Psi_0}$ последовательно $р$ раз (или, иначе говоря, используются $p$ слоев):
 
