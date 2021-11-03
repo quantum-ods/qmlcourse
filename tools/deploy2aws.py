@@ -40,8 +40,8 @@ if __name__ == "__main__":
     print(f"Branches: {existed_branches}")
 
     if branch_name not in existed_branches:
-        print(f"Execute mkdir {remote_path}/branch_name")
-        ssh_client.exec_command(f"mkdir {remote_path}/branch_name")
+        print(f"Execute mkdir {remote_path}/{branch_name}")
+        ssh_client.exec_command(f"mkdir {remote_path}/{branch_name}")
         existed_branches.append(branch_name)
 
     print("Update index.html")
