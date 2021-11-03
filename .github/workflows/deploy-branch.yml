@@ -15,6 +15,10 @@ jobs:
       # Another magic action
       - name: get branch name
         uses: nelonoel/branch-name@v1.0.1
+        run: |
+          npm ci
+          echo ${BRANCH_NAME}
+
 
       # Set up PY38
       - name: Set up Python 3.8
