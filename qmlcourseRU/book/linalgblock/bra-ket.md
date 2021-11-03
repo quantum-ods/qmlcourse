@@ -161,8 +161,8 @@ print(f"{D = }")
 print(f"{np.allclose(U @ U.T.conj(), np.eye(N)) = }") # no
 
 U_hat = linalg.expm(1j * U)
-print(f"{np.allclose(U_hat @ U_hat.conj().T, np.eye(N)) = }")
-print(f"{np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = }")
+print(f"\n{np.allclose(U_hat @ U_hat.conj().T, np.eye(N)) = }")
+print(f"\n{np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = }")
 ```
 
 ### Пример: оператор-проектор
