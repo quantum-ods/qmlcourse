@@ -2,7 +2,7 @@ import os
 import sys
 import time
 from subprocess import PIPE, Popen
-from git import Repo
+from git import Git
 import re
 
 import jinja2
@@ -12,8 +12,9 @@ if __name__ == "__main__":
     course_root = sys.argv[1]
 
     # branch_name = os.environ["CURRENT_BRANCH"].replace("/", "_")
-    repo = Repo("./")
-    branch_name = re.sub("-/",repo.active_branch.name,"_")
+    gh_branch_split = Git().branch().split("\n")
+    gh_branch_0 = gh_branch_split[0].replace("*", "").strip()
+    branch_name = re.sub("[-/]", "_", gh_branch_0)
 
     host = os.environ["AWS_HOST"]
     user = os.environ["AWS_USER"]
