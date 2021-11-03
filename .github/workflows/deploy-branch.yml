@@ -63,14 +63,13 @@ jobs:
 
       - name: build the book
         run: |
-#          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
       - name: deploy
         run: |
+          poetry run python ./tools/deploy2aws.py ./
+
 #          export AWS_HOST="54.89.156.216"
 #          export AWS_USER="ubuntu"
 #          export SSH_KEY="/home/runner/.ssh/key.pem"
 #          export CURRENT_BRANCH="${BRANCH_NAME}"
-
-          poetry run python ./tools/deploy2aws.py ./
