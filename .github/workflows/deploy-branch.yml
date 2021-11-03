@@ -50,7 +50,7 @@ jobs:
           export CURRENT_BRANCH=${BRANCH_NAME}  
 
           export DWAVE_TOKEN="$DWAVE_TOKEN"
-          
+
           export AWS_SSH_KEY="$AWS_SSH_KEY"
           export SSH_KEY_PATH=/home/runner/.ssh/key.pem
           export AWS_HOST=54.89.156.216
@@ -59,8 +59,8 @@ jobs:
       - name: add SSH key-file
         run: |
           mkdir -p /home/runner/.ssh
-          echo ${AWS_SSH_KEY} > ${SSH_KEY_PATH}
-          chmod 600 ${SSH_KEY_PATH}
+          echo $AWS_SSH_KEY > $SSH_KEY_PATH
+          chmod 600 $SSH_KEY_PATH
 
       - name: build the book
         run: |
