@@ -46,8 +46,9 @@ jobs:
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
+          CURRENT_BRANCH: ${BRANCH_NAME}
         run: |
-          export CURRENT_BRANCH="${BRANCH_NAME}"
+          export CURRENT_BRANCH="$CURRENT_BRANCH"
 
           export DWAVE_TOKEN="$DWAVE_TOKEN"
 
