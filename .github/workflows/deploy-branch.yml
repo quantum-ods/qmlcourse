@@ -50,9 +50,9 @@ jobs:
           export DWAVE_TOKEN="$DWAVE_TOKEN"
           export CURRENT_BRANCH="${BRANCH_NAME}""
           export AWS_SSH_KEY="$AWS_SSH_KEY"
-          export SSH_KEY_PATH="/home/runner/.ssh/key.pem"
+          export SSH_KEY_PATH=/home/runner/.ssh/key.pem
           export AWS_HOST=54.89.156.216
-          export AWS_USER="ubuntu"
+          export AWS_USER=ubuntu
 
       - name: add SSH key-file
         run: |
