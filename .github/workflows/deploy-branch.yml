@@ -47,8 +47,10 @@ jobs:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
         run: |
+          export CURRENT_BRANCH=${BRANCH_NAME}  
+
           export DWAVE_TOKEN="$DWAVE_TOKEN"
-          export CURRENT_BRANCH="${BRANCH_NAME}""
+          
           export AWS_SSH_KEY="$AWS_SSH_KEY"
           export SSH_KEY_PATH=/home/runner/.ssh/key.pem
           export AWS_HOST=54.89.156.216
