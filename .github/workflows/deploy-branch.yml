@@ -12,6 +12,10 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
+      # Another magic action
+      - name: get branch name
+        uses: nelonoel/branch-name@v1.0.1
+
       # Set up PY38
       - name: Set up Python 3.8
         uses: actions/setup-python@v2.2.2
