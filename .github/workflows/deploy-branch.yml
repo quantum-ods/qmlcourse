@@ -14,7 +14,7 @@ jobs:
 
       # Another magic action
       - uses: nelonoel/branch-name@v1.0.1
-        run: |
+      - run: |
           npm ci
           echo ${BRANCH_NAME}
 
