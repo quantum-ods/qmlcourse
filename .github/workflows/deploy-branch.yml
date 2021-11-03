@@ -12,47 +12,50 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
-      # Set up PY38
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2.2.2
-        with:
-          python-version: 3.8
+      - name: Branch name
+        run: echo ${GITHUB_REF##*/}
 
-      # Set up POETRY
-      - name: Set up poetry
-        uses: snok/install-poetry@v1.1.6
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
+      # # Set up PY38
+      # - name: Set up Python 3.8
+      #   uses: actions/setup-python@v2.2.2
+      #   with:
+      #     python-version: 3.8
 
-      # Install dependencies
-      - name: Install dependencies
-        run: |
-          poetry install
+      # # Set up POETRY
+      # - name: Set up poetry
+      #   uses: snok/install-poetry@v1.1.6
+      #   with:
+      #     virtualenvs-create: true
+      #     virtualenvs-in-project: true
 
-      # todo: replace with a more sane solution
-      - name: install tensorflow_quantum
-        run: |
-          poetry run pip install --upgrade pip
-          poetry run pip install -U tensorflow==2.5.1
-          poetry run pip install -U tensorflow_quantum
-          poetry run pip install -U tfq-nightly
+      # # Install dependencies
+      # - name: Install dependencies
+      #   run: |
+      #     poetry install
 
-      - name: add SSH key-file
-        run: |
-          mkdir -p /home/runner/.ssh
-          echo "${{ secrets.AWS_SSH_KEY }}" > /home/runner/.ssh/key.pem
-          chmod 600 /home/runner/.ssh/key.pem
+      # # todo: replace with a more sane solution
+      # - name: install tensorflow_quantum
+      #   run: |
+      #     poetry run pip install --upgrade pip
+      #     poetry run pip install -U tensorflow==2.5.1
+      #     poetry run pip install -U tensorflow_quantum
+      #     poetry run pip install -U tfq-nightly
 
-      - name: build the book
-        run: |
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
-          poetry run jupyter-book build ./qmlcourseRU
+      # - name: add SSH key-file
+      #   run: |
+      #     mkdir -p /home/runner/.ssh
+      #     echo "${{ secrets.AWS_SSH_KEY }}" > /home/runner/.ssh/key.pem
+      #     chmod 600 /home/runner/.ssh/key.pem
 
-      - name: deploy
-        run: |
-          export AWS_HOST="54.89.156.216"
-          export AWS_USER="ubuntu"
-          export SSH_KEY="/home/runner/.ssh/key.pem"
+      # - name: build the book
+      #   run: |
+      #     export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+      #     poetry run jupyter-book build ./qmlcourseRU
 
-          poetry run python ./tools/deploy2aws.py ./
+      # - name: deploy
+      #   run: |
+      #     export AWS_HOST="54.89.156.216"
+      #     export AWS_USER="ubuntu"
+      #     export SSH_KEY="/home/runner/.ssh/key.pem"
+
+      #     poetry run python ./tools/deploy2aws.py ./
