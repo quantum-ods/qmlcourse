@@ -54,11 +54,11 @@ jobs:
         run: |
           echo "On branch ${BRANCH_NAME}"
           export CURRENT_BRANCH="${BRANCH_NAME}"
-          
+
           export AWS_HOST="54.89.156.216"
           export AWS_USER="ubuntu"
           export SSH_KEY="/home/runner/.ssh/key.pem"
-          
+
           export DWAVE_TOKEN="$DWAVE_TOKEN"
 
       - name: build the book
