@@ -51,15 +51,12 @@ jobs:
       - name: export some tokens
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+          CURRENT_BRANCH: ${BRANCH_NAME}
+          AWS_HOST: 54.89.156.216
+          AWS_USER: ubuntu
+          SSH_KEY: /home/runner/.ssh/key.pem
         run: |
-          echo "On branch ${BRANCH_NAME}"
-          export CURRENT_BRANCH="${BRANCH_NAME}"
-
-          export AWS_HOST="54.89.156.216"
-          export AWS_USER="ubuntu"
-          export SSH_KEY="/home/runner/.ssh/key.pem"
-
-          export DWAVE_TOKEN="$DWAVE_TOKEN"
+          echo "branch: $BRANCH_NAME"
 
       - name: build the book
         run: |
