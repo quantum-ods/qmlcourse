@@ -46,7 +46,7 @@ jobs:
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}
-          CURRENT_BRANCH: ${BRANCH_NAME}
+          CURRENT_BRANCH: "${BRANCH_NAME}"
         run: |
           export CURRENT_BRANCH="$CURRENT_BRANCH"
 
@@ -56,6 +56,8 @@ jobs:
           export SSH_KEY="/home/runner/.ssh/key.pem"
           export AWS_HOST="54.89.156.216"
           export AWS_USER="ubuntu"
+
+          echo $CURRENT_BRANCH
 
       - name: add SSH key-file
         run: |
