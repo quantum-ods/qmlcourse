@@ -7,11 +7,11 @@ on:
         description: 'Disable cache'
         required: false
         default: 'false'
-  pull_request:
   push:
     branches: [ master ]
 
 jobs:
+
   deploy_book:
     runs-on: ubuntu-latest
     env:
@@ -57,6 +57,21 @@ jobs:
         run: |
           poetry install
 
+      # todo: replace with a more sane solution
+      - name: install tensorflow_quantum # https://www.tensorflow.org/quantum/install
+        run: |
+          poetry run pip install --upgrade pip
+
+          poetry run pip install -U tensorflow==2.5.1
+          poetry run pip install -U tensorflow_quantum
+          poetry run pip install -U tfq-nightly
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
       - name: Build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
@@ -67,3 +82,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU
+
+      - name: Build PDF file
+        run: |
+          poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
+          mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/all_book.pdf
+
+      - name: Deploy only pdf files
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU/_build/pdf/
+          destination_dir: pdf

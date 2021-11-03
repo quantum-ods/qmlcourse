@@ -6,21 +6,23 @@ on:
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
+
   deploy-book:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
     steps:
       - name: Checkout branch for build
         uses: actions/checkout@v2
 
-      - name: Checkout branch with cache
-        uses: actions/checkout@v2
-        with:
-          ref: "gh-pages"
-          path: ./gh-pages
+#       - name: Checkout branch with cache
+#         uses: actions/checkout@v2
+#         with:
+#           ref: "gh-pages"
+#           path: ./gh-pages
 
       - name: Copy cache for build book
         run: |
@@ -46,7 +48,7 @@ jobs:
           python-version: 3.8
           conda-channels: anaconda, conda-forge
 
-      #Use cache
+      # Use cache
       - name: Copy cache dir for dependecies
         uses: actions/cache@v2
         env:
@@ -55,17 +57,25 @@ jobs:
           path: .venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-      - name: Remove dependencies for Windows
-        if: ${{ runner.os == 'Windows'}}
-        run: |
-          poetry remove tensorflow-quantum
+#       - name: Remove dependencies for Windows
+#         if: ${{ runner.os == 'Windows'}}
+#         run: |
+#           poetry remove tensorflow-quantum
 
       - name: Install dependencies
         run: |
           poetry install
+          conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
 
-      - run: conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
-      - run: poetry run psi4 --test
+      - name: poetry run psi4 --test
+        run: |
+          poetry run psi4 --test
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
 
       - name: Build the book
         run: |
