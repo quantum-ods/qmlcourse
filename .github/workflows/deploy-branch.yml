@@ -42,7 +42,7 @@ jobs:
           poetry run pip install -U tensorflow_quantum
           poetry run pip install -U tfq-nightly
 
-      - name: export some env & token
+      - name: export some envs & tokens
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
           CURRENT_BRANCH: ${ BRANCH_NAME }
@@ -51,13 +51,13 @@ jobs:
           AWS_HOST: 54.89.156.216
           AWS_USER: ubuntu
         run: |
-          echo "branch: $CURRENT_BRANCH"
+          echo "branch: ${CURRENT_BRANCH}"
 
       - name: add SSH key-file
         run: |
           mkdir -p /home/runner/.ssh
-          echo AWS_SSH_KEY > $SSH_KEY_PATH
-          chmod 600 $SSH_KEY_PATH
+          echo ${AWS_SSH_KEY} > ${SSH_KEY_PATH}
+          chmod 600 ${SSH_KEY_PATH}
 
       - name: build the book
         run: |
