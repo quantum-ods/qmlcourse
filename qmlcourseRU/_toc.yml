@@ -38,10 +38,8 @@
       title: ⬜ О блоке
     - file: book/linalgblock/vectors.md
       title: 🟦 Векторы
-    # - file: book/linalgblock/algebra.md
-    #   title: 🟦 Алгебра
-    # - file: book/linalgblock/bra-ket.md
-    #   title: 🟦 Нотация Дирака
+    - file: book/linalgblock/bra-ket.md
+      title: 🟦 Нотация Дирака
     - file: book/linalgblock/matrices.md
       title: 🟦 Матрицы
     - file: book/linalgblock/numpy.md
