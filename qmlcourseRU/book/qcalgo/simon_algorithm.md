@@ -32,10 +32,10 @@ kernelspec:
 
 ## Описание алгоритма
 
-Сразу определим операцию на двух бинарных строках (они же бинарные векторы) $x = x_0 x_1 x_2 ... x_{2^n-1}$, $z = z_1 z_2 z_3 ... z_{2^n-1}$: 
+Сразу определим операцию на двух бинарных строках (они же бинарные векторы) $x = x_0 x_1 x_2 ... x_{2^n-1}$, $z = z_1 z_2 z_3 ... z_{2^n-1}$:
 
 $$
-  \langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i 
+  \langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i
 $$
 
 Принципиальная схема алгоритма Саймона:
@@ -81,7 +81,6 @@ $$
       $(-1)^{1} = -1$
     ```
 
-
 6. Производим измерение на первом регистре. И здесь возможны 2 варианта исхода:
 
     1. $ x \oplus y = s = 0^n $
@@ -96,11 +95,10 @@ $$
 
         т.е. имеет место **равномерное распределение**.
 
-
     2. $ x \oplus y = s \neq 0^n $
 
         Этот случай гораздо интереснее. Функция $f$ преобразует два различных входных значения $x_1, x_2 \in \{0,1\}^n$ в одно $f(x_1) = f(x_2) = s \in \{0, 1\}^n$ .
-        Также, справедливо $x_1 \oplus x_2 = s$, что переписывается в виде $x_1 \oplus s = x_2$ .
+        Также $x_1 \oplus x_2 = s$ эквивалентно $x_1 \oplus s = x_2$.
 
         $$ |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle=
         $$
@@ -125,7 +123,6 @@ $$
     Выполняем алгоритм $n$ раз. После чего у нас будет система $n$ линейно независимых уравнений.
 
     Теперь приступаем к вычислению строки $s$.
-
 
 7. Постобработка.
 
@@ -218,7 +215,6 @@ qc.draw()
       + |101\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
       + |110\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
       + |111\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} )
-
     $$
 
 4. Измеряем второй регистр. С вероятностью $\frac{1}{2}$ мы получим либо значение $|000\rangle$ или $|100\rangle$.
@@ -239,7 +235,7 @@ qc.draw()
 
 7. Здесь решаем систему уравнений.
 
-# Приложение
+## Приложение
 
 1. Расчёт вероятностей.
 
@@ -248,16 +244,16 @@ qc.draw()
         $$
           \sum_{z \in \{0,1\}^n} |z\rangle \otimes \left( \frac{1}{2^n} \sum_{x \in \{0,1\}^n} ((-1)^{\langle x, z \rangle} |f(x)\rangle) \right)
         $$
-  
+
         Вероятность получить какую-либо из $2^n$ строк одинакова:
 
-        $$ 
+        $$
           p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}
         $$
 
         Утверждение данное выше следует из того, что $f(x)$ отличается от $x$ лишь порядком во всём множестве строк $\{0,1\}^n$:  
-        
-        $$ 
+
+        $$
           \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |x\rangle \right) \right\|^2
         $$
 
@@ -265,7 +261,7 @@ qc.draw()
 
         Определим $A = f(\{0,1\}^n)$ - образ функции $f$, $f(x_i) = \ell \in A$ - т.е. это какое-то значение функции $f$. Здесь у нас имеются два таких значения $x_1 \in \{0, 1\}^n $, $x_2 \in \{0, 1\}^n $ , что для них выполняется $ x_2 = s \oplus x_1 $.
 
-        $$ 
+        $$
           p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
         $$
 
@@ -283,7 +279,7 @@ qc.draw()
 
         И собирая все полученные условия:
 
-        $$ 
+        $$
           p_z = \left\| \frac{1}{2^n} \sum_{l \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
         $$
 
@@ -305,7 +301,7 @@ qc.draw()
           (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = (-1)^{\langle x_1, z \rangle} 2
         $$
 
-        Вычисление вероятности 
+        Вычисление вероятности
 
         $$
           p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} 2 |\ell\rangle \right\|^2 =
@@ -322,10 +318,8 @@ qc.draw()
           \end{cases}
         $$
 
-# Ссылки
+## Ссылки
 
-[Simon Algorithm](https://leimao.github.io/blog/Simon-Algorithm/)
-
-[Simon's problem](https://en.wikipedia.org/wiki/Simon%27s_problem)
-
-[Qiskit Simon algorithm](https://qiskit.org/textbook/ch-algorithms/simon.html)
+- [Simon Algorithm](https://leimao.github.io/blog/Simon-Algorithm/)
+- [Simon's problem](https://en.wikipedia.org/wiki/Simon%27s_problem)
+- [Qiskit Simon algorithm](https://qiskit.org/textbook/ch-algorithms/simon.html)
