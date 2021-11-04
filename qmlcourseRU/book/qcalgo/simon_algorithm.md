@@ -79,7 +79,7 @@ $$
     Для чисел $x = 110111$ и $z = 010101$ получим
 
       $$
-        \langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1$.
+        \langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1
       $$
       $$(-1)^{1} = -1$$
     ```
