@@ -18,7 +18,7 @@ kernelspec:
 ## Задача Саймона
 Давайте начнём с того, что алгоритм Саймона решает задачу Саймона. Да, вот такой замечательный учёный - нашёл проблему, решил проблему.
 
-По своей природе задача Саймона является разновидностью задачи о скрытой абелевой подгруппе. {cite}`lomont2004hidden`
+По своей природе задача Саймона является разновидностью задачи о скрытой абелевой подгруппе {cite}`lomont2004hidden`.
 
 
 Пусть задана функция $f: \{0, 1\}^n \rightarrow \{0, 1\}^n$ и **неизвестная** строка $s \in  \{0, 1\}^n$, для всех $x, y \in \{0, 1\}^n$ выполняется:
@@ -69,16 +69,19 @@ $$
 
 5. Снова применяем матрицы Адамара на первом регистре:
 
-    $$ (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{z \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle} + -1^{\langle y, z\rangle}) |z\rangle $$
+    $$
+      (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{z \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle} + -1^{\langle y, z\rangle}) |z\rangle,
+    $$
 
     где $\langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i $.
 
     ```{note}
     Для чисел $x = 110111$ и $z = 010101$ получим
 
-      $\langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1$.
-
-      $(-1)^{1} = -1$
+      $$
+        \langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1$.
+      $$
+      $$(-1)^{1} = -1$$
     ```
 
 6. Производим измерение на первом регистре. И здесь возможны 2 варианта исхода:
@@ -132,7 +135,11 @@ $$
 
 ## Пример
 
-Давайте возьмём n = 3, строка $s = 100$, и функцию $f$, которая соответствует критерию $f(x) = f(y) \Leftrightarrow x \oplus s = y$.
+Давайте возьмём n = 3, строка $s = 100$, и функцию $f$, которая соответствует критерию
+
+$$
+f(x) = f(y) \Leftrightarrow x \oplus s = y
+$$
 
 Обычно функция $f(x)$ задана наперёд. Ну а мы выберем её простейшей: $f(x) = x \oplus s$ .
 
@@ -298,7 +305,7 @@ qc.draw()
         Иначе $\langle z, s \rangle = 0$, и тогда $(-1)^{\langle z, s \rangle} = 1$:
 
         $$
-          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = (-1)^{\langle x_1, z \rangle} 2
+          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = 2 (-1)^{\langle x_1, z \rangle}
         $$
 
         Вычисление вероятности
