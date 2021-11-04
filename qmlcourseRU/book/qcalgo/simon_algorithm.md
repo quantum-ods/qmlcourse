@@ -23,7 +23,9 @@ kernelspec:
 
 Пусть задана функция $f: \{0, 1\}^n \rightarrow \{0, 1\}^n$ и **неизвестная** строка $s \in  \{0, 1\}^n$, для всех $x, y \in \{0, 1\}^n$ выполняется:
 
-  $$\large f(x) = f(y) \Leftrightarrow x \oplus y = s$$
+  $$
+    \large f(x) = f(y) \Leftrightarrow x \oplus y = s
+  $$
 
 То есть, если мы для двух различных строк $x$ и $y$ имеем одинаковое значение $f(x) = f(y)$, то $x \oplus y$ равняется некоторой неизвестной строке $s$.
 Функция $f(x)$ представляет собой чёрный ящик.
@@ -49,11 +51,15 @@ $$
 
 1. Сначала приготовления. Вначале мы приготовим 2 набора квантовых регистров (каждый размерности $n$) в следующем состоянии:
 
-    $$|\psi_0\rangle = |0\rangle|0\rangle$$
+    $$
+      |\psi_0\rangle = |0\rangle|0\rangle
+    $$
 
 2. Применяем матрицы Адамара на первом регистре:
 
-    $$ (H^n \otimes I^n) |\psi_0\rangle = (H^n \otimes I^n) |0\rangle |0\rangle = |\psi_1 \rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle $$
+    $$
+      (H^n \otimes I^n) |\psi_0\rangle = (H^n \otimes I^n) |0\rangle |0\rangle = |\psi_1 \rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle
+    $$
 
 3. Применяем оператор $U_f$:
 
@@ -81,7 +87,10 @@ $$
       $$
         \langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1
       $$
-      $$(-1)^{1} = -1$$
+
+      $$
+        (-1)^{1} = -1
+      $$
     ```
 
 6. Производим измерение на первом регистре. И здесь возможны 2 варианта исхода:
@@ -90,11 +99,15 @@ $$
 
         Учитывая $ x \oplus y = 0^n $ и то, что состояние всей системы описывается
 
-        $$ \sum_{z \in \{0, 1\}^n}|z\rangle \otimes \frac{1}{2^n} \sum_{x \in \{0, 1\}^n}(-1^{\langle x, z\rangle}) |f(x) \rangle $$
+        $$
+          \sum_{z \in \{0, 1\}^n}|z\rangle \otimes \frac{1}{2^n} \sum_{x \in \{0, 1\}^n}(-1^{\langle x, z\rangle}) |f(x) \rangle
+        $$
 
         т.е. имеем вероятность получить строку $z$ на первом регистре
 
-        $$ p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}$$
+        $$
+          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}
+        $$
 
         т.е. имеет место **равномерное распределение**.
 
@@ -103,14 +116,16 @@ $$
         Этот случай гораздо интереснее. Функция $f$ преобразует два различных входных значения $x_1, x_2 \in \{0,1\}^n$ в одно $f(x_1) = f(x_2) = s \in \{0, 1\}^n$ .
         Также $x_1 \oplus x_2 = s$ эквивалентно $x_1 \oplus s = x_2$.
 
-        $$ |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle=
+        $$
+          |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle=
         $$
 
         $$
-        \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle
+          \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle
         $$
 
-        $$ p_z = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, z\rangle} |f(x)\rangle \right) \right\|^2 =
+        $$
+          p_z = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, z\rangle} |f(x)\rangle \right) \right\|^2 =
         \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{\langle x_1, z\rangle} + (-1)^{\langle x_2, z\rangle})|z\rangle \right) \right\|^2
         $$
 
@@ -138,26 +153,27 @@ $$
 Давайте возьмём n = 3, строка $s = 100$, и функцию $f$, которая соответствует критерию
 
 $$
-f(x) = f(y) \Leftrightarrow x \oplus s = y
+  f(x) = f(y) \Leftrightarrow x \oplus s = y
 $$
 
 Обычно функция $f(x)$ задана наперёд. Ну а мы выберем её простейшей: $f(x) = x \oplus s$ .
 
 Давайте посмотрим таблицу истинности всех нужных переменных.
 
-$$\large
-\begin{array} {|r|r|r|}
-\hline x & x \oplus s & f(x) \\
-\hline 000 & 100 & 000 \\
-\hline 001 & 101 & 001 \\
-\hline 010 & 110 & 010 \\
-\hline 011 & 111 & 011 \\
-\hline 100 & 000 & 000 \\
-\hline 101 & 001 & 001 \\
-\hline 110 & 010 & 010 \\
-\hline 111 & 011 & 011 \\
-\hline  
-\end{array}
+$$
+  \large
+  \begin{array} {|r|r|r|}
+  \hline x & x \oplus s & f(x) \\
+  \hline 000 & 100 & 000 \\
+  \hline 001 & 101 & 001 \\
+  \hline 010 & 110 & 010 \\
+  \hline 011 & 111 & 011 \\
+  \hline 100 & 000 & 000 \\
+  \hline 101 & 001 & 001 \\
+  \hline 110 & 010 & 010 \\
+  \hline 111 & 011 & 011 \\
+  \hline  
+  \end{array}
 $$
 
 Нарисуем схему на Qiskit, которая будет показывать одну итерацию алгоритма:
@@ -180,11 +196,10 @@ qc = QuantumCircuit(qr1, qr2, cr1)
 qc.h(range(n))
 
 # Шаг 3. Применяем U_f
-qc.cx(qr1[0],qr2[0])
+qc.cx(qr1[0], qr2[0])
 
 # Шаг 4. Производим измерение первого регистра
 qc.measure(qr2, cr1)
-
 
 # Шаг 5. Ещё раз применяем гейт адамара к каждому из кубитов
 qc.h(range(n))
@@ -196,17 +211,18 @@ qc.measure(qr1, cr1)
 qc.draw()
 ```
 
-
 Теперь пройдём по всем шагам алгоритма:
 
 1. Инициализация всех регистров в $0$ состоянии:
 
-    $$|\psi_0\rangle = |000\rangle_{1} |000\rangle_{2}$$
+    $$
+      |\psi_0\rangle = |000\rangle_{1} |000\rangle_{2}
+    $$
 
 2. Применяем Адамар к первому регистру:
 
     $$
-    (H^n \otimes I)(|\psi_0\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2}
+      (H^n \otimes I)(|\psi_0\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2}
     $$
 
 3. Применяем оракул $U_f$:
@@ -231,10 +247,18 @@ qc.draw()
 
 5. Ещё один раз применяем гейты Адамара на первый регистр:
 
-    $$ |\psi_4 \rangle = \frac{1}{4} [ \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle + |1\rangle) \right) $$
-    $$ + \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle - |1\rangle) \right) $$
-    $$ + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right) $$
-    $$ + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \right) ] $$
+    $$
+      |\psi_4 \rangle = \frac{1}{4} [ \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle + |1\rangle) \right)
+    $$
+    $$
+      + \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle - |1\rangle) \right)
+    $$
+    $$
+      + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right)
+    $$
+    $$
+      + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \right) ]
+    $$
 
 6. Производим измерение первого регистра, записывая результат.
 
