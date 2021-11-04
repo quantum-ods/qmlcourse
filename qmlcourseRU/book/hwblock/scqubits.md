@@ -315,10 +315,7 @@ $$
 то получим систему
 
 $$
-i\dot{d}_0 e^{i\left(\omega_q t + \phi(t)\right)2} + \frac{\omega_q + \dot{\phi}}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} & = & - \frac{\omega_q}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} + d_1 e^{i\left(\omega_q t + \phi(t)\right)/2} \left(\Omega(t)e^{i\left(\omega_q t + \phi(t)\right)} + \Omega^*(t)e^{-i\left(\omega_q t + \phi(t)\right)} \right),
-$$
-
-$$
+i\dot{d}_0 e^{i\left(\omega_q t + \phi(t)\right)2} + \frac{\omega_q + \dot{\phi}}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} & = & - \frac{\omega_q}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} + d_1 e^{i\left(\omega_q t + \phi(t)\right)/2} \left(\Omega(t)e^{i\left(\omega_q t + \phi(t)\right)} + \Omega^*(t)e^{-i\left(\omega_q t + \phi(t)\right)} \right), \\
 i\dot{d}_1 e^{-i\left(\omega_q t + \phi(t)\right)/2} - \frac{\omega_q + \dot{\phi}}{2} d_{1} e^{-i\left(\omega_q t + \phi(t)\right)/2} & = & \frac{\omega_q}{2} d_{1} e^{-i\left(\omega_q t + \phi(t)\right)/2} + d_0 e^{i\left(\omega_q t + \phi(t)\right)/2} \left(\Omega(t)e^{i\left(\omega_q t + \phi(t)\right)} + \Omega^*(t)e^{-i\left(\omega_q t + \phi(t)\right)} \right).
 $$
 
