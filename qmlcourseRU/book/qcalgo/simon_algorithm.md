@@ -262,7 +262,7 @@ qc.draw()
         Определим $A = f(\{0,1\}^n)$ - образ функции $f$, $f(x_i) = \ell \in A$ - т.е. это какое-то значение функции $f$. Здесь у нас имеются два таких значения $x_1 \in \{0, 1\}^n $, $x_2 \in \{0, 1\}^n $ , что для них выполняется $ x_2 = s \oplus x_1 $.
 
         $$
-          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
+          p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
         $$
 
         Перепишем коэффициенты $(-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2, z \rangle}$:
@@ -271,7 +271,7 @@ qc.draw()
           (-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2, z \rangle} = (-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2 \oplus s, z \rangle}
         $$
 
-        Перепишем коэффициенты $\langle (x_1 \oplus s, z \rangle = \langle (x_1, z \rangle \oplus \langle (x_2, z \rangle$:
+        Также, заметим, что выполняется $\langle x_1 \oplus s, z \rangle = \langle x_1, z \rangle \oplus \langle x_2, z \rangle$, тогда ещё раз перепишем:
 
         $$
           (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle})
@@ -279,11 +279,11 @@ qc.draw()
 
         И собирая все полученные условия:
 
-        $$
-          p_z = \left\| \frac{1}{2^n} \sum_{l \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
+        $$ 
+           p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
         $$
 
-        Сейчас разберёмся со случаем, когда $\langle z, s \rangle = 1$, $(-1)^{\langle z, s \rangle} = -1$
+        Если $\langle z, s \rangle = 1$, то $(-1)^{\langle z, s \rangle} = -1$ и следовательно
 
         $$
           (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = (-1)^{\langle x_1, z \rangle} (1 - 1) = 0
@@ -295,7 +295,7 @@ qc.draw()
           p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = 0
         $$
 
-        Сейчас разберёмся со случаем, когда $\langle z, s \rangle = 0$, $(-1)^{\langle z, s \rangle} = 1$
+        Иначе $\langle z, s \rangle = 0$, и тогда $(-1)^{\langle z, s \rangle} = 1$:
 
         $$
           (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = (-1)^{\langle x_1, z \rangle} 2

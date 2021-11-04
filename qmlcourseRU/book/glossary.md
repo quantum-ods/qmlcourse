@@ -12,7 +12,7 @@
     (QAOA, quantum approximate optimization algorithm), [https://www.osp.ru/os/2019/03/13055118](https://www.osp.ru/os/2019/03/13055118), [https://habr.com/ru/post/513474/](https://habr.com/ru/post/513474/)
 
 Аннилер
-    Англ. annealer. Устройство для приближённого решения задачи оптимизации [https://en.wikipedia.org/wiki/Quantum_annealing](https://en.wikipedia.org/wiki/Quantum_annealing)
+    Англ. annealer. Устройство для приближенного решения задачи оптимизации [https://en.wikipedia.org/wiki/Quantum_annealing](https://en.wikipedia.org/wiki/Quantum_annealing)
 ```
 
 ## Б

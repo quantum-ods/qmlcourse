@@ -7,11 +7,11 @@ on:
         description: 'Disable cache'
         required: false
         default: 'false'
-  pull_request:
   push:
     branches: [ master ]
 
 jobs:
+
   deploy_book:
     runs-on: ubuntu-latest
     env:
@@ -56,6 +56,21 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
+
+      # todo: replace with a more sane solution
+      - name: install tensorflow_quantum # https://www.tensorflow.org/quantum/install
+        run: |
+          poetry run pip install --upgrade pip
+
+          poetry run pip install -U tensorflow==2.5.1
+          poetry run pip install -U tensorflow_quantum
+          poetry run pip install -U tfq-nightly
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
 
       - name: Build the book
         run: |
