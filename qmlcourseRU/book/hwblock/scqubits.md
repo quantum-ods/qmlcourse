@@ -235,9 +235,10 @@ $$
 V_\mathrm{ex1}(t) = V_I(t) \cos \left(\omega_q t + \phi(t) \right) + V_Q(t) \sin \left(\omega_q t + \phi(t) \right),
 $$
 
-где $V_I(t), V_Q(t)$ -- медленно изменяющиеся огибающие, а $\phi(t)$ -- медленно изменяющаяся фаза. "Медленно изменяющая" здесь означает, что за переходы между уровнями будет отвечать только быстро осциллирующий множитель. Обозначим
+где $V_I(t), V_Q(t)$ -- медленно изменяющиеся огибающие, а $\phi(t)$ -- медленно изменяющаяся фаза. "Медленно изменяющаяся" здесь означает, что за переходы между уровнями будет отвечать только быстро осциллирующий множитель. Обозначим
 
 $$
+\Omega(t) = 2e \frac{C_g}{C_g+C_{qs}}\sqrt{\frac{\hbar}{2Z}}\left(V_I-iV_Q\right)
 $$
 
 Полный гамильтониан трансмона с возбуждающим излучением будет иметь вид
@@ -315,7 +316,7 @@ $$
 то получим систему
 
 $$
-i\dot{d}_0 e^{i\left(\omega_q t + \phi(t)\right)2} + \frac{\omega_q + \dot{\phi}}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} & = & - \frac{\omega_q}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} + d_1 e^{i\left(\omega_q t + \phi(t)\right)/2} \left(\Omega(t)e^{i\left(\omega_q t + \phi(t)\right)} + \Omega^*(t)e^{-i\left(\omega_q t + \phi(t)\right)} \right), \\
+i\dot{d}_0 e^{i\left(\omega_q t + \phi(t)\right)/2} + \frac{\omega_q + \dot{\phi}}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} & = & - \frac{\omega_q}{2} d_{0} e^{i\left(\omega_q t + \phi(t)\right)/2} + d_1 e^{i\left(\omega_q t + \phi(t)\right)/2} \left(\Omega(t)e^{i\left(\omega_q t + \phi(t)\right)} + \Omega^*(t)e^{-i\left(\omega_q t + \phi(t)\right)} \right), \\
 i\dot{d}_1 e^{-i\left(\omega_q t + \phi(t)\right)/2} - \frac{\omega_q + \dot{\phi}}{2} d_{1} e^{-i\left(\omega_q t + \phi(t)\right)/2} & = & \frac{\omega_q}{2} d_{1} e^{-i\left(\omega_q t + \phi(t)\right)/2} + d_0 e^{i\left(\omega_q t + \phi(t)\right)/2} \left(\Omega(t)e^{i\left(\omega_q t + \phi(t)\right)} + \Omega^*(t)e^{-i\left(\omega_q t + \phi(t)\right)} \right).
 $$
 
