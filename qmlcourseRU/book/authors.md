@@ -14,7 +14,8 @@
 2. [Илья Беседин](https://github.com/ooovector)
 3. [Сергей Ширкин](https://github.com/SergeiShirkin)
 4. [Александр Березутский](https://github.com/meandmytram)
-5. [Игорь Котенков](https://github.com/stalkermustang)
+5. [Котенков Игорь](https://github.com/stalkermustang)
+6. [Игорь Токарев](https://github.com/polyzer)
 6. [Алексей Пронькин](https://github.com/alexey-pronkin)
 7. [Юрий Кашницкий](https://github.com/alexey-pronkin)
 
@@ -75,9 +76,7 @@
 
 ```{dropdown} **К**
 [Карелин Николай](https://github.com/karelin)
-
 [Кашницкий Юрий](https://github.com/Yorko)
-
 [Котенков Игорь](https://github.com/stalkermustang)
 ```
 
@@ -112,6 +111,7 @@
 
 ```{dropdown} **Т**
 [Трохименко Виктор](https://github.com/vtrokhymenko)
+[Токарев Игорь](https://github.com/polyzer)
 ```
 
 ```{dropdown} **У**
