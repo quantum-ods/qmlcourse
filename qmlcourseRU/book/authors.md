@@ -17,6 +17,7 @@
 - [Андрей Лукьяненко](https://github.com/Erlemar)
 - [Борис Зимка](https://github.com/zimka)
 - [Дани Эль-Айясс](http://github.com/dayyass)
+- [Дмитрий Бажанов](https://github.com/dbazhanov)
 - [Евгений Желтоножский](https://github.com/Randl)
 - [Игорь Котенков](https://github.com/stalkermustang)
 - [Игорь Токарев](https://github.com/polyzer)
@@ -24,7 +25,6 @@
 - [Николай Карелин](https://github.com/karelin)
 - [Семен Синченко](https://github.com/SemyonSinchenko)
 - [Сергей Ширкин](https://github.com/SergeiShirkin)
-- [Дмитрий Бажанов](https://github.com/dbazhanov)
 - [Юрий Кашницкий](https://github.com/alexey-pronkin)
 - [Vadzim Piatrou](https://github.com/belgraviton)
 
