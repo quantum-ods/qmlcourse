@@ -18,6 +18,7 @@
 6. [Игорь Токарев](https://github.com/polyzer)
 6. [Алексей Пронькин](https://github.com/alexey-pronkin)
 7. [Юрий Кашницкий](https://github.com/alexey-pronkin)
+8. [Дмитрий Бажанов](https://github.com/dbazhanov)
 
 ## Основные ревьюеры
 
@@ -42,7 +43,8 @@
 ```
 
 ```{dropdown} **Б**
-[Березутский Александр](https://github.com/meandmytram)
+[Бажанов Дмитрий](https://github.com/dbazhanov)
+[Березуцкий Александр](https://github.com/meandmytram)
 ```
 
 ```{dropdown} **В**

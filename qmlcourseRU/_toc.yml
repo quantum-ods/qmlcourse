@@ -143,6 +143,10 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
+    - file: book/problemsblock/ising
+      title: 🟩 Модель Изинга
+    - file: book/problemsblock/advising
+      title: 🟧 Продвинутая модель Изинга
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
