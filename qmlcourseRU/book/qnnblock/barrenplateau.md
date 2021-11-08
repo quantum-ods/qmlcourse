@@ -16,7 +16,7 @@ kernelspec:
 
 In this lecture, we will learn about the barren plateau phenomenon. It is a common pittfall of many VQC architectures, for which an exponentially vanishing gradient hinders the optimization process. In particular, we will try to answer the following questions:
 * What is the barren plateau phenomenon?
-* Under which conditions can barren plateaus occur? 
+* Under which conditions can barren plateaus occur?
 * What strategies can we adopt to avoid them?
 
 ## Introduction
