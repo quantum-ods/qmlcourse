@@ -61,7 +61,7 @@ $$ (eqn:3)
 где
 
 $$
-T_{\sigma \sigma'} = <\sigma|T|\sigma'> = e^{t\sigma\sigma' +\frac{h}{2}(\sigma + \sigma')},
+T_{\sigma \sigma'} = \langle \sigma|T|\sigma' \rangle = e^{t\sigma\sigma' +\frac{h}{2}(\sigma + \sigma')},
 $$ (eqn:4)
 
 а $t$ и $h$ введены для более компактного написания формул и выражаются через $J$, $H$ и $\theta$ следующим образом
