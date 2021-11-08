@@ -37,14 +37,18 @@
 
 This is the main repository of the course.
 
-1. [Contributing Guide](#contributing-guide)
-2. [Discussions](#discussions)
-3. [Course Program](#course-program)
-4. [Team](#team)
-5. [Join ODS](#join-ods)
-6. [Similar Projects](#similar-projects)
-7. [Bibtex Citations](#bibtex)
-8. [Legal Issues](#legal-issues)
+- [QMLCourse](#qmlcourse)
+  - [About](#about)
+  - [Contributing Guide](#contributing-guide)
+  - [Discussions](#discussions)
+  - [Course Program](#course-program)
+    - [How to read the schema?](#how-to-read-the-schema)
+  - [Team](#team)
+    - [Contributor roles](#contributor-roles)
+  - [Join ODS](#join-ods)
+  - [Similar projects](#similar-projects)
+  - [Bibtex](#bibtex)
+  - [Legal Issues](#legal-issues)
 
 ## Contributing Guide
 
@@ -68,57 +72,14 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Team
 
-There is a not full list of core members. The first is the nickname in the ODS slack and the second is the GitHub account.
+The main authors, reviewers, editors, DevOps you can find [here](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/authors.html).
+
+Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
+Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
 
 ### Contributor roles
 
-Here we list all team members according to their contributor roles. Refer to [CONTRIBUTING.md](https://github.com/SemyonSinchenko/qmlcourse.ai/blob/master/CONTRIBUTING.md) for the definition of all contributor roles.
-
-### Benevolent Dictator
-
-Semyon Sinchenko, @sem ([GitHub](https://github.com/SemyonSinchenko))
-
-### Core reviewers
-
-- @evgeniyzh ([GitHub](https://github.com/Randl))
-- @gamlo ([GitHub](https://github.com/ooovector))
-- @Sergei Shirkin ([GitHub](https://github.com/SergeiShirkin))
-
-To be extended based on the actual commitment and qualification of all contributors.
-
-### Reviewers
-
-By default that's everyone who is invited to the #org_qml_course Slack channel.
-
-### Authors
-
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
-
-Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
-
-- @stm ([GitHub](https://github.com/stalkermustang)): Python
-- @dayyass ([GitHub](https://github.com/dayyass)): Linear Algebra
-- @artgor ([GitHub](https://github.com/Erlemar)): NumPy
-- @yorko ([GitHub](https://github.com/Yorko)): ML intro, advanced SVM
-- @nkarelin ([GitHub](https://github.com/karelin)): quantum entropy and mixed states
-- @gamlo ([GitHub](https://github.com/ooovector)): hardware
-- @Sergei Shirkin ([GitHub](https://github.com/SergeiShirkin)): PennyLane, Deutsch, Grover
-- @sem ([GitHub](https://github.com/SemyonSinchenko)): multiple lectures
-- @zimka ([GitHub](https://github.com/zimka)): quantum chemistry
-- @Aleksandr Berezutskii ([GitHub](https://github.com/meandmytram)): D-Wave, Barren plateau
-
-### Editors
-
-- @nmarkova ([GitHub](https://github.com/nsmarkova))
-
-### Orgs
-
-- @yorko ([GitHub](https://github.com/Yorko))
-- @vtrohimenko ([GitHub](https://github.com/vtrokhymenko))
-
-### DevOps
-
-- @Korzhov Dmitry ([GitHub](https://github.com/dkorzhov))
+Refer to [CONTRIBUTING.md](https://github.com/SemyonSinchenko/qmlcourse.ai/blob/master/CONTRIBUTING.md) for the definition of all contributor roles.
 
 ## Join ODS
 
