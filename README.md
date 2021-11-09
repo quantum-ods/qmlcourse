@@ -49,7 +49,7 @@ This is the main repository of the course.
 
 ## Contributing Guide
 
-[Contributing Guide](./CONTRIBUTING.md)
+Refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for the definition of all contributor roles.
 
 ## Discussions
 
@@ -72,11 +72,8 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 The main authors, reviewers, editors, DevOps you can find [here](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/authors.html).
 
 Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
+
 Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
-
-### Contributor roles
-
-Refer to [CONTRIBUTING.md](https://github.com/SemyonSinchenko/qmlcourse.ai/blob/master/CONTRIBUTING.md) for the definition of all contributor roles.
 
 ## Join ODS
 
