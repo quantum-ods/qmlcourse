@@ -23,6 +23,7 @@
 - [Игорь Токарев](https://github.com/polyzer)
 - [Илья Беседин](https://github.com/ooovector)
 - [Николай Карелин](https://github.com/karelin)
+- [Никита Щуцкий](https://github.com/magnus-the-collectioner)
 - [Семен Синченко](https://github.com/SemyonSinchenko)
 - [Сергей Ширкин](https://github.com/SergeiShirkin)
 - [Юрий Кашницкий](https://github.com/alexey-pronkin)
