@@ -15,14 +15,18 @@
 3. [Сергей Ширкин](https://github.com/SergeiShirkin)
 4. [Александр Березутский](https://github.com/meandmytram)
 5. [Котенков Игорь](https://github.com/stalkermustang)
+6. [Игорь Токарев](https://github.com/polyzer)
+6. [Алексей Пронькин](https://github.com/alexey-pronkin)
+7. [Юрий Кашницкий](https://github.com/alexey-pronkin)
+8. [Дмитрий Бажанов](https://github.com/dbazhanov)
 
 ## Основные ревьюеры
 
-1. [Юрий Кашницкий](https://github.com/Yorko)
-2. [Виктор Трохименко](https://github.com/vtrokhymenko)
-3. [Борис Зимка](https://github.com/zimka)
-4. [Николай Карелин](https://github.com/karelin)
-5. [Евгений Желтоножский](https://github.com/Randl)
+1. [Евгений Желтоножский](https://github.com/Randl)
+2. [Юрий Кашницкий](https://github.com/Yorko)
+3. [Виктор Трохименко](https://github.com/vtrokhymenko)
+4. [Борис Зимка](https://github.com/zimka)
+5. [Николай Карелин](https://github.com/karelin)
 
 ## Редакторы
 
@@ -39,6 +43,7 @@
 ```
 
 ```{dropdown} **Б**
+[Бажанов Дмитрий](https://github.com/dbazhanov)
 [Березуцкий Александр](https://github.com/meandmytram)
 ```
 
@@ -73,9 +78,7 @@
 
 ```{dropdown} **К**
 [Карелин Николай](https://github.com/karelin)
-
 [Кашницкий Юрий](https://github.com/Yorko)
-
 [Котенков Игорь](https://github.com/stalkermustang)
 ```
 
@@ -97,6 +100,7 @@
 
 ```{dropdown} **П**
 [Пацкова Екатерина](https://github.com/patsko8a)
+[Пронкин Алексей](https://github.com/alexey-pronkin)
 ```
 
 ```{dropdown} **Р**
@@ -109,6 +113,7 @@
 
 ```{dropdown} **Т**
 [Трохименко Виктор](https://github.com/vtrokhymenko)
+[Токарев Игорь](https://github.com/polyzer)
 ```
 
 ```{dropdown} **У**

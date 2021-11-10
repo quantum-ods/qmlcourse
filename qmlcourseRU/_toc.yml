@@ -38,10 +38,8 @@
       title: ⬜ О блоке
     - file: book/linalgblock/vectors.md
       title: 🟦 Векторы
-    # - file: book/linalgblock/algebra.md
-    #   title: 🟦 Алгебра
-    # - file: book/linalgblock/bra-ket.md
-    #   title: 🟦 Нотация Дирака
+    - file: book/linalgblock/bra-ket.md
+      title: 🟦 Нотация Дирака
     - file: book/linalgblock/matrices.md
       title: 🟦 Матрицы
     - file: book/linalgblock/numpy.md
@@ -90,6 +88,8 @@
       title: 🟩 Квантовая телепортация
     - file: book/qcalgo/grovers_algorithm
       title: 🟧 Алгоритм Гровера
+    - file: book/qcalgo/simon_algorithm
+      title: 🟧 Алгоритм Саймона
 
 - part: Железо квантовых компьютеров
   chapters:
@@ -147,6 +147,10 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
+    - file: book/problemsblock/ising
+      title: 🟩 Модель Изинга
+    - file: book/problemsblock/advising
+      title: 🟧 Продвинутая модель Изинга
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
