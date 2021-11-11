@@ -16,6 +16,7 @@
 - [Алексей Пронькин](https://github.com/alexey-pronkin)
 - [Андрей Лукьяненко](https://github.com/Erlemar)
 - [Борис Зимка](https://github.com/zimka)
+- [Вадим Петров](https://github.com/belgraviton)
 - [Дани Эль-Айясс](http://github.com/dayyass)
 - [Дмитрий Бажанов](https://github.com/dbazhanov)
 - [Евгений Желтоножский](https://github.com/Randl)
@@ -28,7 +29,6 @@
 - [Семен Синченко](https://github.com/SemyonSinchenko)
 - [Сергей Ширкин](https://github.com/SergeiShirkin)
 - [Юрий Кашницкий](https://github.com/alexey-pronkin)
-- [Vadzim Piatrou](https://github.com/belgraviton)
 
 ## Основные ревьюеры
 
