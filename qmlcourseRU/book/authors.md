@@ -38,7 +38,7 @@
 - [Николай Карелин](https://github.com/karelin)
 - [Роман Тезиков](https://github.com/TezRomacH)
 - [Юрий Кашницкий](https://github.com/Yorko)
-- [Dikhtyar Ivan](https://github.com/sustxh)
+- [Ivan Dikhtyar](https://github.com/sustxh)
 
 ## Техническая поддержка
 
