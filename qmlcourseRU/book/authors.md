@@ -4,146 +4,48 @@
 
 ## Создатели курса
 
-1. [Семен Синченко](https://github.com/SemyonSinchenko)
-2. [Юрий Кашницкий](https://github.com/Yorko)
-3. [Виктор Трохименко](https://github.com/vtrokhymenko)
+- [Семен Синченко](https://github.com/SemyonSinchenko)
+- [Юрий Кашницкий](https://github.com/Yorko)
+- [Виктор Трохименко](https://github.com/vtrokhymenko)
 
 ## Основные авторы
 
-1. [Семен Синченко](https://github.com/SemyonSinchenko)
-2. [Илья Беседин](https://github.com/ooovector)
-3. [Сергей Ширкин](https://github.com/SergeiShirkin)
-4. [Александр Березутский](https://github.com/meandmytram)
-5. [Котенков Игорь](https://github.com/stalkermustang)
-6. [Игорь Токарев](https://github.com/polyzer)
-6. [Алексей Пронькин](https://github.com/alexey-pronkin)
-7. [Юрий Кашницкий](https://github.com/alexey-pronkin)
-8. [Дмитрий Бажанов](https://github.com/dbazhanov)
+- [Александр Березутский](https://github.com/meandmytram)
+- [Александра Овсянникова](https://github.com/alexmorphine)
+- [Алексей Озерин](https://github.com/m12sl)
+- [Алексей Пронькин](https://github.com/alexey-pronkin)
+- [Андрей Лукьяненко](https://github.com/Erlemar)
+- [Борис Зимка](https://github.com/zimka)
+- [Вадим Петров](https://github.com/belgraviton)
+- [Дани Эль-Айясс](http://github.com/dayyass)
+- [Дмитрий Бажанов](https://github.com/dbazhanov)
+- [Евгений Желтоножский](https://github.com/Randl)
+- [Игорь Котенков](https://github.com/stalkermustang)
+- [Игорь Токарев](https://github.com/polyzer)
+- [Илья Беседин](https://github.com/ooovector)
+– [Карина Решетова](https://github.com/Carinetta)
+- [Николай Карелин](https://github.com/karelin)
+- [Никита Щуцкий](https://github.com/magnus-the-collectioner)
+- [Семен Синченко](https://github.com/SemyonSinchenko)
+- [Сергей Ширкин](https://github.com/SergeiShirkin)
+- [Юрий Кашницкий](https://github.com/alexey-pronkin)
 
 ## Основные ревьюеры
 
-1. [Евгений Желтоножский](https://github.com/Randl)
-2. [Юрий Кашницкий](https://github.com/Yorko)
-3. [Виктор Трохименко](https://github.com/vtrokhymenko)
-4. [Борис Зимка](https://github.com/zimka)
-5. [Николай Карелин](https://github.com/karelin)
-
-## Редакторы
-
-1. [Наталья Маркова](https://github.com/nsmarkova)
+- [Борис Зимка](https://github.com/zimka)
+- [Виктор Трохименко](https://github.com/vtrokhymenko)
+- [Евгений Желтоножский](https://github.com/Randl)
+- [Николай Карелин](https://github.com/karelin)
+- [Роман Тезиков](https://github.com/TezRomacH)
+- [Юрий Кашницкий](https://github.com/Yorko)
+- [Ivan Dikhtyar](https://github.com/sustxh)
 
 ## Техническая поддержка
 
-1. [Дмитрий Коржов](https://github.com/dkorzhov)
+- [Алексей Пронькин](https://github.com/alexey-pronkin)
+- [Дмитрий Коржов](https://github.com/dkorzhov)
 
-## Полный список авторов
+## Редакторы
 
-```{dropdown} **А**
-
-```
-
-```{dropdown} **Б**
-[Бажанов Дмитрий](https://github.com/dbazhanov)
-[Березуцкий Александр](https://github.com/meandmytram)
-```
-
-```{dropdown} **В**
-
-```
-
-```{dropdown} **Г**
-
-```
-
-```{dropdown} **Д**
-
-```
-
-```{dropdown} **Е**
-[Евгений Желтоножский](https://github.com/Randl)
-```
-
-```{dropdown} **Ж**
-
-```
-
-```{dropdown} **З**
-[Зимка Борис](https://github.com/zimka)
-
-```
-
-```{dropdown} **И**
-
-```
-
-```{dropdown} **К**
-[Карелин Николай](https://github.com/karelin)
-[Кашницкий Юрий](https://github.com/Yorko)
-[Котенков Игорь](https://github.com/stalkermustang)
-```
-
-```{dropdown} **Л**
-
-```
-
-```{dropdown} **М**
-[Маркова Наталья](https://github.com/nsmarkova)
-```
-
-```{dropdown} **Н**
-
-```
-
-```{dropdown} **О**
-[Овсянникова Александра](https://github.com/alexmorphine)
-```
-
-```{dropdown} **П**
-[Пацкова Екатерина](https://github.com/patsko8a)
-[Пронкин Алексей](https://github.com/alexey-pronkin)
-```
-
-```{dropdown} **Р**
-
-```
-
-```{dropdown} **С**
-[Синченко Семен](https://github.com/SemyonSinchenko)
-```
-
-```{dropdown} **Т**
-[Трохименко Виктор](https://github.com/vtrokhymenko)
-[Токарев Игорь](https://github.com/polyzer)
-```
-
-```{dropdown} **У**
-
-```
-
-```{dropdown} **Ф**
-
-```
-
-```{dropdown} **Х**
-
-```
-
-```{dropdown} **Ц**
-
-```
-
-```{dropdown} **Ш**
-[Ширкин Сергей](https://github.com/SergeiShirkin)
-```
-
-```{dropdown} **Э**
-
-```
-
-```{dropdown} **Ю**
-
-```
-
-```{dropdown} **Я**
-
-```
+- [Екатерина Пацкова](https://github.com/patsko8a)
+- [Наталья Маркова](https://github.com/nsmarkova)
