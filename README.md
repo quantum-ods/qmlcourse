@@ -37,7 +37,6 @@
 
 This is the main repository of the course.
 
-- [About](#about)
 - [Contributing Guide](#contributing-guide)
 - [Discussions](#discussions)
 - [Course Program](#course-program)
@@ -49,7 +48,7 @@ This is the main repository of the course.
 
 ## Contributing Guide
 
-Refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for the definition of all contributor roles.
+Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contributor roles.
 
 ## Discussions
 
@@ -73,7 +72,7 @@ The main authors, reviewers, editors, DevOps you can find [here](https://semyons
 
 Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
 
-Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
+Also, all authors for some updates are participants special channel into community [ods.ai](http://ods.ai), join filling the form and write your nickname to orgs to add you to the channel.
 
 ## Join ODS
 
