@@ -42,7 +42,7 @@ This is the main repository of the course.
 - [Course Program](#course-program)
 - [Team](#team)
 - [Join ODS](#join-ods)
-- [Similar projects](#similar-projects)
+- [Similar Projects](#similar-projects)
 - [Bibtex](#bibtex)
 - [Legal Issues](#legal-issues)
 
@@ -78,7 +78,7 @@ Also, all authors for some updates are participants special channel into communi
 
 To join the ODS-community slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that, we add you to the closed channel in the ODS Slack.
 
-## Similar projects
+## Similar Projects
 
 - [QuantumAlgorithms.org](https://github.com/Scinawa/quantumalgorithms.org) [ENG]: lecture notes for students about quantum algorithms and quantum machine learning. Compared to this project our lectures are more practice and programming-oriented. In our course, there are more entry-level and sci-pop lectures but in QuantumAlgorithms.org there are more hard math and strong proofs of theorems. Also, we pay less attention to fully-quantum algorithms and ML but pay more attention to the variational and hybrid quantum-classical things.
 - [Qiskit-textbook](https://github.com/qiskit-community/qiskit-textbook) [ENG]: a textbook about learning quantum computing with qiskit. Compared to this project our course is more about ML, not the quantum protocols and algorithms. Also, we use `PennyLane` as the main quantum framework because it could be used with different backends including `Qiskit` and `CirQ`.
