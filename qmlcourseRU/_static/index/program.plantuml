@@ -21,7 +21,7 @@ package "Week 2" {
         package "Programming QC" #Bisque {
                 rectangle "Frameworks Comparision" as progcomparision #40B464
                 rectangle "PennyLane" as pennylane #40B464
-                rectangle "Qiskit & Aqua" as qiskit #FFC864
+                rectangle "Qiskit" as qiskit #FFC864
                 rectangle "Cirq & TFQ" as cirq #FFC864
         }
 }
