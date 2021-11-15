@@ -52,7 +52,7 @@ $$
   F_j = F(\psi, \phi_j) = |\langle \psi | \phi_j \rangle |^2
 $$
 
-В свою очередь $F = [F_0, F_1, ..., F_{M-1}]$ - это таблица fidelity значений между тестовым сотоянием и каждым из тренировочных.
+В свою очередь $F = [F_0, F_1, ..., F_{M-1}]$ - это таблица fidelity значений между тестовым состоянием и каждым из тренировочных.
 
 Заметим, что задача нахождения $k$ ближайших соседей сводится к задаче нахождения $k$ максимумов значений fidelity из таблицы $F$. Для этого мы должны реализовать оракула
 
@@ -146,7 +146,7 @@ $$
 для всех $j \in \{0, ..., M-1\}$.
 
 1. Инициализируем 4 регистра $i$, $tr$, $tst$, $B$ с соответствующим количеством кубитов в каждом $m$, $n$, $n$, $1$, где $n = \log(N)$, $m = \log(M)$.
-   
+
     $$
       |j\rangle_{i}|0^{\otimes n}\rangle_{tr}|0^{\otimes n}\rangle_{tst}|0\rangle_B
     $$
@@ -160,7 +160,7 @@ $$
 3. Применяем $\mathcal{V}$
 
     $$
-      \mathcal{W}(|j\rangle_{i}|\phi_j\rangle_{tr}|0^{\otimes n}\rangle_{tst}|0\rangle_B) = |j\rangle_{i}|\phi_j\rangle_{tr}|\psi_j\rangle_{tst}|0\rangle_B
+      \mathcal{V}(|j\rangle_{i}|\phi_j\rangle_{tr}|0^{\otimes n}\rangle_{tst}|0\rangle_B) = |j\rangle_{i}|\phi_j\rangle_{tr}|\psi_j\rangle_{tst}|0\rangle_B
     $$
 
 4. Применяем swap test между тренировочным регистром $tr$ и тестовым регистром $tst$, а регистр $B$ будет выступать в качестве контрольного.
@@ -197,7 +197,7 @@ $$
       |\psi_j\rangle = \frac{-i}{\sqrt{2}}\left(e^{i\pi\theta_j}|\psi_{j+}\rangle - e^{-i\pi\theta_j}|\psi_{j-}\rangle \right)
     $$
 
-7.  Теперь применяем алгоритм QPE (Quantum Phase Estimation), чтобы перевести значение фазы $\theta_j$ в числовое представление.
+7.  Теперь применяем алгоритм [QPE](https://qiskit.org/textbook/ch-algorithms/quantum-phase-estimation.html) (Quantum Phase Estimation), чтобы перевести значение фазы $\theta_j$ в числовое представление.
 
     $$
       QPE(|\psi_j\rangle) = \frac{-i}{\sqrt{2}}|j\rangle_{i}\left[e^{i\pi\theta_j}|\theta_j\rangle_{ph}|\psi_{j+}\rangle_{tr,tst,B}  - e^{-i\pi\theta_j}|1 - \theta_j\rangle_{ph}|\psi_{j-}\rangle_{tr,tst,B}\right] = |j\rangle_{i}|\psi_{j,AE}\rangle_{ph,tr,tst,B}
