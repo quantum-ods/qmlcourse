@@ -104,6 +104,8 @@
   chapters:
     - file: book/qmlkindsblock/qmlkindsintro.md
       title: ⬜ О блоке
+    - file: book/qmlkindsblock/qmlkinds
+      title: 🟦 Виды QML
     - file: book/qmlkindsblock/hhl_algorithm
       title: 🟥 Алгоритм HHL
 
