@@ -47,7 +47,7 @@ kernelspec:
 
 ```{figure} /_static/qcalgo/grovers_algorithm/grover_2_qubits.png
 :name: grover_2_qubits
-:width: 800px
+:width: 666px
 
 Алгоритм Гровера для n=2 (искомый индекс 11).
 ```
