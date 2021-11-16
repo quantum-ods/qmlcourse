@@ -31,10 +31,12 @@ $$\ket{a} = \begin{bmatrix} 2 - i \\ 3 + i  \end{bmatrix} \quad \ket{b} = \beg
 
 **Решение:**
 
-```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-0.png
+$\left\langle a\middle| b\right\rangle = a^{\intercal^\ast} \cdot b = \begin{bmatrix} 2 + i & 3 - i  \end{bmatrix} \cdot \begin{bmatrix} i \\ 1 - i \end{bmatrix} = (2 + i)i + (3 - i)(1 - i) = 1 - 2i$
+
+<!-- ```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-0.png
 :width: 600px
 :name: qmlcourse_hw1_q1-4_solution_yorko-0
-```
+``` -->
 
 **2\. Укажите все верные варианты ответа для задачи нахождения собственных значений и собственных векторов оператора Паули  $\hat{\sigma^y} = \begin{bmatrix} 0 & -i\\ i & 0 \end{bmatrix}$:**
 
