@@ -74,7 +74,7 @@ $$
 
 
 ```{figure} /_static/qsvmblock/classicsvm/distance_to_the_plane.png
-:width: 600px
+:width: 400px
 :name: distance_to_the_plane
 
 Расстояние от точки до плоскости
