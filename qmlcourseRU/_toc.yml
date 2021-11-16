@@ -62,6 +62,8 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/mixedstates
       title: 🟨 Смешанные состояния
+    - file: book/qcblock/hw1_qcblock_solution
+      title: ⬜ Решение Задания 1
 
 - part: Фреймворки
   chapters:
