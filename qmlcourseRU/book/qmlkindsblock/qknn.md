@@ -94,27 +94,25 @@ $$
 
     для $j \in \{0, ..., M-1\}$. $|F_j\rangle$ -- это одно из базисных состояний вычислительного базиса (выражающее двоичное представление числа $F_j$).
 
-    1.1.  Выполняется преобразование: $\xi^{amp}|j\rangle|0\rangle = |j\rangle|\psi_j\rangle$. В амплитуду состояния $|\psi_j\rangle$ закодирована информация о числе $F_j$. Делается это с помощью Swap test.
+    - Выполняется преобразование: $\xi^{amp}|j\rangle|0\rangle = |j\rangle|\psi_j\rangle$. В амплитуду состояния $|\psi_j\rangle$ закодирована информация о числе $F_j$ Делается это с помощью Swap test.
 
-    Swap test это применение контролируемой операции $Swap$, которым можно пользоваться для того, чтобы статистически определять fidelity: $F(\psi, \phi) = |\langle \psi | \phi\rangle|^2$ между двумя произвольными чистыми состояниями $|\psi\rangle$ и $|\phi\rangle$.
+      Swap test это применение контролируемой операции $Swap$, которым можно пользоваться для того, чтобы статистически определять fidelity: $F(\psi, \phi) = |\langle \psi | \phi\rangle|^2$ между двумя произвольными чистыми состояниями $|\psi\rangle$ и $|\phi\rangle$.
 
-    $$
-      CSWAP(|0\rangle|\psi\rangle|\phi\rangle) = |0\rangle|\psi\rangle|\phi\rangle\\
-      CSWAP(|1\rangle|\psi\rangle|\phi\rangle) = |1\rangle|\psi\rangle|\phi\rangle
-    $$
+      $$
+        CSWAP(|0\rangle|\psi\rangle|\phi\rangle) = |0\rangle|\psi\rangle|\phi\rangle\\
+        CSWAP(|1\rangle|\psi\rangle|\phi\rangle) = |1\rangle|\psi\rangle|\phi\rangle
+      $$
 
+      ```{figure} /_static/qmlkindsblock/qknn/swap_test.png
+      :name: qknn_swap_test
+      :width: 500px
 
-    ```{figure} /_static/qmlkindsblock/qknn/swap_test.png
-    :name: qknn_swap_test
-    :width: 500px
+      Схема Swap test
+      ```
 
-    Схема Swap test
-    ```
+    - Выполняется преобразование $\xi^{dig}|j\rangle|\psi_j\rangle = |j\rangle|F_j\rangle$
 
-
-    1.2.  Выполняется преобразование $\xi^{dig}|j\rangle|\psi_j\rangle = |j\rangle|F_j\rangle$
-
-    И тогда $\mathcal{F} = \xi^{dig}\xi^{amp}$.
+        И тогда $\mathcal{F} = \xi^{dig}\xi^{amp}$.
 
 2.  Берём 2 пары регистров $i_1, f_1; i_2, f_2$. Инициализируются они в форме $|j\rangle_{i_1}|0\rangle_{f_1}|y\rangle_{i_2}|0\rangle_{f_2}$
 
@@ -129,7 +127,6 @@ $$
     $$
       \mathcal{C}(|j\rangle_{i_1}|F_j\rangle_{f_1}|y\rangle_{i_2}|F_y\rangle_{f_2}) = |j\rangle_{i_1}|0\rangle_{f_1}|f_{y,A}\rangle_{i_2}|0\rangle_{f_2}
     $$
-
 
 Теперь займёмся вопросом конструирования оракула $O_{y,A}$. Просьба держаться за ваши кресла.
 
