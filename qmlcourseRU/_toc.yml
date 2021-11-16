@@ -88,6 +88,8 @@
       title: 🟩 Квантовая телепортация
     - file: book/qcalgo/grovers_algorithm
       title: 🟧 Алгоритм Гровера
+    - file: book/qcalgo/simon_algorithm
+      title: 🟧 Алгоритм Саймона
 
 - part: Железо квантовых компьютеров
   chapters:
@@ -143,30 +145,12 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
+    - file: book/problemsblock/copt
+      title: 🟩 Комбинаторная оптимизация
     - file: book/problemsblock/ising
-      title: 🟩 Модель Изинга (Введение)
+      title: 🟩 Модель Изинга
     - file: book/problemsblock/advising
-      title: 🟧 Модель Изинга (Метод трансфер-матрицы)
-
-
-
-- part: От проблем к обучению
-  chapters:
-    - file: book/problems2qml/problems2qmlintro
-      title: ⬜ О блоке
-    - file: book/problems2qml/np2ising
-      title: 🟩 NP как модели Изинга
-    - file: book/problems2qml/eigenvals
-      title: 🟩 О собственных значениях
-
-- part: VQE
-  chapters:
-    - file: book/vqeblock/vqeintro
-      title: ⬜ О блоке
-    - file: book/vqeblock/vqe
-      title: 🟩 Основы VQE
-    - file: book/vqeblock/tspvqe
-      title: 🟩 TSP с помощью VQE
+      title: 🟧 Продвинутая модель Изинга
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
