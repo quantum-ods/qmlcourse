@@ -31,7 +31,7 @@ $$\ket{a} = \begin{bmatrix} 2 - i \\ 3 + i  \end{bmatrix} \quad \ket{b} = \beg
 
 **Решение:**
 
-$\left\langle a\middle| b\right\rangle = a^{\intercal^\ast} \cdot b = \begin{bmatrix} 2 + i & 3 - i \end{bmatrix} \cdot \begin{bmatrix} i \\ 1 - i \end{bmatrix} = (2 + i)i + (3 - i)(1 - i) = 1 - 2i$
+$\left\langle a\middle| b\right\rangle = a^{T^\ast} \cdot b = \begin{bmatrix} 2 + i & 3 - i \end{bmatrix} \cdot \begin{bmatrix} i \\ 1 - i \end{bmatrix} = (2 + i)i + (3 - i)(1 - i) = 1 - 2i$
 
 **Решение на `NumPy`:**
 
@@ -102,22 +102,34 @@ print("D – False, можно заметить, что переставили �
 
 **3\. Выберите все верные утверждения:**
 
-- [x] Мат ожидание измерения оператора $\hat{\sigma^y} $ для состояния $\ket{R}$ равно 1  
+- [x] Мат ожидание измерения оператора $\hat{\sigma^y}$ для состояния $\ket{R}$ равно 1  
 - [x] Собственные значения оператора Адамара – те же, что у операторов Паули
 - [x] Собственные вектора phase-shift гейта $\hat{U_1} (\phi)$ – $\ket{0}$ и $\ket{1}$
 - [x] Для $|\alpha|  > |\beta|$ кубит в состоянии $\begin{bmatrix} \alpha  \\ \beta \end{bmatrix}$ при измерении скорее окажется в состоянии $\ket{0}$
 
 **Решение:**
 
-```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-2.png
-:width: 500px
-:name: qmlcourse_hw1_q1-4_solution_yorko-2
-```
+1) $\hat{\sigma^y} = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$, $\ket{R} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix}$
 
-```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-3.png
-:width: 500px
-:name: qmlcourse_hw1_q1-4_solution_yorko-3
-```
+Мат ожидание измерения оператора:
+
+$E(\hat{\sigma^y}) = \left\langle R\middle| \hat{\sigma^y} \middle| R\right\rangle = R^{T^\ast} \cdot \hat{\sigma^y} \cdot R = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 1 \\ i \end{bmatrix} = 1$
+
+$\underline{Утверждение \ верно}$
+
+2) $\hat{H} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$
+
+Собственные значения: $\begin{vmatrix} \hat{H} - \lambda E \end{vmatrix} = 0 \quad \Leftrightarrow \quad \frac{1}{\sqrt{2}} \begin{vmatrix} 1 - \sqrt{2} \lambda & 1 \\ 1 & -1 - \sqrt{2} \lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad (\sqrt{2} \lambda - 1)(\sqrt{2} \lambda + 1) - 1 = 0 \quad \Leftrightarrow \quad \lambda = \plusmn 1$
+
+Собственные значения такие же, что у операторов Паули.
+
+$\underline{Утверждение \ верно}$
+
+3) $\hat{u}_1(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
+
+Собственные значения: $\begin{vmatrix} 1 - \lambda & 0 \\ 0 & e^{i \phi} - \lambda \end{vmatrix} = 0$
+
+
 
 **4\. Выберите все верные утверждения:**
 - T-гейт – это то же, что phase-shift гейт $\hat{U}_1 (\phi)$ с параметром $\phi = \pi/2$
