@@ -124,7 +124,7 @@ $$
 Далее надо приравнять нулю частные производные лагранжиана по его аргументам. Из
 $\frac{\partial \mathcal{L}}{\partial x} = 0$ получаем: $2(x - x_0) + 2 \lambda w = 0 \Rightarrow x = x_0 - \lambda w$.
 
-Теперь домножим это уравнение скалярно на w и выразим $\lambda$:
+Теперь домножим это уравнение скалярно на $w$ и выразим $\lambda$:
 
 $\langle w, x \rangle  = \langle w, x_0 \rangle - \lambda {||w||}^2 \Rightarrow \lambda = \frac{\langle w, x_0 \rangle}{{||w||}^2 } $
 
