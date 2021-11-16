@@ -31,12 +31,20 @@ $$\ket{a} = \begin{bmatrix} 2 - i \\ 3 + i  \end{bmatrix} \quad \ket{b} = \beg
 
 **Решение:**
 
-$\left\langle a\middle| b\right\rangle = a^{\intercal^\ast} \cdot b = \begin{bmatrix} 2 + i & 3 - i  \end{bmatrix} \cdot \begin{bmatrix} i \\ 1 - i \end{bmatrix} = (2 + i)i + (3 - i)(1 - i) = 1 - 2i$
+$\left\langle a\middle| b\right\rangle = a^{\intercal^\ast} \cdot b = \begin{bmatrix} 2 + i & 3 - i \end{bmatrix} \cdot \begin{bmatrix} i \\ 1 - i \end{bmatrix} = (2 + i)i + (3 - i)(1 - i) = 1 - 2i$
 
-<!-- ```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-0.png
-:width: 600px
-:name: qmlcourse_hw1_q1-4_solution_yorko-0
-``` -->
+**Решение на `NumPy`:**
+
+```{code-cell} ipython3
+import numpy as np
+
+a = np.array([2-1j, 3+1j]).T
+b = np.array([1j, 1-1j])
+
+print(f"Answer: {a.conj().T @ b}")
+# or
+print(f"Answer: {np.vdot(a, b)}")
+```
 
 **2\. Укажите все верные варианты ответа для задачи нахождения собственных значений и собственных векторов оператора Паули  $\hat{\sigma^y} = \begin{bmatrix} 0 & -i\\ i & 0 \end{bmatrix}$:**
 
@@ -48,9 +56,48 @@ $\left\langle a\middle| b\right\rangle = a^{\intercal^\ast} \cdot b = \begin{bma
 
 **Решение:**
 
-```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-1.png
-:width: 600px
-:name: qmlcourse_hw1_q1-4_solution_yorko-1
+Собственные вектора и значения: $\begin{vmatrix} \hat{\sigma^y} - \lambda_k E \end{vmatrix} = 0$ и $\hat{\sigma^y} u_k = \lambda_k u_k$
+
+$\begin{vmatrix} -\lambda & -i \\ i & -\lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad \lambda^2 - 1 = 0 \quad \Leftrightarrow \quad \lambda = \plusmn 1$
+
+Для $\lambda_1 = 1$ : $\begin{bmatrix} -1 & -i \\ i & -1 \end{bmatrix} \cdot u_1 = 0 \quad \Leftrightarrow \quad u_1 = \begin{bmatrix} 1 \\ i \end{bmatrix}$
+
+Для $\lambda_2 = -1$ : $\begin{bmatrix} 1 & -i \\ i & 1 \end{bmatrix} \cdot u_2 = 0 \quad \Leftrightarrow \quad u_2 = \begin{bmatrix} i \\ 1 \end{bmatrix}$
+
+Вариант $\begin{bmatrix} -i \\ 1 \end{bmatrix}$, $\begin{bmatrix} 1 \\ -i \end{bmatrix}$ тоже верный, т.к. отличается от представленного только умножением на константу $-i$.
+
+**Решение на `NumPy`:**
+
+```{code-cell} ipython3
+import numpy as np
+
+pauli_y = np.array([[0 + 0j, 0 - 1j], [0 + 1j, 0 + 0j]])
+eigenvalues, eigenvectors = np.linalg.eig(pauli_y)
+print(f"eigenvalues={eigenvalues}")
+print(f"eigenvectors={eigenvectors}")
+
+print("А – False, 0 – не собственное значение.")
+
+# b - Проверим, что собственные вектора отличаются на константу:
+a1 = eigenvectors[0] / np.array([1, 1j]) # поделим вектора покоординатно
+check1 = np.allclose(a1[0],a1[1]) # проверим, что коэффициент пропорциональности - один
+print(check1)
+
+# то же самое для второго вектора
+a2 = eigenvectors[1] / np.array([1j, 1])
+check2 = np.allclose(a2[0], a2[1])
+print(check2)
+print(f"B – {check1 and check2}")
+
+# C
+print("C – False, ноль – не собственное значение.")
+
+# D проверим так же, как и для b), только учтем, что собственные значения переставлены:
+a1 = eigenvectors[1] / np.array([-1j, 1])
+a2 = eigenvectors[0] / np.array([1, -1j])
+print(np.allclose(a1[0], a1[1]))
+print(np.allclose(a2[0], a2[1]))
+print("D – False, можно заметить, что переставили собственные значения, а собственные вектора умножили на i по сравнению с вариантом B, но не переставили.")
 ```
 
 **3\. Выберите все верные утверждения:**
