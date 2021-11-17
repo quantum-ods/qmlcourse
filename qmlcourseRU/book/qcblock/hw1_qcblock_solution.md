@@ -58,7 +58,7 @@ print(f"Answer: {np.vdot(a, b)}")
 
 Собственные вектора и значения: $\begin{vmatrix} \hat{\sigma^y} - \lambda_k E \end{vmatrix} = 0$ и $\hat{\sigma^y} u_k = \lambda_k u_k$
 
-$\begin{vmatrix} -\lambda & -i \\ i & -\lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad \lambda^2 - 1 = 0 \quad \Leftrightarrow \quad \lambda = \plusmn 1$
+$\begin{vmatrix} -\lambda & -i \\ i & -\lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad \lambda^2 - 1 = 0 \quad \Leftrightarrow \quad \lambda = \pm 1$
 
 Для $\lambda_1 = 1$ : $\begin{bmatrix} -1 & -i \\ i & -1 \end{bmatrix} \cdot u_1 = 0 \quad \Leftrightarrow \quad u_1 = \begin{bmatrix} 1 \\ i \end{bmatrix}$
 
@@ -119,7 +119,7 @@ $\underline{Утверждение \ верно}$
 
 - $\hat{H} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$
 
-Собственные значения: $\begin{vmatrix} \hat{H} - \lambda E \end{vmatrix} = 0 \quad \Leftrightarrow \quad \frac{1}{\sqrt{2}} \begin{vmatrix} 1 - \sqrt{2} \lambda & 1 \\ 1 & -1 - \sqrt{2} \lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad (\sqrt{2} \lambda - 1)(\sqrt{2} \lambda + 1) - 1 = 0 \quad \Leftrightarrow \quad \lambda = \plusmn 1$
+Собственные значения: $\begin{vmatrix} \hat{H} - \lambda E \end{vmatrix} = 0 \quad \Leftrightarrow \quad \frac{1}{\sqrt{2}} \begin{vmatrix} 1 - \sqrt{2} \lambda & 1 \\ 1 & -1 - \sqrt{2} \lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad (\sqrt{2} \lambda - 1)(\sqrt{2} \lambda + 1) - 1 = 0 \quad \Leftrightarrow \quad \lambda = \pm 1$
 
 Собственные значения такие же, что у операторов Паули.
 
