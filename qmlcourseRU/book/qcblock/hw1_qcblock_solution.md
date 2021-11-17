@@ -155,15 +155,17 @@ $\underline{Утверждение \ верно}$
 
 **Решение:**
 
-```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-4.png
-:width: 500px
-:name: qmlcourse_hw1_q1-4_solution_yorko-4
-```
+1) $\hat{T} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix}, \hat{u_1}(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
 
-```{figure} /_static/qcblock/hw1_qcblock_solution/qmlcourse_hw1_q1-4_solution_yorko-5.png
-:width: 500px
-:name: qmlcourse_hw1_q1-4_solution_yorko-5
-```
+$\hat{u_1}(\frac{\pi}{2}) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \frac{\pi}{2}} \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix} not = \hat{T}$
+
+$\underline{Утверждение \ неверно}$
+
+1) $\ket{\Psi} = \hat{RX}(\frac{\pi}{2}) \cdot \ket{1} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \\ -i & 1 \end{bmatrix} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -i \\ 1 \end{bmatrix}$
+
+Изменение по оси $Y$ делается оператором Паули $\hat{\sigma^y}$
+
+Мат ожидание: $\left\langle \Psi \middle| \hat{\sigma^y} \middle| \Psi \right\rangle =\frac{1}{\sqrt{2}}$
 
 **5\. Какая из последовательностей гейтов идентична единичному гейту $ \sigma^x $?**
 
