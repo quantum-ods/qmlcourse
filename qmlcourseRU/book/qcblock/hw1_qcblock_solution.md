@@ -102,22 +102,22 @@ print("D – False, можно заметить, что переставили �
 
 **3\. Выберите все верные утверждения:**
 
-- [x] Мат ожидание измерения оператора $\hat{\sigma^y}$ для состояния $\ket{R}$ равно 1  
+- [x] Матожидание измерения оператора $\hat{\sigma^y}$ для состояния $\ket{R}$ равно 1  
 - [x] Собственные значения оператора Адамара – те же, что у операторов Паули
 - [x] Собственные вектора phase-shift гейта $\hat{U_1} (\phi)$ – $\ket{0}$ и $\ket{1}$
 - [x] Для $|\alpha|  > |\beta|$ кубит в состоянии $\begin{bmatrix} \alpha  \\ \beta \end{bmatrix}$ при измерении скорее окажется в состоянии $\ket{0}$
 
 **Решение:**
 
-1) $\hat{\sigma^y} = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$, $\ket{R} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix}$
+- $\hat{\sigma^y} = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$, $\ket{R} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix}$
 
-Мат ожидание измерения оператора:
+Матожидание измерения оператора:
 
 $E(\hat{\sigma^y}) = \left\langle R\middle| \hat{\sigma^y} \middle| R\right\rangle = R^{T^\ast} \cdot \hat{\sigma^y} \cdot R = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 1 \\ i \end{bmatrix} = 1$
 
 $\underline{Утверждение \ верно}$
 
-2) $\hat{H} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$
+- $\hat{H} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$
 
 Собственные значения: $\begin{vmatrix} \hat{H} - \lambda E \end{vmatrix} = 0 \quad \Leftrightarrow \quad \frac{1}{\sqrt{2}} \begin{vmatrix} 1 - \sqrt{2} \lambda & 1 \\ 1 & -1 - \sqrt{2} \lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad (\sqrt{2} \lambda - 1)(\sqrt{2} \lambda + 1) - 1 = 0 \quad \Leftrightarrow \quad \lambda = \plusmn 1$
 
@@ -125,7 +125,7 @@ $\underline{Утверждение \ верно}$
 
 $\underline{Утверждение \ верно}$
 
-3) $\hat{u}_1(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
+- $\hat{u}_1(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
 
 Собственные значения: $\begin{vmatrix} 1 - \lambda & 0 \\ 0 & e^{i \phi} - \lambda \end{vmatrix} = 0$
 
@@ -135,11 +135,11 @@ $\lambda_2 = e^{i \phi} \quad \Rightarrow \quad \begin{vmatrix} 1 - e^{i \phi} &
 
 $\underline{Утверждение \ верно}$
 
-4) $\ket{\Psi} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$
+- $\ket{\Psi} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$
 
 Измерение по оси $Z$ делается оператором $\hat{\sigma^z} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$
 
-Мат ожидание при измерении $(E(\hat{\sigma^z}))$:
+Матожидание при измерении $(E(\hat{\sigma^z}))$:
 
 $\left\langle \Psi \middle| \hat{\sigma^z} \middle| \Psi \right\rangle = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ -\beta \end{bmatrix} = \alpha \alpha^* - \beta \beta^* = {\mid\alpha\mid}^2 - {\mid\beta\mid}^2$
 
@@ -155,29 +155,51 @@ $\underline{Утверждение \ верно}$
 
 **Решение:**
 
-1) $\hat{T} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix}, \hat{u_1}(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
+- $\hat{T} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix}, \hat{u_1}(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
 
-$\hat{u_1}(\frac{\pi}{2}) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \frac{\pi}{2}} \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix} not = \hat{T}$
+$\hat{u_1}(\frac{\pi}{2}) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \frac{\pi}{2}} \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix} \neq \hat{T}$
 
 $\underline{Утверждение \ неверно}$
 
-1) $\ket{\Psi} = \hat{RX}(\frac{\pi}{2}) \cdot \ket{1} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \\ -i & 1 \end{bmatrix} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -i \\ 1 \end{bmatrix}$
+- $\ket{\Psi} = \hat{RX}(\frac{\pi}{2}) \cdot \ket{1} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \\ -i & 1 \end{bmatrix} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -i \\ 1 \end{bmatrix}$
 
 Изменение по оси $Y$ делается оператором Паули $\hat{\sigma^y}$
 
-Мат ожидание: $\left\langle \Psi \middle| \hat{\sigma^y} \middle| \Psi \right\rangle =\frac{1}{\sqrt{2}}$
+Матожидание: $\left\langle \Psi \middle| \hat{\sigma^y} \middle| \Psi \right\rangle =\frac{1}{\sqrt{2}} \begin{bmatrix} i & 1 \end{bmatrix} \cdot \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} -i \\ 1 \end{bmatrix} = \frac{1}{2} \begin{bmatrix} i & 1 \end{bmatrix} \cdot \begin{bmatrix} -i \\ 1 \end{bmatrix} = 1$
 
-**5\. Какая из последовательностей гейтов идентична единичному гейту $ \sigma^x $?**
+То есть финальное состояние -- $\ket{R}$
 
-- $ \hat{\sigma^z} \hat{H} \hat{\sigma^z} \hat{H} $
-- $ \hat{H} \hat{\sigma^z} \hat{\sigma^z} \hat{H}$
-- [x] $ \hat{H} \hat{\sigma^z} \hat{H} $
-- $ \hat{\sigma^z} \hat{H} \hat{\sigma^z}$
+$\underline{Утверждение \ верно}$
+
+- При $\phi = 2 \pi k, k \in \mathbb{Z}$ все операторы поворота равны:
+
+$\hat{RX}(2 \pi k) = \hat{RY}(2 \pi k) = \hat{RZ}(2 \pi k) = \begin{bmatrix} \cos \pi k & 0 \\ 0 & \cos \pi k \end{bmatrix} = (-1)^kE,$ с точностью до коэффициента $-1$.
+То есть до "Глобальной фазы" (см. пояснение в лекции) состояние кубита при таком повороте не поменяется.
+
+$\underline{Утверждение \ верно}$
+
+- $\underline{Утверждение \ неверно}$.
+
+В качестве контр примера возьмем поворот кубита из $\ket{0}$ вокруг оси $X$ и измерение по $Z$.
+
+$\ket{\Psi} = \hat{RX}(\phi) \cdot \ket{0} = \begin{bmatrix} \cos \frac{\phi}{2} & -i \sin \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} & \cos \frac{\phi}{2} \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} \cos \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} \end{bmatrix}$
+
+Мат ожидание при измерении по $Z$:
+
+$\left\langle \Psi \middle| \hat{\sigma^z} \middle| \Psi \right\rangle = \begin{bmatrix} \cos \frac{\phi}{2} & -i \sin \frac{\phi}{2} \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \cdot \begin{bmatrix} \cos \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} \end{bmatrix} = \begin{bmatrix} \cos \frac{\phi}{2} & -i \sin \frac{\phi}{2} \end{bmatrix} \cdot \begin{bmatrix} \cos \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} \end{bmatrix} = \cos^2\frac{\phi}{2} - \sin^2\frac{\phi}{2} = \cos \phi$
+
+В зависимости от $\phi$ будут получаться разные состояния.
+
+**5\. Какая из последовательностей гейтов идентична единичному гейту $\sigma^x$?**
+
+- $\hat{\sigma^z} \hat{H} \hat{\sigma^z} \hat{H}$
+- $\hat{H} \hat{\sigma^z} \hat{\sigma^z} \hat{H}$
+- [x] $\hat{H} \hat{\sigma^z} \hat{H}$
+- $\hat{\sigma^z} \hat{H} \hat{\sigma^z}$
 
 **Решение:**
 
 ```{code-cell} ipython3
-
 import numpy as np
 
 pauli_x = np.array([[0 + 0j, 1 + 0j], [1 + 0j, 0 + 0j]])
@@ -211,7 +233,6 @@ _Считаем, что по умолчанию углы измеряются в
 **Решение:**
 
 ```{code-cell} ipython3
-
 def ry(state, phi):
     return np.array([
         [np.cos(phi / 2), -np.sin(phi / 2)],
@@ -240,7 +261,7 @@ print(final_state[2].conj() * final_state[2])
 ```
 
 
-**7 \. Реализуйте поворот вектора состояния $\ket{0}$ на угол $ \frac{\pi}{2}$  с помощью оператора $\hat{RX}(\phi)$:**
+**7 \. Реализуйте поворот вектора состояния $\ket{0}$ на угол $\frac{\pi}{2}$  с помощью оператора $\hat{RX}(\phi)$:**
  - на `NumPy`
  - на `PennyLane`
 
@@ -254,7 +275,6 @@ print(final_state[2].conj() * final_state[2])
 - 0 – по $\mathbf{X}$, 0.70710678 – по $\mathbf{Y}$, 0 – по $\mathbf{Z}$
 
 **Решение:**
-
 
 На `NumPy`
 
