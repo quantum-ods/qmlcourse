@@ -129,7 +129,23 @@ $\underline{Утверждение \ верно}$
 
 Собственные значения: $\begin{vmatrix} 1 - \lambda & 0 \\ 0 & e^{i \phi} - \lambda \end{vmatrix} = 0$
 
+$\lambda_1 = 1 \quad \Rightarrow \quad \begin{vmatrix} 0 & 0 \\ 0 & e^{i \phi} - 1 \end{vmatrix} u_1 = 0 \quad \Rightarrow \quad u_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
 
+$\lambda_2 = e^{i \phi} \quad \Rightarrow \quad \begin{vmatrix} 1 - e^{i \phi} & 0 \\ 0 & 0 \end{vmatrix} u_2 = 0 \quad \Rightarrow \quad u_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$
+
+$\underline{Утверждение \ верно}$
+
+4) $\ket{\Psi} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$
+
+Измерение по оси $Z$ делается оператором $\hat{\sigma^z} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$
+
+Мат ожидание при измерении $(E(\hat{\sigma^z}))$:
+
+$\left\langle \Psi \middle| \hat{\sigma^z} \middle| \Psi \right\rangle = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ -\beta \end{bmatrix} = \alpha \alpha^* - \beta \beta^* = {\mid\alpha\mid}^2 - {\mid\beta\mid}^2$
+
+При $\mid\alpha\mid > \mid\beta\mid$ видно, что $E(\hat{\sigma^z}) > 0$, значит состояние $\ket{0}$ более вероятно, чем $\ket{1}$. Заметим, что $\ket{1}$ соответствует значению $-1$ по оси $Z$, а $\ket{0}$ -- значению 1.
+
+$\underline{Утверждение \ верно}$
 
 **4\. Выберите все верные утверждения:**
 - T-гейт – это то же, что phase-shift гейт $\hat{U}_1 (\phi)$ с параметром $\phi = \pi/2$
