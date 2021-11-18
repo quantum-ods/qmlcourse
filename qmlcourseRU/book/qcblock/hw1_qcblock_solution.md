@@ -37,8 +37,8 @@ $\left\langle a\middle| b\right\rangle = a^{T^\ast} \cdot b = \begin{bmatrix} 2 
 ```{code-cell} ipython3
 import numpy as np
 
-a = np.array([2-1j, 3+1j]).T
-b = np.array([1j, 1-1j])
+a = np.array([2 - 1j, 3 + 1j]).T
+b = np.array([1j, 1 - 1j])
 
 print(f"Answer: {a.conj().T @ b}")
 # or
@@ -50,7 +50,7 @@ print(f"Answer: {np.vdot(a, b)}")
 - Собственные значения: 0 и 1, собственные вектора: $\begin{bmatrix} 1  \\ 0 \end{bmatrix}$ и $\begin{bmatrix} i  \\ 1 \end{bmatrix}$;
 - [x]  Собственные значения: 1 и -1, собственные вектора: $\begin{bmatrix} 1  \\ i \end{bmatrix}$ и $\begin{bmatrix} i  \\ 1 \end{bmatrix}$;
 - Собственные значения: 0 и 1, собственные вектора: $\begin{bmatrix} i  \\ 0 \end{bmatrix}$ и $\begin{bmatrix} 0 \\ i \end{bmatrix}$;
-- [x]  Собственные значения: -1 и 1, собственные вектора: $\begin{bmatrix} -i  \\ 1 \end{bmatrix}$ и $\begin{bmatrix} 1  \\ -i \end{bmatrix}$.
+- [x]  Собственные значения: 1 и -1, собственные вектора: $\begin{bmatrix} -i  \\ 1 \end{bmatrix}$ и $\begin{bmatrix} 1  \\ -i \end{bmatrix}$.
 
 
 **Решение:**
@@ -108,15 +108,15 @@ print("D – False, можно заметить, что переставили �
 
 **Решение:**
 
-- $\hat{\sigma^y} = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$, $\ket{R} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix}$
+1\. $\hat{\sigma^y} = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$, $\ket{R} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix}$
 
 Матожидание измерения оператора:
 
-$E(\hat{\sigma^y}) = \left\langle R\middle| \hat{\sigma^y} \middle| R\right\rangle = R^{T^\ast} \cdot \hat{\sigma^y} \cdot R = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 1 \\ i \end{bmatrix} = 1$
+$\mathbf{E}(\hat{\sigma^y}) = \left\langle R\middle| \hat{\sigma^y} \middle| R\right\rangle = R^{T^\ast} \cdot \hat{\sigma^y} \cdot R = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix} \cdot \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ i \end{bmatrix} = \frac{1}{2} \begin{bmatrix} 1 & -i \end{bmatrix} \cdot \begin{bmatrix} 1 \\ i \end{bmatrix} = 1$
 
 $\underline{Утверждение \ верно}$
 
-- $\hat{H} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$
+2\. $\hat{H} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}$
 
 Собственные значения: $\begin{vmatrix} \hat{H} - \lambda E \end{vmatrix} = 0 \quad \Leftrightarrow \quad \frac{1}{\sqrt{2}} \begin{vmatrix} 1 - \sqrt{2} \lambda & 1 \\ 1 & -1 - \sqrt{2} \lambda \end{vmatrix} = 0 \quad \Leftrightarrow \quad (\sqrt{2} \lambda - 1)(\sqrt{2} \lambda + 1) - 1 = 0 \quad \Leftrightarrow \quad \lambda = \pm 1$
 
@@ -124,7 +124,7 @@ $\underline{Утверждение \ верно}$
 
 $\underline{Утверждение \ верно}$
 
-- $\hat{u}_1(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
+3\. $\hat{u}_1(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
 
 Собственные значения: $\begin{vmatrix} 1 - \lambda & 0 \\ 0 & e^{i \phi} - \lambda \end{vmatrix} = 0$
 
@@ -134,15 +134,15 @@ $\lambda_2 = e^{i \phi} \quad \Rightarrow \quad \begin{vmatrix} 1 - e^{i \phi} &
 
 $\underline{Утверждение \ верно}$
 
-- $\ket{\Psi} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$
+4\. $\ket{\Psi} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$
 
 Измерение по оси $\mathbf{Z}$ делается оператором $\hat{\sigma^z} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$.
 
-Матожидание при измерении $(E(\hat{\sigma^z}))$:
+Матожидание при измерении:
 
-$\left\langle \Psi \middle| \hat{\sigma^z} \middle| \Psi \right\rangle = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ -\beta \end{bmatrix} = \alpha \alpha^* - \beta \beta^* = {|\alpha|}^2 - {|\beta|}^2$
+$\mathbf{E}(\hat{\sigma^z}) = \left\langle \Psi \middle| \hat{\sigma^z} \middle| \Psi \right\rangle = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \cdot \begin{bmatrix} \alpha \\ -\beta \end{bmatrix} = \alpha \alpha^* - \beta \beta^* = {|\alpha|}^2 - {|\beta|}^2$
 
-При $|\alpha| > |\beta|$ видно, что $E(\hat{\sigma^z}) > 0$, значит состояние $\ket{0}$ более вероятно, чем $\ket{1}$. Заметим, что $\ket{1}$ соответствует значению $-1$ по оси $Z$, а $\ket{0}$ -- значению 1.
+При $|\alpha| > |\beta|$ видно, что $\mathbf{E}(\hat{\sigma^z}) > 0$, значит состояние $\ket{0}$ более вероятно, чем $\ket{1}$. Заметим, что $\ket{1}$ соответствует значению $-1$ по оси $Z$, а $\ket{0}$ -- значению 1.
 
 $\underline{Утверждение \ верно}$
 
@@ -154,13 +154,13 @@ $\underline{Утверждение \ верно}$
 
 **Решение:**
 
-- $\hat{T} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix},\ \hat{u_1}(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix}$
-
-$\hat{u_1}(\frac{\pi}{2}) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \frac{\pi}{2}} \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix} \neq \hat{T}$
+1\. $\hat{T} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1+i}{\sqrt{2}} \end{bmatrix},\
+\hat{u_1}(\phi) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \phi} \end{bmatrix},\
+\hat{u_1}(\frac{\pi}{2}) = \begin{bmatrix} 1 & 0 \\ 0 & e^{i \frac{\pi}{2}} \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & i \end{bmatrix} \neq \hat{T}$
 
 $\underline{Утверждение \ неверно}$
 
-- $\ket{\Psi} = \hat{RX}(\frac{\pi}{2}) \cdot \ket{1} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \\ -i & 1 \end{bmatrix} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -i \\ 1 \end{bmatrix}$
+2\. $\ket{\Psi} = \hat{RX}(\frac{\pi}{2}) \cdot \ket{1} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & -i \\ -i & 1 \end{bmatrix} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -i \\ 1 \end{bmatrix}$
 
 Изменение по оси $\mathbf{Y}$ делается оператором Паули $\hat{\sigma^y}$.
 
@@ -170,20 +170,20 @@ $\underline{Утверждение \ неверно}$
 
 $\underline{Утверждение \ верно}$
 
-- При $\phi = 2 \pi k, k \in \mathbb{Z}$ все операторы поворота равны:
+3\. При $\phi = 2 \pi k, k \in \mathbb{Z}$ все операторы поворота равны:
 
-$\hat{RX}(2 \pi k) = \hat{RY}(2 \pi k) = \hat{RZ}(2 \pi k) = \begin{bmatrix} \cos \pi k & 0 \\ 0 & \cos \pi k \end{bmatrix} = (-1)^kE,$ с точностью до коэффициента $-1$.
-То есть до "Глобальной фазы" ([см. пояснение в лекции](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/qcblock/qubit.html#id27)) состояние кубита при таком повороте не поменяется.
+$\hat{RX}(2 \pi k) = \hat{RY}(2 \pi k) = \hat{RZ}(2 \pi k) = \begin{bmatrix} \cos \pi k & 0 \\ 0 & \cos \pi k \end{bmatrix} = (-1)^kE,$ с точностью до коэффициента $-1$ (
+то есть до "глобальной фазы", [см. пояснение в лекции](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/qcblock/qubit.html#id27)) состояние кубита при таком повороте не поменяется.
 
 $\underline{Утверждение \ верно}$
 
-- $\underline{Утверждение \ неверно}$.
+4\. $\underline{Утверждение \ неверно}$.
 
-В качестве контр примера возьмем поворот кубита из $\ket{0}$ вокруг оси $\mathbf{X}$ и измерение по $\mathbf{Z}$.
+В качестве контрпримера возьмем поворот кубита из $\ket{0}$ вокруг оси $\mathbf{X}$ и измерение по $\mathbf{Z}$.
 
 $\ket{\Psi} = \hat{RX}(\phi) \cdot \ket{0} = \begin{bmatrix} \cos \frac{\phi}{2} & -i \sin \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} & \cos \frac{\phi}{2} \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} \cos \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} \end{bmatrix}$
 
-Мат ожидание при измерении по $\mathbf{Z}$:
+Матожидание при измерении по $\mathbf{Z}$:
 
 $\left\langle \Psi \middle| \hat{\sigma^z} \middle| \Psi \right\rangle = \begin{bmatrix} \cos \frac{\phi}{2} & -i \sin \frac{\phi}{2} \end{bmatrix} \cdot \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \cdot \begin{bmatrix} \cos \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} \end{bmatrix} = \begin{bmatrix} \cos \frac{\phi}{2} & -i \sin \frac{\phi}{2} \end{bmatrix} \cdot \begin{bmatrix} \cos \frac{\phi}{2} \\ -i \sin \frac{\phi}{2} \end{bmatrix} = \cos^2\frac{\phi}{2} - \sin^2\frac{\phi}{2} = \cos \phi$
 
