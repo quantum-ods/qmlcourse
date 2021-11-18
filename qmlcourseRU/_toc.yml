@@ -92,6 +92,8 @@
       title: 🟧 Алгоритм Гровера
     - file: book/qcalgo/simon_algorithm
       title: 🟧 Алгоритм Саймона
+    - file: book/qcalgo/hw2_qcalgo_solution
+      title: ⬜ Решение Задания 2
 
 - part: Железо квантовых компьютеров
   chapters:
