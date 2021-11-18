@@ -24,9 +24,6 @@
   <a href="https://ods.ai/tracks/qmlcourse">
     <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=red&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
   </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/raw/gh-pages/pdf/all_book.pdf">
-    <img alt="shield_downlod_all_pdf_book" src="https://img.shields.io/website?style=for-the-badge&up_color=yellow&up_message=download%20course%20book&url=https%3A%2F%2Fgithub.com%2FSemyonSinchenko%2Fqmlcourse%2Fraw%2Fgh-pages%2Fpdf%2Fall_book.pdf">
-  </a>
 </p>
 
 ## About
