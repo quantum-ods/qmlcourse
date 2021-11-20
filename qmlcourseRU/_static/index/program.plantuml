@@ -67,7 +67,7 @@ package "Week 5" {
 
         package "Quantum SVM" #Bisque {
                 rectangle "Hybrid SVM" as hsvm #40B464
-                rectangle "Classical SVM math" as csvm #40B464
+                rectangle "Classical SVM math" as csvm #FFC864
         }
 }
 
