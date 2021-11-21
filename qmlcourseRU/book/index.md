@@ -24,7 +24,7 @@
 - **КРАСНЫЙ** -- лекции про физику и математику, которая стоит за всем этим;
 - **БЕЛЫЙ** -- факультативные лекции.
 
-```{figure} /_static/index/program.png
+```{figure} /_static/index/program.svg
 :name: course_program
 
 Программа курса
