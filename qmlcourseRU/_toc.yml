@@ -133,6 +133,8 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+    - file: book/qsvmblock/classic_svm
+      title: 🟧 Классический SVM
 
 - part: Квантовые нейронные сети
   chapters:
