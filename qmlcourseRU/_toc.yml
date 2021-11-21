@@ -136,8 +136,10 @@
 
 - part: Квантовые нейронные сети
   chapters:
-    - file: book/qnnblock/qnnintro.md
+    - file: book/qnnblock/qnnintro
       title: ⬜ О блоке
+    - file: book/qnnblock/qnn
+      title: 🟩 Квантовые нейронные сети
     - file: book/qnnblock/qconv.ipynb
       title: 🟩 Квантовые сверточные сети
 

@@ -37,7 +37,7 @@ kernelspec:
 Сразу определим операцию на двух бинарных строках (они же бинарные векторы) $x = x_0 x_1 x_2 ... x_{2^n-1}$, $z = z_1 z_2 z_3 ... z_{2^n-1}$:
 
 $$
-  \langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i = x_0 \wedge z_0 \oplus x_0 \wedge z_0 \oplus ... \oplus x_{2^n-1} \wedge z_{2^n-1}
+  \langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i = x_0 \wedge z_0 \oplus x_1 \wedge z_1 \oplus ... \oplus x_{2^n-1} \wedge z_{2^n-1}
 $$
 
 Принципиальная схема алгоритма Саймона:

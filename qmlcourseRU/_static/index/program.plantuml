@@ -62,7 +62,7 @@ package "Week 5" {
         package "Quantum Neural Networks" #Bisque {
                 rectangle "QNN" as qnn #40B464
                 rectangle "Barren plateaus" as barren #FFC864
-                rectangle "Convolutional VQC" as convvqc #FFC864
+                rectangle "Convolutional VQC" as convvqc #40B464
         }
 
         package "Quantum SVM" #Bisque {
