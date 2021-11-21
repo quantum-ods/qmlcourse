@@ -32,14 +32,17 @@
 
 This is the main repository of the course.
 
-- [Contributing Guide](#contributing-guide)
-- [Discussions](#discussions)
-- [Course Program](#course-program)
-- [Team](#team)
-- [Join ODS](#join-ods)
-- [Similar Projects](#similar-projects)
-- [Bibtex](#bibtex)
-- [Legal Issues](#legal-issues)
+- [QMLCourse](#qmlcourse)
+  - [About](#about)
+  - [Contributing Guide](#contributing-guide)
+  - [Discussions](#discussions)
+  - [Course Program](#course-program)
+    - [How to read the schema?](#how-to-read-the-schema)
+  - [Team](#team)
+  - [Join ODS](#join-ods)
+  - [Similar Projects](#similar-projects)
+  - [Bibtex](#bibtex)
+  - [Legal Issues](#legal-issues)
 
 ## Contributing Guide
 
@@ -51,7 +54,7 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Course Program
 
-![](./qmlcourseRU/_static/index/program.png)
+![](./qmlcourseRU/_static/index/program.svg)
 
 ### How to read the schema?
 
