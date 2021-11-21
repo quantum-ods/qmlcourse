@@ -59,15 +59,15 @@ package "Week 4" {
 }
 
 package "Week 5" {
+        package "Quantum SVM" #Bisque {
+                rectangle "Hybrid SVM" as hsvm #40B464
+                rectangle "Classical SVM math" as csvm #FFC864
+        }
+
         package "Quantum Neural Networks" #Bisque {
                 rectangle "QNN" as qnn #40B464
                 rectangle "Barren plateaus" as barren #FFC864
                 rectangle "Convolutional VQC" as convvqc #40B464
-        }
-
-        package "Quantum SVM" #Bisque {
-                rectangle "Hybrid SVM" as hsvm #40B464
-                rectangle "Classical SVM math" as csvm #FFC864
         }
 }
 
@@ -152,16 +152,16 @@ qml_general --> vqc
 vqc --> grad
 grad -> hograd
 
-grad --> qnn
+grad --> hsvm
 barren <- qnn
 qnn -> convvqc
 
-qnn --> hsvm
+hsvm --> qnn
 csvm <- hsvm
 
-hsvm --> ising
-hsvm --> copt
-hsvm --> qchem
+qnn --> ising
+qnn --> copt
+qnn --> qchem
 qchem -> aqchem
 qchem --> jordan
 ising --> npising
