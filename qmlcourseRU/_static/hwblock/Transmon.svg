@@ -2,10 +2,10 @@
 <!-- Created with matplotlib (https://matplotlib.org/) -->
 
 <svg
-   height="123.67907pt"
+   height="120.48376pt"
    version="1.1"
-   viewBox="0 0 202.86421 123.67907"
-   width="202.86421pt"
+   viewBox="0 0 191.21499 120.48376"
+   width="191.215pt"
    id="svg87"
    sodipodi:docname="Transmon.svg"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
@@ -30,8 +30,8 @@
      id="namedview89"
      showgrid="false"
      inkscape:zoom="1.4151997"
-     inkscape:cx="180.53989"
-     inkscape:cy="42.043536"
+     inkscape:cx="183.36635"
+     inkscape:cy="37.803852"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -69,7 +69,7 @@
   <g
      id="patch_2"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="m 103.5,111.28883 c 0.64444,0 1.26258,-0.22048 1.71827,-0.61288 0.45569,-0.3924 0.71173,-0.92469 0.71173,-1.47962 0,-0.55494 -0.25604,-1.08723 -0.71173,-1.47963 -0.45569,-0.3924 -1.07383,-0.61287 -1.71827,-0.61287 -0.64444,0 -1.26258,0.22047 -1.71827,0.61287 -0.45569,0.3924 -0.71173,0.92469 -0.71173,1.47963 0,0.55493 0.25604,1.08722 0.71173,1.47962 0.45569,0.3924 1.07383,0.61288 1.71827,0.61288 z"
@@ -80,7 +80,7 @@
   <g
      id="patch_3"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="m 103.5,27.588825 c 0.64444,0 1.26258,-0.220479 1.71827,-0.612879 0.45569,-0.3924 0.71173,-0.924684 0.71173,-1.479621 0,-0.554937 -0.25604,-1.087221 -0.71173,-1.479621 -0.45569,-0.3924 -1.07383,-0.612879 -1.71827,-0.612879 -0.64444,0 -1.26258,0.220479 -1.71827,0.612879 -0.45569,0.3924 -0.71173,0.924684 -0.71173,1.479621 0,0.554937 0.25604,1.087221 0.71173,1.479621 0.45569,0.3924 1.07383,0.612879 1.71827,0.612879 z"
@@ -91,7 +91,7 @@
   <g
      id="patch_4"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="m 176.4,81.296325 c 4.29629,0 8.41719,-1.46986 11.45513,-4.08586 3.03794,-2.616001 4.74487,-6.164557 4.74487,-9.86414 0,-3.699583 -1.70693,-7.248139 -4.74487,-9.86414 -3.03794,-2.616 -7.15884,-4.08586 -11.45513,-4.08586 -4.29629,0 -8.41719,1.46986 -11.45513,4.08586 -3.03794,2.616001 -4.74487,6.164557 -4.74487,9.86414 0,3.699583 1.70693,7.248139 4.74487,9.86414 3.03794,2.616 7.15884,4.08586 11.45513,4.08586 z"
@@ -102,7 +102,7 @@
   <g
      id="line2d_1"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 79.2,109.19633 H 54.9 30.6"
@@ -113,7 +113,7 @@
   <g
      id="line2d_2"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 30.6,109.19633 V 69.857325 m -8.1,0 h 16.2 m -16.2,-5.022 h 16.2 m -8.1,0 v -39.339"
@@ -124,7 +124,7 @@
   <g
      id="line2d_3"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 30.6,25.496325 H 54.9 79.2"
@@ -135,7 +135,7 @@
   <g
      id="line2d_4"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="m 79.2,25.496325 v 39.339 m 8.1,0 H 71.1 m 16.2,5.022 H 71.1 m 8.1,0 v 39.339005"
@@ -146,7 +146,7 @@
   <g
      id="line2d_5"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 79.2,109.19633 H 91.35 103.5"
@@ -157,7 +157,7 @@
   <g
      id="line2d_6"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 103.5,109.19633"
@@ -168,7 +168,7 @@
   <g
      id="line2d_8"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="m 103.5,109.19633 h 12.15 12.15"
@@ -179,7 +179,7 @@
   <g
      id="line2d_9"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 127.8,109.19633 V 67.346325 m -8.1,6.975 16.2,-13.95 m -16.2,0 16.2,13.95 m -8.1,-6.975 v -41.85"
@@ -190,7 +190,7 @@
   <g
      id="line2d_10"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 127.8,25.496325 H 115.65 103.5"
@@ -201,7 +201,7 @@
   <g
      id="line2d_11"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 103.5,25.496325"
@@ -212,7 +212,7 @@
   <g
      id="line2d_12"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 103.5,25.496325 H 91.35 79.2"
@@ -223,7 +223,7 @@
   <g
      id="line2d_13"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="m 127.8,25.496325 h 24.3 24.3"
@@ -234,7 +234,7 @@
   <g
      id="line2d_14"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="m 176.4,25.496325 v 27.9 0 m 0,27.9 v 0 27.900005"
@@ -245,7 +245,7 @@
   <g
      id="line2d_15"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <path
        clip-path="url(#p88274128cc)"
        d="M 176.4,109.19633 H 152.1 127.8"
@@ -256,7 +256,7 @@
   <g
      id="text_1"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <text
        style="font-style:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'DejaVu Sans';text-anchor:end;stroke-linecap:butt;stroke-linejoin:round"
        x="19.26"
@@ -268,7 +268,7 @@
   <g
      id="text_2"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <text
        style="font-style:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'DejaVu Sans';text-anchor:end;stroke-linecap:butt;stroke-linejoin:round"
        x="67.860001"
@@ -280,7 +280,7 @@
   <g
      id="text_3"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <text
        style="font-style:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'DejaVu Sans';text-anchor:end;stroke-linecap:butt;stroke-linejoin:round"
        x="116.46"
@@ -292,7 +292,7 @@
   <g
      id="text_4"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-4.421875,-5.1300755)">
+     transform="translate(-2.3850005,-8.325388)">
     <text
        style="font-style:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'DejaVu Sans';text-anchor:middle;stroke-linecap:butt;stroke-linejoin:round"
        x="103.5"
@@ -304,7 +304,7 @@
   <g
      id="text_5"
      style="stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(47.064848,-5.1300755)">
+     transform="translate(49.101723,-8.325388)">
     <text
        style="font-style:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'DejaVu Sans';text-anchor:end;stroke-linecap:butt;stroke-linejoin:round"
        x="124.84898"
@@ -332,12 +332,12 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
-     x="99.185417"
-     y="123.48083"
+     x="101.22229"
+     y="120.28551"
      id="text4665"><tspan
        sodipodi:role="line"
        id="tspan4663"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:round"
-       x="99.185417"
-       y="123.48083">0</tspan></text>
+       x="101.22229"
+       y="120.28551">0</tspan></text>
 </svg>
