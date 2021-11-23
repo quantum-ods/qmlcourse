@@ -14,10 +14,9 @@ kernelspec:
 
 # Задание 1. Кубиты, гейты. Решение
 
-[Ссылка на тест](https://ods.ai/tracks/qmlcourse/blocks/de5e69c5-dbca-49d0-bf4e-048f61829fd8).
+Авторы – Юрий Кашницкий и Семен Синченко. [Ссылка на тест](https://ods.ai/tracks/qmlcourse/blocks/de5e69c5-dbca-49d0-bf4e-048f61829fd8).
 
-_Замечания:_
- - _Правильные варианты ответа помечены значком [x]._
+_Правильные варианты ответа помечены значком [x]._
 
 **1\. Чему равно скалярное произведение $\left\langle a\middle| b\right\rangle$ векторов $\ket{a}$ и $\ket{b}$ (в [bra-ket нотации](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation))?**
 

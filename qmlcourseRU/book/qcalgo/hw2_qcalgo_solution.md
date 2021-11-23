@@ -1,20 +1,10 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 (hw2_solution)=
 
 # Задание 2. Квантовые алгоритмы. Решение
 
 Автор – Сергей Ширкин. [Ссылка на тест](https://ods.ai/tracks/qmlcourse/blocks/3383edce-0c64-4fbc-a498-1c5f4c2a381e)
+
+_Правильные варианты ответа помечены значком [x]._
 
 **1\. Для функции $f$, используемой в задаче Саймона, известно, что $f(a) = f(b)$ и $a \neq b$. Чему равно $a$, если $b = 11011$, а также уже известна скрытая последовательность $s$, равная $00101$?**
 
