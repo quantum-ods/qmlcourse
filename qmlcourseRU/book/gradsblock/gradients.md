@@ -300,7 +300,7 @@ print(pretty_print)
 
 ### Parameter-shift rule
 
-Более точная оценка может быть получена методом, который называется **Parameter shift**. Он основан на том, что для квантового "черного ящика" $\hat{U}(\theta)$, которым является наша схема, частная производная по параметру $\theta_i$ выражается так:
+Более точная оценка может быть получена методом, который называется **Parameter-shift**. Он основан на том, что для квантового "черного ящика" $\hat{U}(\theta)$, которым является наша схема, частная производная по параметру $\theta_i$ выражается так:
 
 $$
 \nabla_{\theta_i}\langle \hat{U} \rangle (\mathbf{\theta}) = \frac{1}{2}[\langle \hat{U} \rangle (\mathbf{\theta} + \frac{\pi}{2}\mathbf{e_i}) - \langle \hat{U} \rangle (\mathbf{\theta} - \frac{\pi}{2}\mathbf{e_i})]

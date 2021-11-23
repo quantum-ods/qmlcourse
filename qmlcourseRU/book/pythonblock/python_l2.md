@@ -175,7 +175,7 @@ poetry run jupyter notebook
 Для создания нового файла -- блокнота, как его еще называют (почему? узнаете в следующей лекции) -- кликните по кнопке `new` в правом верхнем углу, а затем -- по `Python 3` (возможно будет какая-нить приставка, это штатно).
 
 ```{figure} /_static/pythonblock/install_l2/jupyter_create.png
-:name: jupyter_console
+:name: jupyter_create
 :width: 600px
 
 Таким образом можно создать новый файл с кодом.
