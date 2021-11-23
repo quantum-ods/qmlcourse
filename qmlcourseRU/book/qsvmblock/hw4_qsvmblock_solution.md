@@ -99,7 +99,7 @@ $$
             & \lambda_1  + \lambda_3 = \lambda_4  \\
             & w_2 + b = 1 \\
             & 2 w_1 + 4w_2 + b = 1 \\
-            & -2w_1 -w_2 + b = 1
+            & -2w_1 -w_2 - b = 1
         \end{aligned}
     \right.
 $$
