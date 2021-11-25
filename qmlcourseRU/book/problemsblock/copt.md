@@ -303,7 +303,6 @@ def split_random_node(random_seed: int) -> (List[int]):
 
     return random_x
 
-
 for random_seed in [2019, 2020, 2021]:
     random_x = split_random_node(random_seed)
 ```
