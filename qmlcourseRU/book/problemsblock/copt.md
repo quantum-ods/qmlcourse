@@ -188,7 +188,7 @@ $$
    - если нет, то разбиваем $N$ для создания новых узлов $N_i$:
       - если верхняя оценочная граница решений для этой ветки $bound(N_i)$ больше $B$, то ничего не делаем;
       - в противном случае добавляем $N_i$ в очередь.
-      
+
 В данном случае нам необходимо реализовать для конкретной задачи следующие суб-рутины:
 
 - построения дерева решения
@@ -241,7 +241,7 @@ while True:
         cand = [it for it in items_and_score if it[0] <= w][0]
         solution.append(cand)
         w -= cand[0]
-        
+
 final_score = sum([it[1] for it in solution])
 final_weight = sum([it[0] for it in solution])
 
@@ -257,6 +257,8 @@ print(f"Total weight of items: {final_weight}")
 
 ```{code-cell} ipython3
 import numpy as np
+from typing import List
+from typing import Union
 
 np.random.seed(42)
 rand_mat = np.random.rand(10, 10)
@@ -272,8 +274,7 @@ plt.show()
 Напомню, что наша цель состоит в том, чтобы разбить наше множество вершин на два подмножества так, чтобы сумма весов ребер между двумя подмножествами была максимальной. Для этого понадобится функция, которая считает целевое значение для любого разбиения на два подмножества.
 
 ```{code-cell} ipython3
-
-def score(g, x):
+def score(g: nx.classes.graph.Graph, x: List[int]) -> (float):
     score = 0
     for e in g.edges(data=True):
         if x[e[0]] != x[e[1]]:
@@ -284,26 +285,20 @@ def score(g, x):
 Разобьем вершины на две группы случайным образом несколько раз и проверим, что функция работает корректно:
 
 ```{code-cell} ipython3
-np.random.seed(42)
-random_x = [
-  1 if np.random.random() <= 0.5 else -1
-  for _ in range(g.number_of_nodes())
-]
-print(f"Random seed 42\tScore: {score(g, random_x):.2f}")
+def split_random_node(random_seed: int) -> (List[int]):
 
-np.random.seed(14)
-random_x = [
-  1 if np.random.random() <= 0.5 else -1
-  for _ in range(g.number_of_nodes())
-]
-print(f"Random seed 14\tScore: {score(g, random_x):.2f}")
+    np.random.seed(random_seed)
+    random_x = [
+        1 if np.random.random() <= 0.5 else -1
+        for _ in range(g.number_of_nodes())
+    ]
+    print(f"Random seed {random_seed}\tScore: {score(g, random_x):.2f}")
 
-np.random.seed(2021)
-random_x = [
-  1 if np.random.random() <= 0.5 else -1
-  for _ in range(g.number_of_nodes())
-]
-print(f"Random seed 2021\tScore: {score(g, random_x):.2f}")
+    return random_x
+
+
+for random_seed in [2019, 2020, 2021]:
+    random_x = split_random_node(random_seed)
 ```
 
 Суть процесса отжига заключается в следующем:
@@ -314,7 +309,7 @@ print(f"Random seed 2021\tScore: {score(g, random_x):.2f}")
     - выполняем случайную пермутацию решения;
     - если значение функции стоимости для нового решения лучше, чем для старого, то принимаем его;
     - если нет, то все равно можем принять новое решение, но лишь с некоторой вероятностью, которая тем больше, чем выше температура и чем ближе друг к другу по оценке старое и новое решение.
-  
+
 Давайте реализуем это. В качестве функции, которая дает нам вероятность принять/отклонить новое решение будем использовать [распределение Больцмана](https://en.wikipedia.org/wiki/Boltzmann_distribution):
 
 $$
@@ -323,7 +318,7 @@ $$
 
 Видно, что эта величина может быть больше единицы в случае, когда новое решение лучше старого, но для нас это не проблема -- это просто будет значить, что мы точно принимаем новое решение!
 
-```{code-cell}
+```{code-cell} ipython3
 from copy import copy
 
 e_history = []
@@ -332,20 +327,20 @@ T = T_0 = 100
 e = score(g, x)
 e_history.append(e)
 
-def bolzman(e_old, e_new, T):
+def bolzman(e_old: float, e_new: float, T: Union[int, float]) -> (float):
     return np.exp((e_new - e_old) / T)
-    
-def permute(x):
+
+def permute(x: List[int]) -> (List[int]):
     i = np.random.randint(0, len(x) - 1)
     x_new = copy(x)
     x_new[i] *= -1
-    
+
     return x_new
-    
+
 for i in range(1500):
     new_state = permute(x)
     new_e = score(g, new_state)
-    
+
     if new_e > e:
         e = new_e
         x = new_state
@@ -354,10 +349,10 @@ for i in range(1500):
         if np.random.rand() <= prob:
             e = new_e
             x = new_state
-    
+
     e_history.append(e)
     T = T_0 / (i + 1)
-    
+
 print(f"Final energy: {e:.2f}")
 ```
 
