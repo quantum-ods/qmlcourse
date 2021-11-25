@@ -1,6 +1,12 @@
-<img src="./qmlcourseRU/logo.svg" align="left"></img>
+<img src="./qmlcourseRU/logo.svg" align="left" width="178" height="178"></img>
 
 # QMLCourse
+<a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
+    <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+</a>
+<a href="https://ods.ai/tracks/qmlcourse">
+  <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=red&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
+</a>
 
 <p align="left">
   <a href="https://github.com/SemyonSinchenko/qmlcourse/blob/master/LICENSE">
@@ -16,18 +22,7 @@
     <img alt="deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
 </p>
-</br></br>
-<p align="left">
-  <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
-    <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
-  </a>
-  <a href="https://ods.ai/tracks/qmlcourse">
-    <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=red&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
-  </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/raw/gh-pages/pdf/all_book.pdf">
-    <img alt="shield_downlod_all_pdf_book" src="https://img.shields.io/website?style=for-the-badge&up_color=yellow&up_message=download%20course%20book&url=https%3A%2F%2Fgithub.com%2FSemyonSinchenko%2Fqmlcourse%2Fraw%2Fgh-pages%2Fpdf%2Fall_book.pdf">
-  </a>
-</p>
+</br>
 
 ## About
 
@@ -37,6 +32,7 @@
 
 This is the main repository of the course.
 
+- [About](#about)
 - [Contributing Guide](#contributing-guide)
 - [Discussions](#discussions)
 - [Course Program](#course-program)
@@ -56,7 +52,7 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Course Program
 
-![](./qmlcourseRU/_static/index/program.png)
+![](./qmlcourseRU/_static/index/program.svg)
 
 ### How to read the schema?
 
