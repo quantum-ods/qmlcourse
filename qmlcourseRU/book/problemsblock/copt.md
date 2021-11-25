@@ -122,9 +122,9 @@ $$
 
 $$
 \begin{cases}
-\sum_p x_{i,p} = 1\text{  }\forall i \\
-\sum_i x_{i,p} = 1\text{  }\forall p \\
-x_{i, p} = 1 \land x_{j, p + 1} = 0\text{ }\forall i,j \notin E
+\sum_p x_{i,p} = 1 \quad \forall i \\
+\sum_i x_{i,p} = 1 \quad \forall p \\
+x_{i, p} = 1 \land x_{j, p + 1} = 0 \quad \forall i,j \notin E
 \end{cases}
 $$
 
@@ -151,7 +151,7 @@ $$
 C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} x_{u,p} x_{v,p+1} + B \sum_{u,v,w \in E} w x_{u,p} x_{v,p+1}
 $$
 
-Тут $A,B$ это веса, которые лучше выбирать так, что $0 < Bw < A\text{ }\forall u,v,w \in E$.
+Тут $A,B$ это веса, которые лучше выбирать так, что $0 < Bw < A \quad \forall u,v,w \in E$.
 
 ## Задача о рюкзаке
 
