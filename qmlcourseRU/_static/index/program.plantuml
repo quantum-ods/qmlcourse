@@ -168,7 +168,7 @@ qchem --> jordan
 ising -> aising
 ising --> npising
 ising --> jordan
-npising --> jordan
+npising -> jordan
 copt --> npising
 
 npising --> eigenvals
