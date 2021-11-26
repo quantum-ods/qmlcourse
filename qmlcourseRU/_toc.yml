@@ -1,171 +1,191 @@
-- file: book/index
+@startuml
+package "Week 1" {
+        package "Introduction" #Bisque {
+                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+        }
 
-- part: Введение
-  chapters:
-    - file: book/intro1block/intro1.md
-      title: 🟦 О квантовых компьютерах
-    - file: book/prerequisite.md
-      title: ⬜ Пререквизиты курса
+        package "Prerequisites" #Bisque {
+                rectangle "Python Intro" as python #14D2EF
+                rectangle "Numpy & Linalg" as numpy #14D2EF
+                rectangle "Classical ML/DL" as ml #14D2EF
+        }
+}
 
-- part: Основы Python
-  chapters:
-    - file: book/pythonblock/pythonintro.md
-      title: ⬜ О блоке
-    - file: book/pythonblock/python_l1.md
-      title: 🟦 Вводная лекция про Python
-    - file: book/pythonblock/python_l2.md
-      title: 🟦 Установка инструментов
-    - file: book/pythonblock/python_l3.md
-      title: 🟦 Ориентация в Jupyter
-    - file: book/pythonblock/python_l4.md
-      title: 🟦 Переменные, типы и вывод
-    - file: book/pythonblock/python_l5.md
-      title: 🟦 Условия и сравнения
-    - file: book/pythonblock/python_l6.md
-      title: 🟦 Списки и циклы
-    - file: book/pythonblock/python_l7.md
-      title: 🟦 Словари
-    - file: book/pythonblock/python_l8.md
-      title: 🟦 Функции
-    - file: book/pythonblock/python_l9.md
-      title: 🟦 Объекты и классы
-    - file: book/pythonblock/python_l10.md
-      title: 🟦 Финальная лекция
+package "Week 2" {
+        package "Quantum Computing" as qci #Bisque {
+                rectangle "Qubit" as qubit #40B464
+                rectangle "Gates" as gates #40B464
+                rectangle "Mixed Stated" as mixed #FFC864
+        }
 
-- part: Линейная алгебра и numpy
-  chapters:
-    - file: book/linalgblock/intro.md
-      title: ⬜ О блоке
-    - file: book/linalgblock/vectors.md
-      title: 🟦 Векторы
-    - file: book/linalgblock/bra-ket.md
-      title: 🟦 Нотация Дирака
-    - file: book/linalgblock/matrices.md
-      title: 🟦 Матрицы
-    - file: book/linalgblock/numpy.md
-      title: 🟦 Numpy fun
+        package "Programming QC" #Bisque {
+                rectangle "Frameworks Comparision" as progcomparision #40B464
+                rectangle "PennyLane" as pennylane #40B464
+                rectangle "Qiskit" as qiskit #FFC864
+                rectangle "Cirq & TFQ" as cirq #FFC864
+        }
+}
 
-- part: Основы машинного обучения
-  chapters:
-    - file: book/mlblock/ml_intro
-      title: ⬜ О блоке
-    - file: book/mlblock/ml_l1
-      title: 🟦 Машинное обучение как пазл
+package "Week 3" {
+        package "Basic Quantum Algorithms" as qalgo #Bisque {
+                rectangle "Deutsch" as deutsch #40B464
+                rectangle "Other Algorithms Review" as advanced_algos #40B464
+                rectangle "Grover" as grover #FFC864
+                rectangle "Quantum Teleportation" as qtp #40B464
+                rectangle "Simon" as saimon #FFC864
+        }
 
-- part: Квантовые вычисления
-  chapters:
-    - file: book/qcblock/qcintro
-      title: ⬜ О блоке
-    - file: book/qcblock/qubit
-      title: 🟩 Квантовый бит
-    - file: book/qcblock/gates
-      title: 🟩 Квантовые гейты
-    - file: book/qcblock/mixedstates
-      title: 🟨 Смешанные состояния
+        package "NISQ Hardware" #Bisque {
+                rectangle "Hardware review" as review #40B464
+                rectangle "Superconducting qubits" as schard #E0535C
+        }
+}
 
-- part: Фреймворки
-  chapters:
-    - file: book/progblock/progintro.md
-      title: ⬜ О блоке
-    - file: book/progblock/progreview
-      title: 🟩 Обзор фреймворков
-    - file: book/progblock/pennylane.ipynb
-      title: 🟩 PennyLane
-    - file: book/progblock/cirq_tfq
-      title: 🟧 Cirq & TFQ
-    - file: book/progblock/qiskit
-      title: 🟧 Qiskit
+package "Week 4" {
+        package "Quantum ML" #Bisque {
+                rectangle "Kinds of QML" as qml_general #14D2EF
+                rectangle "HHL" as hhl #E0535C
+                rectangle "Quantum KNN" as qknn #E0535C
+        }
 
-- part: Базовые квантовые алгоритмы
-  chapters:
-    - file: book/qcalgo/qcalgointro
-      title: ⬜ О блоке
-    - file: book/qcalgo/quantum_algorithms_overview
-      title: 🟩 Обзор квантовых алгоритмов
-    - file: book/qcalgo/deutschs_algorithm
-      title: 🟩 Алгоритм Дойча
-    - file: book/qcalgo/quantum_teleportation
-      title: 🟩 Квантовая телепортация
-    - file: book/qcalgo/grovers_algorithm
-      title: 🟧 Алгоритм Гровера
-    - file: book/qcalgo/simon_algorithm
-      title: 🟧 Алгоритм Саймона
+        package "VQC" #Bisque {
+                rectangle "VQC" as vqc #40B464
+        }
 
-- part: Железо квантовых компьютеров
-  chapters:
-    - file: book/hwblock/hwintro
-      title: ⬜ О блоке
-    - file: book/hwblock/hwreview
-      title: 🟩 Обзор
-    - file: book/hwblock/scqubits
-      title: 🟥 Сверхпроводниковые кубиты
+        package "Gradients" #Bisque {
+                rectangle "Gradients" as grad #40B464
+                rectangle "High-order gradients" as hograd #FFC864
+        }
+}
 
-- part: Квантовое машинное обучение
-  chapters:
-    - file: book/qmlkindsblock/qmlkindsintro.md
-      title: ⬜ О блоке
-    - file: book/qmlkindsblock/qmlkinds
-      title: 🟦 Виды QML
-    - file: book/qmlkindsblock/hhl_algorithm
-      title: 🟥 Алгоритм HHL
-    - file: book/qmlkindsblock/qknn
-      title: 🟥 Алгоритм QKNN
+package "Week 5" {
+        package "Quantum SVM" #Bisque {
+                rectangle "Hybrid SVM" as hsvm #40B464
+                rectangle "Classical SVM math" as csvm #FFC864
+        }
 
-- part: Вариационные схемы
-  chapters:
-    - file: book/vqcblock/vqcintro
-      title: ⬜ О блоке
-    - file: book/vqcblock/vqc
-      title: 🟩 Вариационные схемы
+        package "Quantum Neural Networks" #Bisque {
+                rectangle "QNN" as qnn #40B464
+                ' rectangle "Barren plateaus" as barren #FFC864
+                rectangle "Convolutional VQC" as convvqc #40B464
+        }
+}
 
-- part: Квантовые градиенты
-  chapters:
-    - file: book/gradsblock/gradsintro
-      title: ⬜ О блоке
-    - file: book/gradsblock/gradients
-      title: 🟩 Градиенты квантовых схем
-    - file: book/gradsblock/hogradients
-      title: 🟧 Градиенты высших порядков
+package "Week 6" {
+        package "Problems for QML" #Bisque {
+                rectangle "Ising model" as ising #40B464
+                rectangle "Advanced Ising" as aising #FFC864
+                rectangle "Combinatorial Optimization" as copt #40B464
+                rectangle "Quantum Chemistry" as qchem #40B464
+                rectangle "Advanced Chemistry" as aqchem #FFC864
+        }
 
-- part: Квантовый SVM
-  chapters:
-    - file: book/qsvmblock/qsvmintro
-      title: ⬜ О блоке
-    - file: book/qsvmblock/hybridsvm
-      title: 🟩 Гибридный SVM
-    - file: book/qsvmblock/classic_svm
-      title: 🟧 Классический SVM
+        package "From problems to QML" #Bisque {
+                usecase "NP-problems as Ising model" as npising #40B464
+                usecase "Jordan-Wigner transformation" as jordan #40B464
+                usecase "Eigenvalues problem" as eigenvals #40B464
+        }
+}
 
-- part: Квантовые нейронные сети
-  chapters:
-    - file: book/qnnblock/qnnintro
-      title: ⬜ О блоке
-    - file: book/qnnblock/qnn
-      title: 🟩 Квантовые нейронные сети
-    - file: book/qnnblock/qconv
-      title: 🟩 Квантовые сверточные сети
+package "Week 7" {
+        package "VQE" #Bisque {
+                rectangle "VQE" as vqe #40B464
+                rectangle "TSP with VQE" as tspvqe #40B464
+        }
 
-- part: Проблемы квантового машинного обучения
-  chapters:
-    - file: book/problemsblock/quantchembasic
-      title: 🟩 Квантовая химия (Введение)
-    - file: book/problemsblock/quantchemadvancedscf
-      title: 🟧 Квантовая химия (SCF)
-    - file: book/problemsblock/ising
-      title: 🟩 Модель Изинга
-    - file: book/problemsblock/advising
-      title: 🟧 Продвинутая модель Изинга
+        package "QAOA" #Bisque {
+                usecase "QAOA" as qaoa #40B464
+                usecase "Cost/Mixed Hamiltonians" as hams #FFC864
+        }
+}
 
-- part: D-Wave – квантовый отжиг и семплирование
-  chapters:
-    - file: book/dwaveblock/dwaveintro
-      title: ⬜ О блоке
-    - file: book/dwaveblock/dwave
-      title: 🟩 Квантовый отжиг и семплирование
+package "Week 8" {
+        package "D-Wave" #Bisque {
+                usecase "D-Wave & Sampling" as dwave #40B464
+        }
 
-- part: О курсе
-  chapters:
-    - file: book/bibliography
-    - file: book/authors
-    - file: book/acknowledgments
-    - file: book/glossary
+        package "Advanced Topics" as adv #Bisque {
+                rectangle "SotA review" as sota #40B464
+        }
+}
+
+package "Week 9" {
+        package "Jobs and Perspectives" as jobs #Bisque {
+                usecase "Academic positions" as academic #White
+                usecase "Industrial positions" as industrial #White
+        }
+}
+
+
+intro1 --> python
+intro1 --> numpy
+intro1 --> ml
+
+python --> qubit
+numpy --> qubit
+ml --> qubit
+
+qubit --> gates
+mixed <- qubit
+
+gates --> progcomparision
+progcomparision --> pennylane
+cirq <- progcomparision
+progcomparision -> qiskit
+
+pennylane --> deutsch
+
+deutsch --> advanced_algos
+advanced_algos -> grover
+advanced_algos -> qtp
+saimon <- advanced_algos
+
+advanced_algos --> review
+review -> schard
+
+review --> qml_general
+
+qml_general -> hhl
+qknn <- qml_general
+
+qml_general --> vqc
+
+vqc --> grad
+grad -> hograd
+
+grad --> hsvm
+' barren <- qnn
+qnn -> convvqc
+
+hsvm --> qnn
+csvm <- hsvm
+
+qnn --> copt
+qnn --> ising
+qnn --> qchem
+qchem -> aqchem
+qchem --> jordan
+ising -> aising
+ising --> npising
+npising --> jordan
+copt --> npising
+
+npising --> eigenvals
+jordan --> eigenvals
+
+eigenvals --> vqe
+eigenvals --> qaoa
+
+vqe --> tspvqe
+
+qaoa -> hams
+
+qaoa --> dwave
+vqe --> dwave
+
+dwave --> academic
+dwave --> industrial
+
+dwave --> sota
+
+@enduml

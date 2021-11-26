@@ -73,8 +73,9 @@ package "Week 5" {
 
 package "Week 6" {
         package "Problems for QML" #Bisque {
-                usecase "Ising model" as ising #40B464
-                usecase "Combinatorial Optimization" as copt #40B464
+                rectangle "Ising model" as ising #40B464
+                rectangle "Advanced Ising" as aising #FFC864
+                rectangle "Combinatorial Optimization" as copt #40B464
                 rectangle "Quantum Chemistry" as qchem #40B464
                 rectangle "Advanced Chemistry" as aqchem #FFC864
         }
@@ -159,13 +160,14 @@ qnn -> convvqc
 hsvm --> qnn
 csvm <- hsvm
 
-qnn --> ising
 qnn --> copt
+qnn --> ising
 qnn --> qchem
 qchem -> aqchem
 qchem --> jordan
+ising -> aising
 ising --> npising
-ising --> jordan
+npising --> jordan
 copt --> npising
 
 npising --> eigenvals
