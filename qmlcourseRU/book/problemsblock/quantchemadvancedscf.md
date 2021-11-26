@@ -135,10 +135,7 @@ $$
 Опустим несколько страниц выкладок {cite}`howtounderstandqm`, учтем граничные условия и получим следующее решение:
 
 $$
-R_{n\ell}(r) = r^\ell \cdot e^{-r/n} \cdot \sum_{k=0}^{n -\ell -1} \frac{(-2r/n)^k}{ (2\ell + 2 +k)! (n-\ell-k-1)! k!} \cdot C
-$$
-
-$$
+R_{n\ell}(r) = r^\ell \cdot e^{-r/n} \cdot \sum_{k=0}^{n -\ell -1} \frac{(-2r/n)^k}{ (2\ell + 2 +k)! (n-\ell-k-1)! k!} \cdot C \\
 \ket{\Psi(r, \theta, \phi)} = R_{n\ell}(r) Y_{\ell m} (\theta, \phi)
 $$,
 
