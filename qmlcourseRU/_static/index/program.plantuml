@@ -167,6 +167,7 @@ qchem -> aqchem
 qchem --> jordan
 ising -> aising
 ising --> npising
+ising --> jordan
 npising --> jordan
 copt --> npising
 
