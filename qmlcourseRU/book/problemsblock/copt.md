@@ -62,7 +62,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 %config InlineBackend.figure_format = 'retina'
 
-plt.figure(figsize=(6, 4))
 zachary = nx.generators.social.karate_club_graph()
 nx.draw(
     zachary,
@@ -212,12 +211,12 @@ $$
 Теперь давайте вернемся к аппроксимационным алгоритмам, которые работают относительно быстро, но, к сожалению, часто дают довольное плохие результаты. Ну и самым простым вариантом таких алгоритмов будет жадный алгоритм. Рассматривать его будем на примере задачи о рюкзаке. Пусть у нас есть рюкзак объема $30$ и набор предметов с их стоимостью и объемом:
 
 $$
-items = \{(4, 370), (9, 1950), (10, 3400), (21, 6700), (17, 6100), (3, 800), (27, 8300)\}
+items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27, 8300)\}
 $$
 
 ```{code-cell} ipython3
 capacity = 30
-items = [(4, 370), (9, 1950), (10, 3400), (21, 6700), (17, 6100), (3, 800), (27, 8300),]
+items = [(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27, 8300),]
 ```
 
 Наше решение будет максимально простым:
@@ -271,8 +270,6 @@ import numpy as np
 from typing import List
 from typing import Union
 
-
-plt.figure(figsize=(6, 4))
 
 np.random.seed(42)
 rand_mat = np.random.rand(10, 10)
@@ -373,7 +370,6 @@ print(f"Final energy: {e:.2f}")
 И посмотрим, как оно сходилось:
 
 ```{code-cell} ipython3
-plt.figure(figsize=(6, 4))
 plt.plot(np.arange(len(e_history)), e_history, ".-")
 plt.xlabel("Step")
 plt.ylabel("Cost")
