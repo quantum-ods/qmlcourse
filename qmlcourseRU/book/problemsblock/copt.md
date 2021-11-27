@@ -62,6 +62,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 %config InlineBackend.figure_format = 'retina'
 
+plt.figure(figsize=(6, 4))
 zachary = nx.generators.social.karate_club_graph()
 nx.draw(
     zachary,
@@ -271,7 +272,7 @@ from typing import List
 from typing import Union
 
 
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(6, 4))
 
 np.random.seed(42)
 rand_mat = np.random.rand(10, 10)
@@ -372,7 +373,7 @@ print(f"Final energy: {e:.2f}")
 И посмотрим, как оно сходилось:
 
 ```{code-cell} ipython3
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(6, 4))
 plt.plot(np.arange(len(e_history)), e_history, ".-")
 plt.xlabel("Step")
 plt.ylabel("Cost")
