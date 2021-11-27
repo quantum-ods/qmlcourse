@@ -270,6 +270,9 @@ import numpy as np
 from typing import List
 from typing import Union
 
+
+plt.figure(figsize=(8, 6))
+
 np.random.seed(42)
 rand_mat = np.random.rand(10, 10)
 rand_adj = (rand_mat + rand_mat.T) / 2
@@ -278,6 +281,7 @@ np.fill_diagonal(rand_adj, 0)
 
 g = nx.Graph(rand_adj)
 nx.draw(g)
+
 plt.show()
 ```
 
