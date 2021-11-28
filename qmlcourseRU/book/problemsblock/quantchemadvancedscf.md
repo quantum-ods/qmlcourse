@@ -167,7 +167,6 @@ $$
 import psi4
 psi4.core.be_quiet() # отключаем логирование в stdout
 
-
 h_atom = psi4.geometry("H")
 ```
 
