@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       DisableCache:
-        description: 'Disable cache'
+        description: 'disable cache'
         required: false
         default: 'false'
   push:
@@ -18,34 +18,40 @@ jobs:
       TF_CPP_MIN_LOG_LEVEL: 3
 
     steps:
-      - name: Checkout branch for build
+      - name: checkout branch for build
         uses: actions/checkout@v2
 
-      - name: Checkout branch with cache
+      - name: checkout branch with cache
         uses: actions/checkout@v2
         with:
           ref: "gh-pages"
           path: ./gh-pages
 
-      - name: Copy cache for build book
+      - name: copy cache for build book
         if: ${{ github.event.inputs.DisableCache != 'true' }}
         run: |
           cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
 
-      # Install dependencies
-      - name: Set up Python 3.8
+      - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
         with:
           python-version: 3.8
 
-      - name: Set up poetry
+      - name: set up conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge, psi4
+          activate-conda: true
+
+      - name: set up poetry
         uses: snok/install-poetry@v1.1.6
         with:
-          virtualenvs-create: true
+          virtualenvs-create: false
           virtualenvs-in-project: true
 
-      #Use cache
-      - name: Copy cache dir for dependecies
+      - name: copy cache dir for dependecies
         uses: actions/cache@v2
         env:
           cache-name: cache-poetry-modules
@@ -53,8 +59,11 @@ jobs:
           path: .venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-      - name: Install dependencies
+      - name: install the main dependencies
         run: |
+          conda create python=3.8 -p .venv -y
+          conda install psi4 -c psi4 -p .venv -y
+
           poetry install
 
       # todo: replace with a more sane solution
@@ -72,12 +81,11 @@ jobs:
         run: |
           export DWAVE_TOKEN="$DWAVE_TOKEN"
 
-      - name: Build the book
+      - name: build the book
         run: |
           poetry run jupyter-book build ./qmlcourseRU
 
-      # Push the book's HTML to github-pages
-      - name: GitHub Pages action
+      - name: gh-pages action
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

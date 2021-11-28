@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  deploy_branch_aws:
+  deploy_branch:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -12,17 +12,15 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
-      # Another magic action
       - name: get branch name
         uses: nelonoel/branch-name@v1.0.1
 
-      # Set up PY38
-      - name: Set up Python 3.8
+      - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
         with:
           python-version: 3.8
 
-      - name: Set up conda
+      - name: set up conda
         uses: s-weigand/setup-conda@v1
         with:
           update-conda: true
@@ -30,18 +28,17 @@ jobs:
           conda-channels: anaconda, conda-forge, psi4
           activate-conda: true
 
-      # Set up POETRY
-      - name: Set up poetry
+      - name: set up poetry
         uses: snok/install-poetry@v1.1.6
         with:
           virtualenvs-create: false
           virtualenvs-in-project: true
 
-      # Install dependencies
-      - name: Install dependencies
+      - name: install the main dependencies
         run: |
           conda create python=3.8 -p .venv -y
           conda install psi4 -c psi4 -p .venv -y
+
           poetry install
 
       # todo: replace with a more sane solution
