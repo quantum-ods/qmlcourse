@@ -100,7 +100,7 @@ $$
 
 $$
 E = E_{p} / 2 = - \frac{k e^2}{2 R} = - \frac{k^2}{n^2} \frac{me^4}{2 \hbar^2}
-$$
+$$ (eqn:hydroenergylevels)
 
 Уровни энергии пропорциональны $\frac{1}{n^2}$ и именно [такая зависимость](https://en.wikipedia.org/wiki/Hydrogen_spectral_series) наблюдается в эксперименте.
 
