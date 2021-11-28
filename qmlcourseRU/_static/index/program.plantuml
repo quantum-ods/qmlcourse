@@ -79,15 +79,15 @@ package "Week 6" {
                 rectangle "Quantum Chemistry" as qchem #40B464
                 rectangle "Advanced Chemistry" as aqchem #FFC864
         }
+}
 
-        package "From problems to QML" #Bisque {
+package "Week 7" {
+          package "From problems to QML" #Bisque {
                 usecase "NP-problems as Ising model" as npising #40B464
                 usecase "Jordan-Wigner transformation" as jordan #40B464
                 usecase "Eigenvalues problem" as eigenvals #40B464
         }
-}
 
-package "Week 7" {
         package "VQE" #Bisque {
                 rectangle "VQE" as vqe #40B464
                 rectangle "TSP with VQE" as tspvqe #40B464
@@ -177,16 +177,16 @@ jordan --> eigenvals
 eigenvals --> vqe
 eigenvals --> qaoa
 
-vqe --> tspvqe
+vqe -> tspvqe
 
 qaoa -> hams
 
 qaoa --> dwave
 vqe --> dwave
 
+dwave -> sota
+
 dwave --> academic
 dwave --> industrial
-
-dwave --> sota
 
 @enduml
