@@ -22,16 +22,26 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Set up conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge, psi4
+          activate-conda: true
+
       # Set up POETRY
       - name: Set up poetry
         uses: snok/install-poetry@v1.1.6
         with:
-          virtualenvs-create: true
+          virtualenvs-create: false
           virtualenvs-in-project: true
 
       # Install dependencies
       - name: Install dependencies
         run: |
+          conda create python=3.8 -p .venv -y
+          conda install psi4 -c psi4 -p .venv -y
           poetry install
 
       # todo: replace with a more sane solution
