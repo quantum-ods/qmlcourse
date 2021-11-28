@@ -51,13 +51,13 @@ jobs:
           virtualenvs-create: false
           virtualenvs-in-project: true
 
-      - name: copy cache dir for dependecies
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-poetry-modules
-        with:
-          path: .venv
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      # - name: copy cache dir for dependecies
+      #   uses: actions/cache@v2
+      #   env:
+      #     cache-name: cache-poetry-modules
+      #   with:
+      #     path: .venv
+      #     key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: install the main dependencies
         run: |
