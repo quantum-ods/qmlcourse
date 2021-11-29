@@ -95,7 +95,6 @@ package "Week 7" {
 
         package "QAOA" #Bisque {
                 usecase "QAOA" as qaoa #40B464
-                usecase "Cost/Mixed Hamiltonians" as hams #FFC864
         }
 }
 
@@ -178,8 +177,6 @@ eigenvals --> vqe
 eigenvals --> qaoa
 
 vqe -> tspvqe
-
-qaoa -> hams
 
 qaoa --> dwave
 vqe --> dwave
