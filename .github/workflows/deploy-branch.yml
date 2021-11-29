@@ -1,0 +1,72 @@
+name: deploy-branch
+
+on:
+  pull_request:
+
+jobs:
+
+  deploy_branch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+
+      - name: get branch name
+        uses: nelonoel/branch-name@v1.0.1
+
+      - name: set up Python 3.8
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.8
+
+      - name: set up conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge, psi4
+          activate-conda: true
+
+      - name: set up poetry
+        uses: snok/install-poetry@v1.1.6
+        with:
+          virtualenvs-create: false
+          virtualenvs-in-project: true
+
+      - name: install the main dependencies
+        run: |
+          conda create python=3.8 -p .venv -y
+          conda install psi4 -c psi4 -p .venv -y
+
+          poetry install
+
+      # todo: replace with a more sane solution
+      - name: install tensorflow_quantum
+        run: |
+          poetry run pip install --upgrade pip
+          poetry run pip install -U tensorflow==2.5.1
+          poetry run pip install -U tensorflow_quantum
+          poetry run pip install -U tfq-nightly
+
+      - name: add SSH key-file
+        run: |
+          mkdir -p /home/runner/.ssh
+          echo "${{ secrets.AWS_SSH_KEY }}" > /home/runner/.ssh/key.pem
+          chmod 600 /home/runner/.ssh/key.pem
+
+      - name: build the book
+        run: |
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          poetry run jupyter-book build ./qmlcourseRU
+
+      - name: deploy
+        run: |
+          export CURRENT_BRANCH="${BRANCH_NAME}"
+
+          export AWS_HOST="54.89.156.216"
+          export AWS_USER="ubuntu"
+          export SSH_KEY="/home/runner/.ssh/key.pem"
+
+          poetry run python ./tools/deploy2aws.py ./
