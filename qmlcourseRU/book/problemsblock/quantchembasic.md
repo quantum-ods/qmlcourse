@@ -110,7 +110,7 @@ $$ (eqn:hydroenergylevels)
 from scipy import constants as consts
 
 # постоянная кулона
-k = ( 1 / (4 * consts.pi * consts.epsilon_0))
+k = (1 / (4 * consts.pi * consts.epsilon_0))
 
 # энергия в Джоулях
 E1 = - k**2 * consts.m_e * consts.e**4 / (2 * consts.hbar ** 2)
