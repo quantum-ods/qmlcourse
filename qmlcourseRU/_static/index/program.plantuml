@@ -73,20 +73,21 @@ package "Week 5" {
 
 package "Week 6" {
         package "Problems for QML" #Bisque {
-                usecase "Ising model" as ising #40B464
-                usecase "Combinatorial Optimization" as copt #40B464
+                rectangle "Ising model" as ising #40B464
+                rectangle "Advanced Ising" as aising #FFC864
+                rectangle "Combinatorial Optimization" as copt #40B464
                 rectangle "Quantum Chemistry" as qchem #40B464
                 rectangle "Advanced Chemistry" as aqchem #FFC864
-        }
-
-        package "From problems to QML" #Bisque {
-                usecase "NP-problems as Ising model" as npising #40B464
-                usecase "Jordan-Wigner transformation" as jordan #40B464
-                usecase "Eigenvalues problem" as eigenvals #40B464
         }
 }
 
 package "Week 7" {
+          package "From problems to QML" #Bisque {
+                usecase "NP-problems as Ising model" as npising #40B464
+                usecase "Jordan-Wigner transformation" as jordan #40B464
+                usecase "Eigenvalues problem" as eigenvals #40B464
+        }
+
         package "VQE" #Bisque {
                 rectangle "VQE" as vqe #40B464
                 rectangle "TSP with VQE" as tspvqe #40B464
@@ -94,7 +95,6 @@ package "Week 7" {
 
         package "QAOA" #Bisque {
                 usecase "QAOA" as qaoa #40B464
-                usecase "Cost/Mixed Hamiltonians" as hams #FFC864
         }
 }
 
@@ -159,13 +159,15 @@ qnn -> convvqc
 hsvm --> qnn
 csvm <- hsvm
 
-qnn --> ising
 qnn --> copt
+qnn --> ising
 qnn --> qchem
 qchem -> aqchem
 qchem --> jordan
+ising -> aising
 ising --> npising
 ising --> jordan
+npising -> jordan
 copt --> npising
 
 npising --> eigenvals
@@ -174,16 +176,14 @@ jordan --> eigenvals
 eigenvals --> vqe
 eigenvals --> qaoa
 
-vqe --> tspvqe
-
-qaoa -> hams
+vqe -> tspvqe
 
 qaoa --> dwave
 vqe --> dwave
 
+dwave -> sota
+
 dwave --> academic
 dwave --> industrial
-
-dwave --> sota
 
 @enduml

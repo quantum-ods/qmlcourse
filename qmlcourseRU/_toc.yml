@@ -147,6 +147,8 @@
 
 - part: Проблемы квантового машинного обучения
   chapters:
+    - file: book/problemsblock/problemsintro
+      title: ⬜ О блоке
     - file: book/problemsblock/quantchembasic
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
@@ -155,6 +157,8 @@
       title: 🟩 Модель Изинга
     - file: book/problemsblock/advising
       title: 🟧 Продвинутая модель Изинга
+    - file: book/problemsblock/copt
+      title: 🟩 Комбинаторная оптимизация
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
