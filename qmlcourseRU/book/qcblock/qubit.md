@@ -261,7 +261,7 @@ print(np.allclose(np.conj(R).T @ L, 0))
 
 $$
 \begin{bmatrix}
-\frac{1}{\sqrt{2}} & i\frac{1}{\sqrt{2}}
+\frac{1}{\sqrt{2}} & -i\frac{1}{\sqrt{2}}
 \end{bmatrix} 
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} \\
