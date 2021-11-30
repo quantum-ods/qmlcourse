@@ -10,7 +10,6 @@ kernelspec:
   name: python3
 ---
 
-(qknn)=
 
 # Quantum K-nearest neighbor
 

@@ -32,6 +32,7 @@
 
 This is the main repository of the course.
 
+- [About](#about)
 - [Contributing Guide](#contributing-guide)
 - [Discussions](#discussions)
 - [Course Program](#course-program)
@@ -51,7 +52,7 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Course Program
 
-![](./qmlcourseRU/_static/index/program.png)
+![](./qmlcourseRU/_static/index/program.svg)
 
 ### How to read the schema?
 
