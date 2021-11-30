@@ -230,7 +230,7 @@ print(np.allclose(np.conj(basis_0).T @ basis_1, 0))
 $$
 \begin{bmatrix}
 1 & 0
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 0 \\
 1
@@ -246,7 +246,7 @@ print(np.allclose(np.conj(plus).T @ minus, 0))
 $$
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} \\
 -\frac{1}{\sqrt{2}}
@@ -262,7 +262,7 @@ print(np.allclose(np.conj(R).T @ L, 0))
 $$
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & i\frac{1}{\sqrt{2}}
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} \\
 -i\frac{1}{\sqrt{2}}
@@ -503,7 +503,7 @@ print(plus.conj().T @ pauli_z @ plus)
 $$
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 1 & 0 \\
 0 & -1 \\
@@ -524,7 +524,7 @@ print(plus.conj().T @ pauli_x @ plus)
 $$
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 0 & 1 \\
 1 & 0 \\
