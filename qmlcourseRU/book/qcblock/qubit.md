@@ -93,6 +93,13 @@ qubit = np.array([1 / np.sqrt(2) + 0j, 1 / np.sqrt(2) + 0j]).reshape((2, 1))
 
 Здесь мы создаем именно вектор-столбец размерности $2\times1$.
 
+$$
+\ket{\Psi} = \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+$$
+
 ```{code-cell} ipython3
 print(qubit.shape)
 ```
@@ -131,6 +138,25 @@ c0 = c1 = 1 / np.sqrt(2)
 print(np.allclose(qubit, c0 * basis_0 + c1 * basis_1))
 ```
 
+$$
+\ket{\Psi} = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
++
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+$$
+
 #### Амплитуды вероятностей
 
 Квантовая механика устроена таким интересным образом, что если мы будем измерять **значение** кубита, то вероятность каждого из вариантов будет пропорциональна соответствующему коэффициенту в разложении **состояния**. Но так как амплитуды -- это в общем случае комплексные числа, а вероятности должны быть строго действительные, нужно домножить амплитуды на комплексно сопряженные значения. В случае наших значений $c_0 = c_1 = \frac{1}{\sqrt{2}}$ получаем:
@@ -148,6 +174,18 @@ print(np.allclose(p0 + p1, 1.0))
 ```{code-cell} ipython3
 print(np.allclose(np.conj(qubit).T @ qubit, 1.0))
 ```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 1.0
+$$
+
 
 Мы будем очень часто пользоваться транспонированием и взятием комплексно сопряженного от векторов. В квантовой механике это имеет специальное обозначение $\bra{\Psi} = {\Psi^T}^* = \Psi^\dagger$ (бра -- вектор-строка). Тогда наше правило нормировки из `NumPy` кода может быть записано в нотации Дирака так:
 
@@ -187,9 +225,50 @@ L = (basis_0 - 1j * basis_1) / np.sqrt(2)
 
 ```{code-cell} ipython3
 print(np.allclose(np.conj(basis_0).T @ basis_1, 0))
+```
+
+$$
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+= 0
+$$
+
+```
+{code-cell} ipython3
 print(np.allclose(np.conj(plus).T @ minus, 0))
+```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+$$
+
+
+```{code-cell} ipython3
 print(np.allclose(np.conj(R).T @ L, 0))
 ```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & -i\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-i\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+$$
 
 Заметьте, что в наших векторных пространствах скалярное произведение -- это (в случае действительных векторов) $\vec{a}\vec{b} = \left\langle a\middle| b\right\rangle$ ([бра-кет](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation)). Именно поэтому нужно делать транспонирование и комплексное сопряжение первого вектора в паре.
 
@@ -275,6 +354,20 @@ h = 1 / np.sqrt(2) * np.array([
 ```{code-cell} ipython3
 print(np.allclose(np.conj(h).T @ h, np.eye(2)))
 ```
+$$
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1 \\
+\end{bmatrix}
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1 \\
+\end{bmatrix}
+= \begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+$$
 
 ##### Проверка
 
@@ -283,6 +376,21 @@ print(np.allclose(np.conj(h).T @ h, np.eye(2)))
 ```{code-cell} ipython3
 print(np.allclose(h @ basis_0, plus))
 ```
+$$
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+$$
 
 ## Измерение
 
@@ -392,11 +500,41 @@ $$
 print(plus.conj().T @ pauli_z @ plus)
 ```
 
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 \\
+0 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+$$
+
 С другой стороны, измеряя состояние $\ket{+}$ в _X_-базисе мы всегда будем получать 1:
 
 ```{code-cell} ipython3
 print(plus.conj().T @ pauli_x @ plus)
 ```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 1
+$$
 
 ### Вероятности битовых строк
 
