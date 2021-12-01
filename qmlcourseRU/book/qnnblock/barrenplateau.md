@@ -26,12 +26,16 @@ Variational algorithms have emerged as a central class of quantum algorithms for
 - **Low-expressiveness**: the variational circuit cannot efficiently represent the states or functions of interest. For instance, a ansatz for VQE might need an exponential number of gates/layers to be able to approximate the ground state of interesting Hamiltonians (i.e. Hamiltonians that cannot be efficiently simulated with classical tensor network or Monte Carlo techniques).
 - **Bad trainability**: it takes an exponential time (or an exponential precision in the measurement process) to find the correct parameters of the variational ansatz.
 
-Trainability is the topic of today. What do we know about the optimization of variational circuits that could make them less trainable than, let's say, regular neural networks? This question was studied for the first time by a [team at Google](https://arxiv.org/abs/1803.11173) who introduced the main tool to study this question, namely the **barren plateau phenomenon**. So what's a barren plateau?
+Trainability is the topic of today. What do we know about the optimization of variational circuits that could make them less trainable than, let's say, regular neural networks? This question was studied for the first time by a [team at Google](https://arxiv.org/abs/1803.11173) who introduced the main tool to study this question, namely the **barren plateau phenomenon**. Such phenomenon occurs whenever the gradient of a randomly-initialized parametrized quantum circuit gets exponentially close to $0$ when increasing the number of qubits. The presence of small gradients tends to make the optimization problem extremely difficult for large systems, as it means that the landscape of the function we want to optimize is mostly flat, or *barren*. Finding a good descent direction at each optimization step is therefore a laborious process. The presence or absence of barren plateaus is influenced by many aspects of variational architectures: the [type of ansatz](https://arxiv.org/abs/2011.02966), the [number of layers](https://arxiv.org/abs/2001.00550), the [cost function](https://arxiv.org/abs/2001.00550), the [strength of noise](https://arxiv.org/abs/2007.14384) and [entanglement](https://arxiv.org/abs/2010.15968), the [initialization strategy](https://arxiv.org/abs/1903.05076), etc. 
 
-> **Definition:** a variational circuit on $n$ qubits is said to have a *barren plateau phenomenon* if, when initialized randomly, the gradient of its cost function is concentrated around 0 with a variance that decreases exponentially with $n$.
+We will explore here those different features of barren plateaus, with the goal of helping you identify if any architecture you're considering might exhibit this phenomenon. Let's start by giving a more precise definition of barren plateaus and go through some simple examples.
+
+## What is a barren plateau?
+
+> **Definition:** a variational circuit on $n$ qubits is said to have a *barren plateau phenomenon* if, when initialized randomly, the gradient of its cost function is concentrated around $0$ with a variance that decreases exponentially with $n$.
 
 
-Let's unwrap this definition. First of all, the barren plateau is a random phenomenon, meaning that it can only be quantified when considering a random distribution of variational parameters, and will strongly depend on the properties of this distribution. Whether a barren plateau phenomenon is still present in the middle of the optimization process is still an open question. Secondly, the presence or absence of a barren plateau depends on both the ansatz and the cost-function. Changing the cost-function or the ansatz used to solve a given problem can therefore serve as a mitigation strategy to avoid barren plateaus. Finally, the barren plateau is an asymptotic phenomenon, and by convention only occurs when the gradient is *exponentially* decaying with the number of qubits. It is something important to notice as a polynomially-vanishing gradient could potentially destroy certain types of quantum advantage without being called barren plateau in the current terminology.
+Let's unwrap this definition. First of all, the barren plateau is a random phenomenon, meaning that it can only be quantified when considering a random distribution of variational parameters, and will strongly depend on the properties of this distribution. Whether gradients are still small in the middle of the optimization process is harder to prove. Secondly, the presence or absence of a barren plateau depends on both the ansatz and the cost-function. Changing the cost-function or the ansatz used to solve a given problem can therefore serve as a mitigation strategy to avoid barren plateaus. Finally, the barren plateau is an asymptotic phenomenon, and by convention only occurs when the gradient is *exponentially* decaying with the number of qubits. It is something important to notice as a polynomially-vanishing gradient could potentially destroy certain types of quantum advantage without being called barren plateau in the current terminology.
 
 Hands-on code example here.
 ```{code-cell} ipython3
@@ -42,6 +46,24 @@ So, why do we care about barren plateau? Because the properties of the gradients
 
 ## When do we have barren plateaus?
 
-## How to avoid barren plateaus?
+### When the cost function is global
+
+### When the number of layers if high
+
+### When noise is present
+
+### When hidden and visible layers of QNNs are highly entangled
+
+## How to mitigate the barren plateau phenomenon?
+
+### Architectures with a logarithmic number of layers
+
+### Initialization strategies
 
 ## Expressibility vs trainability
+
+## Landscape close to the minimum: narrow gorges
+
+## The maths of barren plateaus
+
+## Resources
