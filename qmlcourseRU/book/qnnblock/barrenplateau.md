@@ -42,9 +42,46 @@ Hands-on code example here.
 visualize_barren_plateau()
 ```
 
-So, why do we care about barren plateau? Because the properties of the gradients have a large influence on the optimization process. Let's imagine that you are optimizing your cost-function using gradient-descent. Then you need to compute the gradient at each step. If the gradient is exponentially close to zero, we will need an exponential precision to compute it, and that sucks. As we will see later, this issue can also arise when considering gradient-free methods, so the problem is not only about some particular gradient descent algorithms, but really about the landscape of the cost-function.
+So, why do we care about barren plateaus? Because the properties of the gradients have a large influence on the optimization process. Let's imagine that you are optimizing your cost-function using gradient-descent. Then you need to compute the gradient at each step. If the gradient is exponentially close to zero, we will need an exponential precision to compute it, and that sucks. As we will see later, this issue can also arise when considering gradient-free methods, so the problem is not only about some particular gradient descent algorithms, but really about the landscape of the cost-function.
 
 ## When do we have barren plateaus?
+
+### When the circuit distribution is a 2-design
+
+[Insert figure with a big unitary matrix]
+
+"When the what is a what??". Let's unravel those terms, which are crucial to understand the essence of barren plateaus.
+
+Let's say you have a certain parametrized quantum circuit.
+It can be represented by a unitary matrix $U(\theta)$ depending on some parameters $\theta$.
+You then need to specify a distribution to initialize your circuit.
+For instance, you could choose to pick your $\theta$s uniformly between $0$ and $2\pi$.
+Or have a Gaussian distribution centered around $0$.
+In any case, this distribution over the parameters will induce a distribution over unitary matrices:
+each time you initialize your circuit, you get a different unitary $U$ that has a certain probability density $p(U)$.
+And we're lucky, there is an entire field, called *random matrix theory*, that studies those distribution over matrices, and in particular over unitary matrices.
+For example, in random matrix theory, the equivalent of the uniform distribution is called the **Haar measure**.
+The Haar measure over the unitary group $\mathcal{U}(n)$ is defined as the unique probability distribution $p_{\text{Haar}}$ such that
+
+\begin{equation}
+  \forall U, V \in \mathcal{U}(n), p_{\text{Haar}}(UV)=p_{\text{Haar}}(VU)=p_{\text{Haar}}(U)
+\end{equation}
+
+It means that moving around the unitary group does not change the density, or in other words, all unitary matrices have equal probability.
+While algorithms exist to sample unitary matrices over the Haar distribution, most quantum circuit initialization schemes are based on parameter initialization and do not directly follow the Haar measure. However, they can often approximate it.
+
+A particular type of approximation of the Haar measure is formed by the so-called **$t$-designs**. A distribution $p$ over the unitary group is a $t$-design if all its moments up to $t$ (expectation, variance, etc.) are equal to those of the Haar measure. More formally, for any polynomial function $f$ of degree $t$, we should have:
+
+\begin{equation}
+  \mathbb{E}_{U \sim p_{\text{Haar}}}[f(U)]=\mathbb{E}_{U \sim p}[f(U)]
+\end{equation}
+
+Sometimes, you'll also find the definition written as
+\begin{equation}
+  \int (U^{\dagger})^{\otimes t} M U^{\otimes t} dp(U) = \int (U^{\dagger})^{\otimes t} M U^{\otimes t} dp_{\text{Haar}}(U)
+\end{equation}
+in the literature, which is just the explicit form of the equation above.
+For instance
 
 ### When the cost function is global
 
@@ -55,6 +92,8 @@ So, why do we care about barren plateau? Because the properties of the gradients
 ### When hidden and visible layers of QNNs are highly entangled
 
 ## How to mitigate the barren plateau phenomenon?
+
+### Global to local cost function
 
 ### Architectures with a logarithmic number of layers
 
