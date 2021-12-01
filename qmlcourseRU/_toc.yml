@@ -69,7 +69,7 @@
       title: ⬜ О блоке
     - file: book/progblock/progreview
       title: 🟩 Обзор фреймворков
-    - file: book/progblock/pennylane.ipynb
+    - file: book/progblock/pennylane
       title: 🟩 PennyLane
     - file: book/progblock/cirq_tfq
       title: 🟧 Cirq & TFQ
