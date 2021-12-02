@@ -34,27 +34,18 @@ kernelspec:
 import pennylane as qml
 from pennylane import numpy as np
 dev = qml.device('default.qubit', shots=1000, wires=2)
-```
-
-
-```{code-cell} ipython3
 def make_entanglement():
     qml.Hadamard(wires=0)
     qml.CNOT(wires=[0, 1])
     return qml.probs(wires=[0, 1])
-```
 
-
-```{code-cell} ipython3
 circuit = qml.QNode(make_entanglement, dev)
 circuit()
-```
 
 Работая с библиотекой PennyLane для математических операций, можно использовать интерфейс `NumPy`, но при этом также пользоваться преимуществами автоматического дифференцирования, которое обеспечивает <a href="https://github.com/HIPS/autograd">autograd</a>.
 Именно поэтому мы не импортировали `NumPy` обычным способом: `import numpy as np`, а сделали это так: `from pennylane import numpy as np`.
 
 Второй способ создания квантовых узлов -- с помощью декоратора `QNode`. Пропускаем импорт библиотек и создание устройства, так как в начале код тот же самый:
-
 
 ```{code-cell} ipython3
 @qml.qnode(dev)
@@ -62,13 +53,8 @@ def circuit():
     qml.Hadamard(wires=0)
     qml.CNOT(wires=[0, 1])
     return qml.probs(wires=[0, 1])
-```
 
-
-```{code-cell} ipython3
-result = circuit()
-print(result)
-```
+print(circuit())
 
 В данном примере мы взяли двухкубитную систему и создали запутанное состояние, а затем с помощью метода `probs` вычислили вероятности получения состояний $|00\rangle$, $|01\rangle$, $|10\rangle$, $|11\rangle$.
 
@@ -80,7 +66,6 @@ print(result)
 
 $$0.5 \cdot 1 + 0.5 \cdot (-1) = 0$$
 
-
 ```{code-cell} ipython3
 @qml.qnode(dev)
 def circuit(x):
@@ -88,12 +73,10 @@ def circuit(x):
     return qml.expval(qml.PauliZ(0))
 
 circuit(np.pi/2)
-```
 
 В следующем примере мы вращаем кубит на тот же угол 90 градусов, но уже вокруг оси Y. Ожидаемое значение в этот раз ищем для `qml.PauliX` и получаем 1, что соответствует вычислениям:
 
 $$1 \cdot 1 + 0 \cdot (-1) = 1$$
-
 
 ```{code-cell} ipython3
 @qml.qnode(dev)
