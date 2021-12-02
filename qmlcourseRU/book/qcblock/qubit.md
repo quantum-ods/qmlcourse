@@ -573,7 +573,7 @@ $$
 \otimes
 \begin{bmatrix}
 1 & 0
-\end{bmatrix} 
+\end{bmatrix}
 =
 \begin{bmatrix}
 1 & 0 \\
@@ -591,7 +591,7 @@ $$
 \otimes
 \begin{bmatrix}
 0 & 1
-\end{bmatrix} 
+\end{bmatrix}
 =
 \begin{bmatrix}
 0 & 0 \\
@@ -615,7 +615,7 @@ p_0 = super_position.conj().T @ proj_0 @ super_position
 print(np.allclose(p_0, 0.5))
 ```
 $$
-\mathbf{P}(\lambda_0) = 
+\mathbf{P}(\lambda_0) =
 \Bigg(
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
@@ -653,11 +653,11 @@ print(np.allclose(p_1, 0.5))
 print(np.allclose(p_0 + p_1, 1.0))
 ```
 $$
-\mathbf{P}(\lambda_1) = 
+\mathbf{P}(\lambda_1) =
 \Bigg(
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 0 & 0 \\
 0 & 1 \\
@@ -670,7 +670,7 @@ $$
 =
 \begin{bmatrix}
 \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
-\end{bmatrix} 
+\end{bmatrix}
 \Bigg(
 \begin{bmatrix}
 0 & 0 \\
