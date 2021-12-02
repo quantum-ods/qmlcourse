@@ -52,6 +52,8 @@ So, why do we care about barren plateaus? Because the properties of the gradient
 
 "When the what is a what??". Let's unravel those terms, which are crucial to understand the essence of barren plateaus.
 
+#### Haar measure and 2-designs
+
 Let's say you have a certain parametrized quantum circuit.
 It can be represented by a unitary matrix $U(\theta)$ depending on some parameters $\theta$.
 You then need to specify a distribution to initialize your circuit.
@@ -72,32 +74,77 @@ While algorithms exist to sample unitary matrices over the Haar distribution, mo
 
 A particular type of approximation of the Haar measure is formed by the so-called **$t$-designs**. A distribution $p$ over the unitary group is a $t$-design if all its moments up to $t$ (expectation, variance, etc.) are equal to those of the Haar measure. More formally, for any polynomial function $f$ of degree $t$, we should have:
 
-\begin{equation}
+$$
   \mathbb{E}_{U \sim p_{\text{Haar}}}[f(U)]=\mathbb{E}_{U \sim p}[f(U)]
-\end{equation}
+$$
 
-Sometimes, you'll also find the definition written as
-\begin{equation}
-  \int (U^{\dagger})^{\otimes t} M U^{\otimes t} dp(U) = \int (U^{\dagger})^{\otimes t} M U^{\otimes t} dp_{\text{Haar}}(U)
-\end{equation}
-in the literature, which is just the explicit form of the equation above.
-For instance
+Sometimes, you'll also find in the literature the definition of a $t$-design written as
 
-### When the cost function is global
+$$
+  \forall M, \, \int (U^{\dagger})^{\otimes t} M U^{\otimes t} dp(U) = \int (U^{\dagger})^{\otimes t} M U^{\otimes t} dp_{\text{Haar}}(U)
+$$
+
+or
+
+$$
+  \forall M, \, \frac{1}{N} \sum_k (U_k^{\dagger})^{\otimes t} M U_k^{\otimes t} = \int (U^{\dagger})^{\otimes t} M U^{\otimes t} dp_{\text{Haar}}(U)
+$$
+
+which is just the explicit form of the equation above, when the distribution is respectively continuous or discrete and $M$ is the matrix representing the polynomial we want to take. In particular, $2$-designs are distributions that have the same expectation and variance as the Haar measure, and they appear everywhere in quantum information. For instance, if you construct a circuit by randomly inserting Clifford gates (H, CNOT, S), you'll eventually get a 2-design [TODO: make those statements more precise]
+
+#### 2-designs and barren plateaus
+
+So what's the link between 2-designs and barren plateaus? It happens that whenever your circuit distribution follows a 2-design, you'll get a barren plateau. That statement was proved in the [first paper on barren plateau](https://arxiv.org/abs/1803.11173) and takes the following more precise form:
+
+> **Theorem:** let $U(\theta)$ a parametrized quantum circuit, $U_k=e^{iA\theta_k}$ a particular gate in the circuit, $\rho$ the input density matrix and $E(\theta)=\text{Tr}[HU(\theta)\rho U^\dagger(\theta)]$ the cost function we are trying to optimize. Then, if the unitaries before and after $U_k$ follow a 2-design, we will have as the number of qubits $n \rightarrow \infty$:
+>
+> $$\mathbb{E}[\partial_k E]=0$$
+>
+> $$\text{Var}[\partial_k E] \sim - \frac{2}{2^{3n}} \text{Tr}[\rho^2] \text{Tr}[H^2] \text{Tr}[A^2]$$
+
+So in other words, randomly initializing a quantum circuit such that the resulting distribution is 2-design will directly give you exponentially vanishing gradients. The trace terms appearing in the variance usually don't contribute too much to the overall scaling. Indeed, taking VQE as an example, the intial density matrix is usually taken to be $\rho = |0\rangle \langle 0 |$ for which $\text{Tr}[\rho^2]=1$. Gates are usually rotations, in which case $A$ is a pauli matrix fullfilling $\text{Tr}[A^2]=n$. Finally, if $H$ is a sum of local terms (e.g. an Ising Hamiltonian), we can also show that $\text{Tr}[H^2]$ won't have any influence on the scaling.
+
+What is the intuition behind this result? Levy's lemma and concentration of measure
 
 ### When the number of layers if high
 
+How do we get 2-designs? By having a large depth.
+
+This statement was made more precise in the cost-function dependent BP paper, in which they studied one particular type of ansatz: the so-called hardware-efficient ansatz (HEA).
+
+Description of the HEA.
+
+Description of the paper's results.
+
+
+### When the cost function is global
+
+In the previous discussion, we've assumed that the cost function was local.
+If the cost function is global, more chance of BP.
+
+Example of global cost function: the fidelity
+
 ### When noise is present
 
+Discussion of the noise-induced BP paper
+
 ### When hidden and visible layers of QNNs are highly entangled
+
+Specific to a particular QNN architecture as well as QRBM.
 
 ## How to mitigate the barren plateau phenomenon?
 
 ### Global to local cost function
 
+Example of the fidelity.
+
 ### Architectures with a logarithmic number of layers
 
+Example of the QCNN
+
 ### Initialization strategies
+
+Paper by UCL team.
 
 ## Expressibility vs trainability
 
