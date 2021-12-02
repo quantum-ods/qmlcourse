@@ -563,6 +563,41 @@ eigenvectors = np.linalg.eig(pauli_z)[1]
 proj_0 = eigenvectors[0].reshape((-1, 1)) @ eigenvectors[0].reshape((1, -1))
 proj_1 = eigenvectors[1].reshape((-1, 1)) @ eigenvectors[1].reshape((1, -1))
 ```
+$$
+\hat{P}_{\ket{\Phi_0}}
+=
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+$$
+
+$$
+\hat{P}_{\ket{\Phi_1}}
+=
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+$$
 
 #### Правило Борна
 
@@ -576,11 +611,78 @@ $$
 
 ```{code-cell} ipython3
 p_0 = super_position.conj().T @ proj_0 @ super_position
-p_1 = super_position.conj().T @ proj_1 @ super_position
 
-print(np.allclose(p_0 + p_1, 1.0))
 print(np.allclose(p_0, 0.5))
 ```
+$$
+\mathbf{P}(\lambda_0) =
+\Bigg(
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+\Bigg)
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg(
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg)
+= \frac{1}{2}
+$$
+
+```{code-cell} ipython3
+p_1 = super_position.conj().T @ proj_1 @ super_position
+
+print(np.allclose(p_1, 0.5))
+print(np.allclose(p_0 + p_1, 1.0))
+```
+$$
+\mathbf{P}(\lambda_1) =
+\Bigg(
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\Bigg)
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg(
+\begin{bmatrix}
+0 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg)
+= \frac{1}{2}
+$$
 
 ## Что мы узнали?
 
