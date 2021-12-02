@@ -93,16 +93,15 @@ package "Week 7" {
                 rectangle "TSP with VQE" as tspvqe #40B464
         }
 
-        package "QAOA" #Bisque {
-                usecase "QAOA" as qaoa #40B464
+        package "D-Wave" #Bisque {
+                usecase "D-Wave & Sampling" as dwave #40B464
         }
 }
 
 package "Week 8" {
-        package "D-Wave" #Bisque {
-                usecase "D-Wave & Sampling" as dwave #40B464
+        package "QAOA" #Bisque {
+                usecase "QAOA" as qaoa #40B464
         }
-
         package "Advanced Topics" as adv #Bisque {
                 rectangle "SotA review" as sota #40B464
         }
@@ -174,16 +173,14 @@ npising --> eigenvals
 jordan --> eigenvals
 
 eigenvals --> vqe
-eigenvals --> qaoa
+eigenvals --> dwave
 
 vqe -> tspvqe
 
-qaoa --> dwave
-vqe --> dwave
+dwave --> qaoa
 
-dwave -> sota
-
-dwave --> academic
-dwave --> industrial
+qaoa -> sota
+qaoa --> academic
+qaoa --> industrial
 
 @enduml
