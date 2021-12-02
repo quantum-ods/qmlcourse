@@ -33,10 +33,6 @@ kernelspec:
 ```{code-cell} ipython3
 import pennylane as qml
 from pennylane import numpy as np
-```
-
-
-```{code-cell} ipython3
 dev = qml.device('default.qubit', shots=1000, wires=2)
 ```
 
