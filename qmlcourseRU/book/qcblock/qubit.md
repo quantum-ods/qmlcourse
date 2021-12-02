@@ -611,7 +611,6 @@ $$
 
 ```{code-cell} ipython3
 p_0 = super_position.conj().T @ proj_0 @ super_position
-p_1 = super_position.conj().T @ proj_1 @ super_position
 
 print(np.allclose(p_0, 0.5))
 ```
@@ -650,7 +649,7 @@ $$
 ```{code-cell} ipython3
 p_1 = super_position.conj().T @ proj_1 @ super_position
 
-print(np.allclose(p_0, 0.5))
+print(np.allclose(p_1, 0.5))
 print(np.allclose(p_0 + p_1, 1.0))
 ```
 $$
