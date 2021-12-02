@@ -30,7 +30,6 @@ kernelspec:
 
 Рассмотрим первый способ -- явное создание узла.
 
-
 ```{code-cell} ipython3
 import pennylane as qml
 from pennylane import numpy as np
