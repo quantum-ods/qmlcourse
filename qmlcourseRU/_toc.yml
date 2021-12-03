@@ -162,6 +162,8 @@
 
 - part: От проблем к обучению
   chapters:
+    - file: book/problems2qml/jordanwigner
+      title: 🟩 Преобразование Жордана-Вигнера
     - file: book/problems2qml/eigenvals
       title: 🟩 О собственных значениях
 
