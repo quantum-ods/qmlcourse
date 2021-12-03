@@ -153,14 +153,17 @@
       title: 🟩 Квантовая химия (Введение)
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
-    - file: book/problemsblock/jordanwigner
-      title: 🟧 Jordan-Wigner
     - file: book/problemsblock/ising
       title: 🟩 Модель Изинга
     - file: book/problemsblock/advising
       title: 🟧 Продвинутая модель Изинга
     - file: book/problemsblock/copt
       title: 🟩 Комбинаторная оптимизация
+
+- part: От проблем к обучению
+  chapters:
+    - file: book/problems2qml/jordanwigner
+      title: 🟩 Преобразование Жордана-Вигнера
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
