@@ -160,6 +160,11 @@
     - file: book/problemsblock/copt
       title: 🟩 Комбинаторная оптимизация
 
+- part: От проблем к обучению
+  chapters:
+    - file: book/problems2qml/jordanwigner
+      title: 🟩 Преобразование Жордана-Вигнера
+
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
     - file: book/dwaveblock/dwaveintro
