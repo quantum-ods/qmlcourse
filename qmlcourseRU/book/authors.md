@@ -24,6 +24,7 @@
 - [Игорь Токарев](https://github.com/polyzer)
 - [Илья Беседин](https://github.com/ooovector)
 - [Карина Решетова](https://github.com/Carinetta)
+- [Леонид Сендерович](https://github.com/flatslm)
 - [Николай Карелин](https://github.com/karelin)
 - [Никита Щуцкий](https://github.com/magnus-the-collectioner)
 - [Семен Синченко](https://github.com/SemyonSinchenko)
