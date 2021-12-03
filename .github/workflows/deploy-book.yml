@@ -75,14 +75,9 @@ jobs:
           poetry run pip install -U tensorflow_quantum
           poetry run pip install -U tfq-nightly
 
-      - name: export some tokens
-        env:
-          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-        run: |
-          export DWAVE_TOKEN="$DWAVE_TOKEN"
-
       - name: build the book
         run: |
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
       - name: gh-pages action
