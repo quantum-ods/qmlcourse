@@ -41,6 +41,7 @@ def make_entanglement():
 
 circuit = qml.QNode(make_entanglement, dev)
 circuit()
+```
 
 Работая с библиотекой PennyLane для математических операций, можно использовать интерфейс `NumPy`, но при этом также пользоваться преимуществами автоматического дифференцирования, которое обеспечивает <a href="https://github.com/HIPS/autograd">autograd</a>.
 Именно поэтому мы не импортировали `NumPy` обычным способом: `import numpy as np`, а сделали это так: `from pennylane import numpy as np`.
@@ -55,6 +56,7 @@ def circuit():
     return qml.probs(wires=[0, 1])
 
 print(circuit())
+```
 
 В данном примере мы взяли двухкубитную систему и создали запутанное состояние, а затем с помощью метода `probs` вычислили вероятности получения состояний $|00\rangle$, $|01\rangle$, $|10\rangle$, $|11\rangle$.
 
