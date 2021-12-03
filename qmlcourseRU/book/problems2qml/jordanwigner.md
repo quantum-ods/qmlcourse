@@ -237,7 +237,3 @@ $$
 H_k -t\sum_{j}(\sigma^x_{2j}\sigma^x_{2j+2}+ \sigma^y_{2j}\sigma^y_{2j+2}) \sigma^z_{2j} \sigma^z_
 {2j+1} + \frac{U}{4} \sum_{j} (1 - \sigma^z_{2j} )(1 - \sigma^z_{2j+1})
 $$
-
-### Пример с кодом. Атом водорода
-
-TODO: https://qiskit.org/documentation/nature/tutorials/01_electronic_structure.html#The-mapping-from-fermions-to-qubits
