@@ -95,21 +95,19 @@ import matplotlib.pyplot as plt
 
 Отобразим задачу на граф, где провинции будут вершинами графа, а границы -- его ребрами. Например `(AB, BC)` -- ребро, соответствующее границе между провинциями Альберта и Британская Колумбия. Обозначения провинций представлены в таблице ниже.
 
-| код | провинция                 | код | провинция            |
-|-----|---------------------------|-----|----------------------|
-| AB  | Alberta                   | BC  | British Columbia     |
-| MB  | Manitoba                  | NB  | New Brunswick        |
-| NL  | Newfoundland and Labrador | NS  | Nova Scotia          |
-| NT  | Northwest Territories     | NU  | Nunavut              |
-| ON  | Ontario                   | PE  | Prince Edward Island |
-| QC  | Quebec                    | SK  | Saskatchewan         |
-| YT  | Yukon                     |
+| код | провинция             | код | провинция                 | код | провинция    |
+|-----|-----------------------|-----|---------------------------|-----|--------------|
+| AB  | Alberta               | BC  | British Columbia          | MB  | Manitoba     |
+| NB  | New Brunswick         | NL  | Newfoundland and Labrador | NS  | Nova Scotia  |
+| NT  | Northwest Territories | NU  | Nunavut                   | ON  | Ontario      |
+| PE  | Prince Edward Island  | QC  | Quebec                    | SK  | Saskatchewan |
+| YT  | Yukon                 |
 
 ```{code-cell} ipython3
-provinces = ['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE', 'QC', 'SK', 'YT']
-neighbors = [('AB', 'BC'), ('AB', 'NT'), ('AB', 'SK'), ('BC', 'NT'), ('BC', 'YT'),
-             ('MB', 'NU'), ('MB', 'ON'), ('MB', 'SK'), ('NB', 'NS'), ('NB', 'QC'),
-             ('NL', 'QC'), ('NT', 'NU'), ('NT', 'SK'), ('NT', 'YT'), ('ON', 'QC')]
+provinces = ["AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT"]
+neighbors = [("AB", "BC"), ("AB", "NT"), ("AB", "SK"), ("BC", "NT"), ("BC", "YT"),
+             ("MB", "NU"), ("MB", "ON"), ("MB", "SK"), ("NB", "NS"), ("NB", "QC"),
+             ("NL", "QC"), ("NT", "NU"), ("NT", "SK"), ("NT", "YT"), ("ON", "QC")]
 ```
 
 Чтобы "объяснить" отжигателю эту задачу, необходимо сформулировать ее в виде [задачи удовлетворения ограничений](https://ru.wikipedia.org/wiki/Удовлетворение_ограничений) (`Constraint Satisfaction Problem (CSP)`). В свою очередь, библиотеки `D-Wave` умеют отображать ее на модель Изинга. Математически, это выглядит следующим образом: каждой провинции (вершине графа) сопоставляется 4 бинарные переменные (каждая отвечает за один из четырех цветов) $x_i \in \{0,1\}$, где одна из переменных "выбирает" цвет и переключается в состояние $x_i = 1$, как и остальные три переменные остаются в состоянии $0$.
@@ -164,7 +162,7 @@ base_sampler = DWaveSampler(token=os.environ["DWAVE_TOKEN"])
 
 ```{code-cell} ipython3
 sampler = EmbeddingComposite(base_sampler)
-sampleset = sampler.sample(bqm, num_reads=1000, label='Canada Map Coloring')
+sampleset = sampler.sample(bqm, num_reads=1000, label="Canada Map Coloring")
 ```
 
 Проверим, что было найдено решение задачи,
@@ -185,7 +183,7 @@ from typing import Tuple
 from typing import Dict
 
 
-def plot_map(sample: Dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]):
+def plot_map(sample: Dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]) -> None:
     G = nx.Graph()
     G.add_nodes_from(provinces)
     G.add_edges_from(neighbors)
