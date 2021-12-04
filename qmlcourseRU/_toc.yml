@@ -162,6 +162,10 @@
 
 - part: От проблем к обучению
   chapters:
+    - file: book/problems2qml/problems2qmlintro
+      title: ⬜ О блоке
+    - file: book/problems2qml/np2ising
+      title: 🟩 NP как модели Изинга
     - file: book/problems2qml/jordanwigner
       title: 🟩 Преобразование Жордана-Вигнера
 
