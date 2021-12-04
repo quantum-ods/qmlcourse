@@ -155,6 +155,7 @@ bqm = dwavebinarycsp.stitch(csp)
 
 ```{code-cell} ipython3
 import os
+
 base_sampler = DWaveSampler(token=os.environ["DWAVE_TOKEN"])
 ```
 
