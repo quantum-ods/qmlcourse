@@ -50,7 +50,7 @@ So, why do we care about barren plateaus? Because the properties of the gradient
 
 [Insert figure with a big unitary matrix]
 
-"When the what is a what??". Let's unravel those terms, which are crucial to understand the essence of barren plateaus.
+"When the circuit distribution is a what?". Let's unravel those terms, which are crucial to understand the essence of barren plateaus.
 
 #### Haar measure and 2-designs
 
@@ -102,15 +102,22 @@ So what's the link between 2-designs and barren plateaus? It happens that whenev
 >
 > $$\text{Var}[\partial_k E] \sim - \frac{2}{2^{3n}} \text{Tr}[\rho^2] \text{Tr}[H^2] \text{Tr}[A^2]$$
 
-So in other words, randomly initializing a quantum circuit such that the resulting distribution is 2-design will directly give you exponentially vanishing gradients. The trace terms appearing in the variance usually don't contribute too much to the overall scaling. Indeed, taking VQE as an example, the intial density matrix is usually taken to be $\rho = |0\rangle \langle 0 |$ for which $\text{Tr}[\rho^2]=1$. Gates are usually rotations, in which case $A$ is a pauli matrix fullfilling $\text{Tr}[A^2]=n$. Finally, if $H$ is a sum of local terms (e.g. an Ising Hamiltonian), we can also show that $\text{Tr}[H^2]$ won't have any influence on the scaling.
+So in other words, randomly initializing a quantum circuit such that the resulting distribution is a 2-design will directly give you exponentially vanishing gradients. The trace terms appearing in the variance usually don't contribute too much to the overall scaling. Indeed, taking VQE as an example, the intial density matrix is usually taken to be $\rho = |0\rangle \langle 0 |$ for which $\text{Tr}[\rho^2]=1$. Gates are usually rotations, in which case $A$ is a pauli matrix, fullfilling $\text{Tr}[A^2]=n$. Finally, if $H$ is a sum of local terms (e.g. an Ising Hamiltonian), we can also show that $\text{Tr}[H^2]$ won't have any influence on the scaling.
 
-What is the intuition behind this result? Levy's lemma and concentration of measure
+<!-- While proving this theorem is out-of-scope for this lecture, let's try to give some intuition using the notion of concentration of measure.
 
-### When the number of layers if high
+#### Concentration of measure -->
 
-How do we get 2-designs? By having a large depth.
 
-This statement was made more precise in the cost-function dependent BP paper, in which they studied one particular type of ansatz: the so-called hardware-efficient ansatz (HEA).
+
+### When the number of layers is high
+
+At this point of the lecture, you might be thinking that this 2-design assumption doesn't help you much in knowing whether your particular variational architecture has a barren plateau or not. Indeed, how to know if your ansatz and initialization scheme give rise to a 2-design?
+
+The first hint concerns the number of layers.
+Indeed, a known procedure to create a 2-design is to build a circuit with a polynomial number of random 2-qubit gates. The precise nature of the polynomial depends on the dimension of the lattice underlying your qubits (considering that you can only put a gate between neighboring qubits). For a lattice of dimension $d$, having $O(n^{1/D})$ random gates gives you an approximate 2-design (see [Harrow and Mehraban, 2018](https://arxiv.org/abs/1809.06957)). So, while having a high-dimensional lattice is advantageous from an expressiveness perspective (you can build more circuits at a given depth), it will kill your gradients with a higher probability.
+
+This statement was made rigorous for a particular type of 1D ansatz: the hardware-efficient ansatz (HEA).
 
 Description of the HEA.
 
@@ -153,3 +160,5 @@ Paper by UCL team.
 ## The maths of barren plateaus
 
 ## Resources
+
+* [A short introduction to unitary t-designs](https://glassnotes.github.io/OliviaDiMatteo_Unitary2Designs.pdf)
