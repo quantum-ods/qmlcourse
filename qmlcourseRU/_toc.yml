@@ -69,7 +69,7 @@
       title: ⬜ О блоке
     - file: book/progblock/progreview
       title: 🟩 Обзор фреймворков
-    - file: book/progblock/pennylane.ipynb
+    - file: book/progblock/pennylane
       title: 🟩 PennyLane
     - file: book/progblock/cirq_tfq
       title: 🟧 Cirq & TFQ
@@ -88,6 +88,8 @@
       title: 🟩 Квантовая телепортация
     - file: book/qcalgo/grovers_algorithm
       title: 🟧 Алгоритм Гровера
+    - file: book/qcalgo/simon_algorithm
+      title: 🟧 Алгоритм Саймона
 
 - part: Железо квантовых компьютеров
   chapters:
@@ -102,8 +104,12 @@
   chapters:
     - file: book/qmlkindsblock/qmlkindsintro.md
       title: ⬜ О блоке
+    - file: book/qmlkindsblock/qmlkinds
+      title: 🟦 Виды QML
     - file: book/qmlkindsblock/hhl_algorithm
       title: 🟥 Алгоритм HHL
+    - file: book/qmlkindsblock/qknn
+      title: 🟥 Алгоритм QKNN
 
 - part: Вариационные схемы
   chapters:
@@ -127,12 +133,16 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+    - file: book/qsvmblock/classic_svm
+      title: 🟧 Классический SVM
 
 - part: Квантовые нейронные сети
   chapters:
-    - file: book/qnnblock/qnnintro.md
+    - file: book/qnnblock/qnnintro
       title: ⬜ О блоке
-    - file: book/qnnblock/qconv.ipynb
+    - file: book/qnnblock/qnn
+      title: 🟩 Квантовые нейронные сети
+    - file: book/qnnblock/qconv
       title: 🟩 Квантовые сверточные сети
 
 - part: Проблемы квантового машинного обучения
@@ -144,9 +154,22 @@
     - file: book/problemsblock/quantchemadvancedscf
       title: 🟧 Квантовая химия (SCF)
     - file: book/problemsblock/ising
-      title: 🟩 Модель Изинга (Введение)
+      title: 🟩 Модель Изинга
     - file: book/problemsblock/advising
-      title: 🟧 Модель Изинга (Метод трансфер-матрицы)
+      title: 🟧 Продвинутая модель Изинга
+    - file: book/problemsblock/copt
+      title: 🟩 Комбинаторная оптимизация
+
+- part: От проблем к обучению
+  chapters:
+    - file: book/problems2qml/problems2qmlintro
+      title: ⬜ О блоке
+    - file: book/problems2qml/np2ising
+      title: 🟩 NP как модели Изинга
+    - file: book/problems2qml/jordanwigner
+      title: 🟩 Преобразование Жордана-Вигнера
+    - file: book/problems2qml/eigenvals
+      title: 🟩 О собственных значениях
 
 
 
