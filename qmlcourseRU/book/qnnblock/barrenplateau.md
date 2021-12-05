@@ -151,14 +151,33 @@ Example of the QCNN
 
 ### Initialization strategies
 
-Paper by UCL team.
+Paper by UCL team. However, unlikely to really help, see next section.
 
-## Expressibility vs trainability
+## Landscape of variational circuits
 
-## Landscape close to the minimum: narrow gorges
+Is there any hope of finding better gradients by initializing circuits differently, or choosing different optimizers than gradient descent?
+Unfortunately, evidence seem to converge to a negative answer: the barren plateau phenomenon is not fundamentally about random gradients or 2-designs, it is about the optimization landscape of variational circuits. If the gradient of random circuits is exponentially small with a high probability, it means that a significant part of the landscape is basically flat. It implies that whatever optimization method you choose (gradient-free, second-order, etc.), you will have a hard time navigate the landscape towards a global minimum. It also means that the only initialization strategies that are likely to help are the ones that already bring you very close to a global minimum, but finding such strategy might be as hard as finding the minimum itself. This idea that flat landscapes are the essence of barren plateau was made more precise in a series of papers that we will discuss now.
 
-## The maths of barren plateaus
+### Barren plateaus and narrow gorges
+
+### Could gradient-free or second-order optimizers help navigate the landscape?
+
+No.
+
+### Expressibility vs trainability
+
+## Conclusion
 
 ## Resources
 
+* [Pennylane tutorial on barren plateaus](https://pennylane.ai/qml/demos/tutorial_barren_plateaus.html)
+* [Pennylane tutorial on the Haar measure](https://pennylane.ai/qml/demos/tutorial_haar_measure.html)
 * [A short introduction to unitary t-designs](https://glassnotes.github.io/OliviaDiMatteo_Unitary2Designs.pdf)
+
+## Appendix: the maths of barren plateaus
+
+### Computing gradients
+
+### Computing expectations: Weingarten calculus
+
+Hands-on example with RTNI in Python.
