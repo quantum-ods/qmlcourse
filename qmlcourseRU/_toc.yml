@@ -189,7 +189,7 @@
     - file: book/vqeblock/vqe
       title: 🟩 Основы VQE
     - file: book/vqeblock/tspvqe
-      title: 🟩 TSP с помощью VQE
+      title: 🟧 VQE - практика
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
