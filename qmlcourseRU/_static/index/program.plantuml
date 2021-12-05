@@ -83,9 +83,9 @@ package "Week 6" {
 
 package "Week 7" {
           package "From problems to QML" #Bisque {
-                usecase "NP-problems as Ising model" as npising #40B464
-                usecase "Jordan-Wigner transformation" as jordan #40B464
-                usecase "Eigenvalues problem" as eigenvals #40B464
+                rectangle "NP-problems as Ising model" as npising #40B464
+                rectangle "Jordan-Wigner transformation" as jordan #FFC864
+                rectangle "Eigenvalues problem" as eigenvals #40B464
         }
 
         package "VQE" #Bisque {
@@ -94,13 +94,13 @@ package "Week 7" {
         }
 
         package "D-Wave" #Bisque {
-                usecase "D-Wave & Sampling" as dwave #40B464
+                rectangle "D-Wave & Sampling" as dwave #40B464
         }
 }
 
 package "Week 8" {
         package "QAOA" #Bisque {
-                usecase "QAOA" as qaoa #40B464
+                rectangle "QAOA" as qaoa #40B464
         }
         package "Advanced Topics" as adv #Bisque {
                 rectangle "SotA review" as sota #40B464
@@ -109,11 +109,10 @@ package "Week 8" {
 
 package "Week 9" {
         package "Jobs and Perspectives" as jobs #Bisque {
-                usecase "Academic positions" as academic #White
-                usecase "Industrial positions" as industrial #White
+                rectangle "Academic positions" as academic #White
+                rectangle "Industrial positions" as industrial #White
         }
 }
-
 
 intro1 --> python
 intro1 --> numpy
