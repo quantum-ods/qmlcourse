@@ -27,7 +27,7 @@ kernelspec:
 
 ```{code-cell} ipython3
 import matplotlib.pyplot as plt
-%config InlineBackend.figure_format = 'retina'
+%config InlineBackend.figure_format = "retina"
 
 import numpy as np
 import networkx as nx

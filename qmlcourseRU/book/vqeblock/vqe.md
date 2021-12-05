@@ -156,6 +156,7 @@ exact = -11.0
 
 ```{code-cell} ipython3
 import matplotlib.pyplot as plt
+%config InlineBackend.figure_format = "retina"
 
 opt = qml.MomentumOptimizer()
 
