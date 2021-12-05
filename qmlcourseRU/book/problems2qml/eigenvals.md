@@ -129,12 +129,12 @@ min_eigval = sl.eigsh(spmat, k=1, which="SM", return_eigenvectors=False)[0]
 print(f"Min E: {min_eigval}\nMax E: {max_eigval}")
 ```
 
-У этой процедуры из `ARPACK` немного другие варианты параметра `which`:
+У этой процедуры из `ARPACK` немного другие варианты параметра `which`, так как мы помним, что у эрмитовых матриц собственные значения вещественны:
 
  - `LM` -- _largest magnitude_ -- наибольшие по модулю
  - `SM` -- _smallest magnitude_ -- наименьшие по модулю
- - `LA` -- _largest algebraic_ -- алгебраически наибольшие
- - `SA` -- _smallest algebraic_ -- алгебраически наименьшие
+ - `LA` -- _largest algebraic_ -- алгебраически наибольшие, т.е. с учетом знака
+ - `SA` -- _smallest algebraic_ -- алгебраически наименьшие, т.е. с учетом знака
 
 ## Вариационные алгоритмы
 
