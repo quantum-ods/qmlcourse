@@ -167,7 +167,7 @@
     - file: book/problems2qml/np2ising
       title: 🟩 NP как модели Изинга
     - file: book/problems2qml/jordanwigner
-      title: 🟩 Преобразование Жордана-Вигнера
+      title: 🟧 Преобразование Жордана-Вигнера
     - file: book/problems2qml/eigenvals
       title: 🟩 О собственных значениях
 
