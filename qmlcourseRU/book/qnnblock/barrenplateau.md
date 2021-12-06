@@ -115,21 +115,60 @@ So in other words, randomly initializing a quantum circuit such that the resulti
 At this point of the lecture, you might be thinking that this 2-design assumption doesn't help you much in knowing whether your particular variational architecture has a barren plateau or not. Indeed, how to know if your ansatz and initialization scheme give rise to a 2-design?
 
 The first hint concerns the number of layers.
-Indeed, a known procedure to create a 2-design is to build a circuit with a polynomial number of random 2-qubit gates. The precise nature of the polynomial depends on the dimension of the lattice underlying your qubits (considering that you can only put a gate between neighboring qubits). For a lattice of dimension $d$, having $O(n^{1/D})$ random gates gives you an approximate 2-design (see [Harrow and Mehraban, 2018](https://arxiv.org/abs/1809.06957)). So, while having a high-dimensional lattice is advantageous from an expressiveness perspective (you can build more circuits at a given depth), it will kill your gradients with a higher probability.
+Indeed, a known procedure to create a 2-design is to build a circuit with a polynomial number of random 2-qubit gates. The precise nature of the polynomial depends on the dimension of the lattice underlying your qubits (considering that you can only put a gate between neighboring qubits). For a lattice of dimension $d$, having $O(n^{1/d})$ random gates gives you an approximate 2-design (see [Harrow and Mehraban, 2018](https://arxiv.org/abs/1809.06957)). So, while having a high-dimensional lattice is advantageous from an expressiveness perspective (you can build more circuits at a given depth), it will kill your gradients with a higher probability.
 
-This statement was made rigorous for a particular type of 1D ansatz: the hardware-efficient ansatz (HEA).
+This statement was made rigorous in [Cerezo et al, 2020](https://arxiv.org/abs/2001.00550), for a particular type of 1D ansatz: the hardware-efficient ansatz (HEA), sometimes also called alternating layer ansatz. Here is a representation of the HEA, along with the scaling laws demonstrated in the paper:
 
-Description of the HEA.
+![Scaling of the hardware-efficient ansatz](../../_static/qnnblock/cost-dependent-bp.png)
 
-Description of the paper's results.
+We can see that the ansatz is indeed one-dimensional: each qubit is only connected to two other qubits. Moreover, each layer is a depth-two circuit made of gates between all the neighboring qubits. The name "hardware-efficient" comes from the combination of those two properties: 1D lattices can easily be realised on real hardware, and gates are efficiently lay out in the circuit.
+
+In [Cerezo et al, 2020](https://arxiv.org/abs/2001.00550), the authors show that if each $2$-qubit unitary of the HEA follows a 2-design and if your cost function is local (more on that later), then you will **not** have any barren plateau if the number of layers grows as $O(log(n))$ (where $n$ is the number of qubits). On the other hand, you will have one if the number of layers grows as $O(poly(n))$. While those laws were only proven in the context of the HEA, they are likely to hold for other types of ansatzes.
 
 
 ### When the cost function is global
 
-In the previous discussion, we've assumed that the cost function was local.
-If the cost function is global, more chance of BP.
+In the previous discussion, we assumed that the cost function was local. Let's explain what we mean by that. In many variational algorithm, the cost function can be written as
 
-Example of global cost function: the fidelity
+$$
+f(\theta)=\text{Tr}[H \rho_{\theta}]
+$$
+
+where $\rho_{\theta}$ is the output of the quantum circuit (which depends on the gate parameters $\theta$). We say that the cost function is local if $H$ can be written as a sum of "local" terms, i.e. terms that only involve a constant number of qubits. For instance, the Ising model
+
+$$
+H=\sum_{i,j} J_{ij} Z_i Z_j
+$$
+
+is local (since each term $Z_i Z_j$ only involves two qubits), while a Hamiltonian like
+
+$$
+H=Z^{\otimes n}
+$$
+
+is global.
+
+A second result from the paper mentionned previously is that global cost functions can lead to barren plateaus for all circuit depths (including constant-depth).
+
+Where do global cost functions appear in variational algorithms? An important example is when maximizing the fidelity between the output of your circuit and a given reference state. For instance, imagine that you want to prepare a state $|\psi\rangle$ at the end of your variational circuit. You can do that by maximizing the fidelity
+
+$$
+F(\psi,\psi_{\theta}) = |\langle \psi | \psi_{\theta} \rangle|^2 = \text{Tr}[|\psi\rangle \langle \psi | \rho_{\theta}]
+$$
+
+where $\rho_{\theta}=|\psi_{\theta}\rangle \langle \psi_{\theta} |$ is the output of the circuit. This corresponds to minimizing the cost function corresponding to the "Hamiltonian":
+
+$$
+H=-|\psi\rangle \langle \psi|
+$$
+
+which will often be a global cost function. For instance, if $|\psi\rangle$ is the zero state, it can be written
+
+$$
+H=-|0\rangle\langle 0|^{\otimes n},
+$$
+
+which involves all the qubits and is therefore global. We will see later how to turn this type of global cost functions into local ones, in order to mitigate the resulting barren plateau problem.
 
 ### When noise is present
 
