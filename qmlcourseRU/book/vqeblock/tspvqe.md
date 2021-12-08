@@ -299,7 +299,7 @@ ham = qml.SparseHamiltonian(op * numer_stability_const, wires=list(range(9)))
 
 ```{figure} /_static/progblock/tfq/sycamore.png
 :width: 350px
-:name: sycamore_lattice
+:name: sycamore_lattice2
 
 Схематичное изображение квантового компьютера _Sycamore_ от компании _Google_ {cite}`sycamore`
 ```
