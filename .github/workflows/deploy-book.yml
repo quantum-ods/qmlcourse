@@ -91,7 +91,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/html/
-          destination_dir: docs
+          publish_branch: pages-gh
 
 #       - name: Build PDF file
 #         run: |
