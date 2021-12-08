@@ -178,6 +178,6 @@ dwave --> qaoa
 
 qaoa -> sota
 
-dwave -> academic_industrial
+qaoa --> academic_industrial
 
 @enduml
