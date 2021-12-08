@@ -2692,6 +2692,18 @@ testing = ["pytest (>=6.0.1,<6.1.0)", "pytest-regressions (>=2.0.1,<2.1.0)"]
 themes = ["sphinx-rtd-theme", "pydata-sphinx-theme (>=0.4.0,<0.5.0)", "sphinx-book-theme (>=0.0.36,<0.1.0)", "myst-parser (>=0.12.9,<0.13.0)"]
 
 [[package]]
+name = "sphinx-sitemap"
+version = "2.2.0"
+description = "Sitemap generator for Sphinx"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
+sphinx = ">=1.2"
+
+[[package]]
 name = "sphinx-thebe"
 version = "0.0.10"
 description = "Integrate interactive code blocks into your documentation with Thebe and Binder."
@@ -3087,7 +3099,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "cf035a211a4fed2cc2c3042f3fdb8e77333c4330ff263a16af09186959a79a49"
+content-hash = "2b605a1f527abcc6f606543d923a15ac5453ea7ba4a8e33e2646e1634d2854d2"
 
 [metadata.files]
 absl-py = [
@@ -4949,6 +4961,9 @@ sphinx-panels = [
     {file = "sphinx-panels-0.5.2.tar.gz", hash = "sha256:b7b3faa05f37b7318fd14cd85c4effa1ab905dfc8bed236a63978565ea461ae4"},
     {file = "sphinx_panels-0.5.2-py3-none-any.whl", hash = "sha256:2b2e18448b0494e7a232d6c7dfb9aa3982e7aeb92aeea7d1b146e34e9261d2f1"},
 ]
+sphinx-sitemap = [
+    {file = "sphinx-sitemap-2.2.0.tar.gz", hash = "sha256:65adda39233cb17c0da10ba1cebaa2df73e271cdb6f8efd5cec8eef3b3cf7737"},
+]
 sphinx-thebe = [
     {file = "sphinx-thebe-0.0.10.tar.gz", hash = "sha256:b51ed38e0974c891319aed1554212598597ae12226c7916f2215becc382ae8d7"},
     {file = "sphinx_thebe-0.0.10-py3-none-any.whl", hash = "sha256:4e349204eab2f059d037be423b93bfe138fa8feceedd5eae7f358f1e82403968"},
@@ -5024,12 +5039,6 @@ sqlalchemy = [
     {file = "SQLAlchemy-1.4.26.tar.gz", hash = "sha256:6bc7f9d7d90ef55e8c6db1308a8619cd8f40e24a34f759119b95e7284dca351a"},
 ]
 symengine = [
-    {file = "symengine-0.8.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d0880ff7f447d1b994f05fa9e4aab7823c1cf4b02ebc06c4179387fc96970ad0"},
-    {file = "symengine-0.8.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:b651e7d1a1dfdea55acc5d5473e0f1a815fd417a66d232226e1fc26262496c4c"},
-    {file = "symengine-0.8.1-cp310-cp310-manylinux2010_x86_64.whl", hash = "sha256:602997991b314ea5a13d0ddf9703b8b74c805f02721b735c3082841cc975da7b"},
-    {file = "symengine-0.8.1-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:a2fb3aca761b53eac25b453b8a5d8e9bf6ca76208eb3e7a64c96db70b907d550"},
-    {file = "symengine-0.8.1-cp310-cp310-manylinux2014_ppc64le.whl", hash = "sha256:ab0e2cc85944ce749e87b12fbd090af2347ef202b107c3ff31e46cd3cf2bad9a"},
-    {file = "symengine-0.8.1-cp310-cp310-win_amd64.whl", hash = "sha256:50ee5950cd7dfaa0c59bb9b46499900c5acdc09af8bba1a0be3b31c2640e3785"},
     {file = "symengine-0.8.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:84482ca9b4432de61a45fce6f6d19241f4c1e450484fdbe6a8a6a1f885d32e60"},
     {file = "symengine-0.8.1-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:e0a0224e4e9d646be63387d53645e7060068304e5d7927fe97d668e7709e4ded"},
     {file = "symengine-0.8.1-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:2fa3493b2bea646520e4bc4531aa7e860b104aefece927167c476c827aaf3654"},
