@@ -102,15 +102,13 @@ package "Week 8" {
         package "QAOA" #Bisque {
                 rectangle "QAOA" as qaoa #40B464
         }
+
         package "Advanced Topics" as adv #Bisque {
                 rectangle "SotA review" as sota #40B464
         }
-}
 
-package "Week 9" {
         package "Jobs and Perspectives" as jobs #Bisque {
-                rectangle "Academic positions" as academic #White
-                rectangle "Industrial positions" as industrial #White
+                rectangle "Academic & Industrial positions" as academic_industrial #White
         }
 }
 
@@ -179,7 +177,7 @@ vqe -> tspvqe
 dwave --> qaoa
 
 qaoa -> sota
-qaoa --> academic
-qaoa --> industrial
+
+dwave -> academic_industrial
 
 @enduml
