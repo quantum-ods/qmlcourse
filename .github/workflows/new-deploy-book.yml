@@ -1,0 +1,100 @@
+name: new-deploy-book
+
+on:
+  workflow_dispatch:
+    inputs:
+      DisableCache:
+        description: 'Disable cache'
+        required: false
+        default: 'false'
+  push:
+    branches: [ master ]
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            label: linux-64
+            prefix: /usr/share/miniconda3/envs/qmlcourse.ai
+
+          # - os: macos-latest
+          #   label: osx-64
+          #   prefix: /Users/runner/miniconda3/envs/qmlcourse.ai
+
+          # - os: windows-latest
+          #   label: win-64
+          #   prefix: C:\Miniconda3\envs\qmlcourse.ai
+jobs:
+
+  deploy_book:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TF_CPP_MIN_LOG_LEVEL: 3
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: Checkout branch with cache
+        uses: actions/checkout@v2
+        with:
+          ref: "gh-pages"
+          path: ./gh-pages
+
+      - name: Copy cache for build book
+        if: ${{ github.event.inputs.DisableCache != 'true' }}
+        run: |
+          cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
+      - name: Download a requirements.yml artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: requirements-yml-file
+
+      # Install dependencies
+      - name: install qmlcourse.ai mamba env
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+            miniforge-variant: Mambaforge
+            miniforge-version: latest
+            use-mamba: true
+            python-version: 3.9
+            mamba-version: "*"
+            channels: conda-forge, defaults
+            channel-priority: true
+            activate-environment: qmlcourse.ai
+            environment-file: environment.yml
+
+      # Use cache
+      - uses: actions/cache@v2
+        with:
+          path: ${{ matrix.prefix }}
+          key: ${{ matrix.label }}-conda-${{ hashFiles('environment.yml') }}
+        id: mamba-cache
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
+      - name: Build the book
+        run: |
+          poetry run jupyter-book build ./qmlcourseRU
+
+      # Push the book's HTML to github-pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU
+
+#       - name: Build PDF file
+#         run: |
+#           poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
+#           mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/all_book.pdf
+
+#       - name: Deploy only pdf files
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./qmlcourseRU/_build/pdf/
+#           destination_dir: pdf

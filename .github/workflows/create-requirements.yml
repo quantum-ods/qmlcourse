@@ -1,0 +1,44 @@
+name: create-requirements
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+    paths:
+      - poetry.lock
+
+jobs:
+
+  create-reqs:
+    runs-on: ubuntu-latest
+    env:
+      TF_CPP_MIN_LOG_LEVEL: 3
+
+    steps:
+      - name: Setup Mambaforge
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: 3.9
+          miniforge-variant: Mambaforge
+          miniforge-version: latest
+          activate-environment: qmlcourse.ai
+          environment-file: tools/environment.yml
+          use-mamba: true
+      - name: install the main dependencies
+        run: |
+          poetry install
+      # todo: replace with a more sane solution
+      - name: install tensorflow_quantum # https://www.tensorflow.org/quantum/install
+        run: |
+          poetry run pip install --upgrade pip
+          poetry run pip install -U tensorflow==2.5.1
+          poetry run pip install -U tensorflow_quantum
+          poetry run pip install -U tfq-nightly
+      - name: create requirements.yml
+        run: conda env export > environment.yml
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: environment-yml-file
+          path: environment.yml
+      # TODO: commit this file

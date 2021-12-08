@@ -1,0 +1,60 @@
+name: deploy-branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  deploy_branch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+
+      - name: get branch name
+        uses: nelonoel/branch-name@v1.0.1
+
+      - name: install mamba and poetry
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: 3.9
+          mamba-version: "*"
+          channels: conda-forge, psi4, defaults
+          channel-priority: true
+          activate-environment: qmlcourse.ai
+          environment-file: tools/environment.yml
+
+      - name: install poetry dependencies
+      - shell: bash -l {0}
+        run: poetry install
+
+      # todo: replace with a more sane solution
+      - name: install tensorflow_quantum
+      - shell: bash -l {0}
+        run: |
+          poetry run pip install -U tensorflow==2.5.1
+          poetry run pip install -U tensorflow_quantum
+          poetry run pip install -U tfq-nightly
+
+      - name: add SSH key-file
+        run: |
+          mkdir -p /home/runner/.ssh
+          echo "${{ secrets.AWS_SSH_KEY }}" > /home/runner/.ssh/key.pem
+          chmod 600 /home/runner/.ssh/key.pem
+
+      - name: build the book
+        run: |
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          poetry run jupyter-book build ./qmlcourseRU
+
+      - name: deploy
+        run: |
+          export CURRENT_BRANCH="${BRANCH_NAME}"
+
+          export AWS_HOST="54.89.156.216"
+          export AWS_USER="ubuntu"
+          export SSH_KEY="/home/runner/.ssh/key.pem"
+
+          poetry run python ./tools/deploy2aws.py ./
