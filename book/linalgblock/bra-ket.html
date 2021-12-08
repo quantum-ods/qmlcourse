@@ -1,0 +1,1131 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Скобки &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/linalgblock/bra-ket.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Матрицы" href="matrices.html" />
+    <link rel="prev" title="Векторы" href="vectors.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/linalgblock/bra-ket.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/linalgblock/bra-ket.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/linalgblock/bra-ket.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/linalgblock/bra-ket.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Гильбертово пространство
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Полное пространство
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Нотация Дирака, или Bra-Ket нотация
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outer-product">
+   Внешнее произведение (outer-product)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Эрмитов оператор
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Унитарный оператор
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Пример: оператор-проектор
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Пример: оператор поворота
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Пример: оператор дифференцирования
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   Произведение Кронекера
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   Рекомендованная литература
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   Что мы узнали
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="bra-ket">
+<span id="id1"></span><h1>Скобки<a class="headerlink" href="#bra-ket" title="Permalink to this headline">¶</a></h1>
+<p>Дисклеймер: нам нужен инструментарий для работы с более абстрактными пространствами!</p>
+<p>Символ Кронекера и остальные специальные тензора – это удобные примитивы для низкоуровневой работы с матрицами и векторами. Физики смогли придумать поверх примитивов линейной алгебры отличный синтаксический сахар, т.н. нотацию Дирака. Но давайте начнем с определения гильбертова пространства.</p>
+<div class="section" id="id2">
+<h2>Гильбертово пространство<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Гильбертово пространство – это полное линейное векторное пространство, определяемое:</p>
+<ol class="simple">
+<li><p>скалярным произведением <span class="math notranslate nohighlight">\((u, v)\)</span>, в простейшем частном случае - <span class="math notranslate nohighlight">\((u, v) = u^{\dagger} v\)</span>;</p></li>
+<li><p>зафиксированной нормой вида <span class="math notranslate nohighlight">\(||v|| = \sqrt{(v,v)}\)</span>;</p></li>
+<li><p>метрикой <span class="math notranslate nohighlight">\(d(u,v) = ||u-v|| = \sqrt{(u-v,u-v)}\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>Полное пространство<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>При нахождении предела некоторой последовательности полное метрическое пространство дает возможность не думать о принадлежности этого предела данному пространству, то есть по своей сути разрешает предельный переход и позволяет доказать множество красивых теорем. Подробнее строгое определение можно посмотреть <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE">тут</a>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Нотация Дирака, или Bra-Ket нотация<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Напомним, что в гильбертовом пространстве для пространства <span class="math notranslate nohighlight">\(H\)</span> определено сопряженное пространство <span class="math notranslate nohighlight">\(H^{\dagger}\)</span>.
+Тогда можно рассмотреть обозначение Ket для элемента <span class="math notranslate nohighlight">\(v\)</span> из <span class="math notranslate nohighlight">\(H\)</span> как вектор-столбец:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{bmatrix}
+\end{split}\]</div>
+<p>и обозначение Bra для элемента <span class="math notranslate nohighlight">\(u\)</span> из сопряженного пространства <span class="math notranslate nohighlight">\(H^*\)</span> как сопряженную вектор-строку</p>
+<div class="math notranslate nohighlight">
+\[
+\bra{u}= \begin{bmatrix} u_1^* &amp; u_2^* &amp; \cdots &amp; u_N^* \end{bmatrix}
+\]</div>
+<p>Bra-ket <span class="math notranslate nohighlight">\(u\)</span> и <span class="math notranslate nohighlight">\(v\)</span> просто задает скалярное произведение между этими элементами:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\bra{u} \ket{v} = u_1^* v_1 + u_2^* v_2 + \cdots + u_N^* v_N =
+\begin{bmatrix} u_1^* &amp; u_2^* &amp; \cdots &amp; u_N^* \end{bmatrix}
+\begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{bmatrix}
+\end{split}\]</div>
+<p>Часто, например, требуется показать два граничных  состояния кубита <span class="math notranslate nohighlight">\(\ket{0}\)</span>, <span class="math notranslate nohighlight">\(\ket{1}\)</span>, тогда мы можем записать их просто как вектор-столбцы: <span class="math notranslate nohighlight">\(\ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> и <span class="math notranslate nohighlight">\(\ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>. В следующей лекции этот вопрос будет рассмотрен детальнее.</p>
+</div>
+<div class="section" id="outer-product">
+<h2>Внешнее произведение (outer-product)<a class="headerlink" href="#outer-product" title="Permalink to this headline">¶</a></h2>
+<p>Также имеет смысл и переставленная запись Ket-Bra, которая называется <a class="reference external" href="https://en.wikipedia.org/wiki/Outer_product"><em>внешним произведением</em></a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{u} \bra{v} = \begin{bmatrix} u_1^* &amp; u_2^* &amp; \cdots &amp; u_N^* \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{bmatrix} = \begin{bmatrix}
+  u_1^* v_1 &amp; u_1^* v_2 &amp; \cdots &amp; u_1^* v_N \\
+  u_2^* v_1 &amp; u_2^* v_2 &amp; \cdots &amp; u_2^* v_N \\
+  \vdots &amp; \cdots &amp;  \ddots &amp; \vdots\\
+  u_N^* v_1 &amp; \cdots &amp; \cdots &amp; u_N^* v_N
+\end{bmatrix}
+\end{split}\]</div>
+<p>По сути это матрица <span class="math notranslate nohighlight">\(N \times N\)</span>, то есть новый оператор в гильбертовом пространстве. Не все перестановки имеют смысл, например, нельзя записать <span class="math notranslate nohighlight">\(\bra{v} \bra{v}\)</span> или <span class="math notranslate nohighlight">\(\ket{u} \ket{v}\)</span>.</p>
+<p>Мы вернемся к Ket-Bra чуть ниже, когда будем говорить про операторы проекции.</p>
+</div>
+<div class="section" id="id5">
+<h2>Эрмитов оператор<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Оператор <span class="math notranslate nohighlight">\(U\)</span> называется <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B8%D1%82%D0%BE%D0%B2_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"><em>эрмитовым</em></a>, если он удовлетворяет равенству <span class="math notranslate nohighlight">\((Uv,u) = (v,Uu)\)</span> для всех <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(v\)</span> из <span class="math notranslate nohighlight">\(H\)</span> или в матричном виде:</p>
+<div class="math notranslate nohighlight">
+\[
+U=U^{\dagger}
+\]</div>
+</div>
+<div class="section" id="id6">
+<h2>Унитарный оператор<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Unitary_operator"><em>Унитарный оператор</em></a> <span class="math notranslate nohighlight">\(\hat{U}:H \rightarrow H\)</span> на гильбертовом пространстве <span class="math notranslate nohighlight">\(H\)</span> – это линейный оператор, который удовлетворяет следующему равенству <span class="math notranslate nohighlight">\((Uv, Uu) = (u,v)\)</span> для любых <span class="math notranslate nohighlight">\(v \in H\)</span>, <span class="math notranslate nohighlight">\(u \in H\)</span>. Или в матричной форме:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}^{\dagger}\hat{U}=\hat{U}\hat{U}^{\dagger}=I
+\]</div>
+<p>Напомним, что операция <span class="math notranslate nohighlight">\(\hat{U}^\dagger\)</span> (другое частое обозначение в работах – звездочка или <span class="math notranslate nohighlight">\(H\hat{U}^{*}=\hat{U}^{H}\)</span>) в матричных терминах является последовательным применением операции транспонирования и последующего комплексного сопряжения элементов этой матрицы <span class="math notranslate nohighlight">\(\hat{U}^\dagger = \overline{\hat{U}}^T\)</span> (порядок этих операций, естественно, не влияет на результат).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+
+<span class="n">U_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">]</span>
+    <span class="p">])</span>
+
+<span class="n">U_hat_star_byhands</span> <span class="o">=</span> <span class="n">U_hat</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="n">U_hat_star_long</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">U_hat</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">U_hat_star_long</span><span class="p">,</span> <span class="n">U_hat_star_byhands</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Также в <code class="docutils literal notranslate"><span class="pre">Python</span></code> для многих операций есть соответствующие методы вместо функций и их сокращения, например <code class="docutils literal notranslate"><span class="pre">U.transpose()</span></code> – то же самое, что <code class="docutils literal notranslate"><span class="pre">U.T</span></code>, а <code class="docutils literal notranslate"><span class="pre">U.conjugate()</span></code> – <code class="docutils literal notranslate"><span class="pre">U.conj()</span></code>.</p>
+<p>Важное свойство, что любой эрмитов оператор <span class="math notranslate nohighlight">\(U\)</span> можно привести к унитарному оператору с помощью взятия матричной экспоненты от матрицы оператора, умноженного на мнимую единицу:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U} = e^{iU}
+\]</div>
+<p>Давайте докажем быстро этот факт: для эрмитовых квадратных матриц можно определить матричные функции через спектральное разложение матрицы, которое в силу свойств эрмитовых матриц имеет вид: <span class="math notranslate nohighlight">\(U=S \Lambda S^{\dagger}\)</span>, где <span class="math notranslate nohighlight">\(S\)</span> – унитарная матрица перехода к тому базису, где изначальный оператор выражается диагональной матрицей. Тогда матричная функция <span class="math notranslate nohighlight">\(f(U) = S f(\Lambda) S^{\dagger}\)</span>, т.е. мы диагонализируем матрицу и применяем функцию ко всем диагональным элементам, а потом возвращаемся в исходный базис унитарным преобразованием. Соответственно, для экспоненты:</p>
+<div class="math notranslate nohighlight">
+\[
+e^V = S e^{\Lambda} S^\dagger.
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>В качестве упражнения для самопроверки можете показать, что такое определение эквивалентно определению через степенной ряд: <span class="math notranslate nohighlight">\(e^U = \sum_{k=0}^\infty{1 \over k!}U^k\)</span></p>
+</div>
+<p>Доказательство:
+Проверим определение унитарной матрицы: <span class="math notranslate nohighlight">\(\hat{U}^{\dagger}\hat{U} = (S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger\)</span>.
+Пользуясь тем, что эрмитово сопряжение переставляет матрицы и является обратной операцией к себе же, а также тем, что <span class="math notranslate nohighlight">\(S\)</span> – унитарная матрица (то есть <span class="math notranslate nohighlight">\(S \cdot S^{\dagger}=I\)</span>), получаем:</p>
+<div class="math notranslate nohighlight">
+\[
+(S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger = \exp(-i*\Lambda) S^\dagger  S \exp (i*\Lambda)  S^\dagger
+\]</div>
+<p>Заметим, что теперь у нас уже скалярная экспонента, которая применяется к элементам диагональной матрицы, и мы можем воспользоваться тем, что произведение экспонент превращается в экспоненту от суммы степеней:</p>
+<div class="math notranslate nohighlight">
+\[
+S \exp(-i \Lambda  + i \Lambda) S^\dagger = S \exp(O) S^\dagger = S I S^\dagger = I
+\]</div>
+<p>В конце мы еще раз воспользовались тем, что <span class="math notranslate nohighlight">\(S\)</span> – унитарная. Абсолютно так же доказывается, что <span class="math notranslate nohighlight">\(\hat{U}\hat{U}^{\dagger} = I.\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Кстати, любая матрица вида <span class="math notranslate nohighlight">\(HH^{\dagger}\)</span> является эрмитовой.</p>
+</div>
+<p>Давайте продемонстрируем доказанный факт на примере матрицы дискретного преобразования Фурье без нормировочного коэффициента <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span>, <span class="math notranslate nohighlight">\(N=3\)</span>, преобразованной к <span class="math notranslate nohighlight">\(DD^{\dagger}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">N</span><span class="p">))</span>
+
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">w</span> <span class="o">**</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">w</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">w</span> <span class="o">**</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="p">])</span>
+
+<span class="n">U</span> <span class="o">=</span> <span class="n">D</span> <span class="o">@</span> <span class="n">D</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">U</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">D</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">U</span> <span class="o">@</span> <span class="n">U</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">conj</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># no</span>
+
+<span class="n">U_hat</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">U</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">U_hat</span> <span class="o">@</span> <span class="n">U_hat</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">U_hat</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">U_hat</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U = array([[ 3.00000000e+00+0.00000000e+00j,  1.00000000e+00+1.73205081e+00j,
+        -1.11022302e-16+7.77156117e-16j],
+       [ 1.00000000e+00-1.73205081e+00j,  3.00000000e+00+0.00000000e+00j,
+         1.00000000e+00+1.73205081e+00j],
+       [-1.11022302e-16-7.77156117e-16j,  1.00000000e+00-1.73205081e+00j,
+         3.00000000e+00+0.00000000e+00j]])
+D = array([[ 1. +0.j       ,  1. +0.j       ,  1. +0.j       ],
+       [ 1. +0.j       ,  0.5-0.8660254j, -0.5-0.8660254j],
+       [ 1. +0.j       , -0.5-0.8660254j, -0.5+0.8660254j]])
+np.allclose(U @ U.T.conj(), np.eye(N)) = False
+
+np.allclose(U_hat @ U_hat.conj().T, np.eye(N)) = True
+
+np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>Пример: оператор-проектор<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Оператором проекции является оператор <span class="math notranslate nohighlight">\(P\)</span> со свойством <span class="math notranslate nohighlight">\(P^2=P\)</span>.</p>
+<p>Покажем, что Ket-Bra вида <span class="math notranslate nohighlight">\(\ket{\Psi} \bra{\Psi}\)</span> обладает этим свойством.</p>
+<div class="math notranslate nohighlight">
+\[(\ket{\Psi} \bra{\Psi})^2 = \ket{\Psi} \bra{\Psi} \ket{\Psi} \bra{\Psi} = \ket{\Psi} (\bra{\Psi} \ket{\Psi}) \bra{\Psi} = \ket{\Psi} \bra{\Psi},\]</div>
+<p>поскольку вектор состояния – нормированный: <span class="math notranslate nohighlight">\(\bra{\Psi} \ket{\Psi} = 1\)</span>.</p>
+<p>Оператор Ket-Bra с вектором состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, то есть <span class="math notranslate nohighlight">\(\ket{\Psi} \bra{\Psi}\)</span>рассматривается во <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">вводной лекции про кубиты</span></a>, а также пригодится позже, когда речь зайдет о <a class="reference internal" href="../qcblock/mixedstates.html#mixedstates"><span class="std std-ref">смешанных состояниях</span></a>.</p>
+</div>
+<div class="section" id="id8">
+<h3>Пример: оператор поворота<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Оператором поворота по оси вращения <span class="math notranslate nohighlight">\(v=(x,y,z)\)</span> на угол <span class="math notranslate nohighlight">\(\theta\)</span> является</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M(v,\theta) = \begin{bmatrix}
+   \cos \theta + (1 - \cos \theta) x^2
+ &amp; (1 - \cos \theta) x y - (\sin \theta) z
+ &amp; (1 - \cos \theta) x z + (\sin \theta) y  
+\\
+   (1 - \cos \theta) y x + (\sin \theta) z
+ &amp; \cos \theta + (1 - \cos \theta) y^2
+ &amp; (1 - \cos \theta) y z - (\sin \theta) x
+\\
+   (1 - \cos \theta) z x - (\sin \theta) y
+ &amp; (1 - \cos \theta) z y + (\sin \theta) x
+ &amp; \cos \theta + (1 - \cos \theta) z^2
+\end{bmatrix}
+\end{split}\]</div>
+<p>Например, матрица поворота относительно оси <span class="math notranslate nohighlight">\(x\)</span> на <span class="math notranslate nohighlight">\(90^\degree\)</span>: <span class="math notranslate nohighlight">\(x=1\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, <span class="math notranslate nohighlight">\(z=0\)</span>, <span class="math notranslate nohighlight">\(\theta = \frac{\pi}{2}\)</span>, будет иметь вид:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+M = \begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; \cos{\frac{\pi}{2}} &amp; -\sin{\frac{\pi}{2}} \\
+0 &amp; \sin{\frac{\pi}{2}} &amp; 1 \end{bmatrix}
+\end{split}\]</div>
+<p>Если у нас больше измерений, то по тем измерениям, которые не затрагиваются этим поворотом, у нас в строке и столбце стоят нули, кроме пересечения строки и столбца, отвечающих за это измерение - там стоит единица.</p>
+<p>Операторы поворота очень важны в квантовых вычислениях. Они рассматриваются отдельно в <a class="reference internal" href="../qcblock/gates.html#gates"><span class="std std-ref">лекции про квантовые гейты</span></a> и далее используются в <a class="reference internal" href="../vqcblock/vqc.html#vqc"><span class="std std-ref">вариационных квантовых схемах</span></a> для кодирования классических данных в квантовые операторы.</p>
+</div>
+<div class="section" id="id9">
+<h3>Пример: оператор дифференцирования<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>В пространстве многочленов <span class="math notranslate nohighlight">\(P\)</span> с базисом <span class="math notranslate nohighlight">\(\{1,t,t^2,...,t^n\}\)</span> можно задать оператор дифференцирования <span class="math notranslate nohighlight">\(\mathcal{D} \colon P_n \to P_{n-1}\)</span> в виде матрицы:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D=\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; 2 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 3 &amp;\cdots &amp; 0 \\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp;\cdots &amp; \cdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp;\cdots &amp; n \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>Тогда производная многочлена <span class="math notranslate nohighlight">\(p = a_0 + a_1 t  + \cdots + a_n t^{n} = \begin{bmatrix} a_0 &amp; a_1 &amp; \cdots &amp; a_n \end{bmatrix} \cdot \begin{bmatrix} 1 \\ t \\ \vdots \\ t^{n} \end{bmatrix}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathcal{D}(p)  = \begin{bmatrix} a_0 &amp; a_1 &amp; \cdots &amp; a_n \end{bmatrix} D \begin{bmatrix} 1 \\ t \\ \vdots \\ t^{n-1} \end{bmatrix} = a_1 + 2 a_2 t+\cdots+n a_n t^{n-1}.
+\end{split}\]</div>
+<div class="admonition- admonition">
+<p class="admonition-title">Про разницу между оператором и матрицей преобразования</p>
+<p>Мы с вами рассматривали операторы через конечные матрицы, но на самом деле гильбертово пространство было придумано как раз, чтобы можно было работать с бесконечномерными векторами и применять непрерывные операторы. Можно считать, что есть некоторый дуализм между непрерывным оператором и пределом бесконечной матрицы. Иногда удобнее работать с матрицей, а иногда – с абстрактным оператором.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>Произведение Кронекера<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>Давайте рассмотрим еще одну интересную операцию, которая называется матричным тензорным произведением (является тензорным произведением для линейных операторов) или произведением Кронекера.</p>
+<p>Проще всего его необходимость можно продемонстрировать на примере двух игр: Орел/Решка и бросок кубика.
+Мы можем записать состояния этих игр через вероятности событий и давайте возьмем монетку со смешенным центром тяжести и такой же кубик:</p>
+<p><span class="math notranslate nohighlight">\(\text{coin} = \begin{bmatrix} \frac{1}{3} &amp;&amp; \frac{2}{3} \end{bmatrix}\)</span> для нашей монетки и <span class="math notranslate nohighlight">\(\text{dice}=\begin{bmatrix} \frac{1}{4} &amp;&amp; \frac{1}{5} &amp;&amp; \frac{1}{7} &amp;&amp; \frac{1}{11} &amp;&amp; \frac{1}{13} &amp;&amp; \frac{4791}{20020} \end{bmatrix}\)</span> для нашей игральной кости. Тогда если мы захотим сыграть в игру, когда сначала подкидывается монетка, а потом - игральный кубик, нам будет удобно записать это в виде либо очень длинного вектора:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{game}_{\text{vec}} = \begin{bmatrix} \frac{1}{3} \times \frac{1}{4} &amp;&amp; \frac{1}{3} \times \frac{1}{5} &amp;&amp; \frac{1}{3} \times \frac{1}{7} &amp;&amp; \frac{1}{3} \times \frac{1}{11} &amp;&amp; \frac{1}{3} \times \frac{1}{13} &amp;&amp; \frac{1}{3} \times \frac{4791}{20020}&amp;&amp; \frac{2}{3} \times \frac{1}{4} &amp;&amp; \frac{2}{3} \times \frac{1}{5} &amp;&amp; \frac{2}{3} \times \frac{1}{7} &amp;&amp; \frac{2}{3} \times \frac{1}{11} &amp;&amp; \frac{2}{3} \times \frac{1}{13} &amp;&amp; \frac{2}{3} \times \frac{4791}{20020} \end{bmatrix}
+\]</div>
+<p>Либо в виде матрицы, где по строкам будут события монетки, а по столбцам – кубика:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text{game}_{\text{matrix}} = \begin{bmatrix} \frac{1}{3} \times \frac{1}{4} &amp;&amp; \frac{1}{3} \times \frac{1}{5} &amp;&amp; \frac{1}{3} \times \frac{1}{7} &amp;&amp; \frac{1}{3} \times \frac{1}{11} &amp;&amp; \frac{1}{3} \times \frac{1}{13} &amp;&amp; \frac{1}{3} \times \frac{4791}{20020}\\
+ \frac{2}{3} \times \frac{1}{4} &amp;&amp; \frac{2}{3} \times \frac{1}{5} &amp;&amp; \frac{2}{3} \times \frac{1}{7} &amp;&amp; \frac{2}{3} \times \frac{1}{11} &amp;&amp; \frac{2}{3} \times \frac{1}{13} &amp;&amp; \frac{2}{3} \times \frac{4791}{20020} \end{bmatrix}
+\end{split}\]</div>
+<p>С помощью произведения Кронекера (или, повторимся, – матричного тензорного произведения) похожие огромные вектора и матрицы можно очень компактно записать:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text{game}_{\text{vec}} = \text{coin} \otimes \text{dice} \\
+\text{game}_{\text{matrix}} = \text{coin}^T \otimes \text{dice}
+\end{split}\]</div>
+<p>В общем случае,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A \otimes B = \begin{bmatrix} a_{11} B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp; \ddots &amp; \vdots \\ a_{m1} B &amp; \cdots &amp; a_{mn} B \end{bmatrix} =\begin{bmatrix}
+   a_{11} b_{11} &amp; a_{11} b_{12} &amp; \cdots &amp; a_{11} b_{1q} &amp; \cdots &amp; \cdots &amp; a_{1n} b_{11} &amp; a_{1n} b_{12} &amp; \cdots &amp; a_{1n} b_{1q} \\
+   a_{11} b_{21} &amp; a_{11} b_{22} &amp; \cdots &amp; a_{11} b_{2q} &amp; \cdots &amp; \cdots &amp; a_{1n} b_{21} &amp; a_{1n} b_{22} &amp; \cdots &amp; a_{1n} b_{2q} \\
+   \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; &amp; &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+   a_{11} b_{p1} &amp; a_{11} b_{p2} &amp; \cdots &amp; a_{11} b_{pq} &amp; \cdots &amp; \cdots &amp; a_{1n} b_{p1} &amp; a_{1n} b_{p2} &amp; \cdots &amp; a_{1n} b_{pq} \\
+   \vdots &amp; \vdots &amp; &amp; \vdots &amp; \ddots &amp; &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+   \vdots &amp; \vdots &amp; &amp; \vdots &amp; &amp; \ddots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+   a_{m1} b_{11} &amp; a_{m1} b_{12} &amp; \cdots &amp; a_{m1} b_{1q} &amp; \cdots &amp; \cdots &amp; a_{mn} b_{11} &amp; a_{mn} b_{12} &amp; \cdots &amp; a_{mn} b_{1q} \\
+   a_{m1} b_{21} &amp; a_{m1} b_{22} &amp; \cdots &amp; a_{m1} b_{2q} &amp; \cdots &amp; \cdots &amp; a_{mn} b_{21} &amp; a_{mn} b_{22} &amp; \cdots &amp; a_{mn} b_{2q} \\
+   \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; &amp; &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+   a_{m1} b_{p1} &amp; a_{m1} b_{p2} &amp; \cdots &amp; a_{m1} b_{pq} &amp; \cdots &amp; \cdots &amp; a_{mn} b_{p1} &amp; a_{mn} b_{p2} &amp; \cdots &amp; a_{mn} b_{pq}
+\end{bmatrix}\end{split}\]</div>
+<p>Основные его свойства вы можете прочитать в статье: <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0"><em>Произведение Кронекера</em></a></p>
+<p>Есть и другие нужные тензорные операции, например, чуть больший список вы можете найти в <a class="reference external" href="https://habr.com/ru/post/369925/">этой статье</a> или в рекомендованной литературе по квантовой механике.</p>
+</div>
+<div class="section" id="id11">
+<h2>Рекомендованная литература<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Quantum Mechanics: The Theoretical Minimum Illustrated Edition by Leonard Susskind, Art Friedman <span id="id12">[<a class="reference internal" href="../bibliography.html#id60"><span>SF14</span></a>]</span> или его русский перевод <span id="id13">[<a class="reference internal" href="../bibliography.html#id61"><span>15b</span></a>]</span>. Книга сочетает в себе довольно строгий формализм вместе с интуицией квантовой механики. Главы построены в виде конкретных примеров или задач, которые понимают, зачем та или иная теория необходима.</p></li>
+<li><p>Mathematics for machine learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong <span id="id14">[<a class="reference internal" href="../bibliography.html#id27"><span>DFO20</span></a>]</span> - отличная книжка чтобы освежить воспоминания о базовых алгоритмах в машинном обучении и о математике, которая применяется в них. <a class="reference external" href="https://mml-book.github.io/book/mml-book.pdf"><em>Доступна бесплатная электронная версия</em></a>.</p></li>
+<li><p>Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville <span id="id15">[<a class="reference internal" href="../bibliography.html#id5"><span>GBC16</span></a>]</span> - отличная книжка, чтобы разобраться в основах глубокого обучения, чем-то может заменить предыдущую книгу, отличный старт, если вы хотите разобраться в автоэнкодерах или в других нейросетевых моделях.
+<a class="reference external" href="https://www.deeplearningbook.org/"><em>Доступна бесплатная электронная версия</em></a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h2>Что мы узнали<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>произвол со скобками</p></li>
+<li><p>Гильбертовы пространства</p></li>
+<li><p>Эрмитовый оператор</p></li>
+<li><p>Унитарный оператор</p></li>
+<li><p>Примеры различных операторов</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/linalgblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="vectors.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Векторы</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="matrices.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Матрицы</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

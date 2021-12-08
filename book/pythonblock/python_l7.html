@@ -1,0 +1,1546 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Словари &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/pythonblock/python_l7.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Функции" href="python_l8.html" />
+    <link rel="prev" title="Списки и циклы в Python" href="python_l6.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/pythonblock/python_l7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/pythonblock/python_l7.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/pythonblock/python_l7.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/pythonblock/python_l7.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dict">
+   Что такое
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Создание словаря
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Получение значения по ключу
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Изменение и добавление значений
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Основные методы словаря
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get">
+     Проверка вхождения и
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Что такое “длина словаря”?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Удаление из словаря
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Обновление и добавление ключей
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   Доступ к ключам и значениям
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Ключи
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Значения
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Все и сразу
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   Сортировка
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   Что можно хранить
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Изменяемость и неизменяемость
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       Неизменяемые типы
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       Изменяемые типы
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   Что мы узнали из лекции
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="python-l7">
+<span id="id1"></span><h1>Словари<a class="headerlink" href="#python-l7" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>В этой лекции мы расскажем про:</p>
+<ul class="simple">
+<li><p>то, что такое <code class="docutils literal notranslate"><span class="pre">dict</span></code>;</p></li>
+<li><p>методы и примеры использования;</p></li>
+<li><p>хранение изменяемых и неизменяемых типов;</p></li>
+<li><p>хэширование.</p></li>
+</ul>
+</div>
+<div class="section" id="dict">
+<h2>Что такое <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#dict" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">dict</span></code> (от английского <em>“dictionary”</em>, словарь) – еще один тип данных в Python. Словари хранят пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>. То есть в списках можно достать элемент, если указать его позицию в виде целого числа, а в словарях – тот самый <code class="docutils literal notranslate"><span class="pre">ключ</span></code>. Обратите внимание, <code class="docutils literal notranslate"><span class="pre">dict</span></code> – <strong>неупорядоченный</strong> тип данных, поэтому достать элемент по номеру не получится, но отображение содержимого будет <strong>в порядке добавления</strong> элементов. <strong>Уникальность</strong> ключей должна поддерживаться, чтобы всегда можно было быстро найти одно единственно верное <code class="docutils literal notranslate"><span class="pre">значение</span></code>.</p>
+<p>В некоторых языках программирования можно встретить ассоциативные массивы – полную аналогию <code class="docutils literal notranslate"><span class="pre">dict</span></code>. Также вспомним базы данных, широко использующиеся во всем мире для хранения информации: в таблице можно установить первичный ключ, который уникально идентифицирует запись, как и <code class="docutils literal notranslate"><span class="pre">ключ</span></code> соответствует <code class="docutils literal notranslate"><span class="pre">значению</span></code> в словаре. Самый простой пример ключа - порядковый номер объекта!</p>
+<div class="section" id="id3">
+<h3>Создание словаря<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Использовать словарь стоит, когда нужно сохранять объекты с какими-то ключами и обращаться к объектам по известным ключам. Один из способов определения словаря: указание пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> через <strong>запятую</strong> внутри фигурных скобок <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Напоминает <code class="docutils literal notranslate"><span class="pre">set</span></code>, правда? <code class="docutils literal notranslate"><span class="pre">{}</span></code> позволяет создать <strong>пустой</strong> словарь, но не пустое множество.</p>
+<p>Например, вы решили упростить себе жизнь и больше не запоминать дни рождения коллег. Вместо этого, лучше хранить их в одном месте:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># локально попробуйте поменять значение переменной dates</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Кунг Фьюри&quot;</span><span class="p">:</span> <span class="s2">&quot;1968-09-09&quot;</span><span class="p">,</span> <span class="s2">&quot;Наташа Романова&quot;</span><span class="p">:</span> <span class="s2">&quot;1985-03-15&quot;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Кунг Фьюри&#39;: &#39;1968-09-09&#39;, &#39;Наташа Романова&#39;: &#39;1985-03-15&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>В примере <code class="docutils literal notranslate"><span class="pre">dates</span></code> имеет две пары значений. В первой паре строка <code class="docutils literal notranslate"><span class="pre">&quot;Кунг</span> <span class="pre">Фьюри&quot;</span></code> является <em>ключом</em>, а <code class="docutils literal notranslate"><span class="pre">&quot;1968-09-09&quot;</span></code> – его <em>значением</em>.</p>
+</div>
+<div class="section" id="id4">
+<h3>Получение значения по ключу<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Чтобы получить значение по ключу, необходимо обратиться к переменной, содержащей словарь, и указать ключ в квадратных скобках <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span><span class="p">[</span><span class="s2">&quot;Кунг Фьюри&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1968-09-09&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Если указать неверный ключ в <code class="docutils literal notranslate"><span class="pre">[]</span></code>, Python будет ругаться: выбросит ошибку <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> и перестанет выполнять код. Чуть ниже посмотрим, как можно избежать таких ситуаций.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># пока этого ключа нет в словаре, будет ошибка при обращении</span>
+<span class="c1"># поэтому используем перехват ошибок</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="s2">&quot;Капитан Ямайка&quot;</span><span class="p">])</span>
+
+<span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ключа действительно нет: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ключа действительно нет: &#39;Капитан Ямайка&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Изменение и добавление значений<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Синтаксис изменения значения по ключу и добавления нового ключа со значением одинаковый: в <code class="docutils literal notranslate"><span class="pre">[]</span></code> нужно указать ключ, поставить <code class="docutils literal notranslate"><span class="pre">=</span></code> и указать значение, которое теперь будет соответствовать ключу.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># этот ключ уже был в примере</span>
+<span class="n">dates</span><span class="p">[</span><span class="s2">&quot;Кунг Фьюри&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1960-09-09&quot;</span>
+
+<span class="c1"># а такого не было</span>
+<span class="n">dates</span><span class="p">[</span><span class="s2">&quot;Капитан Ямайка&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1930-10-04&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Кунг Фьюри&#39;: &#39;1960-09-09&#39;, &#39;Наташа Романова&#39;: &#39;1985-03-15&#39;, &#39;Капитан Ямайка&#39;: &#39;1930-10-04&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Если ключ уже был в словаре, значение по нему изменится на новое, а <strong>старое будет удалено</strong>. Указание нового ключа со значением добавляет пару в словарь.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Основные методы словаря<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get">
+<h3>Проверка вхождения и <code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<p>Помните, ранее говорили, что обращение к несуществующему ключу приводит к ошибке? Пришло время посмотреть пару способов борьбы!</p>
+<p>Можно проверить, есть ли интересующий ключ среди множества ключей словаря. Это делается при помощи бинарного оператора <code class="docutils literal notranslate"><span class="pre">in</span></code>. Слева должен быть указан ключ, справа – переменная со словарем:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># еще способ создания: пары можно передавать как аргументы dict через `=`</span>
+<span class="n">marks</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">линал</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">английский</span><span class="o">=</span><span class="mi">92</span><span class="p">)</span>
+
+<span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;матан&quot;</span> <span class="ow">in</span> <span class="n">marks</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;линал&quot;</span> <span class="ow">in</span> <span class="n">marks</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;матан&quot; in marks = False
+&quot;линал&quot; in marks = True
+</pre></div>
+</div>
+</div>
+</div>
+<p>В коде проверку можно использовать в условной конструкции <code class="docutils literal notranslate"><span class="pre">if</span></code>, чтобы принимать решение в зависимости от наличия ключа:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;матан&quot;</span> <span class="ow">in</span> <span class="n">marks</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">marks</span><span class="p">[</span><span class="s2">&quot;матан&quot;</span><span class="p">])</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Нет оценки по матану :(&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Нет оценки по матану :(
+</pre></div>
+</div>
+</div>
+</div>
+<p>Теперь о методе <code class="docutils literal notranslate"><span class="pre">get()</span></code>: при помощи него тоже можно получать значения из словаря по ключу. <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> никогда не появится: если ключа нет, по умолчанию возвращается <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">empty_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ключ&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вторым аргументом метода <code class="docutils literal notranslate"><span class="pre">get()</span></code> можно указать значение, которое должно возвращаться вместо None, когда ключ не был найден:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># теперь будет возвращено значение `-1`</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">empty_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ключ&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>Что такое “длина словаря”?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Функция <code class="docutils literal notranslate"><span class="pre">len()</span></code> для словаря будет возвращать количество пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (их столько же, сколько ключей), которое в нем содержится:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty_dict -- пустой словарь, поэтому длина равна 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># а вот словарь marks уже содержит две пары, поэтому длина 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">marks</span><span class="p">)</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>len(empty_dict) = 0
+len(marks) = 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Удаление из словаря<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Есть несколько способов очистки в словаре: можно убирать по ключу, а можно сразу удалить все!</p>
+<ul class="simple">
+<li><p>при помощи инструкции del (от английского <em>“delete”</em>) можно удалить пару <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (<em>замечу, что удаление ключа эквивалентно удалению пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, так как мы теряем возможность найти то самое <code class="docutils literal notranslate"><span class="pre">значение</span></code></em>), в общем виде:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># таким образом из словаря &quot;словарь&quot; будет удален ключ &quot;название_ключа&quot;</span>
+<span class="c1"># и соответствующее ему значение</span>
+<span class="k">del</span> <span class="n">словарь</span><span class="p">[</span><span class="n">название_ключа</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Предположим, коллега из самого первого примера уволился и больше нет смысла хранить его день рождения:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># из словаря dates удаляется ключ &quot;Наташа Романова&quot;</span>
+<span class="k">del</span> <span class="n">dates</span><span class="p">[</span><span class="s2">&quot;Наташа Романова&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Наташа Романова&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> – метод, который достает значение, хранящееся по переданному ключу, и <strong>сразу</strong> удаляет ключ из словаря:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># еще один способ создания словаря из последовательности пар</span>
+<span class="n">holidays</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;January&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span> <span class="p">(</span><span class="s2">&quot;Feburary&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">23</span><span class="p">]),</span> <span class="p">(</span><span class="s2">&quot;March&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">8</span><span class="p">])])</span>
+
+<span class="c1"># pop() возвращает значение, соответствующее ключу, значит его можно присвоить</span>
+<span class="c1"># переменной</span>
+<span class="n">january_days</span> <span class="o">=</span> <span class="n">holidays</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;January&quot;</span><span class="p">)</span>
+
+<span class="c1"># напечатается соответствующий массив</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">january_days</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Для метода <code class="docutils literal notranslate"><span class="pre">pop()</span></code> есть возможность указать значение, которое будет возвращено при обращении к несуществующему ключу. Почти как <code class="docutils literal notranslate"><span class="pre">get()</span></code>, но все таки, без указания этого значения, <code class="docutils literal notranslate"><span class="pre">pop()</span></code> выбрасывает <code class="docutils literal notranslate"><span class="pre">KeyError</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">popitem()</span></code> имеет схожее название, но не путайте с предыдущим методом: этот на вход не принимает <code class="docutils literal notranslate"><span class="pre">ключ</span></code>, а возвращает пару <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, которая была добавлена последней (<em>такое поведение гарантируется с Python <strong>3.7</strong></em>).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># в результате -- последняя добавленная пара</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">holidays</span><span class="o">.</span><span class="n">popitem</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;March&#39;, [8])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code> позволяет удалить сразу все ключи словаря, то есть полностью его очистить:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># вернемся к предыдущему примеру</span>
+<span class="c1"># словарь становится пустой</span>
+<span class="n">holidays</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="c1"># значит, длина равна 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">holidays</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Обратите внимание на то, как работают методы <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">popitem()</span></code> и <code class="docutils literal notranslate"><span class="pre">clear()</span></code>: как только вызываются, словарь меняет свой состав (<em>изменения происходят in place</em>, то изменить по месту без копирования).</p>
+</div>
+<div class="section" id="id9">
+<h3>Обновление и добавление ключей<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Мы уже видели, что значения в словарь можно добавлять или менять, обращаясь по ключу. Python предоставляет возможность не писать кучу присваиваний, а использовать лаконичный метод <code class="docutils literal notranslate"><span class="pre">update()</span></code>, который на вход может принимать либо</p>
+<ul class="simple">
+<li><p>другой словарь</p></li>
+<li><p>пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в какой-то последовательности (например, кортежи по два значения в списке: первое – ключ, второе – значение)</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Кортеж (tuple) - еще одна стандартная структура данных. Очень похожа на list (поддерживает индексацию), но является неизменяемой: как только tuple создан, поменять его нельзя</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим два словаря: в первом уже есть два ключа</span>
+<span class="n">quidditch_team</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Fred Weasley&quot;</span><span class="p">:</span> <span class="s2">&quot;3rd year&quot;</span><span class="p">,</span> <span class="s2">&quot;George Weasley&quot;</span><span class="p">:</span> <span class="s2">&quot;3rd year&quot;</span><span class="p">}</span>
+
+<span class="c1"># во втором -- один ключ</span>
+<span class="n">new_members</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">:</span> <span class="s2">&quot;1st year&quot;</span><span class="p">}</span>
+
+<span class="c1"># добавим пары из new_members</span>
+<span class="c1"># метод update() также работает in place, поэтому после выполнения данной</span>
+<span class="c1"># строки кода, в словаре quidditch_team станет три ключа</span>
+<span class="n">quidditch_team</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">quidditch_team</span><span class="p">[</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1st year
+</pre></div>
+</div>
+</div>
+</div>
+<p>А что, если в <code class="docutils literal notranslate"><span class="pre">update()</span></code> передать пары, ключ которых уже был в словаре? Значения по дублирующимся ключам будут <strong>перезаписаны</strong> на новые:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># данный ключ (то, что записано первым в кортеже) уже есть в quidditch_team</span>
+<span class="n">member_update</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span> <span class="s2">&quot;2nd year&quot;</span><span class="p">)]</span>
+
+<span class="c1"># значение, соответствующее &quot;Harry Potter&quot;, будет переписано</span>
+<span class="n">quidditch_team</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">quidditch_team</span><span class="p">[</span><span class="s2">&quot;Harry Potter&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1st year
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>Доступ к ключам и значениям<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>В Python можно без проблем извлекать отдельно по ключам или значениям, а также итерироваться по элементам словарей в цикле <code class="docutils literal notranslate"><span class="pre">for</span></code>. Осталось разобраться, как это работает.</p>
+<div class="section" id="id11">
+<h3>Ключи<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>По умолчанию, в конструкциях вида</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># после in указано название переменной, хранящей словарь</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dict_var</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>переменные цикла (тут – <code class="docutils literal notranslate"><span class="pre">key</span></code>) будут принимать значения из множества <strong>ключей</strong> словаря. Аналогично можно использовать метод <code class="docutils literal notranslate"><span class="pre">keys()</span></code> (<em>позволяет достать все ключи</em>), который явно говорит, что ваш цикл идет по ключам, например:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># словарь в качестве ключей хранит имена игроков</span>
+<span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">quidditch_team</span><span class="p">:</span>
+
+    <span class="c1"># на каждой итерации будет напечатан ключ и значение</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">quidditch_team</span><span class="p">[</span><span class="n">player</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fred Weasley 3rd year
+George Weasley 3rd year
+Harry Potter 1st year
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>Значения<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>При помощи метода <code class="docutils literal notranslate"><span class="pre">values()</span></code> можно получить все значения, хранящиеся по всем ключам словаря:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># можно создать переменную со всеми значениями словаря</span>
+<span class="n">school_years</span> <span class="o">=</span> <span class="n">quidditch_team</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Приведем пример с циклом:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># словарь в качестве значений хранит годы обучения</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">quidditch_team</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+
+    <span class="c1"># на каждой итерации будет год обучения игрока</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3rd year
+3rd year
+1st year
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Напрямую по значению получить ключ нельзя</strong></p>
+</div>
+<div class="section" id="id13">
+<h3>Все и сразу<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Существует метод <code class="docutils literal notranslate"><span class="pre">items()</span></code>, который достает пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в виде последовательности кортежей. Его же часто удобно использовать в циклах, чтобы не тащить длинную запись в виде названия словаря и квадратных скобок с ключом при обращении к значению:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># сразу две переменные: первая последовательно будет ключами,</span>
+<span class="c1"># вторая -- значениями</span>
+<span class="k">for</span> <span class="n">player</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">quidditch_team</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="c1"># items() избавляет от необходимости обращаться quidditch_team[player],</span>
+    <span class="c1"># чтобы получить значение. Оно уже в year</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Player </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2"> is in </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Player Fred Weasley is in 3rd year
+Player George Weasley is in 3rd year
+Player Harry Potter is in 1st year
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>Сортировка<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>Функция <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> доступна и для словарей. По умолчанию ключи словаря поддерживают порядок, в котором были добавлены, но можно отсортировать их в нужном направлении (<em>в зависимости от типа</em>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># вспомним про рабочие дни, ключи - целые числа по номеру дня недели</span>
+<span class="n">week</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7</span><span class="p">:</span> <span class="s2">&quot;weekend&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="s2">&quot;weekend&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;workday&quot;</span><span class="p">}</span>
+
+<span class="c1"># в sorted_week окажутся ключи, отсортированные в порядке возрастания</span>
+<span class="n">sorted_week</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">week</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Порядок возрастания: </span><span class="si">{</span><span class="n">sorted_week</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Порядок возрастания: [1, 6, 7]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Не забудьте, когда в функции передается просто название переменной со словарем, работа идет только над множеством ключей.</p>
+<p>Можно ли отсортировать словарь по значениям? Да, можно попробовать самостоятельно разобраться с аргументами функции <a class="reference external" href="https://docs.python.org/3/howto/sorting.html"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a>.</p>
+</div>
+<div class="section" id="id15">
+<h2>Что можно хранить<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>Теперь добавим немного технических подробностей: возможно, вы уже заметили самостоятельно, что <code class="docutils literal notranslate"><span class="pre">dict</span></code> может принимать в качестве ключа не всякое значение. На самом деле только <a class="reference external" href="https://docs-python.ru/tutorial/vstroennye-funktsii-interpretatora-python/funktsija-hash/"><strong>хэшируемые</strong></a> объекты <em>(можно вызвать функцию <code class="docutils literal notranslate"><span class="pre">hash()</span></code> и получить значение)</em> могут быть ключами словаря, на значения это ограничение не распространяется. В <code class="docutils literal notranslate"><span class="pre">dict</span></code> и <code class="docutils literal notranslate"><span class="pre">set</span></code> значение хэша от объекта используется для поиска внутри структуры.</p>
+<p>Ключом словаря нельзя сделать объект <strong>изменяемого</strong> типа, например, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> или <strong>сам <code class="docutils literal notranslate"><span class="pre">dict</span></code></strong>, так как значение их хэша может измениться со временем. Неизменяемый кортеж может быть ключом только если не содержит внутри изменяемые объекты.</p>
+<div class="section" id="id16">
+<h3>Изменяемость и неизменяемость<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p><em>В англоязычной литературе изменяемые типы называют <strong>mutable</strong>, а неизменяемые – <strong>immutable</strong>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types">почитать документацию</a></em></p>
+<p>В Python все – объект. Когда пользователь присваивает значение переменной, она начинает ассоциироваться с ячейкой памяти, где лежит это значение. Переменная знает адрес, откуда можно получить значение. <code class="docutils literal notranslate"><span class="pre">id()</span></code> и <code class="docutils literal notranslate"><span class="pre">hex()</span></code> показывают адрес в памяти компьютера. _<code class="docutils literal notranslate"><span class="pre">id()</span></code> - адрес в десятичном виде, а <code class="docutils literal notranslate"><span class="pre">hex()</span></code> поможет перевести в <em>шестнадцатеричный</em>.</p>
+<p>По адресу лежит так называемое <strong>внутреннее состояние</strong> переменной:</p>
+<ul class="simple">
+<li><p><strong>неизменяемые</strong> типы не позволяют менять внутреннее состояние, значение переменной может поменяться только вместе с адресом</p></li>
+<li><p><strong>изменяемые</strong> типы позволяют менять внутреннее состояние переменной при сохранении адреса (возвращаемое <code class="docutils literal notranslate"><span class="pre">id()</span></code> значение не меняется, но <em>значение</em> переменной каким-то образом преобразовывается). Изменение по ссылке называется изменением <em>in place</em></p></li>
+</ul>
+<div class="section" id="id17">
+<h4>Неизменяемые типы<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<p>Из стандартных неизменяемыми являются:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></li>
+</ul>
+<p>Давайте сразу рассмотрим пример:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># полученное вами значение адреса может отличаться</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">counter</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f6f3be69d80
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="mutable-example-0">
+<a class="reference internal image-reference" href="../../_images/Python-Immutable-Example-1.png"><img alt="../../_images/Python-Immutable-Example-1.png" src="../../_images/Python-Immutable-Example-1.png" style="width: 411px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100 (цифры в нижней правой части как раз и показывают тот самый адрес)</span><a class="headerlink" href="#mutable-example-0" title="Permalink to this image">¶</a></p>
+</div>
+<p>А теперь поменяем значение <code class="docutils literal notranslate"><span class="pre">counter</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">counter</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">counter</span><span class="p">))</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f6f3be6aa00&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Кажется, что раз значение переменной <code class="docutils literal notranslate"><span class="pre">counter</span></code> поменялось, то и содержимое по предыдущему адресу изменилось? Нет, на самом деле <code class="docutils literal notranslate"><span class="pre">counter</span></code> теперь указывает в другое место:</p>
+<div class="figure align-default" id="mutable-example-1">
+<a class="reference internal image-reference" href="../../_images/Python-Immutable-Example-2.png"><img alt="../../_images/Python-Immutable-Example-2.png" src="../../_images/Python-Immutable-Example-2.png" style="width: 411px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#mutable-example-1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Из интересного: Python <a class="reference external" href="https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong">заранее создает объекты</a> для чисел от -5 до 256, поэтому для переменных со значением из этого диапазона берутся заранее готовые ссылки.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим две переменные с одинаковыми значениями в диапазоне от -5 до 256</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># a и b указывают на одно и то же место в памяти</span>
+<span class="c1"># попробуйте у себя поменять значение a и b на число больше 256 или меньше -5</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h4>Изменяемые типы<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>Стандартные изменяемые типы это:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">set</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+</ul>
+<p>У списков есть метод <code class="docutils literal notranslate"><span class="pre">append()</span></code>, позволяющий добавить в него значение:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим список и напечатаем его адрес</span>
+<span class="n">ratings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Было: </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ratings</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Стало: </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ratings</span><span class="p">))</span><span class="si">}</span><span class="s2"> - ничего не поменялось!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f6f34b2f580
+Стало: 0x7f6f34b2f580 - ничего не поменялось!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="mutable-example-2">
+<a class="reference internal image-reference" href="../../_images/Python-Mutable-Example.png"><img alt="../../_images/Python-Mutable-Example.png" src="../../_images/Python-Mutable-Example.png" style="width: 402px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#mutable-example-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>После добавления еще одного, адрес <code class="docutils literal notranslate"><span class="pre">ratings</span></code> не изменился.</p>
+<div class="figure align-default" id="mutable-example2">
+<a class="reference internal image-reference" href="../../_images/Python-Mutable-Example-2.png"><img alt="../../_images/Python-Mutable-Example-2.png" src="../../_images/Python-Mutable-Example-2.png" style="width: 402px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id19">
+<h2>Что мы узнали из лекции<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Новый тип данных – <strong>словарь</strong>! Позволяет хранить соответствие <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>;</p></li>
+<li><p>Несколько способов создания <code class="docutils literal notranslate"><span class="pre">dict</span></code>, примеры:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># при помощи &quot;литерала&quot; - фигурных скобок {}</span>
+<span class="n">flowers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;roses&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;violets&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">}</span>
+
+<span class="c1"># при помощи вызова</span>
+<span class="c1">#   dict() и последовательности с парами значений</span>
+<span class="n">anime</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([</span>
+              <span class="p">(</span><span class="s2">&quot;Ведьмак&quot;</span><span class="p">,</span> <span class="s2">&quot;Кошмар волка&quot;</span><span class="p">),</span>
+              <span class="p">(</span><span class="s2">&quot;Призрак в доспехах&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Призрак в доспехах&quot;</span><span class="p">,</span> <span class="s2">&quot;Синдром одиночки&quot;</span><span class="p">,</span> <span class="s2">&quot;Невинность&quot;</span><span class="p">])</span>
+             <span class="p">])</span>
+
+<span class="c1">#   dict() и &quot;ключ=значение&quot;</span>
+<span class="n">literature</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">poem_flowers</span><span class="o">=</span><span class="n">flowers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">flowers</span> <span class="si">= }</span><span class="se">\n</span><span class="si">{</span><span class="n">anime</span> <span class="si">= }</span><span class="se">\n</span><span class="si">{</span><span class="n">literature</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flowers = {&#39;roses&#39;: &#39;red&#39;, &#39;violets&#39;: &#39;blue&#39;}
+anime = {&#39;Ведьмак&#39;: &#39;Кошмар волка&#39;, &#39;Призрак в доспехах&#39;: [&#39;Призрак в доспехах&#39;, &#39;Синдром одиночки&#39;, &#39;Невинность&#39;]}
+literature = {&#39;poem_flowers&#39;: {&#39;roses&#39;: &#39;red&#39;, &#39;violets&#39;: &#39;blue&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>методы для изменения состояния или получения доступа к элементам:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># доступ к элементу, если ключа нет - ошибка</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">flowers</span><span class="p">[</span><span class="s2">&quot;violets&quot;</span><span class="p">]</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># при помощи get()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">flowers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;magnolias&quot;</span><span class="p">)</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>flowers[&quot;violets&quot;] = &#39;blue&#39;
+flowers.get(&quot;magnolias&quot;) = None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Пн&quot;</span><span class="p">,</span> <span class="s2">&quot;Вт&quot;</span><span class="p">,</span> <span class="s2">&quot;Ср&quot;</span><span class="p">,</span> <span class="s2">&quot;Чт&quot;</span><span class="p">,</span> <span class="s2">&quot;Пт&quot;</span><span class="p">]</span>
+
+<span class="c1"># создадим пустой словарь</span>
+<span class="n">numbered_days</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># будем добавлять в него элементы в цикле</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">days</span><span class="p">)):</span>
+    <span class="n">numbered_days</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">days</span><span class="p">[</span><span class="n">num</span><span class="p">]</span>
+
+<span class="c1"># получим отдельно ключи и значения</span>
+<span class="c1"># пары из tuple можно сразу получить при помощи метода items()</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">numbered_days</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">numbered_days</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ключи: </span><span class="si">{</span><span class="n">keys</span><span class="si">}</span><span class="se">\n</span><span class="s2">Значения: </span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ключи: dict_keys([0, 1, 2, 3, 4])
+Значения: dict_values([&#39;Пн&#39;, &#39;Вт&#39;, &#39;Ср&#39;, &#39;Чт&#39;, &#39;Пт&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Требование к ключу: возможность хэширования, свойство ключа внутри словаря: уникальность;</p></li>
+<li><p>Разобрали, что есть изменяемые (<code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>) и неизменяемые (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>) стандартные типы данных.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/pythonblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="python_l6.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Списки и циклы в Python</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="python_l8.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Функции</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обзор фреймворков для квантовых вычислений &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/progblock/progreview.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PennyLane" href="pennylane.html" />
+    <link rel="prev" title="О блоке “Фреймворки”" href="progintro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/progblock/progreview.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/progblock/progreview.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Квантовые ассемблеры
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openqasm">
+     OpenQASM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pyquil">
+     PyQuil
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Высокоуровневое программирование
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cirq">
+     Cirq
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q">
+     Q#
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strawberry-fields">
+     Strawberry-Fields
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qiskit">
+     Qiskit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pennylane">
+     Pennylane
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Заключение
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Что мы будем использовать в курсе?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Почему Pennylane?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="progreview">
+<span id="id1"></span><h1>Обзор фреймворков для квантовых вычислений<a class="headerlink" href="#progreview" title="Permalink to this headline">¶</a></h1>
+<p>В этом обзоре мы кратко пробежимся по существующим сегодня фреймворкам для программирования квантовых компьютеров, а также по тем компьютерам, с которыми они совместимы.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Цель этой лекции – исключительно показать как визуально выглядит тот, или иной фреймворк для программирования квантовых компьютеров. Поэтому не стоит пытаться вникнуть и понять, что именно делает тот, или иной пример приведенного тут кода! Также хочется сразу сказать, что разделение на низкоуровневые и высокоуровневые языки квантового относительно субъективно и эта лекция выражает именно точку зрения ее автора.</p>
+</div>
+<div class="section" id="id2">
+<h2>Квантовые ассемблеры<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="openqasm">
+<h3>OpenQASM<a class="headerlink" href="#openqasm" title="Permalink to this headline">¶</a></h3>
+<p>В нашем курсе мы в основном будем пользоваться относительно высокоуровневые фреймворки. Однако это не значит, что квантовый программист не имеет возможности программировать на низком уровне. Например, компания <code class="docutils literal notranslate"><span class="pre">IBM</span></code> дает доступ к своему квантовому ассемблеру <a class="reference external" href="https://github.com/QISKit/openqasm">OpenQASM</a> <span id="id3">[<a class="reference internal" href="../bibliography.html#id53"><span>CBSG17</span></a>]</span>, код на котором выглядит примерно так:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Measuring the relaxation time of a qubit</span>
+<span class="cm"> * This example demonstrates the repeated use of fixed delays.</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="n">OPENQASM</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">include</span><span class="w"> </span><span class="s">&quot;stdgates.inc&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">duration</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1u</span><span class="n">s</span><span class="p">;</span><span class="w">            </span><span class="c1">// time resolution of points taken</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w">              </span><span class="c1">// number of points taken</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">shots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w">             </span><span class="c1">// how many shots per point</span>
+
+<span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">counts0</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">counts1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// surviving |1&gt; populations of qubits</span>
+
+<span class="k">extern</span><span class="w"> </span><span class="n">tabulate</span><span class="p">(</span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
+
+<span class="n">bit</span><span class="w"> </span><span class="n">c0</span><span class="p">;</span><span class="w"></span>
+<span class="n">bit</span><span class="w"> </span><span class="n">c1</span><span class="p">;</span><span class="w"></span>
+
+<span class="n">defcalgrammar</span><span class="w"> </span><span class="s">&quot;openpulse&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// define a gate calibration for an X gate on any qubit</span>
+<span class="n">defcal</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">$q</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="n">play</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="n">$q</span><span class="p">),</span><span class="w"> </span><span class="n">gaussian</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">points</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">shots</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// start of a basic block</span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// excite qubits</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// wait for a fixed time indicated by loop counter</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">stride</span><span class="p">]</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// wait for a fixed time indicated by loop counters</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">durationof</span><span class="p">({</span><span class="n">x</span><span class="w"> </span><span class="n">$1</span><span class="p">;})];</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// read out qubit states</span>
+<span class="w">        </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// increment counts memories, if a 1 is seen</span>
+<span class="w">        </span><span class="n">counts0</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">c0</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">counts1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">c1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// log survival probability curve</span>
+<span class="w">    </span><span class="n">tabulate</span><span class="p">(</span><span class="n">counts0</span><span class="p">,</span><span class="w"> </span><span class="n">shots</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">tabulate</span><span class="p">(</span><span class="n">counts1</span><span class="p">,</span><span class="w"> </span><span class="n">shots</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Пример этого кода <a class="reference external" href="https://github.com/Qiskit/openqasm/blob/master/examples/t1.qasm">взят</a> из официального репозитория.</p>
+</div>
+<div class="section" id="pyquil">
+<h3>PyQuil<a class="headerlink" href="#pyquil" title="Permalink to this headline">¶</a></h3>
+<p>Другим примером относительно низкоуровневого языка квантового программирования является фреймворк <a class="reference external" href="https://github.com/rigetti/pyquil">PyQuil</a> <span id="id4">[<a class="reference internal" href="../bibliography.html#id52"><span>SCZ17</span></a>]</span>. Он разработан компанией <code class="docutils literal notranslate"><span class="pre">Rigetti</span> <span class="pre">Computing</span></code>, производителем одноименных квантовых компьютеров и включает в себя компилятор и виртуальную машину <code class="docutils literal notranslate"><span class="pre">QVM</span></code>. Вот так выглядит код на этом фреймворке:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyquil</span> <span class="kn">import</span> <span class="n">get_qc</span><span class="p">,</span> <span class="n">Program</span>
+<span class="kn">from</span> <span class="nn">pyquil.gates</span> <span class="kn">import</span> <span class="n">CNOT</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">MEASURE</span>
+
+<span class="n">qvm</span> <span class="o">=</span> <span class="n">get_qc</span><span class="p">(</span><span class="s1">&#39;2q-qvm&#39;</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Program</span><span class="p">()</span>
+<span class="n">p</span> <span class="o">+=</span> <span class="n">H</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">+=</span> <span class="n">CNOT</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ro</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="s1">&#39;BIT&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">+=</span> <span class="n">MEASURE</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ro</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p</span> <span class="o">+=</span> <span class="n">MEASURE</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ro</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">p</span><span class="o">.</span><span class="n">wrap_in_numshots_loop</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">qvm</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">readout_data</span><span class="p">[</span><span class="s1">&#39;ro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Пример взят из официального репозитория.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Высокоуровневое программирование<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>В таких фреймворках программист имеет возможность уже не только напрямую манипулировать кубитами на низком уровне, но также вызывать высокоуровневые функции, например, <a class="reference external" href="https://quantumai.google/reference/python/cirq/ops/QuantumFourierTransformGate">квантовое преобразование Фурье</a>.</p>
+<div class="section" id="cirq">
+<h3>Cirq<a class="headerlink" href="#cirq" title="Permalink to this headline">¶</a></h3>
+<p>Одним из таких фреймворков является <code class="docutils literal notranslate"><span class="pre">Cirq</span></code> от компании <code class="docutils literal notranslate"><span class="pre">Google</span></code>. Код, написанный на нем можно запускать на симуляторах локально или в облаке, а также используя специально разработанные компанией <code class="docutils literal notranslate"><span class="pre">Google</span></code> симуляторы на базе <strong>T</strong>ensor <strong>P</strong>rocessing <strong>U</strong>nits или <strong>TPU</strong> используя <code class="docutils literal notranslate"><span class="pre">Floq</span> <span class="pre">API</span></code>. Для целей квантового машинного обучения в связке с <code class="docutils literal notranslate"><span class="pre">Cirq</span></code> можно использовать <code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code> – расширение библиотеки для обычного <em>Deep Leanring</em>, которое позволяет комбинировать классические и квантовые нейронные сети вместе. Еще в экосистему <code class="docutils literal notranslate"><span class="pre">Cirq</span></code> входит также библиотека для квантовой химии <a class="reference external" href="https://github.com/quantumlib/OpenFermion"><code class="docutils literal notranslate"><span class="pre">OpenFermion</span></code></a>.</p>
+<p>Вот так выглядит код, написанный на <code class="docutils literal notranslate"><span class="pre">Cirq</span></code>:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cirq</span>
+<span class="n">qubit</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">GridQubit</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">Circuit</span><span class="p">()</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cirq</span><span class="o">.</span><span class="n">H</span><span class="p">(</span><span class="n">qubit</span><span class="p">))</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cirq</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qubit</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Еще больше примеров и более детальный обзор этого фреймворка читайте в <span class="xref myst">нашей статье про <code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code></span>. Также очень рекомендуем ознакомиться с <a class="reference external" href="https://quantumai.google/">блогом</a> “квантового” подразделения компании <code class="docutils literal notranslate"><span class="pre">Google</span></code> – <em>Google Quantum AI</em>.</p>
+</div>
+<div class="section" id="q">
+<h3>Q#<a class="headerlink" href="#q" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Q#</span></code> это полноценный язык квантового программирования от компании <code class="docutils literal notranslate"><span class="pre">Microsoft</span></code>. Этот техногигант также, как и другие, разрабатывает сейчас свои квантовые компьютеры и облачные симуляторы, а также предоставляет облачный доступ к квантовому железу других производителей. Так что программы, написанные на <code class="docutils literal notranslate"><span class="pre">Q#</span></code> можно запускать в облаке <a class="reference external" href="https://azure.microsoft.com/en-us/services/quantum/">Azure Quantum</a>.</p>
+<p>В отличии от большинства фреймворков, которые обычно написаны как библиотека для языка <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Q#</span></code> использует <code class="docutils literal notranslate"><span class="pre">C#</span></code> для запуска и в целом имеет синтаксис, больше похожий на <code class="docutils literal notranslate"><span class="pre">C#</span></code> или <code class="docutils literal notranslate"><span class="pre">Java</span></code>:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="nn">QuantumRNG</span> <span class="p">{</span>
+    <span class="n">open</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Intrinsic</span><span class="p">;</span>
+    <span class="n">open</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Measurement</span><span class="p">;</span>
+    <span class="n">open</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Canon</span><span class="p">;</span>
+
+    <span class="n">@EntryPoint</span><span class="p">()</span>
+    <span class="n">operation</span> <span class="nf">GenerateRandomBits</span><span class="p">()</span> <span class="p">:</span> <span class="n">Result</span><span class="p">[]</span> <span class="p">{</span>
+        <span class="n">use</span> <span class="n">qubits</span> <span class="p">=</span> <span class="n">Qubit</span><span class="p">[</span><span class="m">4</span><span class="p">];</span>
+        <span class="n">ApplyToEach</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">qubits</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nf">MultiM</span><span class="p">(</span><span class="n">qubits</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Этот пример взят из <a class="reference external" href="https://docs.microsoft.com/en-us/azure/quantum/quickstart-microsoft-qc?view=qsharp-preview&amp;pivots=platform-ionq">официальной документации</a>.</p>
+<p>На самом деле <code class="docutils literal notranslate"><span class="pre">Q#</span></code> это не просто язык для программирования квантовых компьютеров, а целая экосистема, в которую кроме самого языка и его стандартной библиотеки также входят:</p>
+<ul class="simple">
+<li><p>Библиотека <a class="reference external" href="https://docs.microsoft.com/en-us/azure/quantum/user-guide/libraries/chemistry/?view=qsharp-preview">Microsoft.Quantum.Chemistry</a> для квантовой химии</p></li>
+<li><p>Библиотека <a class="reference external" href="https://docs.microsoft.com/en-us/azure/quantum/user-guide/libraries/machine-learning/intro?view=qsharp-preview">Microsoft.Quantum.MachineLearning</a> для квантового машинного обучения</p></li>
+</ul>
+<p>В качестве отличного источника информации про квантовые вычисления с примерами на <code class="docutils literal notranslate"><span class="pre">Q#</span></code>-стеке можно использовать потрясающий репозиторий на <code class="docutils literal notranslate"><span class="pre">GitHub</span></code>, который называется <a class="reference external" href="https://github.com/microsoft/QuantumKatas">QuantumKatas</a>.</p>
+</div>
+<div class="section" id="strawberry-fields">
+<h3>Strawberry-Fields<a class="headerlink" href="#strawberry-fields" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/XanaduAI/strawberryfields"><code class="docutils literal notranslate"><span class="pre">Strawberry-Fields</span></code></a> это библиотека для работы с фотонными квантовыми компьютерами компании <code class="docutils literal notranslate"><span class="pre">Xanadu</span></code>. Эти устройства являются <em>continuous-variable quantum computers</em> и в их основе лежат не бинарные состояния – кубиты, а состояния с непрерывными значениями. Учитывая сложность этого концепта, а также специфичность решаемых на таких устройствах задач мы мало будем о них говорить, но любопытный читатель может ознакомиться, например, с <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous-variable_quantum_information">этой статьей</a>.</p>
+<p>Вот так выглядит код, написанный с использованием этого фреймворка (пример из <a class="reference external" href="https://strawberryfields.readthedocs.io/en/stable/introduction/circuits.html">официальной документации</a>):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">strawberryfields</span> <span class="k">as</span> <span class="nn">sf</span>
+<span class="kn">from</span> <span class="nn">strawberryfields</span> <span class="kn">import</span> <span class="n">ops</span>
+
+<span class="c1"># create a 3-mode quantum program</span>
+<span class="n">prog</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">Program</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">prog</span><span class="o">.</span><span class="n">context</span> <span class="k">as</span> <span class="n">q</span><span class="p">:</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">Sgate</span><span class="p">(</span><span class="mf">0.54</span><span class="p">)</span> <span class="o">|</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">Sgate</span><span class="p">(</span><span class="mf">0.54</span><span class="p">)</span> <span class="o">|</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">Sgate</span><span class="p">(</span><span class="mf">0.54</span><span class="p">)</span> <span class="o">|</span> <span class="n">q</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">BSgate</span><span class="p">(</span><span class="mf">0.43</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">BSgate</span><span class="p">(</span><span class="mf">0.43</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">ops</span><span class="o">.</span><span class="n">MeasureFock</span><span class="p">()</span> <span class="o">|</span> <span class="n">q</span>
+</pre></div>
+</div>
+<p>Также к <code class="docutils literal notranslate"><span class="pre">Strawberry-Fields</span></code> идет большое число высокоуровневых API для конкретных приложений к задачам реального мира. Например:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://strawberryfields.readthedocs.io/en/stable/code/api/strawberryfields.apps.similarity.html">Вычисление схожести графов</a></p></li>
+<li><p><a class="reference external" href="https://strawberryfields.readthedocs.io/en/stable/code/api/strawberryfields.apps.train.html">Gaussian Boson Sampling</a></p></li>
+<li><p><a class="reference external" href="https://strawberryfields.readthedocs.io/en/stable/code/api/strawberryfields.apps.clique.html">Поиск Clique в графах</a></p></li>
+<li><p><a class="reference external" href="https://strawberryfields.readthedocs.io/en/stable/code/api/strawberryfields.apps.subgraph.html">Поиск плотных подграфов</a></p></li>
+</ul>
+<p>И многие другие, с которыми можно ознакомиться на <a class="reference external" href="https://strawberryfields.ai/photonics/applications.html">странице</a> официальной документации.</p>
+</div>
+<div class="section" id="qiskit">
+<h3>Qiskit<a class="headerlink" href="#qiskit" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://qiskit.org/overview">Qiskit</a> – это один из самых популярных в мире фреймворков для квантовых вычислений от компании <code class="docutils literal notranslate"><span class="pre">IBM</span></code>. На самом деле представляет собой даже не фреймворк, а целую экосистему, в которую входят, например:</p>
+<ul class="simple">
+<li><p>Уже <a class="reference external" href="../progblock/progreview.html#openqasm">упомянутый нами</a> квантовый ассемблер <code class="docutils literal notranslate"><span class="pre">OpenQASM</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit">Фреймворк</a> для программирования кубитов, написанный на <code class="docutils literal notranslate"><span class="pre">OpenQASM</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-finance">API для применения квантовых вычислений в финансах</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-machine-learning">API для применения квантовых вычислений в ML</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-optimization">API для применения квантовых вычислений в оптимизации</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-nature">API для применения квантовых вычислений в квантовой химии</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Qiskit/qiskit-metal">Открытый CAD для проектирования квантовых компьютеров (!)</a></p></li>
+</ul>
+<p>И <a class="reference external" href="https://github.com/Qiskit">многое другое</a>.</p>
+<p>Код, написанный на <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> выглядит так (пример из <a class="reference external" href="https://qiskit.org/documentation/intro_tutorial1.html">официальной документации</a>):</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">transpile</span>
+<span class="kn">from</span> <span class="nn">qiskit.providers.aer</span> <span class="kn">import</span> <span class="n">QasmSimulator</span>
+<span class="kn">from</span> <span class="nn">qiskit.visualization</span> <span class="kn">import</span> <span class="n">plot_histogram</span>
+
+<span class="c1"># Use Aer&#39;s qasm_simulator</span>
+<span class="n">simulator</span> <span class="o">=</span> <span class="n">QasmSimulator</span><span class="p">()</span>
+
+<span class="c1"># Create a Quantum Circuit acting on the q register</span>
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Add a H gate on qubit 0</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Add a CX (CNOT) gate on control qubit 0 and target qubit 1</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Map the quantum measurement to the classical bits</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># compile the circuit down to low-level QASM instructions</span>
+<span class="c1"># supported by the backend (not needed for simple circuits)</span>
+<span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+
+<span class="c1"># Execute the circuit on the qasm simulator</span>
+<span class="n">job</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Grab results from the job</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+
+<span class="c1"># Returns counts</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total count for 00 and 11 are:&quot;</span><span class="p">,</span><span class="n">counts</span><span class="p">)</span>
+
+<span class="c1"># Draw the circuit</span>
+<span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Код, написанный на <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> может быть запущен на квантовых компьютерах от компании <code class="docutils literal notranslate"><span class="pre">IBM.</span></code> Для изучения квантовых вычислений с экосистемой <code class="docutils literal notranslate"><span class="pre">Qsikit</span></code> можно рекомендовать <a class="reference external" href="https://qiskit.org/textbook/what-is-quantum.html">прекрасную онлайн книгу</a>. Более подробный обзор библиотеки также <a class="reference internal" href="qiskit.html"><span class="doc std std-doc">в отдельной лекции нашего курса</span></a>.</p>
+</div>
+<div class="section" id="pennylane">
+<h3>Pennylane<a class="headerlink" href="#pennylane" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Pennylane</span></code> это относительно высокоуровневая библиотека для квантовых вычислений и квантового машинного обучения от компании <code class="docutils literal notranslate"><span class="pre">Xanadu</span></code>. Вот так выглядит написанный на ней код:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;default.qubit&#39;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">make_entanglement</span><span class="p">():</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">CNOT</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">probs</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">circuit</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">QNode</span><span class="p">(</span><span class="n">make_entanglement</span><span class="p">,</span> <span class="n">dev</span><span class="p">)</span>
+<span class="n">circuit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Эта библиотека может использовать в качестве backend любое из:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Cirq</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Qiskit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Q#</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Strawberry-Fields</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PyQuil</span></code> (через расширение <a class="reference external" href="https://github.com/PennyLaneAI/pennylane-forest">Pennylane-Forest</a>)</p></li>
+</ul>
+<p>Но для нас самое главное преимущество этой библиотеки – это огромное количество готовых API для машинного обучения, которые позволяют автоматически считать градиенты и дифференцировать квантовые схемы, или обновлять параметры таких схем градиентным спуском.</p>
+<p>В нашем курсе библиотеке <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code> посвящена <a class="reference internal" href="pennylane.html"><span class="doc std std-doc">целая отдельная лекций</span></a>.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Заключение<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Что мы будем использовать в курсе?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>В рамках нашего курса мы в основном будем пользоваться библиотекой <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code>. Некоторые отдельные лекции будут использовать <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code>, но это скорее в порядке исключения.</p>
+</div>
+<div class="section" id="id8">
+<h3>Почему Pennylane?<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Но почему <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code>, если самым популярным фреймворком является именно <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code>? Приведем два основных аргумента.</p>
+<ol class="simple">
+<li><p>Сегодня трудно сказать, какое квантовое железо в итоге победит, а большим преимуществом <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code> является то, что эта библиотека является верхнеуровневой и может использовать различные backend для запуска на квантовых компьютерах разных производителей. Включая <code class="docutils literal notranslate"><span class="pre">Qsikit</span></code> и <code class="docutils literal notranslate"><span class="pre">IBM</span></code>.</p></li>
+<li><p>Наш курс больше про квантовое машинное обучение и именно для этих целей <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code> подходит лучше всего. Там есть рутины и API разных уровней, позволяющих где-то самому писать градиенты квантовых схем и обновлять их параметры, а где-то просто вызывать готовый метод из <code class="docutils literal notranslate"><span class="pre">API</span></code>, чтобы не повторять 10 раз то, что мы уже разбирали в более ранних лекциях.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/progblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="progintro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">О блоке “Фреймворки”</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="pennylane.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">PennyLane</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

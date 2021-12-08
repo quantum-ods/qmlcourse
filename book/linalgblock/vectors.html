@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Векторы &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/linalgblock/vectors.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Скобки" href="bra-ket.html" />
+    <link rel="prev" title="О блоке “Линейная алгебра и NumPy”" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/linalgblock/vectors.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/linalgblock/vectors.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Определение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Операции с векторами
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Норма (длина) вектора
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Скалярное произведение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Линейная независимость
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Базис
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   Что мы узнали?
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="vectors">
+<span id="id1"></span><h1>Векторы<a class="headerlink" href="#vectors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Определение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Вектор – это термин, который имеет несколько различных интерпретаций: математическую, геометрическую, физическую и др. Точный смысл данного термина зависит от контекста.</p>
+<p>Формально вектор определяется как элемент векторного пространства – множества, на котором определены операции <strong>сложения</strong> и <strong>умножения вектора на число (скаляр)</strong>, которые должны удовлетворять <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE">8 аксиомам</a>.</p>
+<p>Для простоты понимания рассмотрим знакомую нам со школьных времен прямоугольную (Декартову) систему координат на плоскости – две перпендикулярные друг другу оси <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span>, выбранные на них единичные векторы (орты) <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> и начало координат.</p>
+<p>Вектор <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> в такой системе координат можно записать следующим образом: <span class="math notranslate nohighlight">\(\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}\)</span></p>
+<p><strong>Замечание 1</strong>: Координаты вектора не определяют однозначно его положение на плоскости, а лишь положение конца вектора относительно его начала. Например, вектор <span class="math notranslate nohighlight">\(\begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</span> может быть отложен как из точки начала координат <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 , 0 \end{pmatrix}\)</span> с концом в точке <span class="math notranslate nohighlight">\(\begin{pmatrix} 3 , 4 \end{pmatrix}\)</span>, так и из произвольной точки, например, <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 , 1 \end{pmatrix}\)</span> с концом в точке <span class="math notranslate nohighlight">\(\begin{pmatrix} 4 , 5 \end{pmatrix}\)</span>. Оба этих вектора соответствую 3 ортам на оси <span class="math notranslate nohighlight">\(x\)</span> и 4 на оси <span class="math notranslate nohighlight">\(y\)</span>. Обычно, если не сказано иное, предполагается, что вектор отложен из начала координат.</p>
+<p><strong>Замечание 2</strong>: Вектор можно представить либо как вектор-столбец <span class="math notranslate nohighlight">\(\begin{pmatrix} a_1 \\ a_2 \end{pmatrix}\)</span>, либо как вектор-строку <span class="math notranslate nohighlight">\(\begin{pmatrix} a_1 \ a_2 \end{pmatrix}\)</span>. Здесь и далее под вектором будем подразумевать вектор-столбец, если не сказано иного.</p>
+<p>Понятие вектора на плоскости можно обобщить на 3-мерное пространство, и, в общем случае, на <span class="math notranslate nohighlight">\(n\)</span>-мерное пространство (которое уже не получится визуализировать):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + ... + a_n \mathbf{e}_n = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="id3">
+<h2>Операции с векторами<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Как было сказано ранее, в формальном определении существуют две основные операции над векторами:</p>
+<ul class="simple">
+<li><p>сложение:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{a} + \mathbf{b} = (a_1 + b_1) \mathbf{e}_1 + (a_2 + b_2) \mathbf{e}_2 + ... + (a_n + b_n) \mathbf{e}_n = \\ = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ ... \\ b_n \end{pmatrix} = \begin{pmatrix} a_1 + b_1 \\ a_2 + b_2 \\ ... \\ a_n + b_n \end{pmatrix}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>умножения вектора на число (скаляр):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lambda \mathbf{a} = \lambda a_1 \mathbf{e}_1 + \lambda a_2 \mathbf{e}_2 + ... + \lambda a_n \mathbf{e}_n = \lambda  \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\ \lambda a_2 \\ ... \\ \lambda a_n \end{pmatrix}
+\end{split}\]</div>
+<p>Операцию умножения вектора на число можно интерпретировать геометрически, как сжатие / растяжение вектора.</p>
+<p>Используя эти две операции, мы можем считать <strong>линейные комбинации векторов</strong>: <span class="math notranslate nohighlight">\(\alpha_1 \mathbf{a}_1 + \alpha_2 \mathbf{a}_2 + ... + \alpha_n \mathbf{a}_n ,\)</span> где <span class="math notranslate nohighlight">\(\mathbf{a}_1, \mathbf{a}_2, ..., \mathbf{a}_n\)</span> – векторы, а <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2, ..., \alpha_n\)</span> – числа.</p>
+</div>
+<div class="section" id="id4">
+<h2>Норма (длина) вектора<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>В линейной алгебре для обобщения понятия длины вектора используется термин <strong>норма</strong>. Можно сказать, что понятия длины и нормы эквивалентны.</p>
+<p>Формально норма определяется как функционал в векторном пространстве, удовлетворяющий <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)">3 аксиомам</a> и отображающий элементы этого пространства (векторы) в множество неотрицательных вещественных чисел.</p>
+<p>Данному определению нормы удовлетворяет множество функционалов, но мы будем рассматривать наиболее часто используемый – <strong>Евклидову норму</strong>.</p>
+<p>Для простоты понимания рассмотрим вектор на плоскости. С геометрической точки зрения он представляет собой направленный отрезок. Направленность вектора никак не влияет на его длину, поэтому, при расчете длины, мы можем работать с ним как с отрезком на плоскости и посчитать длину по школьным формулам.
+Заметим тот факт, что координаты вектора соответствуют числам, умноженным на орты координатных осей, поэтому формула длины вектора выглядит следующим образом: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}\)</span>. Соответственно, в общем случае формула выглядит следующим образом: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}\)</span></p>
+</div>
+<div class="section" id="id5">
+<h2>Скалярное произведение<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Одной из самых распространенных операций над двумя векторами является так называемое <strong>скалярное произведение</strong>, результатом которого является число (скаляр) – отсюда и название операции.</p>
+<p><strong>Замечание</strong>: Кроме скалярного произведения существует также <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">векторное произведение</a> над парой векторов, результатом которого являются вектор. Также существует <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B5%D1%88%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">смешанное произведение</a> над тройкой векторов, результатом которого является число. Данные операции в рамках курса рассматриваться не будут.</p>
+<p>Скалярное произведение используется в определении длины векторов и угла между ними. Данная операция имеет два определения:</p>
+<ul class="simple">
+<li><p>алгебраическое: <span class="math notranslate nohighlight">\( \mathbf{a} \cdot \mathbf{b} = a_1  b_1 + a_2  b_2 + ... + a_n b_n\)</span></p></li>
+<li><p>геометрическое: <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} = \lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert \cos{\theta},\)</span> где <span class="math notranslate nohighlight">\(\theta\)</span> – угол между векторами <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> и <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>.</p></li>
+</ul>
+<p>Используя оба эти определения можно вывести формулу для расчета косинуса угла между векторами:</p>
+<div class="math notranslate nohighlight">
+\[
+\cos{\theta} = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert} = \frac{a_1  b_1 + a_2  b_2 + ... + a_n b_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}
+\]</div>
+<p>С помощью данной формулы можно прийти к одному из главных свойств скалярного произведения, которое заключается в том, что <strong>два вектора перпендикулярны тогда и только тогда, как их скалярное произведение равно 0</strong>: <span class="math notranslate nohighlight">\(\mathbf{a} \perp \mathbf{b} \leftrightarrow \cos{\theta} = 0 \leftrightarrow \mathbf{a} \cdot \mathbf{b} = 0\)</span></p>
+<p>Скалярное произведение можно использовать для расчета нормы вектора следующим образом: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{\mathbf{a} \cdot \mathbf{a}}\)</span></p>
+</div>
+<div class="section" id="id6">
+<h2>Линейная независимость<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Одним из основополагающих понятий линейной алгебры является <strong>линейная зависимость/независимость</strong>.</p>
+<p>Для определения данного понятия рассмотрим набор из нескольких векторов. Набор векторов является <strong>линейно зависимым</strong>, если существует такая ненулевая линейная комбинация векторов данного набора (как минимум один элемент данной комбинации не равен 0) равная нулевому вектору (вектор, состоящий только из 0):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\ 0 \\ ... \\ 0 \end{pmatrix}, \\ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
+\end{split}\]</div>
+<p>Если набор векторов не является линейно зависимым, то есть не существует ненулевой линейной комбинации векторов данного набора равной нулевому вектору, то такой набор векторов называется <strong>линейно независимым</strong>.</p>
+<p><strong>Пример</strong>:</p>
+<ul class="simple">
+<li><p>линейно независимый набор векторов (только нулевые коэффициенты линейно комбинации приводят к нулевому вектору):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>линейно зависимый набор векторов (существуют ненулевые коэффициенты линейно комбинации, которые приводят к нулевому вектору):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\end{split}\]</div>
+<p>Из определения линейной зависимости можно вывести следующее свойство:
+Набор векторов линейно зависим тогда и только тогда, когда один из элементов этого набора может быть выражен через оставшиеся.</p>
+<p><strong>Замечание</strong>: Если векторы рассматривать как какие-то характеристики объектов, то линейную зависимость можно интерпретировать как избыточность данных.</p>
+<p>С помощью понятия линейной независимости вводится понятие <strong>размерности</strong> векторного пространства – это максимальное число линейно независимых векторов в нем.</p>
+</div>
+<div class="section" id="id7">
+<h2>Базис<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>В формальном определении вектора не присутствуют никакие его количественные интерпретации, а лишь две операции над векторами и 8 аксиом.</p>
+<p>Откуда же появляются количественные измерения? Для того, чтобы это стало понятно, нужно ввести понятия <strong>базиса</strong>.</p>
+<p>Базис – это конечный набор векторов в векторном пространстве, такой, что любой вектор этого пространства может быть единственным образом представлен в виде линейной комбинации векторов этого набора.</p>
+<p>Вспомним один из примеров выше, где мы представляли прямоугольную систему координат на плоскости и единичные векторы (орты) <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span>. <span class="math notranslate nohighlight">\(\mathbf{e}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \mathbf{e}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>
+В данном примере мы разложили произвольный вектор <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> следующим образом:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = a_1 \begin{pmatrix} 1 \\ 0 \end{pmatrix} + a_2 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} a_1 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ a_2 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}
+\end{split}\]</div>
+<p>Получается, что орты <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> <strong>являются базисом двумерного векторного пространства</strong>, и с помощью линейной комбинации этих векторов мы можем единственным образом представить любой вектор этого пространства.</p>
+<p>Возникает вопрос, данный базис является единственным в двумерном пространстве, или нет?</p>
+<p>Ответ на этот вопрос – нет. На самом деле можно взять два любых вектора (<strong>почти любых</strong>), и они тоже будут являться базисом, при условии, что любой вектор можно разложить с помощью их линейной комбинации.</p>
+<p><strong>Пример</strong>.</p>
+<p>Пусть у нас есть вектор <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> в базисе единичных орт, и мы хотим разложить его по другому базису <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\alpha_1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + \alpha_2 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+\end{split}\]</div>
+<p>Откуда мы можем найти, что <span class="math notranslate nohighlight">\(\alpha_1 = -1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2 = -1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+-1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+\end{split}\]</div>
+<p>Таким образом, вектор <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> в базисе единичных орт представляется как <span class="math notranslate nohighlight">\(\begin{pmatrix} -1 \\ -1 \end{pmatrix}\)</span> в базисе <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>.</p>
+<p>Но для базиса, как было сказано ранее, подойдет <strong>не любой набор векторов</strong>.</p>
+<p>Например через базис <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span> нельзя разложить вектор <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span>, поэтому данный набор векторов не является базисом.</p>
+<p>В чем же принципиальная разница между этими базисами, и может ли базис двумерного пространства состоять, например, из большего или меньшего числа векторов, чем 2?</p>
+<p>У линейной алгебры есть на это ответ:
+<strong>Любые <span class="math notranslate nohighlight">\(n\)</span> линейно независимых векторов <span class="math notranslate nohighlight">\(n\)</span>-мерного векторного пространства образуют базис этого пространства.</strong></p>
+<p>Именно из-за линейной зависимости векторов <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span> они не могут являться базисом двумерного пространства.</p>
+</div>
+<div class="section" id="id8">
+<h2>Что мы узнали?<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Определение вектора</p></li>
+<li><p>Операции с векторами</p></li>
+<li><p>Норма (длина) вектора</p></li>
+<li><p>Скалярное произведение</p></li>
+<li><p>Линейная независимость</p></li>
+<li><p>Базис</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/linalgblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">О блоке “Линейная алгебра и NumPy”</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="bra-ket.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Скобки</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

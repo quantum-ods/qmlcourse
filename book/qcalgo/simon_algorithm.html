@@ -1,0 +1,1139 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Алгоритм Саймона &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/qcalgo/simon_algorithm.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="О блоке “Железо квантовых компьютеров”" href="../hwblock/hwintro.html" />
+    <link rel="prev" title="Алгоритм Гровера" href="grovers_algorithm.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/qcalgo/simon_algorithm.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/qcalgo/simon_algorithm.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qcalgo/simon_algorithm.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/qcalgo/simon_algorithm.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Задача Саймона
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Описание алгоритма
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Пример
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Приложение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Ссылки
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="simon-algorithm">
+<span id="id1"></span><h1>Алгоритм Саймона<a class="headerlink" href="#simon-algorithm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Задача Саймона<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Давайте начнём с того, что алгоритм Саймона решает задачу Саймона. Да, вот такой замечательный учёный - нашёл проблему, решил проблему.</p>
+<p>По своей природе задача Саймона является разновидностью задачи о скрытой абелевой подгруппе <span id="id3">[<a class="reference internal" href="../bibliography.html#id47"><span>Lom04</span></a>]</span>.</p>
+<p>Пусть задана функция <span class="math notranslate nohighlight">\(f: \{0, 1\}^n \rightarrow \{0, 1\}^n\)</span> и <strong>неизвестная</strong> строка <span class="math notranslate nohighlight">\(s \in  \{0, 1\}^n\)</span>, для всех <span class="math notranslate nohighlight">\(x, y \in \{0, 1\}^n\)</span> выполняется:</p>
+<div class="math notranslate nohighlight">
+\[
+    \large f(x) = f(y) \Leftrightarrow x \oplus y = s
+  \]</div>
+<p>То есть, если мы для двух различных строк <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span> имеем одинаковое значение <span class="math notranslate nohighlight">\(f(x) = f(y)\)</span>, то <span class="math notranslate nohighlight">\(x \oplus y\)</span> равняется некоторой неизвестной строке <span class="math notranslate nohighlight">\(s\)</span>.
+Функция <span class="math notranslate nohighlight">\(f(x)\)</span> представляет собой чёрный ящик.</p>
+<p>Задача состоит в том, чтобы <strong>найти <span class="math notranslate nohighlight">\(s\)</span>, выполнив при этом как можно меньшее количество вызовов <span class="math notranslate nohighlight">\(f(x)\)</span> .</strong></p>
+</div>
+<div class="section" id="id4">
+<h2>Описание алгоритма<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Сразу определим операцию на двух бинарных строках (они же бинарные векторы) <span class="math notranslate nohighlight">\(x = x_0 x_1 x_2 ... x_{2^n-1}\)</span>, <span class="math notranslate nohighlight">\(z = z_1 z_2 z_3 ... z_{2^n-1}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  \langle x, z\rangle = \bigoplus_{i=0}^{2^n-1} x_i \wedge z_i = x_0 \wedge z_0 \oplus x_1 \wedge z_1 \oplus ... \oplus x_{2^n-1} \wedge z_{2^n-1}
+\]</div>
+<p>Принципиальная схема алгоритма Саймона:</p>
+<div class="figure align-default" id="simon-principal">
+<a class="reference internal image-reference" href="../../_images/simon_principal.png"><img alt="../../_images/simon_principal.png" src="../../_images/simon_principal.png" style="width: 400px;" /></a>
+</div>
+<p>В принципе, есть небольшие вариации в реализации алгоритма, мы рассмотрим наиболее простую (все необходимые ссылки в конце приведены):</p>
+<ol>
+<li><p>Сначала приготовления. Вначале мы приготовим 2 набора квантовых регистров (каждый размерности <span class="math notranslate nohighlight">\(n\)</span>) в следующем состоянии:</p>
+<div class="math notranslate nohighlight">
+\[
+      |\psi_0\rangle = |0\rangle|0\rangle
+    \]</div>
+</li>
+<li><p>Применяем гейты Адамара на первом регистре:</p>
+<div class="math notranslate nohighlight">
+\[
+      (H^n \otimes I^n) |\psi_0\rangle = (H^n \otimes I^n) |0\rangle |0\rangle = |\psi_1 \rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle
+    \]</div>
+</li>
+<li><p>Применяем оператор <span class="math notranslate nohighlight">\(U_f\)</span>, который выполняет следующее преобразование <span class="math notranslate nohighlight">\(U_f(|x\rangle|0\rangle) = |x\rangle|f(x)\rangle\)</span>, т.е. во второй регистр записывается значение функции <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+      U_f(|\psi_1 \rangle) = U_f(\frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |0\rangle) = |\psi_2\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{ 0, 1\}^n}|x\rangle |f(x) \rangle
+    \]</div>
+</li>
+<li><p>Производим измерение на втором регистре. Измеренное значение будет соответствовать либо <span class="math notranslate nohighlight">\(x\)</span> либо <span class="math notranslate nohighlight">\(y = x \oplus s\)</span> . А первый регистр примет значение:</p>
+<div class="math notranslate nohighlight">
+\[
+      |\psi \rangle_3 = \frac{1}{\sqrt{2}} \left( |x\rangle_1 + |y\rangle_1 \right)
+    \]</div>
+</li>
+<li><p>Снова применяем гейты Адамара на первом регистре:</p>
+<div class="math notranslate nohighlight">
+\[
+      (H^n \otimes I^n) |\psi_2\rangle = |\psi_3\rangle = \frac{1}{2^n} \sum_{z \in \{ 0, 1\}^n}(-1^{\langle x, z\rangle} + -1^{\langle y, z\rangle}) |z\rangle,
+    \]</div>
+<p>(операцию <span class="math notranslate nohighlight">\(\langle x, z \rangle\)</span> мы уже определяли выше).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Для чисел <span class="math notranslate nohighlight">\(x = 110111\)</span> и <span class="math notranslate nohighlight">\(z = 010101\)</span> получим</p>
+<div class="math notranslate nohighlight">
+\[
+    \langle x, z\rangle = 1 \wedge 0 \oplus 1 \wedge 1 \oplus 0 \wedge 0 \oplus 1 \wedge 1 \oplus 1 \wedge 0 \oplus 1 \wedge 1 = 1
+  \]</div>
+<div class="math notranslate nohighlight">
+\[
+    (-1)^{1} = -1
+  \]</div>
+</div>
+</li>
+<li><p>Производим измерение на первом регистре. И здесь возможны 2 варианта исхода:</p>
+<ol>
+<li><p><span class="math notranslate nohighlight">\( x \oplus y = s = 0^n \)</span></p>
+<p>Учитывая <span class="math notranslate nohighlight">\( x \oplus y = 0^n \)</span> и то, что состояние всей системы описывается как</p>
+<div class="math notranslate nohighlight">
+\[
+          \sum_{z \in \{0, 1\}^n}|z\rangle \otimes \frac{1}{2^n} \sum_{x \in \{0, 1\}^n}(-1^{\langle x, z\rangle}) |f(x) \rangle
+        \]</div>
+<p>находим вероятность получить строку <span class="math notranslate nohighlight">\(z\)</span> на первом регистре</p>
+<div class="math notranslate nohighlight">
+\[
+          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}
+        \]</div>
+<p>т.е. в данном случае имеет место <strong>равномерное распределение</strong>.</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\( x \oplus y = s \neq 0^n \)</span></p>
+<p>Этот случай гораздо интереснее. Функция <span class="math notranslate nohighlight">\(f\)</span> преобразует два различных входных значения <span class="math notranslate nohighlight">\(x_1, x_2 \in \{0,1\}^n\)</span> в одно <span class="math notranslate nohighlight">\(f(x_1) = f(x_2) = s \in \{0, 1\}^n\)</span> .
+Также <span class="math notranslate nohighlight">\(x_1 \oplus x_2 = s\)</span> эквивалентно <span class="math notranslate nohighlight">\(x_1 \oplus s = x_2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+          |\psi_3\rangle = \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}\sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z, x \rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |z\rangle \oplus |f(x)\rangle=
+        \]</div>
+<div class="math notranslate nohighlight">
+\[
+          \frac{1}{2^n}\sum_{z \in \{0, 1 \}^n}|z\rangle \otimes \sum_{x \in \{0, 1 \}^n} \frac{(-1)^{\langle z,  x\rangle} (1 + (-1)^{\langle z, s\rangle})}{2} |f(x)\rangle
+        \]</div>
+<div class="math notranslate nohighlight">
+\[
+          p_z = \left\| \frac{1}{2^n} \sum_{x \in \{0, 1\}^n} \left((-1)^{\langle x, z\rangle} |f(x)\rangle \right) \right\|^2 =
+        \left\| \frac{1}{2^n} \sum_{z \in A} \left(((-1)^{\langle x_1, z\rangle} + (-1)^{\langle x_2, z\rangle})|z\rangle \right) \right\|^2
+        \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+        = \begin{cases}
+            \frac{1}{2^{n-1}}, \text{ если } \langle z, s \rangle = 0 \\
+            0, \text{ если }  \langle z, s \rangle = 1
+          \end{cases}
+        \end{split}\]</div>
+</li>
+</ol>
+<p>Расчёты вероятностей можно найти в приложениях <a class="reference external" href="simon_algorithm.html#id6">Приложение 1</a>.</p>
+<p>Выполняем алгоритм <span class="math notranslate nohighlight">\(n\)</span> раз. После чего у нас будет система <span class="math notranslate nohighlight">\(n\)</span> линейно независимых уравнений. Теперь приступаем к вычислению строки <span class="math notranslate nohighlight">\(s\)</span>.</p>
+</li>
+<li><p>Постобработка.</p>
+<p>Итак, для того, чтобы найти <span class="math notranslate nohighlight">\(s = (s_0, s_1, s_2, ..., s_{n-1})^T\)</span>, нам потребуется <span class="math notranslate nohighlight">\(n\)</span> линейно независимых векторов <span class="math notranslate nohighlight">\(\vec{z_i}\)</span>, для которых выполняется <span class="math notranslate nohighlight">\(\langle \vec{z_i}, s \rangle = 0\)</span>.</p>
+<p>После того как получена система из <span class="math notranslate nohighlight">\(n\)</span> линейно независимых уравнений, решение можно найти методом Гаусса.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>Пример<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Давайте возьмём n = 3, строку <span class="math notranslate nohighlight">\(s = 100\)</span>, и функцию <span class="math notranslate nohighlight">\(f\)</span>, которая соответствует критерию</p>
+<div class="math notranslate nohighlight">
+\[
+  f(x) = f(y) \Leftrightarrow x \oplus s = y
+\]</div>
+<p>Обычно функция <span class="math notranslate nohighlight">\(f(x)\)</span> задана наперёд. Ну а мы выберем её простейшей: <span class="math notranslate nohighlight">\(f(x) = x \oplus s\)</span>.</p>
+<p>Давайте посмотрим на таблицу истинности всех нужных переменных.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \large
+  \begin{array} {|r|r|r|}
+  \hline x &amp; x \oplus s &amp; f(x) \\
+  \hline 000 &amp; 100 &amp; 000 \\
+  \hline 001 &amp; 101 &amp; 001 \\
+  \hline 010 &amp; 110 &amp; 010 \\
+  \hline 011 &amp; 111 &amp; 011 \\
+  \hline 100 &amp; 000 &amp; 000 \\
+  \hline 101 &amp; 001 &amp; 001 \\
+  \hline 110 &amp; 010 &amp; 010 \\
+  \hline 111 &amp; 011 &amp; 011 \\
+  \hline  
+  \end{array}
+\end{split}\]</div>
+<p>Нарисуем схему на Qiskit, которая будет показывать одну итерацию алгоритма:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+
+<span class="c1"># Работаем в пространстве размерности n = 3.</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Создаём необходимые регистры</span>
+<span class="n">qr1</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;q1&quot;</span><span class="p">)</span>
+<span class="n">qr2</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;q2&quot;</span><span class="p">)</span>
+<span class="n">cr1</span> <span class="o">=</span> <span class="n">ClassicalRegister</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;c1&quot;</span><span class="p">)</span>
+
+<span class="c1"># Шаг 1. Создаём квантовую схему (инициализация состояния)</span>
+<span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr1</span><span class="p">,</span> <span class="n">qr2</span><span class="p">,</span> <span class="n">cr1</span><span class="p">)</span>
+
+<span class="c1"># Шаг 2. Применяем гейт Адамара ко всем кубитам первого регистра</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="c1"># Шаг 3. Применяем U_f</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="n">qr1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">qr2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Шаг 4. Производим измерение первого регистра</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr2</span><span class="p">,</span> <span class="n">cr1</span><span class="p">)</span>
+
+<span class="c1"># Шаг 5. Ещё раз применяем гейт адамара к каждому из кубитов</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="c1"># Шаг 6. Производим измерение первого регистра</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr1</span><span class="p">,</span> <span class="n">cr1</span><span class="p">)</span>
+
+<span class="c1"># Рисуем схему</span>
+<span class="n">qc</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">      ┌───┐     ┌───┐      ┌─┐
+q1_0: ┤ H ├──■──┤ H ├──────┤M├
+      ├───┤  │  ├───┤┌─┐   └╥┘
+q1_1: ┤ H ├──┼──┤ H ├┤M├────╫─
+      ├───┤  │  ├───┤└╥┘┌─┐ ║ 
+q1_2: ┤ H ├──┼──┤ H ├─╫─┤M├─╫─
+      └───┘┌─┴─┐└┬─┬┘ ║ └╥┘ ║ 
+q2_0: ─────┤ X ├─┤M├──╫──╫──╫─
+       ┌─┐ └───┘ └╥┘  ║  ║  ║ 
+q2_1: ─┤M├────────╫───╫──╫──╫─
+       └╥┘  ┌─┐   ║   ║  ║  ║ 
+q2_2: ──╫───┤M├───╫───╫──╫──╫─
+        ║   └╥┘   ║   ║  ║  ║ 
+c1: 3/══╩════╩════╩═══╩══╩══╩═
+        1    2    0   1  2  0 </pre></div></div>
+</div>
+<p>Теперь пройдём по всем шагам алгоритма:</p>
+<ol>
+<li><p>Инициализация всех регистров в <span class="math notranslate nohighlight">\(0\)</span> состоянии:</p>
+<div class="math notranslate nohighlight">
+\[
+      |\psi_0\rangle = |000\rangle_{1} |000\rangle_{2}
+    \]</div>
+</li>
+<li><p>Применяем Адамар к первому регистру:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+      (H^n \otimes I)(|\psi_0\rangle) = |\psi_1\rangle = \frac{1}{\sqrt{8}}(|000\rangle + |001\rangle + |010\rangle + |011\rangle \\ + |100\rangle + |101\rangle + |110\rangle + |111\rangle)_1 |000 \rangle_{2})
+    \end{split}\]</div>
+</li>
+<li><p>Применяем оракул <span class="math notranslate nohighlight">\(U_f\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+      U_f(|\psi_1\rangle = |\psi_2\rangle = \\\end{split}\\\begin{split}      \frac{1}{\sqrt{8}} (|000\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |001\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |010\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |011\rangle_{1} |0 \oplus 0, 0, 0 \rangle_{2} \\
+      + |100\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
+      + |101\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
+      + |110\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} \\
+      + |111\rangle_{1} |0 \oplus 1, 0, 0 \rangle_{2} )
+    \end{split}\end{aligned}\end{align} \]</div>
+</li>
+<li><p>Измеряем второй регистр. С вероятностью <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> мы получим либо значение <span class="math notranslate nohighlight">\(|000\rangle\)</span> либо <span class="math notranslate nohighlight">\(|100\rangle\)</span>. Допустим результат равен <span class="math notranslate nohighlight">\(|100\rangle\)</span>. Тогда состояние первого регистра примет вид: <span class="math notranslate nohighlight">\(|\psi_3\rangle = (|100\rangle_{1} + |101\rangle_{1} + |110\rangle_{1} + |111\rangle_{1})\)</span>.</p></li>
+<li><p>Ещё один раз применяем гейты Адамара на первый регистр:</p>
+<div class="math notranslate nohighlight">
+\[
+      |\psi_4 \rangle = \frac{1}{4} [ \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle + |1\rangle) \right)
+    \]</div>
+<div class="math notranslate nohighlight">
+\[
+      + \left(|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \otimes (|0\rangle - |1\rangle) \right)
+    \]</div>
+<div class="math notranslate nohighlight">
+\[
+      + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle + |1\rangle) \right)
+    \]</div>
+<div class="math notranslate nohighlight">
+\[
+      + \left(|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \otimes (|0\rangle - |1\rangle) \right) ]
+    \]</div>
+</li>
+<li><p>Производим измерение первого регистра, записывая результат.</p>
+<p>Выполняем шаги 1-6 <span class="math notranslate nohighlight">\(n\)</span> раз.</p>
+</li>
+<li><p>Здесь решаем систему уравнений.</p></li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h2>Приложение<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Расчёт вероятностей.</p>
+<ol>
+<li><p>Случай, когда <span class="math notranslate nohighlight">\(x \oplus z = 0^n\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
+          \sum_{z \in \{0,1\}^n} |z\rangle \otimes \left( \frac{1}{2^n} \sum_{x \in \{0,1\}^n} ((-1)^{\langle x, z \rangle} |f(x)\rangle) \right)
+        \]</div>
+<p>Вероятность получить какую-либо из <span class="math notranslate nohighlight">\(2^n\)</span> строк одинакова:</p>
+<div class="math notranslate nohighlight">
+\[
+          p_z = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \frac{1}{2^n}
+        \]</div>
+<p>Утверждение, данное выше, следует из того, что <span class="math notranslate nohighlight">\(f(x)\)</span> отличается от <span class="math notranslate nohighlight">\(x\)</span> лишь порядком во всём множестве строк <span class="math notranslate nohighlight">\(\{0,1\}^n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+          \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |f(x)\rangle \right) \right\|^2 = \left\| \frac{1}{2^n} \sum_{z \in \{0, 1\}^n} \left((-1)^{\langle z, x\rangle} |x\rangle \right) \right\|^2
+        \]</div>
+</li>
+<li><p>Случай, когда <span class="math notranslate nohighlight">\(x \oplus z = s \neq 0^n\)</span>:</p>
+<p>Определим <span class="math notranslate nohighlight">\(A = f(\{0,1\}^n)\)</span> - образ функции <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(f(x_i) = \ell \in A\)</span> - т.е. это какое-то значение функции <span class="math notranslate nohighlight">\(f\)</span>. Здесь у нас имеются два таких значения <span class="math notranslate nohighlight">\(x_1 \in \{0, 1\}^n \)</span>, <span class="math notranslate nohighlight">\(x_2 \in \{0, 1\}^n \)</span> , что для них выполняется <span class="math notranslate nohighlight">\( x_2 = s \oplus x_1 \)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+          p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} \left( ((-1)^{\langle z, x_1\rangle} + (-1)^{\langle z, x_2\rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
+        \]</div>
+<p>Перепишем коэффициенты <span class="math notranslate nohighlight">\((-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2, z \rangle}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+          (-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2, z \rangle} = (-1)^{\langle x_1, z \rangle} + (-1)^{\langle x_2 \oplus s, z \rangle}
+        \]</div>
+<p>Также, заметим, что выполняется <span class="math notranslate nohighlight">\(\langle x_1 \oplus s, z \rangle = \langle x_1, z \rangle \oplus \langle x_2, z \rangle\)</span>, тогда ещё раз перепишем:</p>
+<div class="math notranslate nohighlight">
+\[
+          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle})
+        \]</div>
+<p>И собирая все полученные условия:</p>
+<div class="math notranslate nohighlight">
+\[
+           p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = \frac{1}{2^n}
+        \]</div>
+<p>Если <span class="math notranslate nohighlight">\(\langle z, s \rangle = 1\)</span>, то <span class="math notranslate nohighlight">\((-1)^{\langle z, s \rangle} = -1\)</span> и следовательно</p>
+<div class="math notranslate nohighlight">
+\[
+          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = (-1)^{\langle x_1, z \rangle} (1 - 1) = 0
+        \]</div>
+<p>И вероятность в таком случае равняется 0</p>
+<div class="math notranslate nohighlight">
+\[
+          p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} \left( (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) |\ell\rangle \right) \right\|^2 = 0
+        \]</div>
+<p>Иначе <span class="math notranslate nohighlight">\(\langle z, s \rangle = 0\)</span>, и тогда <span class="math notranslate nohighlight">\((-1)^{\langle z, s \rangle} = 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+          (-1)^{\langle x_1, z \rangle} (1 + (-1)^{\langle z, s \rangle}) = 2 (-1)^{\langle x_1, z \rangle}
+        \]</div>
+<p>Вычисление вероятности</p>
+<div class="math notranslate nohighlight">
+\[
+          p_z = \left\| \frac{1}{2^n} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} 2 |\ell\rangle \right\|^2 =
+        \]</div>
+<div class="math notranslate nohighlight">
+\[
+          \left\| \frac{2}{2^n} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} |\ell\rangle \right\|^2 = \left\| \frac{2}{2^n} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} |\ell\rangle \right\|^2 = \left\| \frac{1}{2^{n-1}} \sum_{\ell \in A} (-1)^{\langle x_1, z \rangle} |\ell\rangle \right\|^2
+        \]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+          p_z = \begin{cases}
+            \frac{1}{2^{n-1}}, \text{ если } \langle z, s \rangle = 0 \\
+            0, \text{ если }  \langle z, s \rangle = 1
+          \end{cases}
+        \end{split}\]</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>Ссылки<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leimao.github.io/blog/Simon-Algorithm/">Simon Algorithm</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Simon%27s_problem">Simon’s problem</a></p></li>
+<li><p><a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/simon.html">Qiskit Simon algorithm</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/qcalgo"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="grovers_algorithm.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Алгоритм Гровера</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../hwblock/hwintro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">О блоке “Железо квантовых компьютеров”</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

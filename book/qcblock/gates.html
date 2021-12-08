@@ -1,0 +1,1520 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Квантовые гейты &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/qcblock/gates.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Смешанные состояния и матрицы плотности" href="mixedstates.html" />
+    <link rel="prev" title="Квантовый бит" href="qubit.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/qcblock/gates.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/qcblock/gates.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qcblock/gates.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/qcblock/gates.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Введение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Основные однокубитные гейты
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#t">
+     T-гейт
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Гейты поворота вокруг оси
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hat-ry">
+       Гейт
+       <span class="math notranslate nohighlight">
+        \(\hat{RY}\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Другие гейты вращений
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Общая форма записи однокубитных гейтов
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phase-shift">
+     Phase-shift гейт
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hat-u-2-hat-u-3">
+     Гейты
+     <span class="math notranslate nohighlight">
+      \(\hat{U}_2\)
+     </span>
+     и
+     <span class="math notranslate nohighlight">
+      \(\hat{U}_3\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Еще пара слов об однокубитных гейтах
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Единичный гейт
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   Многокубитные состояния и гейты
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Многокубитные состояния
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Многокубитные операторы
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Конструирование многокубитных операторов
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Наблюдаемые для многокубитных гейтов
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   Основные двухкубитные гейты
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cnot-cx">
+     CNOT (CX)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cy-cz">
+     Гейты CY и CZ
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iswap">
+     Гейт iSWAP
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fsim">
+     Гейт fSim
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pennylane">
+   Первое знакомство с PennyLane
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device">
+     Device
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qnode">
+     QNode
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numpy">
+       Сначала на NumPy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       Теперь через QNode
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   Заключение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   Задачи
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="gates">
+<span id="id1"></span><h1>Квантовые гейты<a class="headerlink" href="#gates" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Из этой лекции мы узнаем:</p>
+<ul class="simple">
+<li><p>какие есть основные однокубитные и многокубитные гейты;</p></li>
+<li><p>как записывать многокубитные состояния;</p></li>
+<li><p>как конструировать многокубитные операторы;</p></li>
+<li><p>как работать с библиотекой <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Квантовые гейты являются основными <em>строительными</em> блоками для любых квантовых схем, в том числе и тех, что применяются для машинного обучения. Можно сказать, что это своеобразный алфавит квантовых вычислений. Он необходим, чтобы сходу понимать, например, что изображено на подобных схемах:</p>
+<div class="figure align-default" id="lvqe">
+<a class="reference internal image-reference" href="../../_images/Layer-VQE.png"><img alt="../../_images/Layer-VQE.png" src="../../_images/Layer-VQE.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text"><a class="reference external" href="https://arxiv.org/abs/2102.05566">Схема Layered-VQE</a></span><a class="headerlink" href="#lvqe" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Основные однокубитные гейты<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>В прошлый раз мы познакомились с <a class="reference external" href="qubit.html#id24">операторами Паули</a>, а также <a class="reference external" href="qubit.html#id20">гейтом Адамара</a>. Как для обычных квантовых алгоритмов, так и
+для QML-алгоритмов нужны и другие гейты, потому что одни только эти гейты не позволяют перейти во все возможные квантовые состояния.
+Теперь давайте посмотрим, какие еще однокубитные гейты часто применяются в квантовых вычислениях и квантовом машинном обучении.</p>
+<div class="section" id="t">
+<h3>T-гейт<a class="headerlink" href="#t" title="Permalink to this headline">¶</a></h3>
+<p>T-гейт очень популярен в универсальных квантовых вычислениях. Его матрица имеет вид:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{T} = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; \frac{1+i}{\sqrt{2}}
+\end{bmatrix}
+\end{split}\]</div>
+<p>Любой однокубитный гейт можно аппроксимировать последовательностью гейтов Адамара и T-гейтов. Чем точнее требуется аппроксимация, тем длиннее будет аппроксимирующая последовательность.</p>
+<p>Помимо важной роли в математике квантовых вычислений, гейт Адамара и T-гейт интересны тем, что именно на них построено большинство предложений по реализации квантовых вычислений с топологической защитой или с коррекцией ошибок. На сегодняшний день эти схемы реально пока не очень работают: никаких топологически защищенных кубитов продемонстрировано не было, а коррекция ошибок не выходит за пределы двух логических кубитов.</p>
+</div>
+<div class="section" id="id5">
+<h3>Гейты поворота вокруг оси<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Поворотные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:</p>
+<div class="figure align-default" id="blochsphere">
+<a class="reference internal image-reference" href="../../_images/Blochsphere.svg"><img alt="../../_images/Blochsphere.svg" src="../../_images/Blochsphere.svg" width="400px" /></a>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochsphere" title="Permalink to this image">¶</a></p>
+</div>
+<p>Любой однокубитный гейт можно представить как вращение вектора состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> на некоторый угол вокруг некоторой оси, проходящей через центр сферы Блоха.</p>
+<p>Гейты <span class="math notranslate nohighlight">\(\hat{RX}(\phi), \hat{RY}(\phi), \hat{RZ}(\phi)\)</span> осуществляют поворот на определенный угол <span class="math notranslate nohighlight">\(\phi\)</span> вокруг соответствующей оси на сфере Блоха.</p>
+<p>Давайте внимательно рассмотрим это на примере гейта <span class="math notranslate nohighlight">\(\hat{RY}\)</span>.</p>
+<div class="section" id="hat-ry">
+<h4>Гейт <span class="math notranslate nohighlight">\(\hat{RY}\)</span><a class="headerlink" href="#hat-ry" title="Permalink to this headline">¶</a></h4>
+<p>Сам гейт определяется следующим образом:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{RY}(\phi) = \begin{bmatrix}
+\cos(\frac{\phi}{2}) &amp; -\sin(\frac{\phi}{2}) \\
+\sin(\frac{\phi}{2}) &amp; \cos(\frac{\phi}{2})
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">ry</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)],</span>
+        <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)]</span>
+    <span class="p">])</span> <span class="o">@</span> <span class="n">state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Запишем наше состояние <span class="math notranslate nohighlight">\(\ket{0}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Внимательно посмотрим на сферу Блоха. Можно заметить, что если повернуть состояние из <span class="math notranslate nohighlight">\(\ket{0}\)</span> на <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> и измерить значение <span class="math notranslate nohighlight">\(\hat{\sigma^x}\)</span>, то получится 1. А если повернуть на <span class="math notranslate nohighlight">\(-\frac{\pi}{2}\)</span>, то получится -1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">expval</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">state</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">op</span> <span class="o">@</span> <span class="n">state</span>
+
+<span class="n">pauli_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">pauli_x</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="n">pauli_x</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Убедимся также, что вращение на угол, пропорциональный <span class="math notranslate nohighlight">\(2\pi\)</span>, не меняет результат измерения. Возьмем случайное состояние:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{\Psi} = \begin{bmatrix}
+0.42 \\
+\sqrt{1 - 0.42^2}
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.42</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.42</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Измерим его по осям <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> и <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, затем повернем на угол <span class="math notranslate nohighlight">\(2\pi\)</span> и измерим снова:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pauli_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="n">pauli_z</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="n">pauli_x</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z after RY:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">pauli_z</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X after RY:</span><span class="se">\n\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expval</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">random_state</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">pauli_x</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z:
+	[[-0.6472+0.j]]
+
+X:
+	[[0.76232025+0.j]]
+
+Z after RY:
+	[[-0.6472+0.j]]
+
+X after RY:
+	[[0.76232025+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>Другие гейты вращений<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Аналогичным образом определяются гейты <span class="math notranslate nohighlight">\(\hat{RX}\)</span> и <span class="math notranslate nohighlight">\(\hat{RZ}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{RX}(\phi) = \begin{bmatrix}
+\cos(\frac{\phi}{2}) &amp; -i\sin(\frac{\phi}{2}) \\
+-i\sin(\frac{\phi}{2}) &amp; \cos(\frac{\phi}{2})
+\end{bmatrix} \qquad \hat{RZ}(\phi) = \begin{bmatrix}
+e^{-\frac{i\phi}{2}} &amp; 0 \\
+0 &amp; e^{\frac{i\phi}{2}}
+\end{bmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="id7">
+<h4>Общая форма записи однокубитных гейтов<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>В общем случае однокубитные гейты могут быть также записаны следующим образом:</p>
+<div class="math notranslate nohighlight">
+\[
+\large \hat{R}^\vec{n}(\alpha) = e^{-\frac{i\alpha\hat{\vec{\sigma}}\vec{n}}{2}},
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(\alpha\)</span> – это угол поворота, <span class="math notranslate nohighlight">\(\vec{n}\)</span> – единичный вектор в направлении оси поворота, а <span class="math notranslate nohighlight">\(\hat{\vec{\sigma}} = \{\hat{\sigma}^x, \hat{\sigma}^y, \hat{\sigma}^z\}\)</span> – это вектор, составленный из операторов Паули. Если использовать покоординатную запись и <span class="math notranslate nohighlight">\(\vec{n} = \{n_x, n_y, n_z\}\)</span> задает ось вращения, то</p>
+<div class="math notranslate nohighlight">
+\[
+\large \hat{R}^\vec{n}(\alpha) = e^{-i\frac{\alpha}{2}\left(\hat{\sigma}^xn_x+\hat{\sigma}^yn_y+\hat{\sigma}^zn_z\right)}.
+\]</div>
+<p>Забегая вперед, можно сказать, что именно гейты вращений – это основа <a class="reference internal" href="../vqcblock/vqcintro.html#vqcintro"><span class="std std-ref">квантовых вариационных схем</span></a>, главного инструмента этого курса.</p>
+</div>
+</div>
+<div class="section" id="phase-shift">
+<h3>Phase-shift гейт<a class="headerlink" href="#phase-shift" title="Permalink to this headline">¶</a></h3>
+<p>Другой важный гейт – это так называемый phase-shift гейт, или <span class="math notranslate nohighlight">\(\hat{U}_1\)</span> гейт. Его матричная форма имеет следующий вид:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{U}_1(\phi) = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; e^{i\phi}
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u1</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span><span class="p">)]])</span> <span class="o">@</span> <span class="n">state</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Легко видеть, что с точностью до глобального фазового множителя, который ни на что не влияет, Phase-shift-гейт – это тот же <span class="math notranslate nohighlight">\(\hat{RZ}(\phi)\)</span>.
+Он играет важную роль в квантовых ядерных методах.</p>
+</div>
+<div class="section" id="hat-u-2-hat-u-3">
+<h3>Гейты <span class="math notranslate nohighlight">\(\hat{U}_2\)</span> и <span class="math notranslate nohighlight">\(\hat{U}_3\)</span><a class="headerlink" href="#hat-u-2-hat-u-3" title="Permalink to this headline">¶</a></h3>
+<p>Более редкие в QML гейты, которые однако все равно встречаются в статьях.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{U}_2(\phi, \lambda) = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; -e^{i\lambda} \\
+e^{i\phi} &amp; e^{i(\phi + \lambda)}
+\end{bmatrix} = \hat{U}_1(\phi + \lambda)\hat{RZ}(-\lambda)\hat{RY}(\frac{\pi}{2})\hat{RZ}(\lambda)
+\end{split}\]</div>
+<p>Давайте убедимся в справедливости этого выражения:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rz</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)]])</span> <span class="o">@</span> <span class="n">state</span>
+
+
+<span class="k">def</span> <span class="nf">u2_direct</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="mi">1</span>
+        <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">l</span><span class="p">)],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="p">(</span><span class="n">phi</span> <span class="o">+</span> <span class="n">l</span><span class="p">))]])</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">u2_inferenced</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">u1</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">phi</span> <span class="o">+</span> <span class="n">l</span><span class="p">)</span>
+        <span class="o">@</span> <span class="n">rz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="n">l</span><span class="p">)</span>
+        <span class="o">@</span> <span class="n">ry</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">@</span> <span class="n">rz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">l</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">u2_direct</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">),</span> <span class="n">u2_inferenced</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Схожим образом определяется <span class="math notranslate nohighlight">\(\hat{U}_3(\theta, \phi, \lambda)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{U}_3(\theta, \phi, \lambda) = \begin{bmatrix}
+\cos(\frac{\theta}{2}) &amp; -e^{1j\lambda}\sin(\frac{\theta}{2}) \\
+e^{1j\phi}\sin(\frac{\theta}{2}) &amp; e^{1j(\phi + \lambda)}\cos(\frac{\theta}{2})
+\end{bmatrix} = \hat{U}_1(\phi + \lambda)\hat{RZ}(-\lambda)\hat{RY}(\theta)\hat{RZ}(\lambda)
+\end{split}\]</div>
+<p>Читатель может сам легко убедиться, что эти формы записи эквивалентны. Для этого надо написать примерно такой же код, что мы писали раньше для <span class="math notranslate nohighlight">\(\hat{U}_2\)</span>.</p>
+</div>
+<div class="section" id="id8">
+<h3>Еще пара слов об однокубитных гейтах<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>На этом мы завершаем обзор основных однокубитных гейтов. Маленькое замечание: гейты, связанные со сдвигом фазы, никак не меняют состояние кубита, если оно сейчас <span class="math notranslate nohighlight">\(\ket{0}\)</span>. Так как мы всегда предполагаем, что начальное состояние кубитов – это именно <span class="math notranslate nohighlight">\(\ket{0}\)</span>, то перед применением, например, <span class="math notranslate nohighlight">\(\hat{U}_1\)</span>, рекомендуется применить гейт Адамара:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">u1</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">),</span> <span class="n">basis</span><span class="p">))</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">u1</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">6</span><span class="p">),</span> <span class="n">h</span> <span class="o">@</span> <span class="n">basis</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h4>Единичный гейт<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Самое последнее об однокубитных гейтах – это единичный гейт <span class="math notranslate nohighlight">\(\hat{I}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{I} = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">identity_gate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">identity_gate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.+0.j 0.+0.j]
+ [0.+0.j 1.+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Он не делает с кубитом ровным счетом ничего. Но единичный гейт понадобится нам позже, когда мы будем конструировать многокубитные операторы.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>Многокубитные состояния и гейты<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>Очевидно, что с одним кубитом ничего интересного, кроме разве что генератора истинно-случайных чисел, мы не сделаем. Для начала разберемся, как выглядят состояния для многокубитных систем.</p>
+<div class="section" id="id11">
+<h3>Многокубитные состояния<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>В классическом компьютере один бит имеет два значения – 0 и 1. Два бита имеют четыре значения – 00, 01, 10, 11. Три бита имеют восемь значений и так далее. Аналогично состояние двух кубитов – это вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^4\)</span>, состояние трех кубитов – вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^8\)</span>, то есть состояние <span class="math notranslate nohighlight">\(N\)</span> кубитов описывается вектором размерности <span class="math notranslate nohighlight">\(2^N\)</span> в комплексном пространстве. Вероятности каждой из возможных битовых строк (<span class="math notranslate nohighlight">\(0000...00\)</span>, <span class="math notranslate nohighlight">\(0000...01\)</span>, <span class="math notranslate nohighlight">\(0000...10\)</span>, и так далее) получаются по методу Шредингера, который мы обсуждали <a class="reference external" href="qubit.html#id29">в конце прошлой лекции</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{P}(\vec{s}) = | \bra{\Psi}\ket{\vec{s}} |^2
+\]</div>
+<p>Нужно отсортировать наши битовые строки в лексикографическом порядке – и вероятность <em>i</em>-й битовой строки будет равна квадрату <em>i</em>-го элемента вектора <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>.</p>
+<p>Формально, многокубитные состояния описываются с помощью математического концепта так называемого <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%B7%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"><em>тензорного произведения</em></a>, которое в случае линейных операторов идентично <em>произведению Кронекера</em>, обозначаемого значком <span class="math notranslate nohighlight">\(\otimes\)</span>. Так, если <span class="math notranslate nohighlight">\(\ket{\Psi}_A \in \mathrm{H}_A\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_B \in \mathrm{H}_B\)</span>, то <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB} = \ket{\Psi}_A \otimes \ket{\Psi}_B \in \mathrm{H}_{AB} = \mathrm{H}_{A} \otimes \mathrm{H}_{B}\)</span>. О том, как элементы вектора <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB}\)</span> выражаются через элементы векторов <span class="math notranslate nohighlight">\(\ket{\Psi}_{A}\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_{B}\)</span>, можно прочитать на Википедии в статье <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0">“Произведение Кронекера”</a>.</p>
+</div>
+<div class="section" id="id12">
+<h3>Многокубитные операторы<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Как мы уже обсуждали ранее, квантовые операторы должны переводить текущее состояние в новое в том же пространстве и сохранять нормировку, а еще должны быть обратимыми. Значит, оператор для состояния из <span class="math notranslate nohighlight">\(N\)</span> кубитов – это унитарная комплексная матрица размерности <span class="math notranslate nohighlight">\(2^N \times 2^N\)</span>.</p>
+</div>
+<div class="section" id="id13">
+<h3>Конструирование многокубитных операторов<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Прежде чем мы начнем обсуждать двухкубитные операторы, рассмотрим ситуацию. Представим, что у нас есть состояние из двух кубитов и мы хотим подействовать на первый кубит оператором Адамара. Как же тогда нам написать такой двухкубитный оператор? Мы знаем, что действуем на первый кубит оператором, а что происходит со вторым кубитом? Ничего не происходит – и это эквивалентно тому, что мы действуем на второй кубит единичным оператором. А финальный оператор <span class="math notranslate nohighlight">\(2^2 \times 2^2\)</span> записывается через произведение Кронекера:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{H} \otimes \hat{I} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; -1
+\end{bmatrix} \otimes \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+\hat{I} &amp; \hat{I} \\
+\hat{I} &amp; -\hat{I}
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; -1
+\end{bmatrix}
+\end{split}\]</div>
+<p>Учитывая, что многокубитные состояния конструируются аналогичным образом через произведение Кронекера, мы можем убедиться в верности нашего вывода:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">identity_gate</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>Наблюдаемые для многокубитных гейтов<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Аналогичным образом можно сконструировать и наблюдаемые. Например, если мы хотим измерять одновременно два спина по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, то наблюдаемая будет выглядеть так:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{ZZ} = \hat{\sigma^z} \otimes \hat{\sigma^z} = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">,</span> <span class="n">pauli_z</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>Основные двухкубитные гейты<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>Основные многокубитные гейты, которые предоставляют современные квантовые компьютеры, – это двухкубитные гейты.</p>
+<div class="section" id="cnot-cx">
+<h3>CNOT (CX)<a class="headerlink" href="#cnot-cx" title="Permalink to this headline">¶</a></h3>
+<p>Квантовый гейт контролируемого инвертирования – это гейт, который действует на два кубита: <em>рабочий</em> и <em>контрольный</em>. В зависимости от того, имеет ли контрольный кубит значение 1 или 0, этот гейт инвертирует или не инвертирует рабочий кубит.</p>
+<div class="figure align-default" id="cnot">
+<a class="reference internal image-reference" href="../../_images/CNOT_gate.svg"><img alt="../../_images/CNOT_gate.svg" src="../../_images/CNOT_gate.svg" width="400px" /></a>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Гейт CNOT</span><a class="headerlink" href="#cnot" title="Permalink to this image">¶</a></p>
+</div>
+<p>Иногда этот гейт также называют гейтом CX. В матричном виде этот оператор можно записать так:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{CNOT} = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cnot</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">cnot</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
+    <span class="n">cnot</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_x</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_x</span> <span class="o">@</span> <span class="n">basis</span><span class="p">,</span> <span class="n">pauli_x</span> <span class="o">@</span> <span class="n">basis</span><span class="p">)</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Заметьте, тут мы воспользовались тем, что <span class="math notranslate nohighlight">\(\hat{\sigma^x}\)</span> работает так же, как инвертор кубитов: он превращает <span class="math notranslate nohighlight">\(\ket{0}\)</span> в <span class="math notranslate nohighlight">\(\ket{1}\)</span> и наоборот.</p>
+</div>
+<div class="section" id="cy-cz">
+<h3>Гейты CY и CZ<a class="headerlink" href="#cy-cz" title="Permalink to this headline">¶</a></h3>
+<p>Схожие по принципу гейты – это гейты <span class="math notranslate nohighlight">\(\hat{CY}\)</span> и <span class="math notranslate nohighlight">\(\hat{CZ}\)</span>. В зависимости от значения управляющего кубита к рабочему кубиту применяют соответствующий оператор Паули:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{CY} = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -i\\
+0 &amp; 0 &amp; i &amp; 0
+\end{bmatrix} \qquad \hat{CZ} = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{bmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="iswap">
+<h3>Гейт iSWAP<a class="headerlink" href="#iswap" title="Permalink to this headline">¶</a></h3>
+<p>Гейты <span class="math notranslate nohighlight">\(\hat{CX}\)</span>, <span class="math notranslate nohighlight">\(\hat{CY}\)</span> и <span class="math notranslate nohighlight">\(\hat{CZ}\)</span> эквивалентны с точностью до однокубитных гейтов. Это означает, что любой из них можно получить, добавив необходимые однокубитные гейты до и после другого гейта. Например:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{CZ} = \left(\hat{I}\times\hat{H}\right)\hat{CX}\left(\hat{I}\times\hat{H}\right).
+\]</div>
+<p>Этим свойством обладают отнюдь не все двухкубитные гейты. Например, таковым является гейт iSWAP:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{iSWAP} = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; i &amp; 0\\
+0 &amp; i &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="fsim">
+<h3>Гейт fSim<a class="headerlink" href="#fsim" title="Permalink to this headline">¶</a></h3>
+<p>Для разных архитектур квантовых процессоров “естественный” гейт может выглядеть по-разному. Например, в квантовом процессоре Google Sycamore естественным является так называемый fermionic simulation gate или fSim. Это двухпараметрическое семейство гейтов вида:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{fSim}(\theta, \phi) = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \cos\theta &amp; -i\sin\theta &amp; 0\\
+0 &amp; -i\sin\theta &amp; \cos\theta &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; e^{-i\phi}
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Впрочем, и fSim-гейт не является эквивалентным всему множеству двухкубитных гейтов. В общем случае, чем больше кубитов,
+тем сложнее будет выглядеть декомпозиция произвольного гейта на физически реализуемые в “железе”.</p>
+</div>
+</div>
+<div class="section" id="pennylane">
+<h2>Первое знакомство с PennyLane<a class="headerlink" href="#pennylane" title="Permalink to this headline">¶</a></h2>
+<p>На сегодняшний день существует достаточно много фреймворков для программирования квантовых компьютеров. Для целей этого курса мы будем использовать <a class="reference external" href="https://pennylane.ai/">PennyLane</a>. Эта библиотека предоставляет высокоуровневый <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">API</span></code> и создана специально для решения задач квантового машинного обучения.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="device">
+<h3>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h3>
+<p>Для объявления квантового устройства используется класс <code class="docutils literal notranslate"><span class="pre">Device</span></code>. <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> поддерживает работу с большинством существующих квантовых компьютеров, но для целей курса мы будем запускать все наши программы лишь на самом простом симуляторе идеального квантового компьютера:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Разработка и отладка квантовых алгоритмов, как правило, происходит на симуляторах. Но надо понимать, что это работает только пока алгоритмы – “игрушечные” и задействуют пару-тройку или пару десятков кубитов. Надо понимать, что при добавлении каждого следующего кубита требуется вдвое больше ресурсов, чтобы просимулировать квантовый компьютер. Поэтому симуляторы –принципиально плохо масштабируемые аналоги реальных квантовых компьютеров.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Первый аргумент тут – указание устройства, а второй – число кубитов.</p>
+</div>
+<div class="section" id="qnode">
+<h3>QNode<a class="headerlink" href="#qnode" title="Permalink to this headline">¶</a></h3>
+<p>Основной <em>строительный блок</em> в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> – это <code class="docutils literal notranslate"><span class="pre">qnode</span></code>. Это функция, которая отмечена специальным декоратором и включает в себя несколько операций с кубитами. Результатом такой функции всегда является измерение. Напишем функцию, которая поворачивает первый кубит на <span class="math notranslate nohighlight">\(45^o\)</span>, после чего измеряет оба кубита по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>.</p>
+<div class="section" id="numpy">
+<h4>Сначала на NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
+<span class="n">op</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">ry</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">45</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">))</span>
+<span class="n">measure</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">,</span> <span class="n">pauli_z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="n">op</span> <span class="o">@</span> <span class="n">state</span><span class="p">)</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">measure</span> <span class="o">@</span> <span class="p">(</span><span class="n">op</span> <span class="o">@</span> <span class="n">state</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.70710678+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h4>Теперь через QNode<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">angle</span><span class="p">):</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">RY</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">expval</span><span class="p">(</span><span class="n">qml</span><span class="o">.</span><span class="n">PauliZ</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">@</span> <span class="n">qml</span><span class="o">.</span><span class="n">PauliZ</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">45</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865475
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>Заключение<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>Это последняя вводная лекция, где мы сами писали операторы и операции на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>: это должно помочь лучше понять ту математику, которая лежит “под капотом” у квантовых вычислений. Дальше мы будем пользоваться только <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> и в отдельной лекции расскажем, как работать с этим фреймворком.</p>
+<p>Итого:</p>
+<ul class="simple">
+<li><p>мы знаем, что такое кубит;</p></li>
+<li><p>понимаем линейную алгебру, которая описывает квантовые вычисления;</p></li>
+<li><p>понимаем, как можно сконструировать нужный нам оператор и как его применить;</p></li>
+<li><p>знаем, что такое измерение и наблюдаемые.</p></li>
+</ul>
+<p>Теперь мы готовы к тому, чтобы знакомиться с квантовыми вариационными схемами и переходить непосредственно к построению моделей квантового машинного обучения.</p>
+</div>
+<div class="section" id="id18">
+<h2>Задачи<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Как связаны ось и угол вращения на сфере Блоха с собственными значениями и собственными векторами матрицы однокубитного гейта? Для этого найдите собственные векторы и собственные значения гейта <span class="math notranslate nohighlight">\(R^\vec{n}\left(\alpha\right)\)</span>.</p></li>
+<li><p>Вокруг какой оси и на какой угол вращает состояние гейт Адамара?</p></li>
+<li><p>Гейт SWAP меняет кубиты местами. Его унитарная матрица имеет вид:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{SWAP} =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Попробуйте составить последовательность гейтов, реализующую <span class="math notranslate nohighlight">\(\mathrm{SWAP}\)</span>, из гейтов <span class="math notranslate nohighlight">\(\mathrm{iSWAP}\)</span>, <span class="math notranslate nohighlight">\(\hat{CZ}\)</span> и <span class="math notranslate nohighlight">\(\hat{RZ}(\phi)\)</span>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/qcblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="qubit.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Квантовый бит</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="mixedstates.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Смешанные состояния и матрицы плотности</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

@@ -1,0 +1,1060 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Объекты, классы и методы &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/pythonblock/python_l9.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Финальная лекция обо всем и ни о чем" href="python_l10.html" />
+    <link rel="prev" title="Функции" href="python_l8.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/pythonblock/python_l9.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/pythonblock/python_l9.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/pythonblock/python_l9.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/pythonblock/python_l9.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   ООП: Объектно-Ориентированное Программирование
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Определение классов
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Пример использования для хранения состояние
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Что мы узнали из лекции
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="python-l9">
+<span id="id1"></span><h1>Объекты, классы и методы<a class="headerlink" href="#python-l9" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>В этой лекции мы расскажем про:</p>
+<ul class="simple">
+<li><p>основы ООП: что это и зачем?</p></li>
+<li><p>инстанс класса</p></li>
+<li><p>на что указывает <code class="docutils literal notranslate"><span class="pre">self</span></code></p></li>
+<li><p>методы классов в уже знакомых примерах</p></li>
+<li><p>атрибуты классов</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>ООП: Объектно-Ориентированное Программирование<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Что же такое объектно-ориентированное программирование? Судя по названию, ключевую роль здесь играют объекты, на которые ориентируется дальнейший процесс программирования. Если мы взглянем на реальный мир, то для нас он предстанет в виде множества объектов, обладающих определенными свойствами, взаимодействующих между собой и вследствие этого изменяющимися. Эта привычная для взгляда человека картина мира была перенесена в программирование. Python - это объектно-ориентированный язык программирования, и <strong>все в нем является объектами</strong>.</p>
+<p><strong>Объект</strong> - это набор данных и инструкций в памяти компьютера, в том числе:</p>
+<ol class="simple">
+<li><p>Тип объекта;</p></li>
+<li><p>Данные, формирующие объект (контент внутри него);</p></li>
+<li><p>Методы.</p></li>
+</ol>
+<div class="figure align-default" id="class-and-obj1">
+<a class="reference internal image-reference" href="../../_images/class_and_obj1.png"><img alt="../../_images/class_and_obj1.png" src="../../_images/class_and_obj1.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Так можно проиллюстрировать соотношение “класс - объекты”. Сверху указаны общие прототипы (прямоугольник, звезда, треугольник), снизу - уникальные экземпляры, со своим цветом и деталями.</span><a class="headerlink" href="#class-and-obj1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Как определить тип мы уже знаем. И с объектами на самом деле мы знакомы с самого начала - ведь даже целочисленная переменная <code class="docutils literal notranslate"><span class="pre">5</span></code>, имеющая <code class="docutils literal notranslate"><span class="pre">type(5)</span> <span class="pre">=</span> <span class="pre">int</span></code>, представляет собой объект. Напомним, что говорилось в курсе ранее: <strong>методы - это те же функции, только существующие не сами по себе, а являющиеся частью класса</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="s2">&quot;что-то&quot;</span><span class="p">,</span> <span class="s2">&quot;с&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Метод append имеет тип </span><span class="si">{</span><span class="n">example_list</span><span class="o">.</span><span class="n">append</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># вот так можно вызвать метод, изменяя сам экземпляр класса</span>
+<span class="n">example_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;чем-то&quot;</span><span class="p">)</span>
+
+<span class="c1"># а вот так можно обратиться к атрибуту конкретного объекта</span>
+<span class="n">attr_value</span> <span class="o">=</span> <span class="n">example_list</span><span class="o">.</span><span class="vm">__doc__</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Значение атрибута: </span><span class="si">{</span><span class="n">attr_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Метод append имеет тип &lt;built-in method append of list object at 0x7f2022e67640&gt;
+Значение атрибута: Built-in mutable sequence.
+
+If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">list</span></code> - это класс, и в первой строчке кода выше создается <strong>объект, или экземпляр класса</strong> <code class="docutils literal notranslate"><span class="pre">example_list</span></code>. Он хранит свой набор данных (контент). Метод <code class="docutils literal notranslate"><span class="pre">append</span></code> общий для всех списков, однако меняет только конкретный экземпляр. Обратите внимание: этот метод ничего не возвращает, он меняет сам объект и его контент. Не все методы работают схожим образом, и придется запоминать принцип работы самых распространенных методов. К примеру, сложение чисел или строк внутри Python также осуществляется с помощью методов, однако это не меняет саму переменную, как было рассказано в более ранних лекциях:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим два объекта класса int</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># неявно вызовем метод сложения</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="c1"># проверим, что содержимое объектов не изменилось</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">b</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 3, b = 4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Конкретно в данном случае логика работы обусловлена свойствами <code class="docutils literal notranslate"><span class="pre">mutable</span></code>/<code class="docutils literal notranslate"><span class="pre">immutable</span></code> объектов, о чем также упоминалось в одной из предшествующих лекций. <code class="docutils literal notranslate"><span class="pre">int</span></code> неизменяем, и потому при вызове метода сложения возвращает новый объект - ведь самого себя изменить не получится. <code class="docutils literal notranslate"><span class="pre">list</span></code> же может меняться, и <code class="docutils literal notranslate"><span class="pre">append</span></code> меняет содержимое <code class="docutils literal notranslate"><span class="pre">inplace</span></code>.</p>
+<div class="figure align-default" id="class-and-obj-house">
+<a class="reference internal image-reference" href="../../_images/class_and_obj_house.png"><img alt="../../_images/class_and_obj_house.png" src="../../_images/class_and_obj_house.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Другой житейский пример - по одному чертежу (классу) можно построить разные (но похожие!) дома, в которых разные семьи, убранство, разные обои.</span><a class="headerlink" href="#class-and-obj-house" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Определение классов<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Давайте попробуем создать свой первый класс:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># определим классы</span>
+<span class="k">class</span> <span class="nc">List</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_content</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># указывать в виде значения по умолчанию mutable-объекты неправильно</span>
+        <span class="k">if</span> <span class="n">initial_content</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">initial_content</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">initial_content</span>
+
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_element</span><span class="p">):</span>
+        <span class="c1"># изменение производится inplace, с заменой собственного контента</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">+</span> <span class="p">[</span><span class="n">new_element</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">Int</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">second_value</span><span class="p">):</span>
+        <span class="c1"># изменение не производится, создается новый объект и он же возвращается</span>
+        <span class="k">return</span> <span class="n">Int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">second_value</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1"># воспроизведем примеры кода выше для List</span>
+<span class="n">example_list</span> <span class="o">=</span> <span class="n">List</span><span class="p">([</span><span class="s2">&quot;что-то&quot;</span><span class="p">,</span> <span class="s2">&quot;с&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">example_list</span><span class="o">.</span><span class="n">content</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">example_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;чем-то&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">example_list</span><span class="o">.</span><span class="n">content</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">example_list</span><span class="p">)</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># и для Int</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;После простого сложения: </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">value</span> <span class="si">= }</span><span class="s2">, </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">value</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;После записи в переменную результата: </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>example_list.content = [&#39;что-то&#39;, &#39;с&#39;]
+example_list.content = [&#39;что-то&#39;, &#39;с&#39;, &#39;чем-то&#39;]
+type(example_list) = &lt;class &#39;__main__.List&#39;&gt;
+После простого сложения: a.value = 3, b.value = 4
+После записи в переменную результата: c.value = 7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Что важно заметить и отметить в этом примере:</p>
+<ol class="simple">
+<li><p>Как объявить класс? С помощью ключевого слова <code class="docutils literal notranslate"><span class="pre">class</span></code>, указания названия класса (таким образом создается новый тип данных) и перечисления методов:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ИмяКласса</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">код_тела_класса</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Обязательно определить метод <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. Это метод, вызываемый при создании нового объекта класса и отвечающий за определение его контента. В нем через запятую, как и в обычной функции, перечислить необходимые переменные и, по возможности, их значения по умолчанию;</p></li>
+<li><p>Каждый метод должен первым аргументом принимать <strong>экземпляр объекта</strong> (по соглашению он называется <code class="docutils literal notranslate"><span class="pre">self</span></code>). При этом при вызове метода Python автоматически подставит сам объект, делать это руками не нужно. По сути под капотом происходит следующее:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># вызываем метод класса - не объекта! - и передаем первым аргументом объект,</span>
+<span class="c1"># который при обычных обстоятельствах будет записан в self</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">Int</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Int</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">Int</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p><strong>Атрибутом называется переменная, хранящаяся в экземпляре класса</strong>;</p></li>
+<li><p>В рамках методов атрибуты объекта доступны с использованием ключевого слова <code class="docutils literal notranslate"><span class="pre">self</span></code>. К примеру, <code class="docutils literal notranslate"><span class="pre">self.data</span></code>;</p></li>
+<li><p>Вне методов атрибуты доступны у экземпляров через точку: <code class="docutils literal notranslate"><span class="pre">some_object.attr_name</span></code>;</p></li>
+<li><p>Для создания объекта класса нужно указать имя класса (типа) и передать аргументы: <code class="docutils literal notranslate"><span class="pre">Int(3)</span></code> - как раз оно;</p></li>
+<li><p>Методы как могут возвращать что-либо (в том числе новый объект того же класса), так и ничего не возвращать.</p></li>
+</ol>
+<p>В заключение еще одна картинка, иллюстрирующая суть класса, экземпляра, атрибутов и методов:</p>
+<div class="figure align-default" id="class-and-obj-pika">
+<a class="reference internal image-reference" href="../../_images/class_and_obj_pika.png"><img alt="../../_images/class_and_obj_pika.png" src="../../_images/class_and_obj_pika.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Who’s that pokemon?</span><a class="headerlink" href="#class-and-obj-pika" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Пример использования для хранения состояние<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>В курсе будет встречаться подобный паттерн, поэтому хочется остановиться поподробнее. Допустим, есть некоторая среда, заданная состоянием, и есть объекты, существующие в этой среде, как-то взаимодействующие между собой (и со средой). Есть набор функций, который осуществляет эти взаимодействия. Тогда удобно ввести некоторый объект <code class="docutils literal notranslate"><span class="pre">system</span></code>  класса <code class="docutils literal notranslate"><span class="pre">System</span></code>, который хранит эту информацию, и передавать его как параметр в методы расчета чего-либо (никакой конкретной логики тут не заложено, не пытайтесь понять, за что отвечает <code class="docutils literal notranslate"><span class="pre">alpha</span></code> и прочие переменные - пример абстрактный):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># класс системы, с ее параметрами и состоянием</span>
+<span class="k">class</span> <span class="nc">System</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param_vector</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">multiplier</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">energy</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">param_vector</span> <span class="o">=</span> <span class="n">param_vector</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="n">gamma</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">multiplier</span> <span class="o">=</span> <span class="n">multiplier</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="n">energy</span>
+
+        <span class="c1"># начальное состояние</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="n">gamma</span><span class="p">)</span> <span class="o">*</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="n">param</span>
+            <span class="k">for</span> <span class="n">param</span>
+            <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_vector</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">first_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+        <span class="c1"># взаимодействие с одним объектом: увеличение энергии, изменение состояния системы</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">-=</span> <span class="nb">object</span><span class="o">.</span><span class="n">energy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">energy</span> <span class="o">+=</span> <span class="nb">object</span><span class="o">.</span><span class="n">energy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span> <span class="o">=</span> <span class="p">[</span><span class="n">param</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">system_state</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">second_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_of_object</span><span class="p">):</span>
+        <span class="c1"># взаимодействие с несколькими объектами - увеличение их энергии</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">list_of_object</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">energy</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiplier</span>
+
+<span class="k">class</span> <span class="nc">Object</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">energy</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">):</span>
+        <span class="c1"># объект хранит только один атрибут</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">energy</span> <span class="o">=</span> <span class="n">energy</span>
+
+<span class="c1"># симуляция одного цикла в системе</span>
+<span class="k">def</span> <span class="nf">one_system_cycle</span><span class="p">(</span><span class="n">system</span><span class="p">:</span> <span class="n">System</span><span class="p">,</span> <span class="n">objects</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">objects</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">system</span><span class="o">.</span><span class="n">second_action</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+        <span class="c1"># убираем один последний объект</span>
+        <span class="n">objects</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">Object</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">:</span>
+            <span class="n">system</span><span class="o">.</span><span class="n">first_action</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">objects</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.15</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.18</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">energy</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># изначально объектов нет, они появятся после первого цикла</span>
+<span class="n">objects</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">for</span> <span class="n">cycle_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Состояние системы на итерации </span><span class="si">{</span><span class="n">cycle_num</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">system</span><span class="o">.</span><span class="n">system_state</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">objects</span> <span class="o">=</span> <span class="n">one_system_cycle</span><span class="p">(</span><span class="n">system</span><span class="p">,</span> <span class="n">objects</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Всего объектов: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">total_object_energy</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">obj</span><span class="o">.</span><span class="n">energy</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Суммарная энергия объектов: </span><span class="si">{</span><span class="n">total_object_energy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Состояние системы на итерации 1: [9.64, 28.92, 40.00600000000001, 0.0].	Всего объектов: 5	Суммарная энергия объектов: 10
+Состояние системы на итерации 2: [-340.36, -321.08, -309.994, -350.0].	Всего объектов: 4	Суммарная энергия объектов: -72.56
+Состояние системы на итерации 3: [-340.36, -321.08, -309.994, -350.0].	Всего объектов: 3	Суммарная энергия объектов: -114.84
+</pre></div>
+</div>
+</div>
+</div>
+<p>Обратите внимание на то, что функция <code class="docutils literal notranslate"><span class="pre">one_system_cycle</span></code> не возвращает <code class="docutils literal notranslate"><span class="pre">system</span></code> - ведь мы прямо во время итераций меняем ее состояние, и в последующие моменты времени эти изменения сохраняются, то есть состояние остается. Таким образом, эту систему (среду) - а именно объект, экземпляр класса <code class="docutils literal notranslate"><span class="pre">System</span></code> - как параметр <strong>можно передавать в десятки функций, и каждая из них будет видеть актуальное состояние</strong>.</p>
+</div>
+<div class="section" id="id6">
+<h2>Что мы узнали из лекции<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Объекты одного класса отличаются между собой атрибутами, которые придают уникальности;</p></li>
+<li><p>Методы классов позволяют описывать логику взаимодействия, <strong>обновлять состояние</strong>;</p></li>
+<li><p>Для объявления класса нужно определить <strong>как минимум один метод</strong> <code class="docutils literal notranslate"><span class="pre">__init__</span></code>;</p></li>
+<li><p>Классы без методов можно использовать как <strong>удобное хранилище разнородной информации</strong> о схожих объектах (описать разных студентов и их оценки).</p></li>
+</ul>
+<p>Это далеко не все, что можно написать по теме классов и объектов, однако это тот необходимый минимум, что потребуется для прохождения курса. Больше примеров и деталей можно найти, например, по ссылкам: <a class="reference external" href="https://younglinux.info/oopython/ooprogramm">пример с несколькими взаимодействующими объектами</a>, <a class="reference external" href="https://younglinux.info/oopython/inheritance">что такое наследование и зачем оно нужно</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/pythonblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="python_l8.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Функции</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="python_l10.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Финальная лекция обо всем и ни о чем</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

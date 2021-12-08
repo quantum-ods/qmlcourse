@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Смешанные состояния и матрицы плотности &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/qcblock/mixedstates.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="О блоке “Фреймворки”" href="../progblock/progintro.html" />
+    <link rel="prev" title="Квантовые гейты" href="gates.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/qcblock/mixedstates.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/qcblock/mixedstates.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qcblock/mixedstates.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/qcblock/mixedstates.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Смешанные состояния
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Почему нельзя обойтись волновой функцией
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Матрица плотности
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Чистые и смешанные состояния
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Чистота состояния
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Энтропия
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Спектральная декомпозиция матрицы плотности
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   Смешанные состояния и запутанность
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Запутанные и сепарабельные состояния
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Разложение Шмидта
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   Описания эволюции смешанного состояния
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     Квантовая динамика
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     Измерения и томография
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id20">
+   Что мы узнали?
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mixedstates">
+<span id="id1"></span><h1>Смешанные состояния и матрицы плотности<a class="headerlink" href="#mixedstates" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Из этой лекции мы узнаем:</p>
+<ul class="simple">
+<li><p>Что такое матрица плотности</p></li>
+<li><p>Как ввести в описание квантовых состояний новый уровень случайности</p></li>
+<li><p>Как связаны смешанные (mixed) и запутанные (entangled) состояния</p></li>
+<li><p>Как можно описать насколько “сильно” квантовое состояние является смешанным</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Смешанные состояния<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Эта глава кратко рассматривает довольно сложный, но крайне важный аспект квантового описания мира: как описать квантовую систему, в которой случайным является не только результат измерения, но и само состояние квантовой системы, иными словами, когда мы не можем описать квантовую систему определенным вектором состояния.</p>
+<p>Как могут появиться такие ситуации?</p>
+<p>Прежде всего, в любой реалистичной ситуации квантовая система будет испытывать влияние окружающей среды. Это воздействие окружающей среды на квантовый компьютер, как правило, может быть охарактеризовано некоторой температурой этой самой среды и скоростью термализации системы с ней. В отличие от классических компьютеров, где шумы редко приводят к ошибкам в вычислениях, квантовые компьютеры очень плохо защищены от шумов. Любое масштабное квантовое вычисление является гонкой с процессами декогеренции и релаксации: за время выполнения алгоритма шумы не должны испортить результат вычислений настолько, чтобы его нельзя было использовать.</p>
+<p>Вторая, более важная причина использования смешанных состояний состоит в их тесной связи с запутанными состояниями, как показано ниже.</p>
+</div>
+<div class="section" id="id4">
+<h2>Почему нельзя обойтись волновой функцией<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Рассмотрим реальный физический кубит в состоянии равновесия, например, спин ядра атома в магнитном поле.
+Статистическая физика говорит нам, что вероятность обнаружить этот спин ориентированным вдоль внешнего поля выше, чем в
+противоположном полю направлении. Для расчета отношений этих вероятностей можно использовать распределение Больцмана:
+<span class="math notranslate nohighlight">\(p_\uparrow/p_\downarrow = e^{\frac{2\mu \Delta H}{k_\mathrm{B}T}}\)</span>, где <span class="math notranslate nohighlight">\(2\mu \Delta H\)</span> – разность энергий состояний со спином вдоль
+поля и в противоположном полю направлений, <span class="math notranslate nohighlight">\(k_B\)</span> – постоянная Больцмана, а <span class="math notranslate nohighlight">\(T\)</span> – температура. Так как состояний у этой
+системы всего два, сумма их вероятностей должна давать единицу: <span class="math notranslate nohighlight">\(p_\uparrow + p_\downarrow = 1\)</span>. Таким образом,
+вероятности состояний однозначно определены.</p>
+<p>Волновую функцию, отвечающую такому тепловому состоянию, можно записать в виде</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{\psi} =
+\begin{pmatrix}
+\sqrt{p_\uparrow} \\
+\sqrt{p_\downarrow}e^{i\phi}
+\end{pmatrix},
+\end{split}\]</div>
+<p>где значение фазы <span class="math notranslate nohighlight">\(\phi\)</span> не определено. Однако <span class="math notranslate nohighlight">\(\phi\)</span> определяет поведение системы не в меньшей мере, чем вероятности
+<span class="math notranslate nohighlight">\(p_\uparrow\)</span> и <span class="math notranslate nohighlight">\(p_\downarrow\)</span>. <span class="math notranslate nohighlight">\(\phi\)</span> может равновероятно принимать любые значения. Таким образом, уже даже состояние
+теплового равновесия нельзя описать одной волновой функцией – это будет распределением вероятности по волновым
+функциям с разным <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Матрица плотности<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Оказывается, что вместо распределения вероятностей по волновым функциям можно использовать более простую
+конструкцию – матрицу плотности. Если система находится в состояниях <span class="math notranslate nohighlight">\(\Phi_n\)</span> с вероятностями <span class="math notranslate nohighlight">\(p_n\)</span>, то матрицу
+плотности можно определить как</p>
+<div class="math notranslate nohighlight" id="equation-eqn-rho-mixed">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-rho-mixed" title="Permalink to this equation">¶</a></span>\[
+\rho = \sum\limits_{n}p_n \ket{\Phi_n}\bra{\Phi_n}.
+\]</div>
+<p>Выражение <span class="math notranslate nohighlight">\(\ket{\Phi_n}\bra{\Phi_n}\)</span> обозначает произведение вектора-столбца на вектор-строку – результатом будет
+матрица. Важно, что значение любой ожидаемой величины (отвечающей оператору <span class="math notranslate nohighlight">\(\hat{A}\)</span>) можно записать через <span class="math notranslate nohighlight">\(\rho\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}[A] = \sum\limits_{n}p_n \bra{\Phi_n}\hat{A}\ket{\Phi_n} =
+\sum\limits_{n}p_n \operatorname{Tr}\left[\ket{\Phi_n}\bra{\Phi_n}\hat{A}\right] = \operatorname{Tr}\left[\rho \hat{A}\right]
+\]</div>
+<p>Математическое обоснование этой циклической перестановки можно получить, расписав матричные произведения покомпонентно:</p>
+<div class="math notranslate nohighlight">
+\[
+\bra{\Phi_n}\hat{A}\ket{\Phi_n} = \sum \limits_{i,j} \Phi_n^{i*} A_{ij} \Phi_n^{j} =
+\operatorname{Tr}\left[\ket{\Phi_n}\bra{\Phi_n}\hat{A}\right].
+\]</div>
+<p>Любую наблюдаемую физическую величину можно выразить в виде ожидаемой величины некоторого эрмитова оператора –
+а значит, описание с помощью матрицы плотности является универсальным для любых случайных квантовых систем.</p>
+<p>Стоит заметить, что матрица плотности для подсистем была впервые введена в научный оборот знаменитым советским физиком, лауреатом Нобелевской премии Львом Ландау. <span id="id6">[<a class="reference internal" href="../bibliography.html#id37"><span>15a</span></a>]</span></p>
+<div class="figure align-default" id="landau">
+<img alt="../../_images/Landau.jpg" src="../../_images/Landau.jpg" />
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Лев Ландау, 1908-1968</span><a class="headerlink" href="#landau" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Чистые и смешанные состояния<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Состояния, которые описываются одной единственной волновой функцией <span class="math notranslate nohighlight">\(\Psi\)</span>, называются <em>чистыми</em> (англ. <em>pure states</em>).
+Для таких состояний выражение для матрицы плотности получается тривиальным:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-rho-pure">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-rho-pure" title="Permalink to this equation">¶</a></span>\[
+\rho = \ket{\Psi}\bra{\Psi}
+\]</div>
+<p>Матрица плотности чистого состояния является <em>оператором-проектором</em>: действие оператора на волновую функцию произвольного состояния <span class="math notranslate nohighlight">\(\Phi\)</span>
+дает проекцию <span class="math notranslate nohighlight">\(\Phi\)</span> на <span class="math notranslate nohighlight">\(\Psi\)</span>.
+Состояния, которые нельзя описать одним вектором состояния, а можно лишь матрицей плотности, называются <em>смешанными</em>
+(англ. <em>mixed states</em>).</p>
+<div class="section" id="id8">
+<h3>Чистота состояния<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Можно легко показать, для оператора-проектора <a class="reference internal" href="#equation-eqn-rho-pure">(2)</a> выполняется тождество</p>
+<div class="math notranslate nohighlight">
+\[
+\rho^2 = \ket{\Psi} \bra{\Psi} \ket{\Psi} \bra{\Psi} = \ket{\Psi} \bra{\Psi} = \rho
+\]</div>
+<p>и следовательно, для чистого состояния</p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{Tr} (\rho^2) = 1
+\]</div>
+<p>(напомним, что мы всегда считаем вектора состояния нормированными на единицу).</p>
+<p>Аналогичным образом, но после более длинных выкладок можно показать, что в общем случае</p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{Tr} (\rho^2) \leq 1,
+\]</div>
+<p>причем знак равенства в последней формуле возможен, только если в формуле <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> сумма имеет лишь одно
+слагаемое (т.е. состояние является чистым). Последнее свойство матрицы плотности позволяет ввести ряд величин,
+характеризующих смешанные и запутанные состояния, о чем будет рассказано в заключительном разделе этой лекции.
+Величина</p>
+<div class="math notranslate nohighlight" id="equation-eqn-purity">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-purity" title="Permalink to this equation">¶</a></span>\[
+\gamma = \operatorname{Tr} (\rho^2)
+\]</div>
+<p>называется <em>чистотой состояния</em> (<em>quantum state purity</em>).</p>
+</div>
+<div class="section" id="id9">
+<h3>Энтропия<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Энтропия фон Неймана – это другая численная характеристика того, насколько сильно наша система смешанная. Ее
+выражение очень похоже на выражение для классической <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%8D%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%8F">энтропии Шеннона</a>.
+Только в отличие от классики, в квантовой механике мы имеем <em>матрицу</em> плотности, поэтому в выражении у нас
+фигурирует <a class="reference external" href="https://en.wikipedia.org/wiki/Logarithm_of_a_matrix">матричный логарифм</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-entropy">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eqn-entropy" title="Permalink to this equation">¶</a></span>\[
+S = -Tr(\rho\cdot \ln(\rho))
+\]</div>
+</div>
+<div class="section" id="id10">
+<h3>Спектральная декомпозиция матрицы плотности<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Определение матрицы плотности <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> представляет собой сумму матриц плотностей чистых состояний, взятых с
+некоторыми вероятностями. Интересно, что совершенно разным комбинациям чистых состояний могут соответствовать одинаковые
+матрицы плотности. Например, состояние кубита, который с вероятностью 50% находится в состоянии <span class="math notranslate nohighlight">\(\ket{0}\)</span> и с
+вероятностью 50% в состоянии <span class="math notranslate nohighlight">\(\ket{1}\)</span> совершенно неотличимо от такой же равновероятной смеси состояний <span class="math notranslate nohighlight">\(\ket{+}\)</span> и
+<span class="math notranslate nohighlight">\(\ket{-}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{1}{2}\left(\ket{0}\bra{0} + \ket{1}\bra{1}\right) =
+\begin{pmatrix}\frac{1}{2} &amp; 0 \\ 0 &amp; \frac{1}{2}\end{pmatrix} =
+\frac{1}{2}\left(\ket{+}\bra{+} + \ket{-}\bra{-}\right)
+\end{split}\]</div>
+<p>Соотношение <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> также можно рассматривать как спектральную декомпозицию матрицы плотности. В этом случае
+состояния <span class="math notranslate nohighlight">\(\Psi_n\)</span> образуют ортонормированный базис, а вероятности <span class="math notranslate nohighlight">\(p_n\)</span> – это собственные значения <span class="math notranslate nohighlight">\(\rho\)</span>.
+Как чистота <a class="reference internal" href="#equation-eqn-purity">(3)</a>, так и энтропия <a class="reference internal" href="#equation-eqn-entropy">(4)</a> зависят лишь от этих собственных значений.</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>Смешанные состояния и запутанность<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>Рассмотрим ситуацию, когда описываемую квантовую систему <span class="math notranslate nohighlight">\(\Phi\)</span> можно разделить на две подсистемы,
+<span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>, и состояние этой системы <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> является суперпозицией состояний двух подсистем:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\Phi} = \sum_{i,j} c_{i,j} \ket{\phi_i} \ket{\psi_j}.
+\]</div>
+<p>Здесь два ортонормированных набора векторов состояния <span class="math notranslate nohighlight">\(\ket{\phi_i}\)</span> и <span class="math notranslate nohighlight">\(\ket{\psi_j}\)</span> описывают две части всей системы.
+Для такого состояния не всегда можно сказать, в каком именно состоянии находится каждая подсистема.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Вспомним обсуждение кота Шредингера в <a class="reference internal" href="qubit.html"><span class="doc std std-doc">лекции про кубит</span></a> – упрощая до предела, можно считать,
+что радиоактивный атом является одной системой, а несчастный кот – второй.</p>
+<p>До измерения ни атом, ни кот не имеют определенного состояния, а находятся в суперпозиции возможных состояний.</p>
+</div>
+<p>Что же мы можем сделать, если у нас есть доступ лишь к одной из двух подсистем, а измерить состояние второй мы уже не
+можем? В таком случае, все наши наблюдаемые величины будут отвечать операторами <span class="math notranslate nohighlight">\(A_\psi\)</span>, которые
+действует <em>только</em> на вторую подсистему. В примере кота Шредингера можно допустить, что экспериментально
+пронаблюдать мы можем лишь состояние кота, а состояние радиоактивного атома недоступно нам для измерения. В таком случае
+состояние второй подсистемы можно полностью описать используя <em>редуцированную</em>
+матрицу плотности. Редуцированная матрица плотности получается из матрицы плотности чистого состояния всей системы
+суммированием по вероятностям различных состояний первой подсистемы:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-partial-dm">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-partial-dm" title="Permalink to this equation">¶</a></span>\[
+\rho_\psi = \operatorname{Tr}_\phi (\ket{\Phi} \bra{\Phi}) = \sum_{i, j} d_{i, j} \ket{\psi_j} \bra{\psi_i},
+\]</div>
+<p>где</p>
+<div class="math notranslate nohighlight">
+\[
+d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
+\]</div>
+<p>а <span class="math notranslate nohighlight">\(\operatorname{Tr}_\phi\)</span> означает частичный след по второй подсистеме, звездочка – комплексное сопряжение. В таких обозначениях значение для среднего от оператора <span class="math notranslate nohighlight">\(A\)</span> вычисляется по формуле</p>
+<div class="math notranslate nohighlight">
+\[
+\braket{A_\psi} = \operatorname{Tr}_\psi (A \rho_\psi)
+\]</div>
+<p>Здесь след матрицы уже вычисляется по первой подсистеме.</p>
+<p>Чаще всего при обсуждении смешанных состояний рассматривают только одну “подсистему”, считая, что вторая – это некоторый
+макроскопический объект (“резервуар”, например лаборатория или даже вся Вселенная).
+В этом случае определение матрицы плотности <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> можно рассматривать как редуцированную матрицу плотности
+<a class="reference internal" href="#equation-eqn-partial-dm">(5)</a>, из которой убрали нерелевантные и неконтролируемые степени свободы.</p>
+<div class="section" id="id12">
+<h3>Запутанные и сепарабельные состояния<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Давайте вернемся к представлению состояния составной системы и зададимся вопросом: что можно сказать о связи между частями системы с точки зрения квантового описания? Для системы из двух кубитов такая составная система в общем случае может быть записана в явном виде (в этом разделе мы в основном следуем изложению из книги <span id="id13">[<a class="reference internal" href="../bibliography.html#id65"><span>01</span></a>]</span>):</p>
+<div class="math notranslate nohighlight" id="equation-eqn-two-qubit">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-two-qubit" title="Permalink to this equation">¶</a></span>\[
+\ket{\Phi} = a \ket{0_A 0_B} + b \ket{0_A 1_B} + c \ket{1_A 0_B} + d \ket{1_A 1_B},
+\]</div>
+<p>где индексы <span class="math notranslate nohighlight">\(A\)</span> и <span class="math notranslate nohighlight">\(B\)</span> здесь обозначают первый и второй кубиты, соответственно, а условие нормировки дает</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle \Phi \middle| \Phi \right\rangle = |a|^2 + |b|^2 + |c|^2 + |d|^2 = 1.
+\]</div>
+<p>Теперь, как можно показать, состояние типа <a class="reference internal" href="#equation-eqn-two-qubit">(6)</a> может быть представлено в виде произведения состояний двух отдельных кубитов, если <span class="math notranslate nohighlight">\(ad = dc\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\Phi_s} = \left(a_A \ket{0_A} + b_A \ket{1_A} \right) \otimes \left(a_B \ket{0_B} + b_B \ket{1_B} \right),
+\]</div>
+<p>где для выражения <a class="reference internal" href="#equation-eqn-two-qubit">(6)</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc} a = a_A a_B &amp; b = a_A b_B \\ c = b_A a_B &amp; d = b_A b_B \end{array}
+\end{split}\]</div>
+<p>В других случаях, когда <span class="math notranslate nohighlight">\(ad \neq dc\)</span>, состояние составной системы не представимо в виде произведения состояний подсистем, такие состояния называют несепарабельными (nonseparable). Другими словами, результат измерения состояния подсистемы <span class="math notranslate nohighlight">\(A\)</span> будет зависеть от состояния подсистемы <span class="math notranslate nohighlight">\(B\)</span>. Это означает, что для квантовых систем возможна нелокальная корреляция. Такое свойство квантовых систем называется <em>запутыванием</em> (<em>entanglement</em>), а сами состояния <em>запутанными</em> (<em>entangled</em>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>В отличие от анлийского языка, в русском языке не сложилось единой терминологии в отношении запутанных состояний. На момент написания этой лекции (осень 2021 года) в статье <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B7%D0%B0%D0%BF%D1%83%D1%82%D0%B0%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Квантовая запутанность</a> русскоязычной Википедии указывается восемь (!) отличающихся терминов для этого явления, например, “запутанность”, “перепутанность” или “сцепленность”. Сделать с этим что-то сложно, остается только иметь в виду имеющиеся обстоятельства. Мы будем стараться употреблять термин <em>запутанность</em> и, соответственно, <em>запутанные</em> состояния.</p>
+</div>
+<p>Приведем пару примеров запутанных состояний:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(b = c = 0, a = d = \pm 1/\sqrt{2}\)</span> – состояние “<em>шредингеровского кота</em>”, см. <span id="id14">[<a class="reference internal" href="../bibliography.html#id65"><span>01</span></a>]</span> и <span id="id15">[<a class="reference internal" href="../bibliography.html#id49"><span>07</span></a>]</span>, такая формула для вектора состояния возникает для суперпозиции двух макроскопически различимых состояний одной из подсистем, например, живой или мертвый кот.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a = d = 0, b = -c = \pm 1/\sqrt{2}\)</span> – такое состояние называется ЭПР-парой (EPR, от Einstein-Podolsky-Rosen) и это очень важный пример из истории изучения запутанности в квантовой физике.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>в 1930-е происходили многочисленные споры об “интерпретации” (сути) квантовой механики. Именно тогда Эйнштейн, Шредингер и их коллеги обратили внимание на несепарабельные состояния и затем Эйнштейном, Подольским и Розеном был сформулирован “парадокс” – что квантовая механика либо нелокальна (т.е. несовместима с теорией относительности), либо неполна (мы учитываем не все параметры при описании состяния квантовых систем). Именно с дискуссией о сути запутанности связана знаменитая цитата Эйнштейна “Бог не играет в кости” и менее известный ответ Нильса Бора, “Альберт, не указывай Богу, что ему делать.”</p>
+</div>
+<p>Довольно долго изучение запутанности и связанных с ней трудностей считались сложным, но не основными вопросами квантовой физики. Но с развитием квантовой информатики стало понятно, что без запутанности нельзя разрабатывать квантовые компьютеры и системы квантовой связи. В настоящее время существуют устоявшиеся методы создания запутанных состояний в эксперименте. А для целей нашего курса, в симуляциях, достаточно использовать <a class="reference external" href="../qcblock/gates.html#id15">двухкубитные гейты</a>, которые обсуждались в предыдущей лекции, например <code class="docutils literal notranslate"><span class="pre">CNOT</span></code> или <code class="docutils literal notranslate"><span class="pre">CZ</span></code>, который используется в лекции про <a class="reference internal" href="../gradsblock/gradients.html#gradients"><span class="std std-ref">Градиенты квантовых схем</span></a>.</p>
+<p>В качестве примера давайте посмотрим, как можно создать запутанное состояние в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>. Начнем с импортов и создания двухкубитной схемы:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Далее применим к первому кубиту операцию поворота <span class="math notranslate nohighlight">\(\hat{RX}\)</span>, запутаем кубиты с помощью <span class="math notranslate nohighlight">\(\hat{CNOT}\)</span> и далее оценим запутанность с помощью измерения оператора Паули <span class="math notranslate nohighlight">\(\hat{\sigma^z}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">circuit</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">RX</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">CNOT</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">expval</span><span class="p">(</span><span class="n">qml</span><span class="o">.</span><span class="n">PauliZ</span><span class="p">(</span><span class="mi">0</span><span class="p">)),</span> <span class="n">qml</span><span class="o">.</span><span class="n">expval</span><span class="p">(</span><span class="n">qml</span><span class="o">.</span><span class="n">PauliZ</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>В этом примере значение переменной <code class="docutils literal notranslate"><span class="pre">param</span></code> определяет степень запутанности, и для <span class="math notranslate nohighlight">\(\pi/2\)</span> запутанности будет максимальна. В результате оба кубита будут максимально смешанными и средний результат измерения будет нулевым:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.22044605e-16 2.22044605e-16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>(код взят из официальной <a class="reference external" href="https://pennylane.ai/qml/demos/tutorial_advanced_usage.html">демонстрации</a> для библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>)</p>
+</div>
+<div class="section" id="id16">
+<h3>Разложение Шмидта<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>В этом разделе мы познакомимся с важной процедурой – разложением Шмидта, которое тесно связано со спектром редуцированных матриц плотности состояния составной квантовой системы и благодаря которому легко увидеть, является ли состояние системы <em>запутанным</em> или нет.</p>
+<p>Снова запишем чистое двухчастичное состояние <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> квантовой системы, в пространстве <span class="math notranslate nohighlight">\(H_{\phi} \otimes H_{\psi}\)</span> двух подсистем <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>. Покажем тогда, что <em>существуют</em> ортонормированные состояния <span class="math notranslate nohighlight">\(\ket{i_{\phi}}\)</span> системы <span class="math notranslate nohighlight">\(\phi\)</span> и ортонормированные состояния <span class="math notranslate nohighlight">\(\ket{i_{\psi}}\)</span> системы <span class="math notranslate nohighlight">\(\psi\)</span>, которые дадут нам разложение:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-schm">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-schm" title="Permalink to this equation">¶</a></span>\[
+\ket{\Phi} = \sum_{i} \lambda_{i} \ket{i_{\phi}} \ket{i_{\psi}},
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(\lambda_i\)</span> – неотрицательные числа (коэффициенты Шмидта), удовлетворяющие условию <span class="math notranslate nohighlight">\(\sum_{i} \lambda_{i}^{2} = 1\)</span>.</p>
+<p>Для доказательства рассмотрим случай, когда обе подсистемы имеют пространство одинаковой размерности. Пусть тогда <span class="math notranslate nohighlight">\(\ket{n}\)</span> и <span class="math notranslate nohighlight">\(\ket{k}\)</span> состояния образуют произвольный ортонормированный базис для подсистем  <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>. Соответственно, тогда состояние системы  <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> может быть представлено в виде разложения:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-dec">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-dec" title="Permalink to this equation">¶</a></span>\[
+\ket{\Phi} = \sum_{n,k} a_{nk} \ket{n} \ket{k},\ \text{где}\ a_{nk} = \bra{nk} \ket{\Phi}
+\]</div>
+<p>Константы разложения <span class="math notranslate nohighlight">\(a_{nk}\)</span> образуют эрмитово-сопряженную комплексную матрицу <span class="math notranslate nohighlight">\(A\)</span>, которую можно привести к диагональному виду. Для этого применим к этой матрице сингулярное разложение (или SVD-разложение) вида: <span class="math notranslate nohighlight">\(A=U \cdot S \cdot V^{*}\)</span>, где <span class="math notranslate nohighlight">\(U\)</span> и <span class="math notranslate nohighlight">\(V\)</span> – унитарные матрицы, а <span class="math notranslate nohighlight">\(S\)</span> – диагональная матрица с неотрицательными действительными числами на диагонали (эти числа называют сингулярными числами матрицы <span class="math notranslate nohighlight">\(A\)</span>, и их набор однозначно определяется матрицей). Тогда разложение <a class="reference internal" href="#equation-eqn-dec">(8)</a> можно привести к виду:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-dec1">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eqn-dec1" title="Permalink to this equation">¶</a></span>\[
+\ket{\Phi} = \sum_{i,n,k} u_{in}s_{ii}v_{ik} \ket{n} \ket{k}.
+\]</div>
+<p>Теперь переопределим базис состояний в подсистемах  <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-basis">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-basis" title="Permalink to this equation">¶</a></span>\[
+\ket{i_{\phi}}=\sum_{n} u_{ni} \ket{n} \mbox{  ,  } \ket{i_{\psi}}=\sum_{k} v_{ik} \ket{k}
+\]</div>
+<p>и обозначим <span class="math notranslate nohighlight">\(s_{ii} \equiv \lambda_{i}\)</span>. В результате разложение <a class="reference internal" href="#equation-eqn-dec1">(9)</a> преобразуется к виду:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\Phi} = \sum_{i} \lambda_{i} \ket{i_{\phi}} \ket{i_{\psi}}
+\]</div>
+<p>В силу унитарности <span class="math notranslate nohighlight">\(U\)</span> и <span class="math notranslate nohighlight">\(V\)</span> наборы базисных состояний <span class="math notranslate nohighlight">\(\ket{i_{\phi}}\)</span> и <span class="math notranslate nohighlight">\(\ket{i_{\psi}}\)</span> в <a class="reference internal" href="#equation-eqn-basis">(10)</a> образуют полную ортонормированную систему, или базис Шмидта, а само представление <a class="reference internal" href="#equation-eqn-schm">(7)</a> называют <strong>разложением Шмидта</strong>. Число ненулевых значений коэффициентов Шмидта <span class="math notranslate nohighlight">\(\lambda_i\)</span> называется числом (или рангом <span class="math notranslate nohighlight">\(rank(A)=dim{s_{ii} : s_{ii} &gt; 0}\)</span>) Шмидта для состояния <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span>. В теории мер квантовой запутанности это число характеризует степень (или меру) запутанности состояний сложной системы. Чистое двухчастичное состояние запутанно тогда и только тогда, когда его число Шмидта <span class="math notranslate nohighlight">\(&gt; 1\)</span>, и чем больше число Шмидта, тем сильнее запутано состояние.</p>
+<p>Следствием приведенных выше свойств является важная связь между коэффициентами Шмидта чистого запутанного состояния со спектром его редуцированных матриц плотности
+<span class="math notranslate nohighlight">\(\rho_{\phi} = \mbox{Tr}_{\psi} \left( \ket{\Phi}\bra{\Phi}\right)\)</span>  и <span class="math notranslate nohighlight">\(\rho_{\psi} = \mbox{Tr}_{\phi} \left( \ket{\Phi}\bra{\Phi}\right)\)</span>. Несложно убедиться, что собственные значения редуцированных матриц <span class="math notranslate nohighlight">\(\rho_{\phi}\)</span> и <span class="math notranslate nohighlight">\(\rho_{\psi}\)</span> совпадают и представляют собой квадраты коэффициентов Шмидта, а их собственные вектора представляют собой состояния <span class="math notranslate nohighlight">\(\ket{i_{\phi}}\)</span> и <span class="math notranslate nohighlight">\(\ket{i_{\psi}}\)</span> соответственно. Эти свойства дают нам удобный алгоритм вычисления разложения Шмидта двухчастичного состояния <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> через редуцированные матрицы его подсистем: (1) на первом этапе следует вычислить редуцированные матрицы плотности <span class="math notranslate nohighlight">\(\rho_{\phi}\)</span> и <span class="math notranslate nohighlight">\(\rho_{\psi}\)</span>; (2) на втором этапе найти общие собственные значения <span class="math notranslate nohighlight">\(a_i\)</span> и соответствующие им собственные векторы   <span class="math notranslate nohighlight">\(\ket{i_{\phi}}\)</span> и <span class="math notranslate nohighlight">\(\ket{i_{\psi}}\)</span> для матриц <span class="math notranslate nohighlight">\(\rho_{\phi}\)</span> и <span class="math notranslate nohighlight">\(\rho_{\psi}\)</span>; (3) записать разложение Шмидта в виде:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\Phi} = \sum_{i} \sqrt{a_{i}} \ket{i_{\phi}} \ket{i_{\psi}}.
+\]</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>Описания эволюции смешанного состояния<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>Квантовая динамика<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>Напомним, что квантовая динамика в терминах волновых функций <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> описывается при помощи уравнения Шредингера:</p>
+<div class="math notranslate nohighlight">
+\[
+i\hbar \frac{\partial \Psi(x, t)}{\partial t} = \hat{H} \Psi(x, t).
+\]</div>
+<p>Аналогичное уравнение можно получить и для матриц плотности. Оно называется уравнением фон Неймана и записывается через
+коммутатор <span class="math notranslate nohighlight">\([]\)</span>, который определен как <span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+i\hbar \frac{\partial \rho}{\partial t} = [\hat{H}, \rho].
+\]</div>
+<p>Аналогично, если действие каких-то унитарных операций изменяет вектор состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> на
+<span class="math notranslate nohighlight">\(\hat{U} \ket{\Psi}\)</span>, то матрицу плотности оно должно изменять как</p>
+<div class="math notranslate nohighlight">
+\[
+\sum\limits_{n} p_n \hat{U} \ket{\Psi_n} \bra{\Psi_n} \hat{U}^\dagger = \hat{U}\rho\hat{U}^\dagger.
+\]</div>
+<p>Важное свойство унитарных матриц – их собственные значения по модулю равны единице. Действие унитарного оператора не
+изменяет собственных значений матрицы плотности, но вращает собственный ее базис. Исходя из этого можно сделать вывод о
+том, что ни чистота, ни энтропия не могут изменяться в результате унитарных операций.</p>
+</div>
+<div class="section" id="id19">
+<h3>Измерения и томография<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>Квантовая механика работает так, что любое <a class="reference external" href="../qcblock/qubit.html#id23">измерение</a> приводит к коллапсу волновой функции
+и является необратимым. А еще измерения, например, состояния <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span> не различимы при измерениях по оси
+<span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – для обоих состояний мы будем получать <span class="math notranslate nohighlight">\(\ket{1}\)</span> и <span class="math notranslate nohighlight">\(\ket{0}\)</span> с вероятностью <span class="math notranslate nohighlight">\(0.5\)</span>, то есть нам нужно
+измерять по <em>всем</em> базисам. В общем, получается, что восстановить амплитуду и фазу волновой функции <span class="math notranslate nohighlight">\(\Psi\)</span> это большая
+проблема, если добавить сюда вероятностный характер измерения.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Строго говоря это не просто “большая” проблема, а настоящая NP-полная задача оптимизации!</p>
+</div>
+<div class="figure align-default" id="id21">
+<a class="reference internal image-reference" href="../../_images/MarginalDistribution.png"><img alt="../../_images/MarginalDistribution.png" src="../../_images/MarginalDistribution.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Иллюстрация фазовой проблемы.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>Эта задача обычно решается при помощи квантовой томографии, и восстанавливают как раз не волновую функцию <span class="math notranslate nohighlight">\(\Psi\)</span>,
+а матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span>  (потому что в реальных экспериментах и задачах почти не бывает чистых состояний).
+Представим, что наша квантовая система описывается базисом <span class="math notranslate nohighlight">\(y_i\)</span> – набором из <span class="math notranslate nohighlight">\(2^N\)</span> векторов, причем каждому из этих
+базисных векторов соответствует свое собственное значение – результат измерения
+(подробнее об этом было в <a class="reference external" href="../qcblock/qubit.html#id31">лекции про кубит</a>).
+Тогда если у нас будет достаточно много результатов измерений, то мы сможем восстановить нашу матрицу плотности
+<span class="math notranslate nohighlight">\(\rho\)</span> методом максимизации правдоподобия. Выражение для правдоподобия в этом случае можно записать как:</p>
+<div class="math notranslate nohighlight">
+\[
+L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(q_i\)</span> – это частота получения собственного значения, соответствующего волновой функции <span class="math notranslate nohighlight">\(\ket{y_i}\)</span>
+(потому что измерение переводит наше состояние в базисный вектор, соответствующий результату измерения).
+В итоге увеличивая число измерений мы приближаем частоты <span class="math notranslate nohighlight">\(q_i\)</span> к вероятностям <span class="math notranslate nohighlight">\(\bra{\Psi}(\ket{y_i}\bra{y_i})\ket{\Psi}\)</span>, а нашу матрицу <span class="math notranslate nohighlight">\(\rho\)</span> к ее истинному виду.</p>
+<p>Методы квантовой томографии являются критической частью, в том числе, квантовой связи, так как системы там обычно небольшие, но восстанавливать надо всю матрицу плотности.</p>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>Что мы узнали?<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Формализм матрицы плотности позволяет описывать составные системы (например, один кубит в многокубитной системе)</p></li>
+<li><p>Чаще всего в реальных экспериментах у нас ситуация “мы приготовили состояние, но точно не знаем какое” и волновая функция нам не подходит</p></li>
+<li><p>Что такое квантовая запутанность и как ее можно описать</p></li>
+<li><p>Состояние части запутанного состояния – смешанное</p></li>
+<li><p>Отличие смешанного состояния от чистого можно охарактеризовать параметром типа энтропии</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/qcblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="gates.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Квантовые гейты</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../progblock/progintro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">О блоке “Фреймворки”</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

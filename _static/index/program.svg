@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1973px" preserveAspectRatio="none" style="width:1029px;height:1973px;background:#FFFFFF;" version="1.1" viewBox="0 0 1029 1973" width="1029px" zoomAndPan="magnify"><defs><filter height="300%" id="f1uqrezr7soik7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[8dd27e2457c7f46595f361a15c0b246d]
+cluster Week 1--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="347,6,412,6,419,28.2969,805,28.2969,805,208,347,208,347,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="347" x2="419" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="351" y="20.9951">Week 1</text><!--MD5=[6e3ca04aafcd9208d310a649dbb71c37]
+cluster Introduction--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="381,33,483,33,490,55.2969,793,55.2969,793,104,381,104,381,33" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="381" x2="490" y1="55.2969" y2="55.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="96" x="385" y="47.9951">Introduction</text><!--MD5=[7dc36ee093807ae1c9975d41f29f154e]
+cluster Prerequisites--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="355,129,467,129,474,151.2969,797,151.2969,797,200,355,200,355,129" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="355" x2="474" y1="151.2969" y2="151.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="106" x="359" y="143.9951">Prerequisites</text><!--MD5=[0f3e6ca91c425b904138ecd5f2eb0b6e]
+cluster Week 2--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="341,216,406,216,413,238.2969,791,238.2969,791,610,341,610,341,216" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="341" x2="413" y1="238.2969" y2="238.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="345" y="230.9951">Week 2</text><!--MD5=[48d209a1d5bfa3523296a40d2fb024f5]
+cluster qci--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="406,243,573,243,580,265.2969,624,265.2969,624,410,406,410,406,243" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="406" x2="580" y1="265.2969" y2="265.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="161" x="410" y="257.9951">Quantum Computing</text><!--MD5=[b6f8d2e2141744704756287eeccdda0a]
+cluster Programming QC--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="349,435,488,435,495,457.2969,783,457.2969,783,602,349,602,349,435" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="349" x2="495" y1="457.2969" y2="457.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="133" x="353" y="449.9951">Programming QC</text><!--MD5=[88ff5d23ea4a4acbf445671045bd626f]
+cluster Week 3--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="376,618,441,618,448,640.2969,1012,640.2969,1012,916,376,916,376,618" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="376" x2="448" y1="640.2969" y2="640.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="380" y="632.9951">Week 3</text><!--MD5=[6a9206d04eb0a4eedfc5e3adce20d656]
+cluster qalgo--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="384,645,597,645,604,667.2969,1004,667.2969,1004,812,384,812,384,645" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="384" x2="604" y1="667.2969" y2="667.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="207" x="388" y="659.9951">Basic Quantum Algorithms</text><!--MD5=[9441b1168cf56f240c6ce23ff618c11d]
+cluster NISQ Hardware--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="510,837,635,837,642,859.2969,881,859.2969,881,908,510,908,510,837" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="510" x2="642" y1="859.2969" y2="859.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="119" x="514" y="851.9951">NISQ Hardware</text><!--MD5=[67fe2f61fbce6a161cbc871114ead5ad]
+cluster Week 4--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="362,924,427,924,434,946.2969,738,946.2969,738,1222,362,1222,362,924" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="362" x2="434" y1="946.2969" y2="946.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="366" y="938.9951">Week 4</text><!--MD5=[d5509d7d814b1c73429897791867f010]
+cluster Quantum ML--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="370,951,474,951,481,973.2969,730,973.2969,730,1022,370,1022,370,951" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="370" x2="481" y1="973.2969" y2="973.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="98" x="374" y="965.9951">Quantum ML</text><!--MD5=[34e411e58f5eb6b41c5b2d5f39434edf]
+cluster VQC--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="500,1047,540,1047,547,1069.2969,566,1069.2969,566,1118,500,1118,500,1047" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="500" x2="547" y1="1069.2969" y2="1069.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="34" x="504" y="1061.9951">VQC</text><!--MD5=[5feef17ed36116c43753f9cca42e57ad]
+cluster Gradients--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="429,1143,512,1143,519,1165.2969,730,1165.2969,730,1214,429,1214,429,1143" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="429" x2="519" y1="1165.2969" y2="1165.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="77" x="433" y="1157.9951">Gradients</text><!--MD5=[eb32471cad9c7f2fa167603baf61d804]
+cluster Week 5--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="229,1230,294,1230,301,1252.2969,545,1252.2969,545,1432,229,1432,229,1230" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="229" x2="301" y1="1252.2969" y2="1252.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="233" y="1244.9951">Week 5</text><!--MD5=[3f43b3276a4bc456403ca586d1687686]
+cluster Quantum SVM--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="237,1257,353,1257,360,1279.2969,537,1279.2969,537,1328,237,1328,237,1257" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="237" x2="360" y1="1279.2969" y2="1279.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="110" x="241" y="1271.9951">Quantum SVM</text><!--MD5=[cfc3891bf0e60fc4ad5aa673713b448a]
+cluster Quantum Neural Networks--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="287,1353,501,1353,508,1375.2969,537,1375.2969,537,1424,287,1424,287,1353" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="287" x2="508" y1="1375.2969" y2="1375.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="208" x="291" y="1367.9951">Quantum Neural Networks</text><!--MD5=[99e55c87f52fdd959692571fa6f9fd28]
+cluster Week 6--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="16,1440,81,1440,88,1462.2969,935,1462.2969,935,1546,16,1546,16,1440" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="88" y1="1462.2969" y2="1462.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="20" y="1454.9951">Week 6</text><!--MD5=[24c454d77bea29e21ab1d56cceec7202]
+cluster Problems for QML--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="24,1467,171,1467,178,1489.2969,927,1489.2969,927,1538,24,1538,24,1467" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="24" x2="178" y1="1489.2969" y2="1489.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="141" x="28" y="1481.9951">Problems for QML</text><!--MD5=[cd316f1b36b42656f70429db6bafaadf]
+cluster Week 7--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="83,1554,148,1554,155,1576.2969,582,1576.2969,582,1852,83,1852,83,1554" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="83" x2="155" y1="1576.2969" y2="1576.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="87" y="1568.9951">Week 7</text><!--MD5=[d45deef5102645d77119e71b8011472e]
+cluster From problems to QML--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="91,1581,276,1581,283,1603.2969,574,1603.2969,574,1748,91,1748,91,1581" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="91" x2="283" y1="1603.2969" y2="1603.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="179" x="95" y="1595.9951">From problems to QML</text><!--MD5=[ba854d39fab01aa16ec026474776b324]
+cluster VQE--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="126,1773,164,1773,171,1795.2969,339,1795.2969,339,1844,126,1844,126,1773" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="126" x2="171" y1="1795.2969" y2="1795.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="32" x="130" y="1787.9951">VQE</text><!--MD5=[9794924392cb860a5a1822c158cfdf65]
+cluster D-Wave--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="358,1773,424,1773,431,1795.2969,530,1795.2969,530,1844,358,1844,358,1773" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="358" x2="431" y1="1795.2969" y2="1795.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="60" x="362" y="1787.9951">D-Wave</text><!--MD5=[cc5f8e6891c081baf38cab569d1124f0]
+cluster Week 8--><polygon fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" points="162,1860,227,1860,234,1882.2969,673,1882.2969,673,1966,162,1966,162,1860" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="162" x2="234" y1="1882.2969" y2="1882.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="166" y="1874.9951">Week 8</text><!--MD5=[363e27adafadbf0669562999f63a0837]
+cluster QAOA--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="589,1887,641,1887,648,1909.2969,665,1909.2969,665,1958,589,1958,589,1887" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="589" x2="648" y1="1909.2969" y2="1909.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="46" x="593" y="1901.9951">QAOA</text><!--MD5=[6b88b939d07d986cde75187f3ee91e0e]
+cluster adv--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="430,1887,571,1887,578,1909.2969,581,1909.2969,581,1958,430,1958,430,1887" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="430" x2="578" y1="1909.2969" y2="1909.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="135" x="434" y="1901.9951">Advanced Topics</text><!--MD5=[33abf741bc3e750ac887bcce77b2aac8]
+cluster jobs--><polygon fill="#FFE4C4" filter="url(#f1uqrezr7soik7)" points="170,1887,351,1887,358,1909.2969,422,1909.2969,422,1958,170,1958,170,1887" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="170" x2="358" y1="1909.2969" y2="1909.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="175" x="174" y="1901.9951">Jobs and Perspectives</text><!--MD5=[73e4bcf18a035b8362a04877a9aa57d0]
+entity intro1--><rect fill="#14D2EF" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="395" x="389.5" y="60"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="375" x="399.5" y="82.9951">Quantum Computers, Bitcoin and Quantum Advantage</text><!--MD5=[c15c44eddbde3698217cfa31d0e69e09]
+entity python--><rect fill="#14D2EF" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="103" x="685.5" y="156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="695.5" y="178.9951">Python Intro</text><!--MD5=[fed855454d679ff41f3ad6fb1680e6ae]
+entity numpy--><rect fill="#14D2EF" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="127" x="523.5" y="156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="533.5" y="178.9951">Numpy &amp; Linalg</text><!--MD5=[1da348eb3a8ab0eed730e1defa8ec0b1]
+entity ml--><rect fill="#14D2EF" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="125" x="363.5" y="156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="373.5" y="178.9951">Classical ML/DL</text><!--MD5=[8df40ca36c8179edeeadb31698d76630]
+entity qubit--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="57" x="558.5" y="270"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="568.5" y="292.9951">Qubit</text><!--MD5=[a0390acad77d8547816f8b22efbf4a22]
+entity gates--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="61" x="554.5" y="366"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="564.5" y="388.9951">Gates</text><!--MD5=[c2b4aa4b672f924327404acbebd4eb3b]
+entity mixed--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="109" x="414.5" y="270"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="424.5" y="292.9951">Mixed Stated</text><!--MD5=[9050f765d78bef8c843e1c7613ee5099]
+entity progcomparision--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="194" x="488" y="462"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="498" y="484.9951">Frameworks Comparision</text><!--MD5=[20f6145fdc352f5ae0aa5f61ec545c1c]
+entity pennylane--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="96" x="537" y="558"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="547" y="580.9951">PennyLane</text><!--MD5=[8bfce400472214d6f1ce394854442da8]
+entity qiskit--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="58" x="717" y="462"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="727" y="484.9951">Qiskit</text><!--MD5=[38347563cafdec457fa3aad39d7c9e7c]
+entity cirq--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="95" x="357.5" y="462"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="367.5" y="484.9951">Cirq &amp; TFQ</text><!--MD5=[efc64c17f8e4f84310a78ecb4769dbc8]
+entity deutsch--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="79" x="545.5" y="672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="555.5" y="694.9951">Deutsch</text><!--MD5=[01e79eec76a2ffe158779930eccb7887]
+entity advanced_algos--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="189" x="490.5" y="768"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="500.5" y="790.9951">Other Algorithms Review</text><!--MD5=[e3d4ae706dca9c3f3bd568b218a7169c]
+entity grover--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="66" x="930" y="768"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="940" y="790.9951">Grover</text><!--MD5=[542d7a9dfa2ac9ce96e58756bb70ada5]
+entity qtp--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="180" x="715" y="768"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="725" y="790.9951">Quantum Teleportation</text><!--MD5=[4f2e94a91507cf73227a173958a476e1]
+entity saimon--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="63" x="392.5" y="768"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="402.5" y="790.9951">Simon</text><!--MD5=[584399560808746b512476d068539b1d]
+entity review--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="133" x="518.5" y="864"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="528.5" y="886.9951">Hardware review</text><!--MD5=[c3aa1e4cb88933fb912962688cd83505]
+entity schard--><rect fill="#E0535C" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="186" x="687" y="864"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="697" y="886.9951">Superconducting qubits</text><!--MD5=[562d0a61dc568579734d77ce5336b101]
+entity qml_general--><rect fill="#14D2EF" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="109" x="530.5" y="978"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="540.5" y="1000.9951">Kinds of QML</text><!--MD5=[cf4032d579b658aa7ea33cbe442cba3d]
+entity hhl--><rect fill="#E0535C" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="47" x="674.5" y="978"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="684.5" y="1000.9951">HHL</text><!--MD5=[96c89b8fc465faf6bdb956c49e2b853b]
+entity qknn--><rect fill="#E0535C" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="117" x="378.5" y="978"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="388.5" y="1000.9951">Quantum KNN</text><!--MD5=[479a4106e31e4ab63dc1e9dd7f9f030b]
+entity vqc--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="50" x="508" y="1074"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="518" y="1096.9951">VQC</text><!--MD5=[ce9d9ff67360c80c02a9fb79eb8b4ea8]
+entity grad--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="87" x="437.5" y="1170"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="447.5" y="1192.9951">Gradients</text><!--MD5=[fa5717a6e7ec6a8411f33b2367b0aedb]
+entity hograd--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="162" x="560" y="1170"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="570" y="1192.9951">High-order gradients</text><!--MD5=[9eb151021ba774aac1bf6d89773decfd]
+entity hsvm--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="97" x="432.5" y="1284"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="442.5" y="1306.9951">Hybrid SVM</text><!--MD5=[744ed86e038e33bd846871a170292216]
+entity csvm--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="152" x="245" y="1284"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="255" y="1306.9951">Classical SVM math</text><!--MD5=[31f7d5f292b56fdad27dbafba9ab7a52]
+entity qnn--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="51" x="295.5" y="1380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="305.5" y="1402.9951">QNN</text><!--MD5=[c5cea0d3cd2e7f1cbf1384594dca1821]
+entity convvqc--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="147" x="381.5" y="1380"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="391.5" y="1402.9951">Convolutional VQC</text><!--MD5=[bb729e8f9de7097a2f5bf130d9e5dcf0]
+entity ising--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="99" x="271.5" y="1494"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="281.5" y="1516.9951">Ising model</text><!--MD5=[f4abc754ee980bb376d1d8627fd84583]
+entity aising--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="124" x="406" y="1494"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="416" y="1516.9951">Advanced Ising</text><!--MD5=[92d9653d759cee844d9b497ced0931a8]
+entity copt--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="204" x="32" y="1494"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="42" y="1516.9951">Combinatorial Optimization</text><!--MD5=[d914d2fe2fb07f0a6e4c94eea4f52295]
+entity qchem--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="157" x="565.5" y="1494"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="575.5" y="1516.9951">Quantum Chemistry</text><!--MD5=[c168ea98061c8943e8728e4b94afbccb]
+entity aqchem--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="161" x="757.5" y="1494"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="767.5" y="1516.9951">Advanced Chemistry</text><!--MD5=[061027523f104763e9a6e14f54dae584]
+entity npising--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="212" x="99" y="1608"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="109" y="1630.9951">NP-problems as Ising model</text><!--MD5=[551d7c0b9cd2219f86dbe7c11da6a2fc]
+entity jordan--><rect fill="#FFC864" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="220" x="346" y="1608"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="356" y="1630.9951">Jordan-Wigner transformation</text><!--MD5=[ce3a7c5704c0099f06b2150a2892d1a2]
+entity eigenvals--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="164" x="242" y="1704"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="252" y="1726.9951">Eigenvalues problem</text><!--MD5=[f9cf8d4a0e7a67a00da7466c0c124ee1]
+entity vqe--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="49" x="134.5" y="1800"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="144.5" y="1822.9951">VQE</text><!--MD5=[fac30859992036da888524e4d7ffe13d]
+entity tspvqe--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="112" x="219" y="1800"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="229" y="1822.9951">TSP with VQE</text><!--MD5=[e512ba1b47a3ba967cd950cb8a7fbaf5]
+entity dwave--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="156" x="366" y="1800"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="376" y="1822.9951">D-Wave &amp; Sampling</text><!--MD5=[8f54dd4359239a578483854d0b2e1dd2]
+entity qaoa--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="60" x="597" y="1914"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="607" y="1936.9951">QAOA</text><!--MD5=[2de96f33f9b7ceef658d94072635b8e7]
+entity sota--><rect fill="#40B464" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="100" x="462" y="1914"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="472" y="1936.9951">SotA review</text><!--MD5=[9d845b22a76d848716050e5b4f1f137f]
+entity academic_industrial--><rect fill="#FFFFFF" filter="url(#f1uqrezr7soik7)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="236" x="178" y="1914"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="188" y="1936.9951">Academic &amp; Industrial positions</text><!--MD5=[7c899073a3538335d922630093c98e52]
+link intro1 to python--><path d="M615.9368,96.0632 C631.4196,105.7674 650.7907,117.9715 668,129 C680.2256,136.8347 693.6072,145.5332 705.3047,153.1779 " fill="none" id="intro1-to-python" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="709.5329,155.9431,704.1901,147.6694,705.3483,153.2064,699.8113,154.3647,709.5329,155.9431" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[63383a25ca365a9a7c958da650301a6b]
+link intro1 to numpy--><path d="M587,96.0569 C587,111.5126 587,133.8647 587,150.6731 " fill="none" id="intro1-to-numpy" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="587,155.6977,591,146.6977,587,150.6977,583,146.6977,587,155.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9dc61af4684e1146fc18a2f2212e4acf]
+link intro1 to ml--><path d="M556.7171,96.0569 C529.481,112.297 489.4756,136.1512 460.904,153.1877 " fill="none" id="intro1-to-ml" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="456.4203,155.8612,466.199,154.6876,460.7148,153.3005,462.1019,147.8164,456.4203,155.8612" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c0faed7dd1dfc51895741319373d02f0]
+link python to qubit--><path d="M713.2321,192.0636 C686.619,212.2896 643.5202,245.0446 615.2181,266.5543 " fill="none" id="python-to-qubit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="611.1534,269.6434,620.7392,267.3823,615.1342,266.618,615.8986,261.013,611.1534,269.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[146701454263713b864d6ced8216f607]
+link numpy to qubit--><path d="M587,192.0636 C587,211.6264 587,242.9102 587,264.4031 " fill="none" id="numpy-to-qubit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="587,269.6434,591,260.6434,587,264.6434,583,260.6434,587,269.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[39f6ec65a43e8e2ff801313362491108]
+link ml to qubit--><path d="M464.5363,192.0098 C477.5221,197.6376 492.2176,203.5351 506,208 C521.18,212.9177 527.9531,206.8133 541,216 C558.1465,228.0733 570.3837,248.77 577.9046,264.8836 " fill="none" id="ml-to-qubit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="580.0875,269.7225,580.033,259.8738,578.0315,265.1648,572.7406,263.1633,580.0875,269.7225" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4e048993cf9b9bde07c9765173b394f4]
+link qubit to gates--><path d="M586.6238,306.0569 C586.3018,321.5126 585.8362,343.8647 585.486,360.6731 " fill="none" id="qubit-to-gates" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="585.3813,365.6977,589.5681,356.7831,585.4856,360.6988,581.5699,356.6162,585.3813,365.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[07c710c1d8a32b338c4056930f158b2c]
+reverse link mixed to qubit--><path d="M528.9777,288 C538.7805,288 548.5832,288 558.3859,288 " fill="none" id="mixed-backto-qubit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="523.8516,288,532.8516,292,528.8516,288,532.8516,284,523.8516,288" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[aa8e662ca853318fb6c2cc71fd539fbd]
+link gates to progcomparision--><path d="M585,402.0569 C585,417.5126 585,439.8647 585,456.6731 " fill="none" id="gates-to-progcomparision" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="585,461.6977,589,452.6977,585,456.6977,581,452.6977,585,461.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[db51bc6ddb2679919b2cd32f1357b721]
+link progcomparision to pennylane--><path d="M585,498.0569 C585,513.5126 585,535.8647 585,552.6731 " fill="none" id="progcomparision-to-pennylane" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="585,557.6977,589,548.6977,585,552.6977,581,548.6977,585,557.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[eb6297dda81ff9dfb7528486eaab669e]
+reverse link cirq to progcomparision--><path d="M458.0245,480 C467.9913,480 477.958,480 487.9248,480 " fill="none" id="cirq-backto-progcomparision" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="452.8125,480,461.8125,484,457.8125,480,461.8125,476,452.8125,480" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c95b7d5a6c20cc5d5064182ca0f1626e]
+link progcomparision to qiskit--><path d="M682.166,480 C691.9336,480 701.7011,480 711.4687,480 " fill="none" id="progcomparision-to-qiskit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="716.5765,480,707.5765,476,711.5765,480,707.5765,484,716.5765,480" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[54838a727a1944f50bbd20bbed0b061c]
+link pennylane to deutsch--><path d="M585,594.0636 C585,613.6264 585,644.9102 585,666.4031 " fill="none" id="pennylane-to-deutsch" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="585,671.6434,589,662.6434,585,666.6434,581,662.6434,585,671.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[378a69d929aa6e7bd3ddfc0d39e9a613]
+link deutsch to advanced_algos--><path d="M585,708.0569 C585,723.5126 585,745.8647 585,762.6731 " fill="none" id="deutsch-to-advanced_algos" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="585,767.6977,589,758.6977,585,762.6977,581,758.6977,585,767.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[dc22a0d5bbf5e173a9e7e8a28ae5189f]
+link advanced_algos to grover--><path d="M623.1166,767.9187 C648.6233,756.8461 683.2966,743.7347 715.5,738 C794.2609,723.9746 819.2907,713.666 895.5,738 C912.1145,743.3051 928.1375,754.3579 940.4,764.5212 " fill="none" id="advanced_algos-to-grover" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="944.4098,767.9242,940.136,759.051,940.5976,764.689,934.9596,765.1505,944.4098,767.9242" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[853f1807f194940fabf9f1186f428e2c]
+link advanced_algos to qtp--><path d="M679.5313,786 C689.5479,786 699.5646,786 709.5813,786 " fill="none" id="advanced_algos-to-qtp" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="714.8193,786,705.8193,782,709.8193,786,705.8193,790,714.8193,786" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[dec14991b0ab8ac85659803ec034a5b8]
+reverse link saimon to advanced_algos--><path d="M460.893,786 C470.7092,786 480.5254,786 490.3416,786 " fill="none" id="saimon-backto-advanced_algos" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="455.7598,786,464.7598,790,460.7598,786,464.7598,782,455.7598,786" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f25d9f1a7a9beb076b0f06ecf3a39298]
+link advanced_algos to review--><path d="M585,804.0569 C585,819.5126 585,841.8647 585,858.6731 " fill="none" id="advanced_algos-to-review" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="585,863.6977,589,854.6977,585,858.6977,581,854.6977,585,863.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[66d6242a7780421d233d0fe78b5d7d85]
+link review to schard--><path d="M651.6504,882 C661.6836,882 671.7168,882 681.75,882 " fill="none" id="review-to-schard" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="686.9967,882,677.9967,878,681.9967,882,677.9967,886,686.9967,882" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c05609806416f1fe2ada0cf03e523c78]
+link review to qml_general--><path d="M585,900.0636 C585,919.6264 585,950.9102 585,972.4031 " fill="none" id="review-to-qml_general" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="585,977.6434,589,968.6434,585,972.6434,581,968.6434,585,977.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[694962dc8808db511b18650370a5a492]
+link qml_general to hhl--><path d="M639.7344,996 C649.5544,996 659.3744,996 669.1944,996 " fill="none" id="qml_general-to-hhl" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="674.3296,996,665.3296,992,669.3296,996,665.3296,1000,674.3296,996" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[29f18d4216ec68a9415c31f34f64d452]
+reverse link qknn to qml_general--><path d="M500.807,996 C510.6118,996 520.4167,996 530.2215,996 " fill="none" id="qknn-backto-qml_general" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="495.6797,996,504.6797,1000,500.6797,996,504.6797,992,495.6797,996" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[861e73dab080b48b88bdbbc68eb3c349]
+link qml_general to vqc--><path d="M575.2192,1014.0569 C566.7751,1029.6459 554.5309,1052.2506 545.4006,1069.1065 " fill="none" id="qml_general-to-vqc" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="542.9137,1073.6977,550.7174,1067.6891,545.2951,1069.3012,543.683,1063.8789,542.9137,1073.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7fa1c026d0104d39b0e79e560dae5574]
+link vqc to grad--><path d="M523.2192,1110.0569 C514.7751,1125.6459 502.5309,1148.2506 493.4006,1165.1065 " fill="none" id="vqc-to-grad" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="490.9137,1169.6977,498.7174,1163.6891,493.2951,1165.3012,491.683,1159.8789,490.9137,1169.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[502929f726486ef0329ab84397be595b]
+link grad to hograd--><path d="M524.75,1188 C534.6752,1188 544.6004,1188 554.5256,1188 " fill="none" id="grad-to-hograd" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="559.7158,1188,550.7158,1184,554.7158,1188,550.7158,1192,559.7158,1188" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6db83b6cd82142f788ba948c54dff47a]
+link grad to hsvm--><path d="M481,1206.0636 C481,1225.6264 481,1256.9102 481,1278.4031 " fill="none" id="grad-to-hsvm" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="481,1283.6434,485,1274.6434,481,1278.6434,477,1274.6434,481,1283.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8cb0a05ab659fc0db2e7797e3fd15fa0]
+link qnn to convvqc--><path d="M346.6484,1398 C356.5,1398 366.3515,1398 376.2031,1398 " fill="none" id="qnn-to-convvqc" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="381.3548,1398,372.3548,1394,376.3548,1398,372.3548,1402,381.3548,1398" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a055c9dd0047528140f8a6d45d0b0478]
+link hsvm to qnn--><path d="M434.5984,1320.0404 C407.4232,1331.0264 376.1266,1344.5318 364,1353 C354.8637,1359.38 346.1104,1367.9222 338.9141,1375.8493 " fill="none" id="hsvm-to-qnn" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="335.5116,1379.6791,344.4794,1375.6074,338.8324,1375.9412,338.4987,1370.2942,335.5116,1379.6791" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[de83e5d32d21a092f669284acae4b08d]
+reverse link csvm to hsvm--><path d="M402.446,1302 C412.3823,1302 422.3186,1302 432.2549,1302 " fill="none" id="csvm-backto-hsvm" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="397.25,1302,406.25,1306,402.25,1302,406.25,1298,397.25,1302" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c33795f15651e8936cca65691e20746a]
+link qnn to copt--><path d="M295.3905,1413.6122 C262.3249,1433.7699 204.6819,1468.9105 167.9803,1491.2847 " fill="none" id="qnn-to-copt" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="163.6113,1493.9482,173.378,1492.679,167.8806,1491.3456,169.2139,1485.8482,163.6113,1493.9482" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3b3c6cab3f8bcf1a9f985fefd1cd54ae]
+link qnn to ising--><path d="M321,1416.0636 C321,1435.6264 321,1466.9102 321,1488.4031 " fill="none" id="qnn-to-ising" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="321,1493.6434,325,1484.6434,321,1488.6434,317,1484.6434,321,1493.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[993bdd7c2b44b4b177f80e919057cc2e]
+link qnn to qchem--><path d="M338.6653,1416.0744 C345.8878,1422.2895 354.7238,1428.5481 364,1432 C402.3578,1446.2739 509.4631,1426.2172 548,1440 C577.1795,1450.4361 604.8612,1473.0533 622.934,1490.1723 " fill="none" id="qnn-to-qchem" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="626.8661,1493.9545,623.1524,1484.8326,623.2625,1490.4884,617.6067,1490.5985,626.8661,1493.9545" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d6f6100087a113812a3edf2e7e1729d4]
+link qchem to aqchem--><path d="M722.8125,1512 C732.647,1512 742.4815,1512 752.3159,1512 " fill="none" id="qchem-to-aqchem" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="757.4587,1512,748.4587,1508,752.4587,1512,748.4587,1516,757.4587,1512" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6d092be240cac5c2b8f036d9149d7ff3]
+link qchem to jordan--><path d="M614.2108,1530.0636 C580.62,1550.4326 526.074,1583.5083 490.6172,1605.0087 " fill="none" id="qchem-to-jordan" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="485.9605,1607.8325,495.7302,1606.5865,490.2359,1605.2401,491.5823,1599.7458,485.9605,1607.8325" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1f0d8c349c3e7c32f713290f26c66aa3]
+link ising to aising--><path d="M370.6699,1512 C380.5986,1512 390.5272,1512 400.4559,1512 " fill="none" id="ising-to-aising" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="405.6479,1512,396.6479,1508,400.6479,1512,396.6479,1516,405.6479,1512" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ee118258f2ee6ce7251a265de2afb826]
+link ising to npising--><path d="M302.6195,1530.0636 C282.2074,1550.1238 249.2545,1582.5085 227.3625,1604.0231 " fill="none" id="ising-to-npising" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="223.6787,1607.6434,232.9015,1604.188,227.2449,1604.1388,227.2941,1598.4821,223.6787,1607.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f5d806b350cd944a455c628027bc95af]
+link ising to jordan--><path d="M342.3912,1530.0636 C366.2448,1550.2067 404.8141,1582.7763 430.2899,1604.2892 " fill="none" id="ising-to-jordan" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="434.2619,1607.6434,429.9665,1598.7806,430.4418,1604.4174,424.805,1604.8927,434.2619,1607.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[51bd3063ce56f3b974750318bb995371]
+link npising to jordan--><path d="M311.3809,1626 C321.1625,1626 330.9441,1626 340.7257,1626 " fill="none" id="npising-to-jordan" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="345.8409,1626,336.8409,1622,340.8409,1626,336.8409,1630,345.8409,1626" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[04c189af4c9cad42e4abfd165082fa61]
+link copt to npising--><path d="M145.2502,1530.0636 C157.5889,1549.8751 177.4143,1581.7075 190.8112,1603.218 " fill="none" id="copt-to-npising" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="193.5674,1607.6434,192.2046,1597.8893,190.924,1603.3993,185.414,1602.1187,193.5674,1607.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[fec7d1bee242312c0c1064ec37653e04]
+link npising to eigenvals--><path d="M227.383,1644.0569 C247.2024,1660.0456 276.17,1683.4144 297.2146,1700.3916 " fill="none" id="npising-to-eigenvals" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="301.3128,1703.6977,296.8195,1694.9335,297.4213,1700.5583,291.7965,1701.16,301.3128,1703.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a54bafebd0622cfc85139846817bd4a9]
+link jordan to eigenvals--><path d="M431.1718,1644.0569 C409.0957,1660.1122 376.7872,1683.6093 353.4202,1700.6035 " fill="none" id="jordan-to-eigenvals" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="349.1657,1703.6977,358.797,1701.6389,353.2093,1700.7568,354.0915,1695.1691,349.1657,1703.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[22b3303f34549aae1b380b39fc916704]
+link eigenvals to vqe--><path d="M266.2983,1740.0954 C244.7581,1748.3108 220.7543,1759.2971 201,1773 C191.9447,1779.2813 183.3695,1787.8043 176.3569,1795.7437 " fill="none" id="eigenvals-to-vqe" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="173.0447,1799.5819,181.9529,1795.3814,176.3113,1795.7965,175.8962,1790.1549,173.0447,1799.5819" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cd19452083fd5bac38a845db7bc0918e]
+link eigenvals to dwave--><path d="M346.5711,1740.0569 C366.557,1756.0456 395.768,1779.4144 416.9895,1796.3916 " fill="none" id="eigenvals-to-dwave" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="421.1221,1799.6977,416.5933,1790.9519,417.2178,1796.5741,411.5956,1797.1987,421.1221,1799.6977" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6b758bd7a0afbf86100e5e1565f0b9c4]
+link vqe to tspvqe--><path d="M183.9219,1818 C193.8187,1818 203.7155,1818 213.6123,1818 " fill="none" id="vqe-to-tspvqe" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="218.7877,1818,209.7877,1814,213.7877,1818,209.7877,1822,218.7877,1818" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[dc4222075d1ced3e0453c99d302f2985]
+link dwave to qaoa--><path d="M522.3515,1834.9197 C550.5057,1842.1902 578.0271,1851.0619 589,1860 C604.4928,1872.6198 614.463,1893.2594 620.2853,1909.2122 " fill="none" id="dwave-to-qaoa" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="621.9606,1913.9986,622.7624,1904.1824,620.3086,1909.2794,615.2117,1906.8256,621.9606,1913.9986" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b58db3d10bd09cca68190103a401f44d]
+link qaoa to sota--><path d="M596.9304,1932 C587.104,1932 577.2775,1932 567.4511,1932 " fill="none" id="qaoa-to-sota" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="562.3125,1932,571.3125,1936,567.3125,1932,571.3125,1928,562.3125,1932" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[804d30ee822fc347821eb3de47293562]
+link dwave to academic_industrial--><path d="M420.549,1836.0636 C394.2907,1856.2896 351.7666,1889.0446 323.8418,1910.5543 " fill="none" id="dwave-to-academic_industrial" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="319.8314,1913.6434,329.4023,1911.32,323.7925,1910.5922,324.5203,1904.9823,319.8314,1913.6434" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[380c5f1079ced04ca5b28cdaf52a589c]
+@startuml
+package "Week 1" {
+        package "Introduction" #Bisque {
+                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+        }
+
+        package "Prerequisites" #Bisque {
+                rectangle "Python Intro" as python #14D2EF
+                rectangle "Numpy & Linalg" as numpy #14D2EF
+                rectangle "Classical ML/DL" as ml #14D2EF
+        }
+}
+
+package "Week 2" {
+        package "Quantum Computing" as qci #Bisque {
+                rectangle "Qubit" as qubit #40B464
+                rectangle "Gates" as gates #40B464
+                rectangle "Mixed Stated" as mixed #FFC864
+        }
+
+        package "Programming QC" #Bisque {
+                rectangle "Frameworks Comparision" as progcomparision #40B464
+                rectangle "PennyLane" as pennylane #40B464
+                rectangle "Qiskit" as qiskit #FFC864
+                rectangle "Cirq & TFQ" as cirq #FFC864
+        }
+}
+
+package "Week 3" {
+        package "Basic Quantum Algorithms" as qalgo #Bisque {
+                rectangle "Deutsch" as deutsch #40B464
+                rectangle "Other Algorithms Review" as advanced_algos #40B464
+                rectangle "Grover" as grover #FFC864
+                rectangle "Quantum Teleportation" as qtp #40B464
+                rectangle "Simon" as saimon #FFC864
+        }
+
+        package "NISQ Hardware" #Bisque {
+                rectangle "Hardware review" as review #40B464
+                rectangle "Superconducting qubits" as schard #E0535C
+        }
+}
+
+package "Week 4" {
+        package "Quantum ML" #Bisque {
+                rectangle "Kinds of QML" as qml_general #14D2EF
+                rectangle "HHL" as hhl #E0535C
+                rectangle "Quantum KNN" as qknn #E0535C
+        }
+
+        package "VQC" #Bisque {
+                rectangle "VQC" as vqc #40B464
+        }
+
+        package "Gradients" #Bisque {
+                rectangle "Gradients" as grad #40B464
+                rectangle "High-order gradients" as hograd #FFC864
+        }
+}
+
+package "Week 5" {
+        package "Quantum SVM" #Bisque {
+                rectangle "Hybrid SVM" as hsvm #40B464
+                rectangle "Classical SVM math" as csvm #FFC864
+        }
+
+        package "Quantum Neural Networks" #Bisque {
+                rectangle "QNN" as qnn #40B464
+                ' rectangle "Barren plateaus" as barren #FFC864
+                rectangle "Convolutional VQC" as convvqc #40B464
+        }
+}
+
+package "Week 6" {
+        package "Problems for QML" #Bisque {
+                rectangle "Ising model" as ising #40B464
+                rectangle "Advanced Ising" as aising #FFC864
+                rectangle "Combinatorial Optimization" as copt #40B464
+                rectangle "Quantum Chemistry" as qchem #40B464
+                rectangle "Advanced Chemistry" as aqchem #FFC864
+        }
+}
+
+package "Week 7" {
+          package "From problems to QML" #Bisque {
+                rectangle "NP-problems as Ising model" as npising #40B464
+                rectangle "Jordan-Wigner transformation" as jordan #FFC864
+                rectangle "Eigenvalues problem" as eigenvals #40B464
+        }
+
+        package "VQE" #Bisque {
+                rectangle "VQE" as vqe #40B464
+                rectangle "TSP with VQE" as tspvqe #40B464
+        }
+
+        package "D-Wave" #Bisque {
+                rectangle "D-Wave & Sampling" as dwave #40B464
+        }
+}
+
+package "Week 8" {
+        package "QAOA" #Bisque {
+                rectangle "QAOA" as qaoa #40B464
+        }
+
+        package "Advanced Topics" as adv #Bisque {
+                rectangle "SotA review" as sota #40B464
+        }
+
+        package "Jobs and Perspectives" as jobs #Bisque {
+                rectangle "Academic & Industrial positions" as academic_industrial #White
+        }
+}
+
+intro1 - -> python
+intro1 - -> numpy
+intro1 - -> ml
+
+python - -> qubit
+numpy - -> qubit
+ml - -> qubit
+
+qubit - -> gates
+mixed <- qubit
+
+gates - -> progcomparision
+progcomparision - -> pennylane
+cirq <- progcomparision
+progcomparision -> qiskit
+
+pennylane - -> deutsch
+
+deutsch - -> advanced_algos
+advanced_algos -> grover
+advanced_algos -> qtp
+saimon <- advanced_algos
+
+advanced_algos - -> review
+review -> schard
+
+review - -> qml_general
+
+qml_general -> hhl
+qknn <- qml_general
+
+qml_general - -> vqc
+
+vqc - -> grad
+grad -> hograd
+
+grad - -> hsvm
+' barren <- qnn
+qnn -> convvqc
+
+hsvm - -> qnn
+csvm <- hsvm
+
+qnn - -> copt
+qnn - -> ising
+qnn - -> qchem
+qchem -> aqchem
+qchem - -> jordan
+ising -> aising
+ising - -> npising
+ising - -> jordan
+npising -> jordan
+copt - -> npising
+
+npising - -> eigenvals
+jordan - -> eigenvals
+
+eigenvals - -> vqe
+eigenvals - -> dwave
+
+vqe -> tspvqe
+
+dwave - -> qaoa
+
+qaoa -> sota
+
+dwave -> academic_industrial
+@enduml
+
+@startuml
+package "Week 1" {
+        package "Introduction" #Bisque {
+                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+        }
+
+        package "Prerequisites" #Bisque {
+                rectangle "Python Intro" as python #14D2EF
+                rectangle "Numpy & Linalg" as numpy #14D2EF
+                rectangle "Classical ML/DL" as ml #14D2EF
+        }
+}
+
+package "Week 2" {
+        package "Quantum Computing" as qci #Bisque {
+                rectangle "Qubit" as qubit #40B464
+                rectangle "Gates" as gates #40B464
+                rectangle "Mixed Stated" as mixed #FFC864
+        }
+
+        package "Programming QC" #Bisque {
+                rectangle "Frameworks Comparision" as progcomparision #40B464
+                rectangle "PennyLane" as pennylane #40B464
+                rectangle "Qiskit" as qiskit #FFC864
+                rectangle "Cirq & TFQ" as cirq #FFC864
+        }
+}
+
+package "Week 3" {
+        package "Basic Quantum Algorithms" as qalgo #Bisque {
+                rectangle "Deutsch" as deutsch #40B464
+                rectangle "Other Algorithms Review" as advanced_algos #40B464
+                rectangle "Grover" as grover #FFC864
+                rectangle "Quantum Teleportation" as qtp #40B464
+                rectangle "Simon" as saimon #FFC864
+        }
+
+        package "NISQ Hardware" #Bisque {
+                rectangle "Hardware review" as review #40B464
+                rectangle "Superconducting qubits" as schard #E0535C
+        }
+}
+
+package "Week 4" {
+        package "Quantum ML" #Bisque {
+                rectangle "Kinds of QML" as qml_general #14D2EF
+                rectangle "HHL" as hhl #E0535C
+                rectangle "Quantum KNN" as qknn #E0535C
+        }
+
+        package "VQC" #Bisque {
+                rectangle "VQC" as vqc #40B464
+        }
+
+        package "Gradients" #Bisque {
+                rectangle "Gradients" as grad #40B464
+                rectangle "High-order gradients" as hograd #FFC864
+        }
+}
+
+package "Week 5" {
+        package "Quantum SVM" #Bisque {
+                rectangle "Hybrid SVM" as hsvm #40B464
+                rectangle "Classical SVM math" as csvm #FFC864
+        }
+
+        package "Quantum Neural Networks" #Bisque {
+                rectangle "QNN" as qnn #40B464
+                rectangle "Convolutional VQC" as convvqc #40B464
+        }
+}
+
+package "Week 6" {
+        package "Problems for QML" #Bisque {
+                rectangle "Ising model" as ising #40B464
+                rectangle "Advanced Ising" as aising #FFC864
+                rectangle "Combinatorial Optimization" as copt #40B464
+                rectangle "Quantum Chemistry" as qchem #40B464
+                rectangle "Advanced Chemistry" as aqchem #FFC864
+        }
+}
+
+package "Week 7" {
+          package "From problems to QML" #Bisque {
+                rectangle "NP-problems as Ising model" as npising #40B464
+                rectangle "Jordan-Wigner transformation" as jordan #FFC864
+                rectangle "Eigenvalues problem" as eigenvals #40B464
+        }
+
+        package "VQE" #Bisque {
+                rectangle "VQE" as vqe #40B464
+                rectangle "TSP with VQE" as tspvqe #40B464
+        }
+
+        package "D-Wave" #Bisque {
+                rectangle "D-Wave & Sampling" as dwave #40B464
+        }
+}
+
+package "Week 8" {
+        package "QAOA" #Bisque {
+                rectangle "QAOA" as qaoa #40B464
+        }
+
+        package "Advanced Topics" as adv #Bisque {
+                rectangle "SotA review" as sota #40B464
+        }
+
+        package "Jobs and Perspectives" as jobs #Bisque {
+                rectangle "Academic & Industrial positions" as academic_industrial #White
+        }
+}
+
+intro1 - -> python
+intro1 - -> numpy
+intro1 - -> ml
+
+python - -> qubit
+numpy - -> qubit
+ml - -> qubit
+
+qubit - -> gates
+mixed <- qubit
+
+gates - -> progcomparision
+progcomparision - -> pennylane
+cirq <- progcomparision
+progcomparision -> qiskit
+
+pennylane - -> deutsch
+
+deutsch - -> advanced_algos
+advanced_algos -> grover
+advanced_algos -> qtp
+saimon <- advanced_algos
+
+advanced_algos - -> review
+review -> schard
+
+review - -> qml_general
+
+qml_general -> hhl
+qknn <- qml_general
+
+qml_general - -> vqc
+
+vqc - -> grad
+grad -> hograd
+
+grad - -> hsvm
+qnn -> convvqc
+
+hsvm - -> qnn
+csvm <- hsvm
+
+qnn - -> copt
+qnn - -> ising
+qnn - -> qchem
+qchem -> aqchem
+qchem - -> jordan
+ising -> aising
+ising - -> npising
+ising - -> jordan
+npising -> jordan
+copt - -> npising
+
+npising - -> eigenvals
+jordan - -> eigenvals
+
+eigenvals - -> vqe
+eigenvals - -> dwave
+
+vqe -> tspvqe
+
+dwave - -> qaoa
+
+qaoa -> sota
+
+dwave -> academic_industrial
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 12:40:07 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

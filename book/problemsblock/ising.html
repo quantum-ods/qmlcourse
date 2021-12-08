@@ -1,0 +1,998 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Модель Изинга &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/problemsblock/ising.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Точное аналитическое решение одномерной модели Изинга. Метод трансфер-матрицы." href="advising.html" />
+    <link rel="prev" title="Квантовая химия. Теория самосогласованного поля." href="quantchemadvancedscf.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/problemsblock/ising.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/problemsblock/ising.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problemsblock/ising.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/problemsblock/ising.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Задача Изинга в одномерном случае
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Задача Изинга как задача о максимальном разрезе в графе
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   Модель Изинга на чистом NumPy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Заключение
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ising">
+<span id="id1"></span><h1>Модель Изинга<a class="headerlink" href="#ising" title="Permalink to this headline">¶</a></h1>
+<p>В этой лекции познакомимся с моделью Изинга, которая изначально была разработана для описания магнетизма, но оказалась настолько удачной и универсальной, что сегодня к решению именно этой задачи стараются свести многие проблемы реального мира, причем не только из физики. В следующем блоке подробно покажем, как к гамильтонианам типа Изинга, или, по-другому, “спиновым стеклам” могут быть сведены задачи комбинаторной оптимизации и квантовой химии. Так что знакомство с этой удивительной моделью, а также описывающим ее гамильтонианом нам просто необходимо!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Специальные квантовые компьютеры компании D-Wave сконструированы так, что они могут решать вообще только одну задачу – нахождения основного состояния гамильтонианов типа Изинга. Но эта задача настолько распространена и важна, что эти компьютеры стали первыми в мире коммерческими квантовыми компьютерами! Кстати, далее этим компьютерам у нас посвящена <a class="reference internal" href="../dwaveblock/dwave.html#dwave"><span class="std std-ref">отдельная лекция</span></a>.</p>
+</div>
+<p>Ближайшее время посвятим довольно много времени объяснению этой модели. Это может показаться скучным и занудным, но это важно для понимания того, как это все работает и как решать с помощью вариационных квантовых алгоритмов реальные задачи!</p>
+<div class="section" id="id2">
+<h2>Задача Изинга в одномерном случае<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ниже попробуем на пальцах объяснить модель Изинга. Пробовать будем через цепочку атомов антиферромагнетика во внешнем магнитном поле. Ели вы плохо помните физику и вам это объяснение покажется сложным, то не расстраивайтесь – дальше также объясним задачу Изинга как задачу о поиске максимального разреза в графе – известную задачу комбинаторной оптимизации.</p>
+</div>
+<p>Пусть у нас есть, например, цепочка атомов, которые обладают магнитным моментом. Например, цепочка атомов антиферромагнетика. И мы прикладываем к этой цепочке внешнее магнитное поле.</p>
+<p>Тогда, если поле маленькое, наши атомы будут стараться выстроиться в антиферромагнитный порядок, когда соседние из них имеют моменты, направленные в разные стороны. Но если поле уже большое, то оно будет стремиться “повернуть” моменты по своему направлению. А если еще вспомнить, что магнитный момент атома является квантовой величиной и может быть в суперпозиции состояний в одну сторону и в противоположную, то не очень маленькое, но и не слишком большое поле будет переводить часть атомов именно в такие суперпозиции.</p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="_static/problemsblock/ising/af_ordering.png"><img alt="_static/problemsblock/ising/af_ordering.png" src="_static/problemsblock/ising/af_ordering.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 115 </span><span class="caption-text">Иллюстрация антиферромагнитного порядка</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-reminder admonition">
+<p class="admonition-title">Reminder о квантовой физике</p>
+<p>В квантовой механике есть фундаментальное уравнение, которое описывает динамику квантовых систем. Оно называется уравнением Шредингера: <span class="math notranslate nohighlight">\(\imath \hbar \frac{\partial \Psi}{\partial t} = \hat{H} \Psi\)</span>, где <span class="math notranslate nohighlight">\(\hat{H}\)</span> – это оператор Гамильтона, или гамильтониан. Также его называют оператором полной энергии системы, так как в общем случае он равен сумме операторов кинетической и потенциальной энергии. Начиная с этой лекции будем очень часто обращаться к этому оператору, но в целом в нем нет ничего принципиально сложного. Это такой же эрмитов оператор, как и другие. А наблюдаемая величина, которую получаем при <a class="reference external" href="../qcblock/qubit.html#id23">измерении</a> этого оператора – это энергия системы.</p>
+</div>
+<p>Давайте теперь запишем гамильтониан такой системы. Для представления магнитных моментов будем использовать оператор <span class="math notranslate nohighlight">\(\sigma^z\)</span> – другими словами, спин в направлении оси <span class="math notranslate nohighlight">\(Z\)</span>. Если кто-то забыл, как выглядит оператор <span class="math notranslate nohighlight">\(\sigma^z\)</span>, то рекомендуем еще раз просмотреть раздел про <a class="reference external" href="../qcblock/qubit.html#id24">операторы Паули</a> первой лекции. Далее будем очень активно использовать эти матрицы для представления задач реального мира!</p>
+<p>Для начала, в случае если внешнего поля нет, мы должны записать взаимодействие соседних атомов. Так как у нас антиферромагнетик, минимальная энергия достигается в случае, если каждый спин противонаправлен с соседними. Это просто оператор <span class="math notranslate nohighlight">\(\sigma^z_j \sigma^z_{j+1}\)</span>, который действует на все пары соседних спинов. Ну и сразу введем некоторую константу обменного взаимодействия <span class="math notranslate nohighlight">\(J\)</span>, чтобы потом нам было удобно сравнивать ее с внешним полем. В итоге, для цепочки из <span class="math notranslate nohighlight">\(N\)</span> спинов, получаем:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}_{h=0} = J \sum_{i=0}^{N-1} \sigma^{z}_i \sigma^{z}_{i+1}
+\]</div>
+<p>А теперь давайте добавим внешнее поле <span class="math notranslate nohighlight">\(h\)</span>. В этом случае поле просто действует на все спины и пытается выстроить их в зависимости от своего направления, например, вниз. Тогда полный гамильтониан такой системы можно записать в виде:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}_{h\neq 0} = J \sum_{i=0}^{N-1} \hat{\sigma}^{z}_i\hat{\sigma}^{z}_{i+1} - h\sum_{i=0}^N \hat{\sigma}^{z}_i
+\]</div>
+</div>
+<div class="section" id="id3">
+<h2>Задача Изинга как задача о максимальном разрезе в графе<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Задача о максимальном разрезе в графе – это очень известная задача комбинаторики. Она относится к классу <span class="math notranslate nohighlight">\(NP\)</span>-трудных, и к ней можно свести все другие <span class="math notranslate nohighlight">\(NP\)</span> задачи. При этом ее формулировка одна из самых простых среди всего класса задач. Формулируется она следующим образом.</p>
+<p>Нам дан граф – набор вершин <span class="math notranslate nohighlight">\(V\)</span> и связывающих их ребер <span class="math notranslate nohighlight">\(E\)</span>. Нам надо найти такое разделение вершин <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся набора <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, что число ребер между вершинами из разных наборов будет максимально.</p>
+<div class="figure align-default" id="maxcut">
+<a class="reference internal image-reference" href="_static/problemsblock/ising/Max-cut.png"><img alt="_static/problemsblock/ising/Max-cut.png" src="_static/problemsblock/ising/Max-cut.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 116 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut" title="Permalink to this image">¶</a></p>
+</div>
+<p>Теперь давайте представим, что каждой вершине нашего графа сопоставили кубит. Для этих кубитов можем <a class="reference external" href="../qcblock/qubit.html#id23">производить измерения</a> по оси <span class="math notranslate nohighlight">\(Z\)</span>, чтобы понять, как направлен тот или иной спин. И давайте запишем вот такой гамильтониан и внимательно на него посмотрим:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = \sum_{u,v \in E} \hat{\sigma}^z_u \hat{\sigma}^z_v
+\]</div>
+<p>Тут суммирование <span class="math notranslate nohighlight">\(u,v \in E\)</span> идет по всем ребрам графа, а <span class="math notranslate nohighlight">\(u,v\)</span> – вершины инцидентные ребрам. Если вспомнить, что собственные значения <span class="math notranslate nohighlight">\(\sigma^z\)</span> это <span class="math notranslate nohighlight">\(\pm 1\)</span> для, соответственно, спина “вверх” и спина “вниз”, то не трудно понять, в каком случае у нас будет минимум энергии этого гамильтониана. А будет он тогда, когда максимальное число пар вершин <span class="math notranslate nohighlight">\(u,v\)</span> имеют разную ориентацию своих спинов. Ведь если они имеют одинаковую направленность (причем не важно, <span class="math notranslate nohighlight">\(+1\)</span> или <span class="math notranslate nohighlight">\(-1\)</span>), их произведение будет равно <span class="math notranslate nohighlight">\(1\)</span>, но если направленность разная, то их произведение даст нам <span class="math notranslate nohighlight">\(-1\)</span>. Таким образом, минимум энергии такого гамильтониана достигается тогда, когда мы разбили наши вершины на две группы – спин “вверх” и спин “вниз” – причем число ребер между этими группами максимальное. А это в чистом виде формулировка задачи о максимальном разрезе в графе!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Тематика квантовой физики мало обсуждалась в первых лекциях, но нам пока достаточно знать лишь то, что для любая физическая система (включая квантовую) стремится в состояние с минимальной энергией. Например, тело, подброшенное вверх, стремится упасть на землю, а возбужденный атом стремится релаксировать в невозбужденное состояние.</p>
+</div>
+<p>При этом из квантовой физики помним, что для реальных физических систем наиболее вероятными являются состояния с минимальной энергии и системы стремятся в эти состояния прийти. Теперь для простоты предположим, что наш граф – это просто цепочка, то есть ребра есть лишь между соседними в одномерном пространстве вершинами. Ну и теперь давайте сформулируем нашу задачу о максимальном разрезе чуточку сложнее – нам надо найти не просто максимальный разрез, а такой разрез, который самый большой при наименьшем числе вершин в наборе <span class="math notranslate nohighlight">\(V_1\)</span>. И поскольку теперь у нас два вклада в стоимость, то нам нужны коэффициенты, которые покажут, что важнее. Пусть это будут <span class="math notranslate nohighlight">\(J\)</span> и <span class="math notranslate nohighlight">\(h\)</span>. Тогда гамильтониан соответствующей модели Изинга можно записать так:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = J \sum_{i=0}^{N-1} \hat{\sigma}^{z}_i\hat{\sigma}^{z}_{i+1} - h\sum_{i=0}^N \hat{\sigma}^{z}_i
+\]</div>
+<p>Как видно, это тот же самый гамильтониан, который получили и для моделирования антиферромагнетиков. То есть задача об основном состоянии цепочки антиферромагнитных частиц во внешнем поле эквивалентна задаче о максимальном разрезе в графе-цепочке при некотором штрафе за одно из выделенных направлений спинов. Эквивалентность в данном случае значит, что:</p>
+<ul class="simple">
+<li><p>решив задачу о максимальном разрезе, можно найти и основное состояние физической системы;</p></li>
+<li><p>как-то смоделировав физическую систему, подождав пока она релаксирует, после чего измерив ее, получим конфигурацию, отвечающую решению задачи о максимальном разрезе.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Одномерная цепочка атомов, или поиск максимального разреза в графе-цепочке, является простым случаем и не является <span class="math notranslate nohighlight">\(NP\)</span>-задачей. Однако уже в двумерном случае эта задача становится сильно сложнее, как и, например, если в цепочке атомов ферромагнетика добавим взаимодействие не только соседних спинов, но и взаимодействие с соседями соседа. Аналогично, модель вида Изинга сильно усложняется при добавлении недиагональных (off-diagonal elements) элементов гамильтониана, например, когда внешнее поле направлено в другом направлении и второй член гамильтониана принимает вид <span class="math notranslate nohighlight">\(h\sum_{i=N} \sigma^{x}_i\)</span>. Более подробное исследование данной модели приводится в <a class="reference internal" href="advising.html"><span class="doc std std-doc">этой продвинутой лекции</span></a>.</p>
+</div>
+</div>
+<div class="section" id="numpy">
+<h2>Модель Изинга на чистом NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<p>Давайте попробуем реализовать одномерный гамильтониан Изинга на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>/<code class="docutils literal notranslate"><span class="pre">SciPy</span></code> в виде разреженной матрицы. Для этого вспомним, что действуя оператором <span class="math notranslate nohighlight">\(\sigma^z\)</span> на <span class="math notranslate nohighlight">\(i\)</span>-й кубит, одновременно действуем единичным оператором на все остальные, а потом перемножаем все операторы произведением Кронекера. Из <a class="reference internal" href="../linalgblock/intro.html"><span class="doc std std-doc">лекций по линейной алгебре</span></a> помним также об ассоциативности произведения Кронекера, чем и воспользуемся:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+<span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">sl</span>
+
+<span class="k">def</span> <span class="nf">sigmaz_k</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">):</span>
+    <span class="n">left_part</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">right_part</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">sparse</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span>
+        <span class="n">sparse</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span>
+            <span class="n">left_part</span><span class="p">,</span>
+            <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,],]))</span>
+        <span class="p">),</span>
+        <span class="n">right_part</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>А теперь можем реализовать и сам оператор Изинга:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ising</span><span class="p">(</span><span class="n">j</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">((</span><span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">sigmaz_k</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigmaz_k</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">-=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">sigmaz_k</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">-=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">sigmaz_k</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Если внешнего поля нет, спины выстраиваются в полный антиферромагнитный порядок, в чем легко убедиться. Создадим оператор для такой модели и, например, 10 спинов (или 10 вершин в графе, если говорим в терминах Max-Cut):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span> <span class="o">=</span> <span class="n">ising</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;SR&quot;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy: </span><span class="si">{</span><span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy: (-9.000000000000018-2.208468631860285e-16j)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Тут пользуемся функциями из <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> – набором рутин для линейной алгебры разреженных систем. Более подробно о способах и алгоритмах классических решений задачи о собственных значениях расскажем в <span class="xref myst">одной из следующих лекций</span>, полностью посвещнной этой теме. Пока же просто используем эту рутину как “черный ящик”. Более подробное описание этой функции и ее аргументов можно посмотреть в <a class="reference external" href="https://scipy.github.io/devdocs/reference/generated/scipy.sparse.linalg.eigs.html">документации библиотеки <code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a>.</p>
+</div>
+<p>Эта энергия соответствует антиферромагнитному порядку, в этом легко убедиться, нарисовав спины и формулу на бумажке. Внимательный читатель заметил, что в этот раз вернули также и первый собственный вектор, который в нашем случае является волновой функцией основного состояния. А как знаем, квадраты элементов вектора волновой функции дают нам вероятности соответствующих битовых строк (если для вас это все звучит дико, то очень рекомендуем вернуться к <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">лекции про кубит</span></a>). Давайте посмотрим на эту битовую строку, иначе на порядок наших спинов в решении (или на разбиение вершин графа на два подмножества в терминах Max-Cut):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">probs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">bit_s_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">probs</span> <span class="o">==</span> <span class="n">probs</span><span class="o">.</span><span class="n">max</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bit_s_num</span><span class="si">:</span><span class="s2">b</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">+</span> <span class="n">s</span>
+
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="n">probs</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0101010101
+</pre></div>
+</div>
+</div>
+</div>
+<p>Теперь давайте попробуем добавить внешнее поле с коэффициентом, равным удвоенному значению константы обменного взаимодействия. В терминах комбинаторной задачи, добавляем штраф, равный <span class="math notranslate nohighlight">\(2\)</span> умножить на число спинов, направленных вверх.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">external_field</span><span class="p">(</span><span class="n">j</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">op</span> <span class="o">=</span> <span class="n">ising</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">solution</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;SR&quot;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy: </span><span class="si">{</span><span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">probs</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">solution</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">probs2bit_str</span><span class="p">(</span><span class="n">probs</span><span class="p">))</span>
+
+<span class="n">external_field</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy: (-10.99999999999999-1.0571225056728771e-16j)
+0101010010
+</pre></div>
+</div>
+</div>
+</div>
+<p>Видим, что теперь наш антиферромагнитный порядок уже не полный. В целом, данная модель довольно интересная, так как при некотором отношении <span class="math notranslate nohighlight">\(\frac{h}{J}\)</span> у нас происходит фазовый переход от полной упорядоченности, а при дальнейшем росте <span class="math notranslate nohighlight">\(h\)</span> приходим к одинаковой ориентации всех спинов, в чем легко убедиться, взяв, например, <span class="math notranslate nohighlight">\(h = 100\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">external_field</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy: (-991.0000000000039-3.4882612571137096e-14j)
+0000000000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Заключение<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>В этой лекции на базовом уровне познакомились с моделью Изинга – очень важным концептом в квантовом машинном обучении. Узнали, что:</p>
+<ul class="simple">
+<li><p>модель Изинга изначально была создана для объяснения магнетизма;</p></li>
+<li><p>нахождение решений для модели Изинга в общем случае – <em><span class="math notranslate nohighlight">\(NP\)</span>-полная</em> задача;</p></li>
+<li><p>модель Изинга также может быть сформулирована в терминах задачи о максимальном разрезе в графе (и наоборот);</p></li>
+<li><p>в классической модели Изинга существуют интересные фазовые переходы;</p></li>
+<li><p>модель Изинга легко реализовать в коде, используя <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, но размерность задачи растет очень быстро.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/problemsblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="quantchemadvancedscf.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Квантовая химия. Теория самосогласованного поля.</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="advising.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Точное аналитическое решение одномерной модели Изинга. Метод трансфер-матрицы.</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

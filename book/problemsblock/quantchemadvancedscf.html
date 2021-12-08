@@ -1,0 +1,1305 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Квантовая химия. Теория самосогласованного поля. &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/problemsblock/quantchemadvancedscf.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Модель Изинга" href="ising.html" />
+    <link rel="prev" title="Квантовая химия. Введение." href="quantchembasic.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/problemsblock/quantchemadvancedscf.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/problemsblock/quantchemadvancedscf.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problemsblock/quantchemadvancedscf.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/problemsblock/quantchemadvancedscf.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Описание лекции
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Введение
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Что мы ищем?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Долгое и правильное решение, часть 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Про квантовые числа
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Долгое и правильное решение, часть 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     От теории к практике
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   Теория самосогласованного поля
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Атом гелия
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Теория самосогласованного поля
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scf-psi4">
+     SCF в psi4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Атом Гелия (численно)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Молекула водорода
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     Молекула этилового спирта
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   Что мы узнали?
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="quantchemadvancedscf">
+<span id="id1"></span><h1>Квантовая химия. Теория самосогласованного поля.<a class="headerlink" href="#quantchemadvancedscf" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Из этой лекции узнаем:</p>
+<ul class="simple">
+<li><p>как с помощью квантовой химии предсказать спектр атома водорода “из первых принципов”;</p></li>
+<li><p>как посчитать энергию атома с помощью Python;</p></li>
+<li><p>какие бывают волновые функции электронов и как их вычислять методом Self-Consistent Field;</p></li>
+<li><p>как посчитать энергию спирта.</p></li>
+</ul>
+<div class="section" id="id3">
+<h3>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Боровская теория оказалось недостаточной для описания таких сложных систем, как молекулы или не-водородоподобные атомы. В этой лекции разберемся с теорией самосогласованного поля – это один из первых вычислительных методов квантовой химии, пригодный на практике для моделирования разных систем (атомов, молекул, кристаллов).</p>
+<p>Несмотря на то, что основа метода была разработана чуть ли не сто лет назад, он активно используется и сегодня, особенно с различными модификациями и дополнениями.</p>
+</div>
+<div class="section" id="id4">
+<h3>Что мы ищем?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>С точки зрения квантовой химии, чаще всего хотим для произвольного набора частиц (атомов для молекулы или кристалла, протонов и электронов для атома) с известным потенциалом взаимодействия предсказывать стационарное состояние, т.е. находить стационарные волновые функции всех частиц системы. Квантовая механика постулирует, что для любой наблюдаемой физической величины существует оператор, которым можем подействовать на волновую функцию и получить измеренное значение этой величины.</p>
+<p>Например, если волновые функции электронов и ядер в кристалле известны, то можно предсказать теплопроводность кристалла. Или электрическую проводимость, или еще что-нибудь – поэтому основной задачей квантовой химии является поиск волновых функций-решений уравнения Шредингера для системы частиц.</p>
+</div>
+<div class="section" id="id5">
+<h3>Долгое и правильное решение, часть 1<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Начнем с атома водорода и определения его уровней энергии – их можно сравнить с экспериментальными данными, а также результатами Боровской теории. Квантовая механика позволяет решить эту задачу, исходя только из “первых принципов”, то есть аксиоматики квантовой механики. При этом после некоторых усилий решения успешно обобщаются с атома водорода на любой другой.</p>
+<p>Давайте опишем атом водорода – систему из электрона и протона – на языке квантовой механики, то есть в виде уравнения Шредингера, и посмотрим, что получится.</p>
+<p>Электрон находится в потенциале протона, и его волновая функция должна зависеть от расстояния до протона.</p>
+<p>Уравнение Шредингера для электрона будет следующим:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\imath} \hbar \frac{d}{dt} {\ket{\Psi(t, \vec{r})}} = (\frac{ \hat{p}^{2} }{2 m} + \hat{V}(\vec{r})) {\ket{\Psi (t, \vec{r})}}
+\]</div>
+<p>Мы ищем решение, в котором электрон остается в атоме, то есть решаем стационарное уравнение, в котором <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> не зависит от времени. Тогда оператор эволюции (в левой части уравнения Шредингера) при применении к <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> должен вернуть нам тот же вектор <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, умноженный на <span class="math notranslate nohighlight">\(E\)</span> (энергия частицы).</p>
+<p>С точки зрения математики, искомая волновая функция является собственным вектором оператора эволюции, а энергия – собственным значением (подробнее в разделе <a class="reference internal" href="../linalgblock/matrices.html#matrices"><span class="std std-ref">Матрицы</span></a>). Если объяснять “на пальцах”, то оператор эволюции при применении к волновой функции должен вернуть нам новую (эволюционировавшую или изменившуюся во времени) волновую функцию. Если ищем стационарную – не меняющуюся во времени – волновую функцию, то при применении к ней оператора эволюции она не должна изменяться, иначе будет уже не стационарной.</p>
+<div class="math notranslate nohighlight">
+\[
+    \dot{\imath} \hbar \frac{d}{dt} {\ket{\Psi(t, \vec{r})}}
+    \equiv
+    \dot{\imath} \hbar \frac{d}{dt} {\ket{\Psi(\vec{r})}}
+    \equiv
+    E { \ket{\Psi(\vec{r})} }
+\]</div>
+<p>Оператор импульса раскрывается через градиент так:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p} =  \dot{\imath} \hbar \nabla
+\]</div>
+<p>Потенциал взаимодействия двух частиц с противоположными единичными зарядами раскрывается так:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{V}(\vec{r}) = -\frac{e^2}{r}
+\]</div>
+<p>Итого имеем:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-shrstable">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-shrstable" title="Permalink to this equation">¶</a></span>\[
+(-\frac{\hbar^2}{2m}\nabla^2  - \frac{e^2}{r} ){\ket{\Psi(\vec{r})}} = E {\ket{\Psi(\vec{r})}}
+\]</div>
+<p>Прежде чем погружаться глубже в решение этого уравнения, нам надо разобраться с квантовыми числами.</p>
+</div>
+<div class="section" id="id6">
+<h3>Про квантовые числа<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Теория Бора базируется на идее квантования импульса, и ее следствием является возникшее в формуле энергии <a class="reference internal" href="quantchembasic.html#equation-eqn-hydroenergylevels">(18)</a> число <span class="math notranslate nohighlight">\(n\)</span>. Каждое число <span class="math notranslate nohighlight">\(n\)</span> соответствует определенному состоянию, в котором может находиться электрон, и эти состояния отличаются энергией.</p>
+<p>Идея, что электрон может находиться в одном состоянии из некоторого конечного набора вариантов, характеризуемого дискретными (квантовыми) числами, оказалась правильной. В дальнейшем она получила развитие в квантовой механике.</p>
+<p>Число <span class="math notranslate nohighlight">\(n\)</span> называется главным <a class="reference external" href="https://en.wikipedia.org/wiki/Quantum_number">квантовым числом</a>, оно определяет энергетический уровень электрона.</p>
+<p>Из анализа свойств операторов гамильтониана и момента импульса в квантовой механике выводятся еще три квантовых числа:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\ell\)</span> – орбитальное квантовое число, <span class="math notranslate nohighlight">\(0 \leq \ell \leq n-1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> – магнитное квантовое число, <span class="math notranslate nohighlight">\(-\ell \leq m \leq \ell\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> – спиновое квантовое число, <span class="math notranslate nohighlight">\(s = 0|1\)</span> (для атома водорода оно не играет роли, так как электрон только один).</p></li>
+</ul>
+<p>В химии они <a class="reference external" href="https://en.wikipedia.org/wiki/Electron_configuration">используются</a> в другой форме записи для описания орбиталей электронов в атоме.</p>
+<p>Эти числа нам скоро понадобятся, чтобы описывать электрон в атоме.</p>
+<p>Любая функция <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, для которой уравнение <a class="reference internal" href="#equation-eqn-shrstable">(19)</a> верно, описывает электрон, который стабильно находится где-то около ядра и не покидает его, то есть образует с ним атом. При этом функций-решений у уравнения на самом деле много, что физически соответствует тому, что электрон может находиться на разных орбиталях. Каждая орбиталь характеризуется квантовыми числами – <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\ell\)</span>, <span class="math notranslate nohighlight">\(m\)</span> и <span class="math notranslate nohighlight">\(s\)</span>, и обозначается как <span class="math notranslate nohighlight">\(\ket{\Psi_{n \ell m}} \)</span>. <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> (орбиталь) с минимальной энергией <span class="math notranslate nohighlight">\(E\)</span> соответствует основному состоянию (ground state) – она описывает невозбужденный электрон. У водорода только один электрон, поэтому единственная <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> с минимальной энергией соответствует невозбужденному атому водорода.</p>
+<p>В целом, основная задача квантовой химии – найти ground state произвольной системы частиц. В реальности материя редко находятся непосредственно в ground state состоянии, т.к. при ненулевой температуре какие-то флуктуации неизбежно возникают. Тем не менее, ground state обычно в наибольшей степени определяет поведение системы, а другие состояния являются “поправками” к нему.</p>
+<p>Частицы могут переходить из одного состояния в другое: если электрону в основном состоянии придать энергии, например, попасть в него другой частицей, то он может перейти на другую орбиталь, при этом оставшись частью атома. Со временем возбужденные атомы рано или поздно переходят в основное состояния, выбрасывая лишнюю энергию в виде фотона, что и дает спектр излучения атома.</p>
+<p>Итого: <span class="math notranslate nohighlight">\(\ket{\Psi_{n \ell m}(\vec{r})}\)</span> – это функция, соответствующая какой-то стабильной “траектории” (распределению плотности вероятности) электрона вокруг ядра, она является решением уравнения Шредингера, то есть собственной функцией гамильтониана. Соответствующее ей собственное число – энергия электрона на этой орбитали. Для всех волновых функций с одним <span class="math notranslate nohighlight">\(n\)</span> энергия одинакова, но одной энергии может соответствовать несколько волновых функций, каждая - со своим уникальным набором волновых чисел.</p>
+<p>Если электрон описывается такой волновой функцией, то он часть атома, и если какой-либо электрон – часть атома, то он описывается такой волновой функцией. Электрон может переходить между этими волновыми функциями, получая и отдавая энергию, оставаясь при этом частью атома.</p>
+<p>Волновая функция <span class="math notranslate nohighlight">\(\ket{\Psi_{100}}\)</span> (т.е. с числами <span class="math notranslate nohighlight">\(n=1, \ell=0, m=0\)</span>) соответствует минимальной энергии для единственного электрона в атоме водорода. Т.к. в атоме водорода есть лишь один электрон, и других вкладов в энергию нет – весь атом водорода в такой конфигурации имеет минимальную энергию.</p>
+</div>
+<div class="section" id="id7">
+<h3>Долгое и правильное решение, часть 2<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="admonition- admonition">
+<p class="admonition-title">А зачем нам вообще сдался спектр и энергии?</p>
+<p>Вслед за физиками двадцатого века нам приходится продираться через дебри уравнений, абстракций и формул. Дело это непростое и может возникнуть резонный вопрос – а зачем оно все надо?</p>
+<p>Помимо фундаментальной ценности в виде лучшего понимания устройства мира, объясняющая спектр теория дает крутую возможность: по измеренному спектру понять, что за вещество перед нами и какие процессы в нем протекают. Например, изучение спектров – один из немногих способов узнать что-то про процессы в звездах или биологических клетках. Для совсем практиков: спектроскопия также используется для детекции взрывчатых и наркотических веществ в малых дозах, а полевые транзисторы (основа большинства современных вычислительные устройства) работают на основе туннельного эффекта – квантового явления. Так что можно сказать, что квантовая механика используется сплошь и рядом!</p>
+</div>
+<p>Если перейти в уравнении <a class="reference internal" href="#equation-eqn-shrstable">(19)</a> в сферические координаты со следующей параметризацией <span class="math notranslate nohighlight">\(\ket{\Psi(\vec{r})} = \frac{\chi(r)}{r} Y(\theta, \phi)\)</span> и воспользоваться несколькими волшебными выводами квантмеха <span id="id8">[<a class="reference internal" href="../bibliography.html#id44"><span>89</span></a>]</span>, то получится:</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{{\hbar}^2}{2 m} \frac{d^2 \chi}{d r^2} +
+(-\frac{e^2}{r} + \frac{\hbar^2 \ell (\ell + 1)}{2mr^2} -E) \chi(\vec{r}) = 0
+\]</div>
+<p>Все константы (массы, заряда, импульса, энергии) можно убрать, если перейти в кулоновские единицы измерений, где они приняты за единицу (то есть 1 единица заряда = заряд электрона, 1 единица массы = масса электрона).</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{\chi''(r)}{2} +
+(\frac{\ell(\ell+1)}{2r^2} -\frac{1}{r})\chi(r)
+= 0
+\]</div>
+<p>Опустим несколько страниц выкладок <span id="id9">[<a class="reference internal" href="../bibliography.html#id37"><span>15a</span></a>]</span>, учтем граничные условия и получим следующее решение:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+R_{n\ell}(r) = r^\ell \cdot e^{-r/n} \cdot \sum_{k=0}^{n -\ell -1} \frac{(-2r/n)^k}{ (2\ell + 2 +k)! (n-\ell-k-1)! k!} \cdot C \\
+\ket{\Psi(r, \theta, \phi)} = R_{n\ell}(r) Y_{\ell m} (\theta, \phi),
+\end{split}\]</div>
+<p>где <span class="math notranslate nohighlight">\(Y_{\ell m}(\theta, \phi)\)</span> – <a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_harmonics">сферические функции</a>.</p>
+<p>Если подставить это решение в уравнение Шредингера и найти энергию, то получим:</p>
+<div class="math notranslate nohighlight">
+\[
+E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
+\]</div>
+<p>То есть получим ту же формулу, что и в теории Бора, и тот же численный результат – 13.6 eV.</p>
+<p>Здесь начинает проступать основная проблема квантовой химии – математическая и вычислительная сложность. Пока что проблема только концептуальная (сложно разобраться в формулах и уравнениях), но при росте числа частиц в системе даже отличное владение матаппаратом окажется недостаточным.</p>
+</div>
+<div class="section" id="id10">
+<h3>От теории к практике<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Вернемся из начала двадцатого века обратно в день сегодняшний. Сто лет назад невычислимые аналитически интегралы и замороченные дифференциальные уравнения были почти непреодолимыми препятствиями, поэтому поначалу теория квантовой химии развивалась в сторону более хитрых приближений и упрощений, позволяющих решить эти уравнения аналитически.</p>
+<p>Сегодня реальные научные задачи решаются численно – и для этого написано множество высокопроизводительных пакетов, позволяющих на основе входных данных и ограничений вычислить определенным методом желаемые характеристики.</p>
+<p>Как и в задачах машинного обучения, в первом приближении достаточно подготовить данные, скормить их волшебному программному пакету-вычислителю и забрать ответ, но без понимания происходящего под капотом есть шансы получить что-то неправильное.</p>
+<p>В этой лекции воспользуемся Python-пакетом <a class="reference external" href="https://psicode.org/posts/psi4education_setup/"><code class="docutils literal notranslate"><span class="pre">psi4</span></code></a>. Он реализует многие алгоритмы квантовой химии и имеет неплохое Python API.</p>
+<p>Давайте посчитаем c помощью <code class="docutils literal notranslate"><span class="pre">psi4</span></code> энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, “поверив на слово”. Их смысл будет объяснен в дальнейшем.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">be_quiet</span><span class="p">()</span> <span class="c1"># отключаем логирование в stdout</span>
+
+<span class="n">h_atom</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Мы задали атом водорода, по умолчанию атом помещается в начало координат.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+  <span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="s1">&#39;rohf&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Тут уже поинтереснее – объяснение этих параметров пока отложим и вернемся после объяснения теории. В целом они определяют, каким именно методом и в каком базисе нужно численно решить уравнение Шредингера.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">physical_constants</span>
+
+<span class="n">h2ev</span> <span class="o">=</span> <span class="n">physical_constants</span><span class="p">[</span><span class="s1">&#39;hartree-electron volt relationship&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">e_in_ev</span><span class="p">(</span><span class="n">energy_in_ht</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">energy_in_ht</span> <span class="o">*</span> <span class="n">h2ev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># энергия в единицах Hartree</span>
+<span class="n">e_in_ht</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrogen ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hydrogen ground state energy: -12.696338923670485 eV
+</pre></div>
+</div>
+</div>
+</div>
+<p>Здесь посчитали энергию в единицах Хартри – специальной физической системе единиц, где истинная энергия атома водорода равна 1/2, и перевели ее в электрон-вольты. Результат не очень точный (правильный, как помним, равен 13.6 eV), и мы его улучшим после того как разберемся, что и как только что посчитали. Это будет удобнее сделать на примере атома гелия, потому что в атоме водорода есть только один электрон, а в любой реальной системе – больше одного.</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>Теория самосогласованного поля<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>Атом гелия<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Следующим “по простоте” после атома водорода идет атом гелия – как говорит нам школьная химия, это атом из двух протонов, двух нейтронов и двух электронов. Протоны и нейтроны находятся близко друг к другу в ядре и имеют почти одинаковую массу, так что можно просто считать, что есть ядро с зарядом +2 и массой 4. А вот с электронами все сложнее: с одной стороны, это независимые частицы, а с другой – они взаимодействуют друг с другом по закону Кулона, так как оба имеют отрицательный заряд.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Для гравитационного взаимодействия <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0_%D1%82%D1%80%D1%91%D1%85_%D1%82%D0%B5%D0%BB">“проблема трех тел”</a> не имеет известного аналитического решения. Это означает, что если мы знаем, что где-то в глубоком космосе вдалеке от остального мира есть три объекта с известными массами, импульсами и координатами, то, увы, в общем случае не сможем предсказать их движение аналитически (хотя сможем предсказать численно, либо найти приближенное аналитическое решение, если масса одного объекта много больше других, например).</p>
+<p>Для трех классических тел с кулоновским потенциалом все тоже сложно – можно посмотреть <a class="reference external" href="https://www.wolframcloud.com/objects/demonstrations/ThreeBodyCoulombProblem-source.nb">тут</a>, как поведет себя система трех тел с различными зарядами.</p>
+</div>
+<p>Попробуем записать уравнение Шредингера для системы из ядра и двух электронов:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{\imath} \hbar \frac{d}{dt} {\ket{\Psi(t, \vec{r_A}, \vec{r_B})}} = (
+  \frac{ \hat{p_A}^{2} }{2m} - \frac{2e \cdot e}{r_A} +
+  \frac{ \hat{p_B}^{2} }{2m} - \frac{2e \cdot e}{r_B} +
+  \frac{e \cdot e}{|r_A - r_B|}
+) {\ket{\Psi(t, \vec{r_A}, \vec{r_B})}}
+\]</div>
+<p>Оно состоит из кинетической и потенциальной энергии двух электронов в поле ядра и (последнее слагаемое) потенциала взаимодействия двух электронов. Учитывая, что уравнение примерно такое же, как у водорода, только еще более сложное, решение стоит искать численно и с использованием приближений, а не аналитически.</p>
+<p>Если бы не последний член гамильтониана, то можно было бы разбить все выражение на две независимых части – с переменными электрона <span class="math notranslate nohighlight">\(А\)</span> и с переменными электрона <span class="math notranslate nohighlight">\(B\)</span>. Так как это дифференциальное уравнение, можно было бы воспользоваться разделением переменных и найти отдельные решения для двух электронов – задача аналогична атому водорода, а ее мы уже решили.</p>
+<p>Но из-за потенциала взаимодействия решение существенно усложняется, поскольку электроны влияют друг на друга. Придется прибегнуть к упрощениям – и одним из наиболее популярных подходов является <em>теория самосогласованного поля</em> (Self-Consistent Field).</p>
+</div>
+<div class="section" id="id13">
+<h3>Теория самосогласованного поля<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Теория самосогласованного поля (self-consistent field theory) – это подход итеративного решения уравнения Шредингера для многочастичной системы, на основе которого построено много квантово-химических методов, наиболее известный из которых – метод Хартри-Фока. В сниппете выше строчка <code class="docutils literal notranslate"><span class="pre">psi4.energy('scf')</span></code> означает, что энергия посчитана этим методом.</p>
+<p>Основная идея теории заключается в следующем.</p>
+<p>У нас есть несколько частиц, которые взаимодействуют между собой, и найти цельное решение уравнения Шредингера для всех сразу не получается. Тогда вместо этого будем рассматривать частицы по очереди и считать, что все остальные действуют “в среднем” на выбранную частицу. То есть будем считать усредненный по пространству потенциал вместо точного.</p>
+<p>Для электрона <span class="math notranslate nohighlight">\(А\)</span> в атоме гелия нам нужно учесть усредненное влияние электрона <span class="math notranslate nohighlight">\(B\)</span>. Можем для электрона <span class="math notranslate nohighlight">\(B\)</span> взять волновую функцию от атома водорода, посчитать на ее основе усредненное влияние на электрон <span class="math notranslate nohighlight">\(А\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+(h_A + \hat{V}_{eff}) \ket{\psi_A}  =  (h_A +  \bra{\psi_B} \frac{e^2}{r_{AB}} \ket{\psi_B}) \ket{\psi_A}  = \epsilon_A \ket{\psi_A},
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(h_A\)</span> – это кинетическая энергия и потенциал ядра для электрона <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(V_{eff}\)</span> – влияние электрона <span class="math notranslate nohighlight">\(B\)</span> на электрон <span class="math notranslate nohighlight">\(А\)</span> и вычисляется как влияние усредненной электронной плотности, распределенной в соответствии с <span class="math notranslate nohighlight">\(\psi_B\)</span>.</p>
+<p>На этом шаге считаем, что <span class="math notranslate nohighlight">\(\psi_B\)</span> – фиксированная волновая функция и находим “переменную” <span class="math notranslate nohighlight">\(\psi_A\)</span>. Однако <span class="math notranslate nohighlight">\(\psi_A\)</span> тоже будет влиять на <span class="math notranslate nohighlight">\(\psi_B\)</span> и, записав аналогичное уравнение для частицы <span class="math notranslate nohighlight">\(B\)</span>, следующим шагом найдем новую <span class="math notranslate nohighlight">\(\psi_B\)</span>.</p>
+<p>После изменения волновых функций каждого электрона можем заново записать их уравнения с новыми волновыми функциями и так по кругу, пока волновые функции и их энергии не сойдутся к какому-то стабильному (самосогласованному) решению.</p>
+<p>Все вместе это создает итеративную процедуру:</p>
+<ol class="simple">
+<li><p>на основе имеющихся волновых функций посчитать среднее поле, которое создают частицы (например, электрон <span class="math notranslate nohighlight">\(B\)</span> для электрона <span class="math notranslate nohighlight">\(А\)</span>);</p></li>
+<li><p>решить уравнение Шредингера с потенциалом, учитывающим среднее поле, то есть вычислить энергии и новые волновые функции;</p></li>
+<li><p>вернуться к шагу 1.</p></li>
+</ol>
+<p>Для инициализации можно взять какие-то приблизительные волновые функции для всех частиц (двух электронов гелия), например, решения из уравнения водорода, то есть водородоподобные волновые функции. Далее итерацию повторяют, пока волновые функции и их энергии не перестанут изменяться, то есть самосогласуются.</p>
+<p>Система таких уравнений, записанных для каждого электрона, называется <strong>уравнениями <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%80%D1%82%D1%80%D0%B8,_%D0%94%D1%83%D0%B3%D0%BB%D0%B0%D1%81_%D0%A0%D0%B5%D0%B9%D0%BD%D0%B5%D1%80">Хартри</a></strong>. На основе таких волновых функций для отдельных электронов можно собрать общую волновую функцию <span class="math notranslate nohighlight">\(\Psi(\vec{r_A}, \vec{r_B})\)</span>, самый простой вариант – это <span class="math notranslate nohighlight">\(\Psi(\vec{r_A}, \vec{r_B}) = \psi_A(\vec{r_A}) \psi_B(\vec{r_B})\)</span>, он и был предложен первоначально. Однако есть проблема: такая <span class="math notranslate nohighlight">\(\Psi\)</span> получается не антисимметричной, а только такие волновые функции для системы электронов являются “физичными”, то есть могут существовать в реальности.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Один из основополагающих принципов квантовой механики – тождественность частиц и их неразличимость. Принцип означает, что все частицы одного типа (например, электроны) одинаковы и характеризуются только своим состоянием. Например, если мы “переставим местами” два электрона в атоме (не только пространственно, но и в смысле их состояния и энергий), то получившийся атом будет неотличим от исходного.</p>
+<p>Из принципа тождественности следует, что при перестановке не должна меняться плотность вероятности:</p>
+<div class="math notranslate nohighlight">
+\[
+| {\Psi}(X_A, X_B) |^2 = | {\Psi}(X_B, X_A) |^2
+\]</div>
+<p>Кроме того, представим что мы обменяли частицы дважды: <span class="math notranslate nohighlight">\(A\)</span> с <span class="math notranslate nohighlight">\(B\)</span> и обратно. Никакие физические свойства системы из-за этого измениться не должны. В общем случае, из этого не следует что волновая функция не изменилась – например, так как глобальная фаза волновой функции неизмерима, то могли получить <span class="math notranslate nohighlight">\(\Psi' = e^{2 i \pi \theta} \Psi\)</span>.</p>
+<p>Но, если работаем больше чем в двух пространственных измерениях, то такой двойной обмен эквивалентен отсутсвию обмена. Для начала представим, что обмениваем частицы медленно, описывая полукруг частицей <span class="math notranslate nohighlight">\(A\)</span> вокруг частицы <span class="math notranslate nohighlight">\(B\)</span> и потом сдвигая обе частицы. Тогда двойной обмен значит, что частица <span class="math notranslate nohighlight">\(A\)</span> описывает полный круг вокруг частицы <span class="math notranslate nohighlight">\(B\)</span>. Также, если непрерывно изменим ее маршрут не приближая ее к частице <span class="math notranslate nohighlight">\(B\)</span>, то ожидаем получить тот же результат.</p>
+<p>Итак, какие замкнутые маршруты можем получить непрерывно деформируя маршрут в евклидовом пространстве без точки (<span class="math notranslate nohighlight">\(B\)</span>)? Ответ для любого измерения больше 2 – <a class="reference external" href="https://en.wikipedia.org/wiki/Homotopy_groups_of_spheres">любые</a>. Следовательно двойной обмен должен давать такой же результат как и если бы просто оставили частицу <span class="math notranslate nohighlight">\(А\)</span> на месте <span id="id14">[<a class="reference internal" href="../bibliography.html#id64"><span>NSS+08</span></a>]</span>. Это свойство задает ограничение на то, какими могут быть волновые функции.</p>
+<p>У этого ограничения есть два решения: либо <span class="math notranslate nohighlight">\({\Psi}(X_A, X_B) = {\Psi}(X_B, X_A)\)</span> (симметричность), либо <span class="math notranslate nohighlight">\(\Psi(X_A, X_B) = - \Psi(X_B, X_A)\)</span> (антисимметричность). У антисимметричных функций есть интересное свойство: если функция <span class="math notranslate nohighlight">\(f(x_1, x_2)\)</span> антисимметрична, то <span class="math notranslate nohighlight">\(f(x_1=X, x_2=X) = 0\)</span>, то есть антисимметричная функция равна нулю, если ее аргументы одинаковы. В этом легко убедиться на примере <span class="math notranslate nohighlight">\(f = x_1 - x_2\)</span>.</p>
+<p>Для антисимметричной волновой функции это означает, что две частицы не могут иметь полностью одинаковое состояние – волновая функциия (и вероятность) такой конфигурации равна нулю.</p>
+<p>В эксперименте это строго выполняется для всех частиц с полуцелым спином (фермионов), к которым относятся электроны, а частицы с целым спином (бозоны), например, фотоны, имеют симметричную волновую функцию и могут иметь одинаковые состояния.</p>
+<p>Для квантовой химии это все имеет одно важное следствие: электроны – это фермионы и волновая функция, описывающая всю систему электронов целиком, должна быть антисимметрична относительно перестановки (замены пары индексов). Любое не антисимметричное решение не физично, поскольку допускает существование электронов в одинаковом состоянии, а такого не бывает. В химии этот вывод называется <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF_%D0%9F%D0%B0%D1%83%D0%BB%D0%B8">принцип запрета Паули</a>.</p>
+</div>
+<p>Чтобы сделать волновую функцию системы из двух электронов антисимметричной, используется такой прием:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(X_A, X_B) = \psi_A(X_A) \psi_B(X_B) - \psi_B(X_A) \psi_A(X_B)
+\]</div>
+<p>Во-первых, легко проверить, что если поменять местами <span class="math notranslate nohighlight">\(X_A\)</span> и <span class="math notranslate nohighlight">\(X_B\)</span>, то вся функция просто изменит знак. Во-вторых, можно заметить, что формулу можно записать как определитель матрицы:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Psi(X_A, X_B) =
+  \begin{vmatrix}
+    \psi_A(X_A) &amp; \psi_B(X_A) \\
+    \psi_A(X_B) &amp; \psi_B(X_B)
+  \end{vmatrix}
+\end{split}\]</div>
+<p>Из курса линейной алгебры можно вспомнить, что определитель меняет знак при перестановке двух столбцов или двух строк – это свойство позволяет делать антисимметричные волновые функции систем из <span class="math notranslate nohighlight">\(N\)</span> волновых функций отдельных электронов, если использовать метод Хартри не для атома гелия, а для системы с большим числом электронов. Для этого составляется определитель <span class="math notranslate nohighlight">\(N \times N\)</span> по аналогии с формулой выше: элемент в строке <span class="math notranslate nohighlight">\(i\)</span>, столбце <span class="math notranslate nohighlight">\(j\)</span> – это <span class="math notranslate nohighlight">\(i\)</span>-я волновая функция с параметрами <span class="math notranslate nohighlight">\(j\)</span>-го электрона в качестве аргумента. Волновая функция системы частиц вычисляется как нормированный определитель матрицы, а определитель всегда антисимметричен. Такой вариант сборки волновой функции системы частиц называется “определитель <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BB%D0%B5%D0%B9%D1%82%D0%B5%D1%80,_%D0%94%D0%B6%D0%BE%D0%BD_%D0%9A%D0%BB%D0%B0%D1%80%D0%BA">Слэтера</a>”.</p>
+<p>Так как весь подход является аппроксимацией, не любая система может быть точно представлена таким детерминантом, но он является очень распространенным методом “сборки” волновой функции системы электронов в квантовой химии. Его использование также немного меняет вид одноэлектронных уравнений: чтобы корректно учесть антисимметрию, в эффективный потенциал добавляется так называемое “обменное взаимодействие”.</p>
+<p>Все вместе составляет метод Хартри-<a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A4%D0%BE%D0%BA,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87">Фока</a>:</p>
+<ul class="simple">
+<li><p>итеративная процедура самосогласованного поля;</p></li>
+<li><p>усредненное действие электронов друг на друга, учет обменного взаимодействия;</p></li>
+<li><p>детерминант Слетера.</p></li>
+</ul>
+</div>
+<div class="section" id="scf-psi4">
+<h3>SCF в psi4<a class="headerlink" href="#scf-psi4" title="Permalink to this headline">¶</a></h3>
+<p>Теперь можно вернуться к коду и взглянуть на него чуть более осмысленно. При вычислении энергии явно передаем, что хотим посчитать ее методом Self-Consistent Field:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e_in_ht</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Но что происходит в настройках, пока по-прежнему неясно:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="s1">&#39;rohf&#39;</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Начнем с параметра <code class="docutils literal notranslate"><span class="pre">basis</span></code>. <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets"><code class="docutils literal notranslate"><span class="pre">STO-3G</span></code></a> – не стандарт связи, а <strong>S</strong>later <strong>T</strong>ype <strong>O</strong>rbital с <strong>3</strong> <strong>Г</strong>ауссианами в базисном наборе, то есть базис на основе детерминанта Слетера. В описании метода SCF мы собирались начинать итерации с водородоподобных волновых функций, но так как весь метод является аппроксимирующим, нам никто не мешает выбрать другие волновые функции, если результаты лучше согласуются с экспериментом. Выбор базиса может существенно влиять на результат вычислений и современные базисы сложнее, чем Слетеровский детерминант – он просто один из первых и наиболее популярных.</p>
+<p>Параметр <code class="docutils literal notranslate"><span class="pre">reference</span></code> означает, какие предположения о волновой функции делаем, в данном случае используется <a class="reference external" href="https://en.wikipedia.org/wiki/Restricted_open-shell_Hartree%E2%80%93Fock">Restricted Open Shell Hartree-Fock</a>, так как у атома водорода только один электрон и его оболочка не заполнена (на уровне энергии <span class="math notranslate nohighlight">\(n = 1\)</span> для этого нужно 2 электрона).</p>
+<p>Давайте повторим вычисления с более “современными” опциями.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+<span class="n">h_atom</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+  <span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="s1">&#39;d-aug-cc-pv5z&#39;</span><span class="p">,</span> <span class="c1"># разбор этого базиса выходит за рамки этого интро</span>
+  <span class="s1">&#39;scf_type&#39;</span><span class="p">:</span> <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="s1">&#39;rohf&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">e_in_ht</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Better hydrogen ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Better hydrogen ground state energy: -13.605551648965163 eV
+</pre></div>
+</div>
+</div>
+</div>
+<p>Та-дам! Используя более прокачанные базисы, получили правильный ответ.</p>
+<p>Давайте посмотрим, что еще можно сделать с помощью self-consistent field.</p>
+</div>
+<div class="section" id="id15">
+<h3>Атом Гелия (численно)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Раз мы разобрали SCF на примере атома гелия, то наверняка можно посчитать его энергию в <code class="docutils literal notranslate"><span class="pre">psi4</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+<span class="n">he_atom</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;He&quot;</span><span class="p">)</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+  <span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="s1">&#39;rohf&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">e_in_ht</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Helium ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Helium ground state energy: -76.403693763909 eV
+</pre></div>
+</div>
+</div>
+</div>
+<p>Экспериментальное значение энергии атома гелия <a class="reference external" href="https://en.wikipedia.org/wiki/Helium_atom#Experimental_value_of_ionization_energy">равно</a> -79.0 eV.</p>
+</div>
+<div class="section" id="id16">
+<h3>Молекула водорода<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>Пока рассматривали только атомы, но SCF можно использовать и для молекул – потенциалы становятся сложнее, электронов больше, но общая логика не меняется.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+<span class="c1"># задаем 2 атома водорода с явными координатами</span>
+<span class="n">h_mol</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">H 0 0 0</span>
+<span class="s2">H 0 0 0.74</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+  <span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="s1">&#39;rohf&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">e_in_ht_h</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h_mol</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrogen ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht_h</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hydrogen ground state energy: -30.388568856869107 eV
+</pre></div>
+</div>
+</div>
+</div>
+<p>Здесь задали явно координаты обоих атомов водорода в молекуле и энергия электронов была высчитана в предположении, что ядра водородов неподвижны. Здесь расстояние в 0.74 Ангстрема взято из <a class="reference external" href="https://cccbdb.nist.gov/exp2x.asp?casno=1333740&amp;charge=0">экспериментальных данных</a>. Если бы задали неправильные координаты, то рассчитанная энергия окажется неверной. Точнее, она соответствовала бы нефизичной ситуации, когда неведомая сила “удерживает” ядра водорода на месте.</p>
+<p>В <code class="docutils literal notranslate"><span class="pre">psi4</span></code> есть метод для оптимизации геометрии молекулы <code class="docutils literal notranslate"><span class="pre">psi4.optimize</span></code>; он не фиксирует положение ядер и возвращает минимальную возможную энергию с учетом вариации положения атомов.</p>
+<p>Вычисления с оптимизацией геометрии занимают значительно больше времени.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+<span class="n">h_mol_bad</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">H 0 0 0</span>
+<span class="s2">H 0 0 1.5</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="c1"># 1.5 - неверное расстояние в ангстремах, верное - 0.74</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+  <span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="s1">&#39;rohf&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1"># рассчитываем энергию &quot;в точке&quot; с неправильной геометрией</span>
+<span class="n">e_in_ht_h_bad</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h_mol_bad</span><span class="p">)</span>
+
+<span class="c1"># рассчитываем энергию, оптимизируя по ходу геометрию</span>
+<span class="n">e_in_ht_h_optimized</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h_mol_bad</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrogen molecule, incorrect ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht_h_bad</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrogen molecule, optimized ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht_h_optimized</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+Hydrogen molecule, incorrect ground state energy: -24.786132109551904 eV
+Hydrogen molecule, optimized ground state energy: -30.40888422818135 eV
+</pre></div>
+</div>
+</div>
+</div>
+<p>Для некорректной геометрии получилась завышенная энергия, а после оптимизации – почти что такая же энергия, как при вычислении с фиксированным расстоянием 0.74. В оптимальном состоянии энергия системы должна быть минимальна, так что результаты вполне разумны.</p>
+<p>Подобный метод можно использовать и для поиска геометрии куда более сложных молекул.</p>
+</div>
+<div class="section" id="id17">
+<h3>Молекула этилового спирта<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>Молекула водорода – это все еще почти игрушечный пример. Давайте попробуем обсчитать молекулу этанола.</p>
+<p>Задавать руками геометрию молекулы <span class="math notranslate nohighlight">\(C_2H_5OH\)</span> можно, но будет явно сложнее, чем для молекулы водорода. К счастью, это необязательно: <code class="docutils literal notranslate"><span class="pre">psi4</span></code> умеет скачивать геометрию из базы данных <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a> по номенклатурному имени либо уникальному ChemId.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+<span class="n">eth</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;pubchem:ethanol&quot;</span><span class="p">)</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+  <span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="s1">&#39;rohf&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">e_in_ht_eth</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">eth</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ethanol ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht_eth</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Searching PubChem database for ethanol (single best match returned)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Found 1 result(s)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ethanol ground state energy: -4139.645908265889 eV
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>Что мы узнали?<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>Разобрались с базовой теорией квантовой химии:</p>
+<ul class="simple">
+<li><p>как записать уравнение Шредингера для атома;</p></li>
+<li><p>какое получается аналитическое решение для атома водорода;</p></li>
+<li><p>как устроен метод Self-Consistent Field для вычисления волновых функций и энергии для задачи многих тел;</p></li>
+<li><p>как использовать SCF в python пакете <code class="docutils literal notranslate"><span class="pre">psi4</span></code>.</p></li>
+</ul>
+<p>В примерах везде вычисляли ground state энергию, но, конечно, зная волновые функции, можно посчитать много чего еще. Например, можно вычислить спектр поглощения и энергию ионизации (энергии возбужденных состояний), моделировать взаимодействие молекул (найти равновесное состояние для двух систем), с помощью плагинов можно смоделировать рассеяние рентгена на молекуле… Квантовая механика постулирует, что любая измеримая величина является усреднением определенного оператора по волновой функции, поэтому в теории любую физическую величину можно посчитать, зная волновую функцию. Возможности ограничены в основном вычислительной сложностью, а не теорией.</p>
+<p>Для более глубокого погружения в практику квантовой химии можно пройти лабораторные работы <code class="docutils literal notranslate"><span class="pre">psi4</span></code>: <a class="reference external" href="https://psicode.netlify.app/posts/psi4education/">раз</a>, <a class="reference external" href="http://education.molssi.org/qm-tools/">два</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/problemsblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="quantchembasic.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Квантовая химия. Введение.</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ising.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Модель Изинга</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

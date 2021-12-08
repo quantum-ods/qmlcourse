@@ -1,0 +1,1792 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Квантовый бит &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/qcblock/qubit.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Квантовые гейты" href="gates.html" />
+    <link rel="prev" title="О блоке “Квантовые вычисления”" href="qcintro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/qcblock/qubit.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/qcblock/qubit.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qcblock/qubit.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/qcblock/qubit.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Введение
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Что такое кубит
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vs">
+   Состояние vs значение
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Состояние классического бита
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Кот Шредингера
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Состояние кубита
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Связь состояния и значения кубита
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Базисные состояния
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       Амплитуды вероятностей
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   Сфера Блоха
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Возможные базисы
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#z">
+       Z-базис
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#x">
+       X-базис
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#y">
+       Y-базис
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Сфера Блоха
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       Состояние в полярных координатах
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   Что можно делать с таким кубитом?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Линейные операторы
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     Унитарность
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     Обратимость
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     Пример оператора
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       Гейт Адамара
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#python">
+         Реализация в Python
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id21">
+         Унитарность
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id22">
+         Проверка
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id23">
+   Измерение
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     <span class="xref std std-term">
+      Операторы Паули
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     Собственные значения
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hat-sigma-z">
+     Собственные вектора
+     <span class="math notranslate nohighlight">
+      \(\hat{\sigma}^z\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     Формальная запись
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id27">
+     Другие операторы Паули
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id28">
+     Ожидаемое значение при измерении
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id29">
+     Вероятности битовых строк
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id30">
+     Еще пара слов об измерениях
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id31">
+       Измерение как проекция на пространство собственных векторов
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id32">
+       Правило Борна
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id33">
+   Что мы узнали?
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="qubit">
+<span id="id1"></span><h1>Квантовый бит<a class="headerlink" href="#qubit" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Эта лекция расскажет:</p>
+<ul class="simple">
+<li><p>что такое кубит;</p></li>
+<li><p>в чем разница между значением и состоянием;</p></li>
+<li><p>что такое сфера Блоха;</p></li>
+<li><p>какие можно делать операции над кубитами;</p></li>
+<li><p>что такое измерение.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Это первая лекция основного блока нашего курса. Прежде чем мы начнем детально разбирать понятие кубита, давайте взглянем на общий пайплайн квантовых схем.</p>
+<div class="figure align-default" id="qscheme">
+<img alt="../../_images/diagram1.png" src="../../_images/diagram1.png" />
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Схема любого квантового алгоритма</span><a class="headerlink" href="#qscheme" title="Permalink to this image">¶</a></p>
+</div>
+<p>Любая квантовая схема включает в себя:</p>
+<ul class="simple">
+<li><p>кубиты, инициализируемые в начальное состояние, обычно <span class="math notranslate nohighlight">\(\ket{0}\)</span>;</p></li>
+<li><p>унитарные и обратимые операции над кубитами;</p></li>
+<li><p>измерение кубитов.</p></li>
+</ul>
+<p>Эта лекция посвящена разбору операций для одного кубита. Начнем с понятия кубита и его отличий от бита классических компьютеров.</p>
+</div>
+<div class="section" id="id4">
+<h2>Что такое кубит<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Классический компьютер оперирует двоичными числами – нулем и единицей. Минимальный объем информации для классического компьютера называется бит. Квантовый компьютер оперирует квантовыми битами или кубитами, которые тоже имеют два возможных значения – 0 и 1. Так в чем же разница? В чем особенности квантовых компьютеров, которые дают им преимущества над классическими компьютерами?</p>
+<p>Разница в том, что для квантовомеханических систем (и кубитов в частности) их <em>состояния</em> и <em>значения</em> – это не одно и то же.</p>
+</div>
+<div class="section" id="vs">
+<h2>Состояние vs значение<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Состояние классического бита<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Обычно мы не отличаем состояние классического бита от его значения и считаем, что если бит имеет значение <strong>1</strong>, то и состояние его описывается числом <strong>1</strong>.</p>
+</div>
+<div class="section" id="id6">
+<h3>Кот Шредингера<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Давайте вспомним мысленный эксперимента Шредингера. Кот, который одновременно и жив, и мертв. Понятно, что <em>значение</em> кота точно одно: он либо жив, либо мертв. Но <em>состояние</em> его более сложное. Он находится в <em>суперпозиции</em> состояний “жив” и “мертв” одновременно.</p>
+<div class="figure align-default" id="schrodingers-cat">
+<a class="reference internal image-reference" href="../../_images/Schrodingers_cat.svg"><img alt="../../_images/Schrodingers_cat.svg" src="../../_images/Schrodingers_cat.svg" width="600px" /></a>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Кот Шредингера</span><a class="headerlink" href="#schrodingers-cat" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>Состояние кубита<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Состояние кубита, если можно так сказать, аналогично состоянию кота Шредингера. Оно отличается от <em>значения</em> кубита и описывается вектором из двух комплексных чисел. Мы будем обозначать состояния (или вектора) символом <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> (кет – вектор-столбец) – это широко принятая в квантовой механике и квантовых вычислениях нотация Дирака:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{\Psi} = \begin{bmatrix}
+c_0 \\
+c_1
+\end{bmatrix}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Может возникнуть вопрос, а почему комплексные числа? Короткий ответ на этот вопрос дать сложно. Если в двух словах, то использование комплексных чисел связано с удобством представления матричных групп, используемых в квантовой механике.</p>
+<p>Все еще звучит сложно? Тогда нужно вспомнить, что изначально квантовая механика возникла в том числе из-за того, что физики экпериментально обнаружили у фундаментальных частиц свойство <code class="docutils literal notranslate"><span class="pre">корпускулярно-волнового</span> <span class="pre">дуализма</span></code>. Иными словами, электроны, фотоны и другие частицы проявляли как типичные свойства волнового движения (например, интерференцию и дифракцию), и свойства частиц – например, всегда есть минимальная порция (<code class="docutils literal notranslate"><span class="pre">квант</span></code>!) света или электрического поля. Кстати, часто вместо вектора состояния используется понятие <code class="docutils literal notranslate"><span class="pre">волновой</span> <span class="pre">функции</span></code>, которая описывает плотность вероятности обнаружить частицу в той или иной точке пространства (обычного или специального). Ко времени создания квантовой механики для описания волнового движения ученые уже привыкли использовать комплескные числа, которые позволяют упростить описание многих эффектов за счет разделения амплитуды и фазы процесса. Такое удобство справедливо и для многих задач квантовой физики.</p>
+<p>Для более детального ответа авторы курса рекомендуют читать книги по истории квантовой физики (и по самой квантовой физике).</p>
+</div>
+<p>Значение чисел <span class="math notranslate nohighlight">\(c_0\)</span> и <span class="math notranslate nohighlight">\(c_1\)</span> мы обсудим чуть позже, а пока запишем наш кубит <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> в коде Python. Для начала <span class="math notranslate nohighlight">\(c_0 = c_1 = \frac{1}{\sqrt{2}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">qubit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Здесь мы создаем именно вектор-столбец размерности <span class="math notranslate nohighlight">\(2 \times 1\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{\Psi} = \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">qubit</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 1)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Связь состояния и значения кубита<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Разберем подробнее вектор <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> и значение цифр <span class="math notranslate nohighlight">\(c_0, c_1\)</span>. Посмотрим на состояния кубита, значение которого мы знаем точно. То есть “посмотрим на кота Шредингера”, но который точно жив или точно мертв.</p>
+<div class="section" id="id9">
+<h4>Базисные состояния<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Посмотрим, как выглядят состояния кубитов с точно определенными значениями:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{0} = \begin{bmatrix}
+1 \\ 0
+\end{bmatrix} \text{\qquad}
+\ket{1} = \begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>Что мы можем сказать об этих состояниях? Как минимум следующее:</p>
+<ul class="simple">
+<li><p>они ортогональны (<span class="math notranslate nohighlight">\(\ket{0} \perp \ket{1}\)</span>);</p></li>
+<li><p>они имеют единичную норму;</p></li>
+<li><p>они образуют базис.</p></li>
+</ul>
+<p>Что это значит для нас? А то, что любое состояние <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> можно записать как линейную комбинацию векторов <span class="math notranslate nohighlight">\(\ket{0}\)</span> и <span class="math notranslate nohighlight">\(\ket{1}\)</span>, причем коэффициентами в этой комбинации будут как раз <span class="math notranslate nohighlight">\(c_0, c_1\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">basis_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">c0</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">qubit</span><span class="p">,</span> <span class="n">c0</span> <span class="o">*</span> <span class="n">basis_0</span> <span class="o">+</span> <span class="n">c1</span> <span class="o">*</span> <span class="n">basis_1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ket{\Psi} = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
++
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="id10">
+<h4>Амплитуды вероятностей<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>Квантовая механика устроена таким интересным образом, что если мы будем измерять <strong>значение</strong> кубита, то вероятность каждого из вариантов будет пропорциональна соответствующему коэффициенту в разложении <strong>состояния</strong>. Но так как амплитуды – это в общем случае комплексные числа, а вероятности должны быть строго действительные, нужно домножить амплитуды на комплексно сопряженные значения. В случае наших значений <span class="math notranslate nohighlight">\(c_0 = c_1 = \frac{1}{\sqrt{2}}\)</span> получаем:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">c0</span><span class="p">)</span> <span class="o">*</span> <span class="n">c0</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span> <span class="o">*</span> <span class="n">c1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">p0</span> <span class="o">+</span> <span class="n">p1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Видим еще одну важную вещь: сумма вероятностей всех состояний должна быть равна 100%. Это сразу приводит нас к тому, что состояния – это не любые комплексные вектора, а комплексные вектора с единичной нормой:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">qubit</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">qubit</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 1.0
+\end{split}\]</div>
+<p>Мы будем очень часто пользоваться транспонированием и взятием комплексно сопряженного от векторов. В квантовой механике это имеет специальное обозначение <span class="math notranslate nohighlight">\(\bra{\Psi} = {\Psi^T}^* = \Psi^\dagger\)</span> (бра – вектор-строка). Тогда наше правило нормировки из <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> кода может быть записано в нотации Дирака так:</p>
+<div class="math notranslate nohighlight">
+\[
+\braket{\Psi | \Psi} = 1
+\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>Сфера Блоха<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>Описанный выше базис <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}\)</span> не является единственно возможным. Вектора <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}\)</span> – это лишь самый часто применимый базис, который называют <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> базисом. Но есть и другие варианты.</p>
+<div class="section" id="id12">
+<h3>Возможные базисы<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="z">
+<h4>Z-базис<a class="headerlink" href="#z" title="Permalink to this headline">¶</a></h4>
+<p>Уже описанные нами <span class="math notranslate nohighlight">\(\ket{0}\)</span> и <span class="math notranslate nohighlight">\(\ket{1}\)</span>.</p>
+</div>
+<div class="section" id="x">
+<h4>X-базис<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
+<p>Базисные состояния <span class="math notranslate nohighlight">\(\ket{+} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}\)</span> и <span class="math notranslate nohighlight">\(\ket{-} = \frac{\ket{0} - \ket{1}}{\sqrt{2}}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plus</span> <span class="o">=</span> <span class="p">(</span><span class="n">basis_0</span> <span class="o">+</span> <span class="n">basis_1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">minus</span> <span class="o">=</span> <span class="p">(</span><span class="n">basis_0</span> <span class="o">-</span> <span class="n">basis_1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="y">
+<h4>Y-базис<a class="headerlink" href="#y" title="Permalink to this headline">¶</a></h4>
+<p>Базисные состояния <span class="math notranslate nohighlight">\(\ket{R} = \frac{\ket{0} + i\ket{1}}{\sqrt{2}}\)</span> и <span class="math notranslate nohighlight">\(\ket{L} = \frac{\ket{0} - i\ket{1}}{\sqrt{2}}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="n">basis_0</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">basis_1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="p">(</span><span class="n">basis_0</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">basis_1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Легко убедиться, что все вектора каждого из этих базисов ортогональны:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">basis_0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">basis_1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+= 0
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">plus</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">minus</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">L</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; -i\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-i\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+\end{split}\]</div>
+<p>Заметьте, что в наших векторных пространствах скалярное произведение – это (в случае действительных векторов) <span class="math notranslate nohighlight">\(\vec{a}\vec{b} = \left\langle a\middle| b\right\rangle\)</span> (<a class="reference external" href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">бра-кет</a>). Именно поэтому нужно делать транспонирование и комплексное сопряжение первого вектора в паре.</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>Сфера Блоха<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Обозначения <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}, \ket{+}, \ket{-}, \ket{R}, \ket{L}\)</span> выбраны неслучайно: они имеют геометрический смысл.</p>
+<div class="figure align-default" id="blochcphere">
+<a class="reference internal image-reference" href="../../_images/Blochsphere.svg"><img alt="../../_images/Blochsphere.svg" src="../../_images/Blochsphere.svg" width="400px" /></a>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochcphere" title="Permalink to this image">¶</a></p>
+</div>
+<p>Принято считать, что ось <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – это основная ось, так как физически квантовые компьютеры измеряют именно по ней. Ось <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> “смотрит на нас” и поэтому обозначается <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span>. А ось <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> направлена как бы вдоль, поэтому базис обозначают как “право” (<span class="math notranslate nohighlight">\(\ket{R}\)</span>) и “лево” (<span class="math notranslate nohighlight">\(\ket{L}\)</span>).</p>
+<p>Вектор состояния кубита еще называют волновой функцией, и этот вектор может идти в любую точку сферы Блоха. Сама сфера имеет единичный радиус, и это гарантирует нам, что для всех состояний сумма квадратов амплитуд будет равна единице.</p>
+<div class="section" id="id14">
+<h4>Состояние в полярных координатах<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>Состояние кубита можно выразить через полярные координаты на сфере Блоха:</p>
+<div class="math notranslate nohighlight">
+\[
+\ket{\Psi} = c_0 \ket{0} + c_1 \ket{1} = \cos\theta\ket{0} + e^{i\phi}\sin\theta \ket{1},
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(\theta,\phi\)</span> – это угловые координаты на сфере Блоха. В этом смысле сфера Блоха очень удобна для представления состояний одного кубита.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Тут мы воспользовались формулой Эйлера, а также вынесли за скобки локальные фазы множителей <span class="math notranslate nohighlight">\(c_0\)</span> и <span class="math notranslate nohighlight">\(c_1\)</span>. Если у вас возникают трудности с подобными операциями над комплексными числами, то рекомендуем еще раз пересмотреть базовый <a class="reference internal" href="../linalgblock/intro.html#linalg-intro"><span class="std std-ref">блок</span></a> нашего курса по линейной алгебре и комплексным числам, там эти моменты освещаются более подробно.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>Что можно делать с таким кубитом?<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h3>Линейные операторы<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>Любое действие, которое мы совершаем с кубитом в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, должно переводить его в другое состояние <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span>. Что переводит один вектор в другой вектор в том же пространстве? Правильно, матрица. Другими словами, линейный оператор. Мы будем обозначать операторы как <span class="math notranslate nohighlight">\(\hat{U}\)</span>.</p>
+</div>
+<div class="section" id="id17">
+<h3>Унитарность<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>Как мы уже говорили, квадраты амплитуд – это вероятности. Следовательно, волновая функция должна быть нормирована на единицу. А значит, любой оператор, который переводит одно состояние в другое <span class="math notranslate nohighlight">\(\hat{U}\ket{\Psi} = \ket{\Phi}\)</span>, должен сохранять эту нормировку, то есть должен быть <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A3%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"><em>унитарным</em></a>. Более того, свойство унитарности приводит к тому, что любой квантовый оператор еще и сохраняет скалярное произведение:</p>
+<div class="math notranslate nohighlight">
+\[
+\bra{\Psi}\hat{U}^\dagger\hat{U}\ket{\Psi} = \bra{\Psi}\ket{\Psi}
+\]</div>
+<p>Другими словами, унитарный оператор удовлетворяет условию <span class="math notranslate nohighlight">\(\hat{U}^\dagger \hat{U} = \hat{I}\)</span>.</p>
+</div>
+<div class="section" id="id18">
+<h3>Обратимость<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>Одно из важных следствий унитарности операций над кубитами – это их обратимость. Если вы сделали какую-то последовательность унитарных операций над кубитами <span class="math notranslate nohighlight">\(\hat{U}\)</span>, то их можно вернуть в начальное состояние, ведь у унитарного оператора всегда есть обратный оператор <span class="math notranslate nohighlight">\(\hat{U}^{-1} = \hat{U}^\dagger\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Квантовый компьютер должен уметь делать несколько не унитарных операций, например, инициализацию кубита в определенное состояние (например, <span class="math notranslate nohighlight">\(\ket{0}\)</span>) и считывание состояния кубитов. Такие неунитарные операции приводят к потере информации и являются необратимыми.</p>
+</div>
+</div>
+<div class="section" id="id19">
+<h3>Пример оператора<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>В дальнейших лекциях мы разберем много операторов, так как именно операторы (или квантовые <strong>гейты</strong>) являются основой квантовых вычислений. А пока рассмотрим простой пример: оператор Адамара (<strong>Hadamard gate</strong>), который переводит <span class="math notranslate nohighlight">\(\ket{0} \to \ket{+}\)</span>.</p>
+<div class="section" id="id20">
+<h4>Гейт Адамара<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<p>Начнем с того, что пока у нас лишь один кубит. Состояние одного кубита – это вектор размерности два. Значит, оператор, который переводит его в другой вектор размерности два – это матрица <span class="math notranslate nohighlight">\(2\times 2\)</span>. Запишем оператор Адамара в матричном виде, а потом убедимся, что он унитарный и действительно переводит состояние <span class="math notranslate nohighlight">\(\ket{0} \to \ket{+}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{H} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; -1 \\
+\end{bmatrix}
+\end{split}\]</div>
+<div class="section" id="python">
+<h5>Реализация в Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id21">
+<h5>Унитарность<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">h</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; -1 \\
+\end{bmatrix}
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; -1 \\
+\end{bmatrix}
+= \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="id22">
+<h5>Проверка<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<p>Проверим, что гейт Адамара действительно переводит кубит из состояния <span class="math notranslate nohighlight">\(\ket{0}\)</span> в состояние <span class="math notranslate nohighlight">\(\ket{+}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">h</span> <span class="o">@</span> <span class="n">basis_0</span><span class="p">,</span> <span class="n">plus</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 &amp; 1 \\
+1 &amp; -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\end{split}\]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id23">
+<h2>Измерение<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p><strong>Измерение</strong> в квантовых вычислениях выделяется отдельно именно потому, что оно “открывает” коробку с котом Шредингера: мы точно узнаем, жив он или мертв, и уже никогда не сможем это “забыть” обратно. Вся <em>суперпозиция</em> его состояния исчезает. То есть <em>измерение</em> – это как раз пример одной из не унитарных операций, которые должен уметь делать квантовый компьютер.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Это интересный факт: исчезновение суперпозиции многим кажется парадоксом, именно поэтому и появляются разные интерпретации квантовой механики, например, многомировая интерпретация Эверетта. Действительно, это кажется немного странным, что полностью обратимая квантовая механика и непрерывная динамика волновых функций вдруг “ломаются” и мы получаем такой коллапс, который еще называют редукцией фон Неймана. Доктору Эверетт тоже это не нравилось и он предложил другую интерпретацию этого процесса. Согласно его теории, когда мы производим измерения, мы как бы “расщепляем” нашу вселенную на две ниточки: в одной кот остается жив, а в другой остается мертв.</p>
+<p>Такие теории остаются на уровне спекуляций, так как почти невозможно придумать эксперимент, который бы подтверждал или опровергал такую гипотезу. Скорее это вопрос личного понимания и интерпретации процесса, так как математически подобные теории в итоге дают один и тот же наблюдаемый и измеримый результат.</p>
+</details>
+</div>
+<p>Как мы уже говорили, состояние кубита может быть записано в разных базисах: <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}\)</span>, <span class="math notranslate nohighlight">\(\ket{+}, \ket{-}\)</span>, <span class="math notranslate nohighlight">\(\ket{R}, \ket{L}\)</span>. <em>Значение</em> кубита в каждом из этих базисов может быть измерено. Но что такое измерение с точки зрения математики?</p>
+<div class="section" id="id24">
+<h3><a class="reference internal" href="../glossary.html#term-23"><span class="xref std std-term">Операторы Паули</span></a><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<p>На самом деле, любая наблюдаемая величина соответствует какому-то оператору. Например, измерения в разных базисах <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> соответствуют операторам Паули:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{\sigma}^x = \begin{bmatrix}
+0 &amp; 1\\
+1 &amp; 0
+\end{bmatrix}
+\qquad
+\hat{\sigma}^y = \begin{bmatrix}
+0 &amp; -i\\
+i &amp; 0
+\end{bmatrix}
+\qquad
+\hat{\sigma}^z = \begin{bmatrix}
+1 &amp; 0\\
+0 &amp; -1
+\end{bmatrix}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pauli_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">]])</span>
+<span class="n">pauli_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">]])</span>
+<span class="n">pauli_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Эти операторы очень важны, рекомендуется знать их наизусть, так как они встречаются в каждой второй статье по квантовым вычислениям, а также постоянно фигурируют в документации всех основных библиотек для квантового машинного обучения.</p>
+</div>
+<div class="section" id="id25">
+<h3>Собственные значения<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<p>Мы поняли, что есть связь между нашими измерениями и операторами. Но какая именно? Что значит, например, что измерения по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> соответствуют оператору <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span>?</p>
+<p>Здесь мы приходим к собственным значениям операторов. Оказывается (так устроен наш мир), что <em>измеряя</em> какую-то величину в квантовой механике, мы всегда будем получать одно из собственных значений соответствующего оператора, а состояние будет коллапсировать в соответствующий собственный вектор этого оператора. Другими словами, <em>измеряя</em> кота Шредингера, мы будем получать значения “жив” или “мертв”, а состояние кота будет переходить в состояние, соответствующее одному из этих значений. А еще <em>измерение</em> не является обратимой операцией: однажды открыв коробку с котом и поняв, жив он или мертв, мы уже не сможем закрыть ее обратно и вернуть кота в суперпозицию.</p>
+<p>Описанное выше – не абстрактные рассуждения из квантовой физики. Оно пригодится, когда мы будем говорить о решении практических комбинаторных задач, таких как задача о выделении сообществ в графе.</p>
+</div>
+<div class="section" id="hat-sigma-z">
+<h3>Собственные вектора <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span><a class="headerlink" href="#hat-sigma-z" title="Permalink to this headline">¶</a></h3>
+<p>Вернемся к нашему оператору <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span>. Легко убедиться, что его собственные значения равны 1 и -1, а соответствующие им собственные вектора – это <span class="math notranslate nohighlight">\(\begin{bmatrix}1 \\ 0\end{bmatrix}\)</span> и <span class="math notranslate nohighlight">\(\begin{bmatrix}0 \\ 1\end{bmatrix}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.+0.j, -1.+0.j]), array([[1.+0.j, 0.+0.j],
+       [0.+0.j, 1.+0.j]]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Таким образом, измерение по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> всегда будет давать нам одно из этих двух значений и переводить состояние кубита в соответствующий собственный вектор.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Зачастую кубиты измеряют именно в в <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базисе; является неким “стандартом” для квантовых вычислений, так как это измерение “ближе к железу”. Также <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базис удобен для нас из-за диагональности <a class="reference internal" href="../glossary.html#term-23"><span class="xref std std-term">оператора Паули</span></a> <span class="math notranslate nohighlight">\(\sigma^z\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>Формальная запись<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<p>Формально мы можем записать для любого <a class="reference external" href="https://en.wikipedia.org/wiki/Hermitian_adjoint#Hermitian_operators">эрмитова</a> оператора <span class="math notranslate nohighlight">\(\hat{U}\)</span>, что собственные состояния этого оператора являются его собственными векторами, а собственные значения в этом случае являются наблюдаемыми значениями:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{U}\ket{\Psi} = u\ket{\Psi}
+\]</div>
+</div>
+<div class="section" id="id27">
+<h3>Другие операторы Паули<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<p>Убедимся, что у остальных операторов собственные значения такие же:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">pauli_x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">pauli_y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 1.+0.j, -1.+0.j]), array([[ 0.70710678-0.j,  0.70710678+0.j],
+       [ 0.70710678+0.j, -0.70710678-0.j]]))
+(array([ 1.+0.j, -1.+0.j]), array([[-0.        -0.70710678j,  0.70710678+0.j        ],
+       [ 0.70710678+0.j        ,  0.        -0.70710678j]]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Заметим, что собственные вектора могут отличаться на какой-то множитель. В частности, один из собственных векторов оператора <span class="math notranslate nohighlight">\(\hat{\sigma}^y\)</span>, возвращенный <code class="docutils literal notranslate"><span class="pre">np.linalg.eig</span></code> равен <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}  \begin{bmatrix} -i  \\ 1 \end{bmatrix}\)</span>, что отличается от <span class="math notranslate nohighlight">\(\ket{R} = \frac{\ket{0} + i\ket{1}}{\sqrt{2}} = \frac{1}{\sqrt{2}}  \begin{bmatrix} 1  \\ i \end{bmatrix}\)</span> только домножением на <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Во-первых, по курсу линейной алгебры мы знаем, что собственные вектора можно домножать на любую константу и они все равно останутся собственными, поскольку если вектор <span class="math notranslate nohighlight">\(x^*\)</span>– решение уравнения <span class="math notranslate nohighlight">\(Ax^* = \lambda x^*\)</span>, то и любой вектор <span class="math notranslate nohighlight">\(kx^*, k \in \mathbb{С}, k \neq 0\)</span> также будет решением этого уравнения.</p>
+<p>Во-вторых, состояния, отличающиеся только множителем, по сути соответствуют одному и тому же состоянию. Любой множитель <span class="math notranslate nohighlight">\(c \in \mathbb{С}\)</span>, стоящий перед вектором состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> можно представить в виде <span class="math notranslate nohighlight">\(c = e^{i\phi}\)</span>, что соответствует повороту на некоторый угол <span class="math notranslate nohighlight">\(\phi\)</span>. При вычислении амплитуды <span class="math notranslate nohighlight">\({|\ket{\Psi}|} ^ 2\)</span> этот множитель даст единицу, то есть, другими словами, поворот кубита никак не повлияет на результат измерения кубита. Это известно как <em>глобальная фаза</em>, и в научной литературе часто можно встретить фразу “up to a global phase factor”, что означает одинаковые состояния с точностью до поворота (примерно как произвольная константа, добавляемая к интегралу).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Также можно заметить, что у всех операторов Паули нет ни одного общего собственного вектора. Таким образом, мы приходим к ситуации, когда не можем одновременно точно провести измерения двумя разными операторами, так как наше измерение должно переводить состояние в соответствующий собственный вектор. В квантовой механике это называется <strong>принципом неопределенности</strong>.</p>
+</div>
+</div>
+<div class="section" id="id28">
+<h3>Ожидаемое значение при измерении<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<p>Мы не будем писать с нуля полный симулятор кубитов, который включает измерения – это требует введения сложного случайного процесса. Но мы можем легко ответить на другой вопрос. А именно: можно ли сказать, какое будет <em>ожидаемое</em> значение оператора <span class="math notranslate nohighlight">\(\hat{U}\)</span> для состояния <span class="math notranslate nohighlight">\(\Psi\)</span>? Другими словами, какое будет математическое ожидание большого числа измерений? Это можно записать следующим образом:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{E}(\hat{U}) = \bra{\Psi}\hat{U}\ket{\Psi}
+\]</div>
+<p>Например, оператор <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span> полностью не определен в состоянии <span class="math notranslate nohighlight">\(\ket{+}\)</span>, то есть мы будем равновероятно получать значения -1 и 1, а математическое ожидание, соответственно, будет равно нулю:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plus</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">pauli_z</span> <span class="o">@</span> <span class="n">plus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.23711432e-17+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+\end{split}\]</div>
+<p>С другой стороны, измеряя состояние <span class="math notranslate nohighlight">\(\ket{+}\)</span> в <em>X</em>-базисе мы всегда будем получать 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plus</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">pauli_x</span> <span class="o">@</span> <span class="n">plus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 1
+\end{split}\]</div>
+</div>
+<div class="section" id="id29">
+<h3>Вероятности битовых строк<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<p>Последнее, чего мы коснемся в части измерений – это битовые строки и метод Шредингера. Мы много говорили о вероятностной интерпретации волновой функции и аналогиях с классическим битом, но пока этого никак не касались на практике. Как же получить вероятность определенной битовой строки для произвольного состояния? Если взять все битовые строки размерности вектора состояния и отсортировать их в лексикографическом порядке (например, <span class="math notranslate nohighlight">\(0 &lt; 1\)</span>, <span class="math notranslate nohighlight">\(00 &lt; 01 &lt; 10 &lt; 11\)</span>, и т.д.), то вероятность каждой битовой строки получается следующим выражением:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{P} = | \bra{\Psi}\ket{\vec{s}} |^2,
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(\vec{s}\)</span> – это вектор, каждая компонента которого соответствует порядковой битовой строке или вектор битовых строк. Другими словами, вероятность получить <em>i</em>-ю битовую строку равна квадрату <em>i</em>-го элемента амплитуды волновой функции. Кажется немного запутанным, но на самом деле <span class="math notranslate nohighlight">\(|\ket{\Psi}|^2\)</span> – это идейно и есть плотность вероятности.</p>
+</div>
+<div class="section" id="id30">
+<h3>Еще пара слов об измерениях<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id31">
+<h4>Измерение как проекция на пространство собственных векторов<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<p>Мы уже говорили, что при измерении мы как бы “выбираем” один из собственных векторов наблюдаемой. Более строго такой процесс называется проецированием на пространство собственных векторов. Для собственного вектора <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> проекция будет линейным оператором:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{P}_{\ket{\Phi}} = \ket{\Phi}\bra{\Phi}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">super_position</span> <span class="o">=</span> <span class="n">h</span> <span class="o">@</span> <span class="n">basis_0</span>
+<span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">proj_0</span> <span class="o">=</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">@</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">proj_1</span> <span class="o">=</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">@</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{P}_{\ket{\Phi_0}}
+=
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+1 &amp; 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 0 \\
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{P}_{\ket{\Phi_1}}
+=
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+0 &amp; 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="id32">
+<h4>Правило Борна<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+<p>Как мы уже говорили, любому эрмитову оператору соответствует какая-либо наблюдаемая величина. А какая наблюдаемая величина соответствует оператору проекции на собственный вектор <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span>, про который мы говорили выше? Ответ – вероятность наблюдения собственного значения, которое соответствует этому собственному вектору. Значит, чтобы получить вероятность измерения значения <span class="math notranslate nohighlight">\(\lambda_i\)</span> эрмитова оператора <span class="math notranslate nohighlight">\(\hat{A}\)</span> (которое соответствует собственному вектору <span class="math notranslate nohighlight">\(\ket{\Phi_i}\)</span> этого оператора) в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, мы должны измерить величину <span class="math notranslate nohighlight">\(\bra{\Psi} \hat{P}_{\ket{\Phi_i}} \ket{\Psi}\)</span>. Это называется правилом Борна.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{P}(\lambda_i) = \bra{\Psi} \hat{P}_{\ket{\Phi_i}} \ket{\Psi}
+\]</div>
+<p>Считать ожидаемое значение оператора мы уже умеем. Давайте убедимся, что для состояния <span class="math notranslate nohighlight">\(\ket{\Psi} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 1\end{bmatrix}\)</span> результаты измерений операторов проекций дадут 0.5 и совпадут с результатом упражнения, которое мы проделали ранее:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_0</span> <span class="o">=</span> <span class="n">super_position</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">proj_0</span> <span class="o">@</span> <span class="n">super_position</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">p_0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{P}(\lambda_0) =
+\Bigg(
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 0 \\
+\end{bmatrix}
+\Bigg)
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg(
+\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg)
+= \frac{1}{2}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_1</span> <span class="o">=</span> <span class="n">super_position</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">proj_1</span> <span class="o">@</span> <span class="n">super_position</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">p_1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">p_0</span> <span class="o">+</span> <span class="n">p_1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{P}(\lambda_1) =
+\Bigg(
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix}
+\Bigg)
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg(
+\begin{bmatrix}
+0 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg)
+= \frac{1}{2}
+\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id33">
+<h2>Что мы узнали?<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Состояние и значение для кубита – это не одно и то же.</p></li>
+<li><p>Состояния представляют собой комплекснозначные вектора.</p></li>
+<li><p>Квантовые операторы – унитарные и самосопряженные.</p></li>
+<li><p>Измеряемые значения – собственные значения операторов.</p></li>
+<li><p>Измерение “ломает” суперпозицию.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/qcblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="qcintro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">О блоке “Квантовые вычисления”</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="gates.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Квантовые гейты</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
