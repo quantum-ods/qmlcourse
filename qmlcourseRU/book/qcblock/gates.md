@@ -59,7 +59,7 @@ $$
 
 Поворотные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:
 
-```{figure} /_static/qcblock/qubit/Blochsphere.svg
+```{figure} /_static/qcblock/qubit/Blochsphere.png
 :name: blochsphere
 :width: 400px
 
