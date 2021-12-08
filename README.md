@@ -1,7 +1,7 @@
 <img src="./qmlcourseRU/logo.svg" align="left" width="178" height="178"></img>
 
 # QMLCourse
-<a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
+<a href="https://semyonsinchenko.github.io/qmlcourse/book/index.html">
     <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse">
