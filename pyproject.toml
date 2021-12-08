@@ -25,6 +25,7 @@ qiskit = "^0.31.0"
 scikit-learn = "^0.24.1"
 scp = "^0.14.1"
 sympy = "1.5"
+netket = "^3.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

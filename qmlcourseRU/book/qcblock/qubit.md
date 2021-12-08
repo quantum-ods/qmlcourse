@@ -91,7 +91,14 @@ import numpy as np
 qubit = np.array([1 / np.sqrt(2) + 0j, 1 / np.sqrt(2) + 0j]).reshape((2, 1))
 ```
 
-Здесь мы создаем именно вектор-столбец размерности $2\times1$.
+Здесь мы создаем именно вектор-столбец размерности $2 \times 1$.
+
+$$
+\ket{\Psi} = \begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+$$
 
 ```{code-cell} ipython3
 print(qubit.shape)
@@ -120,7 +127,7 @@ $$
 - они имеют единичную норму;
 - они образуют базис.
 
-Что это значит для нас? А то, что любое состояние $\ket{\Psi}$ можно записать как линейную комбинацию векторов $\ket{0}$ и $\ket{1}$, причем коэффициентами в этой комбинации будут как раз наши $c_0, c_1$:
+Что это значит для нас? А то, что любое состояние $\ket{\Psi}$ можно записать как линейную комбинацию векторов $\ket{0}$ и $\ket{1}$, причем коэффициентами в этой комбинации будут как раз $c_0, c_1$:
 
 ```{code-cell} ipython3
 basis_0 = np.array([1 + 0j, 0 + 0j]).reshape((2, 1))
@@ -130,6 +137,25 @@ c0 = c1 = 1 / np.sqrt(2)
 
 print(np.allclose(qubit, c0 * basis_0 + c1 * basis_1))
 ```
+
+$$
+\ket{\Psi} = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
++
+\frac{1}{\sqrt{2}}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+$$
 
 #### Амплитуды вероятностей
 
@@ -148,6 +174,18 @@ print(np.allclose(p0 + p1, 1.0))
 ```{code-cell} ipython3
 print(np.allclose(np.conj(qubit).T @ qubit, 1.0))
 ```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 1.0
+$$
+
 
 Мы будем очень часто пользоваться транспонированием и взятием комплексно сопряженного от векторов. В квантовой механике это имеет специальное обозначение $\bra{\Psi} = {\Psi^T}^* = \Psi^\dagger$ (бра -- вектор-строка). Тогда наше правило нормировки из `NumPy` кода может быть записано в нотации Дирака так:
 
@@ -187,9 +225,49 @@ L = (basis_0 - 1j * basis_1) / np.sqrt(2)
 
 ```{code-cell} ipython3
 print(np.allclose(np.conj(basis_0).T @ basis_1, 0))
+```
+
+$$
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+= 0
+$$
+
+```{code-cell} ipython3
 print(np.allclose(np.conj(plus).T @ minus, 0))
+```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+$$
+
+
+```{code-cell} ipython3
 print(np.allclose(np.conj(R).T @ L, 0))
 ```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & -i\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+-i\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+$$
 
 Заметьте, что в наших векторных пространствах скалярное произведение -- это (в случае действительных векторов) $\vec{a}\vec{b} = \left\langle a\middle| b\right\rangle$ ([бра-кет](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation)). Именно поэтому нужно делать транспонирование и комплексное сопряжение первого вектора в паре.
 
@@ -275,6 +353,20 @@ h = 1 / np.sqrt(2) * np.array([
 ```{code-cell} ipython3
 print(np.allclose(np.conj(h).T @ h, np.eye(2)))
 ```
+$$
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1 \\
+\end{bmatrix}
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1 \\
+\end{bmatrix}
+= \begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+$$
 
 ##### Проверка
 
@@ -283,6 +375,21 @@ print(np.allclose(np.conj(h).T @ h, np.eye(2)))
 ```{code-cell} ipython3
 print(np.allclose(h @ basis_0, plus))
 ```
+$$
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+$$
 
 ## Измерение
 
@@ -346,7 +453,7 @@ print(np.linalg.eig(pauli_z))
 Таким образом, измерение по оси $\mathbf{Z}$ всегда будет давать нам одно из этих двух значений и переводить состояние кубита в соответствующий собственный вектор.
 
 ```{caution}
-Зачастую кубити измеряют именно в в $\mathbf{Z}$-базисе; является неким "стандартом" для квантовых вычислений, так как это измерение "ближе к железу". Также $\mathbf{Z}$-базис удобен для нас из-за диагональности {term}`оператора Паули<Операторы Паули>` $\sigma^z$.
+Зачастую кубиты измеряют именно в в $\mathbf{Z}$-базисе; является неким "стандартом" для квантовых вычислений, так как это измерение "ближе к железу". Также $\mathbf{Z}$-базис удобен для нас из-за диагональности {term}`оператора Паули<Операторы Паули>` $\sigma^z$.
 ```
 
 ### Формальная запись
@@ -392,11 +499,41 @@ $$
 print(plus.conj().T @ pauli_z @ plus)
 ```
 
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 \\
+0 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 0
+$$
+
 С другой стороны, измеряя состояние $\ket{+}$ в _X_-базисе мы всегда будем получать 1:
 
 ```{code-cell} ipython3
 print(plus.conj().T @ pauli_x @ plus)
 ```
+
+$$
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+= 1
+$$
 
 ### Вероятности битовых строк
 
@@ -426,6 +563,41 @@ eigenvectors = np.linalg.eig(pauli_z)[1]
 proj_0 = eigenvectors[0].reshape((-1, 1)) @ eigenvectors[0].reshape((1, -1))
 proj_1 = eigenvectors[1].reshape((-1, 1)) @ eigenvectors[1].reshape((1, -1))
 ```
+$$
+\hat{P}_{\ket{\Phi_0}}
+=
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+1 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+$$
+
+$$
+\hat{P}_{\ket{\Phi_1}}
+=
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+$$
 
 #### Правило Борна
 
@@ -439,11 +611,78 @@ $$
 
 ```{code-cell} ipython3
 p_0 = super_position.conj().T @ proj_0 @ super_position
-p_1 = super_position.conj().T @ proj_1 @ super_position
 
-print(np.allclose(p_0 + p_1, 1.0))
 print(np.allclose(p_0, 0.5))
 ```
+$$
+\mathbf{P}(\lambda_0) =
+\Bigg(
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+\Bigg)
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg(
+\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg)
+= \frac{1}{2}
+$$
+
+```{code-cell} ipython3
+p_1 = super_position.conj().T @ proj_1 @ super_position
+
+print(np.allclose(p_1, 0.5))
+print(np.allclose(p_0 + p_1, 1.0))
+```
+$$
+\mathbf{P}(\lambda_1) =
+\Bigg(
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\begin{bmatrix}
+0 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\Bigg)
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg(
+\begin{bmatrix}
+0 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\Bigg)
+= \frac{1}{2}
+$$
 
 ## Что мы узнали?
 

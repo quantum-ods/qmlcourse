@@ -69,7 +69,7 @@
       title: ⬜ О блоке
     - file: book/progblock/progreview
       title: 🟩 Обзор фреймворков
-    - file: book/progblock/pennylane.ipynb
+    - file: book/progblock/pennylane
       title: 🟩 PennyLane
     - file: book/progblock/cirq_tfq
       title: 🟧 Cirq & TFQ
@@ -160,12 +160,25 @@
     - file: book/problemsblock/copt
       title: 🟩 Комбинаторная оптимизация
 
-- part: QAOA
+- part: От проблем к обучению
   chapters:
-    - file: book/qaoablock/intro
+    - file: book/problems2qml/problems2qmlintro
       title: ⬜ О блоке
-    - file: book/qaoablock/qaoa
-      title: 🟩 QAOA
+    - file: book/problems2qml/np2ising
+      title: 🟩 NP как модели Изинга
+    - file: book/problems2qml/jordanwigner
+      title: 🟧 Преобразование Жордана-Вигнера
+    - file: book/problems2qml/eigenvals
+      title: 🟩 О собственных значениях
+
+- part: VQE
+  chapters:
+    - file: book/vqeblock/vqeintro
+      title: ⬜ О блоке
+    - file: book/vqeblock/vqe
+      title: 🟩 Основы VQE
+    - file: book/vqeblock/tspvqe
+      title: 🟧 VQE - практика
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
@@ -173,6 +186,13 @@
       title: ⬜ О блоке
     - file: book/dwaveblock/dwave
       title: 🟩 Квантовый отжиг и семплирование
+
+- part: QAOA
+  chapters:
+    - file: book/qaoablock/intro
+      title: ⬜ О блоке
+    - file: book/qaoablock/qaoa
+      title: 🟩 QAOA
 
 - part: О курсе
   chapters:
