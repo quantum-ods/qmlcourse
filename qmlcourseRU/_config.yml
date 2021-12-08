@@ -33,6 +33,8 @@ latex:
 sphinx:
   config:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
+  extra_extensions:
+    - sphinx_sitemap
 
 parse:
   myst_enable_extensions:
