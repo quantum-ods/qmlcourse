@@ -105,6 +105,7 @@ qc.draw()
 ```{code-cell} ipython3
 
 from qiskit import Aer
+
 aer_sim = Aer.get_backend('aer_simulator')
 result = aer_sim.run(qc).result()
 counts = result.get_counts(qc)
