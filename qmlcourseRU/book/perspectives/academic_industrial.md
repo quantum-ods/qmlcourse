@@ -1,22 +1,7 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
 (academic_industrial)=
 
 # Академия и Индустрия
 
-```{code-cell} ipython3
-from IPython.display import YouTubeVideo
-
-video = YouTubeVideo("nf53CMIUmUA", width=640, height=360)
-display(video)
-```
+<a href="https://youtu.be/nf53CMIUmUA">
+    <img src="../../_static/perspectives/back_4_youtube.png" width="854" height="480">
+</a>
