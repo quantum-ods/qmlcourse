@@ -42,10 +42,12 @@ $$ |\psi\rangle = |\beta_{00}\rangle = \frac{|00\rangle + |11\rangle}{\sqrt{2}}$
 
 В результате получаются состояния двухкубитной системы справа от стрелок в следующих формулах (проверьте это!):
 
-$$ 00: |\psi\rangle \rightarrow \frac{|00\rangle + |11\rangle}{\sqrt{2}} = |\beta_{00}\rangle , $$
-$$ 01: |\psi\rangle \rightarrow \frac{|10\rangle + |01\rangle}{\sqrt{2}} = |\beta_{01}\rangle , $$
-$$ 10: |\psi\rangle \rightarrow \frac{|00\rangle - |11\rangle}{\sqrt{2}} = |\beta_{10}\rangle , $$
-$$ 11: |\psi\rangle \rightarrow \frac{|01\rangle - |10\rangle}{\sqrt{2}} = |\beta_{11}\rangle , $$
+$$
+00: |\psi\rangle \rightarrow \frac{|00\rangle + |11\rangle}{\sqrt{2}} = |\beta_{00}\rangle , \\
+01: |\psi\rangle \rightarrow \frac{|10\rangle + |01\rangle}{\sqrt{2}} = |\beta_{01}\rangle , \\
+10: |\psi\rangle \rightarrow \frac{|00\rangle - |11\rangle}{\sqrt{2}} = |\beta_{10}\rangle , \\
+11: |\psi\rangle \rightarrow \frac{|01\rangle - |10\rangle}{\sqrt{2}} = |\beta_{11}\rangle ,
+$$
 
 т.е. как раз четыре состояния Белла. Они образуют ортонормированный базис в пространстве состояний двухкубитной системы (убедитесь в этом самостоятельно). Следовательно, эти четыре состояния можно различить подходящим измерением для двухкубитной системы. Если Алиса отправит свой кубит Бобу, то Боб после измерения двухкубитной системы в базисе Белла сможет определить, которую из четырех возможных битовых строк Алиса хотела отправить.
 
