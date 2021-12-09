@@ -20,7 +20,7 @@ kernelspec:
 
 Давайте сейчас посмотрим на [состояния Белла](https://ru.wikipedia.org/wiki/Состояние_Белла) (Bell states). Прошу:
 
-$$ |\beta_{00}\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)$$
+$$ |\beta_{00}\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)$$ (eqn:bell_beta_00)
 $$ |\beta_{01}\rangle = \frac{1}{\sqrt{2}} (|01\rangle + |10\rangle)$$
 $$ |\beta_{10}\rangle = \frac{1}{\sqrt{2}} (|00\rangle - |11\rangle)$$
 $$ |\beta_{11}\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)$$
