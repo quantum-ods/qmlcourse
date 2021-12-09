@@ -108,6 +108,7 @@ from qiskit import Aer
 aer_sim = Aer.get_backend('aer_simulator')
 result = aer_sim.run(qc).result()
 counts = result.get_counts(qc)
+
 print(
     f"message was '{message}' -> the measurement result is {counts}"
     " (<- NOTE: the keys are little-endian!)"
