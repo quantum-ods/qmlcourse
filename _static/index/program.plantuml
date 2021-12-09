@@ -66,7 +66,7 @@ package "Week 5" {
 
         package "Quantum Neural Networks" #Bisque {
                 rectangle "QNN" as qnn #40B464
-                ' rectangle "Barren plateaus" as barren #FFC864
+'                rectangle "Barren plateaus" as barren #FFC864
                 rectangle "Convolutional VQC" as convvqc #40B464
         }
 }
@@ -103,9 +103,9 @@ package "Week 8" {
                 rectangle "QAOA" as qaoa #40B464
         }
 
-        package "Advanced Topics" as adv #Bisque {
-                rectangle "SotA review" as sota #40B464
-        }
+'        package "Advanced Topics" as adv #Bisque {
+'                rectangle "SotA review" as adv_sota #40B464
+'        }
 
         package "Jobs and Perspectives" as jobs #Bisque {
                 rectangle "Academic & Industrial positions" as academic_industrial #White
@@ -176,7 +176,7 @@ vqe -> tspvqe
 
 dwave --> qaoa
 
-qaoa -> sota
+' qaoa -> adv_sota
 
 qaoa --> academic_industrial
 

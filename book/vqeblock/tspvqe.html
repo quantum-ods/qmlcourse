@@ -302,6 +302,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/superdense_coding.html">
+   🟩 Сверхплотное кодирование
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
    🟧 Алгоритм Гровера
   </a>
@@ -1100,12 +1105,12 @@ SciPy solution (total cost): 213.0
 <p>Далее необходимо выбрать <em>ansatz</em>. Современные квантовые процессоры обычно имеют вид решетки, типа такого:</p>
 <div class="figure align-default" id="sycamore-lattice">
 <a class="reference internal image-reference" href="../../_images/sycamore.png"><img alt="../../_images/sycamore.png" src="../../_images/sycamore.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../bibliography.html#id62"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 128 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../bibliography.html#id62"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">¶</a></p>
 </div>
 <p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../bibliography.html#id31"><span>KMT+17</span></a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <div class="figure align-default" id="id8">
 <a class="reference internal image-reference" href="../../_images/HWA.png"><img alt="../../_images/HWA.png" src="../../_images/HWA.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 128 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../bibliography.html#id31"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 129 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../bibliography.html#id31"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">
