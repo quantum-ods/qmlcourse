@@ -19,6 +19,7 @@
 - [Вадим Петров](https://github.com/belgraviton)
 - [Дани Эль-Айясс](http://github.com/dayyass)
 - [Дмитрий Бажанов](https://github.com/dbazhanov)
+- [Дмитрий Бурдейный](https://github.com/dmburd)
 - [Евгений Желтоножский](https://github.com/Randl)
 - [Игорь Котенков](https://github.com/stalkermustang)
 - [Игорь Токарев](https://github.com/polyzer)
