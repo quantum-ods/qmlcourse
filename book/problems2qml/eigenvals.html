@@ -270,6 +270,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/cirq_tfq.html">
+   🟧 Cirq &amp; TFQ
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../progblock/qiskit.html">
    🟧 Qiskit
   </a>
@@ -776,7 +781,7 @@
 <span id="id1"></span><h1>Проблема собственных значений<a class="headerlink" href="#eigenvals" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Мы с вами узнали, что задачи комбинаторной оптимизации и квантовой химии могут быть сведены к решению проблемы поиска минимального собственного значения большого эрмитова оператора – гамильтониана. Для оптимизационных задач это <a class="reference internal" href="np2ising.html#np2ising"><span class="std std-ref">осуществляется</span></a> при помощи сведения к <em>QUBO</em>-матрице и гамильтониану типа Изинга. А для электронных орбиталей из квантовой химии можно <a class="reference internal" href="jordanwigner.html#jordanwigner"><span class="std std-ref">применить</span></a> преобразование Жордана-Вигнера и также перейти к спиновому гамильтониану.</p>
+<p>Мы с вами узнали, что задачи комбинаторной оптимизации и квантовой химии могут быть сведены к решению проблемы поиска минимального собственного значения большого эрмитова оператора – гамильтониана. Для оптимизационных задач это <a class="reference internal" href="np2ising.html"><span class="doc std std-doc">осуществляется</span></a> при помощи сведения к <em>QUBO</em>-матрице и гамильтониану типа Изинга. А для электронных орбиталей из квантовой химии можно <a class="reference internal" href="jordanwigner.html"><span class="doc std std-doc">применить</span></a> преобразование Жордана-Вигнера и также перейти к спиновому гамильтониану.</p>
 <p>Теперь перед нами встает вопрос, а как же искать основное состояние этого гамильтониана? В этой лекции рассмотрим <strong>классические</strong> методы решения этой проблемы, то есть без квантовых компьютеров. Рассмотрение этих методов и их недостатков покажет то, зачем тут так нужен будет квантовый компьютер.</p>
 </div>
 <div class="section" id="id3">
@@ -795,7 +800,7 @@ A \Psi_i = e_i \Psi_i
 <p>Таким образом, собственные вектора – это такие вектора, которые при применении оператора не меняют свое направление. Например, в примере ниже собственный вектор – это ось симметрии оператора:</p>
 <div class="figure align-default" id="mona-lisa-eigen">
 <a class="reference internal image-reference" href="../../_images/Mona_Lisa.png"><img alt="../../_images/Mona_Lisa.png" src="../../_images/Mona_Lisa.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 126 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператора не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператора не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -1068,9 +1073,9 @@ D = \begin{bmatrix}
 <div class="section" id="neural-network-quantum-states">
 <h4>Neural Network Quantum States<a class="headerlink" href="#neural-network-quantum-states" title="Permalink to this headline">¶</a></h4>
 <p>Еще более интересный подход к выбору <em>trial wave function</em> – это использование в качестве <span class="math notranslate nohighlight">\(\Psi(X)\)</span> нейронной сети <span id="id15">[<a class="reference internal" href="../bibliography.html#id24"><span>CT17</span></a>]</span>. Уже немного <a class="reference external" href="qmlkindsblock/qmlkinds.html#nqs">касались этой темы</a>, когда речь шла о видах квантового машинного обучения. Хороший вариант, это использовать, например, полносвязную сеть – ограниченную машину Больцмана:</p>
-<div class="figure align-default" id="nqs">
+<div class="figure align-default" id="nqs2">
 <a class="reference internal image-reference" href="../../_images/NQS1.png"><img alt="../../_images/NQS1.png" src="../../_images/NQS1.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">Нейронная сеть в качестве <em>trial wave function</em> из работы <span id="id16">[<a class="reference internal" href="../bibliography.html#id24"><span>CT17</span></a>]</span>.</span><a class="headerlink" href="#nqs" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 128 </span><span class="caption-text">Нейронная сеть в качестве <em>trial wave function</em> из работы <span id="id16">[<a class="reference internal" href="../bibliography.html#id24"><span>CT17</span></a>]</span>.</span><a class="headerlink" href="#nqs2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Это также легко может быть реализовано с использованием библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code>:</p>
 <div class="cell docutils container">

@@ -270,6 +270,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/cirq_tfq.html">
+   🟧 Cirq &amp; TFQ
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../progblock/qiskit.html">
    🟧 Qiskit
   </a>
@@ -768,7 +773,7 @@
 <p>В течение всего курса мы будем говорить преимущественно о комбинированном квантово-классическом машинном обучении, построенном на базе вариационных квантовых схем. Именно он является наиболее перспективным в эпоху <a class="reference internal" href="../glossary.html#term-Noisy-intermediate-scale-quantum-NISQ-NISQ-Hardware"><span class="xref std std-term">NISQ</span></a>. Давайте забежим немного вперед и посмотрим, как выглядит типичный цикл такого обучения.</p>
 <div class="figure align-default" id="vqcdiag">
 <a class="reference internal image-reference" href="../../_images/diagram.png"><img alt="../../_images/diagram.png" src="../../_images/diagram.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 100 </span><span class="caption-text">Пример цикла смешанного обучения</span><a class="headerlink" href="#vqcdiag" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text">Пример цикла смешанного обучения</span><a class="headerlink" href="#vqcdiag" title="Permalink to this image">¶</a></p>
 </div>
 <p>Красным цветом на диаграмме помечены блоки, выполняемые на квантовом устройстве, зеленым – те, что считает обычный компьютер. Квантовая часть, которая включает в себя операторы <span class="math notranslate nohighlight">\(\hat{U}(X)\)</span> и <span class="math notranslate nohighlight">\(\hat{U}(\theta)\)</span>, а также измерение наблюдаемой <span class="math notranslate nohighlight">\(\hat{M}\)</span>, называется вариационной квантовой схемой. Именно ей посвящена данная лекция.</p>
 <p>Но сначала сделаем шаг назад и обсудим в общих чертах идеи, которые лежат в основе квантово-классического обучения.</p>
