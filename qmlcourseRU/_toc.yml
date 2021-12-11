@@ -189,6 +189,13 @@
     - file: book/dwaveblock/dwave
       title: 🟩 Квантовый отжиг и семплирование
 
+- part: QAOA
+  chapters:
+    - file: book/qaoablock/intro
+      title: ⬜ О блоке
+    - file: book/qaoablock/qaoa
+      title: 🟩 QAOA
+
 - part: Перспективы
   chapters:
     - file: book/perspectives/academic_industrial
