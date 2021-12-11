@@ -559,6 +559,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  QAOA
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qaoablock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qaoablock/qaoa.html">
+   🟩 QAOA
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Перспективы
  </span>
 </p>
@@ -774,7 +791,7 @@
 <p>Не зря мы так глубоко изучали <a class="reference internal" href="../problemsblock/ising.html#ising"><span class="std std-ref">модель Изинга</span></a> и <a class="reference internal" href="../problemsblock/advising.html#advising"><span class="std std-ref">анализировали</span></a> ее решения – сегодня увидим, как в терминах этой модели можно сформулировать большинство важных задач <a class="reference internal" href="../problemsblock/copt.html#copt"><span class="std std-ref">комбинаторной оптимизации</span></a>.</p>
 <div class="section" id="qubo">
 <h2>QUBO матрица<a class="headerlink" href="#qubo" title="Permalink to this headline">¶</a></h2>
-<p>Но сначала кратко обсудим так называемую <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрицу <span id="id2">[<a class="reference internal" href="../bibliography.html#id30"><span>GKD19</span></a>]</span> – это еще один способ записать задачу модели Изинга, и дальше по курсу иногда будем этим пользоваться.</p>
+<p>Но сначала кратко обсудим так называемую <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрицу <span id="id2">[<a class="reference internal" href="../bibliography.html#id32"><span>GKD19</span></a>]</span> – это еще один способ записать задачу модели Изинга, и дальше по курсу иногда будем этим пользоваться.</p>
 <p><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> – это сокращение от <strong>Quadratic Unconstrained Binary Optimization</strong>, или, если переводить, то это <em>задача квадратичной оптимизации без ограничений</em>. То есть это такие задачи, для которых нет отдельных ограничений, например, равенств или неравенств, а функция стоимости представима в виде многочлена второй степени от входных переменных. Решением такой задачи является бинарный вектор <span class="math notranslate nohighlight">\(X = \{x_1, x_2, ..., x_n\}\)</span> такой, что <span class="math notranslate nohighlight">\(x_1, ..., x_n \in \{0, 1\}\)</span>. В этом случае функцию стоимости <span class="math notranslate nohighlight">\(C\)</span> можно записать в виде:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -900,7 +917,7 @@ C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} 
 </div>
 <div class="section" id="id11">
 <h2>Задача о выделении сообществ в графе<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p>Уже <a class="reference external" href="../problemsblock/copt.html#id3">говорили об этой задаче</a> в лекции про комбинаторную оптимизацию. Для этой задачи было разработано немало эвристических алгоритмов поиска <span id="id12">[<a class="reference internal" href="../bibliography.html#id58"><span>SCBR14</span></a>]</span>, а в этой части сосредоточимся на формулировке как задачи <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>.</p>
+<p>Уже <a class="reference external" href="../problemsblock/copt.html#id3">говорили об этой задаче</a> в лекции про комбинаторную оптимизацию. Для этой задачи было разработано немало эвристических алгоритмов поиска <span id="id12">[<a class="reference internal" href="../bibliography.html#id61"><span>SCBR14</span></a>]</span>, а в этой части сосредоточимся на формулировке как задачи <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>.</p>
 <div class="section" id="k-2">
 <h3><span class="math notranslate nohighlight">\(k = 2\)</span> сообществ<a class="headerlink" href="#k-2" title="Permalink to this headline">¶</a></h3>
 <p>В случае всего двух сообществ будем использовать двоичные спиновые переменные <span class="math notranslate nohighlight">\(s_i \in \{-1,1\}\)</span> для кодирования того, к какому именно сообществу принадлежит вершина <span class="math notranslate nohighlight">\(i\)</span>. <span class="math notranslate nohighlight">\(\frac{1 + s_is_j}{2}\)</span> будет равняться <span class="math notranslate nohighlight">\(1\)</span>, если <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> принадлежат одному сообществу, и <span class="math notranslate nohighlight">\(0\)</span> – в противном случае. Модулярность при этом будет следующей</p>
@@ -968,7 +985,7 @@ H = H_M + H_p
 <li><p>вариационно-градиентные методы
 В этом подходе попытаемся закодировать волновую функцию основного состояния системы при помощи <a class="reference internal" href="../vqcblock/vqc.html#vqc"><span class="std std-ref">вариационной квантовой схемы</span></a>, а дальше найти такие параметры, которые минимизируют результат измерения гамильтониана в таком состоянии. Этот метод называется <a class="reference internal" href="../vqeblock/vqeintro.html#vqeintro"><span class="std std-ref"><strong>V</strong>ariational <strong>Q</strong>uantum <strong>E</strong>igensolver</span></a>.</p></li>
 <li><p>третий популярный подход соединяет идеи первых двух
-В этом случае также делаем квантовый отжиг, но для этого не строим целевую систему в железе, а производим симуляцию квантовой динамики на кубитах при помощи специальных приближений из области квантовой механики. А параметры “отжига”, как и в <strong>VQE</strong>, подбираем при помощи градиентных методов. Такой подход носит название <span class="xref myst"><strong>Q</strong>uantum <strong>A</strong>pproximate <strong>O</strong>ptimization <strong>A</strong>lgorithm</span>.</p></li>
+В этом случае также делаем квантовый отжиг, но для этого не строим целевую систему в железе, а производим симуляцию квантовой динамики на кубитах при помощи специальных приближений из области квантовой механики. А параметры “отжига”, как и в <strong>VQE</strong>, подбираем при помощи градиентных методов. Такой подход носит название <a class="reference internal" href="../qaoablock/qaoa.html#qaoa"><span class="std std-ref"><strong>Q</strong>uantum <strong>A</strong>pproximate <strong>O</strong>ptimization <strong>A</strong>lgorithm</span></a>.</p></li>
 </ol>
 <p>Именно этим темам будет посвящена бОльшая часть оставшихся лекций.</p>
 </div>

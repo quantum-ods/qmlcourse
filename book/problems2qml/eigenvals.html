@@ -559,6 +559,23 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  QAOA
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qaoablock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qaoablock/qaoa.html">
+   🟩 QAOA
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Перспективы
  </span>
 </p>
@@ -902,7 +919,7 @@ Max E: (1.0000000000000007+0j)
 </div>
 <div class="section" id="id8">
 <h3>Алгоритм Ланкзоша<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>Итерация Ланкзоша (<em>англ.</em> Lanzos) <span id="id9">[<a class="reference internal" href="../bibliography.html#id42"><span>Lan50</span></a>]</span> – это модификация итерации Арнольди, которая работает с эрмитовыми матрицами и находит максимально широкое применение в том числе для квантовых гамильтонианов. Этот алгоритм по умолчанию включен в большинство математических пакетов, включая <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> и, соответственно, <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>:</p>
+<p>Итерация Ланкзоша (<em>англ.</em> Lanzos) <span id="id9">[<a class="reference internal" href="../bibliography.html#id45"><span>Lan50</span></a>]</span> – это модификация итерации Арнольди, которая работает с эрмитовыми матрицами и находит максимально широкое применение в том числе для квантовых гамильтонианов. Этот алгоритм по умолчанию включен в большинство математических пакетов, включая <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> и, соответственно, <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_eigval</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigsh</span><span class="p">(</span><span class="n">spmat</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;LM&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -966,7 +983,7 @@ E = \frac{\int |\Psi(X)|^2 \frac{\hat{H}\Psi(X)}{\Psi(X)} dX}{\int |\Psi(X)|^2 d
 \[
 \Psi(X) = e^{-\sum_{i,j} u(r_i, r_j)},
 \]</div>
-<p>где <span class="math notranslate nohighlight">\(r_i, r_j\)</span> – это радиус-векторы частиц, а <span class="math notranslate nohighlight">\(u(r_i, r_j)\)</span> – симметричная функция, описывающая двухчастичное взаимодействия. Такая функция называется <strong>Jastrow function</strong> <span id="id12">[<a class="reference internal" href="../bibliography.html#id41"><span>Jas55</span></a>]</span>. В этом случае, в процессе работы <strong>VMC</strong> будем просто варьировать радиус-векторы частиц также, как варьировали вершины графа в <a class="reference external" href="../problemsblock/copt.html#id13">обычном отжиге</a>, когда решали задачу комбинаторной оптимизации. Только теперь есть еще и параметризация обменных взаимодействий, которую “варьируем”.</p>
+<p>где <span class="math notranslate nohighlight">\(r_i, r_j\)</span> – это радиус-векторы частиц, а <span class="math notranslate nohighlight">\(u(r_i, r_j)\)</span> – симметричная функция, описывающая двухчастичное взаимодействия. Такая функция называется <strong>Jastrow function</strong> <span id="id12">[<a class="reference internal" href="../bibliography.html#id44"><span>Jas55</span></a>]</span>. В этом случае, в процессе работы <strong>VMC</strong> будем просто варьировать радиус-векторы частиц также, как варьировали вершины графа в <a class="reference external" href="../problemsblock/copt.html#id13">обычном отжиге</a>, когда решали задачу комбинаторной оптимизации. Только теперь есть еще и параметризация обменных взаимодействий, которую “варьируем”.</p>
 </div>
 <div class="section" id="hartree-fock-scf">
 <h4>Hartree-Fock (SCF)<a class="headerlink" href="#hartree-fock-scf" title="Permalink to this headline">¶</a></h4>
@@ -1117,13 +1134,13 @@ D = \begin{bmatrix}
 <p>Преимущества использования нейронной сети трудно показать на таком небольшом примере с моделью Изинга и 10-ю спинами, но они полностью раскрываются, если нужно анализировать более сложные модели.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Это интересно, но при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> можно по сути решать проблемы комбинаторной оптимизации <span id="id17">[<a class="reference internal" href="../bibliography.html#id57"><span>SB19</span></a>]</span> с помощью методов <em>deep learning</em>.</p>
+<p>Это интересно, но при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> можно по сути решать проблемы комбинаторной оптимизации <span id="id17">[<a class="reference internal" href="../bibliography.html#id60"><span>SB19</span></a>]</span> с помощью методов <em>deep learning</em>.</p>
 </div>
 </div>
 </div>
 <div class="section" id="vmc">
 <h3>Проблемы с VMC<a class="headerlink" href="#vmc" title="Permalink to this headline">¶</a></h3>
-<p>К сожалению, у метода <strong>VMC</strong> есть свои проблемы. Это относительно плохая масштабируемость – при росте размерности проблемы для того, чтобы подобрать реально хорошую аппроксимацию потребуется все больше итераций и семплов на каждой из них. Также у <strong>VMC</strong> есть ряд фундаментальных проблем, например, так называемая <em>sign problem</em> <span id="id18">[<a class="reference internal" href="../bibliography.html#id46"><span>LJGS+90</span></a>]</span>.</p>
+<p>К сожалению, у метода <strong>VMC</strong> есть свои проблемы. Это относительно плохая масштабируемость – при росте размерности проблемы для того, чтобы подобрать реально хорошую аппроксимацию потребуется все больше итераций и семплов на каждой из них. Также у <strong>VMC</strong> есть ряд фундаментальных проблем, например, так называемая <em>sign problem</em> <span id="id18">[<a class="reference internal" href="../bibliography.html#id49"><span>LJGS+90</span></a>]</span>.</p>
 </div>
 </div>
 <div class="section" id="id19">
