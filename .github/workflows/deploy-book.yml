@@ -80,6 +80,10 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
+      - name: fix sitemap
+        run: |
+          poetry run python ./tools/fix_sitemap.py ./qmlcourseRU/_build/html/sitemap.xml ./qmlcourseRU/_build/html/sitemap.xml
+
       - name: gh-pages action
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
