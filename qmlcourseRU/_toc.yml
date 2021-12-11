@@ -195,7 +195,7 @@
       title: ⬜ О блоке
     - file: book/qaoablock/qaoa
       title: 🟩 QAOA
-      
+
 - part: Перспективы
   chapters:
     - file: book/perspectives/academic_industrial
