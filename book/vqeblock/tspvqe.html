@@ -868,7 +868,12 @@ NetworkX solution (total cost): 213.0
 </div>
 <div class="section" id="sigma-z-mod">
 <h2>Матрица <span class="math notranslate nohighlight">\(\sigma^z_{mod}\)</span><a class="headerlink" href="#sigma-z-mod" title="Permalink to this headline">¶</a></h2>
-<p>Это бинарный оператор, который <a class="reference external" href="../problems2qml/np2ising.html#id3">ранее вводили</a> в лекции о представлении комбинаторных задач в виде моделей Изинга.</p>
+<p>Это бинарный оператор, который <a class="reference external" href="../problems2qml/np2ising.html#id3">ранее вводили</a> в лекции о представлении комбинаторных задач в виде моделей Изинга.
+Соотношение между <span class="math notranslate nohighlight">\(\sigma^z_{mod}\)</span> и <span class="math notranslate nohighlight">\(\sigma^z\)</span> таково:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\sigma}^z_{mod} = \frac{1 + \hat{\sigma}^z}{2}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigma_z_mod</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
@@ -890,7 +895,27 @@ NetworkX solution (total cost): 213.0
 </div>
 </div>
 </div>
-<p>Напомним, что эта матрица имеет собственные значения 0 и 1, в чем легко убедиться, создав оператор маленькой размерности и вычислив все его собственные значения:</p>
+<p>Для произвольного состояния <span class="math notranslate nohighlight">\(\ket{\psi}\)</span> справедливо</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\sigma}^z_{mod} \ket{\psi} = \frac{1}{2} \ket{\psi} + \frac{1}{2} \hat{\sigma}^z \ket{\psi}
+\]</div>
+<p>Пусть <span class="math notranslate nohighlight">\(\ket{\phi}\)</span> – собственный вектор (собственное состояние) оператора <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span>, соответствующий собственному значению <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\sigma}^z \ket{\phi} = \lambda \ket{\phi}
+\]</div>
+<p>Отсюда следует, что</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\sigma}^z_{mod} \ket{\phi} = \frac{1}{2} \ket{\phi} + \frac{1}{2} \lambda \ket{\phi} = \frac{1 + \lambda}{2} \ket{\phi}
+\]</div>
+<p>Значит,</p>
+<ul class="simple">
+<li><p>собственные векторы <span class="math notranslate nohighlight">\(\hat{\sigma}^z_{mod}\)</span> и <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span> совпадают;</p></li>
+<li><p>соответствующие собственные значения связаны соотношением <span class="math notranslate nohighlight">\(\lambda_{mod} = \frac{1 + \lambda}{2}\)</span>.</p></li>
+</ul>
+<p>Поскольку <span class="math notranslate nohighlight">\(\lambda \in \{-1, +1\}\)</span>, получаем <span class="math notranslate nohighlight">\(\lambda_{mod} \in \{0, 1\}\)</span>. На всякий случай проверим это, создав оператор маленькой размерности и вычислив его собственные значения:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sigma_z_mod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
@@ -904,7 +929,12 @@ NetworkX solution (total cost): 213.0
 </div>
 </div>
 </div>
-<p>Легко убедиться, что собственные операторы <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span> совпадают с собственными операторами <span class="math notranslate nohighlight">\(\sigma^z\)</span>, причем они имеют значение 1, когда спин с номером 2 имеет в битовой строке значение 0 и 1 если он имеет значение 1. Напомню, что у нас 0-индексация, поэтому <code class="docutils literal notranslate"><span class="pre">sigma_z_mod(1,</span> <span class="pre">3)</span></code> значит что-то типа “построй мне матрицу <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>, действующую на второй спин (ну или второй кубит)”.</p>
+<p>Напомню, что у нас zero-based индексация, поэтому <code class="docutils literal notranslate"><span class="pre">sigma_z_mod(1,</span> <span class="pre">3)</span></code> значит что-то типа “построй мне матрицу <span class="math notranslate nohighlight">\(\hat{\sigma}^z_{mod}\)</span>, действующую на второй спин (ну или второй кубит)”.</p>
+<p>Легко убедиться, что</p>
+<ul class="simple">
+<li><p>для <span class="math notranslate nohighlight">\(\lambda_{mod} = 1\)</span> собственный вектор представляется битовой строкой, в которой спин с индексом 1 имеет значение 0;</p></li>
+<li><p>для <span class="math notranslate nohighlight">\(\lambda_{mod} = 0\)</span> собственный вектор представляется битовой строкой, в которой спин с индексом 1 имеет значение 1.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmaz_k</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
