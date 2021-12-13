@@ -964,17 +964,14 @@
 которая и будет определять метод опорных векторов для линейно разделимой выборки (hard margin support vector machine):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{equation}
-\label{eq:svmSep}
-    \left\{
-        \begin{aligned}
-            &amp; \frac{1}{2} \|w\|^2 \to \min_{w, b} \\
-            &amp; y_i \left(
-                \langle w, x_i \rangle + b
-            \right) \geq 1, \quad i = 1, \dots, \ell.
-        \end{aligned}
-    \right.
-\end{equation}
+\left\{
+    \begin{aligned}
+        &amp; \frac{1}{2} \|w\|^2 \to \min_{w, b} \\
+        &amp; y_i \left(
+            \langle w, x_i \rangle + b
+        \right) \geq 1, \quad i = 1, \dots, \ell.
+    \end{aligned}
+\right.
 \end{split}\]</div>
 <p>Здесь мы воспользовались тем, что линейный классификатор дает правильный ответ на примере <span class="math notranslate nohighlight">\(x_i\)</span> тогда и только тогда, когда <span class="math notranslate nohighlight">\(y_i (\langle w, x_i \rangle + b) \geq 0\)</span> (вспомним, что <span class="math notranslate nohighlight">\(M_i = y_i (\langle w, x_i \rangle + b)\)</span> – отступ классификации для примера <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> обучающей выборки). Более того, из условия нормировки <span class="math notranslate nohighlight">\(\min_{x \in X} | \langle w, x \rangle + b| = 1\)</span> следует, что <span class="math notranslate nohighlight">\(y_i (\langle w, x_i \rangle + b) \geq 1\)</span>.</p>
 <p>В данной задаче функционал является строго выпуклым, а ограничения линейными, поэтому сама задача является выпуклой и имеет единственное решение. Более того, задача является квадратичной и может быть решена крайне эффективно.</p>
@@ -1009,18 +1006,15 @@
 <p>Приходим к оптимизационной задаче, соответствующей методу опорных векторов для линейно неразделимой выборки (soft margin support vector machine):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{equation}
-\label{eq:svmUnsep}
-    \left\{
-        \begin{aligned}
-            &amp; \frac{1}{2} \|w\|^2 + C \sum_{i = 1}^{\ell} \xi_i \to \min_{w, b, \xi} \\
-            &amp; y_i \left(
-                \langle w, x_i \rangle + b
-            \right) \geq 1 - \xi_i, \quad i = 1, \dots, \ell, \\
-            &amp; \xi_i \geq 0, \quad i = 1, \dots, \ell.
-        \end{aligned}
-    \right.
-\end{equation}
+\left\{
+    \begin{aligned}
+        &amp; \frac{1}{2} \|w\|^2 + C \sum_{i = 1}^{\ell} \xi_i \to \min_{w, b, \xi} \\
+        &amp; y_i \left(
+            \langle w, x_i \rangle + b
+        \right) \geq 1 - \xi_i, \quad i = 1, \dots, \ell, \\
+        &amp; \xi_i \geq 0, \quad i = 1, \dots, \ell.
+    \end{aligned}
+\right.
 \end{split}\]</div>
 <p>Чем больше здесь параметр <span class="math notranslate nohighlight">\(C\)</span>, тем сильнее мы будем настраиваться на обучающую выборку. Данная задача также является выпуклой и имеет единственное решение.</p>
 <div class="section" id="id9">
@@ -1207,31 +1201,26 @@
 <p>Значит, можно сделать ядерный переход:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{equation}
-    \left\{
-        \begin{aligned}
-            &amp; \sum_{i = 1}^{\ell}
-                \lambda_i
-            -
-            \frac{1}{2} \sum_{i, j = 1}^{\ell}
-                \lambda_i \lambda_j y_i y_j K(x_i, x_j)
-            \to \max_{\lambda} \\
-            &amp; 0 \leq \lambda_i \leq C, \quad i = 1, \dots, \ell, \\
-            &amp; \sum_{i = 1}^{\ell} \lambda_i y_i = 0.
-        \end{aligned}
-    \right.
-\end{equation}
+\left\{
+    \begin{aligned}
+        &amp; \sum_{i = 1}^{\ell}
+            \lambda_i
+        -
+        \frac{1}{2} \sum_{i, j = 1}^{\ell}
+            \lambda_i \lambda_j y_i y_j K(x_i, x_j)
+        \to \max_{\lambda} \\
+        &amp; 0 \leq \lambda_i \leq C, \quad i = 1, \dots, \ell, \\
+        &amp; \sum_{i = 1}^{\ell} \lambda_i y_i = 0.
+    \end{aligned}
+\right.
 \end{split}\]</div>
 <p>Здесь <span class="math notranslate nohighlight">\(K(x_i, x_j)\)</span> – это функция-ядро, определенная на парах векторов, которая должна быть симметричной и неотрицательно определенной (<a class="reference external" href="http://www.machinelearning.ru/wiki/index.php?title=%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%9C%D0%B5%D1%80%D1%81%D0%B5%D1%80%D0%B0">теорема Мерсера</a>).</p>
 <p>Вернемся к тому, какое представление классификатора дает двойственная задача. Из уравнения <a class="reference internal" href="#equation-kucktuckercond1">(12)</a> следует, что вектор весов <span class="math notranslate nohighlight">\(w\)</span> можно представить как линейную комбинацию объектов из обучающей выборки. Подставляя это представление <span class="math notranslate nohighlight">\(w\)</span> в классификатор, получаем</p>
 <div class="math notranslate nohighlight">
 \[
-\begin{equation}
-\label{eq:svmDualClassifier}
-    a(x) = \text{sign} \left(
-        \sum_{i = 1}^{\ell} \lambda_i y_i \langle x_i, x \rangle + b
-    \right).
-\end{equation}
+a(x) = \text{sign} \left(
+    \sum_{i = 1}^{\ell} \lambda_i y_i \langle x_i, x \rangle + b
+\right).
 \]</div>
 <p>Таким образом, классификатор измеряет сходство нового объекта с объектами из обучающей выборки, вычисляя скалярное произведение между ними. Это выражение также зависит только от скалярных произведений, поэтому в нём тоже можно перейти к ядру.</p>
 <div class="admonition note">

@@ -65,7 +65,7 @@ $$
 
 Оказывается, что и это все можно провернуть с помощью известных квантовых преобразований. Принципиальный вид нашей схемы представлен следующим образом:
 
-```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_circuit.svg
+```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_circuit.png
 :name: hhl_curcuit
 :width: 800px
 
@@ -167,7 +167,7 @@ $$
 
 Принципиальная схема QPE выглядит следующим образом:
 
-```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_circuit2.svg
+```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_circuit2.png
 :name: hhl_curcuit2
 :width: 800px
 

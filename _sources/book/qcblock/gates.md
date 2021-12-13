@@ -59,7 +59,7 @@ $$
 
 Поворотные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:
 
-```{figure} /_static/qcblock/qubit/Blochsphere.svg
+```{figure} /_static/qcblock/qubit/Blochsphere.png
 :name: blochsphere
 :width: 400px
 
@@ -335,9 +335,9 @@ print(np.kron(basis, basis).conj().T @ np.kron(pauli_z, pauli_z) @ np.kron(basis
 
 Квантовый гейт контролируемого инвертирования -- это гейт, который действует на два кубита: _рабочий_ и _контрольный_. В зависимости от того, имеет ли контрольный кубит значение 1 или 0, этот гейт инвертирует или не инвертирует рабочий кубит.
 
-```{figure} /_static/qcblock/gates/CNOT_gate.svg
+```{figure} /_static/qcblock/gates/CNOT_gate.png
 :name: cnot
-:width: 400px
+:width: 200px
 
 Гейт CNOT
 ```
