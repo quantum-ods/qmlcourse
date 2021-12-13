@@ -21,6 +21,10 @@ jobs:
       - name: checkout branch for build
         uses: actions/checkout@v2
 
+      - name: install imagemagick
+        run: |
+          sudo apt install -y imagemagick
+
       - name: checkout branch with cache
         uses: actions/checkout@v2
         with:
