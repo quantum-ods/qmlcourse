@@ -86,6 +86,8 @@
       title: 🟩 Алгоритм Дойча
     - file: book/qcalgo/quantum_teleportation
       title: 🟩 Квантовая телепортация
+    - file: book/qcalgo/superdense_coding
+      title: 🟩 Сверхплотное кодирование
     - file: book/qcalgo/grovers_algorithm
       title: 🟧 Алгоритм Гровера
     - file: book/qcalgo/simon_algorithm
@@ -186,6 +188,18 @@
       title: ⬜ О блоке
     - file: book/dwaveblock/dwave
       title: 🟩 Квантовый отжиг и семплирование
+
+- part: QAOA
+  chapters:
+    - file: book/qaoablock/intro
+      title: ⬜ О блоке
+    - file: book/qaoablock/qaoa
+      title: 🟩 QAOA
+
+- part: Перспективы
+  chapters:
+    - file: book/perspectives/academic_industrial
+      title: ⬜ Академия и индустрия
 
 - part: О курсе
   chapters:
