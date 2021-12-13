@@ -236,17 +236,14 @@ $$
 которая и будет определять метод опорных векторов для линейно разделимой выборки (hard margin support vector machine):
 
 $$
-\begin{equation}
-\label{eq:svmSep}
-    \left\{
-        \begin{aligned}
-            & \frac{1}{2} \|w\|^2 \to \min_{w, b} \\
-            & y_i \left(
-                \langle w, x_i \rangle + b
-            \right) \geq 1, \quad i = 1, \dots, \ell.
-        \end{aligned}
-    \right.
-\end{equation}
+\left\{
+    \begin{aligned}
+        & \frac{1}{2} \|w\|^2 \to \min_{w, b} \\
+        & y_i \left(
+            \langle w, x_i \rangle + b
+        \right) \geq 1, \quad i = 1, \dots, \ell.
+    \end{aligned}
+\right.
 $$
 
 Здесь мы воспользовались тем, что линейный классификатор дает правильный ответ на примере $x_i$ тогда и только тогда, когда $y_i (\langle w, x_i \rangle + b) \geq 0$ (вспомним, что $M_i = y_i (\langle w, x_i \rangle + b)$ -- отступ классификации для примера $(x_i, y_i)$ обучающей выборки). Более того, из условия нормировки $\min_{x \in X} | \langle w, x \rangle + b| = 1$ следует, что $y_i (\langle w, x_i \rangle + b) \geq 1$.
@@ -288,18 +285,15 @@ $$
 Приходим к оптимизационной задаче, соответствующей методу опорных векторов для линейно неразделимой выборки (soft margin support vector machine):
 
 $$
-\begin{equation}
-\label{eq:svmUnsep}
-    \left\{
-        \begin{aligned}
-            & \frac{1}{2} \|w\|^2 + C \sum_{i = 1}^{\ell} \xi_i \to \min_{w, b, \xi} \\
-            & y_i \left(
-                \langle w, x_i \rangle + b
-            \right) \geq 1 - \xi_i, \quad i = 1, \dots, \ell, \\
-            & \xi_i \geq 0, \quad i = 1, \dots, \ell.
-        \end{aligned}
-    \right.
-\end{equation}
+\left\{
+    \begin{aligned}
+        & \frac{1}{2} \|w\|^2 + C \sum_{i = 1}^{\ell} \xi_i \to \min_{w, b, \xi} \\
+        & y_i \left(
+            \langle w, x_i \rangle + b
+        \right) \geq 1 - \xi_i, \quad i = 1, \dots, \ell, \\
+        & \xi_i \geq 0, \quad i = 1, \dots, \ell.
+    \end{aligned}
+\right.
 $$
 
 Чем больше здесь параметр $C$, тем сильнее мы будем настраиваться на обучающую выборку. Данная задача также является выпуклой и имеет единственное решение.
@@ -537,20 +531,18 @@ $$
 Значит, можно сделать ядерный переход:
 
 $$
-\begin{equation}
-    \left\{
-        \begin{aligned}
-            & \sum_{i = 1}^{\ell}
-                \lambda_i
-            -
-            \frac{1}{2} \sum_{i, j = 1}^{\ell}
-                \lambda_i \lambda_j y_i y_j K(x_i, x_j)
-            \to \max_{\lambda} \\
-            & 0 \leq \lambda_i \leq C, \quad i = 1, \dots, \ell, \\
-            & \sum_{i = 1}^{\ell} \lambda_i y_i = 0.
-        \end{aligned}
-    \right.
-\end{equation}
+\left\{
+    \begin{aligned}
+        & \sum_{i = 1}^{\ell}
+            \lambda_i
+        -
+        \frac{1}{2} \sum_{i, j = 1}^{\ell}
+            \lambda_i \lambda_j y_i y_j K(x_i, x_j)
+        \to \max_{\lambda} \\
+        & 0 \leq \lambda_i \leq C, \quad i = 1, \dots, \ell, \\
+        & \sum_{i = 1}^{\ell} \lambda_i y_i = 0.
+    \end{aligned}
+\right.
 $$
 
 Здесь $K(x_i, x_j)$ -- это функция-ядро, определенная на парах векторов, которая должна быть симметричной и неотрицательно определенной ([теорема Мерсера](http://www.machinelearning.ru/wiki/index.php?title=Теорема_Мерсера)).
@@ -558,12 +550,9 @@ $$
 Вернемся к тому, какое представление классификатора дает двойственная задача. Из уравнения {eq}`KuckTuckerCond1` следует, что вектор весов $w$ можно представить как линейную комбинацию объектов из обучающей выборки. Подставляя это представление $w$ в классификатор, получаем
 
 $$
-\begin{equation}
-\label{eq:svmDualClassifier}
-    a(x) = \text{sign} \left(
-        \sum_{i = 1}^{\ell} \lambda_i y_i \langle x_i, x \rangle + b
-    \right).
-\end{equation}
+a(x) = \text{sign} \left(
+    \sum_{i = 1}^{\ell} \lambda_i y_i \langle x_i, x \rangle + b
+\right).
 $$
 
 Таким образом, классификатор измеряет сходство нового объекта с объектами из обучающей выборки, вычисляя скалярное произведение между ними. Это выражение также зависит только от скалярных произведений, поэтому в нём тоже можно перейти к ядру.

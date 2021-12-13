@@ -220,7 +220,7 @@ $$ (eq:determ)
 
 $$
 \lambda^{2} - \lambda \left( e^{t+h} + e^{t-h} \right) + e^{2t} - e^{-2t} = 0
-$$ (eq:cheq\)
+$$ (eq:cheq)
 
 решением которого являются два собственных значения:
 

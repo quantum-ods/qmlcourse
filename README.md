@@ -33,6 +33,7 @@
 This is the main repository of the course.
 
 - [About](#about)
+- [Build the book](#build-the-book)
 - [Contributing Guide](#contributing-guide)
 - [Discussions](#discussions)
 - [Course Program](#course-program)
@@ -41,6 +42,19 @@ This is the main repository of the course.
 - [Similar Projects](#similar-projects)
 - [Bibtex](#bibtex)
 - [Legal Issues](#legal-issues)
+
+## Build the book
+
+Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
+
+Linux, xelatex:
+```
+git clone https://github.com/SemyonSinchenko/qmlcourse.git
+cd qmlcourse
+git checkout gh-pages
+cd _build/latex
+xelatex -interaction nonstopmode qmlcourseRU.tex
+```
 
 ## Contributing Guide
 

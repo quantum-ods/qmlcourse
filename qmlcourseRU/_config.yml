@@ -27,14 +27,25 @@ notebook_interface: "notebook"
 
 latex:
   latex_engine: "xelatex"
+  latex_elements:
+    preamble: >-
+      \usepackage{amsmath}
+      \usepackage{unicodemath}
+      \usepackage{hyperref}
+      \usepackage{physics}
+      \usepackage{polyglossia}
+      \setmainlanguage[babelshorthands = true]{russian}
+      \setotherlanguage{english}
+  use_jupyterbook_latex: true
   latex_documents:
-    target.name: qmlcourseRU.tex
+    targetname: qmlcourseRU.tex
 
 sphinx:
   config:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
   extra_extensions:
     - sphinx_sitemap
+    - sphinx_jupyterbook_latex
 
 parse:
   myst_enable_extensions:

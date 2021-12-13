@@ -80,6 +80,11 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
+      - name: build LaTeX files
+        run: |
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          poetry run jupyter-book build ./qmlcourseRU --builder latex
+
       - name: fix sitemap
         run: |
           poetry run python ./tools/fix_sitemap.py ./qmlcourseRU/_build/html/sitemap.xml ./qmlcourseRU/_build/html/sitemap.xml

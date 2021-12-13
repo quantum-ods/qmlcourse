@@ -27,6 +27,7 @@ scp = "^0.14.1"
 sympy = "1.5"
 netket = "^3.2"
 sphinx-sitemap = "^2.2.0"
+sphinx-jupyterbook-latex = "^0.4.6"
 
 
 [tool.poetry.dev-dependencies]
