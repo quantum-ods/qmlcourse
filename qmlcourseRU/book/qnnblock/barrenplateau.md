@@ -125,6 +125,8 @@ We can see that the ansatz is indeed one-dimensional: each qubit is only connect
 
 In [Cerezo et al, 2020](https://arxiv.org/abs/2001.00550), the authors show that if each $2$-qubit unitary of the HEA follows a 2-design and if your cost function is local (more on that later), then you will **not** have any barren plateau if the number of layers grows as $O(log(n))$ (where $n$ is the number of qubits). On the other hand, you will have one if the number of layers grows as $O(poly(n))$. While those laws were only proven in the context of the HEA, they are likely to hold for other types of ansatzes.
 
+So, are barren plateaus destroying all hopes of optimizing deep quantum circuits? Potentially not: correlating parameters in the circuit, for instance by having many gates sharing the same parameter, has been shown to be helpful in mitigating the phenomenon. Therefore, ansatzes such as QAOA might not exhibit any barren plateau. We will discuss that in more details when talking about mitigation strategies.
+
 
 ### When the cost function is global
 
@@ -148,7 +150,9 @@ $$
 
 is global.
 
-A second result from the paper mentionned previously is that global cost functions can lead to barren plateaus for all circuit depths (including constant-depth).
+A second result from the paper mentionned previously is that global cost functions can lead to barren plateaus for all circuit depths (including constant-depth):
+
+![Noise-Induced Barren Plateau](../../_static/qnnblock/global-cost-function.png)
 
 Where do global cost functions appear in variational algorithms? An important example is when maximizing the fidelity between the output of your circuit and a given reference state. For instance, imagine that you want to prepare a state $|\psi\rangle$ at the end of your variational circuit. You can do that by maximizing the fidelity
 
@@ -172,7 +176,12 @@ which involves all the qubits and is therefore global. We will see later how to 
 
 ### When noise is present
 
-Discussion of the noise-induced BP paper
+Barren plateaus can emerge from a completely different reason than random initialization: the presence of noise during the computation. In [Wang et al.](https://arxiv.org/abs/2007.14384), the authors show that a polynomial-depth circuit with local noise after each layer of unitary gates (as represented in the figure below) exhibit a barren plateau phenomenon.
+
+![Noise-Induced Barren Plateau](../../_static/qnnblock/nibp.png)
+
+Their model is very general and includes physically-motivated ansatzes such as QAOA and the Unitary Coupled Cluster ansatz (UCC). In particular, it means that some ansatzes which don't a priori suffer from noise-free barren plateaus (such as QAOA) can actually get vanishing gradients due to noise. This reduces the prospect of training large variational circuits on near-term, non fault-tolerant devices.
+
 
 ### When hidden and visible layers of QNNs are highly entangled
 
@@ -187,6 +196,14 @@ Example of the fidelity.
 ### Architectures with a logarithmic number of layers
 
 Example of the QCNN
+
+### Correlated parameters
+
+Example of QAOA
+
+### Training strategies
+
+[Layerwise learning for quantum neural networks](https://arxiv.org/abs/2006.14904)
 
 ### Initialization strategies
 
@@ -206,6 +223,8 @@ No.
 ### Expressibility vs trainability
 
 ## Conclusion
+
+Barren plateau is only a scalability problem, showing that exponential advantage might be hard to obtain in the NISQ era with variational circuits. However, when working on practical problems, techniques can be used to mitigate its effects, and all hope is not gone that variaitonal circuits can lead to useful applications in the near-term.
 
 ## Resources
 
