@@ -35,7 +35,22 @@ kernelspec:
 Как помним, квантовый гамильтониан является оператором, ставящим в соответствие собственным состояниям системы ее энергии. Множество собственных чисел гамильтониана называется его спектром. В квантовом отжигателе `D-Wave` гамильтониан имеет следующую форму:
 
 $$
-\mathcal{H}_{Ising}=\underbrace{{-A(t)}\left(\sum_{i} \hat{\sigma}_{x}^{(i)}\right)}_{\text {Initial Hamiltonian }}+\underbrace{{B(t)}\left(\sum_{i} h_{i} \hat{\sigma}_{z}^{(i)}+\sum_{i,j} J_{i, j} \hat{\sigma}_{z}^{(i)} \hat{\sigma}_{z}^{(j)}\right)}_{\text {Final Hamiltonian }},
+\mathcal{H}_{Ising} =
+    A(t) \cdot
+    \underbrace{
+        \left( -\sum_{i} \hat{\sigma}_{x}^{(i)} \right)
+    }_{
+        \text{Initial Hamiltonian}
+    }
+    + B(t) \cdot
+    \underbrace{
+        \left(
+            \sum_{i} h_{i} \hat{\sigma}_{z}^{(i)}
+            +\sum_{i,j} J_{i, j} \hat{\sigma}_{z}^{(i)} \hat{\sigma}_{z}^{(j)}
+        \right)
+    }_{
+        \text{Final Hamiltonian}
+    },
 $$
 
 где $A(t)$, $B(t)$ являются функциями от времени $t \in [0, T]$, $\hat{\sigma}_{x, z}^{(i)}$ -- операторами Паули, действующими на кубиты, а $h_i$ и $J_{i,j}$ -- локальными полями и взаимодействиями кубитов соответственно. Физически, вектор $h$ соответствует внешнему магнитному полю, применимому к каждому кубиту. В свою очередь, матрица $J$ отвечает за попарные $ZZ$ взаимодействия кубитов. Функции $A(t)$, $B(t)$ должны быть такими, что $A(0)=B(T)=1$, $A(T)=B(0)=0$, то есть гамильтониан со временем полностью переходит из $\mathcal{H}_{Initial}$ в $\mathcal{H}_{Final}$. Вид этих функций называется расписанием отжига или `annealing schedule`.
