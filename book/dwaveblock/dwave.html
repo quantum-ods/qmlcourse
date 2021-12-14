@@ -781,7 +781,22 @@
 <p>Как помним, квантовый гамильтониан является оператором, ставящим в соответствие собственным состояниям системы ее энергии. Множество собственных чисел гамильтониана называется его спектром. В квантовом отжигателе <code class="docutils literal notranslate"><span class="pre">D-Wave</span></code> гамильтониан имеет следующую форму:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{H}_{Ising}=\underbrace{{-A(t)}\left(\sum_{i} \hat{\sigma}_{x}^{(i)}\right)}_{\text {Initial Hamiltonian }}+\underbrace{{B(t)}\left(\sum_{i} h_{i} \hat{\sigma}_{z}^{(i)}+\sum_{i,j} J_{i, j} \hat{\sigma}_{z}^{(i)} \hat{\sigma}_{z}^{(j)}\right)}_{\text {Final Hamiltonian }},
+\mathcal{H}_{Ising} =
+    A(t) \cdot
+    \underbrace{
+        \left( -\sum_{i} \hat{\sigma}_{x}^{(i)} \right)
+    }_{
+        \text{Initial Hamiltonian}
+    }
+    + B(t) \cdot
+    \underbrace{
+        \left(
+            \sum_{i} h_{i} \hat{\sigma}_{z}^{(i)}
+            +\sum_{i,j} J_{i, j} \hat{\sigma}_{z}^{(i)} \hat{\sigma}_{z}^{(j)}
+        \right)
+    }_{
+        \text{Final Hamiltonian}
+    },
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(A(t)\)</span>, <span class="math notranslate nohighlight">\(B(t)\)</span> являются функциями от времени <span class="math notranslate nohighlight">\(t \in [0, T]\)</span>, <span class="math notranslate nohighlight">\(\hat{\sigma}_{x, z}^{(i)}\)</span> – операторами Паули, действующими на кубиты, а <span class="math notranslate nohighlight">\(h_i\)</span> и <span class="math notranslate nohighlight">\(J_{i,j}\)</span> – локальными полями и взаимодействиями кубитов соответственно. Физически, вектор <span class="math notranslate nohighlight">\(h\)</span> соответствует внешнему магнитному полю, применимому к каждому кубиту. В свою очередь, матрица <span class="math notranslate nohighlight">\(J\)</span> отвечает за попарные <span class="math notranslate nohighlight">\(ZZ\)</span> взаимодействия кубитов. Функции <span class="math notranslate nohighlight">\(A(t)\)</span>, <span class="math notranslate nohighlight">\(B(t)\)</span> должны быть такими, что <span class="math notranslate nohighlight">\(A(0)=B(T)=1\)</span>, <span class="math notranslate nohighlight">\(A(T)=B(0)=0\)</span>, то есть гамильтониан со временем полностью переходит из <span class="math notranslate nohighlight">\(\mathcal{H}_{Initial}\)</span> в <span class="math notranslate nohighlight">\(\mathcal{H}_{Final}\)</span>. Вид этих функций называется расписанием отжига или <code class="docutils literal notranslate"><span class="pre">annealing</span> <span class="pre">schedule</span></code>.</p>
 <div class="figure align-default" id="fig-1">
