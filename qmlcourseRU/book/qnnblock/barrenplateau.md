@@ -195,7 +195,18 @@ Example of the fidelity.
 
 ### Architectures with a logarithmic number of layers
 
-Example of the QCNN
+While having a local cost-function is necessary to fight barren plateaus, it might not completely resolve it if your circuit is too deep. Therefore, looking at circuits with a logarithmic number of layers is a simple solution to mitigate the barren plateau effect. But which ansatzes naturally have a logarithmic number of layers? There is at least one that has gathered some tractions in the field, namely the [quantum convolutional neural network (QCNN)](https://arxiv.org/abs/1810.03787):
+
+![Noise-Induced Barren Plateau](../../_static/qnnblock/qcnn.png)
+
+This architecture is made to process quantum data, i.e. data that are given as quantum states coming from the output of a quantum experiment, such as a previous quantum algorithm or some quantum sensors. For instance, after having run a quantum algorithm computing the ground-state of a Hamiltonian, you might want to know some properties of this ground-state, such as its energy, the phase of matter it belongs to, etc. One way to obtain this information is to perform quantum state tomography, which will give you the full quantum state as a classical vector of dimension $2^n$, that you can then process classically. Another possibility is to run a quantum algorithm that directly outputs this property, such as a variational circuit trained to do so.
+Machine learning on quantum data is a promising research direction, where a form of quantum advantage [can be rigorously proven](https://arxiv.org/abs/2112.00778).
+
+QCNNs are models that take a state $\rho_{i}$ as input and output a target number $\hat{y}$, that can for instance represent the phase of matter $\rho_{\text{in}}$ belongs to (e.g. ferromagnetic if $\hat{y} = 0$ vs paramagnetic if $\hat{y}=1$). The ansatz is made of a succession of "convolutional blocks" and "pooling blocks". Each convolutional block consists in a 1D arrangement of two-qubit unitaries, similar to the hardware-efficient ansatz. However, all the unitaries of a given block share the same parameters, making the whole block translationally invariant. The name *convolutional* comes precisely from the fact that convolutions can be defined as operations having a translational symmetry (see this [amazing blog post](https://towardsdatascience.com/deriving-convolution-from-first-principles-4ff124888028) by Michael Bronstein for more details). Each convolutional block is followed by a "pooling layer" (by analogy with the classical CNN jargon), where conditional measurements are performed to reduce the dimensionality of the state.
+
+As a consequence, the total depth of the QCNN is logarithmic, and we can therefore expect an absence of barren plateaus. This was proven more rigorously in [Pesah et al.](https://arxiv.org/abs/2011.02966): the gradient is at least greater than $O\left(\frac{1}{n^{\alpha}}\right)$ with $\alpha > 0$, so there is no exponential vanishing.
+
+While discovering a quantum advantage for QCNNS is still an open problem, we at least known that training shouldn't be the main issue to make this architecture work.
 
 ### Correlated parameters
 
@@ -205,9 +216,13 @@ Example of QAOA
 
 [Layerwise learning for quantum neural networks](https://arxiv.org/abs/2006.14904)
 
+Natural gradient and hessian methods: in [Huembeli et al.](https://arxiv.org/abs/2008.02785), it was shown that two techniques, natural gradient descent and learning rate adapation using the Hessian matrix, lead to an improve convergence time. It was then argued that the reason was probably a mitigated barren plateau effect.
+
 ### Initialization strategies
 
 Paper by UCL team. However, unlikely to really help, see next section.
+
+### Error mitigation against noise-induced barren plateau
 
 ## Landscape of variational circuits
 
@@ -216,11 +231,17 @@ Unfortunately, evidence seem to converge to a negative answer: the barren platea
 
 ### Barren plateaus and narrow gorges
 
-### Could gradient-free or second-order optimizers help navigate the landscape?
+[Paper](https://arxiv.org/abs/2104.05868)
 
-No.
+### Could better optimizers help navigate the landscape?
+
+When reading about barren plateaus, something might have crossed your mind: if the barren plateau problem is mostly related to the magnitude of the gradient, why not using an other type of optimization technique that don't rely directly or uniquely on the gradient. For instance, optimizers such as Nelder-Mead don't require any gradient information. Moreover, some optimizers discussed previously such as quantum natural gradient descent and hessian-based methods are rescaling the gradient and could therefore in principle improve its scaling.
+
+While those techniques might have an effect on small systems, it is unlikely that they will change the overall scaling of the problem, as shown in a [recent paper](https://arxiv.org/pdf/2008.07454.pdf).
 
 ### Expressibility vs trainability
+
+[Paper](https://arxiv.org/abs/2101.02138)
 
 ## Conclusion
 
