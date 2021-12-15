@@ -17,7 +17,7 @@
 - [Бурдейный Дмитрий](https://github.com/dmburd)
 - [Желтоножский Евгений](https://github.com/Randl)
 - [Карелин Николай](https://github.com/karelin)
-- [Кашницкий Юрий](https://github.com/yorko)
+- [Кашницкий Юрий](https://github.com/Yorko)
 - [Котенков Игорь](https://github.com/stalkermustang)
 - [Лукьяненко Андрей](https://github.com/Erlemar)
 - [Овсянникова Александра](https://github.com/alexmorphine)
