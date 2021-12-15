@@ -16,7 +16,7 @@ kernelspec:
 
 Автор(ы):
 
--
+- [Синченко Семен](https://github.com/SemyonSinchenko)
 
 
 ## Введение

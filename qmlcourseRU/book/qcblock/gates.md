@@ -16,7 +16,8 @@ kernelspec:
 
 Автор(ы):
 
--
+- [Синченко Семен](https://github.com/SemyonSinchenko)
+- [Беседин Илья](https://github.com/ooovector)
 
 
 ## Описание лекции

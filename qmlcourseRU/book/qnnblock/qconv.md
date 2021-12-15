@@ -16,7 +16,7 @@ kernelspec:
 
 Автор(ы):
 
--
+- [Петров Вадим](https://github.com/belgraviton)
 
 
 ## Описание лекции
