@@ -15,6 +15,7 @@ kernelspec:
 
 Автор(ы):
 
+- [Озерин Алексей](https://github.com/m12sl)
 - [Пронькин Алексей](https://github.com/alexey-pronkin)
 
 
@@ -63,7 +64,7 @@ $$
 Также имеет смысл и переставленная запись Ket-Bra, которая называется [_внешним произведением_](https://en.wikipedia.org/wiki/Outer_product):
 
 $$
-\ket{u} \bra{v} = \begin{bmatrix} u_1^* & u_2^* & \cdots & u_N^* \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{bmatrix} = \begin{bmatrix}
+\ket{u} \bra{v} = \begin{bmatrix} u_1^* \\ u_2^* \\ \cdots \\ u_N^* \end{bmatrix} \begin{bmatrix} v_1 & v_2 & \vdots & v_N \end{bmatrix} = \begin{bmatrix}
   u_1^* v_1 & u_1^* v_2 & \cdots & u_1^* v_N \\
   u_2^* v_1 & u_2^* v_2 & \cdots & u_2^* v_N \\
   \vdots & \cdots &  \ddots & \vdots\\
