@@ -30,7 +30,7 @@
 - [Никита Щуцкий](https://github.com/magnus-the-collectioner)
 - [Семен Синченко](https://github.com/SemyonSinchenko)
 - [Сергей Ширкин](https://github.com/SergeiShirkin)
-- [Юрий Кашницкий](https://github.com/alexey-pronkin)
+- [Юрий Кашницкий](https://github.com/yorko)
 
 ## Основные ревьюеры
 
