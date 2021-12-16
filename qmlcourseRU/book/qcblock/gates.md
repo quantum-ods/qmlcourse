@@ -14,6 +14,12 @@ kernelspec:
 
 # Квантовые гейты
 
+Автор(ы):
+
+- [Синченко Семен](https://github.com/SemyonSinchenko)
+- [Беседин Илья](https://github.com/ooovector)
+
+
 ## Описание лекции
 
 Из этой лекции мы узнаем:

@@ -14,6 +14,13 @@ kernelspec:
 
 # Смешанные состояния и матрицы плотности
 
+Автор(ы):
+
+- [Карелин Николай](https://github.com/karelin)
+- [Синченко Семен](https://github.com/SemyonSinchenko)
+- [Беседин Илья](https://github.com/ooovector)
+
+
 ## Описание лекции
 
 Из этой лекции мы узнаем:
