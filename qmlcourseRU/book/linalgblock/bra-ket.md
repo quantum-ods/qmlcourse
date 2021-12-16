@@ -16,7 +16,6 @@ kernelspec:
 Автор(ы):
 
 - [Озерин Алексей](https://github.com/m12sl)
-
 - [Пронькин Алексей](https://github.com/alexey-pronkin)
 
 
