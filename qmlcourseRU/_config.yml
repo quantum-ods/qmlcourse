@@ -56,6 +56,6 @@ bibtex_bibfiles:
   - _bibliography/references.bib
 
 repository:
-  url: https://github.com/SemyonSinchenko/qmlcourse
+  url: https://github.com/quantum-ods/qmlcourse
   path_to_book: qmlcourseRU
   branch: master
