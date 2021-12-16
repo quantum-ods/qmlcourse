@@ -1,7 +1,7 @@
 <img src="./qmlcourseRU/logo.svg" align="left" width="178" height="178"></img>
 
 # QMLCourse
-<a href="https://semyonsinchenko.github.io/qmlcourse/book/index.html">
+<a href="https://quantum-ods.github.io/qmlcourse/book/index.html">
     <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fquantum-ods.github.io%2Fqmlcourse%2Fbook%2Findex.html">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse">
@@ -9,17 +9,17 @@
 </a>
 
 <p align="left">
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/blob/master/LICENSE">
+  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
     <img alt="shield_license" src="https://img.shields.io/badge/license-CC--BY--4.0-brightgreen">
   </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/discussions">
-    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/SemyonSinchenko/qmlcourse">
+  <a href="https://github.com/quantum-ods/qmlcourse/discussions">
+    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/quantum-ods/qmlcourse">
   </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit.yml">
-    <img alt="pre_commit" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
+    <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml">
-    <img alt="deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
+    <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
 </p>
 </br>
@@ -62,7 +62,7 @@ Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contr
 
 ## Discussions
 
-Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions).
+Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/quantum-ods/qmlcourse/discussions).
 
 ## Course Program
 
@@ -78,9 +78,9 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Team
 
-The main authors, reviewers, editors, DevOps you can find [here](https://semyonsinchenko.github.io/qmlcourse/_build/html/book/authors.html).
+The main authors, reviewers, editors, DevOps you can find [here](https://quantum-ods.github.io/qmlcourse/book/authors.html).
 
-Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
+Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/quantum-ods/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
 
 Also, all authors for some updates are participants special channel into community [ods.ai](http://ods.ai), join filling the form and write your nickname to orgs to add you to the channel.
 
