@@ -2,6 +2,13 @@
 
 # Quantum Approximate Optimization Algorithm
 
+Автор(ы):
+
+- [Решетова Карина](https://github.com/Carinetta)
+- [Синченко Семен](https://github.com/SemyonSinchenko)
+- [Березутский Александр](https://github.com/meandmytram)
+
+
 ## Введение
 
 В лекции рассматривается еще один алгоритм для приближенного решения [$NP$-задач комбинаторный оптимизации](copt), который называется **Q**auntum **A**pproximate **O**ptimization **A**lgorithm (далее **QAOA**) {cite}`farhi2014quantum`.

@@ -794,6 +794,11 @@
                 
   <div class="section" id="bra-ket">
 <span id="id1"></span><h1>Скобки<a class="headerlink" href="#bra-ket" title="Permalink to this headline">¶</a></h1>
+<p>Автор(ы):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/m12sl">Озерин Алексей</a></p></li>
+<li><p><a class="reference external" href="https://github.com/alexey-pronkin">Пронькин Алексей</a></p></li>
+</ul>
 <p>Дисклеймер: нам нужен инструментарий для работы с более абстрактными пространствами!</p>
 <p>Символ Кронекера и остальные специальные тензора – это удобные примитивы для низкоуровневой работы с матрицами и векторами. Физики смогли придумать поверх примитивов линейной алгебры отличный синтаксический сахар, т.н. нотацию Дирака. Но давайте начнем с определения гильбертова пространства.</p>
 <div class="section" id="id2">
@@ -836,7 +841,7 @@
 <p>Также имеет смысл и переставленная запись Ket-Bra, которая называется <a class="reference external" href="https://en.wikipedia.org/wiki/Outer_product"><em>внешним произведением</em></a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\ket{u} \bra{v} = \begin{bmatrix} u_1^* &amp; u_2^* &amp; \cdots &amp; u_N^* \end{bmatrix} \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{bmatrix} = \begin{bmatrix}
+\ket{u} \bra{v} = \begin{bmatrix} u_1^* \\ u_2^* \\ \cdots \\ u_N^* \end{bmatrix} \begin{bmatrix} v_1 &amp; v_2 &amp; \vdots &amp; v_N \end{bmatrix} = \begin{bmatrix}
   u_1^* v_1 &amp; u_1^* v_2 &amp; \cdots &amp; u_1^* v_N \\
   u_2^* v_1 &amp; u_2^* v_2 &amp; \cdots &amp; u_2^* v_N \\
   \vdots &amp; \cdots &amp;  \ddots &amp; \vdots\\
