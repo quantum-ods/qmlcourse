@@ -16,7 +16,7 @@ html:
   home_page_in_navbar: true
   use_repository_button: true
   use_issues_button: true
-  baseurl: https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html
+  baseurl: https://quantum-ods.github.io/qmlcourse/book/
   google_analytics_id: UA-51362752-1
 
 notebook_interface: "notebook"
