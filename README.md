@@ -49,7 +49,7 @@ Building the PDF-version of the book is very time-expensive and could not be aut
 
 Linux, xelatex:
 ```
-git clone https://github.com/SemyonSinchenko/qmlcourse.git
+git clone https://github.com/quantum-ods/qmlcourse.git
 cd qmlcourse
 git checkout gh-pages
 cd _build/latex
