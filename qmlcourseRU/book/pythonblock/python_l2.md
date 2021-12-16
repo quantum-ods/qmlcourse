@@ -17,6 +17,7 @@ kernelspec:
 Автор(ы):
 
 - [Котенков Игорь](https://github.com/stalkermustang)
+- [Дмитрий Коржов](https://github.com/dkorzhov)
 
 
 ## Описание лекции

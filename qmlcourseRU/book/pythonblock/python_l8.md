@@ -16,7 +16,7 @@ kernelspec:
 
 Автор(ы):
 
--
+- [Овсянникова Александра](https://github.com/alexmorphine)
 
 
 ## Описание лекции
