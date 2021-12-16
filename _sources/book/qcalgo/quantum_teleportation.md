@@ -16,6 +16,7 @@ kernelspec:
 
 Автор(ы):
 
+- [Решетова Карина](https://github.com/Carinetta)
 - [Токарев Игорь](https://github.com/polyzer)
 
 
