@@ -105,7 +105,7 @@ To join the ODS-community slack you need to fill the form [here](https://ods.ai/
   title = {Quantum Machine Learning Course},
   year = {2021},
   publisher = {GitHub},
-  howpublished = {\url{https://github.com/quantum-ods/qmlcourse.ai}},
+  howpublished = {\url{https://github.com/quantum-ods/qmlcourse}},
 }
 ```
 
