@@ -41,7 +41,6 @@ This is the main repository of the course.
 - [Team](#team)
 - [Join ODS](#join-ods)
 - [Similar Projects](#similar-projects)
-- [Bibtex](#bibtex)
 - [Legal Issues](#legal-issues)
 
 ## Build the book
@@ -95,43 +94,6 @@ To join the ODS-community slack you need to fill the form [here](https://ods.ai/
 - [Qiskit-textbook](https://github.com/qiskit-community/qiskit-textbook) [ENG]: a textbook about learning quantum computing with qiskit. Compared to this project our course is more about ML, not the quantum protocols and algorithms. Also, we use `PennyLane` as the main quantum framework because it could be used with different backends including `Qiskit` and `CirQ`.
 - [CERN Introductory Course](https://home.cern/news/announcement/computing/online-introductory-lectures-quantum-computing-6-november) [ENG]: A series of weekly lectures on the basics of quantum computing. The talks focus on the practical aspects of quantum computing and are organised by CERN openlab and the CERN Quantum Technology Initiative. They are given by Elias Fernandez-Combarro Alvarez, an associate professor in the Computer Science Department at the University of Oviedo in Spain since 2009 and a cooperation associate at CERN since earlier this year. Compared to that lectures our course is more practice and programming oriented. Also our course is open source and maintained by community compared to the CERN course which is maintained by the author Dr. Alvarez.
 - [CERN Introductory Course (adopted version in russian)](https://russol.info/quantum) [RU]: The same as above but in russian and better adopted for entry-level poeple. Lectures are splitted to short parts and notes are commented and illustrated.
-
-## Bibtex
-
-```bibtex
-@misc{qmlcourse2021,
-  author = {
-            Sinchenko, Semyon and
-            Kashnitsky, Yury and
-            Trokhymenko, Viktor and
-            Bazhanov, Dmitry and
-            Berezutskii, Aleksandr and
-            Zimka, Boris and
-            Besedin, Ilya and
-            Burdeiny, Dmitry and
-            Zheltonozhskii, Evgenii and
-            Karelin, Nikolay and
-            Kotenkov, Igor and
-            Lukyanenko, Andrey and
-            Ovsyannikova, Alexandra and
-            Ozerin, Alex and
-            Piatrou, Vadzim and
-            Pronkin, Alexey and
-            Reshetova, Carina and
-            Senderovich, Leonid and
-            Tokarev, Igor and
-            Shirkin, Sergei and
-            Shchutski, Mikita and
-            El-Ayyass, Dani and
-            Markova, Natalya and
-            Korzhov, Dmitry and
-  },
-  title = {Quantum Machine Learning Course},
-  year = {2021},
-  publisher = {GitHub},
-  howpublished = {\url{https://github.com/quantum-ods/qmlcourse}},
-}
-```
 
 ## Legal Issues
 
