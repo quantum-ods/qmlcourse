@@ -1,7 +1,8 @@
 import os
 import sys
 import time
-from subprocess import PIPE, Popen
+from subprocess import PIPE
+from subprocess import Popen
 
 import jinja2
 import paramiko
@@ -29,7 +30,7 @@ if __name__ == "__main__":
 
     print("Get all folders/branches...")
     stdin, stdout, stderr = ssh_client.exec_command(f"ls {remote_path}")
-    print(f"Done.")
+    print("Done.")
 
     existed_branches = []
     for f_ in stdout.readlines():
@@ -55,13 +56,9 @@ if __name__ == "__main__":
     print("Done.")
 
     ftp_client = ssh_client.open_sftp()
-    ftp_client.put(
-        os.path.join(course_root, "index.html"), os.path.join(remote_path, "index.html")
-    )
+    ftp_client.put(os.path.join(course_root, "index.html"), os.path.join(remote_path, "index.html"))
 
-    print(
-        f"Execute local: tar -zcf {course_root}/build.tar.gz {course_root}/qmlcourseRU/_build/"
-    )
+    print(f"Execute local: tar -zcf {course_root}/build.tar.gz {course_root}/qmlcourseRU/_build/")
     process = Popen(
         [
             "tar",
@@ -85,38 +82,30 @@ if __name__ == "__main__":
     )
     print("Done.")
 
-    print(
-        f"execute tar -xzf {remote_path}/build.tar.gz --directory {remote_path}/{branch_name}"
-    )
+    print(f"execute tar -xzf {remote_path}/build.tar.gz --directory {remote_path}/{branch_name}")
     stdin, stdout, stderr = ssh_client.exec_command(
-        f"tar -xzf {remote_path}/build.tar.gz --directory {remote_path}/{branch_name}"
+        f"tar -xzf {remote_path}/build.tar.gz --directory {remote_path}/{branch_name}",
     )
     time.sleep(3)
     print(f"stdout: {stdout}")
     print(f"stderr: {stderr}")
 
     print(f"Execute rm -r {remote_path}/{branch_name}/_build")
-    stdin, stdout, stderr = ssh_client.exec_command(
-        f"rm -r {remote_path}/{branch_name}/_build"
-    )
+    stdin, stdout, stderr = ssh_client.exec_command(f"rm -r {remote_path}/{branch_name}/_build")
     time.sleep(3)
     print(f"stdout: {stdout}")
     print(f"stderr: {stderr}")
 
-    print(
-        f"Execute mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/"
-    )
+    print(f"Execute mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/")
     stdin, stdout, stderr = ssh_client.exec_command(
-        f"mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/"
+        f"mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/",
     )
     time.sleep(3)
     print(f"stdout: {stdout}")
     print(f"stderr: {stderr}")
 
     print(f"Execute rm -r {remote_path}/{branch_name}/qmlcourseRU")
-    stdin, stdout, stderr = ssh_client.exec_command(
-        f"rm -r {remote_path}/{branch_name}/qmlcourseRU"
-    )
+    stdin, stdout, stderr = ssh_client.exec_command(f"rm -r {remote_path}/{branch_name}/qmlcourseRU")
     time.sleep(3)
     print(f"stdout: {stdout}")
     print(f"stderr: {stderr}")
