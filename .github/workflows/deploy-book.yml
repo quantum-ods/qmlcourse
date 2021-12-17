@@ -89,10 +89,6 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU --builder latex
 
-#       - name: fix sitemap
-#         run: |
-#           poetry run python ./tools/fix_sitemap.py ./qmlcourseRU/_build/html/sitemap.xml ./qmlcourseRU/_build/html/sitemap.xml
-
       - name: gh-pages action
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
@@ -105,15 +101,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/html/
           publish_branch: pages-gh
-
-#       - name: Build PDF file
-#         run: |
-#           poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
-#           mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/all_book.pdf
-
-#       - name: Deploy only pdf files
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./qmlcourseRU/_build/pdf/
-#           destination_dir: pdf
