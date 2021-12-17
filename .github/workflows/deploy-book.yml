@@ -13,7 +13,6 @@ on:
 jobs:
 
   deploy_book:
-  
     runs-on: ubuntu-latest
     env:
       TF_CPP_MIN_LOG_LEVEL: 3
