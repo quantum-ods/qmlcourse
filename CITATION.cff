@@ -2,7 +2,7 @@ cff-version: 1.2.0
 
 title: "Quantum Machine Learning Course"
 version: 0.1
-data: 2021
+date-released: 2021-10-25
 url: "https://github.com/quantum-ods/qmlcourse"
 
 authors:
