@@ -1,12 +1,15 @@
 cff-version: 1.2.0
 
-message: "If you use this content, please cite it as below."
+title: "Quantum Machine Learning Course"
+version: 0.1
+data: 2021
+url: "https://github.com/quantum-ods/qmlcourse"
 
 authors:
 - family-names: "Sinchenko"
   given-names: "Semyon"
-- family-names: "Kashnitskyx"
-  given-names: "Kashnitsky"
+- family-names: "Kashnitsky"
+  given-names: "Yury"
 - family-names: "Trokhymenko"
   given-names: "Viktor"
 - family-names: "Bazhanov"
@@ -51,8 +54,3 @@ authors:
   given-names: "Natalya"
 - family-names: "Korzhov"
   given-names: "Dmitry"
-
-title: "Quantum Machine Learning Course"
-version: 0.1
-date-released: 2021-10-25
-url: "https://github.com/quantum-ods/qmlcourse"
