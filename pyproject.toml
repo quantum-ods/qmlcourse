@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "qmlcourse.ai"
+name = "qmlcourse"
 version = "0.1.1"
 description = ""
 authors = ["SemyonSinchenko <semyonsinchenko@yahoo.com>"]
