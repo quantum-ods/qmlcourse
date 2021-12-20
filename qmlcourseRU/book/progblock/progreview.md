@@ -228,7 +228,7 @@ result = job.result()
 
 # Returns counts
 counts = result.get_counts(compiled_circuit)
-print("\nTotal count for 00 and 11 are:",counts)
+print(f"\nTotal count for 00 and 11 are: {counts}")
 
 # Draw the circuit
 qml.drawer.use_style("default")
