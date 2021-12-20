@@ -80,17 +80,17 @@ for p in [0 : points-1] {
 from pyquil import get_qc, Program
 from pyquil.gates import CNOT, H, MEASURE
 
-qvm = get_qc('2q-qvm')
+qvm = get_qc("2q-qvm")
 
 p = Program()
 p += H(0)
 p += CNOT(0, 1)
-ro = p.declare('ro', 'BIT', 2)
+ro = p.declare("ro", "BIT", 2)
 p += MEASURE(0, ro[0])
 p += MEASURE(1, ro[1])
 p.wrap_in_numshots_loop(10)
 
-qvm.run(p).readout_data['ro'].tolist()
+qvm.run(p).readout_data["ro"].tolist()
 ```
 
 Пример взят из официального репозитория.
@@ -231,8 +231,9 @@ counts = result.get_counts(compiled_circuit)
 print("\nTotal count for 00 and 11 are:",counts)
 
 # Draw the circuit
-qml.drawer.use_style('default')
+qml.drawer.use_style("default")
 fig, ax = qml.draw_mpl(circuit)()
+fig.show()
 ```
 
 Код, написанный на `Qiskit` может быть запущен на квантовых компьютерах от компании `IBM.` Для изучения квантовых вычислений с экосистемой `Qsikit` можно рекомендовать [прекрасную онлайн книгу](https://qiskit.org/textbook/what-is-quantum.html). Более подробный обзор библиотеки также [в отдельной лекции нашего курса](./qiskit.md).
@@ -245,7 +246,7 @@ fig, ax = qml.draw_mpl(circuit)()
 import pennylane as qml
 from pennylane import numpy as np
 
-dev = qml.device('default.qubit', shots=1000, wires=2)
+dev = qml.device("default.qubit", shots=1000, wires=2)
 
 def make_entanglement():
     qml.Hadamard(wires=0)
