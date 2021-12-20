@@ -7,7 +7,7 @@ jobs:
 
   deploy_branch:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 24
 
     steps:
       - name: checkout code
