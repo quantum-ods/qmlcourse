@@ -22,7 +22,7 @@ html:
 notebook_interface: "notebook"
 
 # repository:
-#   url: https://github.com/SemyonSinchenko/qmlcourse.ai
+#   url: https://github.com/quantum-ods/qmlcourse
 #   path_to_book: "qmlcourseRU"
 
 latex:

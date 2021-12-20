@@ -45,7 +45,7 @@ Those who don't satisfy the requirements for core reviewers, but still want to r
 
 ### Authors
 
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks.
+Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/quantum-ods/qmlcourse/issues) to pick up one of the open tasks.
 
 ### Editors
 
@@ -116,7 +116,7 @@ If you are not familiar with GitHub, please take [a short course](https://learng
 
 ## Content review
 
-Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master` branch. For example, see [Pull Request #1](https://github.com/SemyonSinchenko/qmlcourse.ai/pull/1) with lecture #1 material.
+Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master` branch. For example, see [Pull Request #1](https://github.com/quantum-ods/qmlcourse/pull/1) with lecture #1 material.
 
 Every PR needs to have at least 4 approvals and at least 1 of them from a Core Reviewer. If you see a Pull Request and want to review it you can add yourself as a reviewer.
 
@@ -124,7 +124,7 @@ The review process depends on whether a reviewer is familiar with GitHub or not.
 
 ### Reviewing without commits (no git fluency required)
 
-Go to a Pull Request with lecture content (e.g. [this one](https://github.com/SemyonSinchenko/qmlcourse.ai/pull/3/files) for lecture 2), further visit the `Files Changed` tab and add your reviewer comments to specific lines.
+Go to a Pull Request with lecture content (e.g. [this one](https://github.com/quantum-ods/qmlcourse/pull/3/files) for lecture 2), further visit the `Files Changed` tab and add your reviewer comments to specific lines.
 
 Example:
 

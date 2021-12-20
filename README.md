@@ -33,7 +33,6 @@
 
 This is the main repository of the course.
 
-- [About](#about)
 - [Build the book](#build-the-book)
 - [Contributing Guide](#contributing-guide)
 - [Discussions](#discussions)
@@ -48,6 +47,7 @@ This is the main repository of the course.
 Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
 
 Linux, xelatex:
+
 ```
 git clone https://github.com/quantum-ods/qmlcourse.git
 cd qmlcourse
@@ -80,7 +80,7 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 The main authors, reviewers, editors, DevOps you can find [here](https://quantum-ods.github.io/qmlcourse/book/authors.html).
 
-Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/quantum-ods/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
+Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/quantum-ods/qmlcourse/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
 
 Also, all authors for some updates are participants special channel into community [ods.ai](http://ods.ai), join filling the form and write your nickname to orgs to add you to the channel.
 
