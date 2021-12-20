@@ -38,6 +38,8 @@ kernelspec:
 ```{code-cell} ipython3
 import pennylane as qml
 from pennylane import numpy as np
+qml.drawer.use_style('default')
+
 dev = qml.device('default.qubit', shots=1000, wires=2)
 def make_entanglement():
     qml.Hadamard(wires=0)
@@ -46,6 +48,10 @@ def make_entanglement():
 
 circuit = qml.QNode(make_entanglement, dev)
 circuit()
+```
+
+```{code-cell} ipython3
+fig, ax = qml.draw_mpl(circuit)()
 ```
 
 Работая с библиотекой PennyLane для математических операций, можно использовать интерфейс `NumPy`, но при этом также пользоваться преимуществами автоматического дифференцирования, которое обеспечивает <a href="https://github.com/HIPS/autograd">autograd</a>.
@@ -172,5 +178,5 @@ circuit(do_swap=True)
 Видим, что во втором случае операция SWAP сработала: состояния кубитов поменялись местами. Можно посмотреть, как выглядит такая схема:
 
 ```{code-cell} ipython3
-print(circuit.draw())
+fig, ax = qml.draw_mpl(circuit)(True)
 ```

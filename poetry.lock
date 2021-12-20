@@ -1966,7 +1966,7 @@ pysmt = "0.8.0"
 
 [[package]]
 name = "pennylane"
-version = "0.18.0"
+version = "0.20.0"
 description = "PennyLane is a Python quantum machine learning library by Xanadu Inc."
 category = "main"
 optional = false

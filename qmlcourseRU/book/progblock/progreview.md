@@ -231,7 +231,8 @@ counts = result.get_counts(compiled_circuit)
 print("\nTotal count for 00 and 11 are:",counts)
 
 # Draw the circuit
-circuit.draw()
+qml.drawer.use_style('default')
+fig, ax = qml.draw_mpl(circuit)()
 ```
 
 Код, написанный на `Qiskit` может быть запущен на квантовых компьютерах от компании `IBM.` Для изучения квантовых вычислений с экосистемой `Qsikit` можно рекомендовать [прекрасную онлайн книгу](https://qiskit.org/textbook/what-is-quantum.html). Более подробный обзор библиотеки также [в отдельной лекции нашего курса](./qiskit.md).
