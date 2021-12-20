@@ -180,4 +180,5 @@ circuit(do_swap=True)
 
 ```{code-cell} ipython3
 fig, ax = qml.draw_mpl(circuit)(True)
+fig.show();
 ```
