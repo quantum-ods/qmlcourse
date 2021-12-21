@@ -16,7 +16,7 @@ networkx = "^2.6.3"
 numpy = "^1.19.2"
 paramiko = "^2.8.0"
 penaltymodel-maxgap = "^0.5.5"
-PennyLane = "^0.18.0"
+PennyLane = "0.20.0"
 pre-commit = "^2.13.0"
 pylatexenc = "^2.10"
 pyppeteer  = "^0.2.6"
@@ -28,7 +28,6 @@ sympy = "1.5"
 netket = "^3.2"
 sphinx-sitemap = "^2.2.0"
 sphinx-jupyterbook-latex = "^0.4.6"
-
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.12.2"

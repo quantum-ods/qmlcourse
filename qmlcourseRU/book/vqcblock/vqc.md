@@ -72,7 +72,12 @@ def simple_x_gate():
 
 
 print(f"{simple_x_gate() = }")
-print(simple_x_gate.draw())
+```
+
+```{code-cell} ipython3
+qml.drawer.use_style("default")
+fig, ax = qml.draw_mpl(simple_x_gate)()
+fig.show()
 ```
 
 С другой стороны, у нас есть оператор $\hat{RX}(\phi)$, который "вращает" состояние нашего кубита вокруг оси $\mathbf{X}$ на угол $\phi$. Сделаем параметризованную схему с одним параметром:
