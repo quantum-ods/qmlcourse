@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сравнение квантовой и классической имитации отжига &#8212; QMLCourse</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/dwaveblock/annealing_paper_1998.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="О блоке “Quantum Approximate Optimization Algorithm”" href="../qaoablock/intro.html" />
+    <link rel="prev" title="D-Wave: квантовый отжиг, оптимизация и семплинг" href="dwave.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">QMLCourse</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Приветствие
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Введение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro1block/intro1.html">
+   🟦 О квантовых компьютерах
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/pythonintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l1.html">
+   🟦 Вводная лекция про Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l3.html">
+   🟦 Ориентация в Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l4.html">
+   🟦 Переменные, типы и вывод
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l5.html">
+   🟦 Условия и сравнения
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
+   🟦 Словари
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
+   🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Линейная алгебра и numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/vectors.html">
+   🟦 Векторы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/bra-ket.html">
+   🟦 Нотация Дирака
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/matrices.html">
+   🟦 Матрицы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../linalgblock/numpy.html">
+   🟦 Numpy fun
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   🟦 Машинное обучение как пазл
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые вычисления
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qubit.html">
+   🟩 Квантовый бит
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/gates.html">
+   🟩 Квантовые гейты
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/mixedstates.html">
+   🟨 Смешанные состояния
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Фреймворки
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progreview.html">
+   🟩 Обзор фреймворков
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/pennylane.html">
+   🟩 PennyLane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/cirq_tfq.html">
+   🟧 Cirq &amp; TFQ
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/qiskit.html">
+   🟧 Qiskit
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/superdense_coding.html">
+   🟩 Сверхплотное кодирование
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/simon_algorithm.html">
+   🟧 Алгоритм Саймона
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkinds.html">
+   🟦 Виды QML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qknn.html">
+   🟥 Алгоритм QKNN
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Вариационные схемы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqcintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqcblock/vqc.html">
+   🟩 Вариационные схемы
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые градиенты
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/gradients.html">
+   🟩 Градиенты квантовых схем
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../gradsblock/hogradients.html">
+   🟧 Градиенты высших порядков
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовый SVM
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/qsvmintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/hybridsvm.html">
+   🟩 Гибридный SVM
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qsvmblock/classic_svm.html">
+   🟧 Классический SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟩 Квантовые нейронные сети
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Проблемы квантового машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/problemsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchembasic.html">
+   🟩 Квантовая химия (Введение)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/quantchemadvancedscf.html">
+   🟧 Квантовая химия (SCF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/ising.html">
+   🟩 Модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/advising.html">
+   🟧 Продвинутая модель Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problemsblock/copt.html">
+   🟩 Комбинаторная оптимизация
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  От проблем к обучению
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/problems2qmlintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/np2ising.html">
+   🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/jordanwigner.html">
+   🟧 Преобразование Жордана-Вигнера
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/eigenvals.html">
+   🟩 О собственных значениях
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  VQE
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqeintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/vqe.html">
+   🟩 Основы VQE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vqeblock/tspvqe.html">
+   🟧 VQE - практика
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  D-Wave – квантовый отжиг и семплирование
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="dwaveintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dwave.html">
+   🟩 Квантовый отжиг и семплирование
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🟧 Сравнение квантовой и классической имитации отжига
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  QAOA
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qaoablock/intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qaoablock/qaoa.html">
+   🟩 QAOA
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Перспективы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../perspectives/academic_industrial.html">
+   ⬜ Академия и индустрия
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  О курсе
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Список литературы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../authors.html">
+   Список авторов курса
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Глоссарий
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgments.html">
+   Благодарности
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../leaderboard.html">
+   Рейтинг
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/book/dwaveblock/annealing_paper_1998.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/book/dwaveblock/annealing_paper_1998.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/dwaveblock/annealing_paper_1998.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourseRU/book/dwaveblock/annealing_paper_1998.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Постановка задачи
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qa">
+   Имитация квантового отжига (QA)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sa">
+   Классическая имитация отжига (SA)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Анализ и сравнение результатов
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Ферромагнитная модель
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Фрустрированная модель
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Модель со случайными взаимодействиями
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   Заключение
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="annealing-paper-1998">
+<span id="id1"></span><h1>Сравнение квантовой и классической имитации отжига<a class="headerlink" href="#annealing-paper-1998" title="Permalink to this headline">¶</a></h1>
+<p>Автор(ы):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dmburd">Бурдейный Дмитрий</a></p></li>
+</ul>
+<div class="section" id="id2">
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>В этой лекции рассмотрим каноническую работу <strong>Quantum annealing in the transverse Ising model</strong>, опубликованную в 1998 году <span id="id3">[<a class="reference internal" href="../bibliography.html#id73"><span>KN98</span></a>]</span>. В ней двумя способами численно решается задача о нахождении основного состояния системы взаимодействующих спинов. Первый способ – обычная классическая имитация отжига, второй – имитация квантового отжига. Результаты применения этих подходов анализируются и сравниваются между собой.</p>
+</div>
+<div class="section" id="id4">
+<h2>Постановка задачи<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Итак, рассматривается одномерная система взаимодействующих спинов, которая описывается гамильтонианом Изинга (полностью аналогичным тому, который был представлен в <a class="reference internal" href="../problemsblock/ising.html#ising"><span class="std std-ref">базовой лекции</span></a> о модели Изинга):</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}_{0} =
+    -\sum_{i,j} J_{ij} \hat{\sigma}^{z}_i \hat{\sigma}^{z}_{j}
+    - h \sum_{i} \hat{\sigma}^{z}_i,
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(J_{ij}\)</span> – величины обменного взаимодействия для пар спинов, <span class="math notranslate nohighlight">\(h\)</span> – внешнее поле (оно направлено вдоль оси <span class="math notranslate nohighlight">\(z\)</span> и потому называется продольным – <em>longitudinal</em>). Требуется найти основное состояние гамильтониана <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span>, т.е. его собственное состояние, соответствующее его минимальному собственному значению.</p>
+<p>Далее разберем численное решение этой задачи с помощью обычной классической имитации отжига (<em>simulated annealing</em>, SA для краткости) и с помощью квантовой имитации отжига (<em>quantum annealing</em> – QA).</p>
+</div>
+<div class="section" id="qa">
+<h2>Имитация квантового отжига (QA)<a class="headerlink" href="#qa" title="Permalink to this headline">¶</a></h2>
+<p>Как в <a class="reference internal" href="dwave.html#dwave"><span class="std std-ref">предыдущей лекции</span></a> об аннилере D-Wave, добавляем к “целевому”  гамильтониану <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span> (<em>problem Hamiltonian</em>) слагаемое, которое называется <em>tunneling Hamiltonian</em>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-qa-hamilt">
+<span class="eqno">(47)<a class="headerlink" href="#equation-eqn-qa-hamilt" title="Permalink to this equation">¶</a></span>\[
+\hat{H}(t) =
+    \hat{H}_{0} - \Gamma(t) \sum_{i} \hat{\sigma}^{x}_i
+    = \hat{H}_{0} + \hat{H}_{tun}(t),
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(\hat{H}_{tun}(t)\)</span> зависит от времени и отвечает за квантовомеханическое туннелирование между различными собственными состояниями гамильтониана <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span>. Оператор <span class="math notranslate nohighlight">\(\hat{H}_{tun}(t)\)</span> соответствует приложенному внешнему магнитному полю вдоль оси <span class="math notranslate nohighlight">\(x\)</span> (т.е. поперечному, <em>transverse</em>). Когда величина <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> очень велика по сравнению с <span class="math notranslate nohighlight">\(J_{i j}\)</span> и <span class="math notranslate nohighlight">\(h\)</span>, собственное состояние гамильтониана <span class="math notranslate nohighlight">\(\hat{H}(t)\)</span>, соответствующее его минимальному собственному значению, представляет собой линейную комбинацию всевозможных состояний системы с приблизительно равными амплитудами вероятностей ориентации каждого спина вверх и вниз. Если достаточно медленно уменьшать <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> с очень большой величины до нуля, можно надеяться (в соответствии с адиабатической теоремой), что приведем систему в основное состояние гамильтониана <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span>.</p>
+<p>В обсуждаемой статье в качестве примеров рассматриваются три различных закона изменения <span class="math notranslate nohighlight">\(\Gamma(t)\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Gamma(t) = \frac{c}{\ln(t+1)},\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma(t) = \frac{c}{\sqrt{t}},\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma(t) = \frac{c}{t},\)</span></p></li>
+</ul>
+<p>везде <span class="math notranslate nohighlight">\(t \in (0, +\infty)\)</span> и <span class="math notranslate nohighlight">\(c = \textrm{const}\)</span>.</p>
+<p>Квантовая динамика системы описывается нестационарным уравнением Шредингера</p>
+<div class="math notranslate nohighlight" id="equation-eqn-schrodinger-timedep">
+<span class="eqno">(48)<a class="headerlink" href="#equation-eqn-schrodinger-timedep" title="Permalink to this equation">¶</a></span>\[
+i \frac{\partial}{\partial t} \ket{\psi(t)} =
+    \hat{H}(t) \ket{\psi(t)}
+\]</div>
+<p>Это уравнение решается численно (с помощью дискретизации по времени и применения конечно-разностной схемы) для небольшой системы (число спинов <span class="math notranslate nohighlight">\(N=8\)</span>). Измерить близость состояния <span class="math notranslate nohighlight">\(\ket{\psi(t)}\)</span> к основному состоянию <span class="math notranslate nohighlight">\(\ket{g}\)</span> гамильтониана <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span> можно путем вычисления вероятности</p>
+<div class="math notranslate nohighlight">
+\[
+P_{QA}(t) = {\left| \braket{g | \psi(t)} \right|}^2
+\]</div>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>Основное состояние <span class="math notranslate nohighlight">\(\ket{g}\)</span> для небольшого числа спинов можно найти точно, например, путем полного перебора.</p>
+</div>
+<p>Кроме того, можно рассмотреть так называемое <a class="reference external" href="https://en.wikipedia.org/wiki/Quasistatic_approximation"><em>квазистатическое приближение</em></a>. Выберем какое-нибудь значение <span class="math notranslate nohighlight">\(\Gamma = \textrm{const}\)</span> и решим задачу об основном состоянии <span class="math notranslate nohighlight">\(\ket{\psi_{\Gamma}}\)</span> независящего от времени гамильтониана</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}_{0} - \Gamma \sum_{i} \hat{\sigma}^{x}_i
+\]</div>
+<p>Следует ожидать, что при очень медленном изменении <span class="math notranslate nohighlight">\(\Gamma(t)\)</span> вероятность</p>
+<div class="math notranslate nohighlight">
+\[
+P_{QA}^{st}(\Gamma) = {\left| \braket{g | \psi_{\Gamma}} \right|}^2
+\]</div>
+<p>будет близка к <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span> (имеется в виду, что значение <span class="math notranslate nohighlight">\(\Gamma\)</span> соответствует значению <span class="math notranslate nohighlight">\(\Gamma(t)\)</span>). Отличие <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span> от <span class="math notranslate nohighlight">\(P_{QA}^{st}(\Gamma)\)</span> говорит о том, насколько близко состояния системы при динамическом процессе отжига следуют за соответствующими “квазистатическими” состояниями.</p>
+</div>
+<div class="section" id="sa">
+<h2>Классическая имитация отжига (SA)<a class="headerlink" href="#sa" title="Permalink to this headline">¶</a></h2>
+<p>В <a class="reference internal" href="../problemsblock/copt.html#copt"><span class="std std-ref">лекции</span></a>, посвященной комбинаторной оптимизации, процесс имитации отжига описывался таким образом: выбиралось случайное начальное состояние, затем оно в цикле подвергалось случайной модификации, и новое состояние принималось или отклонялось в соответствии с некоторым критерием. В статье <span id="id5">[<a class="reference internal" href="../bibliography.html#id73"><span>KN98</span></a>]</span> принят другой подход к SA. Рассматривается так называемое <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B8%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5"><em>основное кинетическое уравнение</em></a> (англ. <em>master equation</em>). Оно описывает классический SA процесс, соответствующий нестационарному уравнению Шредингера <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(48)</a>. В нашем случае это система обыкновенных дифференциальных уравнений для вероятностей нахождения системы в различных состояниях <span class="math notranslate nohighlight">\(i\)</span> в момент времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-sa-master-eqn">
+<span class="eqno">(49)<a class="headerlink" href="#equation-eqn-sa-master-eqn" title="Permalink to this equation">¶</a></span>\[
+\frac{d P_i(t)}{d t} =
+    \sum_j \mathcal{L}_{i j} P_j(t),
+\]</div>
+<p>где <span class="math notranslate nohighlight">\(\mathcal{L}_{i j}\)</span> – вероятность перехода системы из состояния <span class="math notranslate nohighlight">\(j\)</span> в состояние <span class="math notranslate nohighlight">\(i\)</span> (при <span class="math notranslate nohighlight">\(j \neq i\)</span>) в единицу времени. Рассматриваются только элементарные переходы, сопровождающиеся изменением ориентации какого-либо одного спина (остальные спины при данном переходе не меняют ориентацию). Элементы матрицы переходов записываются следующим образом:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-l-trans-matr-elem">
+<span class="eqno">(50)<a class="headerlink" href="#equation-eqn-l-trans-matr-elem" title="Permalink to this equation">¶</a></span>\[\begin{split}
+\mathcal{L}_{i j} =
+\begin{cases}
+    \frac{1}{1 + \exp \left( \frac{E_i - E_j}{T(t)} \right) } &amp; \quad (\text{single-spin transition}, j \neq i) \\
+    -\sum_{k \neq i} \mathcal{L}_{k i} &amp; \quad (j = i) \\
+    0 &amp; \quad \text{(otherwise)}
+\end{cases}
+\end{split}\]</div>
+<p>Для первого условия правая часть в формуле <a class="reference internal" href="#equation-eqn-l-trans-matr-elem">(50)</a> соответствует <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%91%D0%BE%D0%BB%D1%8C%D1%86%D0%BC%D0%B0%D0%BD%D0%B0">распределению Больцмана</a>. Для понимания полезно проанализировать несколько предельных случаев:</p>
+<ul class="simple">
+<li><p>если <span class="math notranslate nohighlight">\(E_i &lt; E_j\)</span> и <span class="math notranslate nohighlight">\(\left| E_i - E_j \right| \gg T(t)\)</span>, то вероятность перехода <span class="math notranslate nohighlight">\(j \to i\)</span> близка к 1;</p></li>
+<li><p>если <span class="math notranslate nohighlight">\(E_i &gt; E_j\)</span> и <span class="math notranslate nohighlight">\(E_i - E_j \gg T(t)\)</span>, то вероятность перехода <span class="math notranslate nohighlight">\(j \to i\)</span> близка к 0;</p></li>
+<li><p>если <span class="math notranslate nohighlight">\(\left| E_i - E_j \right| \ll T(t)\)</span>, то вероятность перехода <span class="math notranslate nohighlight">\(j \to i\)</span> близка к <span class="math notranslate nohighlight">\(1/2\)</span>.</p></li>
+</ul>
+<p>Все случаи соответствуют интуитивным ожиданиям.</p>
+<p>Во втором условии в <a class="reference internal" href="#equation-eqn-l-trans-matr-elem">(50)</a> сама сумма (без знака “минус”) равна суммарной вероятности перехода из состояния <span class="math notranslate nohighlight">\(i\)</span> во все остальные состояния. Так что эта сумма должна входить со знаком “минус” в выражение <span class="math notranslate nohighlight">\(\frac{d P_i(t)}{d t}\)</span> для темпа изменения вероятности <span class="math notranslate nohighlight">\(P_i\)</span> нахождения в состоянии <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Третье условие в <a class="reference internal" href="#equation-eqn-l-trans-matr-elem">(50)</a> означает, что рассматриваем только перевороты одиночных спинов (<em>single-spin flip</em>) в качестве допустимых переходов между состояниями системы.</p>
+<p>Зависимость температуры от времени выбирается равной <span class="math notranslate nohighlight">\(\Gamma(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+T(t) = \Gamma(t)
+\]</div>
+<p>Близость решения задачи SA к основному состоянию <span class="math notranslate nohighlight">\(\ket{g}\)</span> гамильтониана <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span> выражается величиной вероятности <span class="math notranslate nohighlight">\(P_g(t)\)</span> найти систему в основном состоянии в момент времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{SA}(t) = P_g(t)
+\]</div>
+<p>Аналогично квантовому случаю, введем величину <span class="math notranslate nohighlight">\(P_{SA}^{st}(T)\)</span>, которая в квазистатическом приближении близка к <span class="math notranslate nohighlight">\(P_{SA}(t)\)</span> (если величина температуры <span class="math notranslate nohighlight">\(T = T(t)\)</span>).</p>
+</div>
+<div class="section" id="id6">
+<h2>Анализ и сравнение результатов<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>В статье обсуждаются численные результаты для <span class="math notranslate nohighlight">\(P_{SA}\)</span> и <span class="math notranslate nohighlight">\(P_{QA}\)</span> для различных конфигураций обменного взаимодействия и различных вариантов зависимости поперечного поля от времени. В всех случаях продольное внешнее поле выбрано постоянным: <span class="math notranslate nohighlight">\(h = 0.1\)</span>.</p>
+<div class="section" id="id7">
+<h3>Ферромагнитная модель<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Здесь проводится численный эксперимент для ферромагнитной модели Изинга с <span class="math notranslate nohighlight">\(J_{i j} = \textrm{const}\)</span> для всех пар спинов. Зависимости <span class="math notranslate nohighlight">\(T\)</span> и <span class="math notranslate nohighlight">\(\Gamma\)</span> от времени выбираются такими:</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(t) = T(t) = \frac{3}{\ln(t + 1)}
+\]</div>
+<p>Результаты представлены на <a class="reference internal" href="#qa-sa-fig-1"><span class="std std-numref">Fig. 136</span></a>.</p>
+<div class="figure align-default" id="qa-sa-fig-1">
+<a class="reference internal image-reference" href="../../_images/fig_11.png"><img alt="../../_images/fig_11.png" src="../../_images/fig_11.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 136 </span><span class="caption-text">Зависимости <span class="math notranslate nohighlight">\(P_{SA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{SA}^{st}(T(t))\)</span> и <span class="math notranslate nohighlight">\(P_{QA}^{st}(\Gamma(t))\)</span> для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \ln(t+1)\)</span>.</span><a class="headerlink" href="#qa-sa-fig-1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Видно, что квазистатическое приближение работает очень хорошо, интересующие нас величины в динамическом процессе очень близки к вычисленным в равновесных условиях. Когда расписание отжига имеет вид <span class="math notranslate nohighlight">\(T(t) = c / \ln(t+1)\)</span>, гарантируется сходимость <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при подходящем выборе константы <span class="math notranslate nohighlight">\(c\)</span> (в статье <span id="id8">[<a class="reference internal" href="../bibliography.html#id73"><span>KN98</span></a>]</span> есть ссылка на соответствующую теорему). Выбор константы <span class="math notranslate nohighlight">\(c = 3\)</span> достаточно произволен, но высокая точность приближенного равенства <span class="math notranslate nohighlight">\(P_{SA}(t) \approx P_{SA}^{st}(T(t))\)</span> свидетельствует о том, что в рассматриваемом случае действительно <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при <span class="math notranslate nohighlight">\(t \to +\infty\)</span>.</p>
+<p>Для QA нет аналогичного точного утверждения о сходимости <span class="math notranslate nohighlight">\(P_{QA} \to 1\)</span>, но численные результаты для данного ферромагнитного случая при <span class="math notranslate nohighlight">\(\Gamma(t) = 3 / \ln(t+1)\)</span> позволяют предположить такую сходимость.</p>
+<p>Тот факт, что QA-кривая на <a class="reference internal" href="#qa-sa-fig-1"><span class="std std-numref">Fig. 136</span></a> всегда ниже SA-кривой, никакого значения не имеет, потому что в обеих задачах у нас все величины обезразмерены (<span class="math notranslate nohighlight">\(\hbar = 1\)</span> в <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(48)</a> и единица времени <span class="math notranslate nohighlight">\(\tau = 1\)</span> в <a class="reference internal" href="#equation-eqn-sa-master-eqn">(49)</a>) и никакого согласования при обезразмеривании в двух задачах нет.</p>
+<p>Если уменьшать поперечное поле и температуру быстрее,</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(t) = T(t) = \frac{3}{\sqrt{t}},
+\]</div>
+<p>то возникает качественное отличие QA и SA решений, см. <a class="reference internal" href="#qa-sa-fig-2"><span class="std std-numref">Fig. 137</span></a>.</p>
+<div class="figure align-default" id="qa-sa-fig-2">
+<a class="reference internal image-reference" href="../../_images/fig_21.png"><img alt="../../_images/fig_21.png" src="../../_images/fig_21.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 137 </span><span class="caption-text">Вид коэффициентов перекрытия для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Видно, что решение квантовомеханической задачи лучше сходится к основному состоянию, чем решение классической задачи. Более того, SA-решение “застревает” в каком-то локальном минимуме с не очень малой вероятностью. На <a class="reference internal" href="#qa-sa-fig-3"><span class="std std-numref">Fig. 138</span></a> виден темп приближения <span class="math notranslate nohighlight">\(P_{QA}\)</span> к 1 (на графике двойная логарифмическая шкала). Можно сделать вывод, что <span class="math notranslate nohighlight">\((1 - P_{QA}) \propto 1/t\)</span> в широком диапазоне <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="figure align-default" id="qa-sa-fig-3">
+<a class="reference internal image-reference" href="../../_images/fig_31.png"><img alt="../../_images/fig_31.png" src="../../_images/fig_31.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 138 </span><span class="caption-text"><span class="math notranslate nohighlight">\((1 - P_{QA}(t))\)</span> для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Если еще быстрее уменьшать поперечное поле и температуру,</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(t) = T(t) = \frac{3}{t},
+\]</div>
+<p>то оба решения “застревают” в неосновных состояниях, как видно из <a class="reference internal" href="#qa-sa-fig-4"><span class="std std-numref">Fig. 139</span></a>.</p>
+<div class="figure align-default" id="qa-sa-fig-4">
+<a class="reference internal image-reference" href="../../_images/fig_41.png"><img alt="../../_images/fig_41.png" src="../../_images/fig_41.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 139 </span><span class="caption-text">Вид коэффициентов перекрытия для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / t\)</span>.</span><a class="headerlink" href="#qa-sa-fig-4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Фрустрированная модель<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>Здесь анализируется так называемая фрустрированная (<em>frustrated</em>) система, она изображена на <a class="reference internal" href="#qa-sa-fig-5"><span class="std std-numref">Fig. 140</span></a>.</p>
+<div class="figure align-default" id="qa-sa-fig-5">
+<a class="reference internal image-reference" href="../../_images/fig_51.png"><img alt="../../_images/fig_51.png" src="../../_images/fig_51.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 140 </span><span class="caption-text">Фрустрированная система спинов.</span><a class="headerlink" href="#qa-sa-fig-5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Сплошные линии обозначают ферромагнитное взаимодействие между спинами, пунктирная линия – антиферромагнитное взаимодействие (сила которого по абсолютной величине равна силе ферромагнитного взаимодействия). Если в SA-задаче температура очень велика, то спины 4 и 5 меняют свою ориентацию с очень высокой частотой, так что взаимодействие спинов 3 и 6 посредством спинов 4 и 5 пренебрежимо мало. В этом случае прямое антиферромагнитное взаимодействие между спинами 3 и 6 оказывается доминирующим, поэтому наблюдается отрицательная корреляция между ориентациями спинов 3 и 6 (см. <a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 141</span></a>).</p>
+<div class="figure align-default" id="qa-sa-fig-6">
+<a class="reference internal image-reference" href="../../_images/fig_6.png"><img alt="../../_images/fig_6.png" src="../../_images/fig_6.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 141 </span><span class="caption-text">Величина корреляции спинов 3 и 6. Индекс <code class="docutils literal notranslate"><span class="pre">c</span></code> означает классическое решение (SA), индекс <code class="docutils literal notranslate"><span class="pre">q</span></code> означает квантовомеханическое решение (QA).</span><a class="headerlink" href="#qa-sa-fig-6" title="Permalink to this image">¶</a></p>
+</div>
+<p>С другой стороны, при низкой температуре спины 4 и 5 стремятся принять определенную устойчивую ориентацию. В этом случае эффективное (непрямое) ферромагнитное взаимодействие между спинами 3 и 6 посредством спинов 4 и 5 примерно вдвое сильнее, чем прямое антиферромагнитное взаимодействие. Эти рассуждения подтверждаются положительной величиной корреляции <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_c\)</span> при низких температурах (<a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 141</span></a>). Значит, спины 3 и 6 должны поменять взаимную ориентацию при некоторой промежуточной температуре.</p>
+<p>Если поперечное поле в QA-задаче играет роль, аналогичную роли температуры в SA-задаче, то следует ожидать схожего поведения величины корреляции <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_q\)</span> при изменении <span class="math notranslate nohighlight">\(\Gamma\)</span>. Здесь наблюдаемая <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_q\)</span> вычисляется с использованием основного состояния гамильтониана <a class="reference internal" href="#equation-eqn-qa-hamilt">(47)</a> при заданной <span class="math notranslate nohighlight">\(\Gamma\)</span>. Так и есть (см. пунктирную кривую на <a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 141</span></a>).</p>
+<p>Если использовать расписание отжига</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(t) = T(t) = \frac{3}{\sqrt{t}},
+\]</div>
+<p>то получаются результаты, изображенные на <a class="reference internal" href="#qa-sa-fig-7"><span class="std std-numref">Fig. 142</span></a>.</p>
+<div class="figure align-default" id="qa-sa-fig-7">
+<a class="reference internal image-reference" href="../../_images/fig_7.png"><img alt="../../_images/fig_7.png" src="../../_images/fig_7.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 142 </span><span class="caption-text">Вид коэффициентов перекрытия для фрустрированной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Обезразмеренное время <span class="math notranslate nohighlight">\(\tau = t T_c^2\)</span> для SA-задачи и <span class="math notranslate nohighlight">\(\tau = t \Gamma_c^2\)</span> для QA-задачи. Здесь <span class="math notranslate nohighlight">\(T_c\)</span> и <span class="math notranslate nohighlight">\(\Gamma_c\)</span> – критические величины, при которых <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_c\)</span> и <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_q\)</span> переходят через ноль на графике <a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 141</span></a>. Видно, что квантовый отжиг лучше подходит для поиска основного состояния в такой системе.</p>
+</div>
+<div class="section" id="id10">
+<h3>Модель со случайными взаимодействиями<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Последний рассмотренный пример – это модель спинового стекла, предложенная Шеррингтоном и Киркпатриком <span id="id11">[<a class="reference internal" href="../bibliography.html#id74"><span>SK75</span></a>]</span>. Для всех пар спинов есть взаимодействие, сила которого является случайной величиной и семплируется из гауссова распределения с нулевым средним и с дисперсией <span class="math notranslate nohighlight">\(1/N\)</span> (в нашем случае <span class="math notranslate nohighlight">\(N=8\)</span>). На <a class="reference internal" href="#qa-sa-fig-8"><span class="std std-numref">Fig. 143</span></a> показан типичный результат для эволюции коэффициентов перекрытия во времени при расписании отжига <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</p>
+<div class="figure align-default" id="qa-sa-fig-8">
+<a class="reference internal image-reference" href="../../_images/fig_8.png"><img alt="../../_images/fig_8.png" src="../../_images/fig_8.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 143 </span><span class="caption-text">Вид коэффициентов перекрытия для модели Шеррингтона-Киркпатрика при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-8" title="Permalink to this image">¶</a></p>
+</div>
+<p>Было проверено несколько реализаций для коэффициентов обменного взаимодействия (семплирование выполнялось из одной и той же функции распределения), результаты оказались качественно близкими. Графики на <a class="reference internal" href="#qa-sa-fig-8"><span class="std std-numref">Fig. 143</span></a> подтверждают, что для данной оптимизационной задачи квантовый отжиг подходит лучше, чем классический.</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>Заключение<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>В этой лекции рассказали о канонической работе, в которой для модели Изинга рассмотрены классическая имитация отжига и квантовая имитация отжига, выполнен анализ и сравнение свойств решений в рамках этих двух подходов на нескольких примерах. Выяснилось, что:</p>
+<ul class="simple">
+<li><p>при одном и том же расписании отжига квантовый отжиг дает сходимость к основному состоянию с большей вероятностью, чем классический отжиг;</p></li>
+<li><p>для квантового случая система сходится к основному состоянию при расписании отжига <span class="math notranslate nohighlight">\(\Gamma = c / \sqrt{t}\)</span>, но не при более быстром уменьшении поперечного поля;</p></li>
+<li><p>для ферромагнитной модели при квантовом отжиге вероятность получения основного состояния ведет себя приближенно как <span class="math notranslate nohighlight">\((1 - \frac{\text{const}}{t})\)</span> на больших временах <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book/dwaveblock"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="dwave.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">D-Wave: квантовый отжиг, оптимизация и семплинг</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../qaoablock/intro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">О блоке “Quantum Approximate Optimization Algorithm”</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ODS Quantum Community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-51362752-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

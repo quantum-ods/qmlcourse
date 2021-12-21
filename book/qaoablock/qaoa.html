@@ -556,6 +556,11 @@
    🟩 Квантовый отжиг и семплирование
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/annealing_paper_1998.html">
+   🟧 Сравнение квантовой и классической имитации отжига
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -773,12 +778,12 @@
 <p>В процессе квантового отжига плавно меняются параметры <span class="math notranslate nohighlight">\(A\)</span> и <span class="math notranslate nohighlight">\(B\)</span>:</p>
 <div class="figure align-default" id="fig-1">
 <a class="reference internal image-reference" href="../../_images/fig_3.png"><img alt="../../_images/fig_3.png" src="../../_images/fig_3.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 136 </span><span class="caption-text">Пример расписания отжига: функций <span class="math notranslate nohighlight">\(A(t)\)</span>, <span class="math notranslate nohighlight">\(B(t)\)</span>.</span><a class="headerlink" href="#fig-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 144 </span><span class="caption-text">Пример расписания отжига: функций <span class="math notranslate nohighlight">\(A(t)\)</span>, <span class="math notranslate nohighlight">\(B(t)\)</span>.</span><a class="headerlink" href="#fig-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>В той же <span class="xref myst">лекции</span> о <code class="docutils literal notranslate"><span class="pre">D-Wave</span></code> указывалась главная проблема – риск перехода системы из основного состояния в возбужденное при недостаточно медленном изменении параметров <span class="math notranslate nohighlight">\(A\)</span> и <span class="math notranslate nohighlight">\(B\)</span>:</p>
 <div class="figure align-default" id="fig-2">
 <a class="reference internal image-reference" href="../../_images/fig_1.png"><img alt="../../_images/fig_1.png" src="../../_images/fig_1.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 137 </span><span class="caption-text">Типичная зависимость от времени энергетических уровней гамильтонианов, используемых в квантовом отжиге</span><a class="headerlink" href="#fig-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 145 </span><span class="caption-text">Типичная зависимость от времени энергетических уровней гамильтонианов, используемых в квантовом отжиге</span><a class="headerlink" href="#fig-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Таким образом, большой проблемой для нас является выбор правильного “расписания” отжига, то есть зависимостей <span class="math notranslate nohighlight">\(A(t)\)</span> и <span class="math notranslate nohighlight">\(B(t)\)</span>.</p>
 </div>
@@ -847,7 +852,7 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 \]</div>
 <div class="figure align-default" id="hamiltonian-u-phase">
 <a class="reference internal image-reference" href="../../_images/hamiltonian_u_phase.png"><img alt="../../_images/hamiltonian_u_phase.png" src="../../_images/hamiltonian_u_phase.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 138 </span><span class="caption-text">Оператор <span class="math notranslate nohighlight">\(U_{\text{phase}}\)</span></span><a class="headerlink" href="#hamiltonian-u-phase" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 146 </span><span class="caption-text">Оператор <span class="math notranslate nohighlight">\(U_{\text{phase}}\)</span></span><a class="headerlink" href="#hamiltonian-u-phase" title="Permalink to this image">¶</a></p>
 </div>
 <p><span class="math notranslate nohighlight">\(U_{\text{mixed}}\)</span> в классическом случае использует матрицу <span class="math notranslate nohighlight">\(XNOT\)</span>.</p>
 <p>Операторы применяются к начальному состоянию <span class="math notranslate nohighlight">\(\ket{\Psi_{0}}\)</span> (путем поочередного применения гамильтонианов <span class="math notranslate nohighlight">\(H_{p}\)</span> и <span class="math notranslate nohighlight">\(H_{M}\)</span>) последовательно <span class="math notranslate nohighlight">\(р\)</span> раз (или, иначе говоря, используются <span class="math notranslate nohighlight">\(p\)</span> слоев), где продолжительность <span class="math notranslate nohighlight">\(j\)</span>-й итерации определяется параметрами <span class="math notranslate nohighlight">\(\gamma_{j}\)</span> и <span class="math notranslate nohighlight">\(\beta_{j}\)</span> соответственно</p>
@@ -858,7 +863,7 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 <p>Общая схема для <span class="math notranslate nohighlight">\(n\)</span> кубитов выглядит следующим образом</p>
 <div class="figure align-default" id="general-scheme-for-n-qubits">
 <a class="reference internal image-reference" href="../../_images/general_scheme_for_n_qubits.png"><img alt="../../_images/general_scheme_for_n_qubits.png" src="../../_images/general_scheme_for_n_qubits.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 139 </span><span class="caption-text">Общая схема для <span class="math notranslate nohighlight">\(n\)</span> кубитов</span><a class="headerlink" href="#general-scheme-for-n-qubits" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 147 </span><span class="caption-text">Общая схема для <span class="math notranslate nohighlight">\(n\)</span> кубитов</span><a class="headerlink" href="#general-scheme-for-n-qubits" title="Permalink to this image">¶</a></p>
 </div>
 <p>Итак, алгоритм состоит из следующих основных этапов:</p>
 <ol>
@@ -919,11 +924,11 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 <p>На рисунках ниже представлена абстрактная визуализация “смешивания” и обозначение оператора:</p>
 <div class="figure align-default" id="ansatz-mixing">
 <a class="reference internal image-reference" href="../../_images/ansatz_mixing.png"><img alt="../../_images/ansatz_mixing.png" src="../../_images/ansatz_mixing.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 140 </span><span class="caption-text">“Смешивание”</span><a class="headerlink" href="#ansatz-mixing" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 148 </span><span class="caption-text">“Смешивание”</span><a class="headerlink" href="#ansatz-mixing" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-default" id="ansatz-operator-designation">
 <a class="reference internal image-reference" href="../../_images/ansatz_operator_designation.png"><img alt="../../_images/ansatz_operator_designation.png" src="../../_images/ansatz_operator_designation.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 141 </span><span class="caption-text">Обозначение оператора</span><a class="headerlink" href="#ansatz-operator-designation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 149 </span><span class="caption-text">Обозначение оператора</span><a class="headerlink" href="#ansatz-operator-designation" title="Permalink to this image">¶</a></p>
 </div>
 <p>Классически семейство анзацев можно поделить на три основных типа:</p>
 <ul class="simple">

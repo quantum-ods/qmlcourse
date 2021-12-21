@@ -58,9 +58,9 @@ $$ |\beta_{11}\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)$$
 
 3. Алиса применяет CNOT между первым и вторым кубитами. Вспоминая, что $ |\psi\rangle = \alpha|0\rangle + \beta|1\rangle $:
 
-   $$|\psi_{3}\rangle = (I \otimes CNOT(1, 2))|\psi_{2}\rangle =$$
+   $$|\psi_{3}\rangle = (CNOT(1, 2) \otimes I)|\psi_{2}\rangle =$$
 
-   $$(I \otimes CNOT(1, 2))\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =$$
+   $$(CNOT(1, 2) \otimes I)\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =$$
 
    $$ = \frac{1}{\sqrt{2}}[\alpha(|000\rangle + |011\rangle) + \beta(|110\rangle + |101\rangle)] $$
 

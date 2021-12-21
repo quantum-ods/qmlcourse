@@ -556,6 +556,11 @@
    🟩 Квантовый отжиг и семплирование
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../dwaveblock/annealing_paper_1998.html">
+   🟧 Сравнение квантовой и классической имитации отжига
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -770,9 +775,9 @@
 </li>
 <li><p>Алиса применяет CNOT между первым и вторым кубитами. Вспоминая, что <span class="math notranslate nohighlight">\( |\psi\rangle = \alpha|0\rangle + \beta|1\rangle \)</span>:</p>
 <div class="math notranslate nohighlight">
-\[|\psi_{3}\rangle = (I \otimes CNOT(1, 2))|\psi_{2}\rangle =\]</div>
+\[|\psi_{3}\rangle = (CNOT(1, 2) \otimes I)|\psi_{2}\rangle =\]</div>
 <div class="math notranslate nohighlight">
-\[(I \otimes CNOT(1, 2))\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =\]</div>
+\[(CNOT(1, 2) \otimes I)\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =\]</div>
 <div class="math notranslate nohighlight">
 \[ = \frac{1}{\sqrt{2}}[\alpha(|000\rangle + |011\rangle) + \beta(|110\rangle + |101\rangle)] \]</div>
 </li>
