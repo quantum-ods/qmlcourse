@@ -1062,10 +1062,10 @@ D = \begin{bmatrix}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">MetropolisLocal</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Jastrow</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Jastrow</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">Sgd</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sr</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">SR</span><span class="p">(</span><span class="n">diag_shift</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="n">vmc</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">VMC</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">sampler</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">preconditioner</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
+<span class="n">vmc</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">VMC</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">sampler</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1008</span><span class="p">,</span> <span class="n">preconditioner</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1088,7 +1088,7 @@ D = \begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;netket.logging.runtime_log.RuntimeLog at 0x7f9cfce09fa0&gt;,)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;netket.logging.runtime_log.RuntimeLog at 0x7fa284228190&gt;,)
 </pre></div>
 </div>
 </div>
