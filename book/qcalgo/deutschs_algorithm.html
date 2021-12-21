@@ -944,6 +944,12 @@ f_4(1) = 0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:35: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Теперь создадим функции для черного ящика. Обратите внимание, что здесь уже учтено сложение по модулю <span class="math notranslate nohighlight">\(2\)</span> результата функции с состоянием второго кубита:</p>
 <div class="cell docutils container">
@@ -1020,7 +1026,7 @@ f_4(1) = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
 </pre></div>
 </div>
 </div>
@@ -1033,7 +1039,7 @@ f_4(1) = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f4
 </pre></div>
 </div>
 </div>
@@ -1041,15 +1047,14 @@ f_4(1) = 0
 <p>Также посмотрим, как выглядит квантовая схема:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qml</span><span class="o">.</span><span class="n">drawer</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">draw_mpl</span><span class="p">(</span><span class="n">circuit</span><span class="p">)(</span><span class="n">black_box_name</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──H──┤ Sample[Z] 
- 1: ──X──H──┤           
-</pre></div>
-</div>
+<img alt="../../_images/deutschs_algorithm_17_0.png" src="../../_images/deutschs_algorithm_17_0.png" />
 </div>
 </div>
 <p>На примере алгоритма Дойча мы видим, что уже двухкубитная схема дает прирост скорости в два раза. Если же увеличивать количество входных параметров (как в аналогичном алгоритме <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%94%D0%BE%D0%B9%D1%87%D0%B0_%E2%80%94_%D0%99%D0%BE%D0%B6%D0%B8">Дойча-Йожи</a>), то ускорение будет экспоненциальным.</p>

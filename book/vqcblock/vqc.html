@@ -847,15 +847,29 @@
 
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">simple_x_gate</span><span class="p">()</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">simple_x_gate</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>simple_x_gate() = tensor(-1., requires_grad=True)
- 0: ──X──┤ ⟨Z⟩ 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:35: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>simple_x_gate() = tensor(-1., requires_grad=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qml</span><span class="o">.</span><span class="n">drawer</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">draw_mpl</span><span class="p">(</span><span class="n">simple_x_gate</span><span class="p">)()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/vqc_2_0.png" src="../../_images/vqc_2_0.png" />
 </div>
 </div>
 <p>С другой стороны, у нас есть оператор <span class="math notranslate nohighlight">\(\hat{RX}(\phi)\)</span>, который “вращает” состояние нашего кубита вокруг оси <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> на угол <span class="math notranslate nohighlight">\(\phi\)</span>. Сделаем параметризованную схему с одним параметром:</p>
@@ -935,7 +949,7 @@ Try 3.14159265359: -1.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/vqc_9_0.png" src="../../_images/vqc_9_0.png" />
+<img alt="../../_images/vqc_10_0.png" src="../../_images/vqc_10_0.png" />
 </div>
 </div>
 <p>Результат довольно необычный. Предсказать такое довольно сложно и хорошо видна возможность нелинейности <code class="docutils literal notranslate"><span class="pre">VQC</span></code> схем. В дальнейших лекциях мы будем более подробно разбирать возможные варианты кодирования данных. Кстати, кодирование углами настолько популярно, что в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> для этого есть специальная функция, которая позволяет “повернуть” сразу множество кубитов, используя список из классических данных:</p>
@@ -1000,7 +1014,7 @@ Try 3.14159265359: -1.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/vqc_17_0.png" src="../../_images/vqc_17_0.png" />
+<img alt="../../_images/vqc_18_0.png" src="../../_images/vqc_18_0.png" />
 </div>
 </div>
 <p>Результат выглядит гораздо интереснее. В целом можно сказать, что выбор способа кодирования данных – один из важнейших при проектировании <strong>VQC</strong>. Мы еще много раз будем обсуждать способы сделать это.</p>
