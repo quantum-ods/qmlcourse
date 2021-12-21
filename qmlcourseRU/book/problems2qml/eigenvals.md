@@ -246,10 +246,10 @@ exact = nk.exact.lanczos_ed(op)[0]
 
 ```{code-cell} ipython3
 sampler = nk.sampler.MetropolisLocal(hi)
-model = nk.models.Jastrow()
+model = nk.models.Jastrow(dtype=complex)
 optimizer = nk.optimizer.Sgd(learning_rate=0.05)
 sr = nk.optimizer.SR(diag_shift=0.01)
-vmc = nk.driver.VMC(op, optimizer, sampler, model, n_samples=1000, preconditioner=sr)
+vmc = nk.driver.VMC(op, optimizer, sampler, model, n_samples=1008, preconditioner=sr)
 ```
 
 ```{note}
