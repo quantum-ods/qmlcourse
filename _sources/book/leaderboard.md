@@ -26,5 +26,6 @@
 | 16 | Rustam Bikmurzin | 29 | 8 | 3 | 4 | 4 | 5 | 5 |
 | 17 | Ivan Gluhov | 24 | 2 | 4 | 8 | 4 | 2 | 4 |
 | 18 | Maksim Kleshchenok | 22 | 1 | 0 | 9 | 2 | 2 | 8 |
+| 20 | Adam Smoluakov| 16 | 0 | 3 | 7 | 4 | 2 | 0 |
 | 19 | Mark Baushenko | 15 | 4 | 0 | 0 | 8 | 3 | 0 |
-| 20 | Viktor Krasilnikov | 14 | 1 | 1 | 3 | 2 | 2 | 5 |
+| 21 | Viktor Krasilnikov | 14 | 1 | 1 | 3 | 2 | 2 | 5 |
