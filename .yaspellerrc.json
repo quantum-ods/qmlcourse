@@ -15,7 +15,6 @@
     "ignoreCapitalization": true,
     "checkYo": false,
     "ignoreText": [
-      "й",
       "Ско бки",
       "\\w[\\$\\_]-й",
       "\\d{1,3}-ы?й",
