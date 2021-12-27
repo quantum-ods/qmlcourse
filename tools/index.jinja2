@@ -9,7 +9,12 @@
   <body>
     <ul>
       {% for branch in branches %}
-        <li><a href="/{{ branch }}/_build/html/index.html">{{ branch }}</a></li>
+        <li> {{branch }}
+          <ul>
+            <li><a href="/{{ branch }}/qmlcourseRU/_build/html/index.html">RU</a></li>
+            <li><a href="/{{ branch }}/qmlcourseEN/_build/html/index.html">EN</a></li>
+          </ul>
+        </li>
       {% endfor %}
     </ul>
   </body>

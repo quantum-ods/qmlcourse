@@ -58,12 +58,29 @@ if __name__ == "__main__":
     ftp_client = ssh_client.open_sftp()
     ftp_client.put(os.path.join(course_root, "index.html"), os.path.join(remote_path, "index.html"))
 
-    print(f"Execute local: tar -zcf {course_root}/build.tar.gz {course_root}/qmlcourseRU/_build/")
+    print(f"Execute local: tar -zcf {course_root}/buildRU.tar.gz {course_root}/qmlcourseRU/_build/")
     process = Popen(
         [
             "tar",
             "-zcf",
-            f"{course_root}/build.tar.gz",
+            f"{course_root}/buildRU.tar.gz",
+            f"{course_root}/qmlcourseRU/_build/",
+        ],
+        stdout=PIPE,
+        stderr=PIPE,
+    )
+    res = process.wait()
+    print("Done.")
+
+    if res != 0:
+        raise ValueError("gzip failed")
+
+    print(f"Execute local: tar -zcf {course_root}/buildEN.tar.gz {course_root}/qmlcourseEN/_build/")
+    process = Popen(
+        [
+            "tar",
+            "-zcf",
+            f"{course_root}/buildEN.tar.gz",
             f"{course_root}/qmlcourseRU/_build/",
         ],
         stdout=PIPE,
@@ -77,35 +94,49 @@ if __name__ == "__main__":
 
     print("Put the build.tar.gz on the AWS machine...")
     ftp_client.put(
-        os.path.join(course_root, "build.tar.gz"),
-        os.path.join(remote_path, "build.tar.gz"),
+        os.path.join(course_root, "buildRU.tar.gz"),
+        os.path.join(remote_path, "buildRU.tar.gz"),
+    )
+    ftp_client.put(
+        os.path.join(course_root, "buildEN.tar.gz"),
+        os.path.join(remote_path, "buildEN.tar.gz"),
     )
     print("Done.")
 
-    print(f"execute tar -xzf {remote_path}/build.tar.gz --directory {remote_path}/{branch_name}")
+    print(f"execute tar -xzf {remote_path}/buildRU.tar.gz --directory {remote_path}/{branch_name}")
     stdin, stdout, stderr = ssh_client.exec_command(
-        f"tar -xzf {remote_path}/build.tar.gz --directory {remote_path}/{branch_name}",
+        f"tar -xzf {remote_path}/buildRU.tar.gz --directory {remote_path}/{branch_name}",
+    )
+    time.sleep(3)
+    print(f"stdout: {stdout}")
+    print(f"stderr: {stderr}")
+
+    print(f"execute tar -xzf {remote_path}/buildEN.tar.gz --directory {remote_path}/{branch_name}")
+    stdin, stdout, stderr = ssh_client.exec_command(
+        f"tar -xzf {remote_path}/buildEN.tar.gz --directory {remote_path}/{branch_name}",
     )
     time.sleep(3)
     print(f"stdout: {stdout}")
     print(f"stderr: {stderr}")
 
     print(f"Execute rm -r {remote_path}/{branch_name}/_build")
-    stdin, stdout, stderr = ssh_client.exec_command(f"rm -r {remote_path}/{branch_name}/_build")
+    stdin, stdout, stderr = ssh_client.exec_command(f"rm -r {remote_path}/{branch_name}/qmlcourseRU/_build")
+    time.sleep(3)
+    stdin, stdout, stderr = ssh_client.exec_command(f"rm -r {remote_path}/{branch_name}/qmlcourseEN/_build")
     time.sleep(3)
     print(f"stdout: {stdout}")
     print(f"stderr: {stderr}")
 
-    print(f"Execute mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/")
-    stdin, stdout, stderr = ssh_client.exec_command(
-        f"mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/",
-    )
-    time.sleep(3)
-    print(f"stdout: {stdout}")
-    print(f"stderr: {stderr}")
+    # print(f"Execute mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/")
+    # stdin, stdout, stderr = ssh_client.exec_command(
+    #     f"mv {remote_path}/{branch_name}/qmlcourseRU/_build {remote_path}/{branch_name}/",
+    # )
+    # time.sleep(3)
+    # print(f"stdout: {stdout}")
+    # print(f"stderr: {stderr}")
 
-    print(f"Execute rm -r {remote_path}/{branch_name}/qmlcourseRU")
-    stdin, stdout, stderr = ssh_client.exec_command(f"rm -r {remote_path}/{branch_name}/qmlcourseRU")
-    time.sleep(3)
-    print(f"stdout: {stdout}")
-    print(f"stderr: {stderr}")
+    # print(f"Execute rm -r {remote_path}/{branch_name}/qmlcourseRU")
+    # stdin, stdout, stderr = ssh_client.exec_command(f"rm -r {remote_path}/{branch_name}/qmlcourseRU")
+    # time.sleep(3)
+    # print(f"stdout: {stdout}")
+    # print(f"stderr: {stderr}")
