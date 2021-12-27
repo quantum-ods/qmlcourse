@@ -208,7 +208,7 @@ $$
 w = \sum_{i = 1}^{N} \lambda_i y_i x_i
 $$
 
-не зависит. Семплы, соответствующие $\lambda_i > 0$, называются *опорными*. В статье {cite}`qubo3mlproblems2021` при переходе к QUBO-формулировке ограничение $\sum_{i} \lambda_i y_i = 0$ отбрасывают без всяких объяснений. Возможно, это обосновывается тем соображением, что в "хороших" задачах классификации количество опорных семплов обычно невелико (таким образом, сумма $\sum_{i} \lambda_i y_i$ в последнем условии в {eq}`eqn:svm_dual_2` содержит достаточно мало нетривиальных $(\lambda_i \neq 0)$ слагаемых).
+не зависит. Семплы, соответствующие $\lambda_i > 0$, называются *опорными*.
 
 Задача минимизации переписывается в виде
 
@@ -219,7 +219,8 @@ $$
             \frac{1}{2} \lambda^T \left( X X^T \odot Y Y^T \right) \lambda
             -\lambda^T 1_{N}
           \to \min_{\lambda}, \\
-        & 0_{N} \leq \lambda \leq C_{N},
+        & 0_{N} \leq \lambda \leq C_{N}, \\
+        & \lambda^T Y = 0,
     \end{aligned}
 \right.
 $$ (eqn:svm_dual_3)
@@ -262,19 +263,54 @@ $$
 \lambda = \mathcal{P} \tilde{\lambda}
 $$
 
-Подставляя из этого выражения $\lambda$ в {eq}`eqn:svm_dual_3`, получаем итоговую QUBO-формулировку:
+Подставляя из этого выражения $\lambda$ в {eq}`eqn:svm_dual_3`, получаем:
 
 $$
-\mathcal{L}_{neg}(\tilde{\lambda}) =
-            \frac{1}{2}
-            \tilde{\lambda}^T \mathcal{P}^T \left( X X^T \odot Y Y^T \right) \mathcal{P} \tilde{\lambda}
-            -\tilde{\lambda}^T \mathcal{P}^T 1_{N}
-          \to \min_{\tilde{\lambda} \in \{0,1\}^{N K}}
+\left\{
+    \begin{aligned}
+    & \mathcal{L}_{neg}(\tilde{\lambda}) =
+                \frac{1}{2}
+                \tilde{\lambda}^T \mathcal{P}^T \left( X X^T \odot Y Y^T \right) \mathcal{P} \tilde{\lambda}
+                -\tilde{\lambda}^T \mathcal{P}^T 1_{N}
+            \to \min_{\tilde{\lambda} \in \{0,1\}^{N K}} \\
+    & \left( \mathcal{P} \tilde{\lambda} \right)^T Y = 0
+    \end{aligned}
+\right.
 $$ (eqn:svm_qubo_1)
+
+Остается избавиться от ограничения в виде равенства в {eq}`eqn:svm_qubo_1`. Как обычно делается в таких случаях, вместо ограничения вводим соответствующий штраф за его нарушение:
+
+$$
+Penalty^{(hp)} = \frac{\gamma}{2}
+    \left(
+        \left( \mathcal{P} \tilde{\lambda} \right)^T Y
+    \right)^2
+    = \frac{\gamma}{2} \left(
+        \left( \tilde{\lambda}^T \mathcal{P}^T \right) Y
+    \right)^2
+    = \frac{\gamma}{2} \tilde{\lambda}^T \mathcal{P}^T \left( Y Y^T \right) \mathcal{P} \tilde{\lambda},
+$$
+
+где $\gamma$ -- достаточно большая константа, *hp* означает *hyperplane* (гиперплоскость).
+
+Добавляем $Penalty^{(hp)}$ к $\mathcal{L}_{neg}(\tilde{\lambda})$ и получаем итоговую QUBO-формулировку:
+
+$$
+    \frac{1}{2}
+        \tilde{\lambda}^T \mathcal{P}^T
+        \left(
+            X X^T \odot Y Y^T + \gamma Y Y^T
+        \right)
+        \mathcal{P} \tilde{\lambda}
+        -\tilde{\lambda}^T \mathcal{P}^T 1_{N}
+    \to \min_{\tilde{\lambda} \in \{0,1\}^{N K}}
+$$ (eqn:svm_qubo_2)
+
+
 
 ### Оценка вычислительной сложности
 
-Задача {eq}`eqn:svm_dual_3` содержит $\mathcal{O}(N d)$ значений в данных и $\mathcal{O}(N)$ параметров ($\lambda$). QUBO-формулировка {eq}`eqn:svm_qubo_1` содержит то же количество данных, а число параметров в $K$ раз больше, т.е. $\mathcal{O}(K N)$. Значит, потребуется $\mathcal{O}(N^2 K^2)$ кубитов.
+Задача {eq}`eqn:svm_dual_3` содержит $\mathcal{O}(N d)$ значений в данных и $\mathcal{O}(N)$ параметров ($\lambda$). QUBO-формулировка {eq}`eqn:svm_qubo_2` содержит то же количество данных, а число параметров в $K$ раз больше, т.е. $\mathcal{O}(K N)$. Значит, потребуется $\mathcal{O}(N^2 K^2)$ кубитов.
 
 ВременнАя сложность классического SVM в типичных реализациях (например, [LIBSVM](https://en.wikipedia.org/wiki/LIBSVM)) равна $\mathcal{O}(N^3)$. Для оценки временнОй сложности QUBO рассматриваем три составляющие (как в задаче линейной регрессии):
 
