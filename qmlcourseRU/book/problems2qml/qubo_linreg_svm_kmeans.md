@@ -117,7 +117,7 @@ $$
             ]^T
 $$
 
-и матрицу $\mathcal{P}$ (*precision matrix*):
+и матрицу точности $\mathcal{P}$ (_**P**recision matrix_), которая задает переход к бинарному представлению векторов:
 
 $$
 \mathcal{P} = I_{d+1} \otimes P^T,
