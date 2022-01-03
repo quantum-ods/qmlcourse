@@ -59,7 +59,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/html/
-          publish_branch: heroku-deploy-branch
 
       - name: add composer for heroku
         run: |
