@@ -10,7 +10,8 @@ jobs:
     timeout-minutes: 24
 
     strategy:
-      publish_dir: ./qmlcourseRU/_build/html/
+      matrix:
+        publish_dir: ./qmlcourseRU/_build/html/
 
     steps:
       - name: checkout code
@@ -59,9 +60,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ publish_dir }}
+          publish_dir: ${{ matrix.publish_dir }}
           publish_branch: heroku-deploy-branch
 
       - name: add `composer.json`
         run: |
-          echo "{}" > ${{ publish_dir }}/composer.json
+          echo "{}" > ${{ matrix.publish_dir }}/composer.json
