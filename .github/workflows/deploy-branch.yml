@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 24
 
+    strategy:
+      publish_dir: ./qmlcourseRU/_build/html/
+
     steps:
       - name: checkout code
         uses: actions/checkout@v2
@@ -40,12 +43,12 @@ jobs:
           poetry install
 
       # todo: replace with a more sane solution
-      - name: install tensorflow_quantum
-        run: |
-          poetry run pip install --upgrade pip
-          poetry run pip install -U tensorflow==2.5.1
-          poetry run pip install -U tensorflow_quantum
-          poetry run pip install -U tfq-nightly
+      # - name: install tensorflow_quantum
+      #   run: |
+      #     poetry run pip install --upgrade pip
+      #     poetry run pip install -U tensorflow==2.5.1
+      #     poetry run pip install -U tensorflow_quantum
+      #     poetry run pip install -U tfq-nightly
 
       - name: build the book
         run: |
@@ -56,9 +59,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU/_build/html/
+          publish_dir: ${{ publish_dir }}
           publish_branch: heroku-deploy-branch
 
-      - name: add composer for heroku
+      - name: add `composer.json`
         run: |
-          echo "{}" > composer.json
+          echo "{}" > ${{ publish_dir }}/composer.json
