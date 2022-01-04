@@ -2,6 +2,11 @@
 
 # Обзор фреймворков для квантовых вычислений
 
+Автор(ы):
+
+- [Синченко Семен](https://github.com/SemyonSinchenko)
+
+
 В этом обзоре мы кратко пробежимся по существующим сегодня фреймворкам для программирования квантовых компьютеров, а также по тем компьютерам, с которыми они совместимы.
 
 ```{note}
@@ -75,17 +80,17 @@ for p in [0 : points-1] {
 from pyquil import get_qc, Program
 from pyquil.gates import CNOT, H, MEASURE
 
-qvm = get_qc('2q-qvm')
+qvm = get_qc("2q-qvm")
 
 p = Program()
 p += H(0)
 p += CNOT(0, 1)
-ro = p.declare('ro', 'BIT', 2)
+ro = p.declare("ro", "BIT", 2)
 p += MEASURE(0, ro[0])
 p += MEASURE(1, ro[1])
 p.wrap_in_numshots_loop(10)
 
-qvm.run(p).readout_data['ro'].tolist()
+qvm.run(p).readout_data["ro"].tolist()
 ```
 
 Пример взят из официального репозитория.
@@ -111,7 +116,7 @@ circuit.append(cirq.measure(qubit))
 print(circuit)
 ```
 
-Еще больше примеров и более детальный обзор этого фреймворка читайте в [нашей статье про `Tensorflow Quantum`](cirq-tfq). Также очень рекомендуем ознакомиться с [блогом](https://quantumai.google/) "квантового" подразделения компании `Google` -- _Google Quantum AI_.
+Еще больше примеров и более детальный обзор этого фреймворка читайте в [нашей статье про `Tensorflow Quantum`](./cirq_tfq.md). Также очень рекомендуем ознакомиться с [блогом](https://quantumai.google/) "квантового" подразделения компании `Google` -- _Google Quantum AI_.
 
 ### Q#
 
@@ -223,13 +228,13 @@ result = job.result()
 
 # Returns counts
 counts = result.get_counts(compiled_circuit)
-print("\nTotal count for 00 and 11 are:",counts)
+print(f"\nTotal count for 00 and 11 are: {counts}")
 
 # Draw the circuit
 circuit.draw()
 ```
 
-Код, написанный на `Qiskit` может быть запущен на квантовых компьютерах от компании `IBM.` Для изучения квантовых вычислений с экосистемой `Qsikit` можно рекомендовать [прекрасную онлайн книгу](https://qiskit.org/textbook/what-is-quantum.html). Более подробный обзор библиотеки также [в отдельной лекции нашего курса](qiskit).
+Код, написанный на `Qiskit` может быть запущен на квантовых компьютерах от компании `IBM.` Для изучения квантовых вычислений с экосистемой `Qsikit` можно рекомендовать [прекрасную онлайн книгу](https://qiskit.org/textbook/what-is-quantum.html). Более подробный обзор библиотеки также [в отдельной лекции нашего курса](./qiskit.md).
 
 ### Pennylane
 
@@ -239,7 +244,7 @@ circuit.draw()
 import pennylane as qml
 from pennylane import numpy as np
 
-dev = qml.device('default.qubit', shots=1000, wires=2)
+dev = qml.device("default.qubit", shots=1000, wires=2)
 
 def make_entanglement():
     qml.Hadamard(wires=0)
@@ -248,6 +253,13 @@ def make_entanglement():
 
 circuit = qml.QNode(make_entanglement, dev)
 circuit()
+```
+
+```
+# Draw the circuit
+qml.drawer.use_style("default")
+fig, ax = qml.draw_mpl(circuit)()
+fig.show()
 ```
 
 Эта библиотека может использовать в качестве backend любое из:
@@ -260,7 +272,7 @@ circuit()
 
 Но для нас самое главное преимущество этой библиотеки -- это огромное количество готовых API для машинного обучения, которые позволяют автоматически считать градиенты и дифференцировать квантовые схемы, или обновлять параметры таких схем градиентным спуском.
 
-В нашем курсе библиотеке `Pennylane` посвящена [целая отдельная лекций](pennylane).
+В нашем курсе библиотеке `Pennylane` посвящена [целая отдельная лекций](pennylane.md).
 
 ## Заключение
 

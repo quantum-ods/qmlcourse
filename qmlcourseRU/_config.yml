@@ -16,23 +16,36 @@ html:
   home_page_in_navbar: true
   use_repository_button: true
   use_issues_button: true
-  baseurl: https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html
+  baseurl: https://quantum-ods.github.io/qmlcourse/book/
   google_analytics_id: UA-51362752-1
 
 notebook_interface: "notebook"
 
 # repository:
-#   url: https://github.com/SemyonSinchenko/qmlcourse.ai
+#   url: https://github.com/quantum-ods/qmlcourse
 #   path_to_book: "qmlcourseRU"
 
 latex:
   latex_engine: "xelatex"
+  latex_elements:
+    preamble: >-
+      \usepackage{amsmath}
+      \usepackage{unicodemath}
+      \usepackage{hyperref}
+      \usepackage{physics}
+      \usepackage{polyglossia}
+      \setmainlanguage[babelshorthands = true]{russian}
+      \setotherlanguage{english}
+  use_jupyterbook_latex: true
   latex_documents:
-    target.name: qmlcourseRU.tex
+    targetname: qmlcourseRU.tex
 
 sphinx:
   config:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
+  extra_extensions:
+    - sphinx_sitemap
+    - sphinx_jupyterbook_latex
 
 parse:
   myst_enable_extensions:
@@ -43,6 +56,6 @@ bibtex_bibfiles:
   - _bibliography/references.bib
 
 repository:
-  url: https://github.com/SemyonSinchenko/qmlcourse
+  url: https://github.com/quantum-ods/qmlcourse
   path_to_book: qmlcourseRU
   branch: master

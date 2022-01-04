@@ -14,13 +14,19 @@ kernelspec:
 
 # Квантовая телепортация
 
+Автор(ы):
+
+- [Решетова Карина](https://github.com/Carinetta)
+- [Токарев Игорь](https://github.com/polyzer)
+
+
 Пожалуй, пришло время познакомиться с квантовой телепортацией.
 
 Часто вижу в новостях «телепортировали кубит», «телепортировали электрон». Но это лишь игра слов... Рассмотрим два запутанных электрона -- первый находится у вас, а второй у вашего друга. И под телепортацией подразумевается вот что: вы, используя допустимую операцию, изменяете состояние своего электрона, и второй (запутанный с ним), также изменит свое состояние (в соответствии с примененной операцией). Вам остается лишь выбрать допустимую операцию.
 
 Давайте сейчас посмотрим на [состояния Белла](https://ru.wikipedia.org/wiki/Состояние_Белла) (Bell states). Прошу:
 
-$$ |\beta_{00}\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)$$
+$$ |\beta_{00}\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)$$ (eqn:bell_beta_00)
 $$ |\beta_{01}\rangle = \frac{1}{\sqrt{2}} (|01\rangle + |10\rangle)$$
 $$ |\beta_{10}\rangle = \frac{1}{\sqrt{2}} (|00\rangle - |11\rangle)$$
 $$ |\beta_{11}\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)$$
@@ -52,9 +58,9 @@ $$ |\beta_{11}\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)$$
 
 3. Алиса применяет CNOT между первым и вторым кубитами. Вспоминая, что $ |\psi\rangle = \alpha|0\rangle + \beta|1\rangle $:
 
-   $$|\psi_{3}\rangle = (I \otimes CNOT(1, 2))|\psi_{2}\rangle =$$
+   $$|\psi_{3}\rangle = (CNOT(1, 2) \otimes I)|\psi_{2}\rangle =$$
 
-   $$(I \otimes CNOT(1, 2))\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =$$
+   $$(CNOT(1, 2) \otimes I)\frac{1}{\sqrt{2}}(\alpha|0\rangle + \beta|1\rangle)(|00\rangle + |11\rangle) =$$
 
    $$ = \frac{1}{\sqrt{2}}[\alpha(|000\rangle + |011\rangle) + \beta(|110\rangle + |101\rangle)] $$
 

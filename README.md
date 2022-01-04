@@ -1,33 +1,29 @@
-<img src="./qmlcourseRU/logo.svg" align="left"></img>
+<img src="./qmlcourseRU/logo.svg" align="left" width="178" height="178"></img>
 
 # QMLCourse
 
+<a href="https://quantum-ods.github.io/qmlcourse/book/index.html" target="_blank">
+    <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fquantum-ods.github.io%2Fqmlcourse%2Fbook%2Findex.html">
+</a>
+<a href="https://ods.ai/tracks/qmlcourse" target="_blank">
+  <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=critical&up_message=ods.ai&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
+</a>
+
 <p align="left">
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/blob/master/LICENSE">
+  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
     <img alt="shield_license" src="https://img.shields.io/badge/license-CC--BY--4.0-brightgreen">
   </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/discussions">
-    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/SemyonSinchenko/qmlcourse">
+  <a href="https://github.com/quantum-ods/qmlcourse/discussions">
+    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/quantum-ods/qmlcourse">
   </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit.yml">
-    <img alt="pre_commit" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
+    <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml">
-    <img alt="deploy_book" src="https://github.com/SemyonSinchenko/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
-  </a>
-</p>
-</br></br>
-<p align="left">
-  <a href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html">
-    <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
-  </a>
-  <a href="https://ods.ai/tracks/qmlcourse">
-    <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=red&up_message=ods.ai%20course&url=https%3A%2F%2Fsemyonsinchenko.github.io%2Fqmlcourse%2F_build%2Fhtml%2Fbook%2Findex.html">
-  </a>
-  <a href="https://github.com/SemyonSinchenko/qmlcourse/raw/gh-pages/pdf/all_book.pdf">
-    <img alt="shield_downlod_all_pdf_book" src="https://img.shields.io/website?style=for-the-badge&up_color=yellow&up_message=download%20course%20book&url=https%3A%2F%2Fgithub.com%2FSemyonSinchenko%2Fqmlcourse%2Fraw%2Fgh-pages%2Fpdf%2Fall_book.pdf">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
+    <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
 </p>
+</br>
 
 ## About
 
@@ -37,26 +33,40 @@
 
 This is the main repository of the course.
 
-1. [Contributing Guide](#contributing-guide)
-2. [Discussions](#discussions)
-3. [Course Program](#course-program)
-4. [Team](#team)
-5. [Join ODS](#join-ods)
-6. [Similar Projects](#similar-projects)
-7. [Bibtex Citations](#bibtex)
-8. [Legal Issues](#legal-issues)
+- [Build the book](#build-the-book)
+- [Contributing Guide](#contributing-guide)
+- [Discussions](#discussions)
+- [Course Program](#course-program)
+- [Team](#team)
+- [Join ODS](#join-ods)
+- [Similar Projects](#similar-projects)
+- [Legal Issues](#legal-issues)
+
+## Build the book
+
+Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
+
+Linux, xelatex:
+
+```
+git clone https://github.com/quantum-ods/qmlcourse.git
+cd qmlcourse
+git checkout gh-pages
+cd _build/latex
+xelatex -interaction nonstopmode qmlcourseRU.tex
+```
 
 ## Contributing Guide
 
-[Contributing Guide](./CONTRIBUTING.md)
+Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contributor roles.
 
 ## Discussions
 
-Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/SemyonSinchenko/qmlcourse/discussions).
+Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/quantum-ods/qmlcourse/discussions).
 
 ## Course Program
 
-![](./qmlcourseRU/_static/index/program.png)
+![](./qmlcourseRU/_static/index/program.svg)
 
 ### How to read the schema?
 
@@ -68,82 +78,22 @@ Some ideas, suggestions, remarks, etc. you can write on a separate page [here](h
 
 ## Team
 
-There is a not full list of core members. The first is the nickname in the ODS slack and the second is the GitHub account.
+The main authors, reviewers, editors, DevOps you can find [here](https://quantum-ods.github.io/qmlcourse/book/authors.html).
 
-### Contributor roles
+Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/quantum-ods/qmlcourse/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
 
-Here we list all team members according to their contributor roles. Refer to [CONTRIBUTING.md](https://github.com/SemyonSinchenko/qmlcourse.ai/blob/master/CONTRIBUTING.md) for the definition of all contributor roles.
-
-### Benevolent Dictator
-
-Semyon Sinchenko, @sem ([GitHub](https://github.com/SemyonSinchenko))
-
-### Core reviewers
-
-- @evgeniyzh ([GitHub](https://github.com/Randl))
-- @gamlo ([GitHub](https://github.com/ooovector))
-- @Sergei Shirkin ([GitHub](https://github.com/SergeiShirkin))
-
-To be extended based on the actual commitment and qualification of all contributors.
-
-### Reviewers
-
-By default that's everyone who is invited to the #org_qml_course Slack channel.
-
-### Authors
-
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/SemyonSinchenko/qmlcourse.ai/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
-
-Also, all authors for some updates are participants special channel into community ods.ai, join filling the form and write your nickname to orgs to add you to the channel.
-
-- @stm ([GitHub](https://github.com/stalkermustang)): Python
-- @dayyass ([GitHub](https://github.com/dayyass)): Linear Algebra
-- @artgor ([GitHub](https://github.com/Erlemar)): NumPy
-- @yorko ([GitHub](https://github.com/Yorko)): ML intro, advanced SVM
-- @nkarelin ([GitHub](https://github.com/karelin)): quantum entropy and mixed states
-- @gamlo ([GitHub](https://github.com/ooovector)): hardware
-- @Sergei Shirkin ([GitHub](https://github.com/SergeiShirkin)): PennyLane, Deutsch, Grover
-- @sem ([GitHub](https://github.com/SemyonSinchenko)): multiple lectures
-- @zimka ([GitHub](https://github.com/zimka)): quantum chemistry
-- @Aleksandr Berezutskii ([GitHub](https://github.com/meandmytram)): D-Wave, Barren plateau
-
-### Editors
-
-- @nmarkova ([GitHub](https://github.com/nsmarkova))
-
-### Orgs
-
-- @yorko ([GitHub](https://github.com/Yorko))
-- @vtrohimenko ([GitHub](https://github.com/vtrokhymenko))
-
-### DevOps
-
-- @Korzhov Dmitry ([GitHub](https://github.com/dkorzhov))
+Also, all authors for some updates are participants special channel into community [ods.ai](http://ods.ai), join filling the form and write your nickname to orgs to add you to the channel.
 
 ## Join ODS
 
 To join the ODS-community slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that, we add you to the closed channel in the ODS Slack.
 
-## Similar projects
+## Similar Projects
 
 - [QuantumAlgorithms.org](https://github.com/Scinawa/quantumalgorithms.org) [ENG]: lecture notes for students about quantum algorithms and quantum machine learning. Compared to this project our lectures are more practice and programming-oriented. In our course, there are more entry-level and sci-pop lectures but in QuantumAlgorithms.org there are more hard math and strong proofs of theorems. Also, we pay less attention to fully-quantum algorithms and ML but pay more attention to the variational and hybrid quantum-classical things.
 - [Qiskit-textbook](https://github.com/qiskit-community/qiskit-textbook) [ENG]: a textbook about learning quantum computing with qiskit. Compared to this project our course is more about ML, not the quantum protocols and algorithms. Also, we use `PennyLane` as the main quantum framework because it could be used with different backends including `Qiskit` and `CirQ`.
 - [CERN Introductory Course](https://home.cern/news/announcement/computing/online-introductory-lectures-quantum-computing-6-november) [ENG]: A series of weekly lectures on the basics of quantum computing. The talks focus on the practical aspects of quantum computing and are organised by CERN openlab and the CERN Quantum Technology Initiative. They are given by Elias Fernandez-Combarro Alvarez, an associate professor in the Computer Science Department at the University of Oviedo in Spain since 2009 and a cooperation associate at CERN since earlier this year. Compared to that lectures our course is more practice and programming oriented. Also our course is open source and maintained by community compared to the CERN course which is maintained by the author Dr. Alvarez.
 - [CERN Introductory Course (adopted version in russian)](https://russol.info/quantum) [RU]: The same as above but in russian and better adopted for entry-level poeple. Lectures are splitted to short parts and notes are commented and illustrated.
-
-## Bibtex
-
-```bibtex
-@misc{qmlcourse2021,
-  author = {Sinchenko, Semyon A. and Kashnitsky, Yury and Trokhymenko, Viktor and  Besedin, Ilya and Shirkin, Sergei
-  and Berezutskii, Aleksandr and Kotenkov, Igor and Zheltonozhskii, Evgenii and Zimka, Boris and Karelin, Nikolay
-  and Markova, Natalya and Korzhov, Dmitry and Ovsyannikova, Alexandra and Patskova, Ekaterina},
-  title = {Quantum Machine Learning Course},
-  year = {2021},
-  publisher = {GitHub},
-  howpublished = {\url{https://github.com/SemyonSinchenko/qmlcourse.ai}},
-}
-```
 
 ## Legal Issues
 

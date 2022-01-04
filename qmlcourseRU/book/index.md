@@ -32,13 +32,13 @@
 
 ## Как проходить этот курс?
 
-Рекомендуется проходить курс в том порядке, который обозначен на схеме. У курса есть [пререквизиты](prerequisite) – программирование на Python, основы линейной алгебры и машинного обучения, советуем с ними ознакомиться и (опционально) проверить себя с помощью [входного теста](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
+Рекомендуется проходить курс в том порядке, который обозначен на схеме. У курса есть [пререквизиты](./prerequisite.md) – программирование на Python, основы линейной алгебры и машинного обучения, советуем с ними ознакомиться и (опционально) проверить себя с помощью [входного теста](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
 
 Курс обсуждается в [Slack ODS.ai](https://ods.ai/join-community) в канале #quantum_computing.
 
 ## Как можно помочь?
 
-Помочь можно словом и делом. Если знаете людей, интересующихся квантовыми вычислениями – замолвите словечко. Курс разрабатывается сообществом OpenDataScience, такими же «больными», как и организаторы ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). Если горите желанием в чем-то помочь, то создавайте Issue, а лучше сразу Pull Request в [репозитории курса](http://github.com/SemyonSinchenko/qmlcourse/) ([Contributing guide](https://github.com/SemyonSinchenko/qmlcourse/blob/master/CONTRIBUTING.md)).
+Помочь можно словом и делом. Если знаете людей, интересующихся квантовыми вычислениями – замолвите словечко. Курс разрабатывается сообществом OpenDataScience, такими же «больными», как и организаторы ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). Если горите желанием в чем-то помочь, то создавайте Issue, а лучше сразу Pull Request в [репозитории курса](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
 
 **Желаем успехов!**
 

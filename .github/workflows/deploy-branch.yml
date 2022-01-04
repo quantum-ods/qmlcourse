@@ -1,37 +1,42 @@
 name: deploy-branch
 
 on:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
-  deploy_branch_aws:
+
+  deploy_branch_to_heroku:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 24
 
     steps:
       - name: checkout code
         uses: actions/checkout@v2
 
-      # Another magic action
-      - name: get branch name
-        uses: nelonoel/branch-name@v1.0.1
-
-      # Set up PY38
-      - name: Set up Python 3.8
+      - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
         with:
           python-version: 3.8
 
-      # Set up POETRY
-      - name: Set up poetry
+      - name: set up conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge, psi4
+          activate-conda: true
+
+      - name: set up poetry
         uses: snok/install-poetry@v1.1.6
         with:
-          virtualenvs-create: true
+          virtualenvs-create: false
           virtualenvs-in-project: true
 
-      # Install dependencies
-      - name: Install dependencies
+      - name: install the main dependencies
         run: |
+          conda create python=3.8 -p .venv -y
+          conda install psi4 -c psi4 -p .venv -y
+
           poetry install
 
       # todo: replace with a more sane solution
@@ -42,23 +47,18 @@ jobs:
           poetry run pip install -U tensorflow_quantum
           poetry run pip install -U tfq-nightly
 
-      - name: add SSH key-file
-        run: |
-          mkdir -p /home/runner/.ssh
-          echo "${{ secrets.AWS_SSH_KEY }}" > /home/runner/.ssh/key.pem
-          chmod 600 /home/runner/.ssh/key.pem
-
       - name: build the book
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
-      - name: deploy
+      - name: add `composer.json`
         run: |
-          export CURRENT_BRANCH="${BRANCH_NAME}"
+          echo "{}" > ./qmlcourseRU/_build/html/composer.json
 
-          export AWS_HOST="54.89.156.216"
-          export AWS_USER="ubuntu"
-          export SSH_KEY="/home/runner/.ssh/key.pem"
-
-          poetry run python ./tools/deploy2aws.py ./
+      - name: update publish dir
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU/_build/html/
+          publish_branch: heroku-deploy-branch
