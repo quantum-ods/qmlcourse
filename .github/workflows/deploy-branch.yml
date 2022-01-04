@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  deploy_branch:
+  deploy_branch_to_heroku:
     runs-on: ubuntu-latest
     timeout-minutes: 24
 
@@ -40,12 +40,12 @@ jobs:
           poetry install
 
       # todo: replace with a more sane solution
-      # - name: install tensorflow_quantum
-      #   run: |
-      #     poetry run pip install --upgrade pip
-      #     poetry run pip install -U tensorflow==2.5.1
-      #     poetry run pip install -U tensorflow_quantum
-      #     poetry run pip install -U tfq-nightly
+      - name: install tensorflow_quantum
+        run: |
+          poetry run pip install --upgrade pip
+          poetry run pip install -U tensorflow==2.5.1
+          poetry run pip install -U tensorflow_quantum
+          poetry run pip install -U tfq-nightly
 
       - name: build the book
         run: |
