@@ -508,6 +508,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/qubo_linreg_svm_kmeans.html">
+   🟧 QUBO-формулировки трех задач ML
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../problems2qml/jordanwigner.html">
    🟧 Преобразование Жордана-Вигнера
   </a>
@@ -829,12 +834,12 @@
 <p class="admonition-title">Note</p>
 <p>Это интересно, что многие специалисты в области <strong>QML</strong> сегодня даже предлагают вместо термина “квантовая нейросеть” использовать термин “квантовое ядро”, так как математически <strong>VQC</strong> гораздо ближе именно к ядрам, чем к слоям современных глубоких сетей.</p>
 </div>
-<p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id2">[<a class="reference internal" href="../bibliography.html#id57"><span>HavlivcekCorcolesT+19</span></a>]</span>.</p>
+<p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id2">[<a class="reference internal" href="../bibliography.html#id59"><span>HavlivcekCorcolesT+19</span></a>]</span>.</p>
 <div class="section" id="id3">
 <h3>Преобразование состояния<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>На самом деле, если просто использовать какие-то простые квантовые операции, мы не получим какого-то преимущества над классическим ядерным SVM – ведь все то же самое можно будет сделать и на классическом компьютере.</p>
 <p>Чтобы получить реальное преимущество, нам необходимо использовать запутывание и прочие “фишки” квантовых вычислений.</p>
-<p>Дальше мы не станем изобретать велосипеды, а вместо этого воспользуемся примерами хороших преобразований из работы <span id="id4">[<a class="reference internal" href="../bibliography.html#id58"><span>SYG+20</span></a>]</span>. Рассмотрим, что именно там описано.</p>
+<p>Дальше мы не станем изобретать велосипеды, а вместо этого воспользуемся примерами хороших преобразований из работы <span id="id4">[<a class="reference internal" href="../bibliography.html#id60"><span>SYG+20</span></a>]</span>. Рассмотрим, что именно там описано.</p>
 <div class="section" id="id5">
 <h4>Общая схема<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Для простоты формул мы не будем выписывать обобщенные формулы, а все будем писать для нашего двумерного пространства. Тогда наша схема может быть разделена на несколько частей:</p>
@@ -859,7 +864,7 @@
 \phi(x_1, x_2),\text{    }x_1 \neq x_2
 \end{cases}
 \end{split}\]</div>
-<p>Мы будем называть ее <em>feature function</em>. В некотором смысле можно сказать, что именно эта функция определяет тип ядра по аналогии с классическим SVM. В работе <span id="id7">[<a class="reference internal" href="../bibliography.html#id58"><span>SYG+20</span></a>]</span> описано много разных вариантов таких <em>feature function</em>, мы будем использовать следующую:</p>
+<p>Мы будем называть ее <em>feature function</em>. В некотором смысле можно сказать, что именно эта функция определяет тип ядра по аналогии с классическим SVM. В работе <span id="id7">[<a class="reference internal" href="../bibliography.html#id60"><span>SYG+20</span></a>]</span> описано много разных вариантов таких <em>feature function</em>, мы будем использовать следующую:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
@@ -882,10 +887,10 @@
 <p>Для начала необходимые импорты.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">&#39;retina&#39;</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_moons</span>
 </pre></div>
 </div>
@@ -894,7 +899,7 @@
 <p>Помимо всех привычных, нам еще потребуется классический SVM из <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
 </pre></div>
 </div>
 </div>
@@ -902,7 +907,7 @@
 <p>Мы будем работать с уже привычным нам набором “Tow Moons”. Только в этом случае мы будем использовать чуть-чуть другую нормализацию – для нашего ядра элементы вектора <span class="math notranslate nohighlight">\(x\)</span> должны быть в интервале <span class="math notranslate nohighlight">\([-1, 1]\)</span>. Сразу переведем наши данные в этот диапазон:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_moons</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_moons</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -922,14 +927,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/hybridsvm_5_0.png" src="../../_images/hybridsvm_5_0.png" />
-</div>
 </div>
 <p>И привычное нам объявление устройства.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -937,7 +939,7 @@
 <p>Теперь давайте для начала реализуем наше преобразование над одним из векторов (<span class="math notranslate nohighlight">\(U(x)\)</span>). Поскольку далее нам потребуется еще и <span class="math notranslate nohighlight">\(U(x)^\dagger\)</span>, то мы сразу воспользуемся декоратором <code class="docutils literal notranslate"><span class="pre">&#64;qml.template</span></code>, который позволит нам автоматически получить обратную схему.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">template</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">template</span>
 <span class="k">def</span> <span class="nf">var_layer</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -968,7 +970,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <p>Проще говоря, мы реализуем схему, которая нам дает вероятности каждой из битовых строк (а дальше мы просто возьмем первую, она и отвечает строке <span class="math notranslate nohighlight">\(0,...0\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">dot_prod</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">var_layer</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">var_layer</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
@@ -981,7 +983,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <p>Ну и сразу вспомогательную функцию, которая нам считает то, что нам было нужно:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">q_dot_prod</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">q_dot_prod</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
     <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">dot_prod</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -992,16 +994,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <p>Для самопроверки убедимся в том, что наше “скалярное произведение” симметрично:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">q_dot_prod</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">q_dot_prod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/pennylane/utils.py:371: UserWarning: Use of qml.inv() is deprecated and should be replaced with qml.adjoint().
-  warnings.warn(
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">q_dot_prod</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">q_dot_prod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -1009,13 +1002,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <p>И сразу посмотрим на то, как выглядит наша схема:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dot_prod</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──Rϕ(0.333)───H──╭C────────────╭C──╭C─────────────╭C──H──Rϕ(-0.246)──H──╭┤ Probs 
- 1: ──H──Rϕ(-0.333)──H──╰X──Rϕ(2.81)──╰X──╰X──Rϕ(-1.68)──╰X──H──Rϕ(0.989)───H──╰┤ Probs 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dot_prod</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1030,7 +1017,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gram_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gram_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -1047,13 +1034,8 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <p>Обучим нашу модель:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;precomputed&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s2">&quot;precomputed&quot;</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gram_mat</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC(kernel=&#39;precomputed&#39;)
 </pre></div>
 </div>
 </div>
@@ -1061,7 +1043,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <p>Посчитаем предсказания и посмотрим на результат:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">gram_mat</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">gram_mat</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">preds</span><span class="p">)</span>
@@ -1069,9 +1051,6 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/hybridsvm_23_0.png" src="../../_images/hybridsvm_23_0.png" />
 </div>
 </div>
 <p>Результат выглядит неплохо!</p>
