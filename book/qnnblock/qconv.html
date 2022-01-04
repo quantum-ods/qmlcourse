@@ -853,7 +853,7 @@
 <p>Сначала загружаем библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> для квантовых вычислений, <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> для обучения классификатора и <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> для отрисовки результатов.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 <span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="kn">from</span> <span class="nn">pennylane.templates</span> <span class="kn">import</span> <span class="n">RandomLayers</span>
 
@@ -863,13 +863,7 @@
 <span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:36: UserWarning: Setuptools is replacing distutils.
-  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">&#39;retina&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -877,7 +871,7 @@
 <p>Устанавливаем параметры модели для обучения: число эпох, число слоев квантовой свертки и его выходных каналов, а также число тренировочных и тестовых примеров. Нужно использовать 4 кубита, для обработки каждого из 4 пикселей входного блока и генерации 4 каналов.  Число примеров выбрано малым для увеличения скорости демонстрации. Также фиксируем инициализацию генераторов случайных чисел для <code class="docutils literal notranslate"><span class="pre">numpy</span></code> и <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_epochs</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Количество эпох обучения</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_epochs</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># Количество эпох обучения</span>
 <span class="n">n_layers</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1"># Число случайных квантовых блоков</span>
 <span class="n">n_wires</span> <span class="o">=</span> <span class="mi">4</span>     <span class="c1"># Число выходных каналов после квантовых блоков</span>
 <span class="n">n_train</span> <span class="o">=</span> <span class="mi">20</span>    <span class="c1"># Размер тренировочного датасета</span>
@@ -893,7 +887,7 @@
 <p>Для демонстрации используем датасет MNIST, который создан для предсказания цифры (от 0 до  9) по его изображению</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mnist_dataset</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mnist_dataset</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span>
 <span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist_dataset</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
 
 <span class="c1"># Ограничение размера датасета</span>
@@ -909,29 +903,6 @@
 <span class="c1"># Добавление дополнительной размерности к данным для сверточных каналов</span>
 <span class="n">train_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_images</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">test_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_images</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
-
-    8192/11490434 [..............................] - ETA: 0s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-   65536/11490434 [..............................] - ETA: 10s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-  131072/11490434 [..............................] - ETA: 9s 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
- 1097728/11490434 [=&gt;............................] - ETA: 1s
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-11493376/11490434 [==============================] - 0s 0us/step
 </pre></div>
 </div>
 </div>
@@ -953,7 +924,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">n_wires</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">n_wires</span><span class="p">)</span>
 
 <span class="c1"># Генерация значений параметров для квантовых слоев</span>
 <span class="n">rand_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">high</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_layers</span><span class="p">,</span> <span class="n">n_wires</span><span class="p">))</span>
@@ -982,7 +953,7 @@
 <p>Описанный выше процесс уменьшает разрешение входного изображения в 2 раза, что эквивалентно классической свертки с ядром 2х2 и шагом 2</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quanv</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quanv</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Функция квантовой свертки над входным изображением.&quot;&quot;&quot;</span>
 
     <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">14</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="n">n_wires</span><span class="p">))</span>
@@ -1013,7 +984,7 @@
 <p>Так как квантовый сверточный слой в нашем случае не обучается, то лучше провести предварительную обработку им всех используемых изображений из датасета. Подготовленные данные будут использоваться классической нейронной сетью для обучения модели классификатора.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_train_images</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q_train_images</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_images</span><span class="p">):</span>
     <span class="n">q_train_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">quanv</span><span class="p">(</span><span class="n">img</span><span class="p">))</span>
 <span class="n">q_train_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">q_train_images</span><span class="p">)</span>
@@ -1027,19 +998,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Препроцессинг тренировочных изображений квантовой сверткой выполнен.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Препроцессинг тестовых изображений квантовой сверткой выполнен.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Давайте посмотрим на 4 первых тренировочных примера (первый ряд) и их 4 канала подготовленных данных (2-5 строки)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">4</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">n_channels</span> <span class="o">=</span> <span class="n">n_wires</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n_channels</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
@@ -1061,9 +1024,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/qconv_13_0.png" src="../../_images/qconv_13_0.png" />
-</div>
 </div>
 <p>По обработанным данным (последние 4 ряда) видно уменьшение разрешения в 2 раза, а также то, что пространственная структура цифр сохраняется, что и должно наблюдаться для сверточных слоев</p>
 </div>
@@ -1073,7 +1033,7 @@
 <p>Обучение будет осуществлено с помощью оптимизатора <code class="docutils literal notranslate"><span class="pre">Adam</span></code> по функции потерь, в качестве которой используется кросс-энтропия.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MyModel</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MyModel</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Функция инициализирует и возвращает keras модель, готовая к обучению&quot;&quot;&quot;</span>
 
     <span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
@@ -1097,7 +1057,7 @@
 <p>Сначала обучим модель на данных, подготовленных с помощью квантовой цепи.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
 
 <span class="n">q_history</span> <span class="o">=</span> <span class="n">q_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
     <span class="n">q_train_images</span><span class="p">,</span>
@@ -1114,7 +1074,7 @@
 <p>Для сравнения с результатами чисто классической модели проведем ее обучение на входных необработанных картинках.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_model</span> <span class="o">=</span> <span class="n">MyModel</span><span class="p">()</span>
 
 <span class="n">c_history</span> <span class="o">=</span> <span class="n">c_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
     <span class="n">train_images</span><span class="p">,</span>
@@ -1134,7 +1094,7 @@
 <p>Сравнение проведем на основе тестовой точности и значению функции потерь в зависимости от номера эпохи</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;seaborn&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;seaborn&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_accuracy&quot;</span><span class="p">],</span> <span class="s2">&quot;-ob&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;With quantum layer&quot;</span><span class="p">)</span>
@@ -1154,9 +1114,6 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/qconv_21_0.png" src="../../_images/qconv_21_0.png" />
 </div>
 </div>
 <p>Из рисунков видно наличие сильного сходства результатов для двух моделей: гибридной и чисто классической. В наших малых экспериментах достигнута довольно низкая точность в 50% (классический аналог - 40%). Однако при увеличении числа используемых примеров точность должна быть существенно выше.</p>

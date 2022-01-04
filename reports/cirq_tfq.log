@@ -17,20 +17,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import psi4
-psi4.core.be_quiet() # отключаем логирование в stdout
-
-h_atom = psi4.geometry("H")
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+import tensorflow as tf
+import tensorflow_quantum as tfq
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_7479/4225377570.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mpsi4[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mpsi4[0m[0;34m.[0m[0mcore[0m[0;34m.[0m[0mbe_quiet[0m[0;34m([0m[0;34m)[0m [0;31m# отключаем логирование в stdout[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0mh_atom[0m [0;34m=[0m [0mpsi4[0m[0;34m.[0m[0mgeometry[0m[0;34m([0m[0;34m"H"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_7142/3324038471.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mimport[0m [0mos[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0mos[0m[0;34m.[0m[0menviron[0m[0;34m[[0m[0;34m"TF_CPP_MIN_LOG_LEVEL"[0m[0;34m][0m [0;34m=[0m [0;34m"3"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m [0;32mimport[0m [0mtensorflow[0m [0;32mas[0m [0mtf[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      4[0m [0;32mimport[0m [0mtensorflow_quantum[0m [0;32mas[0m [0mtfq[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'psi4'
-ModuleNotFoundError: No module named 'psi4'
+[0;31mModuleNotFoundError[0m: No module named 'tensorflow'
+ModuleNotFoundError: No module named 'tensorflow'
 
