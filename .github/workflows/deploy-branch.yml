@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2
-
-      - name: get branch name
-        uses: nelonoel/branch-name@v1.0.1
+        with:
+          ref: "heroku-deploy-branch"
+          path: ./heroku-deploy-branch
 
       - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
@@ -50,23 +50,16 @@ jobs:
           poetry run pip install -U tensorflow_quantum
           poetry run pip install -U tfq-nightly
 
-      - name: add SSH key-file
-        run: |
-          mkdir -p /home/runner/.ssh
-          echo "${{ secrets.AWS_SSH_KEY }}" > /home/runner/.ssh/key.pem
-          chmod 600 /home/runner/.ssh/key.pem
-
       - name: build the book
         run: |
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
-      - name: deploy
+      - name: gh-pages action
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourseRU/_build/html/
+
+      - name: add composer for heroku
         run: |
-          export CURRENT_BRANCH="${BRANCH_NAME}"
-
-          export AWS_HOST="54.89.156.216"
-          export AWS_USER="ubuntu"
-          export SSH_KEY="/home/runner/.ssh/key.pem"
-
-          poetry run python ./tools/deploy2aws.py ./
+          echo "{}" > composer.json
