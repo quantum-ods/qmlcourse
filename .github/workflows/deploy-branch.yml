@@ -13,10 +13,6 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
-      - name: set some flags
-        env:
-          PUBLISH_DIR: ./qmlcourseRU/_build/html/
-
       - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
         with:
@@ -56,13 +52,13 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
+      - name: add `composer.json`
+        run: |
+          echo "{}" > ./qmlcourseRU/_build/html/composer.json
+
       - name: update publish dir
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${ secrets.GITHUB_TOKEN }}
-          publish_dir: ${ PUBLISH_DIR }
+          publish_dir: ./qmlcourseRU/_build/html/
           publish_branch: heroku-deploy-branch
-
-      - name: add `composer.json`
-        run: |
-          echo "{}" > ${ PUBLISH_DIR }/composer.json
