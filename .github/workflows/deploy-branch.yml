@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 24
 
-    strategy:
-      matrix:
-        publish_dir: ./qmlcourseRU/_build/html/
-
     steps:
       - name: checkout code
         uses: actions/checkout@v2
+
+      - name: set some flags
+        env:
+          PUBLISH_DIR: ./qmlcourseRU/_build/html/
 
       - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
@@ -59,10 +59,10 @@ jobs:
       - name: update publish dir
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ matrix.publish_dir }}
+          github_token: ${ secrets.GITHUB_TOKEN }}
+          publish_dir: ${ PUBLISH_DIR }
           publish_branch: heroku-deploy-branch
 
       - name: add `composer.json`
         run: |
-          echo "{}" > ${{ matrix.publish_dir }}/composer.json
+          echo "{}" > ${ PUBLISH_DIR }/composer.json
