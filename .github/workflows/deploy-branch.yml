@@ -5,16 +5,13 @@ on:
 
 jobs:
 
-  deploy_branch:
+  deploy_branch_to_heroku:
     runs-on: ubuntu-latest
     timeout-minutes: 24
 
     steps:
       - name: checkout code
         uses: actions/checkout@v2
-        with:
-          ref: "heroku-deploy-branch"
-          path: ./heroku-deploy-branch
 
       - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
@@ -52,14 +49,16 @@ jobs:
 
       - name: build the book
         run: |
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
-      - name: gh-pages action
+      - name: add `composer.json`
+        run: |
+          echo "{}" > ./qmlcourseRU/_build/html/composer.json
+
+      - name: update publish dir
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/html/
-
-      - name: add composer for heroku
-        run: |
-          echo "{}" > composer.json
+          publish_branch: heroku-deploy-branch
