@@ -51,7 +51,7 @@ Linux, xelatex:
 ```
 git clone https://github.com/quantum-ods/qmlcourse.git
 cd qmlcourse
-git checkout gh-pages
+git checkout gh-artifacts
 cd _build/latex
 xelatex -interaction nonstopmode qmlcourseRU.tex
 ```

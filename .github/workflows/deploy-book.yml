@@ -25,16 +25,16 @@ jobs:
         run: |
           sudo apt install -y imagemagick
 
-      - name: checkout branch with cache
+      - name: checkout branch to gh-artifacts
         uses: actions/checkout@v2
         with:
-          ref: "gh-pages"
-          path: ./gh-pages
+          ref: "gh-artifacts"
+          path: ./gh-artifacts
 
       - name: copy cache for build book
         if: ${{ github.event.inputs.DisableCache != 'true' }}
         run: |
-          cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
+          cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
       - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
@@ -95,7 +95,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU
 
-      - name: gh-pages action
+      - name: gh-pages action to pages-gh
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
