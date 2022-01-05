@@ -33,14 +33,17 @@
 
 This is the main repository of the course.
 
-- [Build the book](#build-the-book)
-- [Contributing Guide](#contributing-guide)
-- [Discussions](#discussions)
-- [Course Program](#course-program)
-- [Team](#team)
-- [Join ODS](#join-ods)
-- [Similar Projects](#similar-projects)
-- [Legal Issues](#legal-issues)
+- [QMLCourse](#qmlcourse)
+  - [About](#about)
+  - [Build the book](#build-the-book)
+  - [Contributing Guide](#contributing-guide)
+  - [Discussions](#discussions)
+  - [Course Program](#course-program)
+    - [How to read the schema?](#how-to-read-the-schema)
+  - [Team](#team)
+  - [Join ODS](#join-ods)
+  - [Similar Projects](#similar-projects)
+  - [Legal Issues](#legal-issues)
 
 ## Build the book
 
@@ -51,7 +54,7 @@ Linux, xelatex:
 ```
 git clone https://github.com/quantum-ods/qmlcourse.git
 cd qmlcourse
-git checkout gh-pages
+git checkout gh-artifacts
 cd _build/latex
 xelatex -interaction nonstopmode qmlcourseRU.tex
 ```
