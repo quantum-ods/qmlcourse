@@ -32,7 +32,7 @@ jobs:
           path: ./gh-artifacts
 
       - name: copy cache for build book
-        if: ${{ github.event.inputs.DisableCache != 'true' }}
+        if: ${{ github.event.inputs.DisableCache == 'false' }}
         run: |
           cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
@@ -55,13 +55,13 @@ jobs:
           virtualenvs-create: false
           virtualenvs-in-project: true
 
-      - name: copy cache dir for dependecies
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-poetry-modules
-        with:
-          path: .venv
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+#       - name: copy cache dir for dependecies
+#         uses: actions/cache@v2
+#         env:
+#           cache-name: cache-poetry-modules
+#         with:
+#           path: .venv
+#           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: install the main dependencies
         run: |
@@ -71,7 +71,8 @@ jobs:
           poetry install
 
       # todo: replace with a more sane solution
-      - name: install tensorflow_quantum # https://www.tensorflow.org/quantum/install
+      # https://www.tensorflow.org/quantum/install
+      - name: install tensorflow_quantum
         run: |
           poetry run pip install --upgrade pip
 
