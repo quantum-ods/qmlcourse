@@ -32,7 +32,7 @@ jobs:
           path: ./gh-artifacts
 
       - name: copy cache for build book
-        if: ${{ github.event.inputs.DisableCache == 'false' }}
+        if: ${{ github.event.inputs.DisableCache != 'true' }}
         run: |
           cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
@@ -70,8 +70,8 @@ jobs:
 
           poetry install
 
-      # todo: replace with a more sane solution
       # https://www.tensorflow.org/quantum/install
+      # todo: replace with a more sane solution
       - name: install tensorflow_quantum
         run: |
           poetry run pip install --upgrade pip
