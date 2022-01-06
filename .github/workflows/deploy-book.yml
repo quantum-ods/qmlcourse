@@ -32,7 +32,7 @@ jobs:
           path: ./gh-artifacts
 
       - name: copy cache for build book
-        if: ${{ github.event.inputs.DisableCache != 'true' }}
+        if: ${{ github.event.inputs.DisableCache == 'false' }}
         run: |
           cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
@@ -88,12 +88,6 @@ jobs:
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU --builder latex
-
-#       - name: gh-pages action
-#         uses: peaceiris/actions-gh-pages@v3.8.0
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./qmlcourseRU
 
       - name: gh-pages action to pages-gh
         uses: peaceiris/actions-gh-pages@v3.8.0
