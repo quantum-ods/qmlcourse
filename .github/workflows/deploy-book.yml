@@ -55,13 +55,13 @@ jobs:
           virtualenvs-create: false
           virtualenvs-in-project: true
 
-      # - name: copy cache dir for dependecies
-      #   uses: actions/cache@v2
-      #   env:
-      #     cache-name: cache-poetry-modules
-      #   with:
-      #     path: .venv
-      #     key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - name: copy cache dir for dependecies
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-poetry-modules
+        with:
+          path: .venv
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: install the main dependencies
         run: |
@@ -89,11 +89,11 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU --builder latex
 
-      - name: gh-pages action
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU
+#       - name: gh-pages action
+#         uses: peaceiris/actions-gh-pages@v3.8.0
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./qmlcourseRU
 
       - name: gh-pages action to pages-gh
         uses: peaceiris/actions-gh-pages@v3.8.0
