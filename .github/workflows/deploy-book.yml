@@ -32,7 +32,7 @@ jobs:
           path: ./gh-artifacts
 
       - name: copy cache for build book
-        if: ${{ github.event.inputs.DisableCache == 'false' }}
+        if: ${{ github.event.inputs.DisableCache == 'true' }}
         run: |
           cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
