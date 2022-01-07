@@ -36,6 +36,14 @@ jobs:
         run: |
           cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
+      - name: cache python module
+        uses: actions/cache@v2
+        with:
+          # CAUTION: Replace this hardcoded "python3.7" dirname with
+          # the dirname providing your desired Python interpreter.
+          path: ${{ env.pythonLocation }}/lib/python3.8/site-packages/*
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
       - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
         with:
@@ -55,14 +63,7 @@ jobs:
           virtualenvs-create: false
           virtualenvs-in-project: true
 
-      - uses: actions/cache@v2
-        with:
-          # CAUTION: Replace this hardcoded "python3.7" dirname with
-          # the dirname providing your desired Python interpreter.
-          path: ${{ env.pythonLocation }}/lib/python3.8/site-packages/*
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-
-#       - name: copy cache dir for dependecies
+#       - name: copy cache for dependecies
 #         uses: actions/cache@v2
 #         env:
 #           cache-name: cache-poetry-modules
