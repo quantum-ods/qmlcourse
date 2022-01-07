@@ -12,13 +12,13 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2
-        
+
       - name: checkout branch to gh-artifacts
         uses: actions/checkout@v2
         with:
           ref: "gh-artifacts"
           path: ./gh-artifacts
-          
+
       - name: copy cache for build book
         run: |
           cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
