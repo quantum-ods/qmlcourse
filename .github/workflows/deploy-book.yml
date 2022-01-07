@@ -45,8 +45,8 @@ jobs:
         uses: actions/cache@v2
         with:
           # /home/runner/work/qmlcourse/qmlcourse/.venv
-          path: /home/runner/work/qmlcourse/qmlcourse/.venv
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+          path: ./.venv
+          key: venv2-${{ runner.os }}-cache
 
       - name: set up conda
         uses: s-weigand/setup-conda@v1
