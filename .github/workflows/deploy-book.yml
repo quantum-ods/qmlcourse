@@ -36,16 +36,16 @@ jobs:
         run: |
           cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
+      - name: set up Python 3.8
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.8
+          
       - name: cache python module
         uses: actions/cache@v2
         with:
           path: ${{ env.pythonLocation }}
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: set up Python 3.8
-        uses: actions/setup-python@v2.2.2
-        with:
-          python-version: 3.8
 
       - name: set up conda
         uses: s-weigand/setup-conda@v1
