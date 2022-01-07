@@ -44,7 +44,8 @@ jobs:
       - name: cache python module
         uses: actions/cache@v2
         with:
-          path: ${{ env.pythonLocation }}
+          # /home/runner/work/qmlcourse/qmlcourse/.venv
+          path: /home/runner/work/qmlcourse/qmlcourse/.venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: set up conda
