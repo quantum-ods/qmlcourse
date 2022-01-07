@@ -55,6 +55,11 @@ jobs:
           virtualenvs-create: false
           virtualenvs-in-project: true
 
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+
 #       - name: copy cache dir for dependecies
 #         uses: actions/cache@v2
 #         env:
