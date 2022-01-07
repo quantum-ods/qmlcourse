@@ -57,8 +57,13 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-          path: ${{ env.pythonLocation }}
-          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+          # CAUTION: Replace this hardcoded "python3.7" dirname with
+          # the dirname providing your desired Python interpreter.
+          path: ${{ env.pythonLocation }}/lib/python3.8/site-packages/*
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
 
 #       - name: copy cache dir for dependecies
 #         uses: actions/cache@v2
