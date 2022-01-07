@@ -39,9 +39,7 @@ jobs:
       - name: cache python module
         uses: actions/cache@v2
         with:
-          # CAUTION: Replace this hardcoded "python3.7" dirname with
-          # the dirname providing your desired Python interpreter.
-          path: ${{ env.pythonLocation }}/lib/python3.8/site-packages/*
+          path: ${{ env.pythonLocation }}
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: set up Python 3.8
