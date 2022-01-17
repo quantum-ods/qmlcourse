@@ -453,11 +453,6 @@
    🟩 Квантовые сверточные сети
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qnnblock/barrenplateau.html">
-   Barren Plateau
-  </a>
- </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -510,6 +505,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../problems2qml/np2ising.html">
    🟩 NP как модели Изинга
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../problems2qml/qubo_linreg_svm_kmeans.html">
+   🟧 QUBO-формулировки трех задач ML
   </a>
  </li>
  <li class="toctree-l1">
@@ -780,7 +780,7 @@
 <div class="section" id="id2">
 <h2>Задача Саймона<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Давайте начнём с того, что алгоритм Саймона решает задачу Саймона. Да, вот такой замечательный учёный - нашёл проблему, решил проблему.</p>
-<p>По своей природе задача Саймона является разновидностью задачи о скрытой абелевой подгруппе <span id="id3">[<a class="reference internal" href="../bibliography.html#id50"><span>Lom04</span></a>]</span>.</p>
+<p>По своей природе задача Саймона является разновидностью задачи о скрытой абелевой подгруппе <span id="id3">[<a class="reference internal" href="../bibliography.html#id52"><span>Lom04</span></a>]</span>.</p>
 <p>Пусть задана функция <span class="math notranslate nohighlight">\(f: \{0, 1\}^n \rightarrow \{0, 1\}^n\)</span> и <strong>неизвестная</strong> строка <span class="math notranslate nohighlight">\(s \in  \{0, 1\}^n\)</span>, для всех <span class="math notranslate nohighlight">\(x, y \in \{0, 1\}^n\)</span> выполняется:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -972,6 +972,51 @@ q2_2: ──╫───┤M├───╫───╫──╫──╫─
         ║   └╥┘   ║   ║  ║  ║ 
 c1: 3/══╩════╩════╩═══╩══╩══╩═
         1    2    0   1  2  0 </pre></div></div>
+</div>
+<p>При использовании pennylane схема выглядит следующим образом:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">NN</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;default.qubit&#39;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">NN</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">simon_start</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+          <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">simon_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+  <span class="n">qml</span><span class="o">.</span><span class="n">CNOT</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">simon_after_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+          <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">simon_circuit</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+  <span class="n">simon_start</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">simon_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">simon_after_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">wx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+  <span class="n">wy</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">wx</span><span class="p">),</span><span class="n">qml</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">wy</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">simon_circuit</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">NN</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">draw_mpl</span><span class="p">(</span><span class="n">simon_circuit</span><span class="p">)(</span><span class="n">N</span><span class="o">=</span><span class="n">NN</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
+</pre></div>
+</div>
+<img alt="../../_images/simon_algorithm_3_1.png" src="../../_images/simon_algorithm_3_1.png" />
+</div>
 </div>
 <p>Теперь пройдём по всем шагам алгоритма:</p>
 <ol>

@@ -213,6 +213,41 @@ qc.measure(qr1, cr1)
 # Рисуем схему
 qc.draw()
 ```
+При использовании pennylane схема выглядит следующим образом:
+
+```{code-cell} ipython3
+import pennylane as qml
+import matplotlib.pyplot as plt
+
+NN = 3
+
+dev = qml.device('default.qubit', shots=128, wires=NN*2)
+
+def simon_start(N: int):
+  for i in range(N):
+          qml.Hadamard(wires=i)
+
+def simon_oracle(N: int):
+  qml.CNOT(wires=[0, N])
+
+def simon_after_oracle(N: int):
+  for i in range(N):
+          qml.Hadamard(wires=i)
+
+@qml.qnode(dev)
+def simon_circuit(N: int):
+  simon_start(N)
+  simon_oracle(N)
+  simon_after_oracle(N)
+  wx = range(0, N)
+  wy = range(N, N*2)
+  return qml.sample(wires=wx),qml.sample(wires=wy)
+
+x,y = simon_circuit(N=NN)
+
+fig, ax = qml.draw_mpl(simon_circuit)(N=NN)
+fig.show()
+```
 
 Теперь пройдём по всем шагам алгоритма:
 
