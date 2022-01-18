@@ -219,6 +219,7 @@ qc.draw()
 import pennylane as qml
 import matplotlib.pyplot as plt
 
+
 NN = 3
 
 dev = qml.device('default.qubit', shots=128, wires=NN*2)
