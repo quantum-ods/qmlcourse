@@ -220,9 +220,9 @@ import pennylane as qml
 import matplotlib.pyplot as plt
 
 
-NN = 3
+n = 3
 
-dev = qml.device('default.qubit', shots=128, wires=NN*2)
+dev = qml.device('default.qubit', shots=128, wires=n*2)
 
 def simon_start(N: int):
   for i in range(N):
@@ -242,16 +242,16 @@ def simon_circuit(N: int):
   simon_after_oracle(N)
   wx = range(0, N)
   wy = range(N, N*2)
-  return qml.sample(wires=wx),qml.sample(wires=wy)
+  return qml.sample(wires=wx), qml.sample(wires=wy)
 
-x,y = simon_circuit(N=NN)
+x, y = simon_circuit(N=n)
 
-fig, ax = qml.draw_mpl(simon_circuit)(N=NN)
+fig, ax = qml.draw_mpl(simon_circuit)(N=n)
 fig.show()
 ```
 
-```{note} 
-Полученная схема визуально отличается от полученной с помощью Qiskit, так как Pennylane не позволяет выполнять операции с кубитами после выполнения измерения. Но так как с кубитами Y ([3,4,5]) после операции измерения не должно выполняться никаких действий, результат получается тот же самый.
+```{note}
+Созданная с помощью Pennylane схема визуально отличается от полученной с помощью Qiskit, так как Pennylane не позволяет выполнять операции с кубитами после выполнения измерения. Но так как с кубитами Y ([3, 4, 5]) после операции измерения не должно выполняться никаких действий, результат получается тот же самый.
 ```
 
 Теперь пройдём по всем шагам алгоритма:
