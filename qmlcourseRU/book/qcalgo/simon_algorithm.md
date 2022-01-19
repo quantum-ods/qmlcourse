@@ -233,7 +233,7 @@ def simon_start(N: int) -> None:
 def simon_oracle(N: int) -> None:
   qml.CNOT(wires=[0, N])
 
-def simon_after_oracle(N: int):
+def simon_after_oracle(N: int) -> None:
   for i in range(N):
     qml.Hadamard(wires=i)
 
