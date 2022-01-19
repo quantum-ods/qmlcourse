@@ -18,7 +18,7 @@ kernelspec:
 
 - [Решетова Карина](https://github.com/Carinetta)
 - [Токарев Игорь](https://github.com/polyzer)
-- [Токарев Игорь](https://github.com/flatslm)
+- [Сендерович Леонид](https://github.com/flatslm)
 
 
 ## Задача Саймона
