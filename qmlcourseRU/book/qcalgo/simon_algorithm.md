@@ -18,6 +18,7 @@ kernelspec:
 
 - [Решетова Карина](https://github.com/Carinetta)
 - [Токарев Игорь](https://github.com/polyzer)
+- [Токарев Игорь](https://github.com/flatslm)
 
 
 ## Задача Саймона
@@ -184,7 +185,8 @@ $$
 ```{code-cell} ipython3
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
 
-# Работаем в пространстве размерности n = 3.
+
+# Работаем в пространстве размерности n = 3
 n = 3
 
 # Создаём необходимые регистры
@@ -222,26 +224,28 @@ import matplotlib.pyplot as plt
 
 n = 3
 
-dev = qml.device('default.qubit', shots=128, wires=n*2)
+dev = qml.device("default.qubit", shots=128, wires=n*2)
 
-def simon_start(N: int):
+def simon_start(N: int) -> None:
   for i in range(N):
-          qml.Hadamard(wires=i)
+    qml.Hadamard(wires=i)
 
-def simon_oracle(N: int):
+def simon_oracle(N: int) -> None:
   qml.CNOT(wires=[0, N])
 
 def simon_after_oracle(N: int):
   for i in range(N):
-          qml.Hadamard(wires=i)
+    qml.Hadamard(wires=i)
 
 @qml.qnode(dev)
 def simon_circuit(N: int):
   simon_start(N)
   simon_oracle(N)
   simon_after_oracle(N)
+  
   wx = range(0, N)
   wy = range(N, N*2)
+  
   return qml.sample(wires=wx), qml.sample(wires=wy)
 
 x, y = simon_circuit(N=n)
