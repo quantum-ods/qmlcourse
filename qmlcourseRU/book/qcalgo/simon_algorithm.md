@@ -201,7 +201,7 @@ qc.h(range(n))
 # Шаг 3. Применяем U_f
 qc.cx(qr1[0], qr2[0])
 
-# Шаг 4. Производим измерение первого регистра
+# Шаг 4. Производим измерение второго регистра
 qc.measure(qr2, cr1)
 
 # Шаг 5. Ещё раз применяем гейт адамара к каждому из кубитов
@@ -235,16 +235,20 @@ def simon_after_oracle(N: int):
   for i in range(N):
           qml.Hadamard(wires=i)
 
+
 @qml.qnode(dev)
 def simon_circuit(N: int):
   simon_start(N)
   simon_oracle(N)
   simon_after_oracle(N)
   wx = range(0, N)
-  wy = range(N, N*2)
-  return qml.sample(wires=wx), qml.sample(wires=wy)
+  wfx = range(N, N*2)
+  return qml.sample(wires=wx), qml.sample(wires=wfx)
 
-x, y = simon_circuit(N=n)
+# Схема возвращает массив  результатов измерений первого
+# регистра: x, и массив результатов измерения 2-го регистра: f(x).
+# количестов измерений (samples) задано через shots
+x, fx = simon_circuit(N=n)
 
 fig, ax = qml.draw_mpl(simon_circuit)(N=n)
 fig.show()
