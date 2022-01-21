@@ -220,7 +220,7 @@ qc.draw()
 ```{code-cell} ipython3
 import pennylane as qml
 import matplotlib.pyplot as plt
-
+from typing import Tuple, List
 
 n = 3
 
@@ -239,7 +239,7 @@ def simon_after_oracle(N: int) -> None:
 
 
 @qml.qnode(dev)
-def simon_circuit(N: int):
+def simon_circuit(N: int) -> Tuple[List[List[int]], List[List[int]]]:
   simon_start(N)
   simon_oracle(N)
   simon_after_oracle(N)
