@@ -215,7 +215,7 @@ qc.measure(qr1, cr1)
 # Рисуем схему
 qc.draw()
 ```
-При использовании pennylane схема выглядит следующим образом:
+При использовании Pennylane схема выглядит следующим образом:
 
 ```{code-cell} ipython3
 import pennylane as qml
