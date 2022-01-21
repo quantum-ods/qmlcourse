@@ -215,7 +215,7 @@ qc.measure(qr1, cr1)
 # Рисуем схему
 qc.draw()
 ```
-При использовании pennylane схема выглядит следующим образом:
+При использовании Pennylane схема выглядит следующим образом:
 
 ```{code-cell} ipython3
 import pennylane as qml
@@ -249,7 +249,7 @@ def simon_circuit(N: int) -> Tuple[List[List[int]], List[List[int]]]:
   
   return qml.sample(wires=wx), qml.sample(wires=wfx)
 
-# Схема возвращает массив  результатов измерений первого
+# Схема возвращает массив результатов измерений первого
 # регистра: x, и массив результатов измерения 2-го регистра: f(x).
 # количестов измерений (samples) задано через shots
 x, fx = simon_circuit(N=n)
