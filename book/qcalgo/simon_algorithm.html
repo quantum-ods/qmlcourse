@@ -776,6 +776,7 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Carinetta">Решетова Карина</a></p></li>
 <li><p><a class="reference external" href="https://github.com/polyzer">Токарев Игорь</a></p></li>
+<li><p><a class="reference external" href="https://github.com/flatslm">Сендерович Леонид</a></p></li>
 </ul>
 <div class="section" id="id2">
 <h2>Задача Саймона<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -925,7 +926,8 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumRegister</span>
 
-<span class="c1"># Работаем в пространстве размерности n = 3.</span>
+
+<span class="c1"># Работаем в пространстве размерности n = 3</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="c1"># Создаём необходимые регистры</span>
@@ -942,7 +944,7 @@
 <span class="c1"># Шаг 3. Применяем U_f</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="n">qr1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">qr2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="c1"># Шаг 4. Производим измерение первого регистра</span>
+<span class="c1"># Шаг 4. Производим измерение второго регистра</span>
 <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr2</span><span class="p">,</span> <span class="n">cr1</span><span class="p">)</span>
 
 <span class="c1"># Шаг 5. Ещё раз применяем гейт адамара к каждому из кубитов</span>
@@ -972,6 +974,63 @@ q2_2: ──╫───┤M├───╫───╫──╫──╫─
         ║   └╥┘   ║   ║  ║  ║ 
 c1: 3/══╩════╩════╩═══╩══╩══╩═
         1    2    0   1  2  0 </pre></div></div>
+</div>
+<p>При использовании Pennylane схема выглядит следующим образом:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span>
+
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">simon_start</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">simon_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="n">qml</span><span class="o">.</span><span class="n">CNOT</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">simon_after_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+
+
+<span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">simon_circuit</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]:</span>
+  <span class="n">simon_start</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">simon_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+  <span class="n">simon_after_oracle</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+  <span class="n">wx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+  <span class="n">wfx</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">wx</span><span class="p">),</span> <span class="n">qml</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">wfx</span><span class="p">)</span>
+
+<span class="c1"># Схема возвращает массив результатов измерений первого</span>
+<span class="c1"># регистра: x, и массив результатов измерения 2-го регистра: f(x).</span>
+<span class="c1"># количестов измерений (samples) задано через shots</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">simon_circuit</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">draw_mpl</span><span class="p">(</span><span class="n">simon_circuit</span><span class="p">)(</span><span class="n">N</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
+</pre></div>
+</div>
+<img alt="../../_images/simon_algorithm_3_1.png" src="../../_images/simon_algorithm_3_1.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Созданная с помощью Pennylane схема визуально отличается от полученной с помощью Qiskit, так как Pennylane не позволяет выполнять операции с кубитами после выполнения измерения. Но так как с кубитами Y ([3, 4, 5]) после операции измерения не должно выполняться никаких действий, результат получается тот же самый.</p>
 </div>
 <p>Теперь пройдём по всем шагам алгоритма:</p>
 <ol>
