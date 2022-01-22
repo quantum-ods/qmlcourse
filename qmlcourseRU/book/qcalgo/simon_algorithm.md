@@ -243,10 +243,10 @@ def simon_circuit(N: int) -> Tuple[List[List[int]], List[List[int]]]:
   simon_start(N)
   simon_oracle(N)
   simon_after_oracle(N)
-  
+
   wx = range(0, N)
   wfx = range(N, N*2)
-  
+
   return qml.sample(wires=wx), qml.sample(wires=wfx)
 
 # Схема возвращает массив результатов измерений первого
