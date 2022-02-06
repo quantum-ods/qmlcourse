@@ -222,6 +222,7 @@ import pennylane as qml
 import matplotlib.pyplot as plt
 from typing import Tuple, List
 
+
 n = 3
 
 dev = qml.device("default.qubit", shots=128, wires=n*2)

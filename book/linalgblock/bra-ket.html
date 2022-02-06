@@ -923,10 +923,10 @@ e^V = S e^{\Lambda} S^\dagger.
 </div>
 <p>Доказательство:
 Проверим определение унитарной матрицы: <span class="math notranslate nohighlight">\(\hat{U}^{\dagger}\hat{U} = (S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger\)</span>.
-Пользуясь тем, что эрмитово сопряжение переставляет матрицы и является обратной операцией к себе же, а также тем, что <span class="math notranslate nohighlight">\(S\)</span> – унитарная матрица (то есть <span class="math notranslate nohighlight">\(S \cdot S^{\dagger}=I\)</span>), получаем:</p>
+Пользуясь тем, что эрмитово сопряжение произведения это произведение эрмитовых сопряжений в обратном порядке (<span class="math notranslate nohighlight">\((AB)^\dagger=B^\dagger A^\dagger\)</span>) и что эрмитово сопряжение является обратной операцией к себе (<span class="math notranslate nohighlight">\((A^\dagger)^\dagger = A\)</span>), а также тем, что <span class="math notranslate nohighlight">\(S\)</span> – унитарная матрица (то есть <span class="math notranslate nohighlight">\(S \cdot S^{\dagger}=I\)</span>), получаем:</p>
 <div class="math notranslate nohighlight">
 \[
-(S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger = \exp(-i*\Lambda) S^\dagger  S \exp (i*\Lambda)  S^\dagger
+(S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger = S \exp(-i*\Lambda) S^\dagger S \exp (i*\Lambda) S^\dagger = S \exp(-i*\Lambda) \exp (i*\Lambda) S^\dagger
 \]</div>
 <p>Заметим, что теперь у нас уже скалярная экспонента, которая применяется к элементам диагональной матрицы, и мы можем воспользоваться тем, что произведение экспонент превращается в экспоненту от суммы степеней:</p>
 <div class="math notranslate nohighlight">
