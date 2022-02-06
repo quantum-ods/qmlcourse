@@ -133,7 +133,7 @@ $$
 Пользуясь тем, что эрмитово сопряжение произведения это произведение эрмитовых сопряжений в обратном порядке ($(AB)^\dagger=B^\dagger A^\dagger$) и что эрмитово сопряжение является обратной операцией к себе ($(A^\dagger)^\dagger = A$), а также тем, что $S$ -- унитарная матрица (то есть $S \cdot S^{\dagger}=I$), получаем:
 
 $$
-(S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger = S \exp(-i*\Lambda) S^\dagger  S \exp (i*\Lambda)  S^\dagger = S \exp(-i*\Lambda) \exp (i*\Lambda)  S^\dagger
+(S \exp (i*\Lambda) S^\dagger)^\dagger S \exp (i*\Lambda) S^\dagger = S \exp(-i*\Lambda) S^\dagger S \exp (i*\Lambda) S^\dagger = S \exp(-i*\Lambda) \exp (i*\Lambda) S^\dagger
 $$
 
 Заметим, что теперь у нас уже скалярная экспонента, которая применяется к элементам диагональной матрицы, и мы можем воспользоваться тем, что произведение экспонент превращается в экспоненту от суммы степеней:
