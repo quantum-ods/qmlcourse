@@ -1,16 +1,22 @@
 <!-- todo:
     * update `Table of contents`
-    * replace java instead https://plantuml-editor.kkeisuke.com into `Diagrams and Figures`
+    * check `.png` into `Diagrams and Figures`
     * rename forder `qmlcourseRU` to `qmlcourse`
     * update all ci after renamed `qmlcourseRU`
 -->
 
 # Development guide
 
+----
+
 ## Prerequisites
 
 A **general requirement** for all members is to be familiar with GitHub and get with the `markdown` mark-up language (see [Environment](#environment)).
 Still, if you are not comfortable with GitHub at all but are able to provide valuable feedback, pls use comments to a Pull Request or create Issue. See [Content review](#content-review).
+
+### GitHub intro
+
+If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
 
 ----
 
@@ -60,28 +66,18 @@ All course content is being developed as a [Jupyter Book](https://jupyterbook.or
 
 We chose the PlantUML as a standard for all the diagrams. The reason is the simple and understandable syntax and a good quality of final images. You should prefer `<latex></latex>` over `<math></math>` for math equations inside blocks of the diagram.
 
-Any PlantUML diagram can be exported to `.png` with the [PlantUML tool](https://plantuml.com/). You can download Java `.jar` file from the official site or install binary package. [Installation instructions](https://plantuml.com/starting).
+Any PlantUML diagram can be exported to `.png` with the https://plantuml-editor.kkeisuke.com.
 
-- `apt install plantuml` for Ubuntu
-- `choco install plantuml` for Windows
-- `brew install plantuml ` for Mac
+You can find the documentation on the [official site](https://plantuml.com/sitemap-language-specification). If you make any changes in the raw `.plantuml` file you should update genereated picture file.
 
-You can find the documentation on the [official site](https://plantuml.com/sitemap-language-specification). If you make any changes in the raw `.plantuml` file you should:
+Matplotlib figures should be:
 
-1. export it in `.png` file (`plantuml filename.plantuml` or `java -jar path_to_plantuml filename.plantuml`)
-2. rebuild the whole book (`jupyter-book build qmlcourseRU`)
-
-Matplotlib figures should be included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducible.
+- located at the corresponding lecture folder into `_static`;
+- included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducible.
 
 ### Building the project
 
-Before making a Pull Request try to build the book with the following command:
-
-```{shell}
-jupyter-book build qmlcourseRU
-```
-
-_If you have problems with the build command try to pass the full path to the folder_
+To wath you result (after push the branch to GitHub) you can build jupyter book authomatically by GitHub Action: in the page https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-branch.yml choose your branch and press `Run workflow`. After ~10min visit https://gh-qmlc-deploy-branch.herokuapp.com/book/index.html and find your lectures page.
 
 ### Chapters and headers
 
@@ -98,12 +94,6 @@ On first use of a term in main book text, please refer to glossary using the for
 ```
 (with this notation, the chapter will contain text "chapter text" and build script will create reference to
 "glossary term").
-
-----
-
-## GitHub intro
-
-If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
 
 ----
 
@@ -174,7 +164,7 @@ Also, we have spell-checker and it requires simple manual intervention. If
 
 ----
 
-## List of authors <a name="authors"></a>
+## List of authors
 
 If you make lecture, review to the course you should add yourself to
 
@@ -185,7 +175,7 @@ The list is sorted alphabetically and you need to place your surname and name (o
 
 ----
 
-## Intellectual property rights <a name="rights"></a>
+## Intellectual property rights
 
 The course is under the CC-like license. All the media content needs to be under the CC license as well. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed first with one of the co-founders of the course.
 
