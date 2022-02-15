@@ -2,6 +2,10 @@
 
 ## Table of contents
 
+# --------
+# todo: update  
+# --------
+
 1. [Prerequisites](#prerequisites)
 2. [Contributor roles](#contributor-roles)
 3. [Environment](#environment)
@@ -15,49 +19,40 @@
 
 ## Prerequisites
 
-A **general requirement** for all members is to be familiar with GitHub and get familiar with the `markdown` mark-up language (see [Environment](#environment)).
-
-Still, if you are not comfortable with GitHub at all but are able to provide valuable feedback, pls use comments to a Pull Request. See [Content review](#content-review).
+A **general requirement** for all members is to be familiar with GitHub and get with the `markdown` mark-up language (see [Environment](#environment)).
+Still, if you are not comfortable with GitHub at all but are able to provide valuable feedback, pls use comments to a Pull Request or create Issue. See [Content review](#content-review).
 
 ## Contributor roles
 
 We see the following roles for contributors to the course:
 
 - Benevolent Dictator
+
+    Semyon Sinchenko, @sem.
+
 - Core reviewers
+
+    Supposed to be well familiar with quantum information & computation, preferably with experience in QML as well. Also, eager to  provide critical feedback.
+
 - Reviewers
+
+    Those who don't satisfy the requirements for core reviewers, but still want to review the content being generated. By default that's everyone who is invited to the [#org_qml_course](https://opendatascience.slack.com/archives/CEH3VJCRJ) Slack channel.
+
 - Authors
+
+    Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/quantum-ods/qmlcourse/issues) to pick up one of the open tasks.
+
 - Editors
+
+    Editors wait for a PR to be approved, and then introduce their changes fixing grammar, language, etc.
+
 - Orgs
+
+    These guys help organizing/promoting the course.
+
 - Others
 
-### Benevolent Dictator
-
-Semyon Sinchenko, @sem.
-
-### Core reviewers
-
-Supposed to be well familiar with quantum information & computation, preferably with experience in QML as well. Also, eager to provide critical feedback.
-
-### Reviewers
-
-Those who don't satisfy the requirements for core reviewers, but still want to review the content being generated. By default that's everyone who is invited to the #org_qml_course Slack channel.
-
-### Authors
-
-Content generators, to be agreed with Benevolent Dictator. See [Issues](https://github.com/quantum-ods/qmlcourse/issues) to pick up one of the open tasks.
-
-### Editors
-
-Editors wait for a PR to be approved, and then introduce their changes fixing grammar, language, etc.
-
-### Orgs
-
-These guys help organizing/promoting the course.
-
-### Others
-
-We might have some other crowd-sourced help like helping with the course web-site or course assignments. To be elaborated.
+    We might have some other crowd-sourced help like helping with the course web-site or course assignments. To be elaborated.
 
 ## Environment
 
@@ -86,7 +81,7 @@ Matplotlib figures should be included in the source code of markdown by `{code-c
 
 ### Building the project
 
-Before making a Pull-Request try to build the book with the following command:
+Before making a Pull Request try to build the book with the following command:
 
 ```{shell}
 jupyter-book build qmlcourseRU
@@ -138,10 +133,10 @@ We don't want to mess up the process with too many branches. Thus, each lecture 
 
 The preferred way to commit your changes is to:
 
-- Write a message like "I need 2 hours for a review" in the `Conversation` tab. Thus you mention that you are the person modifyig the content right now
-- Introduce your changes, mainly to `.md` files
-- Commit changes to the same feature branch
-- Tell others that you are done with your review
+- write a message like "I need 2 hours for a review" in the `Conversation` tab. Thus you mention that you are the person modifyig the content right now;
+- introduce your changes, mainly to `.md` files;
+- commit changes to the same feature branch;
+- tell others that you are done with your review.
 
 Example:
 
@@ -149,7 +144,7 @@ Example:
 
 ## Issues
 
-- If you want to add something new to the course content you should start with creating of an issue with label `enhancement` where you need to describe your idea;
+- If you want to add something new to the course content you should start with creating of an issue with label `enhancement` where you need to describe your idea.
 - If you see an open issue without assignment and with a label `help wanted`, you can write a comment that you can do it and you will be assigned to this issue.
 
 ## Pull Requests
@@ -159,55 +154,30 @@ Example:
 
 ### Run pre-commit hooks before building
 
-Before you can run hooks, you need to have the pre-commit package manager installed.
+*This part not necessarily, the reviwers will do it for you*
 
-Install poetry (package manager for Python projects)
+Before the final `git push` you can run hooks, you should install the [pre-commit](https://pre-commit.com/#installation). To execute pre-coomit, run (if using poetry)
 
-```{shell}
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-```
-
-Install dependency and pre-commit
-
-```{shell}
-poetry install
-```
-
-Run pre-commit hooks
 ```{shell}
 poetry run pre-commit run --all-files
 ```
 
-### Run spell-checker
+After command execution some files automatically change and then repeat the command and push.
 
-Prior to opening a Pull Request, you need to run book checker test. During this process, GitHub Action will perform spell checkung.
+Also, we have spell-checker and it requires simple manual intervention. If
 
-Spell check use `yaspeller`. `Yaspeller` is a search tool for typos in the text, files and websites. It uses API Yandex.Speller.
-
-To run spell check, you need to:
-
-1. Open GitHub Actions for your project;
-2. Select the `book-check-text` workflow;
-3. Click on the button `Run workflow` (on the right) and choose your branch name.
-4
-<img src="https://habrastorage.org/webt/nf/hv/vx/nfhvvx2skeudhoecaqczqmhxhb4.png" />
-
-If you have mistakes after spell check was finished, you need:
-
-1. Get a log from this job.
-Actions Page -> `book-check-text` -> click on your workflow with mistake -> click `Spell check`
-<img src="https://habrastorage.org/webt/qn/ja/cf/qnjacfv9tclhxkhmmknffqrw0lq.png" />
-<img src="https://habrastorage.org/webt/xt/vs/eo/xtvseofzzdk5gjlrksc4gno0mms.png" />
-
-2. Investigate this logs and each mistake;
-3. If that's indeed a typo, you need to fix it in source files
-4. If you think this word is correct, add this word to the dictionary file `.yaspellerrc.json` -- part `dictionary` or part `ignoreText`
-5. About remaining mistakes ask your curator.
-
+- that's indeed a typo, you need to fix it in source files.
+- you think this word is correct, add this word to the dictionary file `.yaspellerrc.json` -- part `dictionary` or part `ignoreText`.
+- About remaining mistakes ask your curator.
 
 ## List of authors <a name="authors"></a>
 
-If you make a Pull-Request or review or another contribution to the course you should add yourself to a full list of the authors. This list is placed in a markdown file ([Russian version](./qmlcourseRU/book/authors.md)) and is a part of a book. The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block. Such a Pull-Request should be form the branch with name like `authors/add_author_{you git account here}` and could be merged after only one approve from one of core reviewers.
+If you make lecture, review to the course you should add yourself to
+
+- a full list of the authors [here](./qmlcourseRU/book/authors.md)
+- in the header lecture
+
+The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block or another web-page if you want.
 
 ## Intellectual property rights <a name="rights"></a>
 
@@ -217,4 +187,4 @@ The same holds for blocks of text: all the text of our lectures must be original
 
 ## Typos
 
-If you found a typo in the text you can create a branch with name like `/misspell/{lecture_name}` and make a Pull-Request directly to the master. In this case it'd suffice to have only one review from co-founders or core-reviewers.
+If you found a typo in the text you can create a branch with name like or `{user_name}-misspell-{lecture_name}` and make a Pull Request directly to the master. In this case it'd suffice to have only one review from co-founders or core-reviewers.
