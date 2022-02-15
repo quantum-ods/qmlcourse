@@ -127,8 +127,6 @@ Example:
 - If you want to add something new to the course content you should start with creating of an issue with label `enhancement` where you need to describe your idea.
 - If you see an open issue without assignment and with a label `help wanted`, you can write a comment that you can do it and you will be assigned to this issue.
 
-----
-
 ## Pull Requests
 
 - If you were assigned to an issue, you need to create a new branch from the `master`
