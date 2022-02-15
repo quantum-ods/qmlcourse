@@ -27,9 +27,12 @@
 
 ## About
 
-| Note: the course is under active development and, for now, is Russian-only! |
-| --------------------------------------------------------------------------- |
-
+````
+Note:
+  * the course is under active development
+  * Russian-only
+  * English version translation help tube, visit CONTRIBUTING.md
+````
 
 This is the main repository of the course.
 

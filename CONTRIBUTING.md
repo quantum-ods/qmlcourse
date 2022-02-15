@@ -1,5 +1,4 @@
 <!-- todo:
-    * update `Table of contents`
     * check `.png` into `Diagrams and Figures`
     * rename forder `qmlcourseRU` to `qmlcourse`
     * update all ci after renamed `qmlcourseRU`
