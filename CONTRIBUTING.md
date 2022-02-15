@@ -2,6 +2,7 @@
     * update `Table of contents`
     * replace java instead https://plantuml-editor.kkeisuke.com into `Diagrams and Figures`
     * rename forder `qmlcourseRU` to `qmlcourse`
+    * update all ci after renamed `qmlcourseRU`
 -->
 
 # Development guide
