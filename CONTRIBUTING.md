@@ -1,26 +1,17 @@
+<!-- todo:
+    * update `Table of contents`
+    * replace java instead https://plantuml-editor.kkeisuke.com into `Diagrams and Figures`
+    * rename forder `qmlcourseRU` to `qmlcourse`
+-->
+
 # Development guide
-
-## Table of contents
-
-# --------
-# todo: update  
-# --------
-
-1. [Prerequisites](#prerequisites)
-2. [Contributor roles](#contributor-roles)
-3. [Environment](#environment)
-4. [GitHub intro](#github-intro)
-5. [Content review](#content-review)
-6. [Issues](#issues)
-7. [Pull Requests](#pull-requests)
-8. [List of Authors](#authors)
-9. [Intellectual property](#rights)
-10. [Small changes](#misspells)
 
 ## Prerequisites
 
 A **general requirement** for all members is to be familiar with GitHub and get with the `markdown` mark-up language (see [Environment](#environment)).
 Still, if you are not comfortable with GitHub at all but are able to provide valuable feedback, pls use comments to a Pull Request or create Issue. See [Content review](#content-review).
+
+----
 
 ## Contributor roles
 
@@ -54,6 +45,8 @@ We see the following roles for contributors to the course:
 
     We might have some other crowd-sourced help like helping with the course web-site or course assignments. To be elaborated.
 
+----
+
 ## Environment
 
 All course content is being developed as a [Jupyter Book](https://jupyterbook.org/intro.html).
@@ -63,8 +56,6 @@ All course content is being developed as a [Jupyter Book](https://jupyterbook.or
 `Jupyter Book` uses the own dialect of markdown named `MyST`. We prefer `MyST` construction over raw `HTML` blocks and **there should be a significant reason to use raw HTML** instead. Detailed description of `MyST` opportunities could be found [here](https://jupyterbook.org/reference/cheatsheet.html).
 
 ### Diagrams and Figures
-
-# todo: replace java instead https://plantuml-editor.kkeisuke.com
 
 We chose the PlantUML as a standard for all the diagrams. The reason is the simple and understandable syntax and a good quality of final images. You should prefer `<latex></latex>` over `<math></math>` for math equations inside blocks of the diagram.
 
@@ -107,9 +98,13 @@ On first use of a term in main book text, please refer to glossary using the for
 (with this notation, the chapter will contain text "chapter text" and build script will create reference to
 "glossary term").
 
+----
+
 ## GitHub intro
 
 If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
+
+----
 
 ## Content review
 
@@ -144,10 +139,14 @@ Example:
 
  <img src="https://habrastorage.org/webt/1f/fa/ob/1ffaobyn99cuc58fa19pvse_pvw.png" />
 
+----
+
 ## Issues
 
 - If you want to add something new to the course content you should start with creating of an issue with label `enhancement` where you need to describe your idea.
 - If you see an open issue without assignment and with a label `help wanted`, you can write a comment that you can do it and you will be assigned to this issue.
+
+----
 
 ## Pull Requests
 
@@ -172,6 +171,8 @@ Also, we have spell-checker and it requires simple manual intervention. If
 - you think this word is correct, add this word to the dictionary file `.yaspellerrc.json` -- part `dictionary` or part `ignoreText`.
 - About remaining mistakes ask your curator.
 
+----
+
 ## List of authors <a name="authors"></a>
 
 If you make lecture, review to the course you should add yourself to
@@ -181,11 +182,15 @@ If you make lecture, review to the course you should add yourself to
 
 The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block or another web-page if you want.
 
+----
+
 ## Intellectual property rights <a name="rights"></a>
 
 The course is under the CC-like license. All the media content needs to be under the CC license as well. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed first with one of the co-founders of the course.
 
 The same holds for blocks of text: all the text of our lectures must be original only text! If you want to use quote it is OK only with citations of the reference (we use BibTex bibliography).
+
+----
 
 ## Typos
 
