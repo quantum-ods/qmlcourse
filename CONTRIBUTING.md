@@ -64,7 +64,9 @@ All course content is being developed as a [Jupyter Book](https://jupyterbook.or
 
 ### Diagrams and Figures
 
-I chose the PlantUML as a standard for all the diagrams. The reason is the simple and understandable syntax and a good quality of final images. You should prefer `<latex></latex>` over `<math></math>` for math equations inside blocks of the diagram.
+# todo: replace java instead https://plantuml-editor.kkeisuke.com
+
+We chose the PlantUML as a standard for all the diagrams. The reason is the simple and understandable syntax and a good quality of final images. You should prefer `<latex></latex>` over `<math></math>` for math equations inside blocks of the diagram.
 
 Any PlantUML diagram can be exported to `.png` with the [PlantUML tool](https://plantuml.com/). You can download Java `.jar` file from the official site or install binary package. [Installation instructions](https://plantuml.com/starting).
 
