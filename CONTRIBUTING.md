@@ -2,6 +2,7 @@
     * check `.png` into `Diagrams and Figures`
     * rename forder `qmlcourseRU` to `qmlcourse`
     * update all ci after renamed `qmlcourseRU`
+    * add about citation, link into accross the lectures
 -->
 
 # Development guide
