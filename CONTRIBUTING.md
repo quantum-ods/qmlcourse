@@ -7,8 +7,6 @@
 
 # Development guide
 
-----
-
 ## Prerequisites
 
 A **general requirement** for all members is to be familiar with GitHub and get with the `markdown` mark-up language (see [Environment](#environment)).
@@ -17,8 +15,6 @@ Still, if you are not comfortable with GitHub at all but are able to provide val
 ### GitHub intro
 
 If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
-
-----
 
 ## Contributor roles
 
@@ -51,8 +47,6 @@ We see the following roles for contributors to the course:
 - Others
 
     We might have some other crowd-sourced help like helping with the course web-site or course assignments. To be elaborated.
-
-----
 
 ## Environment
 
@@ -95,8 +89,6 @@ On first use of a term in main book text, please refer to glossary using the for
 (with this notation, the chapter will contain text "chapter text" and build script will create reference to
 "glossary term").
 
-----
-
 ## Content review
 
 Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master` branch. For example, see [Pull Request #1](https://github.com/quantum-ods/qmlcourse/pull/1) with lecture #1 material.
@@ -130,8 +122,6 @@ Example:
 
  <img src="https://habrastorage.org/webt/1f/fa/ob/1ffaobyn99cuc58fa19pvse_pvw.png" />
 
-----
-
 ## Issues
 
 - If you want to add something new to the course content you should start with creating of an issue with label `enhancement` where you need to describe your idea.
@@ -162,8 +152,6 @@ Also, we have spell-checker and it requires simple manual intervention. If
 - you think this word is correct, add this word to the dictionary file `.yaspellerrc.json` -- part `dictionary` or part `ignoreText`.
 - About remaining mistakes ask your curator.
 
-----
-
 ## List of authors
 
 If you make lecture, review to the course you should add yourself to
@@ -173,15 +161,11 @@ If you make lecture, review to the course you should add yourself to
 
 The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the github account into the corresponding dropdown block or another web-page if you want.
 
-----
-
 ## Intellectual property rights
 
 The course is under the CC-like license. All the media content needs to be under the CC license as well. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed first with one of the co-founders of the course.
 
 The same holds for blocks of text: all the text of our lectures must be original only text! If you want to use quote it is OK only with citations of the reference (we use BibTex bibliography).
-
-----
 
 ## Typos
 
