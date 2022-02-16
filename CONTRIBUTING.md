@@ -95,7 +95,7 @@ On first use of a term in main book text, please refer to glossary using the for
 
 ### Bibliography
 
-We stick to adding as much as possible link to papers/book/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib] (sorted alphabetically), like
+We stick to adding as much as possible link to papers/book/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib) (sorted alphabetically), like
 
 ```markdown
 {cite}`farhi2014quantum
