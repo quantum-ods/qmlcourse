@@ -2,6 +2,9 @@
     * rename forder `qmlcourseRU` to `qmlcourse`
     * update all ci after renamed `qmlcourseRU`
     * translate the main page jb
+    * add task to translate glossary page
+    * add example how add new glossary into `Glossary terms`
+    * update `Content review`
 -->
 
 # Development guide
@@ -100,7 +103,6 @@ Use relative references not absolute, like `../qcblock/qubit.html#id25`.
 ## Content review
 
 Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master`. For example, see [Pull Request #1](https://github.com/quantum-ods/qmlcourse/pull/1) with lecture #1 material.
-
 
 # todo: replace
 Every PR needs to have at least 4 approvals and at least 1 of them from a Core Reviewer. If you see a Pull Request and want to review it you can add yourself as a reviewer.
