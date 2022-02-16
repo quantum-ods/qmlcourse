@@ -68,7 +68,7 @@ You can find the documentation on the [official site](https://plantuml.com/sitem
 
 Matplotlib figures should be:
 
-- located at the corresponding lecture folder into `_static`;
+- located at the corresponding lecture folder into `_static/`;
 - included in the source code of markdown by `{code-cell} ipython3` blocks to be reproducible.
 
 ### Building the project
@@ -82,7 +82,7 @@ Chapters and headers in markdown must exactly follow the main structure of the b
 ### Glossary terms
 
 Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common
-glossary, `glossary.md`.
+glossary, [`glossary.md`](./qmlcourseRU/glossary.md).
 
 On first use of a term in main book text, please refer to glossary using the format:
 
@@ -94,7 +94,7 @@ On first use of a term in main book text, please refer to glossary using the for
 
 ### Bibliography
 
-We stick to adding as much as possible link to papers/book/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib] (sorted alphabetically), like `{cite}`farhi2014quantum`.
+We stick to adding as much as possible link to papers/book/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib] (sorted alphabetically), like `{cite}\`farhi2014quantum`.
 
 ### Internal links
 
