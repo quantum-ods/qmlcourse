@@ -1,8 +1,7 @@
 <!-- todo:
-    * check `.png` into `Diagrams and Figures`
     * rename forder `qmlcourseRU` to `qmlcourse`
     * update all ci after renamed `qmlcourseRU`
-    * add about citation, link into accross the lectures
+    * translate the main page jb
 -->
 
 # Development guide
@@ -22,7 +21,7 @@ We see the following roles for contributors to the course:
 
 - Benevolent Dictator
 
-    Semyon Sinchenko, @sem.
+    Semyon Sinchenko, [@SemyonSinchenko](https://github.com/SemyonSinchenko).
 
 - Core reviewers
 
@@ -50,7 +49,7 @@ We see the following roles for contributors to the course:
 
 ## Environment
 
-All course content is being developed as a [Jupyter Book](https://jupyterbook.org/intro.html).
+All course content is being developed as a [`Jupyter Book`](https://jupyterbook.org/intro.html).
 
 ### MyST markdown
 
@@ -71,11 +70,11 @@ Matplotlib figures should be:
 
 ### Building the project
 
-To wath you result (after push the branch to GitHub) you can build jupyter book authomatically by GitHub Action: in the page https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-branch.yml choose your branch and press `Run workflow`. After ~10min visit https://gh-qmlc-deploy-branch.herokuapp.com/book/index.html and find your lectures page.
+To wath you result (after `git push`) you can build `Jupyter Book` authomatically by GitHub Action: in the page https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-branch.yml choose your branch and press `Run workflow`. After ~10min visit https://gh-qmlc-deploy-branch.herokuapp.com/book/index.html and find your lectures page.
 
 ### Chapters and headers
 
-Chapters and headers in markdown must exactly follow the main structure of the book. Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
+Chapters and headers in markdown must exactly follow the main structure of the book (into [`_toc.yml`](./qmlcourseRU/_toc.yml)). Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
 
 ### Glossary terms
 
@@ -83,16 +82,27 @@ Please add all terms, preferably with short explanations (and, for Russian varia
 glossary, `glossary.md`.
 
 On first use of a term in main book text, please refer to glossary using the format:
+
 ```markdown
 {term}`chapter text<glossary term>`
 ```
 (with this notation, the chapter will contain text "chapter text" and build script will create reference to
 "glossary term").
 
+### Bibliography
+
+We stick to adding as much as possible link to papers/book/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib] (sorted alphabetically), like `{cite}`farhi2014quantum`.
+
+### Internal links
+
+Use relative references not absolute, like `../qcblock/qubit.html#id25`.
+
 ## Content review
 
-Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master` branch. For example, see [Pull Request #1](https://github.com/quantum-ods/qmlcourse/pull/1) with lecture #1 material.
+Each lecture/assignment or any other unit of content gets its own branch and a Pull Request (PR) into the `master`. For example, see [Pull Request #1](https://github.com/quantum-ods/qmlcourse/pull/1) with lecture #1 material.
 
+
+# todo: replace
 Every PR needs to have at least 4 approvals and at least 1 of them from a Core Reviewer. If you see a Pull Request and want to review it you can add yourself as a reviewer.
 
 The review process depends on whether a reviewer is familiar with GitHub or not.
