@@ -81,8 +81,7 @@ Chapters and headers in markdown must exactly follow the main structure of the b
 
 ### Glossary terms
 
-Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common
-glossary, [`glossary.md`](./qmlcourseRU/glossary.md).
+Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common glossary, [`glossary.md`](./qmlcourseRU/book/glossary.md).
 
 On first use of a term in main book text, please refer to glossary using the format:
 
