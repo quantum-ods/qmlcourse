@@ -1,6 +1,6 @@
 (authors)=
 
-# Список авторов курса / Course authors list
+# Список авторов курса / Course authors
 
 ## Создатели курса / Course creators
 
