@@ -163,7 +163,7 @@ After command execution some files automatically change and then repeat the comm
 Also, we have spell-checker and it requires simple manual intervention. If
 
 - that's indeed a typo, you need to fix it in source files.
-- you think this word is correct, add this word to the dictionary file `.yaspellerrc.json` -- part `dictionary` or part `ignoreText`.
+- you think this word is correct, add this word to the dictionary file [`.yaspellerrc.json`](./.yaspellerrc.json) -- part `dictionary` or part `ignoreText`.
 - About remaining mistakes ask your curator.
 
 ## List of authors
