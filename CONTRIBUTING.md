@@ -89,12 +89,17 @@ On first use of a term in main book text, please refer to glossary using the for
 ```markdown
 {term}`chapter text<glossary term>`
 ```
+
 (with this notation, the chapter will contain text "chapter text" and build script will create reference to
 "glossary term").
 
 ### Bibliography
 
-We stick to adding as much as possible link to papers/book/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib] (sorted alphabetically), like `{cite}\`farhi2014quantum`.
+We stick to adding as much as possible link to papers/book/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib] (sorted alphabetically), like
+
+```markdown
+{cite}`farhi2014quantum
+```
 
 ### Internal links
 
