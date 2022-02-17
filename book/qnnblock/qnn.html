@@ -602,27 +602,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -803,12 +803,12 @@
 <p>В первом примере была построена полностью квантовая генеративная состязательная сеть, задачей которой являлось воспроизвести <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">MNIST</a>, однако у всего эксперимента был один нюанс. Из-за текущего размера квантовых вычислителей было предложено уменьшить размерность MNIST с 784 до 4 при помощи метода главных компонент (<a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a>), чтобы его хоть как-то можно было отправить в квантовую схему. Очевидно, сеть такого размера не в состоянии тягаться с классическими сетями на десятки тысяч весов, поэтому конечным результатом стало сравнение по количеству весов при идентичных результатах. Полностью квантовая сеть смогла получить такие же результаты, как и классическая, при это имея на 95% меньше параметров. Эти результаты всё ещё поднимают вопрос того, будут ли они справедливыми для моделей, адекватно справляющихся с задачей.</p>
 <div class="figure align-default" id="qugan">
 <a class="reference internal image-reference" href="../../_images/qugan.png"><img alt="../../_images/qugan.png" src="../../_images/qugan.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">Схема квантовой генеративной состязательной сети из публикации <span id="id5">[<a class="reference internal" href="../bibliography.html#id66"><span>SBC+21</span></a>]</span>.</span><a class="headerlink" href="#qugan" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">Схема квантовой генеративной состязательной сети из публикации <span id="id5">[<a class="reference internal" href="../bibliography.html#id65"><span>SBC+21</span></a>]</span>.</span><a class="headerlink" href="#qugan" title="Permalink to this image">¶</a></p>
 </div>
 <p>Во втором примере была построена гибридная квантово-классическая генеративная состязательная сеть, задачей которой являлось воспроизвести QM-9 – популярный датасет молекул до 9 атомов, представленный молекулярным графом в виде матрицы 9 на 9 и атомарным вектором из 9 элементов. Генеративная часть модели состояла из нескольких квантовых схем и, по большей части, классической сети, предсказывающей узлы и связи между ними. Дискриминативная часть была полностью классической во всех вариациях модели. В конечном итоге им удалось добиться снижения числа параметров по сравнению с полностью классической сетью на 85% и, при увеличении числа кубитов, на 98%. Таким образом они показали, что комбинация классических и квантовых схем должна соответствовать той же самой закономерности, что и полностью квантовые сети.</p>
 <div class="figure align-default" id="molgan">
 <a class="reference internal image-reference" href="../../_images/molgan.png"><img alt="../../_images/molgan.png" src="../../_images/molgan.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">Схема гибридной генеративной состязательной сети из публикации <span id="id6">[<a class="reference internal" href="../bibliography.html#id50"><span>LTG21</span></a>]</span>.</span><a class="headerlink" href="#molgan" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">Схема гибридной генеративной состязательной сети из публикации <span id="id6">[<a class="reference internal" href="../bibliography.html#id49"><span>LTG21</span></a>]</span>.</span><a class="headerlink" href="#molgan" title="Permalink to this image">¶</a></p>
 </div>
 <p>За счёт большей актуальности на текущих практических задачах именно последнего, гибридного подхода, дальнейшая часть лекции будет рассматривать именно его.</p>
 </div>
@@ -817,7 +817,7 @@
 <p>В идеале этот подход подразумевал бы, что при помощи классического оптимизатора мы обучаем некоторую параметрическую схему на квантовом вычислителе, однако в текущих реалиях <em>NISQ</em> этот подход невозможен, поэтому большая часть параметрической схемы остаётся на классических вычислителях. В данном блоке мы поговорим о подходе, связанном с <strong>QNN Classifiers</strong>, которые следуют вышеупомянутому принципу и обучаются градиентным спуском практически так же, как и обычные классические сети, позволяя градиенту протекать между квантовой и классической частью сети.</p>
 <div class="figure align-default" id="qnn">
 <a class="reference internal image-reference" href="../../_images/qnntfq2.png"><img alt="../../_images/qnntfq2.png" src="../../_images/qnntfq2.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">Схема обучения гибридной нейронной сети из <span id="id8">[<a class="reference internal" href="../bibliography.html#id23"><span>BVM+21</span></a>]</span>.</span><a class="headerlink" href="#qnn" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">Схема обучения гибридной нейронной сети из <span id="id8">[<a class="reference internal" href="../bibliography.html#id22"><span>BVM+21</span></a>]</span>.</span><a class="headerlink" href="#qnn" title="Permalink to this image">¶</a></p>
 </div>
 <p>На изображении гибридной сети процедура практически идентична классическому обучению сетей, в котором добавляется процесс кодирования классических данных в квантовые операторы и процесс измерения квантового состояния для того, чтобы передать уже классическую информацию для дальнейших вычислений на классическом устройстве, как это было описано в <a class="reference internal" href="../vqcblock/vqc.html#vqc"><span class="std std-ref">лекции по <strong>VQC</strong></span></a>.</p>
 </div>

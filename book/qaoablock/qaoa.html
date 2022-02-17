@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -772,7 +772,7 @@
 </ul>
 <div class="section" id="id1">
 <h2>Введение<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>В лекции рассматривается еще один алгоритм для приближенного решения <a class="reference internal" href="../problemsblock/copt.html#copt"><span class="std std-ref"><span class="math notranslate nohighlight">\(NP\)</span>-задач комбинаторный оптимизации</span></a>, который называется <strong>Q</strong>auntum <strong>A</strong>pproximate <strong>O</strong>ptimization <strong>A</strong>lgorithm (далее <strong>QAOA</strong>) <span id="id2">[<a class="reference internal" href="../bibliography.html#id32"><span>FGG14</span></a>]</span>.</p>
+<p>В лекции рассматривается еще один алгоритм для приближенного решения <a class="reference internal" href="../problemsblock/copt.html#copt"><span class="std std-ref"><span class="math notranslate nohighlight">\(NP\)</span>-задач комбинаторный оптимизации</span></a>, который называется <strong>Q</strong>auntum <strong>A</strong>pproximate <strong>O</strong>ptimization <strong>A</strong>lgorithm (далее <strong>QAOA</strong>) <span id="id2">[<a class="reference internal" href="../bibliography.html#id31"><span>FGG14</span></a>]</span>.</p>
 <div class="section" id="id3">
 <h3>Квантовый отжиг (повторение)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>В прошлых лекция активно <a class="reference internal" href="../dwaveblock/dwave.html#dwave"><span class="std std-ref">рассказывалось</span></a> о квантовых <em>аннилерах</em> (<em>отжигателях</em>, англ. <em>annealers</em>) – аналоговых устройствах, реализующих поиск основного состояния системы. Выпишем еще раз <a class="reference external" href="../dwaveblock/dwave.html#id4">гамильтониан</a>, который там используется:</p>
@@ -917,7 +917,7 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
     \end{split}\]</div>
 </li>
 </ol>
-<p>В данном алгоритме используется адиабатический метод эволюции состояния <span id="id7">[<a class="reference internal" href="../bibliography.html#id31"><span>FGGS00</span></a>]</span> <span class="math notranslate nohighlight">\(\ket{\Psi_0}\)</span> с переменным гамильтонианом: на каждой итерации параметры <span class="math notranslate nohighlight">\(\beta\)</span> и <span class="math notranslate nohighlight">\(\gamma\)</span> понемногу изменяются.</p>
+<p>В данном алгоритме используется адиабатический метод эволюции состояния <span id="id7">[<a class="reference internal" href="../bibliography.html#id30"><span>FGGS00</span></a>]</span> <span class="math notranslate nohighlight">\(\ket{\Psi_0}\)</span> с переменным гамильтонианом: на каждой итерации параметры <span class="math notranslate nohighlight">\(\beta\)</span> и <span class="math notranslate nohighlight">\(\gamma\)</span> понемногу изменяются.</p>
 <p>Далее производится измерение финального состояния в <span class="math notranslate nohighlight">\(Z\)</span>-базисе и вычисление <span class="math notranslate nohighlight">\(\bra{\Psi(\beta,\gamma)}H_{phase}\ket{\Psi(\beta,\gamma)}\)</span>. Найденный минимум будет соответствовать оптимальным <span class="math notranslate nohighlight">\(\beta\)</span> и <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
 <p>Описанные выше шаги могут быть полностью повторены с обновлёнными наборами временных параметров в рамках классического цикла оптимизации (такого как градиентный спуск или другие подходы), используемого для оптимизации параметров алгоритма.</p>
 <p>Возвращается лучшее решение, найденное за всё время поиска.</p>
@@ -938,8 +938,8 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 <p>Классически семейство анзацев можно поделить на три основных типа:</p>
 <ul class="simple">
 <li><p>Hardware Efficient Ansatz (HEA) – запутывающий все кубиты;</p></li>
-<li><p>Alternating Layered Ansatz (ALT) <span id="id8">[<a class="reference internal" href="../bibliography.html#id32"><span>FGG14</span></a>]</span>;</p></li>
-<li><p>Tensor Product Ansatz (TEN) <span id="id9">[<a class="reference internal" href="../bibliography.html#id42"><span>HPM+19</span></a>]</span>.</p></li>
+<li><p>Alternating Layered Ansatz (ALT) <span id="id8">[<a class="reference internal" href="../bibliography.html#id31"><span>FGG14</span></a>]</span>;</p></li>
+<li><p>Tensor Product Ansatz (TEN) <span id="id9">[<a class="reference internal" href="../bibliography.html#id41"><span>HPM+19</span></a>]</span>.</p></li>
 </ul>
 <p>На рисунке ниже изображены упрощённые (без учета анзаца и фазовых гейтов) для понимания схемы описанных компоновок – по одному слою каждого типа:</p>
 <div class="figure align-default" id="ansatz-types">

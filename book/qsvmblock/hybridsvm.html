@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -834,12 +834,12 @@
 <p class="admonition-title">Note</p>
 <p>Это интересно, что многие специалисты в области <strong>QML</strong> сегодня даже предлагают вместо термина “квантовая нейросеть” использовать термин “квантовое ядро”, так как математически <strong>VQC</strong> гораздо ближе именно к ядрам, чем к слоям современных глубоких сетей.</p>
 </div>
-<p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id2">[<a class="reference internal" href="../bibliography.html#id59"><span>HavlivcekCorcolesT+19</span></a>]</span>.</p>
+<p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id2">[<a class="reference internal" href="../bibliography.html#id58"><span>HavlivcekCorcolesT+19</span></a>]</span>.</p>
 <div class="section" id="id3">
 <h3>Преобразование состояния<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>На самом деле, если просто использовать какие-то простые квантовые операции, мы не получим какого-то преимущества над классическим ядерным SVM – ведь все то же самое можно будет сделать и на классическом компьютере.</p>
 <p>Чтобы получить реальное преимущество, нам необходимо использовать запутывание и прочие “фишки” квантовых вычислений.</p>
-<p>Дальше мы не станем изобретать велосипеды, а вместо этого воспользуемся примерами хороших преобразований из работы <span id="id4">[<a class="reference internal" href="../bibliography.html#id60"><span>SYG+20</span></a>]</span>. Рассмотрим, что именно там описано.</p>
+<p>Дальше мы не станем изобретать велосипеды, а вместо этого воспользуемся примерами хороших преобразований из работы <span id="id4">[<a class="reference internal" href="../bibliography.html#id59"><span>SYG+20</span></a>]</span>. Рассмотрим, что именно там описано.</p>
 <div class="section" id="id5">
 <h4>Общая схема<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Для простоты формул мы не будем выписывать обобщенные формулы, а все будем писать для нашего двумерного пространства. Тогда наша схема может быть разделена на несколько частей:</p>
@@ -864,7 +864,7 @@
 \phi(x_1, x_2),\text{    }x_1 \neq x_2
 \end{cases}
 \end{split}\]</div>
-<p>Мы будем называть ее <em>feature function</em>. В некотором смысле можно сказать, что именно эта функция определяет тип ядра по аналогии с классическим SVM. В работе <span id="id7">[<a class="reference internal" href="../bibliography.html#id60"><span>SYG+20</span></a>]</span> описано много разных вариантов таких <em>feature function</em>, мы будем использовать следующую:</p>
+<p>Мы будем называть ее <em>feature function</em>. В некотором смысле можно сказать, что именно эта функция определяет тип ядра по аналогии с классическим SVM. В работе <span id="id7">[<a class="reference internal" href="../bibliography.html#id59"><span>SYG+20</span></a>]</span> описано много разных вариантов таких <em>feature function</em>, мы будем использовать следующую:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}

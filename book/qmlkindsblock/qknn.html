@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -776,7 +776,7 @@
 <p>Самой трудозатратным шагом является вычисление расстояния от тестового образца к каждому тренировочному. Также и в квантовой версии алгоритма.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>На текущий момент разработано несколько разных версий квантового алгоритма поиска ближайших соседей. Есть версия основанная расстоянии Хэмминга <span id="id2">[<a class="reference internal" href="../bibliography.html#id50"><span>LTG21</span></a>]</span>:</p>
+<p>На текущий момент разработано несколько разных версий квантового алгоритма поиска ближайших соседей. Есть версия основанная расстоянии Хэмминга <span id="id2">[<a class="reference internal" href="../bibliography.html#id49"><span>LTG21</span></a>]</span>:</p>
 <p><a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5_%D0%A5%D1%8D%D0%BC%D0%BC%D0%B8%D0%BD%D0%B3%D0%B0">Расстояние Хэмминга</a> между векторами <span class="math notranslate nohighlight">\(\vec{x}\)</span> и <span class="math notranslate nohighlight">\(\vec{v_i}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ d_i = |\vec{x} - \vec{v_i}| = \sum_{j=1}^{N} (x_j \oplus v_{ij}) \]</div>
@@ -806,10 +806,10 @@
 </div>
 <div class="section" id="id3">
 <h2>Алгоритм<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Далее мы алгоритм представленный в работе <span id="id4">[<a class="reference internal" href="../bibliography.html#id21"><span>BAG21</span></a>]</span>.</p>
+<p>Далее мы алгоритм представленный в работе <span id="id4">[<a class="reference internal" href="../bibliography.html#id20"><span>BAG21</span></a>]</span>.</p>
 <div class="figure align-default" id="qknn">
 <a class="reference internal image-reference" href="../../_images/qknn.png"><img alt="../../_images/qknn.png" src="../../_images/qknn.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">Принципиальная схема QkNN алгоритма. Взято из работы <span id="id5">[<a class="reference internal" href="../bibliography.html#id21"><span>BAG21</span></a>]</span>.</span><a class="headerlink" href="#qknn" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">Принципиальная схема QkNN алгоритма. Взято из работы <span id="id5">[<a class="reference internal" href="../bibliography.html#id20"><span>BAG21</span></a>]</span>.</span><a class="headerlink" href="#qknn" title="Permalink to this image">¶</a></p>
 </div>
 <p>Квантовый алгоритм поиска <span class="math notranslate nohighlight">\(k\)</span> ближайших соседей будет состоять из двух основных шагов:</p>
 <ol class="simple">
@@ -902,7 +902,7 @@
     \end{split}\]</div>
 <p>На этом шаге информация о <span class="math notranslate nohighlight">\(fidelity\)</span> теперь закодирована в амплитуды. Теперь же мы должны перевести <span class="math notranslate nohighlight">\(fidelity\)</span> из амплитуды в число.</p>
 </li>
-<li><p>Теперь мы будем конструировать новый гейт G. Вообще говоря, он описан в работе <span id="id6">[<a class="reference internal" href="../bibliography.html#id12"><span>MKF19</span></a>]</span>, где вы можете подробнее с ним ознакомиться.</p>
+<li><p>Теперь мы будем конструировать новый гейт G. Вообще говоря, он описан в работе <span id="id6">[<a class="reference internal" href="../bibliography.html#id11"><span>MKF19</span></a>]</span>, где вы можете подробнее с ним ознакомиться.</p>
 <div class="math notranslate nohighlight">
 \[
       G = U_{tr,tst,B}\mathcal{W}_{i,tr}S_{0_{tr,tst,B}}\mathcal{W}_{i,tr}^{\dagger}U_{tr,tst,B}^{\dagger}Z_{B},

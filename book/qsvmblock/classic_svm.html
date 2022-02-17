@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -926,7 +926,7 @@
 </div>
 <div class="section" id="id4">
 <h2>Интуиция метода опорных векторов<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Метод опорных векторов (Support Vector Machine, SVM) основан на идее максимизации зазора между классами. Пока не вводим этот термин формально, но передадим интуицию метода. На Рис. <a class="reference internal" href="#linclass-margins"><span class="std std-numref">Fig. 106</span></a> показана линейно-разделимая выборка, кружки соответствуют положительным примерам, а квадраты – отрицательным (или наоборот), а оси – некоторым признакам этих примеров. На рисунке слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Кажется, что синяя прямая лучше тем, что она дальше отстоит от примеров обучающей выборки, чем красная прямая (зазор – больше), и потому лучше будет разделять другие примеры из того же распределения, что и примеры обучающей выборки. То есть такой линейный классификатор будет лучше обобщаться на новые данные. Теория подтверждает описанную интуицию <span id="id5">[<a class="reference internal" href="../bibliography.html#id10"><span>MRT18</span></a>]</span>.</p>
+<p>Метод опорных векторов (Support Vector Machine, SVM) основан на идее максимизации зазора между классами. Пока не вводим этот термин формально, но передадим интуицию метода. На Рис. <a class="reference internal" href="#linclass-margins"><span class="std std-numref">Fig. 106</span></a> показана линейно-разделимая выборка, кружки соответствуют положительным примерам, а квадраты – отрицательным (или наоборот), а оси – некоторым признакам этих примеров. На рисунке слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Кажется, что синяя прямая лучше тем, что она дальше отстоит от примеров обучающей выборки, чем красная прямая (зазор – больше), и потому лучше будет разделять другие примеры из того же распределения, что и примеры обучающей выборки. То есть такой линейный классификатор будет лучше обобщаться на новые данные. Теория подтверждает описанную интуицию <span id="id5">[<a class="reference internal" href="../bibliography.html#id9"><span>MRT18</span></a>]</span>.</p>
 <div class="figure align-default" id="linclass-margins">
 <a class="reference internal image-reference" href="../../_images/linclass_margins.png"><img alt="../../_images/linclass_margins.png" src="../../_images/linclass_margins.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">Слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Справа показана прямая, максимизирующая зазор между классами. Источник: <a class="reference external" href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html">лекция</a> Cornell</span><a class="headerlink" href="#linclass-margins" title="Permalink to this image">¶</a></p>
@@ -975,7 +975,7 @@
 <p>Данная величина также называется <strong>зазором</strong> (margin). Опять же, эту величину очень легко перепутать с отступом классификации, про который мы говорили выше и который тоже margin в англоязычном варианте. Заметим, что отступ – функция параметров <span class="math notranslate nohighlight">\(w\)</span> и конкретного примера обучающей выборки <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>, а зазор – функция только параметров <span class="math notranslate nohighlight">\(w\)</span> при описанном трюке с нормировкой <span class="math notranslate nohighlight">\(w\)</span> и <span class="math notranslate nohighlight">\(b\)</span> (в противном случае зазор – также функция сдвига <span class="math notranslate nohighlight">\(b\)</span> и всех примеров <span class="math notranslate nohighlight">\(x\)</span>).</p>
 <p>Таким образом, если классификатор без ошибок разделяет обучающую выборку, то ширина его разделяющей полосы равна <span class="math notranslate nohighlight">\(\frac{2}{\|w\|}\)</span>.
 Максимизация ширины разделяющей полосы приводит
-к повышению обобщающей способности классификатора <span id="id7">[<a class="reference internal" href="../bibliography.html#id10"><span>MRT18</span></a>]</span>. На повышение обобщающей способности направлена и регуляризация,
+к повышению обобщающей способности классификатора <span id="id7">[<a class="reference internal" href="../bibliography.html#id9"><span>MRT18</span></a>]</span>. На повышение обобщающей способности направлена и регуляризация,
 которая штрафует большую норму весов – а чем больше норма весов,
 тем меньше ширина разделяющей полосы.</p>
 <p>Итак, требуется построить классификатор, идеально разделяющий обучающую выборку, и при этом имеющий максимальный отступ.</p>
@@ -1098,7 +1098,7 @@
         \end{aligned}
     \right.
 \end{split}\]</div>
-<p>Для решения таких <em>условных</em> задач оптимизации с условиями в виде неравенств или равенств часто используют лагранжиан и двойственную задачу оптимизации. Этот подход исчерпывающе описан в классической книге Бойда по оптимизации <span id="id11">[<a class="reference internal" href="../bibliography.html#id4"><span>BV04</span></a>]</span>, а на русском языке можно обратиться к <a class="reference external" href="http://www.machinelearning.ru/wiki/images/f/fe/Sem6_linear.pdf">конспекту</a> Евгения Соколова. Также для понимания материала рекомендуется рассмотреть <a class="reference external" href="https://github.com/esokolov/ml-course-hse/blob/master/2016-spring/seminars/sem16-svm.pdf">“игрушечный” пример</a> решения задачи метода опорных векторов в случае линейно-разделимой выборки из 5 примеров.</p>
+<p>Для решения таких <em>условных</em> задач оптимизации с условиями в виде неравенств или равенств часто используют лагранжиан и двойственную задачу оптимизации. Этот подход исчерпывающе описан в классической книге Бойда по оптимизации <span id="id11">[<a class="reference internal" href="../bibliography.html#id3"><span>BV04</span></a>]</span>, а на русском языке можно обратиться к <a class="reference external" href="http://www.machinelearning.ru/wiki/images/f/fe/Sem6_linear.pdf">конспекту</a> Евгения Соколова. Также для понимания материала рекомендуется рассмотреть <a class="reference external" href="https://github.com/esokolov/ml-course-hse/blob/master/2016-spring/seminars/sem16-svm.pdf">“игрушечный” пример</a> решения задачи метода опорных векторов в случае линейно-разделимой выборки из 5 примеров.</p>
 <p>Построим двойственную задачу к задаче метода опорных векторов.
 Запишем лагранжиан:</p>
 <div class="math notranslate nohighlight">

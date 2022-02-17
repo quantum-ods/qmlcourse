@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -913,7 +913,7 @@
 <p>Вслед за физиками двадцатого века нам приходится продираться через дебри уравнений, абстракций и формул. Дело это непростое и может возникнуть резонный вопрос – а зачем оно все надо?</p>
 <p>Помимо фундаментальной ценности в виде лучшего понимания устройства мира, объясняющая спектр теория дает крутую возможность: по измеренному спектру понять, что за вещество перед нами и какие процессы в нем протекают. Например, изучение спектров – один из немногих способов узнать что-то про процессы в звездах или биологических клетках. Для совсем практиков: спектроскопия также используется для детекции взрывчатых и наркотических веществ в малых дозах, а полевые транзисторы (основа большинства современных вычислительные устройства) работают на основе туннельного эффекта – квантового явления. Так что можно сказать, что квантовая механика используется сплошь и рядом!</p>
 </div>
-<p>Если перейти в уравнении <a class="reference internal" href="#equation-eqn-shrstable">(20)</a> в сферические координаты со следующей параметризацией <span class="math notranslate nohighlight">\(\ket{\Psi(\vec{r})} = \frac{\chi(r)}{r} Y(\theta, \phi)\)</span> и воспользоваться несколькими волшебными выводами квантмеха <span id="id8">[<a class="reference internal" href="../bibliography.html#id49"><span>89</span></a>]</span>, то получится:</p>
+<p>Если перейти в уравнении <a class="reference internal" href="#equation-eqn-shrstable">(20)</a> в сферические координаты со следующей параметризацией <span class="math notranslate nohighlight">\(\ket{\Psi(\vec{r})} = \frac{\chi(r)}{r} Y(\theta, \phi)\)</span> и воспользоваться несколькими волшебными выводами квантмеха <span id="id8">[<a class="reference internal" href="../bibliography.html#id48"><span>89</span></a>]</span>, то получится:</p>
 <div class="math notranslate nohighlight">
 \[
 -\frac{{\hbar}^2}{2 m} \frac{d^2 \chi}{d r^2} +
@@ -926,7 +926,7 @@
 (\frac{\ell(\ell+1)}{2r^2} -\frac{1}{r})\chi(r)
 = 0
 \]</div>
-<p>Опустим несколько страниц выкладок <span id="id9">[<a class="reference internal" href="../bibliography.html#id40"><span>15a</span></a>]</span>, учтем граничные условия и получим следующее решение:</p>
+<p>Опустим несколько страниц выкладок <span id="id9">[<a class="reference internal" href="../bibliography.html#id39"><span>15a</span></a>]</span>, учтем граничные условия и получим следующее решение:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 R_{n\ell}(r) = r^\ell \cdot e^{-r/n} \cdot \sum_{k=0}^{n -\ell -1} \frac{(-2r/n)^k}{ (2\ell + 2 +k)! (n-\ell-k-1)! k!} \cdot C \\
@@ -1049,7 +1049,7 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 \]</div>
 <p>Кроме того, представим что мы обменяли частицы дважды: <span class="math notranslate nohighlight">\(A\)</span> с <span class="math notranslate nohighlight">\(B\)</span> и обратно. Никакие физические свойства системы из-за этого измениться не должны. В общем случае, из этого не следует что волновая функция не изменилась – например, так как глобальная фаза волновой функции неизмерима, то могли получить <span class="math notranslate nohighlight">\(\Psi' = e^{2 i \pi \theta} \Psi\)</span>.</p>
 <p>Но, если работаем больше чем в двух пространственных измерениях, то такой двойной обмен эквивалентен отсутсвию обмена. Для начала представим, что обмениваем частицы медленно, описывая полукруг частицей <span class="math notranslate nohighlight">\(A\)</span> вокруг частицы <span class="math notranslate nohighlight">\(B\)</span> и потом сдвигая обе частицы. Тогда двойной обмен значит, что частица <span class="math notranslate nohighlight">\(A\)</span> описывает полный круг вокруг частицы <span class="math notranslate nohighlight">\(B\)</span>. Также, если непрерывно изменим ее маршрут не приближая ее к частице <span class="math notranslate nohighlight">\(B\)</span>, то ожидаем получить тот же результат.</p>
-<p>Итак, какие замкнутые маршруты можем получить непрерывно деформируя маршрут в евклидовом пространстве без точки (<span class="math notranslate nohighlight">\(B\)</span>)? Ответ для любого измерения больше 2 – <a class="reference external" href="https://en.wikipedia.org/wiki/Homotopy_groups_of_spheres">любые</a>. Следовательно двойной обмен должен давать такой же результат как и если бы просто оставили частицу <span class="math notranslate nohighlight">\(А\)</span> на месте <span id="id14">[<a class="reference internal" href="../bibliography.html#id71"><span>NSS+08</span></a>]</span>. Это свойство задает ограничение на то, какими могут быть волновые функции.</p>
+<p>Итак, какие замкнутые маршруты можем получить непрерывно деформируя маршрут в евклидовом пространстве без точки (<span class="math notranslate nohighlight">\(B\)</span>)? Ответ для любого измерения больше 2 – <a class="reference external" href="https://en.wikipedia.org/wiki/Homotopy_groups_of_spheres">любые</a>. Следовательно двойной обмен должен давать такой же результат как и если бы просто оставили частицу <span class="math notranslate nohighlight">\(А\)</span> на месте <span id="id14">[<a class="reference internal" href="../bibliography.html#id70"><span>NSS+08</span></a>]</span>. Это свойство задает ограничение на то, какими могут быть волновые функции.</p>
 <p>У этого ограничения есть два решения: либо <span class="math notranslate nohighlight">\({\Psi}(X_A, X_B) = {\Psi}(X_B, X_A)\)</span> (симметричность), либо <span class="math notranslate nohighlight">\(\Psi(X_A, X_B) = - \Psi(X_B, X_A)\)</span> (антисимметричность). У антисимметричных функций есть интересное свойство: если функция <span class="math notranslate nohighlight">\(f(x_1, x_2)\)</span> антисимметрична, то <span class="math notranslate nohighlight">\(f(x_1=X, x_2=X) = 0\)</span>, то есть антисимметричная функция равна нулю, если ее аргументы одинаковы. В этом легко убедиться на примере <span class="math notranslate nohighlight">\(f = x_1 - x_2\)</span>.</p>
 <p>Для антисимметричной волновой функции это означает, что две частицы не могут иметь полностью одинаковое состояние – волновая функциия (и вероятность) такой конфигурации равна нулю.</p>
 <p>В эксперименте это строго выполняется для всех частиц с полуцелым спином (фермионов), к которым относятся электроны, а частицы с целым спином (бозоны), например, фотоны, имеют симметричную волновую функцию и могут иметь одинаковые состояния.</p>

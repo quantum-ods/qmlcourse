@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -838,7 +838,7 @@ C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_
 </div>
 <p>Подробнее о пакетах <code class="docutils literal notranslate"><span class="pre">Python</span></code> можно почитать в <a class="reference internal" href="../pythonblock/python_l1.html#python-l1"><span class="std std-ref">одной из вводных лекций</span></a> про этот язык программирования.</p>
 </div>
-<p>Одним из первых известных наборов данных для задачи выделения сообществ является “Клуб каратэ Захари” (Zachary’s Karate Club) <span id="id4">[<a class="reference internal" href="../bibliography.html#id76"><span>Zac77</span></a>]</span>. Для этого набора данных точно известно, к какому из двух сообществ принадлежит каждая из вершин. В этом клубе карате был внутренний конфликт, и одна часть людей была в группе одного из инструкторов (Mr. Hi), а другая – в группе администратора (Officer).</p>
+<p>Одним из первых известных наборов данных для задачи выделения сообществ является “Клуб каратэ Захари” (Zachary’s Karate Club) <span id="id4">[<a class="reference internal" href="../bibliography.html#id75"><span>Zac77</span></a>]</span>. Для этого набора данных точно известно, к какому из двух сообществ принадлежит каждая из вершин. В этом клубе карате был внутренний конфликт, и одна часть людей была в группе одного из инструкторов (Mr. Hi), а другая – в группе администратора (Officer).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -866,7 +866,7 @@ C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_
 \[
 C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_1) + \mathbf{1}(u \in V_2, v \in V_2))
 \]</div>
-<p>Но на самом деле мы только что свели более простую задачу о минимальном разрезе с неотрицательными весами к более сложной задаче Max-Cut. А еще выбранная нами метрика (количество ребер) – не самый лучший вариант для этой задачи. Гораздо лучше подойдет модулярность (modularity), предложенная физиком Марком Ньюманом <span id="id5">[<a class="reference internal" href="../bibliography.html#id55"><span>New06</span></a>]</span>:</p>
+<p>Но на самом деле мы только что свели более простую задачу о минимальном разрезе с неотрицательными весами к более сложной задаче Max-Cut. А еще выбранная нами метрика (количество ребер) – не самый лучший вариант для этой задачи. Гораздо лучше подойдет модулярность (modularity), предложенная физиком Марком Ньюманом <span id="id5">[<a class="reference internal" href="../bibliography.html#id54"><span>New06</span></a>]</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 Q(C) = \frac{1}{2 |E|}\sum_{e \in E} B_{e_{src}, e_{dst}}\delta (c_{e_{src}}, c_{e_{dst}})
@@ -948,7 +948,7 @@ X = \text{argmax} \{ \sum_i x_i \cdot s_i \} \\
 </div>
 <div class="section" id="id9">
 <h2>Классические алгоритмы<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p>Самый простой и очевидный вариант решения таких проблем – это просто перебор всех возможных комбинаций. Но так как сложность задач растет экспоненциально (<span class="math notranslate nohighlight">\(O(N) \sim e^{N}\)</span>), то очень быстро прямое решение (еще иногда говорят <em>brute force</em> решение, или <em>brute force</em> алгоритм) становится невозможным. Понятно, что можно воспользоваться какими-то эвристиками для конкретной задачи. Это приводит нас к алгоритмам типа <em>ветвей и границ</em> (<em>branch and bound</em>) <span id="id10">[<a class="reference internal" href="../bibliography.html#id48"><span>LD10</span></a>]</span>, в которых мы обычно строим дерево возможных решений и пытаемся перебирать не все подряд, а лишь “перспективные” ветви этого дерева, отсекая те ветки, где хороших решений точно не будет. Но сложность таких алгоритмов все равно остается экспоненциальной. Другой вариант – это искать не обязательно самое лучше решение, а хотя бы какое-то подходящее решение (<em>feasible solution</em>, решение, которое удовлетворяет ограничениям). Это приводит нас к аппроксимационным алгоритмам, которые каким-то образом пытаются свести экспоненциальную задачу к полиномиальной, пусть и теряя в гарантированном качестве итогового решения.</p>
+<p>Самый простой и очевидный вариант решения таких проблем – это просто перебор всех возможных комбинаций. Но так как сложность задач растет экспоненциально (<span class="math notranslate nohighlight">\(O(N) \sim e^{N}\)</span>), то очень быстро прямое решение (еще иногда говорят <em>brute force</em> решение, или <em>brute force</em> алгоритм) становится невозможным. Понятно, что можно воспользоваться какими-то эвристиками для конкретной задачи. Это приводит нас к алгоритмам типа <em>ветвей и границ</em> (<em>branch and bound</em>) <span id="id10">[<a class="reference internal" href="../bibliography.html#id47"><span>LD10</span></a>]</span>, в которых мы обычно строим дерево возможных решений и пытаемся перебирать не все подряд, а лишь “перспективные” ветви этого дерева, отсекая те ветки, где хороших решений точно не будет. Но сложность таких алгоритмов все равно остается экспоненциальной. Другой вариант – это искать не обязательно самое лучше решение, а хотя бы какое-то подходящее решение (<em>feasible solution</em>, решение, которое удовлетворяет ограничениям). Это приводит нас к аппроксимационным алгоритмам, которые каким-то образом пытаются свести экспоненциальную задачу к полиномиальной, пусть и теряя в гарантированном качестве итогового решения.</p>
 <div class="admonition- admonition">
 <p class="admonition-title">Важное замечание</p>
 <p>Задачи комбинаторной оптимизации нельзя точно решить на квантовом компьютере! Квантовые компьютеры лишь дают нам потенциально очень эффективные <em>аппроксимационные</em> алгоритмы. Причем в основе этих алгоритмов лежит обычно как раз квантовое машинное обучение!</p>
@@ -1061,7 +1061,7 @@ Total weight of items: 30
 </div>
 <div class="section" id="id13">
 <h3>Метод имитации отжига<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<p>Это итеративный алгоритм, который очень часто способен найти действительно неплохое решение. Причем, в отличие от жадных алгоритмов, отжиг специально сделан так, чтобы не “застревать” в каких-то локально-хороших точках пространства решений, а наоборот, искать самое лучшее. Мы разберем работу отжига на примере задачи о максимальном разрезе в графе, а именно, реализуем подобие алгоритма Метрополиса-Гастингса <span id="id14">[<a class="reference internal" href="../bibliography.html#id35"><span>Has70</span></a>]</span>. Но для начала давайте сгенерируем случайный граф:</p>
+<p>Это итеративный алгоритм, который очень часто способен найти действительно неплохое решение. Причем, в отличие от жадных алгоритмов, отжиг специально сделан так, чтобы не “застревать” в каких-то локально-хороших точках пространства решений, а наоборот, искать самое лучшее. Мы разберем работу отжига на примере задачи о максимальном разрезе в графе, а именно, реализуем подобие алгоритма Метрополиса-Гастингса <span id="id14">[<a class="reference internal" href="../bibliography.html#id34"><span>Has70</span></a>]</span>. Но для начала давайте сгенерируем случайный граф:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>

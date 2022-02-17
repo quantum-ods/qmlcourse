@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -1035,7 +1035,7 @@
 </div>
 <div class="section" id="id6">
 <h2>Пример: задача электронной структуры молекулы<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>Поскольку в курсе также имеем дело с задачами квантовой химии, давайте разберем соответствующий пример из <span id="id7">[<a class="reference internal" href="../bibliography.html#id70"><span>TKTD20</span></a>]</span>. В данной статье авторы осуществляют точную диагонализацию физического гамильтониана с помощью квантового отжигателя <code class="docutils literal notranslate"><span class="pre">D-Wave</span></code>. Этот подход они называют <code class="docutils literal notranslate"><span class="pre">QAE</span></code> – <code class="docutils literal notranslate"><span class="pre">Quantum</span> <span class="pre">Annealing</span> <span class="pre">Eigensolver</span></code>. Разберем эту статью гораздо менее подробно, чем предыдущую задачу.</p>
+<p>Поскольку в курсе также имеем дело с задачами квантовой химии, давайте разберем соответствующий пример из <span id="id7">[<a class="reference internal" href="../bibliography.html#id69"><span>TKTD20</span></a>]</span>. В данной статье авторы осуществляют точную диагонализацию физического гамильтониана с помощью квантового отжигателя <code class="docutils literal notranslate"><span class="pre">D-Wave</span></code>. Этот подход они называют <code class="docutils literal notranslate"><span class="pre">QAE</span></code> – <code class="docutils literal notranslate"><span class="pre">Quantum</span> <span class="pre">Annealing</span> <span class="pre">Eigensolver</span></code>. Разберем эту статью гораздо менее подробно, чем предыдущую задачу.</p>
 <p>Основная проблема применения квантового отжига в квантовой химии – найти отображение гамильтониана электронной структуры молекулы на гамильтониан Изинга (вспомним <span class="math notranslate nohighlight">\(\mathcal{H}_{Final}\)</span> из теории квантового отжига, описанной в начале этой лекции). Обычно такие отображения начинаются с записи электронного гамильтониана в <a class="reference external" href="https://en.wikipedia.org/wiki/Second_quantization">формализме вторичного квантования</a>, а затем используют преобразования <a class="reference external" href="../problems2qml/jordanwigner.html#id6">Жордана-Вигнера</a> (<code class="docutils literal notranslate"><span class="pre">Jordan-Wigner</span> <span class="pre">transformation</span></code>) или Бравого-Китаева (<code class="docutils literal notranslate"><span class="pre">Bravyi-Kitaev</span> <span class="pre">transformation</span></code>). Минусы такого подхода заключаются в том, что:</p>
 <ul class="simple">
 <li><p>растет число кубитов, необходимое для описания системы на языке (напомним, классического, а значит – диагонального) гамильтониана Изинга</p></li>

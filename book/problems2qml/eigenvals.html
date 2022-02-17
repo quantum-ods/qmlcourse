@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -869,7 +869,7 @@ A \Psi_i = e_i \Psi_i
 </div>
 <div class="section" id="id6">
 <h3>Итерация Арнольди<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>Это гораздо более сложный метод, который, однако, является одним из самых эффективных применительно к разреженным матрицам <span id="id7">[<a class="reference internal" href="../bibliography.html#id19"><span>Arn51</span></a>]</span>. Объяснить его легко, к сожалению, не получится, так как алгоритм требует понимания Крыловских подпространств и других концептов из области линейной алгебры разреженных систем. Но пока достаточно лишь того, что этот алгоритм имеет очень эффективную реализацию – <a class="reference external" href="https://www.caam.rice.edu/software/ARPACK/">ARPACK</a>, написанную в середине 90-х годов на языке <code class="docutils literal notranslate"><span class="pre">FORTRAN77</span></code>. Именно эта библиотека используется “под капотом” у <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, а также во многих других научных пакетах. Давайте посмотрим, как она работает.</p>
+<p>Это гораздо более сложный метод, который, однако, является одним из самых эффективных применительно к разреженным матрицам <span id="id7">[<a class="reference internal" href="../bibliography.html#id18"><span>Arn51</span></a>]</span>. Объяснить его легко, к сожалению, не получится, так как алгоритм требует понимания Крыловских подпространств и других концептов из области линейной алгебры разреженных систем. Но пока достаточно лишь того, что этот алгоритм имеет очень эффективную реализацию – <a class="reference external" href="https://www.caam.rice.edu/software/ARPACK/">ARPACK</a>, написанную в середине 90-х годов на языке <code class="docutils literal notranslate"><span class="pre">FORTRAN77</span></code>. Именно эта библиотека используется “под капотом” у <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, а также во многих других научных пакетах. Давайте посмотрим, как она работает.</p>
 <p>Сгенерируем большую разреженную матрицу.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -938,7 +938,7 @@ Max E: (1.0000000000000007+0j)
 </div>
 <div class="section" id="id8">
 <h3>Алгоритм Ланкзоша<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>Итерация Ланкзоша (<em>англ.</em> Lanzos) <span id="id9">[<a class="reference internal" href="../bibliography.html#id47"><span>Lan50</span></a>]</span> – это модификация итерации Арнольди, которая работает с эрмитовыми матрицами и находит максимально широкое применение в том числе для квантовых гамильтонианов. Этот алгоритм по умолчанию включен в большинство математических пакетов, включая <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> и, соответственно, <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>:</p>
+<p>Итерация Ланкзоша (<em>англ.</em> Lanzos) <span id="id9">[<a class="reference internal" href="../bibliography.html#id46"><span>Lan50</span></a>]</span> – это модификация итерации Арнольди, которая работает с эрмитовыми матрицами и находит максимально широкое применение в том числе для квантовых гамильтонианов. Этот алгоритм по умолчанию включен в большинство математических пакетов, включая <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> и, соответственно, <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_eigval</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigsh</span><span class="p">(</span><span class="n">spmat</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;LM&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -1002,7 +1002,7 @@ E = \frac{\int |\Psi(X)|^2 \frac{\hat{H}\Psi(X)}{\Psi(X)} dX}{\int |\Psi(X)|^2 d
 \[
 \Psi(X) = e^{-\sum_{i,j} u(r_i, r_j)},
 \]</div>
-<p>где <span class="math notranslate nohighlight">\(r_i, r_j\)</span> – это радиус-векторы частиц, а <span class="math notranslate nohighlight">\(u(r_i, r_j)\)</span> – симметричная функция, описывающая двухчастичное взаимодействия. Такая функция называется <strong>Jastrow function</strong> <span id="id12">[<a class="reference internal" href="../bibliography.html#id45"><span>Jas55</span></a>]</span>. В этом случае, в процессе работы <strong>VMC</strong> будем просто варьировать радиус-векторы частиц также, как варьировали вершины графа в <a class="reference external" href="../problemsblock/copt.html#id13">обычном отжиге</a>, когда решали задачу комбинаторной оптимизации. Только теперь есть еще и параметризация обменных взаимодействий, которую “варьируем”.</p>
+<p>где <span class="math notranslate nohighlight">\(r_i, r_j\)</span> – это радиус-векторы частиц, а <span class="math notranslate nohighlight">\(u(r_i, r_j)\)</span> – симметричная функция, описывающая двухчастичное взаимодействия. Такая функция называется <strong>Jastrow function</strong> <span id="id12">[<a class="reference internal" href="../bibliography.html#id44"><span>Jas55</span></a>]</span>. В этом случае, в процессе работы <strong>VMC</strong> будем просто варьировать радиус-векторы частиц также, как варьировали вершины графа в <a class="reference external" href="../problemsblock/copt.html#id13">обычном отжиге</a>, когда решали задачу комбинаторной оптимизации. Только теперь есть еще и параметризация обменных взаимодействий, которую “варьируем”.</p>
 </div>
 <div class="section" id="hartree-fock-scf">
 <h4>Hartree-Fock (SCF)<a class="headerlink" href="#hartree-fock-scf" title="Permalink to this headline">¶</a></h4>
@@ -1028,7 +1028,7 @@ D = \begin{bmatrix}
 \[
 \Psi(s) = e^{\sum_{i,j}s_i W_{i,j} s_j},
 \]</div>
-<p>где матрица <span class="math notranslate nohighlight">\(W\)</span> будет играть роль параметризации и отражать парные спиновые корреляции. Давайте посмотрим это на практике при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> <span id="id14">[<a class="reference internal" href="../bibliography.html#id25"><span>CCH+19</span></a>]</span>.</p>
+<p>где матрица <span class="math notranslate nohighlight">\(W\)</span> будет играть роль параметризации и отражать парные спиновые корреляции. Давайте посмотрим это на практике при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> <span id="id14">[<a class="reference internal" href="../bibliography.html#id24"><span>CCH+19</span></a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netket</span> <span class="k">as</span> <span class="nn">nk</span>
@@ -1120,10 +1120,10 @@ D = \begin{bmatrix}
 </div>
 <div class="section" id="neural-network-quantum-states">
 <h4>Neural Network Quantum States<a class="headerlink" href="#neural-network-quantum-states" title="Permalink to this headline">¶</a></h4>
-<p>Еще более интересный подход к выбору <em>trial wave function</em> – это использование в качестве <span class="math notranslate nohighlight">\(\Psi(X)\)</span> нейронной сети <span id="id15">[<a class="reference internal" href="../bibliography.html#id24"><span>CT17</span></a>]</span>. Уже немного <a class="reference external" href="../qmlkindsblock/qmlkinds.html#nqs">касались этой темы</a>, когда речь шла о видах квантового машинного обучения. Хороший вариант, это использовать, например, полносвязную сеть – ограниченную машину Больцмана:</p>
+<p>Еще более интересный подход к выбору <em>trial wave function</em> – это использование в качестве <span class="math notranslate nohighlight">\(\Psi(X)\)</span> нейронной сети <span id="id15">[<a class="reference internal" href="../bibliography.html#id23"><span>CT17</span></a>]</span>. Уже немного <a class="reference external" href="../qmlkindsblock/qmlkinds.html#nqs">касались этой темы</a>, когда речь шла о видах квантового машинного обучения. Хороший вариант, это использовать, например, полносвязную сеть – ограниченную машину Больцмана:</p>
 <div class="figure align-default" id="nqs2">
 <a class="reference internal image-reference" href="../../_images/NQS1.png"><img alt="../../_images/NQS1.png" src="../../_images/NQS1.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 131 </span><span class="caption-text">Нейронная сеть в качестве <em>trial wave function</em> из работы <span id="id16">[<a class="reference internal" href="../bibliography.html#id24"><span>CT17</span></a>]</span>.</span><a class="headerlink" href="#nqs2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 131 </span><span class="caption-text">Нейронная сеть в качестве <em>trial wave function</em> из работы <span id="id16">[<a class="reference internal" href="../bibliography.html#id23"><span>CT17</span></a>]</span>.</span><a class="headerlink" href="#nqs2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Это также легко может быть реализовано с использованием библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code>:</p>
 <div class="cell docutils container">
@@ -1153,13 +1153,13 @@ D = \begin{bmatrix}
 <p>Преимущества использования нейронной сети трудно показать на таком небольшом примере с моделью Изинга и 10-ю спинами, но они полностью раскрываются, если нужно анализировать более сложные модели.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Это интересно, но при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> можно по сути решать проблемы комбинаторной оптимизации <span id="id17">[<a class="reference internal" href="../bibliography.html#id64"><span>SB19</span></a>]</span> с помощью методов <em>deep learning</em>.</p>
+<p>Это интересно, но при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> можно по сути решать проблемы комбинаторной оптимизации <span id="id17">[<a class="reference internal" href="../bibliography.html#id63"><span>SB19</span></a>]</span> с помощью методов <em>deep learning</em>.</p>
 </div>
 </div>
 </div>
 <div class="section" id="vmc">
 <h3>Проблемы с VMC<a class="headerlink" href="#vmc" title="Permalink to this headline">¶</a></h3>
-<p>К сожалению, у метода <strong>VMC</strong> есть свои проблемы. Это относительно плохая масштабируемость – при росте размерности проблемы для того, чтобы подобрать реально хорошую аппроксимацию потребуется все больше итераций и семплов на каждой из них. Также у <strong>VMC</strong> есть ряд фундаментальных проблем, например, так называемая <em>sign problem</em> <span id="id18">[<a class="reference internal" href="../bibliography.html#id51"><span>LJGS+90</span></a>]</span>.</p>
+<p>К сожалению, у метода <strong>VMC</strong> есть свои проблемы. Это относительно плохая масштабируемость – при росте размерности проблемы для того, чтобы подобрать реально хорошую аппроксимацию потребуется все больше итераций и семплов на каждой из них. Также у <strong>VMC</strong> есть ряд фундаментальных проблем, например, так называемая <em>sign problem</em> <span id="id18">[<a class="reference internal" href="../bibliography.html#id50"><span>LJGS+90</span></a>]</span>.</p>
 </div>
 </div>
 <div class="section" id="id19">

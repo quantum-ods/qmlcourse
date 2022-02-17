@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -794,7 +794,7 @@
 </ul>
 <div class="section" id="id1">
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Здесь рассмотрим QUBO-формулировки трех задач ML (линейная регрессия, SVM, сбалансированная кластеризация методом k-средних) аналогично тому, как в <a class="reference internal" href="np2ising.html#np2ising"><span class="std std-ref">предыдущей лекции</span></a> было продемонстрировано сведение к QUBO задач о максимальном разрезе в графе, о коммивояжере и о выделении сообществ в графе. Изложение полностью основывается на статье <span id="id2">[<a class="reference internal" href="../bibliography.html#id61"><span>DAPN21</span></a>]</span>.</p>
+<p>Здесь рассмотрим QUBO-формулировки трех задач ML (линейная регрессия, SVM, сбалансированная кластеризация методом k-средних) аналогично тому, как в <a class="reference internal" href="np2ising.html#np2ising"><span class="std std-ref">предыдущей лекции</span></a> было продемонстрировано сведение к QUBO задач о максимальном разрезе в графе, о коммивояжере и о выделении сообществ в графе. Изложение полностью основывается на статье <span id="id2">[<a class="reference internal" href="../bibliography.html#id60"><span>DAPN21</span></a>]</span>.</p>
 <p>Некоторые обозначения, которые будут использоваться в дальнейшем:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbb{R}\)</span> – множество действительных чисел;</p></li>
@@ -805,7 +805,7 @@
 <li><p><span class="math notranslate nohighlight">\(\otimes\)</span> – произведение Кронекера (тензорное произведение);</p></li>
 <li><p><span class="math notranslate nohighlight">\(\odot\)</span> – произведение Адамара (поэлементное произведение).</p></li>
 </ul>
-<p>Общая формулировка QUBO-задачи, которая используется в статье <span id="id3">[<a class="reference internal" href="../bibliography.html#id61"><span>DAPN21</span></a>]</span> и к которой всё сводится, выглядит так:</p>
+<p>Общая формулировка QUBO-задачи, которая используется в статье <span id="id3">[<a class="reference internal" href="../bibliography.html#id60"><span>DAPN21</span></a>]</span> и к которой всё сводится, выглядит так:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-general-qubo-in-paper">
 <span class="eqno">(47)<a class="headerlink" href="#equation-eqn-general-qubo-in-paper" title="Permalink to this equation">¶</a></span>\[
 z^T A z + z^T b
@@ -907,11 +907,11 @@ E(\tilde{w}) =
 </div>
 <div class="section" id="id5">
 <h3>Оценка вычислительной сложности<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Для исходной задачи регрессии <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a> количество значений в датасете <span class="math notranslate nohighlight">\(X\)</span> равно <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span>. Мы ввели <span class="math notranslate nohighlight">\(K\)</span> бинарных переменных для каждого из <span class="math notranslate nohighlight">\((d+1)\)</span> весов. Значит, получилось <span class="math notranslate nohighlight">\(\mathcal{O}(K d)\)</span> переменных в QUBO-формулировке <a class="reference internal" href="#equation-eqn-lin-reg-qubo-2">(51)</a>. Для решения задачи требуется <span class="math notranslate nohighlight">\(\mathcal{O}(K^2 d^2)\)</span> кубитов (см. <span id="id6">[<a class="reference internal" href="../bibliography.html#id30"><span>DPP19</span></a>]</span>), это пространственная сложность в рассматриваемом подходе.</p>
+<p>Для исходной задачи регрессии <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a> количество значений в датасете <span class="math notranslate nohighlight">\(X\)</span> равно <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span>. Мы ввели <span class="math notranslate nohighlight">\(K\)</span> бинарных переменных для каждого из <span class="math notranslate nohighlight">\((d+1)\)</span> весов. Значит, получилось <span class="math notranslate nohighlight">\(\mathcal{O}(K d)\)</span> переменных в QUBO-формулировке <a class="reference internal" href="#equation-eqn-lin-reg-qubo-2">(51)</a>. Для решения задачи требуется <span class="math notranslate nohighlight">\(\mathcal{O}(K^2 d^2)\)</span> кубитов (см. <span id="id6">[<a class="reference internal" href="../bibliography.html#id29"><span>DPP19</span></a>]</span>), это пространственная сложность в рассматриваемом подходе.</p>
 <p>ВременнАя сложность в классической задаче <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span>. В случае QUBO-задачи для временнОй оценки нужно рассмотреть три части:</p>
 <ol class="simple">
 <li><p>Затраты времени для конвертации задачи регрессии в QUBO-формулировку. Здесь получаем <span class="math notranslate nohighlight">\(\mathcal{O}(N K^2 d^2)\)</span> (проверьте это, оценив число умножений, необходимых для вычисления <span class="math notranslate nohighlight">\(\mathcal{P}^T X^T X \mathcal{P}\)</span>).</p></li>
-<li><p>Время для реализации QUBO-задачи в квантовом “железе”. Здесь потребуется <span class="math notranslate nohighlight">\(\mathcal{O}(K^2 d^2)\)</span>, если использовать алгоритм из <span id="id7">[<a class="reference internal" href="../bibliography.html#id30"><span>DPP19</span></a>]</span>.</p></li>
+<li><p>Время для реализации QUBO-задачи в квантовом “железе”. Здесь потребуется <span class="math notranslate nohighlight">\(\mathcal{O}(K^2 d^2)\)</span>, если использовать алгоритм из <span id="id7">[<a class="reference internal" href="../bibliography.html#id29"><span>DPP19</span></a>]</span>.</p></li>
 <li><p>Время для выполнения квантового отжига. Существуют теоретические оценки времени для получения точного решения, но более практично рассматривать случай, когда можно просто довольствоваться достаточно высокой вероятностью (скажем, 99%) получения оптимального решения. Для современных квантовых компьютеров D-Wave с ограниченным числом кубитов на практике получается, что время отжига и число повторений можно считать константами.</p></li>
 </ol>
 <p>В итоге полная временнАя сложность решения QUBO-задачи на адиабатическом квантовом компьютере <span class="math notranslate nohighlight">\(\mathcal{O}(N K^2 d^2)\)</span>. Может показаться, что это хуже, чем временнАя сложность классического решения, если считать <span class="math notranslate nohighlight">\(K\)</span> переменной. Но величина <span class="math notranslate nohighlight">\(K\)</span> определяется только шириной диапазона числовых значений и желаемой точностью представления, <span class="math notranslate nohighlight">\(K\)</span> не зависит от основных параметров задачи типа <span class="math notranslate nohighlight">\(N\)</span> и <span class="math notranslate nohighlight">\(d\)</span>. Поэтому можно считать <span class="math notranslate nohighlight">\(K\)</span> константой. Тогда число требуемых кубитов <span class="math notranslate nohighlight">\(\mathcal{O}(d^2)\)</span>, временнАя сложность <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span>, это эквивалентно классическому случаю.</p>
@@ -1214,7 +1214,7 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
 <div class="section" id="id11">
 <h3>Оценка вычислительной сложности<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Задача <a class="reference internal" href="#equation-eqn-kmeans-equal-clusters">(59)</a> содержит <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span> значений в данных и <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> переменных. В QUBO-формулировке вводим по <span class="math notranslate nohighlight">\(k\)</span> бинарных переменных для каждой исходной. Получается <span class="math notranslate nohighlight">\(\mathcal{O}(N k)\)</span> переменных, а значит, требуется <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 k^2)\)</span> кубитов.</p>
-<p>Известно, что классический алгоритм сбалансированной кластеризации методом k-средних сходится за время <span class="math notranslate nohighlight">\(\mathcal{O}(N^{3.5} k^{3.5})\)</span> в худшем случае (см. ссылки в статье <span id="id12">[<a class="reference internal" href="../bibliography.html#id61"><span>DAPN21</span></a>]</span>). Для оценки временнОй сложности QUBO рассматриваем три составляющие:</p>
+<p>Известно, что классический алгоритм сбалансированной кластеризации методом k-средних сходится за время <span class="math notranslate nohighlight">\(\mathcal{O}(N^{3.5} k^{3.5})\)</span> в худшем случае (см. ссылки в статье <span id="id12">[<a class="reference internal" href="../bibliography.html#id60"><span>DAPN21</span></a>]</span>). Для оценки временнОй сложности QUBO рассматриваем три составляющие:</p>
 <ol class="simple">
 <li><p>Затраты времени для конвертации в QUBO-формулировку. В выражении <a class="reference internal" href="#equation-eqn-final-qubo-kmeans">(61)</a> по вычислительной сложности доминирует слагаемое, содержащее <span class="math notranslate nohighlight">\(I_k \otimes D\)</span>. Соответствующая вычислительная сложность <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 k d)\)</span>.</p></li>
 <li><p>Для реализации QUBO-задачи в квантовом “железе” потребуется <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 k^2)\)</span>.</p></li>

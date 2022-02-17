@@ -604,27 +604,27 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
   </a>
  </li>
 </ul>
@@ -853,10 +853,10 @@
 <p>Классическое машинное обучение применительно к квантовым данным – это очень активно развивающаяся область квантовой физики и квантовой химии. Главный вопрос в данном случае – что именно мы пониманием под “квантовыми данными”. Но мы будем придерживаться максимально широкой трактовки этого понятия. Далее рассмотрим примеры возможного применения ML в задачах квантовой физики и химии.</p>
 <div class="section" id="nqs">
 <span id="id4"></span><h3>NQS<a class="headerlink" href="#nqs" title="Permalink to this headline">¶</a></h3>
-<p><strong>N</strong>eural <strong>Q</strong>uantum <strong>S</strong>tates это очень перспективное улучшение квантового Монте-Карло – популярного метода приближенного решения задач квантовой физики. Мы будем подробно рассматривать проблему нахождения энергетических спектров квантомеханических систем, а также моделирования квантовой динамики в блоке о проблемах квантового машинного обучения. Пока нам достаточно знания того, что эти задачи являются вычислительно трудными и их прямое численное решение очень быстро становится невозможным по мере увеличения размера системы и числа взаимодействующих частиц. В подходе <strong>NQS</strong>, впервые опубликованном в журнале <em>Science</em> <span id="id5">[<a class="reference internal" href="../bibliography.html#id24"><span>CT17</span></a>]</span>, предложено моделировать волновую функцию <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> физической системы при помощи глубокой нейронной сети. Это дает ряд преимуществ над обычным квантовым Монте-Карло в плане точности моделирования, а также позволяет явно симулировать <em>time-dependent</em> уравнение Шредингера. Относительно другого популярного метода, который называется <em>Matrix Product State</em> <strong>NQS</strong> дает лучшую масштабируемость и меньшую аппроксимацию сложность, которая оказывается линейной по числу частиц в физической системе.</p>
+<p><strong>N</strong>eural <strong>Q</strong>uantum <strong>S</strong>tates это очень перспективное улучшение квантового Монте-Карло – популярного метода приближенного решения задач квантовой физики. Мы будем подробно рассматривать проблему нахождения энергетических спектров квантомеханических систем, а также моделирования квантовой динамики в блоке о проблемах квантового машинного обучения. Пока нам достаточно знания того, что эти задачи являются вычислительно трудными и их прямое численное решение очень быстро становится невозможным по мере увеличения размера системы и числа взаимодействующих частиц. В подходе <strong>NQS</strong>, впервые опубликованном в журнале <em>Science</em> <span id="id5">[<a class="reference internal" href="../bibliography.html#id23"><span>CT17</span></a>]</span>, предложено моделировать волновую функцию <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> физической системы при помощи глубокой нейронной сети. Это дает ряд преимуществ над обычным квантовым Монте-Карло в плане точности моделирования, а также позволяет явно симулировать <em>time-dependent</em> уравнение Шредингера. Относительно другого популярного метода, который называется <em>Matrix Product State</em> <strong>NQS</strong> дает лучшую масштабируемость и меньшую аппроксимацию сложность, которая оказывается линейной по числу частиц в физической системе.</p>
 <div class="figure align-default" id="id25">
 <a class="reference internal image-reference" href="../../_images/NQS.png"><img alt="../../_images/NQS.png" src="../../_images/NQS.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">Сходимость <strong>NQS</strong> по энергии в зависимости от числа эпох обучения. По вертикали значение энергии на один спин, по горизонтали эпохи обучения. Пунктиром отмечено точное значение, полученное прямой диагонализацией гамильтониана. Слева общий вид, справа – <em>сверхтонкая</em> сходимость вблизи энергии основного состояния. Источник <span id="id6">[<a class="reference internal" href="../bibliography.html#id24"><span>CT17</span></a>]</span>.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 89 </span><span class="caption-text">Сходимость <strong>NQS</strong> по энергии в зависимости от числа эпох обучения. По вертикали значение энергии на один спин, по горизонтали эпохи обучения. Пунктиром отмечено точное значение, полученное прямой диагонализацией гамильтониана. Слева общий вид, справа – <em>сверхтонкая</em> сходимость вблизи энергии основного состояния. Источник <span id="id6">[<a class="reference internal" href="../bibliography.html#id23"><span>CT17</span></a>]</span>.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="cnn">
@@ -864,16 +864,16 @@
 <p>Другим интересным подходом является применение <em>Convolutional Neural Networks</em> (<em>CNN</em>) – специального класса глубоких нейронных сетей, разработанных для обработки изображений, к физическим потенциалам. Дело в том, что трехмерный энергетический потенциал можно представить как 2D изображение. Например, можно взять периодическую потенциальную энергию, создаваемую атомами в кристаллической решетке и рассмотреть, как будет вести себя электрон в таком потенциале.</p>
 <div class="figure align-default" id="id26">
 <a class="reference internal image-reference" href="../../_images/CNN_over_psi.png"><img alt="../../_images/CNN_over_psi.png" src="../../_images/CNN_over_psi.png" style="width: 650px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text">Иллюстрация применения <em>CNN</em> на энергетических потенциалах. Источник <span id="id7">[<a class="reference internal" href="../bibliography.html#id53"><span>MST17</span></a>]</span>.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 90 </span><span class="caption-text">Иллюстрация применения <em>CNN</em> на энергетических потенциалах. Источник <span id="id7">[<a class="reference internal" href="../bibliography.html#id52"><span>MST17</span></a>]</span>.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
 </div>
 <p>Существует ограниченный набор частных случаев, когда эта задача может быть решена аналитически. Используя такие точные решения, мы составляем обучающую выборку, тренируем <em>CNN</em>, а потом можем применять ее к другим, более сложным потенциалам.</p>
 </div>
 <div class="section" id="id8">
 <h3>Решение уравнения Шредингера<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>Другим примером решения задачи об энергетических уровнях является применение глубокой нейронной сети, которая на вход принимает <em>Slater determinants</em>, <em>Jastrow factor</em> и другие известные способы приближенного описания квантомеханических систем. А на выходе из такой глубокой нейронной сети получаем волновую функцию системы. Таким образом, получается объединить все преимущества хорошо изученных физических представлений с высокой экспрессивностью глубоких нейронных сетей <span id="id9">[<a class="reference internal" href="../bibliography.html#id37"><span>HSchatzleNoe20</span></a>]</span>.</p>
+<p>Другим примером решения задачи об энергетических уровнях является применение глубокой нейронной сети, которая на вход принимает <em>Slater determinants</em>, <em>Jastrow factor</em> и другие известные способы приближенного описания квантомеханических систем. А на выходе из такой глубокой нейронной сети получаем волновую функцию системы. Таким образом, получается объединить все преимущества хорошо изученных физических представлений с высокой экспрессивностью глубоких нейронных сетей <span id="id9">[<a class="reference internal" href="../bibliography.html#id36"><span>HSchatzleNoe20</span></a>]</span>.</p>
 <div class="figure align-default" id="id27">
 <a class="reference internal image-reference" href="../../_images/PauliNet.png"><img alt="../../_images/PauliNet.png" src="../../_images/PauliNet.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 91 </span><span class="caption-text">Архитектура подхода <em>PauliNet</em>. Источник <span id="id10">[<a class="reference internal" href="../bibliography.html#id37"><span>HSchatzleNoe20</span></a>]</span>.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 91 </span><span class="caption-text">Архитектура подхода <em>PauliNet</em>. Источник <span id="id10">[<a class="reference internal" href="../bibliography.html#id36"><span>HSchatzleNoe20</span></a>]</span>.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p>Такой подход дает фантастическую точность по сравнению с другими подходами и выглядит очень перспективно, так как дополнительно позволяет получить очень хорошую масштабируемость из-за возможности снизить число <em>slater determinants</em>.</p>
 </div>
@@ -882,13 +882,13 @@
 <p>Другой похожий на <a class="reference internal" href="#nqs"><span class="std std-ref">NQS</span></a> подход – это использовать для аппроксимации волновой функции рекуррентные нейронные сети вместо машин Больцмана.</p>
 <div class="figure align-default" id="id28">
 <a class="reference internal image-reference" href="../../_images/RNN.png"><img alt="../../_images/RNN.png" src="../../_images/RNN.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text">Результаты <em>RNN</em>-модели для аппроксимации волновых функций. Можно получать не только значение энергии, но и ожидаемые значения других операторов, например, операторов спина или операторов спиновых корреляций. Источник <span id="id11">[<a class="reference internal" href="../bibliography.html#id38"><span>HAGH+20</span></a>]</span>. На графике (a) приведена зависимость энергии от эпохи обучения. На графике (b) приведены зависимости собственного значения операторов спиновых корреляций 40-го (центрального) спина с <em>n</em>-ым от номера <em>n</em>. На графике (c) приведено распределение значений оператора спина по длине цепочки спинов.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 92 </span><span class="caption-text">Результаты <em>RNN</em>-модели для аппроксимации волновых функций. Можно получать не только значение энергии, но и ожидаемые значения других операторов, например, операторов спина или операторов спиновых корреляций. Источник <span id="id11">[<a class="reference internal" href="../bibliography.html#id37"><span>HAGH+20</span></a>]</span>. На графике (a) приведена зависимость энергии от эпохи обучения. На графике (b) приведены зависимости собственного значения операторов спиновых корреляций 40-го (центрального) спина с <em>n</em>-ым от номера <em>n</em>. На графике (c) приведено распределение значений оператора спина по длине цепочки спинов.</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
 <p>В данном подходе мы строим “последовательную” волновую функцию многочастичной квантовой системы, “подавая” туда по одной каждую частицу. А так как нейронная сеть – рекуррентная, мы по сути последовательно строим волновую функцию многочастичной системы.</p>
 </div>
 <div class="section" id="id12">
 <h3>Квантовая томография<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>Мы немного рассказывали о задаче квантовой томографии в <a class="reference internal" href="../qcblock/mixedstates.html#mixedstates"><span class="std std-ref">лекции про смешанные состояния</span></a>. Правда, там привели пример использования метода максимизации правдоподобия для решения задачи восстановления состояния по измерениям. Оказывается, что для этих целей можно использовать глубокие нейронные сети. Один из таких подходов описан в <span id="id13">[<a class="reference internal" href="../bibliography.html#id18"><span>AMunozNK21</span></a>]</span>. Суть подхода в том, что используются генеративные сети с условием – <em>Conditional GAN</em> (C-GAN) для восстановления состояния. Для создания матрицы плотности используется генератор, а для вычисления ошибки относительно реальных результатов измерений – дискриминатор.</p>
+<p>Мы немного рассказывали о задаче квантовой томографии в <a class="reference internal" href="../qcblock/mixedstates.html#mixedstates"><span class="std std-ref">лекции про смешанные состояния</span></a>. Правда, там привели пример использования метода максимизации правдоподобия для решения задачи восстановления состояния по измерениям. Оказывается, что для этих целей можно использовать глубокие нейронные сети. Один из таких подходов описан в <span id="id13">[<a class="reference internal" href="../bibliography.html#id17"><span>AMunozNK21</span></a>]</span>. Суть подхода в том, что используются генеративные сети с условием – <em>Conditional GAN</em> (C-GAN) для восстановления состояния. Для создания матрицы плотности используется генератор, а для вычисления ошибки относительно реальных результатов измерений – дискриминатор.</p>
 <div class="figure align-default" id="id29">
 <a class="reference internal image-reference" href="../../_images/C-GAN.png"><img alt="../../_images/C-GAN.png" src="../../_images/C-GAN.png" style="width: 550px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 93 </span><span class="caption-text">Иллюстрация подхода <em>C-GAN</em>.</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
@@ -904,7 +904,7 @@
 <p>Теперь перейдем к ситуации, когда мы рассматриваем классические данные (задачи классификации и регрессии) и применяем к ним машинное обучение, реализуемое на квантовом компьютере как набор операций над кубитами.</p>
 <div class="section" id="hhl">
 <h3>HHL<a class="headerlink" href="#hhl" title="Permalink to this headline">¶</a></h3>
-<p>Один из самых известных алгоритмов квантового машинного обучения – это алгоритм <strong>HHL</strong> <span id="id16">[<a class="reference internal" href="../bibliography.html#id7"><span>HHL09</span></a>]</span>, которому в нашем курсе <a class="reference internal" href="hhl_algorithm.html"><span class="doc std std-doc">посвящена отдельная продвинутая лекция</span></a>. Это алгоритм решения системы линейных уравнений за <span class="math notranslate nohighlight">\(O(N \log N)\)</span> операций. Так как к решению системы уравнений можно свести огромное число задач реального мира, этот алгоритм обладает огромным потенциалом. К сожалению, сегодня его практическое применение сильно ограничено несколькими вещами:</p>
+<p>Один из самых известных алгоритмов квантового машинного обучения – это алгоритм <strong>HHL</strong> <span id="id16">[<a class="reference internal" href="../bibliography.html#id6"><span>HHL09</span></a>]</span>, которому в нашем курсе <a class="reference internal" href="hhl_algorithm.html"><span class="doc std std-doc">посвящена отдельная продвинутая лекция</span></a>. Это алгоритм решения системы линейных уравнений за <span class="math notranslate nohighlight">\(O(N \log N)\)</span> операций. Так как к решению системы уравнений можно свести огромное число задач реального мира, этот алгоритм обладает огромным потенциалом. К сожалению, сегодня его практическое применение сильно ограничено несколькими вещами:</p>
 <ul class="simple">
 <li><p>необходимость эффективной генерации начального состояния – без этого достижения превосходства <strong>HHL</strong> невозможно;</p></li>
 <li><p>высокие требования к точности операций, а также необходимость в большом числе кубитов.</p></li>
@@ -943,7 +943,7 @@
 <p>Квантовые “нейронные сети” – это как раз пример, когда мы комбинируем вариационные слои вместе с обычными слоями нейронных сетей.</p>
 <div class="figure align-default" id="id31">
 <a class="reference internal image-reference" href="../../_images/qnntfq.png"><img alt="../../_images/qnntfq.png" src="../../_images/qnntfq.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">Пример гибридной квантовой нейросети. Источник <span id="id20">[<a class="reference internal" href="../bibliography.html#id23"><span>BVM+21</span></a>]</span>.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 95 </span><span class="caption-text">Пример гибридной квантовой нейросети. Источник <span id="id20">[<a class="reference internal" href="../bibliography.html#id22"><span>BVM+21</span></a>]</span>.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <p>На картинке выше приведен пример комбинации вариационных квантовых схем и классических слоев обычных глубоких нейронных сетей. При этом оптимизация параметров выполняется при помощи единого процесса <em>backpropagation</em>, с той лишь разницей, что для классических и квантовых слоев немного по-разному вычисляется градиент для параметров конкретного слоя. Теме квантовых нейронных сетей в нашем курсе будет посвящен целый блок, где будет, в том числе, рассказано еще и об аналоге сверточного слоя с использованием <strong>VQC</strong>.</p>
 </div>
