@@ -188,6 +188,22 @@ If you make a lecture, review the course you should add yourself to
 
 The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the GitHub account into the corresponding dropdown block or another webpage if you want.
 
+## Translate
+
+You: Where to add lectures pages?
+We: for example
+
+```
+- part: Основы Python / Python Basics
+  chapters:
+    - file: book/pythonblock/pythonintro.md
+      title: ⬜ О блоке / About block
+    - file: book/pythonblock/python_l1.md
+      title: 🟦 Вводная лекция про Python
+    - file: book/pythonblock/python_l1_en.md
+      title: 🟦 Intro to Python
+```
+
 ## Intellectual property rights
 
 The course is under the CC-like license. All the media content needs to be under the CC license as well. Content from the [Wikimedia](https://commons.wikimedia.org/wiki/Main_Page) is preferable! There must be a serious reason to include in the course media from other sources. Each such case must be discussed first with one of the co-founders of the course.
