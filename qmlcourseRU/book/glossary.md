@@ -1,8 +1,13 @@
 (glossary)=
 
-# Глоссарий
+# Глоссарий / Glossary
 
-## А
+*Scroll down for English version*
+
+---
+## Russian
+
+### А
 
 ```{glossary}
 Алгоритм Гровера
@@ -15,14 +20,14 @@
     Англ. annealer. Устройство для приближенного решения задачи оптимизации [https://en.wikipedia.org/wiki/Quantum_annealing](https://en.wikipedia.org/wiki/Quantum_annealing)
 ```
 
-## Б
+### Б
 
 ```{glossary}
 Бра-вектор
     Англ. bra-vector
 ```
 
-## В
+### В
 
 ```{glossary}
 Вакуумное состояние
@@ -35,7 +40,7 @@
     Англ. variational machine learning
 ```
 
-## Г
+### Г
 
 ```{glossary}
 Гейты
@@ -45,14 +50,14 @@
     Англ. Hadamard gate
 ```
 
-## И
+### И
 
 ```{glossary}
 Измерение
     Англ. Quantum measurement
 ```
 
-## К
+### К
 
 ```{glossary}
 Квантовая информация
@@ -80,7 +85,7 @@
     Англ. qudit. Квантовая система с d состояниями.
 ```
 
-## М
+### М
 
 ```{glossary}
 Матрица плотности
@@ -96,21 +101,21 @@
     Англ. Multiqubit gates
 ```
 
-## Н
+### Н
 
 ```{glossary}
 [Нотация Дирака](https://ru.wikipedia.org/wiki/Бра_и_кет)
     Англ. Dirac notation, формализм (система обозначения) для описания кантовых состояний на основе бра- и кет-векторов (англ. bra-ket от bracket, скобка). В этой системе обозначений $\ket{\Psi}$ обозначает вектор состояния, $\bra{\Psi}$ -- сопряженный вектор состояния, а $\bra{\Psi} \hat{H} \ket{\Psi}$ -- среднее (математическое ожидаемое) значения наблюдаемой для оператора $\hat{H}$ в состоянии $\ket{\Psi}$ (также говорят о свертке оператора $\hat{H}$ с бра-вектором $\bra{\Psi}$ и кет-вектором $\ket{\Psi}$). Система обозначений Дирака позволяет отделить отделить вектора состояния $\ket{\Psi}$ от самого состояния $\Psi$ или конкретного математического описания (в виде волновой функции или вектора).
 ```
 
-## О
+### О
 
 ```{glossary}
 Операторы Паули
     Также используется термин "матрицы Паули", англ. Pauli operators или Pauli matrices
 ```
 
-## П
+### П
 
 ```{glossary}
 Правило сдвига параметров
@@ -121,7 +126,7 @@
 
 ```
 
-## С
+### С
 
 ```{glossary}
 Смешанные состояние
@@ -143,23 +148,34 @@
     Англ. Bloch sphere
 ```
 
-## У
+### У
 
 ```{glossary}
 Унитарный оператор
     Англ. Unitary operator
 ```
 
-## Ш
+### Ш
 
 ```{glossary}
 «Шумные» квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)
     Термин введен Прескиллом в работе [https://arxiv.org/abs/1801.00862](https://arxiv.org/abs/1801.00862) для описания сегодняшнего состояния квантовых вычислений, когда "настоящие" квантовые вычисления (на миллионах кубит) еще невозможны, но совеменные квантовые компьютеры уже могут выполнять вычисления, которые невозможны на обычных, классических компьютерах. См. также краткое обсуждение в [https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology](https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology), и перевод на термина русский [https://www.osp.ru/os/2019/03/13055130](https://www.osp.ru/os/2019/03/13055130)
 ```
 
-## Э
+### Э
 
 ```{glossary}
 Энтропия
     Англ. Entropy
+```
+
+---
+
+## English
+
+### A
+
+```{glossary}
+Annealer
+    Device for approximate solution of an optimization problem [https://en.wikipedia.org/wiki/Quantum_annealing](https://en.wikipedia.org/wiki/Quantum_annealing)
 ```
