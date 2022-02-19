@@ -1,3 +1,3 @@
-# intro.md
+# About quantum computers
 
 *comming soon*
