@@ -1,5 +1,5 @@
-- file: book/index_ru
-- file: book/index_en
+- file: book/index_ru.md
+- file: book/index_en.md
 
 # :ru:
 
@@ -210,11 +210,11 @@
 
 - part: О КУРСЕ / ABOUT THE COURSE
   chapters:
-    - file: book/bibliography
-    - file: book/authors
-    - file: book/glossary
-    - file: book/acknowledgments
-    - file: book/leaderboard
+    - file: book/bibliography.md
+    - file: book/authors.md
+    - file: book/glossary.md
+    - file: book/acknowledgments.md
+    - file: book/leaderboard.md
 
 # :en:
 
