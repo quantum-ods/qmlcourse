@@ -190,7 +190,7 @@ The list is sorted alphabetically and you need to place your surname and name (o
 
 ## Translate
 
-All English version start after block **"О КУРСЕ / ABOUT THE COURSE"** where blocks duplicated from Russian. In [`./qmlcourseRU/_static/intro/`](./qmlcourseRU/_static/intro/) you can check how split Russian & English pictures versions.
+All English version start after block **"О КУРСЕ / ABOUT THE COURSE"** where blocks duplicated from Russian. Each lectures folders and pictures have `ru/` & `en/` separate folders to split languages versions.
 
 ## Intellectual property rights
 
