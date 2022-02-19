@@ -190,19 +190,7 @@ The list is sorted alphabetically and you need to place your surname and name (o
 
 ## Translate
 
-You: Where to add lectures pages?
-We: for example
-
-```
-- part: Основы Python / Python Basics
-  chapters:
-    - file: book/pythonblock/pythonintro.md
-      title: ⬜ О блоке / About block
-    - file: book/pythonblock/python_l1.md
-      title: 🟦 Вводная лекция про Python
-    - file: book/pythonblock/python_l1_en.md
-      title: 🟦 Intro to Python
-```
+All English version start after block **"О КУРСЕ / ABOUT THE COURSE"** where blocks duplicated from Russian. In [`./qmlcourseRU/_static/intro/`](./qmlcourseRU/_static/intro/) you can check how split Russian & English pictures versions.
 
 ## Intellectual property rights
 
