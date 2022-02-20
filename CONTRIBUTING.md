@@ -61,10 +61,10 @@ Matplotlib figures should be
 - using the format, for example
 
         ```{figure} /_static/qcalgo/quantum_algorithms_overview/problem_classes.png
-            :name: problem_classes
-            :width: 400px
+        :name: problem_classes
+        :width: 400px
 
-            Еasks сlasses according to temporal complexity
+        Еasks сlasses according to temporal complexity
         ```
 
 ### Code cell
