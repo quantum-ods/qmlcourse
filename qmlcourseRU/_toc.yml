@@ -1,4 +1,5 @@
 - file: book/index_ru.md
+# - file: book/index_en.md
 
 # :ru:
 
@@ -216,8 +217,6 @@
     - file: book/leaderboard.md
 
 # :en:
-
-- file: book/index_en.md
 
 - part: Intro
   chapters:
