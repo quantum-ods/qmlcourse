@@ -2,7 +2,7 @@
 
 # Список авторов курса / Course authors
 
-## Создатели курса / Course creators
+## Создатели курса / Co-founders
 
 - [Синченко Семен / Sinchenko Semyon](https://github.com/SemyonSinchenko)
 - [Кашницкий Юрий / Kashnitsky Yury](https://github.com/Yorko)
