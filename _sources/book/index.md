@@ -17,7 +17,6 @@
 
 > Я очень люблю квантовые технологии и являюсь их большим энтузиастом. При этом моя основная работа связана с машинным обучением, поэтому идею сделать курс по QML я вынашивал очень давно. В сообществе ODS мне удалось найти единомышленников, и вместе мы подготовили для вас набор лекций и домашних заданий, которые проведут вас через удивительный мир кубитов, гейтов и квантовых нейросетей. Мы очень хотели сделать курс одновременно простым и понятным, но также строгим и глубоким с технической точки зрения и, надеюсь, у нас это получилось. В основном мы будем обсуждать темы, которые будут перспективны в ближайшие годы, а также максимально ориентироваться на практической стороне вопроса. Я лично верю, что квантовые технологии по мере их развития произведут не меньшую революцию, чем, например, распространение вычислений на видеокартах, а также позволят по-другому подойти к задачам, которые мы раньше не умели решать . Надеюсь, что после прохождения этого курса поверите и вы! В любом случае, я уверен, что тема QML и квантовых вычислений как минимум стоит того, чтобы с ней познакомиться. Надеюсь, что вам будет интересно!
 
-
 ---
 
 **Why this course?**
@@ -37,7 +36,7 @@ Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 ````{panels}
 :card: border-2
 
-Как устроен курс?
+**Как устроен курс?**
 ^^^
 Наш курс разделен на логические блоки, каждый из которых содержит лекции разных уровней сложности:
 
@@ -49,7 +48,7 @@ Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 
 ---
 
-How does the course work?
+**How does the course work?**
 ^^^
 
 Our course is divided into logical blocks, each containing lectures of different levels of difficulty:
@@ -77,14 +76,20 @@ Our course is divided into logical blocks, each containing lectures of different
 
 Курс обсуждается в [Slack ODS.ai](https://ods.ai/join-community) в канале `#quantum_computing`.
 
+**Желаем успехов!**
+
 ---
 
-**How to take this course?
+**How to take this course?**
 ^^^
 
 It is recommended to take the course in the order indicated in the diagram. The course has [prerequisites](./intro/en/prerequisite.md) - programming in Python, basics of linear algebra and machine learning, we advise to read them and (optionally) check yourself with [input test](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
 
 The course is discussed in [Slack ODS.ai](https://ods.ai/join-community) in the `#quantum_computing` channel.
+
+All English version course you can found below start from [here](./intro/ru/intro.md).
+
+**Good luck!**
 ````
 
 
@@ -98,13 +103,10 @@ The course is discussed in [Slack ODS.ai](https://ods.ai/join-community) in the 
 
 ---
 
-**How can you help?
+**How can you help?**
 ^^^
 
 You can help in word and deed. If you know people interested in quantum computing, put in a word. The course is developed by the OpenDataScience community, the same "sick" people as the organizers ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). If you're eager to help with something, then create an Issue, or better yet a Pull Request in [course repository](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
-
 ````
-
-**Желаем успехов! / Good luck**
 
 <p style="page-break-after:always;"></p>
