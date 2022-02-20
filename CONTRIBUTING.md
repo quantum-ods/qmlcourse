@@ -151,7 +151,7 @@ The preferred way to commit your changes is to:
 
 Example:
 
- <img src="https://habrastorage.org/webt/1f/fa/ob/1ffaobyn99cuc58fa19pvse_pvw.png" width="600" height="300" />
+<img src="https://habrastorage.org/webt/1f/fa/ob/1ffaobyn99cuc58fa19pvse_pvw.png" width="600" height="300" />
 
 ## Issues
 
