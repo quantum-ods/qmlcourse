@@ -1,6 +1,27 @@
-# Приветствие
+# Приветствие / Welcome
 
-Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения!
+<!-- Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения! -->
+
+````{panels}
+:card: border-2
+Почему именно этот курс?
+^^^
+Наш курс отличается от других курсов по квантовым вычислениям:
+
+- он адаптивный и содержит лекции разных уровней сложности и глубины;
+- он практический, а все объяснения подкрепляются кодом;
+- он про реальные методы, которые будут актуальны ближайшие 10-15 лет.
+
+---
+Why this course?
+^^^
+Our course is different from other courses on quantum computing:
+
+- it is adaptive and contains lectures of different levels of complexity and depth;
+- it is practical, and all explanations are backed up by code;
+- it is about real methods that will be relevant in the next 10-15 years.
+````
+
 
 ## Почему именно этот курс?
 
