@@ -17,7 +17,7 @@ We see the following roles for contributors to the course:
 
     Semyon Sinchenko, [@SemyonSinchenko](https://github.com/SemyonSinchenko).
 
-- Core reviewers
+- Core Reviewers
 
     Supposed to be well familiar with quantum information & computation, preferably with experience in QML as well. Also, eager to  provide critical feedback.
 
@@ -60,37 +60,37 @@ Matplotlib figures should be
 - located at the corresponding lecture folder into `_static/`;
 - using the format, for example
 
-    ```{figure} /_static/qcalgo/quantum_algorithms_overview/problem_classes.png
-        :name: problem_classes
-        :width: 400px
+        ```{figure} /_static/qcalgo/quantum_algorithms_overview/problem_classes.png
+            :name: problem_classes
+            :width: 400px
 
-        Еasks сlasses according to temporal complexity
-    ```
+            Еasks сlasses according to temporal complexity
+        ```
 
 ### Code cell
 
 
 - If code cell should be running, use `{code-cell} ipython3` like
 
-    ```{code-cell} ipython3
-    a = 2
-    b = 2
+        ```{code-cell} ipython3
+        a = 2
+        b = 2
 
-    c = a + b
+        c = a + b
 
-    print(f"{c = }")
-    ```
+        print(f"{c = }")
+        ```
 
 - if note, just wrap it on code-cell like
 
-    ```
-    a = 2
-    b = 2
+        ```
+        a = 2
+        b = 2
 
-    c = a + b
+        c = a + b
 
-    print(f"{c ==}")
-    ```
+        print(f"{c ==}")
+        ```
 
 ### Building the project
 
@@ -99,6 +99,8 @@ To watch your result (after `git push`) you can build `Jupyter Book` automatical
 ### Chapters and headers
 
 Chapters and headers in markdown must exactly follow the main structure of the book (into [`_toc.yml`](./qmlcourseRU/_toc.yml)). Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
+
+Russian & English version lectures add after comment `# :ru:` & `# :en:` accordingly.
 
 ### Glossary terms
 
@@ -120,7 +122,7 @@ We stick to adding as many as possible links to papers/books/.. to confirm our w
 
 ### Internal links
 
-Use relative references not absolute like `../qcblock/qubit.html#id25` in the lecture.
+Use relative references not absolute like `../qcblock/qubit.md` or with a specific chapter `../qcblock/qubit.html#id25` in the lecture.
 
 ## Content review
 
