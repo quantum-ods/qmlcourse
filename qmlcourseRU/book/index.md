@@ -36,7 +36,7 @@ Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 ````{panels}
 :card: border-2
 
-Как устроен курс?
+**Как устроен курс?**
 ^^^
 Наш курс разделен на логические блоки, каждый из которых содержит лекции разных уровней сложности:
 
@@ -48,7 +48,7 @@ Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 
 ---
 
-How does the course work?
+**How does the course work?**
 ^^^
 
 Our course is divided into logical blocks, each containing lectures of different levels of difficulty:
@@ -89,7 +89,7 @@ The course is discussed in [Slack ODS.ai](https://ods.ai/join-community) in the 
 
 All English version course you can found below start from [here](./intro/ru/intro.md).
 
-**Good luck**
+**Good luck!**
 ````
 
 
