@@ -136,7 +136,7 @@ Go to a Pull Request with lecture content (e.g. [this one](https://github.com/qu
 
 Example:
 
-<img src="https://habrastorage.org/webt/3m/zv/wv/3mzvwvnqmeatuuyvob5qpvfvobk.png" />
+<img src="https://habrastorage.org/webt/3m/zv/wv/3mzvwvnqmeatuuyvob5qpvfvobk.png" width="600" height="400" />
 
 All comments should be made in the `File changed` tab not in the `Conversation` (is only used for discussion and comments about the PR in general).
 
@@ -151,7 +151,7 @@ The preferred way to commit your changes is to:
 
 Example:
 
- <img src="https://habrastorage.org/webt/1f/fa/ob/1ffaobyn99cuc58fa19pvse_pvw.png" />
+ <img src="https://habrastorage.org/webt/1f/fa/ob/1ffaobyn99cuc58fa19pvse_pvw.png" width="600" height="300" />
 
 ## Issues
 
