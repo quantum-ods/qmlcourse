@@ -52,10 +52,6 @@ package "Week 3" {
                 rectangle "Simon" as saimon #FFC864
         }
 
-        package "NISQ Hardware" #Bisque {
-                rectangle "Hardware Overview" as hardware_overview #40B464
-                rectangle "Superconducting qubits" as superconducting_qubits #E0535C
-        }
 }
 
 pennylane --> quantum_algorithms_overview
@@ -67,10 +63,13 @@ saimon <- quantum_algorithms_overview
 deutsch -> quantum_teleportation
 quantum_teleportation --> superdense_coding
 
-superdense_coding --> hardware_overview
-hardware_overview -> superconducting_qubits
-
 package "Week 4" {
+
+        package "NISQ Hardware" #Bisque {
+                rectangle "Hardware Overview" as hardware_overview #40B464
+                rectangle "Superconducting qubits" as superconducting_qubits #E0535C
+        }
+
         package "Quantum ML" #Bisque {
                 rectangle "QML General" as qml_general #40B464
                 rectangle "HHL" as hhl #E0535C
@@ -81,11 +80,10 @@ package "Week 4" {
                 rectangle "VQC" as vqc #40B464
         }
 
-        package "Gradients" #Bisque {
-                rectangle "Gradients" as gradients #40B464
-                rectangle "High-Order gradients" as high_gradients #FFC864
-        }
 }
+
+superdense_coding --> hardware_overview
+hardware_overview -> superconducting_qubits
 
 hardware_overview --> qml_general
 
@@ -94,10 +92,13 @@ qknn <- qml_general
 
 qml_general --> vqc
 
-vqc --> gradients
-gradients -> high_gradients
-
 package "Week 5" {
+
+        package "Gradients" #Bisque {
+                rectangle "Gradients" as gradients #40B464
+                rectangle "High-Order gradients" as high_gradients #FFC864
+        }
+
         package "Quantum SVM" #Bisque {
                 rectangle "Hybrid SVM" as hybrid_svm #40B464
                 rectangle "Classical SVM" as classical_svm #FFC864
@@ -109,6 +110,9 @@ package "Week 5" {
                 rectangle "Convolutional VQC" as quantum_cnn #40B464
         }
 }
+
+vqc --> gradients
+gradients -> high_gradients
 
 gradients --> hybrid_svm
 hybrid_svm -> classical_svm
@@ -178,7 +182,7 @@ eigenvalues_problem --> d_wave
 
 vqe --> tsp_with_vqe
 
-d_wave --> q_c_annealers
+q_c_annealers <- d_wave
 d_wave --> qaoa
 
 qaoa --> academic_industrial
