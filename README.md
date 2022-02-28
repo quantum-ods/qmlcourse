@@ -27,9 +27,11 @@
 
 ## About
 
-| Note: the course is under active development and, for now, is Russian-only! |
-| --------------------------------------------------------------------------- |
-
+````
+Note:
+  * Russian-only
+  * English version translation help tube, visit CONTRIBUTING.md
+````
 
 This is the main repository of the course.
 
@@ -49,15 +51,18 @@ This is the main repository of the course.
 
 Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
 
-Linux, xelatex:
+xelatex, Linux:
 
-```
-git clone https://github.com/quantum-ods/qmlcourse.git
-cd qmlcourse
-git checkout gh-artifacts
-cd _build/latex
-xelatex -interaction nonstopmode qmlcourseRU.tex
-```
+  ```
+  git clone https://github.com/quantum-ods/qmlcourse.git
+  cd qmlcourse
+  git checkout gh-artifacts
+  cd _build/latex
+  ```
+
+  ```
+  xelatex -interaction nonstopmode qmlcourseRU.tex
+  ```
 
 ## Contributing Guide
 
@@ -85,7 +90,7 @@ The main authors, reviewers, editors, DevOps you can find [here](https://quantum
 
 Content generators, to be agreed with [@SemyonSinchenko](https://github.com/SemyonSinchenko). See [Issues](https://github.com/quantum-ods/qmlcourse/issues) to pick up one of the open tasks and for updates; this list is not intended to be always up-to-date.
 
-Also, all authors for some updates are participants special channel into community [ods.ai](http://ods.ai), join filling the form and write your nickname to orgs to add you to the channel.
+Also, all authors for some updates are participants special channel into community [ods.ai](https://ods.ai), join filling the form and write your nickname to orgs to add you to the channel.
 
 ## Join ODS
 

@@ -1,10 +1,12 @@
-- file: book/index
+- file: book/index.md
+
+# :ru:
 
 - part: Введение
   chapters:
-    - file: book/intro1block/intro1.md
+    - file: book/intro/ru/intro.md
       title: 🟦 О квантовых компьютерах
-    - file: book/prerequisite.md
+    - file: book/intro/ru/prerequisite.md
       title: ⬜ Пререквизиты курса
 
 - part: Основы Python
@@ -205,10 +207,19 @@
     - file: book/perspectives/academic_industrial
       title: ⬜ Академия и индустрия
 
-- part: О курсе
+- part: О КУРСЕ / ABOUT THE COURSE
   chapters:
-    - file: book/bibliography
-    - file: book/authors
-    - file: book/glossary
-    - file: book/acknowledgments
-    - file: book/leaderboard
+    - file: book/bibliography.md
+    - file: book/authors.md
+    - file: book/glossary.md
+    - file: book/acknowledgments.md
+    - file: book/leaderboard.md
+
+# :en:
+
+- part: Intro
+  chapters:
+    - file: book/intro/en/intro.md
+      title: 🟦 About quantum computers
+    - file: book/intro/en/prerequisite.md
+      title: ⬜ Prerequisite

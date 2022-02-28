@@ -1,4 +1,4 @@
-# Список литературы
+# Список литературы / Bibliography
 
 ```{bibliography}
 
