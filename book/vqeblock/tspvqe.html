@@ -89,7 +89,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
-   Приветствие
+   Приветствие / Welcome
   </a>
  </li>
 </ul>
@@ -100,12 +100,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro1block/intro1.html">
+  <a class="reference internal" href="../intro/ru/intro.html">
    🟦 О квантовых компьютерах
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../prerequisite.html">
+  <a class="reference internal" href="../intro/ru/prerequisite.html">
    ⬜ Пререквизиты курса
   </a>
  </li>
@@ -598,33 +598,50 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  О курсе
+  О КУРСЕ / ABOUT THE COURSE
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Intro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/en/intro.html">
+   🟦 About quantum computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/en/prerequisite.html">
+   ⬜ Prerequisite
   </a>
  </li>
 </ul>
@@ -1188,12 +1205,12 @@ SciPy solution (total cost): 213.0
 <p>Далее необходимо выбрать <em>ansatz</em>. Современные квантовые процессоры обычно имеют вид решетки, типа такого:</p>
 <div class="figure align-default" id="sycamore-lattice2">
 <a class="reference internal image-reference" href="../../_images/sycamore.png"><img alt="../../_images/sycamore.png" src="../../_images/sycamore.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 132 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../bibliography.html#id69"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 132 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../bibliography.html#id68"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../bibliography.html#id34"><span>KMT+17</span></a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
+<p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../bibliography.html#id33"><span>KMT+17</span></a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qcblock/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qcblock/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <div class="figure align-default" id="id8">
 <a class="reference internal image-reference" href="../../_images/HWA.png"><img alt="../../_images/HWA.png" src="../../_images/HWA.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 133 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../bibliography.html#id34"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 133 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../bibliography.html#id33"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">

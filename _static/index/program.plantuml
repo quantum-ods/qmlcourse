@@ -5,11 +5,15 @@ package "Week 1" {
         }
 
         package "Prerequisites" #Bisque {
-                rectangle "Python Intro" as python #14D2EF
-                rectangle "Numpy & Linalg" as numpy #14D2EF
-                rectangle "Classical ML/DL" as ml #14D2EF
+                rectangle "Python Intro" as python_intro #14D2EF
+                rectangle "Linalg & Numpy" as linalg_numpy_intro #14D2EF
+                rectangle "ML Intro" as ml_intro #14D2EF
         }
 }
+
+intro1 --> python_intro
+intro1 --> linalg_numpy_intro
+intro1 --> ml_intro
 
 package "Week 2" {
         package "Quantum Computing" as qci #Bisque {
@@ -19,31 +23,55 @@ package "Week 2" {
         }
 
         package "Programming QC" #Bisque {
-                rectangle "Frameworks Comparision" as progcomparision #40B464
+                rectangle "Frameworks Overview" as frameworks_overview #40B464
                 rectangle "PennyLane" as pennylane #40B464
+                rectangle "Cirq & TFQ" as cirq_tfq #FFC864
                 rectangle "Qiskit" as qiskit #FFC864
-                rectangle "Cirq & TFQ" as cirq #FFC864
         }
 }
+
+python_intro --> qubit
+linalg_numpy_intro --> qubit
+ml_intro --> qubit
+
+qubit --> gates
+qubit -> mixed
+
+gates --> frameworks_overview
+frameworks_overview --> pennylane
+cirq_tfq <- frameworks_overview
+frameworks_overview -> qiskit
 
 package "Week 3" {
         package "Basic Quantum Algorithms" as qalgo #Bisque {
+                rectangle "Quantum Algorithms Overview" as quantum_algorithms_overview #40B464
                 rectangle "Deutsch" as deutsch #40B464
-                rectangle "Other Algorithms Review" as advanced_algos #40B464
+                rectangle "Quantum Teleportation" as quantum_teleportation #40B464
+                rectangle "Superdense coding" as superdense_coding #40B464
                 rectangle "Grover" as grover #FFC864
-                rectangle "Quantum Teleportation" as qtp #40B464
                 rectangle "Simon" as saimon #FFC864
         }
 
-        package "NISQ Hardware" #Bisque {
-                rectangle "Hardware review" as review #40B464
-                rectangle "Superconducting qubits" as schard #E0535C
-        }
 }
 
+pennylane --> quantum_algorithms_overview
+
+quantum_algorithms_overview --> deutsch
+quantum_algorithms_overview -> grover
+saimon <- quantum_algorithms_overview
+
+deutsch -> quantum_teleportation
+quantum_teleportation --> superdense_coding
+
 package "Week 4" {
+
+        package "NISQ Hardware" #Bisque {
+                rectangle "Hardware Overview" as hardware_overview #40B464
+                rectangle "Superconducting qubits" as superconducting_qubits #E0535C
+        }
+
         package "Quantum ML" #Bisque {
-                rectangle "Kinds of QML" as qml_general #14D2EF
+                rectangle "QML General" as qml_general #40B464
                 rectangle "HHL" as hhl #E0535C
                 rectangle "Quantum KNN" as qknn #E0535C
         }
@@ -52,131 +80,110 @@ package "Week 4" {
                 rectangle "VQC" as vqc #40B464
         }
 
-        package "Gradients" #Bisque {
-                rectangle "Gradients" as grad #40B464
-                rectangle "High-order gradients" as hograd #FFC864
-        }
 }
 
-package "Week 5" {
-        package "Quantum SVM" #Bisque {
-                rectangle "Hybrid SVM" as hsvm #40B464
-                rectangle "Classical SVM math" as csvm #FFC864
-        }
+superdense_coding --> hardware_overview
+hardware_overview -> superconducting_qubits
 
-        package "Quantum Neural Networks" #Bisque {
-                rectangle "QNN" as qnn #40B464
-'                rectangle "Barren plateaus" as barren #FFC864
-                rectangle "Convolutional VQC" as convvqc #40B464
-        }
-}
-
-package "Week 6" {
-        package "Problems for QML" #Bisque {
-                rectangle "Ising model" as ising #40B464
-                rectangle "Advanced Ising" as aising #FFC864
-                rectangle "Combinatorial Optimization" as copt #40B464
-                rectangle "Quantum Chemistry" as qchem #40B464
-                rectangle "Advanced Chemistry" as aqchem #FFC864
-        }
-}
-
-package "Week 7" {
-          package "From problems to QML" #Bisque {
-                rectangle "NP-problems as Ising model" as npising #40B464
-                rectangle "Jordan-Wigner transformation" as jordan #FFC864
-                rectangle "Eigenvalues problem" as eigenvals #40B464
-        }
-
-        package "VQE" #Bisque {
-                rectangle "VQE" as vqe #40B464
-                rectangle "TSP with VQE" as tspvqe #40B464
-        }
-
-        package "D-Wave" #Bisque {
-                rectangle "D-Wave & Sampling" as dwave #40B464
-        }
-}
-
-package "Week 8" {
-        package "QAOA" #Bisque {
-                rectangle "QAOA" as qaoa #40B464
-        }
-
-'        package "Advanced Topics" as adv #Bisque {
-'                rectangle "SotA review" as adv_sota #40B464
-'        }
-
-        package "Jobs and Perspectives" as jobs #Bisque {
-                rectangle "Academic & Industrial positions" as academic_industrial #White
-        }
-}
-
-intro1 --> python
-intro1 --> numpy
-intro1 --> ml
-
-python --> qubit
-numpy --> qubit
-ml --> qubit
-
-qubit --> gates
-mixed <- qubit
-
-gates --> progcomparision
-progcomparision --> pennylane
-cirq <- progcomparision
-progcomparision -> qiskit
-
-pennylane --> deutsch
-
-deutsch --> advanced_algos
-advanced_algos -> grover
-advanced_algos -> qtp
-saimon <- advanced_algos
-
-advanced_algos --> review
-review -> schard
-
-review --> qml_general
+hardware_overview --> qml_general
 
 qml_general -> hhl
 qknn <- qml_general
 
 qml_general --> vqc
 
-vqc --> grad
-grad -> hograd
+package "Week 5" {
 
-grad --> hsvm
-' barren <- qnn
-qnn -> convvqc
+        package "Gradients" #Bisque {
+                rectangle "Gradients" as gradients #40B464
+                rectangle "High-Order gradients" as high_gradients #FFC864
+        }
 
-hsvm --> qnn
-csvm <- hsvm
+        package "Quantum SVM" #Bisque {
+                rectangle "Hybrid SVM" as hybrid_svm #40B464
+                rectangle "Classical SVM" as classical_svm #FFC864
+        }
 
-qnn --> copt
-qnn --> ising
-qnn --> qchem
-qchem -> aqchem
-qchem --> jordan
-ising -> aising
-ising --> npising
-ising --> jordan
-npising -> jordan
-copt --> npising
+        package "Quantum Neural Networks" #Bisque {
+                rectangle "QNN" as quantum_nn #40B464
+'                rectangle "Barren plateaus" as barren #FFC864
+                rectangle "Convolutional VQC" as quantum_cnn #40B464
+        }
+}
 
-npising --> eigenvals
-jordan --> eigenvals
+vqc --> gradients
+gradients -> high_gradients
 
-eigenvals --> vqe
-eigenvals --> dwave
+gradients --> hybrid_svm
+hybrid_svm -> classical_svm
 
-vqe -> tspvqe
+hybrid_svm --> quantum_nn
+quantum_nn -> quantum_cnn
 
-dwave --> qaoa
+package "Week 6" {
+        package "Problems for QML" #Bisque {
+                rectangle "Ising model" as ising #40B464
+                rectangle "Advanced Ising" as ising_advanced #FFC864
+                rectangle "Combinatorial Optimization" as combinatorial_optimization #40B464
+                rectangle "Quantum Chemistry" as quantum_chemistry #40B464
+                rectangle "Quantum Chemistry Advanced" as quantum_chemistry_advanced #FFC864
+        }
+}
 
-' qaoa -> adv_sota
+quantum_nn --> ising
+quantum_nn --> combinatorial_optimization
+quantum_nn --> quantum_chemistry
+
+ising_advanced <- ising
+quantum_chemistry_advanced <- quantum_chemistry
+
+package "Week 7" {
+        package "From problems to QML" #Bisque {
+                rectangle "NP-problems as Ising model" as np_problem_ising #40B464
+                rectangle "Jordan-Wigner transformation" as jordan_wigner #FFC864
+                rectangle "QUBO" as qubo #FFC864
+                rectangle "Eigenvalues problem" as eigenvalues_problem #40B464
+        }
+
+}
+
+combinatorial_optimization --> np_problem_ising
+ising --> np_problem_ising
+ising --> jordan_wigner
+quantum_chemistry --> jordan_wigner
+
+np_problem_ising --> eigenvalues_problem
+jordan_wigner <- np_problem_ising
+np_problem_ising --> qubo
+jordan_wigner --> eigenvalues_problem
+
+package "Week 8" {
+        package "VQE" #Bisque {
+                rectangle "VQE" as vqe #40B464
+                rectangle "TSP with VQE" as tsp_with_vqe #FFC864
+        }
+
+        package "D-Wave" #Bisque {
+                rectangle "D-Wave & Sampling" as d_wave #40B464
+                rectangle "Quantum & Classic Annealers" as q_c_annealers #FFC864
+        }
+
+        package "QAOA" #Bisque {
+                rectangle "QAOA" as qaoa #40B464
+        }
+
+        package "Jobs and Perspectives" as jobs #Bisque {
+                rectangle "Academic & Industrial Positions" as academic_industrial #White
+        }
+}
+
+eigenvalues_problem --> vqe
+eigenvalues_problem --> d_wave
+
+vqe --> tsp_with_vqe
+
+q_c_annealers <- d_wave
+d_wave --> qaoa
 
 qaoa --> academic_industrial
 

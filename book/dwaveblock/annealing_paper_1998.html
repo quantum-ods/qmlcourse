@@ -89,7 +89,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
-   Приветствие
+   Приветствие / Welcome
   </a>
  </li>
 </ul>
@@ -100,12 +100,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro1block/intro1.html">
+  <a class="reference internal" href="../intro/ru/intro.html">
    🟦 О квантовых компьютерах
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../prerequisite.html">
+  <a class="reference internal" href="../intro/ru/prerequisite.html">
    ⬜ Пререквизиты курса
   </a>
  </li>
@@ -598,33 +598,50 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  О курсе
+  О КУРСЕ / ABOUT THE COURSE
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы
+   Список литературы / Bibliography
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса
+   Список авторов курса / Course authors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий
+   Глоссарий / Glossary
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности
+   Благодарности / Acknowledgements
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг
+   Рейтинг / Leaderboard
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Intro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/en/intro.html">
+   🟦 About quantum computers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/en/prerequisite.html">
+   ⬜ Prerequisite
   </a>
  </li>
 </ul>
@@ -800,7 +817,7 @@
 </ul>
 <div class="section" id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>В этой лекции рассмотрим каноническую работу <strong>Quantum annealing in the transverse Ising model</strong>, опубликованную в 1998 году <span id="id3">[<a class="reference internal" href="../bibliography.html#id46"><span>KN98</span></a>]</span>. В ней двумя способами численно решается задача о нахождении основного состояния системы взаимодействующих спинов. Первый способ – обычная классическая имитация отжига, второй – имитация квантового отжига. Результаты применения этих подходов анализируются и сравниваются между собой.</p>
+<p>В этой лекции рассмотрим каноническую работу <strong>Quantum annealing in the transverse Ising model</strong>, опубликованную в 1998 году <span id="id3">[<a class="reference internal" href="../bibliography.html#id45"><span>KN98</span></a>]</span>. В ней двумя способами численно решается задача о нахождении основного состояния системы взаимодействующих спинов. Первый способ – обычная классическая имитация отжига, второй – имитация квантового отжига. Результаты применения этих подходов анализируются и сравниваются между собой.</p>
 </div>
 <div class="section" id="id4">
 <h2>Постановка задачи<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -860,7 +877,7 @@ P_{QA}^{st}(\Gamma) = {\left| \braket{g | \psi_{\Gamma}} \right|}^2
 </div>
 <div class="section" id="sa">
 <h2>Классическая имитация отжига (SA)<a class="headerlink" href="#sa" title="Permalink to this headline">¶</a></h2>
-<p>В <a class="reference internal" href="../problemsblock/copt.html#copt"><span class="std std-ref">лекции</span></a>, посвященной комбинаторной оптимизации, процесс имитации отжига описывался таким образом: выбиралось случайное начальное состояние, затем оно в цикле подвергалось случайной модификации, и новое состояние принималось или отклонялось в соответствии с некоторым критерием. В статье <span id="id5">[<a class="reference internal" href="../bibliography.html#id46"><span>KN98</span></a>]</span> принят другой подход к SA. Рассматривается так называемое <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B8%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5"><em>основное кинетическое уравнение</em></a> (англ. <em>master equation</em>). Оно описывает классический SA процесс, соответствующий нестационарному уравнению Шредингера <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(63)</a>. В нашем случае это система обыкновенных дифференциальных уравнений для вероятностей нахождения системы в различных состояниях <span class="math notranslate nohighlight">\(i\)</span> в момент времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<p>В <a class="reference internal" href="../problemsblock/copt.html#copt"><span class="std std-ref">лекции</span></a>, посвященной комбинаторной оптимизации, процесс имитации отжига описывался таким образом: выбиралось случайное начальное состояние, затем оно в цикле подвергалось случайной модификации, и новое состояние принималось или отклонялось в соответствии с некоторым критерием. В статье <span id="id5">[<a class="reference internal" href="../bibliography.html#id45"><span>KN98</span></a>]</span> принят другой подход к SA. Рассматривается так называемое <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B8%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5"><em>основное кинетическое уравнение</em></a> (англ. <em>master equation</em>). Оно описывает классический SA процесс, соответствующий нестационарному уравнению Шредингера <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(63)</a>. В нашем случае это система обыкновенных дифференциальных уравнений для вероятностей нахождения системы в различных состояниях <span class="math notranslate nohighlight">\(i\)</span> в момент времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-sa-master-eqn">
 <span class="eqno">(64)<a class="headerlink" href="#equation-eqn-sa-master-eqn" title="Permalink to this equation">¶</a></span>\[
 \frac{d P_i(t)}{d t} =
@@ -912,7 +929,7 @@ P_{SA}(t) = P_g(t)
 <a class="reference internal image-reference" href="../../_images/fig_11.png"><img alt="../../_images/fig_11.png" src="../../_images/fig_11.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 139 </span><span class="caption-text">Зависимости <span class="math notranslate nohighlight">\(P_{SA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{SA}^{st}(T(t))\)</span> и <span class="math notranslate nohighlight">\(P_{QA}^{st}(\Gamma(t))\)</span> для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \ln(t+1)\)</span>.</span><a class="headerlink" href="#qa-sa-fig-1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Видно, что квазистатическое приближение работает очень хорошо, интересующие нас величины в динамическом процессе очень близки к вычисленным в равновесных условиях. Когда расписание отжига имеет вид <span class="math notranslate nohighlight">\(T(t) = c / \ln(t+1)\)</span>, гарантируется сходимость <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при подходящем выборе константы <span class="math notranslate nohighlight">\(c\)</span> (в статье <span id="id8">[<a class="reference internal" href="../bibliography.html#id46"><span>KN98</span></a>]</span> есть ссылка на соответствующую теорему). Выбор константы <span class="math notranslate nohighlight">\(c = 3\)</span> достаточно произволен, но высокая точность приближенного равенства <span class="math notranslate nohighlight">\(P_{SA}(t) \approx P_{SA}^{st}(T(t))\)</span> свидетельствует о том, что в рассматриваемом случае действительно <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при <span class="math notranslate nohighlight">\(t \to +\infty\)</span>.</p>
+<p>Видно, что квазистатическое приближение работает очень хорошо, интересующие нас величины в динамическом процессе очень близки к вычисленным в равновесных условиях. Когда расписание отжига имеет вид <span class="math notranslate nohighlight">\(T(t) = c / \ln(t+1)\)</span>, гарантируется сходимость <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при подходящем выборе константы <span class="math notranslate nohighlight">\(c\)</span> (в статье <span id="id8">[<a class="reference internal" href="../bibliography.html#id45"><span>KN98</span></a>]</span> есть ссылка на соответствующую теорему). Выбор константы <span class="math notranslate nohighlight">\(c = 3\)</span> достаточно произволен, но высокая точность приближенного равенства <span class="math notranslate nohighlight">\(P_{SA}(t) \approx P_{SA}^{st}(T(t))\)</span> свидетельствует о том, что в рассматриваемом случае действительно <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при <span class="math notranslate nohighlight">\(t \to +\infty\)</span>.</p>
 <p>Для QA нет аналогичного точного утверждения о сходимости <span class="math notranslate nohighlight">\(P_{QA} \to 1\)</span>, но численные результаты для данного ферромагнитного случая при <span class="math notranslate nohighlight">\(\Gamma(t) = 3 / \ln(t+1)\)</span> позволяют предположить такую сходимость.</p>
 <p>Тот факт, что QA-кривая на <a class="reference internal" href="#qa-sa-fig-1"><span class="std std-numref">Fig. 139</span></a> всегда ниже SA-кривой, никакого значения не имеет, потому что в обеих задачах у нас все величины обезразмерены (<span class="math notranslate nohighlight">\(\hbar = 1\)</span> в <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(63)</a> и единица времени <span class="math notranslate nohighlight">\(\tau = 1\)</span> в <a class="reference internal" href="#equation-eqn-sa-master-eqn">(64)</a>) и никакого согласования при обезразмеривании в двух задачах нет.</p>
 <p>Если уменьшать поперечное поле и температуру быстрее,</p>
@@ -969,7 +986,7 @@ P_{SA}(t) = P_g(t)
 </div>
 <div class="section" id="id10">
 <h3>Модель со случайными взаимодействиями<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p>Последний рассмотренный пример – это модель спинового стекла, предложенная Шеррингтоном и Киркпатриком <span id="id11">[<a class="reference internal" href="../bibliography.html#id63"><span>SK75</span></a>]</span>. Для всех пар спинов есть взаимодействие, сила которого является случайной величиной и семплируется из гауссова распределения с нулевым средним и с дисперсией <span class="math notranslate nohighlight">\(1/N\)</span> (в нашем случае <span class="math notranslate nohighlight">\(N=8\)</span>). На <a class="reference internal" href="#qa-sa-fig-8"><span class="std std-numref">Fig. 146</span></a> показан типичный результат для эволюции коэффициентов перекрытия во времени при расписании отжига <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</p>
+<p>Последний рассмотренный пример – это модель спинового стекла, предложенная Шеррингтоном и Киркпатриком <span id="id11">[<a class="reference internal" href="../bibliography.html#id62"><span>SK75</span></a>]</span>. Для всех пар спинов есть взаимодействие, сила которого является случайной величиной и семплируется из гауссова распределения с нулевым средним и с дисперсией <span class="math notranslate nohighlight">\(1/N\)</span> (в нашем случае <span class="math notranslate nohighlight">\(N=8\)</span>). На <a class="reference internal" href="#qa-sa-fig-8"><span class="std std-numref">Fig. 146</span></a> показан типичный результат для эволюции коэффициентов перекрытия во времени при расписании отжига <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</p>
 <div class="figure align-default" id="qa-sa-fig-8">
 <a class="reference internal image-reference" href="../../_images/fig_8.png"><img alt="../../_images/fig_8.png" src="../../_images/fig_8.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 146 </span><span class="caption-text">Вид коэффициентов перекрытия для модели Шеррингтона-Киркпатрика при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-8" title="Permalink to this image">¶</a></p>
