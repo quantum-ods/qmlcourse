@@ -25,27 +25,33 @@
 </p>
 </br>
 
-## About
-
 ````
 Note:
   * Russian-only
   * English version translation help tube, visit CONTRIBUTING.md
 ````
 
-This is the main repository of the course.
+## Contributing Guide
 
-- [QMLCourse](#qmlcourse)
-  - [About](#about)
-  - [Build the book](#build-the-book)
-  - [Contributing Guide](#contributing-guide)
-  - [Discussions](#discussions)
-  - [Course Program](#course-program)
-    - [How to read the schema?](#how-to-read-the-schema)
-  - [Team](#team)
-  - [Join ODS](#join-ods)
-  - [Similar Projects](#similar-projects)
-  - [Legal Issues](#legal-issues)
+Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contributor roles.
+
+## Discussions
+
+Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/quantum-ods/qmlcourse/discussions).
+
+Also, we have many [issues](https://github.com/quantum-ods/qmlcourse/issues).
+
+## Course Program
+
+![](./qmlcourseRU/_static/index/program.png)
+
+### How to read the schema?
+
+- **BLUE** &mdash; introductory blocks covering prerequisites for the rest of the course;
+- **GREEN** &mdash; the main flow of the course with simple introductory lectures on QC and QML;
+- **YELLOW** &mdash; highly recommended facultative lectures which explain additional topics about QML and QC;
+- **RED** &mdash; advanced-level lectures that deeply explain the math and the principles underlying QML.
+- **WHITE** &mdash; career in quantum computations and quantum QML
 
 ## Build the book
 
@@ -63,26 +69,6 @@ xelatex, Linux:
   ```
   xelatex -interaction nonstopmode qmlcourseRU.tex
   ```
-
-## Contributing Guide
-
-Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contributor roles.
-
-## Discussions
-
-Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/quantum-ods/qmlcourse/discussions).
-
-## Course Program
-
-![](./qmlcourseRU/_static/index/program.png)
-
-### How to read the schema?
-
-- **BLUE** &mdash; introductory blocks covering prerequisites for the rest of the course;
-- **GREEN** &mdash; the main flow of the course with simple introductory lectures on QC and QML;
-- **YELLOW** &mdash; highly recommended facultative lectures which explain additional topics about QML and QC;
-- **RED** &mdash; advanced-level lectures that deeply explain the math and the principles underlying QML.
-- **WHITE** &mdash; career in quantum computations and quantum QML
 
 ## Team
 
