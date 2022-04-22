@@ -28,17 +28,16 @@ Note:
   * English version translation help tube, visit CONTRIBUTING.md
 ````
 
-## Contributing Guide
+## Contributing
 
 Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contributor roles.
 
-## Discussions
+### Discussions & Issues
 
 Some ideas, suggestions, remarks, etc. you can write on the
 <a href="https://github.com/quantum-ods/qmlcourse/discussions">
     <img alt="shield_discussions" src="https://img.shields.io/github/discussions/quantum-ods/qmlcourse">
 </a> page.
-
 Also, we have
 <a href="https://github.com/quantum-ods/qmlcourse/issues">
     <img alt="shield_issues" src="https://img.shields.io/github/issues/quantum-ods/qmlcourse">
