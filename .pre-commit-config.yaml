@@ -1,7 +1,7 @@
 repos:
 
   - repo: https://github.com/asottile/reorder_python_imports
-    rev: v2.6.0
+    rev: v3.0.1
     hooks:
       - id: reorder-python-imports
 
@@ -25,13 +25,13 @@ repos:
           - flake8-annotations==2.7.0
 
   - repo: https://github.com/psf/black
-    rev: 21.12b0
+    rev: 22.3.0
     hooks:
       - id: black
         args: ["--line-length=119"]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.2.0
     hooks:
       - id: check-added-large-files
       - id: check-docstring-first
@@ -44,6 +44,6 @@ repos:
         args: ["--markdown-linebreak-ext=md"]
 
   - repo: https://github.com/hcodes/yaspeller.git
-    rev: v8.0.0
+    rev: v8.0.1
     hooks:
       - id: yaspeller
