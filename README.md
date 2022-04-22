@@ -13,9 +13,6 @@
   <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
     <img alt="shield_license" src="https://img.shields.io/badge/license-CC--BY--4.0-brightgreen">
   </a>
-  <a href="https://github.com/quantum-ods/qmlcourse/discussions">
-    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/quantum-ods/qmlcourse">
-  </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
     <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
@@ -37,9 +34,15 @@ Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contr
 
 ## Discussions
 
-Some ideas, suggestions, remarks, etc. you can write on a separate page [here](https://github.com/quantum-ods/qmlcourse/discussions).
+Some ideas, suggestions, remarks, etc. you can write on the 
+<a href="https://github.com/quantum-ods/qmlcourse/discussions">
+    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/quantum-ods/qmlcourse">
+</a> page.
 
-Also, we have many [issues](https://github.com/quantum-ods/qmlcourse/issues).
+Also, we have 
+<a href="https://github.com/quantum-ods/qmlcourse/issues">
+    <img alt="shield_issues" src="https://img.shields.io/github/issues/quantum-ods/qmlcourse">
+</a>.
 
 ## Course Program
 
