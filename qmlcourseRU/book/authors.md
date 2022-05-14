@@ -34,13 +34,13 @@
 
 ## Основные ревьюеры / The main reviewers
 
+- [Дихтяр Иван / Dikhtyar Ivan](https://github.com/sustxh)
 - [Желтоножский Евгений / Zheltonozhskiy Evgeniy](https://github.com/Randl)
 - [Зимка Борис / Zimka Boris](https://github.com/zimka)
 - [Карелин Николай / Karelin Nikolay](https://github.com/karelin)
 - [Кашницкий Юрий / Kashnitsky Yury](https://github.com/Yorko)
 - [Тезиков Роман / Tezikov Roman](https://github.com/TezRomacH)
 - [Трохименко Виктор / Trohimenko Viktor](https://github.com/vtrokhymenko)
-- [Дихтяр Иван / Dikhtyar Ivan](https://github.com/sustxh)
 
 ## Техническая поддержка / Technical support
 
