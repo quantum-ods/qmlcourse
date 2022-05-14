@@ -4,7 +4,7 @@
 
 ## Создатели курса / Co-founders
 
-- [Синченко Семен / Sinchenko Semyon](https://github.com/SemyonSinchenko)
+- [Синченко Семён / Sinchenko Semyon](https://github.com/SemyonSinchenko)
 - [Кашницкий Юрий / Kashnitsky Yury](https://github.com/Yorko)
 - [Трохименко Виктор / Trohimenko Viktor](https://github.com/vtrokhymenko)
 
