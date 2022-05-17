@@ -1869,7 +1869,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "paramiko"
-version = "2.8.1"
+version = "2.10.1"
 description = "SSH2 protocol library"
 category = "main"
 optional = false
@@ -1879,6 +1879,7 @@ python-versions = "*"
 bcrypt = ">=3.1.3"
 cryptography = ">=2.5"
 pynacl = ">=1.0.1"
+six = "*"
 
 [package.extras]
 all = ["pyasn1 (>=0.1.7)", "pynacl (>=1.0.1)", "bcrypt (>=3.1.3)", "invoke (>=1.3)", "gssapi (>=1.4.1)", "pywin32 (>=2.1.8)"]
@@ -3288,7 +3289,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "93b134b67972f9940b885c63f6021e5bb09a8c59aa9a49aa01eaa7c1e0b48f0d"
+content-hash = "b18963dfcf8e9528869201a8cd4a699d5de2af8ace1a7687eac58445a3776420"
 
 [metadata.files]
 absl-py = [
@@ -4553,8 +4554,8 @@ pandocfilters = [
     {file = "pandocfilters-1.5.0.tar.gz", hash = "sha256:0b679503337d233b4339a817bfc8c50064e2eff681314376a47cb582305a7a38"},
 ]
 paramiko = [
-    {file = "paramiko-2.8.1-py2.py3-none-any.whl", hash = "sha256:7b5910f5815a00405af55da7abcc8a9e0d9657f57fcdd9a89894fdbba1c6b8a8"},
-    {file = "paramiko-2.8.1.tar.gz", hash = "sha256:85b1245054e5d7592b9088cc6d08da22445417912d3a3e48138675c7a8616438"},
+    {file = "paramiko-2.10.1-py2.py3-none-any.whl", hash = "sha256:f6cbd3e1204abfdbcd40b3ecbc9d32f04027cd3080fe666245e21e7540ccfc1b"},
+    {file = "paramiko-2.10.1.tar.gz", hash = "sha256:443f4da23ec24e9a9c0ea54017829c282abdda1d57110bf229360775ccd27a31"},
 ]
 parso = [
     {file = "parso-0.8.3-py2.py3-none-any.whl", hash = "sha256:c001d4636cd3aecdaf33cbb40aebb59b094be2a74c556778ef5576c175e19e75"},
