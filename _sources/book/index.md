@@ -21,11 +21,11 @@
 
 **Why this course?**
 ^^^
-Our course is different from other courses on quantum computing because it:
+Our course is different from other courses on quantum computing because it is:
 
-- it is adaptive and contains lectures of different levels of complexity and depth;
-- it is practical, and all explanations are backed up by code;
-- it is about real methods that will be relevant in the next 10-15 years.
+- adaptive and contains lectures of different levels of complexity and depth;
+- practical, and all explanations are backed up by code;
+- about real methods that will be relevant in the next 10-15 years.
 
 Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 
