@@ -94,7 +94,7 @@ Matplotlib figures should be
 
 ### Building the project
 
-To watch your result (after `git push`) you can build `Jupyter Book` automatically by GitHub Action: in the page, https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-branch.yml choose your branch and press `Run workflow`. After ~10min visit https://gh-qmlc-deploy-branch.herokuapp.com/book/index.html and find your lectures page.
+To watch your result (after `git push`) you can build `Jupyter Book` automatically by GitHub Action: in the page, https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-branch.yml choose your branch and press `Run workflow`. After few minutes visit https://qmlc-deploy-branch.netlify.app/book/index.html and find your lectures page.
 
 ### Chapters and headers
 
