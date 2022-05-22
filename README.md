@@ -19,6 +19,9 @@
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
     <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
+  <a href="https://qmlc-deploy-branch.netlify.app/book/index.html">
+    <img alt="netlify_status" src="https://api.netlify.com/api/v1/badges/ff3a4d3f-49a9-47db-9335-364525652b89/deploy-status">
+  </a>
 </p>
 </br>
 
