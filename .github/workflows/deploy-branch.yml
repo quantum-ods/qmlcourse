@@ -62,10 +62,6 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU
 
-      - name: add `composer.json`
-        run: |
-          echo "{}" > ./qmlcourseRU/_build/html/composer.json
-
       - name: update publish dir
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
