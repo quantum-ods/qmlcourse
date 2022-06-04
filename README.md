@@ -6,13 +6,13 @@
     <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fquantum-ods.github.io%2Fqmlcourse%2Fbook%2Findex.html">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse" target="_blank">
-  <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=critical&up_message=ods.ai&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
+    <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=critical&up_message=ods.ai&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
+<a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
+    <img alt="shield_license" src="https://img.shields.io/badge/license-CC--BY--4.0-brightgreen">
+</a>
 </a>
 
 <p align="left">
-  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
-    <img alt="shield_license" src="https://img.shields.io/badge/license-CC--BY--4.0-brightgreen">
-  </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
     <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
