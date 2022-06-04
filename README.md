@@ -25,11 +25,9 @@
 </p>
 </br>
 
-````
-Note:
-  * Russian-only
-  * English version translation help tube, visit CONTRIBUTING.md
-````
+> **Note**
+> * Russian-only
+> * English version translation help tube, visit [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Contributing
 
