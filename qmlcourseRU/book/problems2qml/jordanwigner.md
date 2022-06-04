@@ -242,3 +242,61 @@ $$
 H_k -t\sum_{j}(\sigma^x_{2j}\sigma^x_{2j+2}+ \sigma^y_{2j}\sigma^y_{2j+2}) \sigma^z_{2j} \sigma^z_
 {2j+1} + \frac{U}{4} \sum_{j} (1 - \sigma^z_{2j} )(1 - \sigma^z_{2j+1})
 $$
+
+### Пример. Молекула воды
+
+```{code-cell} ipython3
+symbols, coordinates = qchem.read_structure('h2o.xyz')
+hf_file = qchem.meanfield(
+    symbols,
+    coordinates,
+    name='water',
+    charge=-1,
+    mult=2,
+    basis='6-31g',
+    package='pyscf'
+)
+```
+```{code-cell} ipython3
+from openfermion import MolecularData
+water = MolecularData(filename=hf_file)
+core, active = qchem.active_space(
+    water.n_electrons,
+    water.n_orbitals,
+    mult=2,
+    active_electrons=3,
+    active_orbitals=4
+)
+```
+```{code-cell} ipython3
+qubit_hamiltonian = qchem.decompose(
+    hf_file,
+    mapping='jordan_wigner',
+    core=core,
+    active=active
+)
+```
+
+
+
+```{code-cell} ipython3
+import pennylane as qml
+
+dev = qml.device('default.qubit', wires=4)
+
+hamiltonian = 2.0 * qml.PauliZ(0) @ qml.PauliZ(1)
+
+@qml.qnode(dev)
+def circuit(params):
+    qml.BasisState(np.array([1, 1, 0, 0]), wires=[0,1,2,3])
+    for i in range(4):
+        qml.Rot(*params[i], wires=i)
+    qml.CNOT(wires=[2, 3])
+    qml.CNOT(wires=[2, 0])
+    qml.CNOT(wires=[3, 1])
+    return qml.expval(hamiltonian)
+
+rng = np.random.default_rng(seed=42)
+params = rng.random([4, 3])
+circuit(params)
+```
