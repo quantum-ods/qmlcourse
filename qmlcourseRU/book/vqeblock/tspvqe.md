@@ -333,7 +333,7 @@ ham = qml.SparseHamiltonian(op * numer_stability_const, wires=list(range(9)))
 
 Далее необходимо выбрать _ansatz_. Современные квантовые процессоры обычно имеют вид решетки, типа такого:
 
-```{figure} /_static/progblock/tfq/sycamore.png
+```{figure} /_static/progblock/ru/tfq/sycamore.png
 :width: 350px
 :name: sycamore_lattice2
 
@@ -342,7 +342,7 @@ ham = qml.SparseHamiltonian(op * numer_stability_const, wires=list(range(9)))
 
 Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над "соседними" кубитами. Так появилась идея _hardware efficient ansatz_ {cite}`hardware_ansatz`. Он заключается в том, что формируется несколько "слоев" **VQC**, где каждый такой слой содержит несколько операций вращений, а также попарные "запутывающие" операции (например, [_CZ_](../qcblock/gates.html#cy-cz), или гейт [_CNOT_](../qcblock/gates.html#cnot-cx)). Выглядит это примерно так:
 
-```{figure} /_static/vqeblock/vqe/HWA.png
+```{figure} /_static/vqeblock/ru/vqe/HWA.png
 :width: 400px
 
 Иллюстрация _hardware efficient ansatz_ (_HWEA_) из {cite}`hardware_ansatz`

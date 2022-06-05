@@ -57,7 +57,7 @@ $$
 
 Бобу для декодирования удобно было бы применить некий двухкубитный унитарный оператор, отображающий базис Белла в вычислительный базис (чтобы в итоге выполнить измерение в вычислительном базисе). Для этого можно применить оператор $CNOT$ (первый кубит -- контрольный) и затем оператор Адамара $H$ для первого кубита, как показано в пунктирном блоке в нижнем правом углу на общей схеме:
 
-```{figure} /_static/qcalgo/superdense_coding/Superdense_coding_wikimedia.png
+```{figure} /_static/qcalgo/ru/superdense_coding/Superdense_coding_wikimedia.png
 :name: Superdense_coding_wikimedia
 :width: 542px
 

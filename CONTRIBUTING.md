@@ -60,7 +60,7 @@ Matplotlib figures should be
 - located at the corresponding lecture folder into `_static/`;
 - using the format, for example
 
-        ```{figure} /_static/qcalgo/quantum_algorithms_overview/problem_classes.png
+        ```{figure} /_static/qcalgo/ru/quantum_algorithms_overview/problem_classes.png
         :name: problem_classes
         :width: 400px
 

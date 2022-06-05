@@ -48,7 +48,7 @@ $$
 
 Принципиальная схема алгоритма Саймона:
 
-```{figure} /_static/qcalgo/simon_algorithm/simon_principal.png
+```{figure} /_static/qcalgo/ru/simon_algorithm/simon_principal.png
 :name: simon_principal
 :width: 400px
 ```
