@@ -13,6 +13,10 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
+      # - name: install imagemagick
+      #   run: |
+      #     sudo apt install -y imagemagick
+
       # - name: checkout branch to gh-artifacts
       #   uses: actions/checkout@v2
       #   with:
