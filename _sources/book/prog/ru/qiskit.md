@@ -65,7 +65,7 @@ circuit = QuantumCircuit(2, 2)
 
 ## Квантовые гейты
 
-Давайте попробуем воспроизвести функцию `make_entanglement` из [лекции про `Pennylane`](../prog/pennylane.html#qnode). Применим [гейт Адамара](../qc/qubit.html#id20) к первому кубиту, а потом применим [гейт CNOT (CX)](../qc/gates.html#cnot-cx):
+Давайте попробуем воспроизвести функцию `make_entanglement` из [лекции про `Pennylane`](../../prog/ru/pennylane.html#qnode). Применим [гейт Адамара](../../qc/ru/qubit.html#id20) к первому кубиту, а потом применим [гейт CNOT (CX)](../../qc/ru/gates.html#cnot-cx):
 
 ```{code-cell} ipython3
 circuit.h(0)
@@ -80,7 +80,7 @@ circuit.measure([0,1], [0,1])
 
 ### Компиляция и запуск схемы
 
-Квантовые схемы `Qiskit` должны быть скомпилированы в инструкции [квантового ассемблера](../prog/progreview.html#openqasm). Для этого используется функция `transpile`:
+Квантовые схемы `Qiskit` должны быть скомпилированы в инструкции [квантового ассемблера](../../prog/ru/progreview.html#openqasm). Для этого используется функция `transpile`:
 
 ```{code-cell} ipython3
 from qiskit import transpile
@@ -94,7 +94,7 @@ print(f"Number of '00': {counts['00']}")
 print(f"Number of '11': {counts['11']}")
 ```
 
-Мы получили результат, аналогичный [полученному в лекции про `Pennylane`](../prog/pennylane.html#qnode): вероятности получения результата $\ket{00}$ и $\ket{11}$ равны $\sim 0.5$, а другие результаты мы получить не можем.
+Мы получили результат, аналогичный [полученному в лекции про `Pennylane`](../../prog/ru/pennylane.html#qnode): вероятности получения результата $\ket{00}$ и $\ket{11}$ равны $\sim 0.5$, а другие результаты мы получить не можем.
 
 ## Визуализация
 

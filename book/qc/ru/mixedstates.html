@@ -1068,7 +1068,7 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 <p class="admonition-title">Note</p>
 <p>в 1930-е происходили многочисленные споры об “интерпретации” (сути) квантовой механики. Именно тогда Эйнштейн, Шредингер и их коллеги обратили внимание на несепарабельные состояния и затем Эйнштейном, Подольским и Розеном был сформулирован “парадокс” – что квантовая механика либо нелокальна (т.е. несовместима с теорией относительности), либо неполна (мы учитываем не все параметры при описании состяния квантовых систем). Именно с дискуссией о сути запутанности связана знаменитая цитата Эйнштейна “Бог не играет в кости” и менее известный ответ Нильса Бора, “Альберт, не указывай Богу, что ему делать.”</p>
 </div>
-<p>Довольно долго изучение запутанности и связанных с ней трудностей считались сложным, но не основными вопросами квантовой физики. Но с развитием квантовой информатики стало понятно, что без запутанности нельзя разрабатывать квантовые компьютеры и системы квантовой связи. В настоящее время существуют устоявшиеся методы создания запутанных состояний в эксперименте. А для целей нашего курса, в симуляциях, достаточно использовать <a class="reference external" href="../qc/gates.html#id15">двухкубитные гейты</a>, которые обсуждались в предыдущей лекции, например <code class="docutils literal notranslate"><span class="pre">CNOT</span></code> или <code class="docutils literal notranslate"><span class="pre">CZ</span></code>, который используется в лекции про <a class="reference internal" href="../../grads/ru/gradients.html#gradients"><span class="std std-ref">Градиенты квантовых схем</span></a>.</p>
+<p>Довольно долго изучение запутанности и связанных с ней трудностей считались сложным, но не основными вопросами квантовой физики. Но с развитием квантовой информатики стало понятно, что без запутанности нельзя разрабатывать квантовые компьютеры и системы квантовой связи. В настоящее время существуют устоявшиеся методы создания запутанных состояний в эксперименте. А для целей нашего курса, в симуляциях, достаточно использовать <a class="reference external" href="../../qc/ru/gates.html#id15">двухкубитные гейты</a>, которые обсуждались в предыдущей лекции, например <code class="docutils literal notranslate"><span class="pre">CNOT</span></code> или <code class="docutils literal notranslate"><span class="pre">CZ</span></code>, который используется в лекции про <a class="reference internal" href="../../grads/ru/gradients.html#gradients"><span class="std std-ref">Градиенты квантовых схем</span></a>.</p>
 <p>В качестве примера давайте посмотрим, как можно создать запутанное состояние в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>. Начнем с импортов и создания двухкубитной схемы:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1154,29 +1154,21 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 \[
 i\hbar \frac{\partial \Psi(x, t)}{\partial t} = \hat{H} \Psi(x, t).
 \]</div>
-<p>Аналогичное уравнение можно получить и для матриц плотности. Оно называется уравнением фон Неймана и записывается через
-коммутатор <span class="math notranslate nohighlight">\([]\)</span>, который определен как <span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}\)</span>:</p>
+<p>Аналогичное уравнение можно получить и для матриц плотности. Оно называется уравнением фон Неймана и записывается через коммутатор <span class="math notranslate nohighlight">\([]\)</span>, который определен как <span class="math notranslate nohighlight">\([\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 i\hbar \frac{\partial \rho}{\partial t} = [\hat{H}, \rho].
 \]</div>
-<p>Аналогично, если действие каких-то унитарных операций изменяет вектор состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> на
-<span class="math notranslate nohighlight">\(\hat{U} \ket{\Psi}\)</span>, то матрицу плотности оно должно изменять как</p>
+<p>Аналогично, если действие каких-то унитарных операций изменяет вектор состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> на <span class="math notranslate nohighlight">\(\hat{U} \ket{\Psi}\)</span>, то матрицу плотности оно должно изменять как</p>
 <div class="math notranslate nohighlight">
 \[
 \sum\limits_{n} p_n \hat{U} \ket{\Psi_n} \bra{\Psi_n} \hat{U}^\dagger = \hat{U}\rho\hat{U}^\dagger.
 \]</div>
-<p>Важное свойство унитарных матриц – их собственные значения по модулю равны единице. Действие унитарного оператора не
-изменяет собственных значений матрицы плотности, но вращает собственный ее базис. Исходя из этого можно сделать вывод о
-том, что ни чистота, ни энтропия не могут изменяться в результате унитарных операций.</p>
+<p>Важное свойство унитарных матриц – их собственные значения по модулю равны единице. Действие унитарного оператора не изменяет собственных значений матрицы плотности, но вращает собственный ее базис. Исходя из этого можно сделать вывод о том, что ни чистота, ни энтропия не могут изменяться в результате унитарных операций.</p>
 </div>
 <div class="section" id="id19">
 <h3>Измерения и томография<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
-<p>Квантовая механика работает так, что любое <a class="reference external" href="../qc/qubit.html#id23">измерение</a> приводит к коллапсу волновой функции
-и является необратимым. А еще измерения, например, состояния <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span> не различимы при измерениях по оси
-<span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – для обоих состояний мы будем получать <span class="math notranslate nohighlight">\(\ket{1}\)</span> и <span class="math notranslate nohighlight">\(\ket{0}\)</span> с вероятностью <span class="math notranslate nohighlight">\(0.5\)</span>, то есть нам нужно
-измерять по <em>всем</em> базисам. В общем, получается, что восстановить амплитуду и фазу волновой функции <span class="math notranslate nohighlight">\(\Psi\)</span> это большая
-проблема, если добавить сюда вероятностный характер измерения.</p>
+<p>Квантовая механика работает так, что любое <a class="reference external" href="../../qc/ru/qubit.html#id23">измерение</a> приводит к коллапсу волновой функции и является необратимым. А еще измерения, например, состояния <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span> не различимы при измерениях по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – для обоих состояний мы будем получать <span class="math notranslate nohighlight">\(\ket{1}\)</span> и <span class="math notranslate nohighlight">\(\ket{0}\)</span> с вероятностью <span class="math notranslate nohighlight">\(0.5\)</span>, то есть нам нужно измерять по <em>всем</em> базисам. В общем, получается, что восстановить амплитуду и фазу волновой функции <span class="math notranslate nohighlight">\(\Psi\)</span> это большая проблема, если добавить сюда вероятностный характер измерения.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Строго говоря это не просто “большая” проблема, а настоящая NP-полная задача оптимизации!</p>
@@ -1185,20 +1177,13 @@ i\hbar \frac{\partial \rho}{\partial t} = [\hat{H}, \rho].
 <a class="reference internal image-reference" href="../../../_images/MarginalDistribution.png"><img alt="../../../_images/MarginalDistribution.png" src="../../../_images/MarginalDistribution.png" style="width: 250px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">Иллюстрация фазовой проблемы.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
-<p>Эта задача обычно решается при помощи квантовой томографии, и восстанавливают как раз не волновую функцию <span class="math notranslate nohighlight">\(\Psi\)</span>,
-а матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span>  (потому что в реальных экспериментах и задачах почти не бывает чистых состояний).
-Представим, что наша квантовая система описывается базисом <span class="math notranslate nohighlight">\(y_i\)</span> – набором из <span class="math notranslate nohighlight">\(2^N\)</span> векторов, причем каждому из этих
-базисных векторов соответствует свое собственное значение – результат измерения
-(подробнее об этом было в <a class="reference external" href="../qc/qubit.html#id31">лекции про кубит</a>).
-Тогда если у нас будет достаточно много результатов измерений, то мы сможем восстановить нашу матрицу плотности
-<span class="math notranslate nohighlight">\(\rho\)</span> методом максимизации правдоподобия. Выражение для правдоподобия в этом случае можно записать как:</p>
+<p>Эта задача обычно решается при помощи квантовой томографии, и восстанавливают как раз не волновую функцию <span class="math notranslate nohighlight">\(\Psi\)</span>, а матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span>  (потому что в реальных экспериментах и задачах почти не бывает чистых состояний).
+Представим, что наша квантовая система описывается базисом <span class="math notranslate nohighlight">\(y_i\)</span> – набором из <span class="math notranslate nohighlight">\(2^N\)</span> векторов, причем каждому из этих базисных векторов соответствует свое собственное значение – результат измерения (подробнее об этом было в <a class="reference external" href="../../qc/ru/qubit.html#id31">лекции про кубит</a>). Тогда если у нас будет достаточно много результатов измерений, то мы сможем восстановить нашу матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span> методом максимизации правдоподобия. Выражение для правдоподобия в этом случае можно записать как:</p>
 <div class="math notranslate nohighlight">
 \[
 L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
 \]</div>
-<p>где <span class="math notranslate nohighlight">\(q_i\)</span> – это частота получения собственного значения, соответствующего волновой функции <span class="math notranslate nohighlight">\(\ket{y_i}\)</span>
-(потому что измерение переводит наше состояние в базисный вектор, соответствующий результату измерения).
-В итоге увеличивая число измерений мы приближаем частоты <span class="math notranslate nohighlight">\(q_i\)</span> к вероятностям <span class="math notranslate nohighlight">\(\bra{\Psi}(\ket{y_i}\bra{y_i})\ket{\Psi}\)</span>, а нашу матрицу <span class="math notranslate nohighlight">\(\rho\)</span> к ее истинному виду.</p>
+<p>где <span class="math notranslate nohighlight">\(q_i\)</span> – это частота получения собственного значения, соответствующего волновой функции <span class="math notranslate nohighlight">\(\ket{y_i}\)</span> (потому что измерение переводит наше состояние в базисный вектор, соответствующий результату измерения). В итоге увеличивая число измерений мы приближаем частоты <span class="math notranslate nohighlight">\(q_i\)</span> к вероятностям <span class="math notranslate nohighlight">\(\bra{\Psi}(\ket{y_i}\bra{y_i})\ket{\Psi}\)</span>, а нашу матрицу <span class="math notranslate nohighlight">\(\rho\)</span> к ее истинному виду.</p>
 <p>Методы квантовой томографии являются критической частью, в том числе, квантовой связи, так как системы там обычно небольшие, но восстанавливать надо всю матрицу плотности.</p>
 </div>
 </div>

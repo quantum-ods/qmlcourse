@@ -821,7 +821,7 @@
 </div>
 <div class="section" id="id4">
 <h2>Постановка задачи<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Итак, рассматривается одномерная система взаимодействующих спинов, которая описывается гамильтонианом Изинга (полностью аналогичным тому, который был представлен в <a class="reference internal" href="../../problems/ru/ising.html#ising"><span class="std std-ref">базовой лекции</span></a> о модели Изинга):</p>
+<p>Итак, рассматривается одномерная система взаимодействующих спинов, которая описывается гамильтонианом Изинга (полностью аналогичным тому, который был представлен в <a class="reference internal" href="../../problems/ru/ising.html"><span class="doc std std-doc">базовой лекции</span></a> о модели Изинга):</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{H}_{0} =
@@ -833,7 +833,7 @@
 </div>
 <div class="section" id="qa">
 <h2>Имитация квантового отжига (QA)<a class="headerlink" href="#qa" title="Permalink to this headline">¶</a></h2>
-<p>Как в <a class="reference internal" href="dwave.html#dwave"><span class="std std-ref">предыдущей лекции</span></a> об аннилере D-Wave, добавляем к “целевому”  гамильтониану <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span> (<em>problem Hamiltonian</em>) слагаемое, которое называется <em>tunneling Hamiltonian</em>:</p>
+<p>Как в <a class="reference internal" href="dwave.html"><span class="doc std std-doc">предыдущей лекции</span></a> об аннилере D-Wave, добавляем к “целевому”  гамильтониану <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span> (<em>problem Hamiltonian</em>) слагаемое, которое называется <em>tunneling Hamiltonian</em>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-qa-hamilt">
 <span class="eqno">(62)<a class="headerlink" href="#equation-eqn-qa-hamilt" title="Permalink to this equation">¶</a></span>\[
 \hat{H}(t) =
@@ -877,7 +877,7 @@ P_{QA}^{st}(\Gamma) = {\left| \braket{g | \psi_{\Gamma}} \right|}^2
 </div>
 <div class="section" id="sa">
 <h2>Классическая имитация отжига (SA)<a class="headerlink" href="#sa" title="Permalink to this headline">¶</a></h2>
-<p>В <a class="reference internal" href="../../problems/ru/copt.html#copt"><span class="std std-ref">лекции</span></a>, посвященной комбинаторной оптимизации, процесс имитации отжига описывался таким образом: выбиралось случайное начальное состояние, затем оно в цикле подвергалось случайной модификации, и новое состояние принималось или отклонялось в соответствии с некоторым критерием. В статье <span id="id5">[<a class="reference internal" href="../../bibliography.html#id45"><span>KN98</span></a>]</span> принят другой подход к SA. Рассматривается так называемое <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B8%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5"><em>основное кинетическое уравнение</em></a> (англ. <em>master equation</em>). Оно описывает классический SA процесс, соответствующий нестационарному уравнению Шредингера <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(63)</a>. В нашем случае это система обыкновенных дифференциальных уравнений для вероятностей нахождения системы в различных состояниях <span class="math notranslate nohighlight">\(i\)</span> в момент времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<p>В <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">лекции</span></a>, посвященной комбинаторной оптимизации, процесс имитации отжига описывался таким образом: выбиралось случайное начальное состояние, затем оно в цикле подвергалось случайной модификации, и новое состояние принималось или отклонялось в соответствии с некоторым критерием. В статье <span id="id5">[<a class="reference internal" href="../../bibliography.html#id45"><span>KN98</span></a>]</span> принят другой подход к SA. Рассматривается так называемое <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B8%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5"><em>основное кинетическое уравнение</em></a> (англ. <em>master equation</em>). Оно описывает классический SA процесс, соответствующий нестационарному уравнению Шредингера <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(63)</a>. В нашем случае это система обыкновенных дифференциальных уравнений для вероятностей нахождения системы в различных состояниях <span class="math notranslate nohighlight">\(i\)</span> в момент времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-sa-master-eqn">
 <span class="eqno">(64)<a class="headerlink" href="#equation-eqn-sa-master-eqn" title="Permalink to this equation">¶</a></span>\[
 \frac{d P_i(t)}{d t} =

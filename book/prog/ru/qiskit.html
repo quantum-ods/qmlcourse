@@ -871,7 +871,7 @@
 </div>
 <div class="section" id="id6">
 <h2>Квантовые гейты<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>Давайте попробуем воспроизвести функцию <code class="docutils literal notranslate"><span class="pre">make_entanglement</span></code> из <a class="reference external" href="../prog/pennylane.html#qnode">лекции про <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code></a>. Применим <a class="reference external" href="../qc/qubit.html#id20">гейт Адамара</a> к первому кубиту, а потом применим <a class="reference external" href="../qc/gates.html#cnot-cx">гейт CNOT (CX)</a>:</p>
+<p>Давайте попробуем воспроизвести функцию <code class="docutils literal notranslate"><span class="pre">make_entanglement</span></code> из <a class="reference external" href="../../prog/ru/pennylane.html#qnode">лекции про <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code></a>. Применим <a class="reference external" href="../../qc/ru/qubit.html#id20">гейт Адамара</a> к первому кубиту, а потом применим <a class="reference external" href="../../qc/ru/gates.html#cnot-cx">гейт CNOT (CX)</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -900,7 +900,7 @@
 </div>
 <div class="section" id="id7">
 <h3>Компиляция и запуск схемы<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>Квантовые схемы <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> должны быть скомпилированы в инструкции <a class="reference external" href="../prog/progreview.html#openqasm">квантового ассемблера</a>. Для этого используется функция <code class="docutils literal notranslate"><span class="pre">transpile</span></code>:</p>
+<p>Квантовые схемы <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> должны быть скомпилированы в инструкции <a class="reference external" href="../../prog/ru/progreview.html#openqasm">квантового ассемблера</a>. Для этого используется функция <code class="docutils literal notranslate"><span class="pre">transpile</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">transpile</span>
@@ -922,7 +922,7 @@ Number of &#39;11&#39;: 502
 </div>
 </div>
 </div>
-<p>Мы получили результат, аналогичный <a class="reference external" href="../prog/pennylane.html#qnode">полученному в лекции про <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code></a>: вероятности получения результата <span class="math notranslate nohighlight">\(\ket{00}\)</span> и <span class="math notranslate nohighlight">\(\ket{11}\)</span> равны <span class="math notranslate nohighlight">\(\sim 0.5\)</span>, а другие результаты мы получить не можем.</p>
+<p>Мы получили результат, аналогичный <a class="reference external" href="../../prog/ru/pennylane.html#qnode">полученному в лекции про <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code></a>: вероятности получения результата <span class="math notranslate nohighlight">\(\ket{00}\)</span> и <span class="math notranslate nohighlight">\(\ket{11}\)</span> равны <span class="math notranslate nohighlight">\(\sim 0.5\)</span>, а другие результаты мы получить не можем.</p>
 </div>
 </div>
 <div class="section" id="id8">

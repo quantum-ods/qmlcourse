@@ -813,10 +813,10 @@
 </ul>
 <p>Эта лекция будет посвящена практике с <strong>VQE</strong>, а именно решению задачи коммивояжера. Будет много кода и мало теории. Рекомендуется заранее повторить следующие лекции:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="../problems/copt.html#id7">Описание задачи коммивояжера</a> в лекции про задачи комбинаторной оптимизации.</p></li>
-<li><p><a class="reference external" href="../problems2qml/np2ising.html#id10">Сведение этой задачи к модели Изинга</a> в лекции о переходе от комбинаторных задач к квантовым алгоритмам.</p></li>
+<li><p><a class="reference external" href="../../problems/ru/copt.html#id7">Описание задачи коммивояжера</a> в лекции про задачи комбинаторной оптимизации.</p></li>
+<li><p><a class="reference external" href="../../problems2qml/ru/np2ising.html#id10">Сведение этой задачи к модели Изинга</a> в лекции о переходе от комбинаторных задач к квантовым алгоритмам.</p></li>
 </ul>
-<p>Нам потребуется определить бинарный оператор <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>, который активно <a class="reference external" href="../problems2qml/np2ising.html#id3">использовали</a> при определении гамильтониана. Нужно будет расписать полный оператор, отвечающий данной задаче и нужен случайный взвешенный граф, по которому будет “путешествовать” коммивояжер. Начнем с импорта библиотек и генерации графа.</p>
+<p>Нам потребуется определить бинарный оператор <span class="math notranslate nohighlight">\(\sigma^{z_{mod}}\)</span>, который активно <a class="reference external" href="../../problems2qml/ru/np2ising.html#id3">использовали</a> при определении гамильтониана. Нужно будет расписать полный оператор, отвечающий данной задаче и нужен случайный взвешенный граф, по которому будет “путешествовать” коммивояжер. Начнем с импорта библиотек и генерации графа.</p>
 <div class="section" id="id1">
 <h2>Импорт библиотек<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Для графов будем использовать структуры данных из уже знакомой нам библиотеки <code class="docutils literal notranslate"><span class="pre">NetwrokX</span></code>, а для работы с разреженными операторами <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>.</p>
@@ -904,7 +904,7 @@ NetworkX solution (total cost): 213.0
 </div>
 <div class="section" id="sigma-z-mod">
 <h2>Матрица <span class="math notranslate nohighlight">\(\sigma^z_{mod}\)</span><a class="headerlink" href="#sigma-z-mod" title="Permalink to this headline">¶</a></h2>
-<p>Это бинарный оператор, который <a class="reference external" href="../problems2qml/np2ising.html#id3">ранее вводили</a> в лекции о представлении комбинаторных задач в виде моделей Изинга.
+<p>Это бинарный оператор, который <a class="reference external" href="../../problems2qml/ru/np2ising.html#id3">ранее вводили</a> в лекции о представлении комбинаторных задач в виде моделей Изинга.
 Соотношение между <span class="math notranslate nohighlight">\(\sigma^z_{mod}\)</span> и <span class="math notranslate nohighlight">\(\sigma^z\)</span> таково:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1207,7 +1207,7 @@ SciPy solution (total cost): 213.0
 <a class="reference internal image-reference" href="../../../_images/sycamore.png"><img alt="../../../_images/sycamore.png" src="../../../_images/sycamore.png" style="width: 350px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 133 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id68"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../../bibliography.html#id33"><span>KMT+17</span></a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../qc/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../qc/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
+<p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../../bibliography.html#id33"><span>KMT+17</span></a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../../qc/ru/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../../qc/ru/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <div class="figure align-default" id="id8">
 <a class="reference internal image-reference" href="../../../_images/HWA.png"><img alt="../../../_images/HWA.png" src="../../../_images/HWA.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 134 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id33"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>

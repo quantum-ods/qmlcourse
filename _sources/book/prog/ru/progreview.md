@@ -190,7 +190,7 @@ with prog.context as q:
 
 [Qiskit](https://qiskit.org/overview) -- это один из самых популярных в мире фреймворков для квантовых вычислений от компании `IBM`. На самом деле представляет собой даже не фреймворк, а целую экосистему, в которую входят, например:
 
-- Уже [упомянутый нами](../prog/progreview.html#openqasm) квантовый ассемблер `OpenQASM`
+- Уже [упомянутый нами](../../prog/ru/progreview.html#openqasm) квантовый ассемблер `OpenQASM`
 - [Фреймворк](https://github.com/Qiskit/qiskit) для программирования кубитов, написанный на `OpenQASM`
 - [API для применения квантовых вычислений в финансах](https://github.com/Qiskit/qiskit-finance)
 - [API для применения квантовых вычислений в ML](https://github.com/Qiskit/qiskit-machine-learning)
