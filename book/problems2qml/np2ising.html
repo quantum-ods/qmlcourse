@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="QUBO-формулировки для линейной регрессии, SVM и метода k-средних" href="qubo_linreg_svm_kmeans.html" />
+    <link rel="next" title="Преобразование Жордана-Вигнера" href="jordanwigner.html" />
     <link rel="prev" title="О блоке “От задач к квантовым алгоритмам”" href="problems2qmlintro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -89,7 +89,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
-   Приветствие / Welcome
+   Приветствие
   </a>
  </li>
 </ul>
@@ -100,12 +100,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro/ru/intro.html">
+  <a class="reference internal" href="../intro1block/intro1.html">
    🟦 О квантовых компьютерах
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro/ru/prerequisite.html">
+  <a class="reference internal" href="../prerequisite.html">
    ⬜ Пререквизиты курса
   </a>
  </li>
@@ -508,11 +508,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="qubo_linreg_svm_kmeans.html">
-   🟧 QUBO-формулировки трех задач ML
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="jordanwigner.html">
    🟧 Преобразование Жордана-Вигнера
   </a>
@@ -598,50 +593,33 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  О КУРСЕ / ABOUT THE COURSE
+  О курсе
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы / Bibliography
+   Список литературы
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса / Course authors
+   Список авторов курса
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий / Glossary
+   Глоссарий
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности / Acknowledgements
+   Благодарности
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг / Leaderboard
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Intro
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/en/intro.html">
-   🟦 About quantum computers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/en/prerequisite.html">
-   ⬜ Prerequisite
+   Рейтинг
   </a>
  </li>
 </ul>
@@ -891,13 +869,13 @@ C = \sum_{i, j \in \{1, ..., |X|\}} J_{i, j} sz_i sz_j + \sum_{i \in {\{1, ..., 
 <p>А финальное решение получается просто как наиболее вероятная конфигурация спинов в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}_{GS}\)</span>. Ну и останется лишь перейти от полученных собственных значений операторов <span class="math notranslate nohighlight">\(\sigma^z_i\)</span> к собственным значениям операторов <span class="math notranslate nohighlight">\(\hat{x}_i\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Кстати, справедлив и обратный переход, то есть решив проблему <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> каким-нибудь из <a class="reference external" href="../problemsblock/copt.html#id9">классических алгоритмов</a> для решения комбинаторных задач, автоматически получим конфигурацию основного состояния соответствуеющей физической системы! Этот подход впервые был предложен аж в 1988-м году в работе <span id="id5">[<a class="reference internal" href="../bibliography.html#id19"><span>BGrotschelJungerR88</span></a>]</span>. Таким образом, приходим к пониманию <strong>тесной связи задач квантовой физики и комбинаторной оптимизации</strong>. Именно на этом и строится огромное число перспективных квантовых алгоритмов для решения задач реального мира. Особенно в <em>NISQ</em> эпоху!</p>
+<p>Кстати, справедлив и обратный переход, то есть решив проблему <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> каким-нибудь из <a class="reference external" href="../problemsblock/copt.html#id9">классических алгоритмов</a> для решения комбинаторных задач, автоматически получим конфигурацию основного состояния соответствуеющей физической системы! Этот подход впервые был предложен аж в 1988-м году в работе <span id="id5">[<a class="reference internal" href="../bibliography.html#id20"><span>BGrotschelJungerR88</span></a>]</span>. Таким образом, приходим к пониманию <strong>тесной связи задач квантовой физики и комбинаторной оптимизации</strong>. Именно на этом и строится огромное число перспективных квантовых алгоритмов для решения задач реального мира. Особенно в <em>NISQ</em> эпоху!</p>
 </div>
 <p>Важное преимущество квантового представления <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-задач – в том, что наш мир устроен таким образом, что любая квантовая система всегда стремится в состояние с минимальной энергией, то есть основное. На этом построен даже целый класс квантовых аннилеров. Но и для вариационных квантовых алгоритмов это также дает свои преимущества.</p>
 </div>
 <div class="section" id="ising-formulations-of-many-np-problems">
 <h2>Статья “Ising formulations of many NP problems”<a class="headerlink" href="#ising-formulations-of-many-np-problems" title="Permalink to this headline">¶</a></h2>
-<p>Основным источником информации для нас будет статья <em>“Ising formulations of many NP problems”</em> <span id="id6">[<a class="reference internal" href="../bibliography.html#id25"><span>Luc14</span></a>]</span>, вышедшая в 2014-м году (версия 3). В данной лекции рассмотрим лишь часть примеров из этой работы, хотя наше рассмотрение будет чуть более подробным. В целом эта статья может быть использована как прекрасный справочник.</p>
+<p>Основным источником информации для нас будет статья <em>“Ising formulations of many NP problems”</em> <span id="id6">[<a class="reference internal" href="../bibliography.html#id26"><span>Luc14</span></a>]</span>, вышедшая в 2014-м году (версия 3). В данной лекции рассмотрим лишь часть примеров из этой работы, хотя наше рассмотрение будет чуть более подробным. В целом эта статья может быть использована как прекрасный справочник.</p>
 </div>
 <div class="section" id="id7">
 <h2>Задача о максимальном разрезе в графе (повторение)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
@@ -953,7 +931,7 @@ C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} 
 </div>
 <div class="section" id="id11">
 <h2>Задача о выделении сообществ в графе<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
-<p>Уже <a class="reference external" href="../problemsblock/copt.html#id3">говорили об этой задаче</a> в лекции про комбинаторную оптимизацию. Для этой задачи было разработано немало эвристических алгоритмов поиска <span id="id12">[<a class="reference internal" href="../bibliography.html#id64"><span>SCBR14</span></a>]</span>, а в этой части сосредоточимся на формулировке как задачи <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>.</p>
+<p>Уже <a class="reference external" href="../problemsblock/copt.html#id3">говорили об этой задаче</a> в лекции про комбинаторную оптимизацию. Для этой задачи было разработано немало эвристических алгоритмов поиска <span id="id12">[<a class="reference internal" href="../bibliography.html#id61"><span>SCBR14</span></a>]</span>, а в этой части сосредоточимся на формулировке как задачи <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>.</p>
 <div class="section" id="k-2">
 <h3><span class="math notranslate nohighlight">\(k = 2\)</span> сообществ<a class="headerlink" href="#k-2" title="Permalink to this headline">¶</a></h3>
 <p>В случае всего двух сообществ будем использовать двоичные спиновые переменные <span class="math notranslate nohighlight">\(s_i \in \{-1,1\}\)</span> для кодирования того, к какому именно сообществу принадлежит вершина <span class="math notranslate nohighlight">\(i\)</span>. <span class="math notranslate nohighlight">\(\frac{1 + s_is_j}{2}\)</span> будет равняться <span class="math notranslate nohighlight">\(1\)</span>, если <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> принадлежат одному сообществу, и <span class="math notranslate nohighlight">\(0\)</span> – в противном случае. Модулярность при этом будет следующей</p>
@@ -1066,10 +1044,10 @@ H = H_M + H_p
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="qubo_linreg_svm_kmeans.html" title="next page">
+        <a class="right-next" href="jordanwigner.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">QUBO-формулировки для линейной регрессии, SVM и метода k-средних</p>
+                <p class="prevnext-title">Преобразование Жордана-Вигнера</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -1085,7 +1063,7 @@ H = H_M + H_p
         
           By ODS Quantum Community<br/>
         
-            &copy; Copyright 2022.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

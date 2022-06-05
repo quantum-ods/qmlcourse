@@ -89,7 +89,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
-   Приветствие / Welcome
+   Приветствие
   </a>
  </li>
 </ul>
@@ -100,12 +100,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro/ru/intro.html">
+  <a class="reference internal" href="../intro1block/intro1.html">
    🟦 О квантовых компьютерах
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro/ru/prerequisite.html">
+  <a class="reference internal" href="../prerequisite.html">
    ⬜ Пререквизиты курса
   </a>
  </li>
@@ -508,11 +508,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../problems2qml/qubo_linreg_svm_kmeans.html">
-   🟧 QUBO-формулировки трех задач ML
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../problems2qml/jordanwigner.html">
    🟧 Преобразование Жордана-Вигнера
   </a>
@@ -598,50 +593,33 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  О КУРСЕ / ABOUT THE COURSE
+  О курсе
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы / Bibliography
+   Список литературы
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса / Course authors
+   Список авторов курса
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий / Glossary
+   Глоссарий
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности / Acknowledgements
+   Благодарности
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг / Leaderboard
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Intro
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/en/intro.html">
-   🟦 About quantum computers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/en/prerequisite.html">
-   ⬜ Prerequisite
+   Рейтинг
   </a>
  </li>
 </ul>
@@ -1034,7 +1012,7 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 <a class="reference internal" href="#equation-eqn-partial-dm">(5)</a>, из которой убрали нерелевантные и неконтролируемые степени свободы.</p>
 <div class="section" id="id12">
 <h3>Запутанные и сепарабельные состояния<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>Давайте вернемся к представлению состояния составной системы и зададимся вопросом: что можно сказать о связи между частями системы с точки зрения квантового описания? Для системы из двух кубитов такая составная система в общем случае может быть записана в явном виде (в этом разделе мы в основном следуем изложению из книги <span id="id13">[<a class="reference internal" href="../bibliography.html#id71"><span>01</span></a>]</span>):</p>
+<p>Давайте вернемся к представлению состояния составной системы и зададимся вопросом: что можно сказать о связи между частями системы с точки зрения квантового описания? Для системы из двух кубитов такая составная система в общем случае может быть записана в явном виде (в этом разделе мы в основном следуем изложению из книги <span id="id13">[<a class="reference internal" href="../bibliography.html#id68"><span>01</span></a>]</span>):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-two-qubit">
 <span class="eqno">(6)<a class="headerlink" href="#equation-eqn-two-qubit" title="Permalink to this equation">¶</a></span>\[
 \ket{\Phi} = a \ket{0_A 0_B} + b \ket{0_A 1_B} + c \ket{1_A 0_B} + d \ket{1_A 1_B},
@@ -1061,7 +1039,7 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 </div>
 <p>Приведем пару примеров запутанных состояний:</p>
 <ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(b = c = 0, a = d = \pm 1/\sqrt{2}\)</span> – состояние “<em>шредингеровского кота</em>”, см. <span id="id14">[<a class="reference internal" href="../bibliography.html#id71"><span>01</span></a>]</span> и <span id="id15">[<a class="reference internal" href="../bibliography.html#id53"><span>07</span></a>]</span>, такая формула для вектора состояния возникает для суперпозиции двух макроскопически различимых состояний одной из подсистем, например, живой или мертвый кот.</p></li>
+<li><p><span class="math notranslate nohighlight">\(b = c = 0, a = d = \pm 1/\sqrt{2}\)</span> – состояние “<em>шредингеровского кота</em>”, см. <span id="id14">[<a class="reference internal" href="../bibliography.html#id68"><span>01</span></a>]</span> и <span id="id15">[<a class="reference internal" href="../bibliography.html#id52"><span>07</span></a>]</span>, такая формула для вектора состояния возникает для суперпозиции двух макроскопически различимых состояний одной из подсистем, например, живой или мертвый кот.</p></li>
 <li><p><span class="math notranslate nohighlight">\(a = d = 0, b = -c = \pm 1/\sqrt{2}\)</span> – такое состояние называется ЭПР-парой (EPR, от Einstein-Podolsky-Rosen) и это очень важный пример из истории изучения запутанности в квантовой физике.</p></li>
 </ol>
 <div class="admonition note">
@@ -1272,7 +1250,7 @@ L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
         
           By ODS Quantum Community<br/>
         
-            &copy; Copyright 2022.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

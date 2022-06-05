@@ -89,7 +89,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
-   Приветствие / Welcome
+   Приветствие
   </a>
  </li>
 </ul>
@@ -100,12 +100,12 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro/ru/intro.html">
+  <a class="reference internal" href="../intro1block/intro1.html">
    🟦 О квантовых компьютерах
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro/ru/prerequisite.html">
+  <a class="reference internal" href="../prerequisite.html">
    ⬜ Пререквизиты курса
   </a>
  </li>
@@ -508,11 +508,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../problems2qml/qubo_linreg_svm_kmeans.html">
-   🟧 QUBO-формулировки трех задач ML
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../problems2qml/jordanwigner.html">
    🟧 Преобразование Жордана-Вигнера
   </a>
@@ -598,50 +593,33 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  О КУРСЕ / ABOUT THE COURSE
+  О курсе
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   Список литературы / Bibliography
+   Список литературы
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../authors.html">
-   Список авторов курса / Course authors
+   Список авторов курса
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../glossary.html">
-   Глоссарий / Glossary
+   Глоссарий
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../acknowledgments.html">
-   Благодарности / Acknowledgements
+   Благодарности
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../leaderboard.html">
-   Рейтинг / Leaderboard
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Intro
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/en/intro.html">
-   🟦 About quantum computers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/en/prerequisite.html">
-   ⬜ Prerequisite
+   Рейтинг
   </a>
  </li>
 </ul>
@@ -853,7 +831,7 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
 \langle M(\theta) \rangle = Tr(M U_{k, ..., 1} \rho_i U_{k, ..., 1}^\dagger)
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(\rho\)</span> это матрица плотности (<span class="math notranslate nohighlight">\(\ket{\Psi}\bra{\Psi}\)</span>). Подробнее о матрицах плотности можно почитать в ранней продвинутой лекции про смешанные состояния.</p>
-<p>Тогда частная производная от математического ожидания по <span class="math notranslate nohighlight">\(i\)</span>-му параметру <span class="math notranslate nohighlight">\(\theta_i\)</span> записывается (подробнее в <span id="id6">[<a class="reference internal" href="../bibliography.html#id55"><span>MNKF18</span></a>]</span>) через коммутатор исходного состояния <span class="math notranslate nohighlight">\(\rho\)</span>, которое “пришло” на вход гейта <span class="math notranslate nohighlight">\(U_i\)</span> и того оператора Паули <span class="math notranslate nohighlight">\(P_i\)</span>, который мы используем в <span class="math notranslate nohighlight">\(U_i\)</span>:</p>
+<p>Тогда частная производная от математического ожидания по <span class="math notranslate nohighlight">\(i\)</span>-му параметру <span class="math notranslate nohighlight">\(\theta_i\)</span> записывается (подробнее в <span id="id6">[<a class="reference internal" href="../bibliography.html#id54"><span>MNKF18</span></a>]</span>) через коммутатор исходного состояния <span class="math notranslate nohighlight">\(\rho\)</span>, которое “пришло” на вход гейта <span class="math notranslate nohighlight">\(U_i\)</span> и того оператора Паули <span class="math notranslate nohighlight">\(P_i\)</span>, который мы используем в <span class="math notranslate nohighlight">\(U_i\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial \langle M \rangle}{\partial \theta_i} = -\frac{i}{2}Tr(M U_{k, ..., i}[P_i, U_{i-1, ..., 1}\rho_i U_{i-1, ..., 1}^\dagger]U_{k, ..., i}^\dagger)
@@ -876,7 +854,7 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
 </div>
 <div class="section" id="id7">
 <h2>Обобщенный parameter-shift<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<p>Предложенное в <span id="id8">[<a class="reference internal" href="../bibliography.html#id55"><span>MNKF18</span></a>]</span> выражение может быть на самом деле получено в более общем виде из других соображений. Так, выражение для нашей наблюдаемой <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> может всегда быть представлено <span id="id9">[<a class="reference internal" href="../bibliography.html#id38"><span>MBK21</span></a>]</span> как сумма вида:</p>
+<p>Предложенное в <span id="id8">[<a class="reference internal" href="../bibliography.html#id54"><span>MNKF18</span></a>]</span> выражение может быть на самом деле получено в более общем виде из других соображений. Так, выражение для нашей наблюдаемой <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> может всегда быть представлено <span id="id9">[<a class="reference internal" href="../bibliography.html#id38"><span>MBK21</span></a>]</span> как сумма вида:</p>
 <div class="math notranslate nohighlight">
 \[
 \bra{U_i(\theta_i)}\hat{M}\ket{U_i(\theta_i)} = \hat{A} + \hat{B}\cos{\theta_i} + \hat{C}\sin{\theta_i}
@@ -908,7 +886,7 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
 \[
 \frac{\partial \langle M(\theta_i) \rangle}{\partial \theta_i} = \frac{\langle M(\theta_i + s) \rangle - \langle M(\theta_i - s) \rangle}{2\sin{s}}
 \]</div>
-<p>Легко заметить, что подстановка сюда <span class="math notranslate nohighlight">\(s = \frac{\pi}{2}\)</span> дает нам классический <em>parameter shift</em>, описанный в <span id="id10">[<a class="reference internal" href="../bibliography.html#id55"><span>MNKF18</span></a>]</span>.</p>
+<p>Легко заметить, что подстановка сюда <span class="math notranslate nohighlight">\(s = \frac{\pi}{2}\)</span> дает нам классический <em>parameter shift</em>, описанный в <span id="id10">[<a class="reference internal" href="../bibliography.html#id54"><span>MNKF18</span></a>]</span>.</p>
 <p>Наконец, запишем полученное выражение в более удобном виде, который позволит нам более эффективно выписывать производные высших порядков. Для этого введем вектор <span class="math notranslate nohighlight">\(\mathbf{e_i}\)</span> – единичный вектор для <span class="math notranslate nohighlight">\(i\)</span>-го параметра, то есть вектор, где все компоненты кроме <span class="math notranslate nohighlight">\(i\)</span>-й равны нулю, а <span class="math notranslate nohighlight">\(i\)</span>-я равна 1. Тогда наше финальное выражение для обобщенного <em>parameter shift</em> примет следующий вид:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -944,7 +922,7 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
 <p>Можно заметить, что, например, использование <span class="math notranslate nohighlight">\(s = \frac{\pi}{4}\)</span> для гессиана, а также “стандартного” <span class="math notranslate nohighlight">\(s=\frac{\pi}{2}\)</span> для градиента позволит полностью переиспользовать в диагональных элементах гессиана значения, которые мы получили при расчете градиента. А значение <span class="math notranslate nohighlight">\(f(\mathbf{\theta})\)</span> вообще считается один раз для всех диагональных вызовов.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>На самом деле, диагональные элементы гессиана можно использовать и сами по себе, например для квазиньютоновских методов оптимизации, где матрица Гессе аппроксимируется какой-то другой матрицей, чтобы не считать все вторые производные. Например, она может быть аппроксимирована диагональной матрицой, как в работе <span id="id13">[<a class="reference internal" href="../bibliography.html#id28"><span>And19</span></a>]</span>.</p>
+<p>На самом деле, диагональные элементы гессиана можно использовать и сами по себе, например для квазиньютоновских методов оптимизации, где матрица Гессе аппроксимируется какой-то другой матрицей, чтобы не считать все вторые производные. Например, она может быть аппроксимирована диагональной матрицой, как в работе <span id="id13">[<a class="reference internal" href="../bibliography.html#id29"><span>And19</span></a>]</span>.</p>
 </div>
 </div>
 <div class="section" id="id14">
@@ -1011,7 +989,7 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
         
           By ODS Quantum Community<br/>
         
-            &copy; Copyright 2022.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
