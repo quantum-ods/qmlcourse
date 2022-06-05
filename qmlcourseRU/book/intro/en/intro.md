@@ -1,4 +1,4 @@
-(intro_en)=
+(intro)=
 
 # About quantum computers, bitcoin, and superiority
 
