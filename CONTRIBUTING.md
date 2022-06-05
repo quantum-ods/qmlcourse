@@ -60,7 +60,7 @@ Matplotlib figures should be
 - located at the corresponding lecture folder into `_static/`;
 - using the format, for example
 
-        ```{figure} /_static/qcalgo/quantum_algorithms_overview/problem_classes.png
+        ```{figure} /_static/qcalgo/ru/quantum_algorithms_overview/problem_classes.png
         :name: problem_classes
         :width: 400px
 
@@ -68,7 +68,6 @@ Matplotlib figures should be
         ```
 
 ### Code cell
-
 
 - If code cell should be running, use `{code-cell} ipython3` like
 
@@ -101,6 +100,10 @@ To watch your result (after `git push`) you can build `Jupyter Book` automatical
 Chapters and headers in markdown must exactly follow the main structure of the book (into [`_toc.yml`](./qmlcourseRU/_toc.yml)). Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
 
 Russian & English version lectures add after comment `# :ru:` & `# :en:` accordingly.
+
+> **Note**
+>
+> Each lectures & pictures should be either `/ru/` or `/en/` folder separated.
 
 ### Glossary terms
 
