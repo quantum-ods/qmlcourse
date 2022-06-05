@@ -69,7 +69,6 @@ Matplotlib figures should be
 
 ### Code cell
 
-
 - If code cell should be running, use `{code-cell} ipython3` like
 
         ```{code-cell} ipython3
