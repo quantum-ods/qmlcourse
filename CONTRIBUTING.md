@@ -102,7 +102,7 @@ Chapters and headers in markdown must exactly follow the main structure of the b
 Russian & English version lectures add after comment `# :ru:` & `# :en:` accordingly.
 
 > **Note**
-> 
+>
 > Each lectures & pictures should be either `/ru/` or `/en/` folder separated.
 
 ### Glossary terms
