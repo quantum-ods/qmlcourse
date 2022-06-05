@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest]
 
     steps:
       - name: Checkout branch for build
@@ -55,11 +55,6 @@ jobs:
         with:
           path: .venv
           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-
-#       - name: Remove dependencies for Windows
-#         if: ${{ runner.os == 'Windows'}}
-#         run: |
-#           poetry remove tensorflow-quantum
 
       - name: Install dependencies
         run: |
