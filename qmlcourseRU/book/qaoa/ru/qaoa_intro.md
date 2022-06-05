@@ -1,4 +1,4 @@
-(intro)=
+(qaoa_intro)=
 
 # О блоке "Quantum Approximate Optimization Algorithm"
 

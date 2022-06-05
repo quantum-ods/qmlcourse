@@ -11,7 +11,7 @@
 
 - part: Основы Python
   chapters:
-    - file: book/python/ru/pythonintro.md
+    - file: book/python/ru/python_intro.md
       title: ⬜ О блоке
     - file: book/python/ru/python_l1.md
       title: 🟦 Вводная лекция про Python
@@ -36,7 +36,7 @@
 
 - part: Линейная алгебра и numpy
   chapters:
-    - file: book/linalg/ru/intro.md
+    - file: book/linalg/ru/linalg_intro.md
       title: ⬜ О блоке
     - file: book/linalg/ru/vectors.md
       title: 🟦 Векторы
@@ -56,7 +56,7 @@
 
 - part: Квантовые вычисления
   chapters:
-    - file: book/qc/ru/qcintro
+    - file: book/qc/ru/qc_intro
       title: ⬜ О блоке
     - file: book/qc/ru/qubit
       title: 🟩 Квантовый бит
@@ -67,7 +67,7 @@
 
 - part: Фреймворки
   chapters:
-    - file: book/prog/ru/progintro.md
+    - file: book/prog/ru/prog_intro.md
       title: ⬜ О блоке
     - file: book/prog/ru/progreview
       title: 🟩 Обзор фреймворков
@@ -80,7 +80,7 @@
 
 - part: Базовые квантовые алгоритмы
   chapters:
-    - file: book/qcalgo/ru/qcalgointro
+    - file: book/qcalgo/ru/qcalgo_intro
       title: ⬜ О блоке
     - file: book/qcalgo/ru/quantum_algorithms_overview
       title: 🟩 Обзор квантовых алгоритмов
@@ -97,7 +97,7 @@
 
 - part: Железо квантовых компьютеров
   chapters:
-    - file: book/hw/ru/hwintro
+    - file: book/hw/ru/hw_intro
       title: ⬜ О блоке
     - file: book/hw/ru/hwreview
       title: 🟩 Обзор
@@ -106,7 +106,7 @@
 
 - part: Квантовое машинное обучение
   chapters:
-    - file: book/qmlkinds/ru/qmlkindsintro.md
+    - file: book/qmlkinds/ru/qmlkinds_intro.md
       title: ⬜ О блоке
     - file: book/qmlkinds/ru/qmlkinds
       title: 🟦 Виды QML
@@ -117,14 +117,14 @@
 
 - part: Вариационные схемы
   chapters:
-    - file: book/vqc/ru/vqcintro
+    - file: book/vqc/ru/vqc_intro
       title: ⬜ О блоке
     - file: book/vqc/ru/vqc
       title: 🟩 Вариационные схемы
 
 - part: Квантовые градиенты
   chapters:
-    - file: book/grads/ru/gradsintro
+    - file: book/grads/ru/grads_intro
       title: ⬜ О блоке
     - file: book/grads/ru/gradients
       title: 🟩 Градиенты квантовых схем
@@ -133,7 +133,7 @@
 
 - part: Квантовый SVM
   chapters:
-    - file: book/qsvm/ru/qsvmintro
+    - file: book/qsvm/ru/qsvm_intro
       title: ⬜ О блоке
     - file: book/qsvm/ru/hybridsvm
       title: 🟩 Гибридный SVM
@@ -142,7 +142,7 @@
 
 - part: Квантовые нейронные сети
   chapters:
-    - file: book/qnn/ru/qnnintro
+    - file: book/qnn/ru/qnn_intro
       title: ⬜ О блоке
     - file: book/qnn/ru/qnn
       title: 🟩 Квантовые нейронные сети
@@ -151,7 +151,7 @@
 
 - part: Проблемы квантового машинного обучения
   chapters:
-    - file: book/problems/ru/problemsintro
+    - file: book/problems/ru/problems_intro
       title: ⬜ О блоке
     - file: book/problems/ru/quantchembasic
       title: 🟩 Квантовая химия (Введение)
@@ -166,7 +166,7 @@
 
 - part: От проблем к обучению
   chapters:
-    - file: book/problems2qml/ru/problems2qmlintro
+    - file: book/problems2qml/ru/problems2qml_intro
       title: ⬜ О блоке
     - file: book/problems2qml/ru/np2ising
       title: 🟩 NP как модели Изинга
@@ -179,7 +179,7 @@
 
 - part: VQE
   chapters:
-    - file: book/vqe/ru/vqeintro
+    - file: book/vqe/ru/vqe_intro
       title: ⬜ О блоке
     - file: book/vqe/ru/vqe
       title: 🟩 Основы VQE
@@ -188,7 +188,7 @@
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
-    - file: book/dwave/ru/dwaveintro
+    - file: book/dwave/ru/dwave_intro
       title: ⬜ О блоке
     - file: book/dwave/ru/dwave
       title: 🟩 Квантовый отжиг и семплирование
@@ -197,7 +197,7 @@
 
 - part: QAOA
   chapters:
-    - file: book/qaoa/ru/intro
+    - file: book/qaoa/ru/qaoa_intro
       title: ⬜ О блоке
     - file: book/qaoa/ru/qaoa
       title: 🟩 QAOA

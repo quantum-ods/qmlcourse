@@ -1,4 +1,4 @@
-(vqeintro)=
+(vqe_intro)=
 
 # О блоке "VQE"
 

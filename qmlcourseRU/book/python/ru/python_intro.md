@@ -1,4 +1,4 @@
-(pythonintro)=
+(python_intro)=
 
 # О блоке "Python"
 

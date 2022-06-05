@@ -1,4 +1,4 @@
-(qsvmblock)=
+(qsvm_intro)=
 
 # О блоке "Квантовый SVM"
 

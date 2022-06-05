@@ -1,4 +1,4 @@
-(qmlkindsintro)=
+(qmlkinds_intro)=
 
 # О блоке "Квантовое машинное обучение"
 

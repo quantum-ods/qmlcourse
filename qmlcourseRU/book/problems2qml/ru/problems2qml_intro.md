@@ -1,4 +1,4 @@
-(problems2qml)=
+(problems2qml_intro)=
 
 # О блоке "От задач к квантовым алгоритмам"
 
