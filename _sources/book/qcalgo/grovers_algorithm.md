@@ -25,7 +25,7 @@ kernelspec:
 
 Если наша база данных работает на основе квантовых вычислений, то мы можем применить алгоритм Гровера, и тогда такой поиск потребует всего порядка $\sqrt{N}$ действий. Конечно же, такое ускорение не будет экспоненциальным, как при использовании некоторых других квантовых алгоритмов, но оно будет квадратичным, что также довольно неплохо.
 
-```{figure} /_static/qcalgo/grovers_algorithm/Grover_photo.jpg
+```{figure} /_static/qcalgo/ru/grovers_algorithm/Grover_photo.jpg
 :name: Grover_photo
 Лов Гровер
 ```
@@ -50,7 +50,7 @@ kernelspec:
 
 Квантовая схема выглядит так:
 
-```{figure} /_static/qcalgo/grovers_algorithm/grover_2_qubits.png
+```{figure} /_static/qcalgo/ru/grovers_algorithm/grover_2_qubits.png
 :name: grover_2_qubits
 :width: 666px
 
@@ -69,7 +69,7 @@ kernelspec:
 
 Мы договорились, что в нашей учебной задаче искомый $Id$ равен $11$, так что в результате измерения мы должны получить именно это значение. Смоделируем оракул, который будет помечать этот индекс. В качестве такого оракула подойдет гейт Тоффоли ($CCNOT$). При подаче на оба его управляющих входа значений $1$, он будет применять к управляемому кубиту (это как раз будет вспомогательный кубит) гейт $X$.
 
-```{figure} /_static/qcalgo/grovers_algorithm/Toffoli_gate.png
+```{figure} /_static/qcalgo/ru/grovers_algorithm/Toffoli_gate.png
 :name: Toffoli_gate
 :width: 200px
 
@@ -94,7 +94,7 @@ $$
 
 Вектор $c$ -- состояние системы перед первой итерацией -- является линейной комбинацией векторов, соответствующим горизонтальной и вертикальной осям.
 
-```{figure} /_static/qcalgo/grovers_algorithm/grover_1a.png
+```{figure} /_static/qcalgo/ru/grovers_algorithm/grover_1a.png
 :name: grover_1a
 :width: 400px
 
@@ -126,7 +126,7 @@ $$
 
 Вектор $c_{1b}$ -- это отражение вектора $c$ на угол $\theta$ вниз относительно горизонтальной оси:
 
-```{figure} /_static/qcalgo/grovers_algorithm/grover_1b.png
+```{figure} /_static/qcalgo/ru/grovers_algorithm/grover_1b.png
 :name: grover_1b
 :width: 400px
 
@@ -148,7 +148,7 @@ $= \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle - |11\rangle)$
 
 И наконец приступаем к разбору второй части первой итерации. В ней будет происходить еще одно отражение вектора, но уже не относительно горизонтальной оси, а относительно вектора $c$. Нетрудно заметить, что при этом текущий вектор состояния станет равен $\cos{3 \theta}|a\rangle + \sin{3 \theta}|b\rangle$.
 
-```{figure} /_static/qcalgo/grovers_algorithm/grover_1c.png
+```{figure} /_static/qcalgo/ru/grovers_algorithm/grover_1c.png
 :name: grover_1c
 :width: 400px
 
@@ -170,7 +170,7 @@ $$
 
 В нашей квантовой схеме эта часть итерации реализована таким образом:
 
-```{figure} /_static/qcalgo/grovers_algorithm/iteration_part2.png
+```{figure} /_static/qcalgo/ru/grovers_algorithm/iteration_part2.png
 :name: iteration_part2
 :width: 450px
 

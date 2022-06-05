@@ -23,7 +23,7 @@
 Так что знакомство с QML не будет полным без ознакомления с этим прекрасным, но очень сложным алгоритмом!
 ```
 
-```{figure} /_static/qmlkindsblock/hhl_algorithm/614px-Seth_Lloyd.jpg
+```{figure} /_static/qmlkindsblock/ru/hhl_algorithm/614px-Seth_Lloyd.jpg
 :name: lloyd
 :width: 350px
 
@@ -71,7 +71,7 @@ $$
 
 Оказывается, что и это все можно провернуть с помощью известных квантовых преобразований. Принципиальный вид нашей схемы представлен следующим образом:
 
-```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_circuit.png
+```{figure} /_static/qmlkindsblock/ru/hhl_algorithm/hhl_circuit.png
 :name: hhl_curcuit
 :width: 800px
 
@@ -173,7 +173,7 @@ $$
 
 Принципиальная схема QPE выглядит следующим образом:
 
-```{figure} /_static/qmlkindsblock/hhl_algorithm/hhl_circuit2.png
+```{figure} /_static/qmlkindsblock/ru/hhl_algorithm/hhl_circuit2.png
 :name: hhl_curcuit2
 :width: 800px
 
