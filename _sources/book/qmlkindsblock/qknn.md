@@ -76,7 +76,7 @@ $$
 
 Далее мы алгоритм представленный в работе {cite}`basheer2021quantum`.
 
-```{figure} /_static/qmlkindsblock/ru/qknn/qknn.png
+```{figure} /_static/qmlkindsblock/qknn/qknn.png
 :name: qknn
 :width: 800px
 
@@ -107,7 +107,7 @@ $$
         CSWAP(|1\rangle|\psi\rangle|\phi\rangle) = |1\rangle|\psi\rangle|\phi\rangle
       $$
 
-      ```{figure} /_static/qmlkindsblock/ru/qknn/swap_test.png
+      ```{figure} /_static/qmlkindsblock/qknn/swap_test.png
       :name: qknn_swap_test
       :width: 500px
 

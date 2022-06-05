@@ -33,7 +33,7 @@ kernelspec:
 
 Это первая лекция основного блока нашего курса. Прежде чем мы начнем детально разбирать понятие кубита, давайте взглянем на общий пайплайн квантовых схем.
 
-```{figure} /_static/qcblock/ru/qubit/diagram.png
+```{figure} /_static/qcblock/qubit/diagram.png
 :name: qscheme
 
 Схема любого квантового алгоритма
@@ -63,7 +63,7 @@ kernelspec:
 
 Давайте вспомним мысленный эксперимента Шредингера. Кот, который одновременно и жив, и мертв. Понятно, что _значение_ кота точно одно: он либо жив, либо мертв. Но _состояние_ его более сложное. Он находится в _суперпозиции_ состояний "жив" и "мертв" одновременно.
 
-```{figure} /_static/qcblock/ru/qubit/Schrodingers_cat.png
+```{figure} /_static/qcblock/qubit/Schrodingers_cat.png
 :width: 600px
 :name: schrodingers_cat
 
@@ -280,7 +280,7 @@ $$
 
 Обозначения $\ket{0}, \ket{1}, \ket{+}, \ket{-}, \ket{R}, \ket{L}$ выбраны неслучайно: они имеют геометрический смысл.
 
-```{figure} /_static/qcblock/ru/qubit/Blochsphere.png
+```{figure} /_static/qcblock/qubit/Blochsphere.png
 :name: blochcphere
 :width: 400px
 

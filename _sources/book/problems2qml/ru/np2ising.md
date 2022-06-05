@@ -102,7 +102,7 @@ $$
 \arg\max{V_1, V_2} {\sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_2, v \in V_1))}
 $$
 
-```{figure} /_static/problemsblock/ru/ising/Max-cut.png
+```{figure} /_static/problems/ru/ising/Max-cut.png
 :width: 400px
 :name: MaxCut3
 
