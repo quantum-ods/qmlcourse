@@ -101,6 +101,10 @@ Chapters and headers in markdown must exactly follow the main structure of the b
 
 Russian & English version lectures add after comment `# :ru:` & `# :en:` accordingly.
 
+> **Note**
+> 
+> Each lectures & pictures should be either `/ru/` or `/en/` folder separated.
+
 ### Glossary terms
 
 Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common [`glossary.md`](./qmlcourseRU/book/glossary.md). On first use of a term in main book text, please refer to glossary using the format:
