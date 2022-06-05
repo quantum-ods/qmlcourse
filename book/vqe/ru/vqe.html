@@ -807,11 +807,11 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
-<p>В этой лекции рассмотрим такой классный и очень перспективный алгоритм как <code class="docutils literal notranslate"><span class="pre">Variational</span> <span class="pre">Quantum</span> <span class="pre">Eigensolver</span></code>. Это алгоритм создан для аппроксимационного решения задачи о собственных значениях матриц. Но, как помним, к этой задаче <a class="reference internal" href="../../problems2qml/ru/np2ising.html#np2ising"><span class="std std-ref">можно свести</span></a> большое число реально интересных задач, например, <em>NP</em>-трудные <a class="reference internal" href="../../problems/ru/copt.html#copt"><span class="std std-ref">задачи комбинаторной оптимизации</span></a>. Также к решению проблемы о собственных значениях спиновых систем <a class="reference internal" href="../../problems2qml/ru/jordanwigner.html#jordanwigner"><span class="std std-ref">сводятся</span></a> задачи квантовой химии, которые <a class="reference internal" href="../../problems/ru/quantchembasic.html#quantchembasic"><span class="std std-ref">обсуждались</span></a> в отдельной лекции.</p>
-<p>Задача о собственных значениях, на решение которой направлен рассматриваемый алгоритм <a class="reference internal" href="../../problems2qml/ru/eigenvals.html#eigenvals"><span class="std std-ref">обсуждалась</span></a> ранее, поэтому не будем на ней останавливаться подробно.</p>
+<p>В этой лекции рассмотрим такой классный и очень перспективный алгоритм как <code class="docutils literal notranslate"><span class="pre">Variational</span> <span class="pre">Quantum</span> <span class="pre">Eigensolver</span></code>. Это алгоритм создан для аппроксимационного решения задачи о собственных значениях матриц. Но, как помним, к этой задаче <a class="reference internal" href="../../problems2qml/ru/np2ising.html"><span class="doc std std-doc">можно свести</span></a> большое число реально интересных задач, например, <em>NP</em>-трудные <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">задачи комбинаторной оптимизации</span></a>. Также к решению проблемы о собственных значениях спиновых систем <a class="reference internal" href="../../problems2qml/ru/jordanwigner.html"><span class="doc std std-doc">сводятся</span></a> задачи квантовой химии, которые <a class="reference internal" href="../../problems/ru/quantchembasic.html"><span class="doc std std-doc">обсуждались</span></a> в отдельной лекции.</p>
+<p>Задача о собственных значениях, на решение которой направлен рассматриваемый алгоритм <a class="reference internal" href="../../problems2qml/ru/eigenvals.html"><span class="doc std std-doc">обсуждалась</span></a> ранее, поэтому не будем на ней останавливаться подробно.</p>
 <div class="section" id="id1">
 <h2>VQE<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Теперь давайте посмотрим, как эта задача связана с квантовым компьютером, а также как ее можно свести к градиентному спуску в пространстве параметров <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, содержащей лишь гейты вращения. Напомню, что наличие лишь гейтов вращения <a class="reference internal" href="../../grads/ru/gradients.html#gradients"><span class="std std-ref">позволяет эффективно считать градиенты</span></a>.</p>
+<p>Теперь давайте посмотрим, как эта задача связана с квантовым компьютером, а также как ее можно свести к градиентному спуску в пространстве параметров <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, содержащей лишь гейты вращения. Напомню, что наличие лишь гейтов вращения <a class="reference internal" href="../../grads/ru/gradients.html"><span class="doc std std-doc">позволяет эффективно считать градиенты</span></a>.</p>
 <div class="section" id="id2">
 <h3>Собственные значения как результат измерения<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Итак, есть эрмитова матрица, для которой хотим найти минимальное собственное значение. То есть сделать примерно то, что делает <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> или <strong>VMC</strong>, но на квантовом компьютере.</p>
@@ -824,7 +824,7 @@
 \[
 e = \bra{\Psi}\hat{A}\ket{\Psi}
 \]</div>
-<p>А, как помним из <a class="reference internal" href="../../vqc/ru/vqc.html#vqc"><span class="std std-ref">лекции по параметризованным квантовым схемам</span></a>, приготовленное состояние задается собственно самой схемой (еще говорят <em>ansatz</em>), а также набором ее классических параметров, которые варьируются в процессе обучения.</p>
+<p>А, как помним из <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc">лекции по параметризованным квантовым схемам</span></a>, приготовленное состояние задается собственно самой схемой (еще говорят <em>ansatz</em>), а также набором ее классических параметров, которые варьируются в процессе обучения.</p>
 <p>Так приходим к алгоритму <code class="docutils literal notranslate"><span class="pre">VQE</span></code> – <strong>V</strong>ariational <strong>Q</strong>uantum <strong>E</strong>igensolver:</p>
 <ol class="simple">
 <li><p>выбираем <em>ansatz</em> – параметризованный оператор <span class="math notranslate nohighlight">\(\hat{B}(q)\)</span>, который представляет из себя последовательность гейтов вращения; вектор <span class="math notranslate nohighlight">\(q\)</span> – это вектор из действительных чисел – параметров;</p></li>
@@ -953,7 +953,7 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 </div>
 <div class="section" id="id5">
 <h3>Обучение<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Возьмем точное решение из <a class="reference external" href="problems/ising.html#numpy">лекции по модели Изинга</a>:</p>
+<p>Возьмем точное решение из <a class="reference external" href="../../problems/ru/ising.html#numpy">лекции по модели Изинга</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exact</span> <span class="o">=</span> <span class="o">-</span><span class="mf">11.0</span>
