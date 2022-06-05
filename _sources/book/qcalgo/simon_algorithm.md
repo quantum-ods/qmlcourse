@@ -18,7 +18,6 @@ kernelspec:
 
 - [Решетова Карина](https://github.com/Carinetta)
 - [Токарев Игорь](https://github.com/polyzer)
-- [Сендерович Леонид](https://github.com/flatslm)
 
 
 ## Задача Саймона
@@ -48,7 +47,7 @@ $$
 
 Принципиальная схема алгоритма Саймона:
 
-```{figure} /_static/qcalgo/ru/simon_algorithm/simon_principal.png
+```{figure} /_static/qcalgo/simon_algorithm/simon_principal.png
 :name: simon_principal
 :width: 400px
 ```
@@ -185,8 +184,7 @@ $$
 ```{code-cell} ipython3
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
 
-
-# Работаем в пространстве размерности n = 3
+# Работаем в пространстве размерности n = 3.
 n = 3
 
 # Создаём необходимые регистры
@@ -203,7 +201,7 @@ qc.h(range(n))
 # Шаг 3. Применяем U_f
 qc.cx(qr1[0], qr2[0])
 
-# Шаг 4. Производим измерение второго регистра
+# Шаг 4. Производим измерение первого регистра
 qc.measure(qr2, cr1)
 
 # Шаг 5. Ещё раз применяем гейт адамара к каждому из кубитов
@@ -214,53 +212,6 @@ qc.measure(qr1, cr1)
 
 # Рисуем схему
 qc.draw()
-```
-При использовании Pennylane схема выглядит следующим образом:
-
-```{code-cell} ipython3
-import pennylane as qml
-import matplotlib.pyplot as plt
-from typing import Tuple, List
-
-
-n = 3
-
-dev = qml.device("default.qubit", shots=128, wires=n*2)
-
-def simon_start(N: int) -> None:
-  for i in range(N):
-    qml.Hadamard(wires=i)
-
-def simon_oracle(N: int) -> None:
-  qml.CNOT(wires=[0, N])
-
-def simon_after_oracle(N: int) -> None:
-  for i in range(N):
-    qml.Hadamard(wires=i)
-
-
-@qml.qnode(dev)
-def simon_circuit(N: int) -> Tuple[List[List[int]], List[List[int]]]:
-  simon_start(N)
-  simon_oracle(N)
-  simon_after_oracle(N)
-
-  wx = range(0, N)
-  wfx = range(N, N*2)
-
-  return qml.sample(wires=wx), qml.sample(wires=wfx)
-
-# Схема возвращает массив результатов измерений первого
-# регистра: x, и массив результатов измерения 2-го регистра: f(x).
-# количестов измерений (samples) задано через shots
-x, fx = simon_circuit(N=n)
-
-fig, ax = qml.draw_mpl(simon_circuit)(N=n)
-fig.show()
-```
-
-```{note}
-Созданная с помощью Pennylane схема визуально отличается от полученной с помощью Qiskit, так как Pennylane не позволяет выполнять операции с кубитами после выполнения измерения. Но так как с кубитами Y ([3, 4, 5]) после операции измерения не должно выполняться никаких действий, результат получается тот же самый.
 ```
 
 Теперь пройдём по всем шагам алгоритма:

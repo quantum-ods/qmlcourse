@@ -83,7 +83,7 @@ $$
 
 Для начала рассмотрим простейшую схему, с помощью которой можно отправлять число на вход и получать ответ от черного ящика:
 
-```{figure} /_static/qcalgo/ru/deutschs_algorithm/scheme_1.png
+```{figure} /_static/qcalgo/deutschs_algorithm/scheme_1.png
 :name: scheme_1
 :width: 400px
 
@@ -111,7 +111,7 @@ $$
 
 _Схема 1_ пока что не дает преимущества по сравнению с классическим компьютером, но мы можем ее немного усовершенствовать:
 
-```{figure} /_static/qcalgo/ru/deutschs_algorithm/scheme_2.png
+```{figure} /_static/qcalgo/deutschs_algorithm/scheme_2.png
 :name: scheme_2
 :width: 500px
 
