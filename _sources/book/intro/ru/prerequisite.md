@@ -1,4 +1,4 @@
-(prerequisite_ru)=
+(prerequisite)=
 
 # Пререквизиты для прохождения курса QML
 
