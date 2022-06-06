@@ -41,11 +41,11 @@ jobs:
         with:
           python-version: 3.8
 
-#       - name: cache python module
-#         uses: actions/cache@v2
-#         with:
-#           path: ./.venv
-#           key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - name: cache python module
+        uses: actions/cache@v2
+        with:
+          path: ./.venv
+          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: set up conda
         uses: s-weigand/setup-conda@v1
