@@ -31,16 +31,16 @@ import tensorflow_quantum as tfq
 [0m[1;32m     43[0m     [0;32mexcept[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/tensorflow/python/framework/load_library.py[0m in [0;36mload_op_library[0;34m(library_filename)[0m
-[1;32m     57[0m   """
-[0;32m---> 58[0;31m   [0mlib_handle[0m [0;34m=[0m [0mpy_tf[0m[0;34m.[0m[0mTF_LoadLibrary[0m[0;34m([0m[0mlibrary_filename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     59[0m   [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     56[0m   """
+[0;32m---> 57[0;31m   [0mlib_handle[0m [0;34m=[0m [0mpy_tf[0m[0;34m.[0m[0mTF_LoadLibrary[0m[0;34m([0m[0mlibrary_filename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     58[0m   [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mNotFoundError[0m: /usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/tensorflow_quantum/core/ops/_tfq_simulate_ops.so: undefined symbol: _ZN10tensorflow6StatusC1ENS_5error4CodeEN4absl12lts_2021032411string_viewEOSt6vectorINS_10StackFrameESaIS7_EE
 
 During handling of the above exception, another exception occurred:
 
 [0;31mNotFoundError[0m                             Traceback (most recent call last)
-[0;32m/tmp/ipykernel_7256/3324038471.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_6750/3324038471.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0mos[0m[0;34m.[0m[0menviron[0m[0;34m[[0m[0;34m"TF_CPP_MIN_LOG_LEVEL"[0m[0;34m][0m [0;34m=[0m [0;34m"3"[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0;32mimport[0m [0mtensorflow[0m [0;32mas[0m [0mtf[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 4[0;31m [0;32mimport[0m [0mtensorflow_quantum[0m [0;32mas[0m [0mtfq[0m[0;34m[0m[0;34m[0m[0m
@@ -86,11 +86,11 @@ During handling of the above exception, another exception occurred:
 [0;32m---> 46[0;31m         [0;32mreturn[0m [0mload_library[0m[0;34m.[0m[0mload_op_library[0m[0;34m([0m[0mpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/tensorflow/python/framework/load_library.py[0m in [0;36mload_op_library[0;34m(library_filename)[0m
-[1;32m     56[0m     [0mRuntimeError[0m[0;34m:[0m [0mwhen[0m [0munable[0m [0mto[0m [0mload[0m [0mthe[0m [0mlibrary[0m [0;32mor[0m [0mget[0m [0mthe[0m [0mpython[0m [0mwrappers[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     57[0m   """
-[0;32m---> 58[0;31m   [0mlib_handle[0m [0;34m=[0m [0mpy_tf[0m[0;34m.[0m[0mTF_LoadLibrary[0m[0;34m([0m[0mlibrary_filename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     59[0m   [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     60[0m     wrappers = _pywrap_python_op_gen.GetPythonWrappers(
+[1;32m     55[0m     [0mRuntimeError[0m[0;34m:[0m [0mwhen[0m [0munable[0m [0mto[0m [0mload[0m [0mthe[0m [0mlibrary[0m [0;32mor[0m [0mget[0m [0mthe[0m [0mpython[0m [0mwrappers[0m[0;34m.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     56[0m   """
+[0;32m---> 57[0;31m   [0mlib_handle[0m [0;34m=[0m [0mpy_tf[0m[0;34m.[0m[0mTF_LoadLibrary[0m[0;34m([0m[0mlibrary_filename[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     58[0m   [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     59[0m     wrappers = _pywrap_python_op_gen.GetPythonWrappers(
 
 [0;31mNotFoundError[0m: /usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/tensorflow_quantum/core/ops/_tfq_simulate_ops.so: undefined symbol: _ZN10tensorflow6StatusC1ENS_5error4CodeEN4absl12lts_2021032411string_viewEOSt6vectorINS_10StackFrameESaIS7_EE
 NotFoundError: /usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/tensorflow_quantum/core/ops/_tfq_simulate_ops.so: undefined symbol: _ZN10tensorflow6StatusC1ENS_5error4CodeEN4absl12lts_2021032411string_viewEOSt6vectorINS_10StackFrameESaIS7_EE

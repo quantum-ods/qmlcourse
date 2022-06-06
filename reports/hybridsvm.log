@@ -35,7 +35,7 @@ def var_layer(x):
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/tmp/ipykernel_6757/2703634271.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_7057/2703634271.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0;34m@[0m[0mqml[0m[0;34m.[0m[0mtemplate[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0;32mdef[0m [0mvar_layer[0m[0;34m([0m[0mx[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m     [0mqml[0m[0;34m.[0m[0mHadamard[0m[0;34m([0m[0mwires[0m[0;34m=[0m[0;36m0[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
