@@ -2,7 +2,7 @@
 name = "qmlcourse"
 version = "0.1.1"
 description = ""
-authors = ["SemyonSinchenko <semyonsinchenko@yahoo.com>"]
+authors = ["Quantum Machine Learning Community Course <qmlcourse.ods@gmail.com>"]
 license = "CCBY-4.0"
 
 [tool.poetry.dependencies]
