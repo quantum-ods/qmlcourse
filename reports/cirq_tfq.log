@@ -40,7 +40,7 @@ import tensorflow_quantum as tfq
 During handling of the above exception, another exception occurred:
 
 [0;31mNotFoundError[0m                             Traceback (most recent call last)
-[0;32m/tmp/ipykernel_4824/3324038471.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2284/3324038471.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0mos[0m[0;34m.[0m[0menviron[0m[0;34m[[0m[0;34m"TF_CPP_MIN_LOG_LEVEL"[0m[0;34m][0m [0;34m=[0m [0;34m"3"[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0;32mimport[0m [0mtensorflow[0m [0;32mas[0m [0mtf[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 4[0;31m [0;32mimport[0m [0mtensorflow_quantum[0m [0;32mas[0m [0mtfq[0m[0;34m[0m[0;34m[0m[0m
