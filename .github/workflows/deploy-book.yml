@@ -62,7 +62,7 @@ jobs:
           poetry run pip install -U tensorflow-quantum
 
           # poetry run pip install -U cirq
-          # poetry run pip install -U tfq-nightly
+          poetry run pip install -U tfq-nightly
 
       - name: build the book
         run: |
