@@ -44,10 +44,13 @@ jobs:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
-      - name: install dependencies
+      - name: install dependencies (if cache does not exist)
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: |
           poetry install --no-interaction --no-root
+
+      - name: install library (if required)
+        run: poetry install --no-interaction
 
       # https://www.tensorflow.org/quantum/install
       # todo: replace with a more sane solution
