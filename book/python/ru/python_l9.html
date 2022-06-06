@@ -813,7 +813,7 @@
 </ol>
 <div class="figure align-default" id="class-and-obj1">
 <a class="reference internal image-reference" href="../../../_images/class_and_obj1.png"><img alt="../../../_images/class_and_obj1.png" src="../../../_images/class_and_obj1.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Так можно проиллюстрировать соотношение “класс - объекты”. Сверху указаны общие прототипы (прямоугольник, звезда, треугольник), снизу - уникальные экземпляры, со своим цветом и деталями.</span><a class="headerlink" href="#class-and-obj1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Так можно проиллюстрировать соотношение “класс - объекты”. Сверху указаны общие прототипы (прямоугольник, звезда, треугольник), снизу - уникальные экземпляры, со своим цветом и деталями.</span><a class="headerlink" href="#class-and-obj1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Как определить тип мы уже знаем. И с объектами на самом деле мы знакомы с самого начала - ведь даже целочисленная переменная <code class="docutils literal notranslate"><span class="pre">5</span></code>, имеющая <code class="docutils literal notranslate"><span class="pre">type(5)</span> <span class="pre">=</span> <span class="pre">int</span></code>, представляет собой объект. Напомним, что говорилось в курсе ранее: <strong>методы - это те же функции, только существующие не сами по себе, а являющиеся частью класса</strong>.</p>
 <div class="cell docutils container">
@@ -831,7 +831,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Метод append имеет тип &lt;built-in method append of list object at 0x7f2022e67640&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Метод append имеет тип &lt;built-in method append of list object at 0x7f7ce4196d00&gt;
 Значение атрибута: Built-in mutable sequence.
 
 If no argument is given, the constructor creates a new empty list.
@@ -863,7 +863,7 @@ The argument must be an iterable if specified.
 <p>Конкретно в данном случае логика работы обусловлена свойствами <code class="docutils literal notranslate"><span class="pre">mutable</span></code>/<code class="docutils literal notranslate"><span class="pre">immutable</span></code> объектов, о чем также упоминалось в одной из предшествующих лекций. <code class="docutils literal notranslate"><span class="pre">int</span></code> неизменяем, и потому при вызове метода сложения возвращает новый объект - ведь самого себя изменить не получится. <code class="docutils literal notranslate"><span class="pre">list</span></code> же может меняться, и <code class="docutils literal notranslate"><span class="pre">append</span></code> меняет содержимое <code class="docutils literal notranslate"><span class="pre">inplace</span></code>.</p>
 <div class="figure align-default" id="class-and-obj-house">
 <a class="reference internal image-reference" href="../../../_images/class_and_obj_house.png"><img alt="../../../_images/class_and_obj_house.png" src="../../../_images/class_and_obj_house.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Другой житейский пример - по одному чертежу (классу) можно построить разные (но похожие!) дома, в которых разные семьи, убранство, разные обои.</span><a class="headerlink" href="#class-and-obj-house" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Другой житейский пример - по одному чертежу (классу) можно построить разные (но похожие!) дома, в которых разные семьи, убранство, разные обои.</span><a class="headerlink" href="#class-and-obj-house" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -958,7 +958,7 @@ type(example_list) = &lt;class &#39;__main__.List&#39;&gt;
 <p>В заключение еще одна картинка, иллюстрирующая суть класса, экземпляра, атрибутов и методов:</p>
 <div class="figure align-default" id="class-and-obj-pika">
 <a class="reference internal image-reference" href="../../../_images/class_and_obj_pika.png"><img alt="../../../_images/class_and_obj_pika.png" src="../../../_images/class_and_obj_pika.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Who’s that pokemon?</span><a class="headerlink" href="#class-and-obj-pika" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Who’s that pokemon?</span><a class="headerlink" href="#class-and-obj-pika" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id5">

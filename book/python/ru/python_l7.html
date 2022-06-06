@@ -1362,14 +1362,14 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f6f3be69d80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x55fc48a05960
 </pre></div>
 </div>
 </div>
 </div>
 <div class="figure align-default" id="mutable-example-0">
 <a class="reference internal image-reference" href="../../../_images/Python-Immutable-Example-1.png"><img alt="../../../_images/Python-Immutable-Example-1.png" src="../../../_images/Python-Immutable-Example-1.png" style="width: 411px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100 (цифры в нижней правой части как раз и показывают тот самый адрес)</span><a class="headerlink" href="#mutable-example-0" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100 (цифры в нижней правой части как раз и показывают тот самый адрес)</span><a class="headerlink" href="#mutable-example-0" title="Permalink to this image">¶</a></p>
 </div>
 <p>А теперь поменяем значение <code class="docutils literal notranslate"><span class="pre">counter</span></code>:</p>
 <div class="cell docutils container">
@@ -1380,7 +1380,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f6f3be6aa00&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x55fc48a065e0&#39;
 </pre></div>
 </div>
 </div>
@@ -1388,7 +1388,7 @@ Player Harry Potter is in 1st year
 <p>Кажется, что раз значение переменной <code class="docutils literal notranslate"><span class="pre">counter</span></code> поменялось, то и содержимое по предыдущему адресу изменилось? Нет, на самом деле <code class="docutils literal notranslate"><span class="pre">counter</span></code> теперь указывает в другое место:</p>
 <div class="figure align-default" id="mutable-example-1">
 <a class="reference internal image-reference" href="../../../_images/Python-Immutable-Example-2.png"><img alt="../../../_images/Python-Immutable-Example-2.png" src="../../../_images/Python-Immutable-Example-2.png" style="width: 411px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#mutable-example-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#mutable-example-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Из интересного: Python <a class="reference external" href="https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong">заранее создает объекты</a> для чисел от -5 до 256, поэтому для переменных со значением из этого диапазона берутся заранее готовые ссылки.</p>
 <div class="cell docutils container">
@@ -1431,20 +1431,20 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f6f34b2f580
-Стало: 0x7f6f34b2f580 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f37e8a725c0
+Стало: 0x7f37e8a725c0 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
 </div>
 <div class="figure align-default" id="mutable-example-2">
 <a class="reference internal image-reference" href="../../../_images/Python-Mutable-Example.png"><img alt="../../../_images/Python-Mutable-Example.png" src="../../../_images/Python-Mutable-Example.png" style="width: 402px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#mutable-example-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#mutable-example-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>После добавления еще одного, адрес <code class="docutils literal notranslate"><span class="pre">ratings</span></code> не изменился.</p>
 <div class="figure align-default" id="mutable-example2">
 <a class="reference internal image-reference" href="../../../_images/Python-Mutable-Example-2.png"><img alt="../../../_images/Python-Mutable-Example-2.png" src="../../../_images/Python-Mutable-Example-2.png" style="width: 402px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

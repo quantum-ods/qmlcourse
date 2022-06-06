@@ -842,7 +842,7 @@
 <p>Данный тип нейронных сетей нацелен на обработку изображений и представляет из себя последовательный набор <code class="docutils literal notranslate"><span class="pre">сверточных</span> <span class="pre">слоев</span></code>, чередующиеся с другими вспомогательными слоями, например, с функциями нелинейного преобразования (активациями). Пример работы <code class="docutils literal notranslate"><span class="pre">сверточного</span> <span class="pre">слоя</span></code> представлен на рисунке ниже.</p>
 <div class="figure align-default" id="d-convolution-animation">
 <img alt="../../../_images/2D_Convolution_Animation.gif" src="../../../_images/2D_Convolution_Animation.gif" />
-<p class="caption"><span class="caption-number">Fig. 115 </span><span class="caption-text">Классическая свертка</span><a class="headerlink" href="#d-convolution-animation" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 113 </span><span class="caption-text">Классическая свертка</span><a class="headerlink" href="#d-convolution-animation" title="Permalink to this image">¶</a></p>
 </div>
 <p>Свое название <code class="docutils literal notranslate"><span class="pre">сверточный</span> <span class="pre">слой</span></code> получил из-за наличия операции свертки (конволюции), суть которой в том, что каждый фрагмент входного изображения (input) умножается на матрицу (ядро размера 3х3, kernel) свертки поэлементно, а результат суммируется и записывается в аналогичную позицию выходного изображения (output).</p>
 <p><code class="docutils literal notranslate"><span class="pre">Сверточные</span> <span class="pre">слои</span></code> являются ключевыми элементами алгоритмов по распознаванию и классификации изображений. Большинство успехов в области компьютерного зрения за последнее десятилетие связано именно с ними.</p>
@@ -859,7 +859,7 @@
 </ul>
 <div class="figure align-default" id="qconv-net4">
 <a class="reference internal image-reference" href="../../../_images/qconv_net4.png"><img alt="../../../_images/qconv_net4.png" src="../../../_images/qconv_net4.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 116 </span><span class="caption-text">Квантовая свертка</span><a class="headerlink" href="#qconv-net4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 114 </span><span class="caption-text">Квантовая свертка</span><a class="headerlink" href="#qconv-net4" title="Permalink to this image">¶</a></p>
 </div>
 <p>Основное отличие по отношению к классической свертке состоит в том, что квантовая схема может генерировать очень сложные ядра, вычисления которых могут быть классически невоспроизводимыми. Указанные сложные ядра, а именно ядра в высокоразмерном пространстве Гильберта, могут дать преимущества квантовым сверткам по отношению к классическим.</p>
 <p>Пример реализации и работы такого блока квантовой свертки будет продемонстрирован ниже.</p>
@@ -881,6 +881,12 @@
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
 </pre></div>
 </div>
 </div>
@@ -925,13 +931,16 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    8192/11490434 [..............................] - ETA: 0s
+
+    8192/11490434 [..............................] - ETA: 0s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
- 8224768/11490434 [====================&gt;.........] - ETA: 0s
+  917504/11490434 [=&gt;............................] - ETA: 0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 8724480/11490434 [=====================&gt;........] - ETA: 0s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
