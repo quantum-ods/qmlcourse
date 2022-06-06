@@ -21,20 +21,20 @@ jobs:
       - name: checkout branch for build
         uses: actions/checkout@v2
 
-      - name: install imagemagick
-        run: |
-          sudo apt install -y imagemagick
+      # - name: install imagemagick
+      #   run: |
+      #     sudo apt install -y imagemagick
 
-      - name: checkout branch to gh-artifacts
-        uses: actions/checkout@v2
-        with:
-          ref: "gh-artifacts"
-          path: ./gh-artifacts
+      # - name: checkout branch to gh-artifacts
+      #   uses: actions/checkout@v2
+      #   with:
+      #     ref: "gh-artifacts"
+      #     path: ./gh-artifacts
 
-      - name: copy book module
-        if: ${{ github.event.inputs.DisableCache != 'true' }}
-        run: |
-          cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
+      # - name: copy book module
+      #   if: ${{ github.event.inputs.DisableCache != 'true' }}
+      #   run: |
+      #     cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
 
       - name: set up Python 3.8
         uses: actions/setup-python@v2.2.2
