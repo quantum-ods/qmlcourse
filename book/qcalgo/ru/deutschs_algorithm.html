@@ -835,7 +835,7 @@ f_4(1) = 0
 <p>Для начала рассмотрим простейшую схему, с помощью которой можно отправлять число на вход и получать ответ от черного ящика:</p>
 <div class="figure align-default" id="scheme-1">
 <a class="reference internal image-reference" href="../../../_images/scheme_1.png"><img alt="../../../_images/scheme_1.png" src="../../../_images/scheme_1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">Схема 1</span><a class="headerlink" href="#scheme-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">Схема 1</span><a class="headerlink" href="#scheme-1" title="Permalink to this image">¶</a></p>
 </div>
 <p><span class="math notranslate nohighlight">\(U_f\)</span> на данной схеме – это неизвестная функция (ее также часто называют “оракул”), являющаяся унитарным оператором. Обратите внимание, что в квантовой схеме используются два кубита. Это нужно для того, чтобы информация, с которой работает квантовый компьютер, не стиралась. В квантовом компьютере важно, чтобы все действия с кубитами (кроме операции измерения) были обратимыми, а для этого информация должна сохраняться. В верхнем кубите будет записано входное значение, а в нижнем – выходное значение функции. Таким образом, входное значение не будет перезаписано значением, которое вернет функция.</p>
 <p>Но нам важно будет не только сохранить значение <span class="math notranslate nohighlight">\(|x\rangle\)</span>, но также и не разрушить <span class="math notranslate nohighlight">\(|y\rangle\)</span>. Так как кубит <span class="math notranslate nohighlight">\(y\)</span> очевидно имеет некоторое изначальное значение, мы не можем его просто перезаписать тем числом, которое выдаст функция <span class="math notranslate nohighlight">\(f(x)\)</span>. Здесь на помощь приходит операция исключающее ИЛИ - <span class="math notranslate nohighlight">\(XOR\)</span> (также ее можно называть сложением по модулю 2), обозначенная на схеме как <span class="math notranslate nohighlight">\(\oplus\)</span>. В процессе работы черный ящик <span class="math notranslate nohighlight">\(U_f\)</span> не только находит значение <span class="math notranslate nohighlight">\(f(x)\)</span>, но и применяет исключающее ИЛИ к значениям <span class="math notranslate nohighlight">\(y\)</span> и <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
@@ -874,7 +874,7 @@ f_4(1) = 0
 <p><em>Схема 1</em> пока что не дает преимущества по сравнению с классическим компьютером, но мы можем ее немного усовершенствовать:</p>
 <div class="figure align-default" id="scheme-2">
 <a class="reference internal image-reference" href="../../../_images/scheme_2.png"><img alt="../../../_images/scheme_2.png" src="../../../_images/scheme_2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">Схема 2</span><a class="headerlink" href="#scheme-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">Схема 2</span><a class="headerlink" href="#scheme-2" title="Permalink to this image">¶</a></p>
 </div>
 <p>В новой схеме оба кубита вначале будут находиться в состоянии <span class="math notranslate nohighlight">\(|0\rangle\)</span>. Затем мы применим к верхнему кубиту оператор Адамара, а к нижнему – гейт <span class="math notranslate nohighlight">\(X\)</span>, а затем так же, как и к верхнему, оператор Адамара. Тем самым мы приведем оба кубита в состояние суперпозиции перед тем, как они попадут на вход функции <span class="math notranslate nohighlight">\(U_f\)</span>.
 Верхний кубит будет находиться в такой суперпозиции:</p>
@@ -967,7 +967,7 @@ f_4(1) = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:35: UserWarning: Setuptools is replacing distutils.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils.
   warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
 </pre></div>
 </div>
@@ -1048,7 +1048,7 @@ f_4(1) = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1061,7 +1061,7 @@ f_4(1) = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f1
 </pre></div>
 </div>
 </div>

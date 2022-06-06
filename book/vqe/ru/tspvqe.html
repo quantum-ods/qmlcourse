@@ -1201,16 +1201,22 @@ SciPy solution (total cost): 213.0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Далее необходимо выбрать <em>ansatz</em>. Современные квантовые процессоры обычно имеют вид решетки, типа такого:</p>
 <div class="figure align-default" id="sycamore-lattice2">
 <a class="reference internal image-reference" href="../../../_images/sycamore.png"><img alt="../../../_images/sycamore.png" src="../../../_images/sycamore.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 133 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id68"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 131 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id68"><span>AAB+19</span></a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../../bibliography.html#id33"><span>KMT+17</span></a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../../qc/ru/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../../qc/ru/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <div class="figure align-default" id="id8">
 <a class="reference internal image-reference" href="../../../_images/HWA.png"><img alt="../../../_images/HWA.png" src="../../../_images/HWA.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 134 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id33"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 132 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id33"><span>KMT+17</span></a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">
@@ -1291,6 +1297,10 @@ SciPy solution (total cost): 213.0
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda/envs/__setup_conda/lib/python3.8/site-packages/pennylane/_grad.py:95: UserWarning: Starting with PennyLane v0.21.0, when using Autograd, inputs have to explicitly specify requires_grad=True (or the argnum argument must be passed) in order for trainable parameters to be identified.
+  warnings.warn(
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 0	energy: 360.638506
 </pre></div>
 </div>
