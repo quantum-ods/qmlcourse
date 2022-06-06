@@ -58,7 +58,7 @@ jobs:
         run: |
           poetry run pip install --upgrade pip
 
-          poetry run pip install -U tensorflow==2.4.1
+          poetry run pip install -U tensorflow==2.7.0
           poetry run pip install -U tensorflow-quantum
 
           # poetry run pip install -U cirq
