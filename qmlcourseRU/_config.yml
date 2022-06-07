@@ -23,7 +23,7 @@ notebook_interface: "notebook"
 
 # repository:
 #   url: https://github.com/quantum-ods/qmlcourse
-#   path_to_book: "qmlcourseRU"
+#   path_to_book: "qmlcourse"
 
 latex:
   latex_engine: "xelatex"
@@ -38,7 +38,7 @@ latex:
       \setotherlanguage{english}
   use_jupyterbook_latex: true
   latex_documents:
-    targetname: qmlcourseRU.tex
+    targetname: qmlcourse.tex
 
 sphinx:
   config:
@@ -57,5 +57,5 @@ bibtex_bibfiles:
 
 repository:
   url: https://github.com/quantum-ods/qmlcourse
-  path_to_book: qmlcourseRU
+  path_to_book: qmlcourse
   branch: master

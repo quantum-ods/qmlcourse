@@ -25,7 +25,7 @@ jobs:
 
       - name: Copy cache for build book
         run: |
-          cp -r ./gh-artifacts/_build/ ./qmlcourseRU/ || exit 0
+          cp -r ./gh-artifacts/_build/ ./qmlcourse/ || exit 0
 
       # Install dependencies
       - name: Set up Python 3.8
@@ -73,4 +73,4 @@ jobs:
 
       - name: Build the book
         run: |
-          poetry run jupyter-book build ./qmlcourseRU
+          poetry run jupyter-book build ./qmlcourse

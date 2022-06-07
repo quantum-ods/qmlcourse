@@ -31,4 +31,4 @@ install-python-dependencies:
 
 build-linux-macos:
 #	cd $(HOME)/psi4conda/etc/profile.d/ && source conda.sh && conda activate && cd - && poetry run psi4 --test
-	poetry run jupyter-book build ./qmlcourseRU
+	poetry run jupyter-book build ./qmlcourse

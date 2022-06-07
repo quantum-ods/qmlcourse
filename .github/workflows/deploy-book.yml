@@ -49,16 +49,16 @@ jobs:
       - name: build the book
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
-          poetry run jupyter-book build ./qmlcourseRU
+          poetry run jupyter-book build ./qmlcourse
 
       - name: build latex files
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
-          poetry run jupyter-book build ./qmlcourseRU --builder latex
+          poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: gh-pages action to `pages-gh`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU/_build/html/
+          publish_dir: ./qmlcourse/_build/html/
           publish_branch: pages-gh
