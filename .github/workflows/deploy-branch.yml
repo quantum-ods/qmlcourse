@@ -1,18 +1,18 @@
-name: deploy-book
+name: deploy-branch
 
 on:
   workflow_dispatch:
-    inputs:
-      DisableCache:
-        description: 'disable cache'
-        required: false
-        default: 'false'
+    # inputs:
+    #   DisableCache:
+    #     description: 'disable cache'
+    #     required: false
+    #     default: 'false'
   push:
     branches: [ master ]
 
 jobs:
 
-  deploy_book:
+  deploy_branch:
     runs-on: ubuntu-latest
     env:
       TF_CPP_MIN_LOG_LEVEL: 3
@@ -76,9 +76,9 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourseRU --builder latex
 
-      - name: gh-pages action to `pages-gh`
+      - name: update publish dir
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourseRU/_build/html/
-          publish_branch: pages-gh
+          publish_branch: deploy-any-branch
