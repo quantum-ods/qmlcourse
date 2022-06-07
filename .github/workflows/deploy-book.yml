@@ -2,11 +2,6 @@ name: deploy-book
 
 on:
   workflow_dispatch:
-    inputs:
-      DisableCache:
-        description: 'disable cache'
-        required: false
-        default: 'false'
   push:
     branches: [ master ]
 
@@ -14,8 +9,7 @@ jobs:
 
   deploy_book:
     runs-on: ubuntu-latest
-    env:
-      TF_CPP_MIN_LOG_LEVEL: 3
+    timeout-minutes: 20
 
     steps:
       - name: checkout branch for build
@@ -51,20 +45,6 @@ jobs:
 
       - name: install library (if required)
         run: poetry install --no-interaction
-
-      # https://www.tensorflow.org/quantum/install
-      # todo: replace with a more sane solution
-      - name: install tensorflow_quantum
-        run: |
-          poetry run pip install --upgrade pip
-
-          poetry run pip install -U tensorflow==2.7.0
-
-          poetry run pip install -U cirq==0.11.1
-          poetry run pip install -U tensorflow-quantum
-
-          poetry run pip install -U cirq==0.11.1
-          poetry run pip install -U tfq-nightly
 
       - name: build the book
         run: |

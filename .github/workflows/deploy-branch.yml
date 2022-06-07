@@ -44,20 +44,6 @@ jobs:
       - name: install library (if required)
         run: poetry install --no-interaction
 
-      # # https://www.tensorflow.org/quantum/install
-      # # todo: replace with a more sane solution
-      # - name: install tensorflow_quantum
-      #   run: |
-      #     poetry run pip install --upgrade pip
-
-      #     poetry run pip install -U tensorflow==2.7.0
-
-      #     poetry run pip install -U cirq==0.11.1
-      #     poetry run pip install -U tensorflow-quantum
-
-      #     poetry run pip install -U cirq==0.11.1
-      #     poetry run pip install -U tfq-nightly
-
       - name: build the book
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
