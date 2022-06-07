@@ -2,24 +2,22 @@ name: deploy-branch
 
 on:
   workflow_dispatch:
-    # inputs:
-    #   DisableCache:
-    #     description: 'disable cache'
-    #     required: false
-    #     default: 'false'
-  push:
-    branches: [ master ]
 
 jobs:
 
   deploy_branch:
     runs-on: ubuntu-latest
-    env:
-      TF_CPP_MIN_LOG_LEVEL: 3
+    timeout-minutes: 20
 
     steps:
-      - name: checkout branch for build
+      - name: checkout code
         uses: actions/checkout@v2
+
+      - name: checkout branch to gh-artifacts
+        uses: actions/checkout@v2
+        with:
+          ref: "gh-artifacts"
+          path: ./gh-artifacts
 
       - name: install imagemagick
         run: |
