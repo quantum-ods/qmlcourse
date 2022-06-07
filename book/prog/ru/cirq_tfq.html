@@ -1104,10 +1104,12 @@ title="Print to PDF"
 <h3>Импорты и схема<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code> нельзя установить на <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, поэтому те <code class="docutils literal notranslate"><span class="pre">Makefiles</span></code>, которые мы сделали для слушателей не содержат шаг установки <code class="docutils literal notranslate"><span class="pre">tensorflow-quantum</span></code>. Если ваша система <code class="docutils literal notranslate"><span class="pre">POSIX</span></code>-совместимая и вы хотите обязательно попробовать запустить примеры кода из этой лекции, то просто в корне данного репозитория наберите команду:</p>
-<p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow-quantum==0.5.1</span></code></p>
-<p>Обладателям компьютеров на системе <code class="docutils literal notranslate"><span class="pre">Windows</span></code> мы можем лишь предложить использовать <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about"><code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a> или <code class="docutils literal notranslate"><span class="pre">Docker</span></code>. В целом эта лекция факультативная и нигде далее <code class="docutils literal notranslate"><span class="pre">TFQ</span></code> у нас не используется.</p>
-<p>Больше информации можно найти в <a class="reference external" href="https://www.tensorflow.org/quantum/install">разделе про установку</a> в официальной документации этой библиотеки.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code> нельзя установить на <code class="docutils literal notranslate"><span class="pre">Windows</span></code>. Если система <code class="docutils literal notranslate"><span class="pre">POSIX</span></code>-совместимая и хотите попробовать запустить примеры кода из этой лекции, то просто в корне данного репозитория наберите команду (если уже установили <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>poetry run pip install tensorflow-quantum==0.5.1
+</pre></div>
+</div>
+<p>Обладателям компьютеров на системе <code class="docutils literal notranslate"><span class="pre">Windows</span></code> можем лишь предложить использовать <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about"><code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a> или <code class="docutils literal notranslate"><span class="pre">Docker</span></code>. В целом эта лекция факультативная и нигде далее <code class="docutils literal notranslate"><span class="pre">TFQ</span></code> не используется.</p>
+<p>А так, больше информации по установке можно найти в <a class="reference external" href="https://www.tensorflow.org/quantum/install">разделе про установку</a> в официальной документации или у них же на <a class="reference external" href="https://github.com/tensorflow/quantum/blob/master/docs/install.md">GitHub</a>.</p>
 </div>
 <p>Для начала импортируем <code class="docutils literal notranslate"><span class="pre">cirq</span></code>.</p>
 <div class="cell docutils container">
@@ -1167,13 +1169,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.6
 dtype: float64
 
-100 сэмплов: (0, 0)    0.51
+100 сэмплов: (0, 0)    0.46
 dtype: float64
 
-1000 сэмплов: (0, 0)    0.503
+1000 сэмплов: (0, 0)    0.5
 dtype: float64
 </pre></div>
 </div>
@@ -1191,7 +1193,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=0011100110011011100010110
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=0011100011100100011011100
 </pre></div>
 </div>
 </div>
@@ -1456,11 +1458,11 @@ _________________________________________________________________
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.35 s, sys: 102 ms, total: 4.46 s
-Wall time: 4.02 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.62 s, sys: 38.2 ms, total: 4.66 s
+Wall time: 4.19 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7ff9740e2e50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f5734313be0&gt;
 </pre></div>
 </div>
 </div>
