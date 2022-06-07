@@ -10,14 +10,8 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - name: checkout code
+      - name: checkout branch for build
         uses: actions/checkout@v2
-
-      - name: checkout branch to gh-artifacts
-        uses: actions/checkout@v2
-        with:
-          ref: "gh-artifacts"
-          path: ./gh-artifacts
 
       - name: install imagemagick
         run: |
