@@ -29,34 +29,34 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
 
-      - name: load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+      # - name: load cached venv
+      #   id: cached-poetry-dependencies
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: .venv
+      #     key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: install dependencies (if cache does not exist)
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        # if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: |
           poetry install --no-interaction --no-root
 
-      - name: install library (if required)
-        run: poetry install --no-interaction
+      # - name: install library (if required)
+      #   run: poetry install --no-interaction
 
       - name: build the book
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
-          poetry run jupyter-book build ./qmlcourse
+          poetry run jupyter-book build ./qmlcourseRU
 
       - name: build latex files
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
-          poetry run jupyter-book build ./qmlcourse --builder latex
+          poetry run jupyter-book build ./qmlcourseRU --builder latex
 
       - name: update publish dir
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/html/
+          publish_dir: ./qmlcourseRU/_build/html/
           publish_branch: deploy-any-branch
