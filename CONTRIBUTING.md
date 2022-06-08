@@ -97,7 +97,7 @@ To watch your result (after `git push`) you can build `Jupyter Book` automatical
 
 ### Chapters and headers
 
-Chapters and headers in markdown must exactly follow the main structure of the book (into [`_toc.yml`](./qmlcourseRU/_toc.yml)). Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
+Chapters and headers in markdown must exactly follow the main structure of the book (into [`_toc.yml`](./qmlcourse/_toc.yml)). Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
 
 Russian & English version lectures add after comment `# :ru:` & `# :en:` accordingly.
 
@@ -107,7 +107,7 @@ Russian & English version lectures add after comment `# :ru:` & `# :en:` accordi
 
 ### Glossary terms
 
-Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common [`glossary.md`](./qmlcourseRU/book/glossary.md). On first use of a term in main book text, please refer to glossary using the format:
+Please add all terms, preferably with short explanations (and, for Russian variant, its English original) to common [`glossary.md`](./qmlcourse/book/glossary.md). On first use of a term in main book text, please refer to glossary using the format:
 
 ```markdown
 {term}`chapter text<glossary term>`
@@ -117,7 +117,7 @@ Please add all terms, preferably with short explanations (and, for Russian varia
 
 ### Bibliography
 
-We stick to adding as many as possible links to papers/books/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourseRU/_bibliography/references.bib) (sorted alphabetically) like
+We stick to adding as many as possible links to papers/books/.. to confirm our words. For this we have the page [`bibliography`](./qmlcourse/_bibliography/references.bib) (sorted alphabetically) like
 
 ```markdown
 {cite}`farhi2014quantum`
@@ -188,7 +188,7 @@ Also, we have a spell-checker and it requires simple manual intervention. If
 
 If you make a lecture, review the course you should add yourself to
 
-- a full list of the authors [here](./qmlcourseRU/book/authors.md)
+- a full list of the authors [here](./qmlcourse/book/authors.md)
 - in the header lecture
 
 The list is sorted alphabetically and you need to place your surname and name (or nickname if you want) and link to the GitHub account into the corresponding dropdown block or another webpage if you want.

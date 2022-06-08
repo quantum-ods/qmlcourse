@@ -1,4 +1,4 @@
-<img src="./qmlcourseRU/logo.svg" align="left" width="178" height="178"></img>
+<img src="./qmlcourse/logo.svg" align="left" width="178" height="178"></img>
 
 # QMLCourse
 
@@ -46,7 +46,7 @@ Also, we have
 
 ## Course Program
 
-![](./qmlcourseRU/_static/index/program.png)
+![](./qmlcourse/_static/index/program.png)
 
 ### How to read the schema?
 
@@ -70,7 +70,7 @@ xelatex, Linux:
   ```
 
   ```
-  xelatex -interaction nonstopmode qmlcourseRU.tex
+  xelatex -interaction nonstopmode qmlcourse.tex
   ```
 
 ## Team
