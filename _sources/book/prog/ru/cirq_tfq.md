@@ -32,13 +32,13 @@ kernelspec:
 ### Импорты и схема
 
 ```{warning}
-`Tensorflow Quantum` нельзя установить на `Windows`, поэтому те `Makefiles`, которые мы сделали для слушателей не содержат шаг установки `tensorflow-quantum`. Если ваша система `POSIX`-совместимая и вы хотите обязательно попробовать запустить примеры кода из этой лекции, то просто в корне данного репозитория наберите команду:
+`Tensorflow Quantum` нельзя установить на `Windows`. Если система `POSIX`-совместимая и хотите попробовать запустить примеры кода из этой лекции, то просто в корне данного репозитория наберите команду (если уже установили `tensorflow`):
 
-`poetry run pip install tensorflow-quantum==0.5.1`
+    poetry run pip install tensorflow-quantum==0.5.1
 
-Обладателям компьютеров на системе `Windows` мы можем лишь предложить использовать [`WSL2`](https://docs.microsoft.com/en-us/windows/wsl/about) или `Docker`. В целом эта лекция факультативная и нигде далее `TFQ` у нас не используется.
+Обладателям компьютеров на системе `Windows` можем лишь предложить использовать [`WSL2`](https://docs.microsoft.com/en-us/windows/wsl/about) или `Docker`. В целом эта лекция факультативная и нигде далее `TFQ` не используется.
 
-Больше информации можно найти в [разделе про установку](https://www.tensorflow.org/quantum/install) в официальной документации этой библиотеки.
+А так, больше информации по установке можно найти в [разделе про установку](https://www.tensorflow.org/quantum/install) в официальной документации или у них же на [GitHub](https://github.com/tensorflow/quantum/blob/master/docs/install.md).
 ```
 
 Для начала импортируем `cirq`.
