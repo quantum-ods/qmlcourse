@@ -60,7 +60,7 @@ Also, we have
 
 Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
 
-xelatex, Linux:
+`xelatex` (Linux):
 
   ```
   git clone https://github.com/quantum-ods/qmlcourse.git
