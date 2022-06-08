@@ -42,7 +42,7 @@ jobs:
           poetry install --no-interaction --no-root
 
       - name: install library (if required)
-        run: poetry install --no-interaction
+        run: poetry install --no-interaction --no-root
 
       - name: build the book
         run: |
