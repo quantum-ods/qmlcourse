@@ -2,6 +2,11 @@ name: deploy-branch
 
 on:
   workflow_dispatch:
+    inputs:
+      DisableCache:
+        description: 'disable cache'
+        required: false
+        default: 'false'
 
 jobs:
 
@@ -37,11 +42,13 @@ jobs:
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: install dependencies (if cache does not exist)
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        # if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        if: ${{ github.event.inputs.DisableCache != 'true' }}
         run: |
           poetry install --no-interaction --no-root
 
       - name: install library (if required)
+        if: ${{ github.event.inputs.DisableCache != 'false' }}
         run: poetry install --no-interaction
 
       - name: build the book
