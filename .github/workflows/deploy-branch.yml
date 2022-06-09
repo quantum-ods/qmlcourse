@@ -49,7 +49,6 @@ jobs:
       - name: build latex files
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
-          poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
 
           poetry run jupyter-book build ./qmlcourse --builder latex
 
