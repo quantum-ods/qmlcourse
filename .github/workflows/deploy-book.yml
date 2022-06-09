@@ -38,22 +38,21 @@ jobs:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
-      - name: install dependencies (if cache does not exist)
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      - name: install dependencies
         run: |
           poetry install --no-interaction --no-root
-
-      - name: install library (if required)
-        run: poetry install --no-interaction --no-root
 
       - name: build the book
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
+
           poetry run jupyter-book build ./qmlcourse
 
       - name: build latex files
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: gh-pages action to `pages-gh`
