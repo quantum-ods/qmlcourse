@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сверхпроводниковые кубиты &#8212; QMLCourse</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -19,8 +18,12 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -28,8 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -38,8 +40,8 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -47,7 +49,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/hw/ru/scqubits.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -71,21 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,10 +82,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -115,15 +102,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../index.html">
-                    Приветствие / Welcome
-                </a>
-            </li>
-        </ul>
-        <p class="caption">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Приветствие / Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Введение
  </span>
@@ -677,17 +663,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -695,162 +676,77 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/quantum-ods/qmlcourse"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/hw/ru/scqubits.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/book/hw/ru/scqubits.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/book/hw/ru/scqubits.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/hw/ru/scqubits.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
    Квантование электрических цепей
@@ -893,11 +789,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Сверхпроводниковые кубиты</h1>
@@ -956,17 +853,16 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <div class="section" id="scqubits">
+  <div class="tex2jax_ignore mathjax_ignore section" id="scqubits">
 <span id="id1"></span><h1>Сверхпроводниковые кубиты<a class="headerlink" href="#scqubits" title="Permalink to this headline">¶</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ooovector">Беседин Илья</a></p></li>
 </ul>
-<p>Сверхпроводниковые кубиты относятся к наиболее успешным типам кубитов для квантовых вычислений и симуляции на сегодняшний день. Google впервые продемонстрировала квантовое превосходство на квантовом процессоре из 53 сверхпроводниковых кубитов-трансмонов <span id="id2">[<a class="reference internal" href="../../bibliography.html#id68"><span>AAB+19</span></a>]</span>. Кроме Google, сверхпроводниковые кубиты используют IBM (в том числе для своего открытого облачного проекта IBM Quantum Experience), Riggetti Computing и другие крупные фирмы и лаборатории по всему миру.</p>
+<p>Сверхпроводниковые кубиты относятся к наиболее успешным типам кубитов для квантовых вычислений и симуляции на сегодняшний день. Google впервые продемонстрировала квантовое превосходство на квантовом процессоре из 53 сверхпроводниковых кубитов-трансмонов <span id="id2">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span>. Кроме Google, сверхпроводниковые кубиты используют IBM (в том числе для своего открытого облачного проекта IBM Quantum Experience), Riggetti Computing и другие крупные фирмы и лаборатории по всему миру.</p>
 <div class="figure align-default" id="two-qubit-quantum-processor">
 <a class="reference internal image-reference" href="../../../_images/two-qubit-chip.png"><img alt="../../../_images/two-qubit-chip.png" src="../../../_images/two-qubit-chip.png" style="width: 550px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">Фотографии, изображения со сканирующего электронного микроскопа и эквивалентная электрическая схема микросхемы сверхпроводникового квантового процессора с двумя кубитами-трансмонами. Синим отмечен электрод одного из трансмонов. Микросхема была изготовлена в НОЦ ФМН в МГТУ им. Баумана, топология разработана в НИТУ МИСиС.</span><a class="headerlink" href="#two-qubit-quantum-processor" title="Permalink to this image">¶</a></p>
@@ -974,7 +870,7 @@ title="Print to PDF"
 <p>Квантовый процессор на сверхпроводниковых кубитах – это электрическая цепь. Эту электрическую цепь можно изобразить в схемы с квазисосредоточенными элементами.</p>
 <div class="section" id="id3">
 <h2>Квантование электрических цепей<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Электрические цепи, как и любые другие физические объекты, могут быть описаны с помощью законов квантовой механики <span id="id4">[<a class="reference internal" href="../../bibliography.html#id14"><span>VD17</span></a>]</span>. Для этого следует начать с гамильтонового описания, например с помощью функции Лагранжа. Энергия всей физической системы (электрической цепи) должна быть записана в виде суммы энергий, накопленных ее составными частями (сосредоточенных элементов), выраженной через динамическое переменные системы и их производные. Самые простые электрические элементы, такие как конденсаторы и индукторы, запасают энергию <span class="math notranslate nohighlight">\(E_C\)</span> и <span class="math notranslate nohighlight">\(E_L\)</span> в электрическом и магнитном поле, а выражение для них можно записать либо через заряд на обкладках <span class="math notranslate nohighlight">\(Q\)</span> и поток через кольцо <span class="math notranslate nohighlight">\(\Phi\)</span>, либо через напряжение <span class="math notranslate nohighlight">\(V\)</span> и ток <span class="math notranslate nohighlight">\(I\)</span>, соответственно:</p>
+<p>Электрические цепи, как и любые другие физические объекты, могут быть описаны с помощью законов квантовой механики <span id="id4">[<a class="reference internal" href="../../bibliography.html#id14" title="Uri Vool and Michel Devoret. Introduction to quantum electromagnetic circuits. International Journal of Circuit Theory and Applications, 45(7):897–934, 2017. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/cta.2359, doi:10.1002/cta.2359.">VD17</a>]</span>. Для этого следует начать с гамильтонового описания, например с помощью функции Лагранжа. Энергия всей физической системы (электрической цепи) должна быть записана в виде суммы энергий, накопленных ее составными частями (сосредоточенных элементов), выраженной через динамическое переменные системы и их производные. Самые простые электрические элементы, такие как конденсаторы и индукторы, запасают энергию <span class="math notranslate nohighlight">\(E_C\)</span> и <span class="math notranslate nohighlight">\(E_L\)</span> в электрическом и магнитном поле, а выражение для них можно записать либо через заряд на обкладках <span class="math notranslate nohighlight">\(Q\)</span> и поток через кольцо <span class="math notranslate nohighlight">\(\Phi\)</span>, либо через напряжение <span class="math notranslate nohighlight">\(V\)</span> и ток <span class="math notranslate nohighlight">\(I\)</span>, соответственно:</p>
 <div class="math notranslate nohighlight">
 \[
 E_C = \frac{Q^2}{2C}=\frac{CV^2}{2},
@@ -1067,7 +963,7 @@ L_J=\frac{1}{\frac{\partial^2 E}{\partial \Phi^2}} =
 <img alt="../../../_images/Transmon.png" src="../../../_images/Transmon.png" />
 <p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">Электрическая схема трансмона. <span class="math notranslate nohighlight">\(I_c\)</span> – критический ток контакта, <span class="math notranslate nohighlight">\(C_S\)</span> – шунтриующая емкость, <span class="math notranslate nohighlight">\(C_J\)</span> – емкость контакта</span><a class="headerlink" href="#transmon-electric-circuit" title="Permalink to this image">¶</a></p>
 </div>
-<p>Самый простой, и в то же время один самых успешных видов сверхпроводниковых кубитов – это трансмон<span id="id7">[<a class="reference internal" href="../../bibliography.html#id7"><span>KYG+07</span></a>]</span>. Трансмон представляет собой ангармонический осциллятор на основе наноразмерного джозефсоновского контакта, шунтированного емкостью. Такая цепь хорошо известна в сверхпроводниковой электронике, а ее резонансная частота называется плазменной частотой:</p>
+<p>Самый простой, и в то же время один самых успешных видов сверхпроводниковых кубитов – это трансмон<span id="id7">[<a class="reference internal" href="../../bibliography.html#id7" title="Jens Koch, Terri M Yu, Jay Gambetta, A A Houck, D I Schuster, J Majer, Alexandre Blais, M H Devoret, S M Girvin, and R J Schoelkopf. Charge-insensitive qubit design derived from the Cooper pair box. Physical Review A, 10 2007. doi:10.1103/physreva.76.042319.">KYG+07</a>]</span>. Трансмон представляет собой ангармонический осциллятор на основе наноразмерного джозефсоновского контакта, шунтированного емкостью. Такая цепь хорошо известна в сверхпроводниковой электронике, а ее резонансная частота называется плазменной частотой:</p>
 <div class="math notranslate nohighlight">
 \[
 \omega_{\mathrm{p}} = \frac{1}{\sqrt{L_{J}(C_J+C_S)}}.
@@ -1105,7 +1001,7 @@ E_J=\frac{I_c\Phi_0}{2\pi},
 </div>
 <div class="section" id="id8">
 <h2>Считывание<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p>Считывание состояния кубита в сверхпроводящих цепях, как правило, осуществляется методом дисперсионного считывания <span id="id9">[<a class="reference internal" href="../../bibliography.html#id15"><span>WSB+05</span></a>]</span>. В основе дисперсионного считывания состояния сверхпроводниковых кубитов стоит архитектура квантовой электродинамики в электрической цепи, в которой сверхпроводниковый кубит связан с микроволновым резонатором. Концепция квантовой электродинамики в электрической цепи возникла по аналогии с квантовой электродинамикой в полости, где уединенный атом помещается в оптическую полость, которая выступает в роли резонатора. Взаимодействие такого атома с излучением сильно отличается от того, что происходит с таким атомом, помещенном в вакуум: из-за отражений от стенок полости, излучение не может эффективно покинуть атом. Это увеличивает время жизни атома, если резонансная частота полости находится вдали от спектральной линии кубита. Напротив, если атом находится в резонансе с полостью, то это стимулирует излучение.</p>
+<p>Считывание состояния кубита в сверхпроводящих цепях, как правило, осуществляется методом дисперсионного считывания <span id="id9">[<a class="reference internal" href="../../bibliography.html#id15" title="A. Wallraff, D. I. Schuster, A. Blais, L. Frunzio, J. Majer, M. H. Devoret, S. M. Girvin, and R. J. Schoelkopf. Approaching unit visibility for control of a superconducting qubit with dispersive readout. Physical Review Letters, 95(6):060501, 8 2005. URL: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.060501, arXiv:0502645, doi:10.1103/PhysRevLett.95.060501.">WSB+05</a>]</span>. В основе дисперсионного считывания состояния сверхпроводниковых кубитов стоит архитектура квантовой электродинамики в электрической цепи, в которой сверхпроводниковый кубит связан с микроволновым резонатором. Концепция квантовой электродинамики в электрической цепи возникла по аналогии с квантовой электродинамикой в полости, где уединенный атом помещается в оптическую полость, которая выступает в роли резонатора. Взаимодействие такого атома с излучением сильно отличается от того, что происходит с таким атомом, помещенном в вакуум: из-за отражений от стенок полости, излучение не может эффективно покинуть атом. Это увеличивает время жизни атома, если резонансная частота полости находится вдали от спектральной линии кубита. Напротив, если атом находится в резонансе с полостью, то это стимулирует излучение.</p>
 <div class="figure align-default" id="cqed-electric-circuit">
 <img alt="../../../_images/cQED.png" src="../../../_images/cQED.png" />
 <p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text">Эквивалентная электрическая схема трансмона, связанного с резонатором. Синий — электрод резонатора, зеленый — электрод трансмона</span><a class="headerlink" href="#cqed-electric-circuit" title="Permalink to this image">¶</a></p>
@@ -1326,7 +1222,7 @@ I_{\mathrm{C SQUID}}(\Phi_x) = \sqrt{\left(I_{\mathrm{Cc1}} + I_{\mathrm{Cc2}}\r
 \hat{V} = i\hbar \hat{U}\frac{\partial \hat{U}^\dagger}{\partial \Phi_x}\frac{\partial \Phi_x}{\partial t}
 \sim \Omega\left(\hat{a}^\dagger + \hat{a}\right)\left(\hat{b}^\dagger + \hat{b}\right).
 \]</div>
-<p>Мы не будем здесь подробно рассматривать природу этого слагаемого; подробнее об этом можно почитать, например, в работе <span id="id13">[<a class="reference internal" href="../../bibliography.html#id12"><span>RGM+17</span></a>]</span>. Ограничимся тем, что это взаимодействие является поперечным, то есть <span class="math notranslate nohighlight">\(xx\)</span>-взаимодействием. Если модулировать поток в СКВИДе в резонансе с разностью частот между кубитами (<span class="math notranslate nohighlight">\(n \omega_m = \omega_1 - \omega_2\)</span>, где <span class="math notranslate nohighlight">\(n\)</span> – номер гармоники), то возбуждение с одного кубита будет переходить на другой, и обратно.</p>
+<p>Мы не будем здесь подробно рассматривать природу этого слагаемого; подробнее об этом можно почитать, например, в работе <span id="id13">[<a class="reference internal" href="../../bibliography.html#id12" title="Marco Roth, Marc Ganzhorn, Nikolaj Moll, Stefan Filipp, Gian Salis, and Sebastian Schmidt. Analysis of a parametrically driven exchange-type gate and a two-photon excitation gate between superconducting qubits. Physical Review A, 2017. doi:10.1103/PhysRevA.96.062323.">RGM+17</a>]</span>. Ограничимся тем, что это взаимодействие является поперечным, то есть <span class="math notranslate nohighlight">\(xx\)</span>-взаимодействием. Если модулировать поток в СКВИДе в резонансе с разностью частот между кубитами (<span class="math notranslate nohighlight">\(n \omega_m = \omega_1 - \omega_2\)</span>, где <span class="math notranslate nohighlight">\(n\)</span> – номер гармоники), то возбуждение с одного кубита будет переходить на другой, и обратно.</p>
 <div class="figure align-default" id="two-qubit-parametric-gate">
 <a class="reference internal image-reference" href="../../../_images/two-qubit-pulse-sequence-parametric.png"><img alt="../../../_images/two-qubit-pulse-sequence-parametric.png" src="../../../_images/two-qubit-pulse-sequence-parametric.png" style="width: 550px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 86 </span><span class="caption-text">Последовательность сигналов, которую нужно подать, чтобы наблюдать осцилляции населенности между кубитами, и результат из наблюдения. iSWAP получается при длительности вентиля <span class="math notranslate nohighlight">\(T_p=500~\mathrm{ns}\)</span></span><a class="headerlink" href="#two-qubit-parametric-gate" title="Permalink to this image">¶</a></p>
@@ -1348,7 +1244,7 @@ I_{\mathrm{C SQUID}}(\Phi_x) = \sqrt{\left(I_{\mathrm{Cc1}} + I_{\mathrm{Cc2}}\r
 <h2>Что почитать для дальнейшего изучения вопроса?<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiskit.org/learn/intro-qc-qh/">Introduction to Quantum Computing and Quantum Hardware</a></p></li>
-<li><p><a class="reference external" href="https://arxiv.org/abs/1904.06560">A Quantum Engineer’s Guide to Superconducting Qubits</a> <span id="id15">[<a class="reference internal" href="../../bibliography.html#id8"><span>KKY+19</span></a>]</span></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1904.06560">A Quantum Engineer’s Guide to Superconducting Qubits</a> <span id="id15">[<a class="reference internal" href="../../bibliography.html#id8" title="P Krantz, M Kjaergaard, F Yan, T P Orlando, S Gustavsson, and W D Oliver. A Guide to Superconducting Qubits for New Quantum Information Engineers. Applied Physics Review, 2019. arXiv:1904.06560v1.">KKY+19</a>]</span></p></li>
 </ul>
 </div>
 </div>
@@ -1375,11 +1271,9 @@ I_{\mathrm{C SQUID}}(\Phi_x) = \sqrt{\left(I_{\mathrm{Cc1}} + I_{\mathrm{Cc2}}\r
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="hwreview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1395,28 +1289,24 @@ I_{\mathrm{C SQUID}}(\Phi_x) = \sqrt{\left(I_{\mathrm{Cc1}} + I_{\mathrm{Cc2}}\r
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By ODS Quantum Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By ODS Quantum Community<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
