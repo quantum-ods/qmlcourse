@@ -27,7 +27,7 @@
 
 > **Note**
 > * Russian-only
-> * English version translation help tube, visit [CONTRIBUTING.md](./CONTRIBUTING.md)
+> * English version translation help tube, visit [issue #399](https://github.com/quantum-ods/qmlcourse/issues/399) & [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Contributing
 
