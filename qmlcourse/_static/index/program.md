@@ -1,0 +1,50 @@
+```mermaid
+flowchart TB
+
+    subgraph week_1 [Week 1]
+
+        subgraph part_introduction [Introduction]
+            intro[Quantum Computers, Bitcoin and Quantum Advantage]
+        end
+
+        subgraph part_prerequisites [Prerequisites]
+            python_intro[ML Intro]
+            linalg_numpy_intro[Linalg & Numpy]
+            ml_intro[Python Intro]
+        end
+
+        part_introduction --> part_prerequisites
+
+    end
+
+    subgraph week_2 [Week 2]
+        subgraph part_quantum_computing [Quantum Computing]
+
+            subgraph subpart_qubit [Qubit]
+
+                qubit[Qubit] -.-> qubit_mixed([Mixed States])
+
+            end
+
+            subpart_qubit --> gates[Gates]
+
+        end
+
+        subgraph part_programming_qc [Programming QC]
+
+            subgraph subpart_frameworks_overview [Frameworks Overview]
+
+                frameworks_overview[Frameworks Overview] -.-> qiskit([Qiskit]) & cirq_tfq([Cirq & TFQ])
+
+            end
+
+            subpart_frameworks_overview --> pennylane[PennyLane]
+
+        end
+
+    end
+
+        part_quantum_computing --> part_programming_qc
+
+    week_1 --> week_2
+```
