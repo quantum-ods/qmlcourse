@@ -19,7 +19,7 @@ package "Week 2" {
         package "Quantum Computing" as qci #Bisque {
                 rectangle "Qubit" as qubit #40B464
                 rectangle "Gates" as gates #40B464
-                rectangle "Mixed Stated" as mixed #FFC864
+                rectangle "Mixed States" as mixed #FFC864
         }
 
         package "Programming QC" #Bisque {
