@@ -50,6 +50,8 @@ Also, we have
 
 ![](https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7)
 
+https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7
+
 ### How to read the schema?
 
 - **BLUE** &mdash; introductory blocks covering prerequisites for the rest of the course;
