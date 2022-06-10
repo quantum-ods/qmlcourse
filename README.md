@@ -46,6 +46,15 @@ Also, we have
 
 ## Course Program
 
+<script src="https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7.js"></script>
+
+![](https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7)
+
+https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7
+
+```gist
+https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7
+```
 
 ### How to read the schema?
 
