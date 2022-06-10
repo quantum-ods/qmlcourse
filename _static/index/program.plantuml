@@ -1,7 +1,7 @@
 @startuml
 package "Week 1" {
         package "Introduction" #Bisque {
-                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro1 #14D2EF
+                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro #14D2EF
         }
 
         package "Prerequisites" #Bisque {
@@ -11,9 +11,9 @@ package "Week 1" {
         }
 }
 
-intro1 --> python_intro
-intro1 --> linalg_numpy_intro
-intro1 --> ml_intro
+intro --> python_intro
+intro --> linalg_numpy_intro
+intro --> ml_intro
 
 package "Week 2" {
         package "Quantum Computing" as qci #Bisque {
