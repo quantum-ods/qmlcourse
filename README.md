@@ -46,7 +46,7 @@ Also, we have
 
 ## Course Program
 
-![](./qmlcourse/_static/index/program.png)
+![](./qmlcourse/_static/index/program.md)
 
 ### How to read the schema?
 
