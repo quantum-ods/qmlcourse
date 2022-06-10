@@ -52,11 +52,7 @@ Also, we have
 
 https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7
 
-```markdown
-
-embed-url-code https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7
-
-
+```gist
 https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7
 ```
 
