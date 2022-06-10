@@ -46,7 +46,7 @@ Also, we have
 
 ## Course Program
 
-![](./qmlcourse/_static/index/program.md)
+<script src="https://gist.github.com/vtrokhymenko/ac79166f640db751bc7aee92fef3a9c7.js"></script>
 
 ### How to read the schema?
 
