@@ -2,7 +2,7 @@
 
 <!-- Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения! -->
 
-::::{grid}
+```{grid}
 :gutter: 2
 
 :::{grid-item-card} Почему именно этот курс?
@@ -28,9 +28,9 @@ Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 
 > I love quantum technologies and am a great enthusiast of them. At the same time my main job is associated with machine learning, so the idea to make a course on QML I hatched a long time ago. In the ODS community I've managed to find like-minded people, and together we have prepared a set of lectures and homework assignments that will lead you through the wonderful world of qubits, gates and quantum neural networks. We really wanted to make the course both simple and clear, but also rigorous and deep from a technical point of view, and hopefully we succeeded. Basically, we will discuss topics that will be promising in the coming years, as well as focus on the practical side of the issue as much as possible. I personally believe that quantum technologies, as they develop, will produce no less of a revolution than, for example, the spread of video-card computing, as well as allow us to approach problems that we did not know how to solve before in a different way. I hope that after taking this course, you will too! In any case, I am convinced that the topic of QML and quantum computing at least worth getting acquainted with it. I hope that you will be interesting!
 :::
-::::
+```
 
-::::{grid}
+```{grid}
 :gutter: 2
 
 :::{grid-item-card} Как устроен курс?
@@ -52,7 +52,7 @@ Our course is divided into logical blocks, each containing lectures of different
 - **RED** -- lectures on the physics and mathematics behind it all;
 - **WHITE** -- elective lectures.
 :::
-::::
+```
 
 ```{figure} /_static/index/program.png
 :name: course_program
@@ -60,7 +60,7 @@ Our course is divided into logical blocks, each containing lectures of different
 Программа курса / Course program
 ```
 
-::::{grid}
+```{grid}
 :gutter: 2
 
 :::{grid-item-card} Как проходить этот курс?
@@ -80,9 +80,9 @@ All English version course you can found below start from [here](./intro/en/intr
 
 **Good luck!**
 :::
-::::
+```
 
-::::{grid}
+```{grid}
 :gutter: 2
 
 :::{grid-item-card} Как можно помочь?
@@ -92,6 +92,6 @@ All English version course you can found below start from [here](./intro/en/intr
 :::{grid-item-card} How can you help?
 You can help in word and deed. If you know people interested in quantum computing, put in a word. The course is developed by the OpenDataScience community, the same "sick" people as the organizers ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). If you're eager to help with something, then create an Issue, or better yet a Pull Request in [course repository](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
 :::
-::::
+```
 
 <p style="page-break-after:always;"></p>
