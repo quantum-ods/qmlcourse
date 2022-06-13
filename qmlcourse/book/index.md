@@ -2,10 +2,9 @@
 
 <!-- Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения! -->
 
-```{grid}
-:gutter: 2
+````{grid}
 
-:::{grid-item-card} Почему именно этот курс?
+```{grid-item-card} Почему именно этот курс?
 Наш курс отличается от других курсов по квантовым вычислениям, потому что он:
 
 - адаптивный и содержит лекции разных уровней сложности и глубины;
@@ -15,9 +14,9 @@
 Основатель курса [Синченко Семён](https://github.com/SemyonSinchenko):
 
 > Я очень люблю квантовые технологии и являюсь их большим энтузиастом. При этом моя основная работа связана с машинным обучением, поэтому идею сделать курс по QML я вынашивал очень давно. В сообществе ODS мне удалось найти единомышленников, и вместе мы подготовили для вас набор лекций и домашних заданий, которые проведут вас через удивительный мир кубитов, гейтов и квантовых нейросетей. Мы очень хотели сделать курс одновременно простым и понятным, но также строгим и глубоким с технической точки зрения и, надеюсь, у нас это получилось. В основном мы будем обсуждать темы, которые будут перспективны в ближайшие годы, а также максимально ориентироваться на практической стороне вопроса. Я лично верю, что квантовые технологии по мере их развития произведут не меньшую революцию, чем, например, распространение вычислений на видеокартах, а также позволят по-другому подойти к задачам, которые мы раньше не умели решать . Надеюсь, что после прохождения этого курса поверите и вы! В любом случае, я уверен, что тема QML и квантовых вычислений как минимум стоит того, чтобы с ней познакомиться. Надеюсь, что вам будет интересно!
-:::
+```
 
-:::{grid-item-card} Why this course?
+```{grid-item-card} Why this course?
 Our course is different from other courses on quantum computing because it is:
 
 - adaptive and contains lectures of different levels of complexity and depth;
@@ -27,8 +26,8 @@ Our course is different from other courses on quantum computing because it is:
 Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 
 > I love quantum technologies and am a great enthusiast of them. At the same time my main job is associated with machine learning, so the idea to make a course on QML I hatched a long time ago. In the ODS community I've managed to find like-minded people, and together we have prepared a set of lectures and homework assignments that will lead you through the wonderful world of qubits, gates and quantum neural networks. We really wanted to make the course both simple and clear, but also rigorous and deep from a technical point of view, and hopefully we succeeded. Basically, we will discuss topics that will be promising in the coming years, as well as focus on the practical side of the issue as much as possible. I personally believe that quantum technologies, as they develop, will produce no less of a revolution than, for example, the spread of video-card computing, as well as allow us to approach problems that we did not know how to solve before in a different way. I hope that after taking this course, you will too! In any case, I am convinced that the topic of QML and quantum computing at least worth getting acquainted with it. I hope that you will be interesting!
-:::
 ```
+````
 
 ```{grid}
 :gutter: 2
