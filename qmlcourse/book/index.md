@@ -3,7 +3,6 @@
 <!-- Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения! -->
 
 ````{grid}
-
 ```{grid-item-card} Почему именно этот курс?
 Наш курс отличается от других курсов по квантовым вычислениям, потому что он:
 
@@ -29,10 +28,8 @@ Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 ```
 ````
 
-```{grid}
-:gutter: 2
-
-:::{grid-item-card} Как устроен курс?
+````{grid}
+```{grid-item-card} Как устроен курс?
 Наш курс разделен на логические блоки, каждый из которых содержит лекции разных уровней сложности:
 
 - **ГОЛУБОЙ** -- вводные лекции;
@@ -40,9 +37,9 @@ Course Founder [Sinchenko Semyon](https://github.com/SemyonSinchenko):
 - **ЖЕЛТЫЙ** -- лекции, глубже раскрывающие темы блоков;
 - **КРАСНЫЙ** -- лекции про физику и математику, которая стоит за всем этим;
 - **БЕЛЫЙ** -- факультативные лекции.
-:::
+```
 
-:::{grid-item-card} How does the course work?
+```{grid-item-card} How does the course work?
 Our course is divided into logical blocks, each containing lectures of different levels of difficulty:
 
 - **CYAN** -- introductory lectures;
@@ -50,8 +47,8 @@ Our course is divided into logical blocks, each containing lectures of different
 - **YELLOW** -- lectures that go deeper into the units;
 - **RED** -- lectures on the physics and mathematics behind it all;
 - **WHITE** -- elective lectures.
-:::
 ```
+````
 
 ```{figure} /_static/index/program.png
 :name: course_program
@@ -59,18 +56,16 @@ Our course is divided into logical blocks, each containing lectures of different
 Программа курса / Course program
 ```
 
-```{grid}
-:gutter: 2
-
-:::{grid-item-card} Как проходить этот курс?
+````{grid}
+```{grid-item-card} Как проходить этот курс?
 Рекомендуется проходить курс в том порядке, который обозначен на схеме. У курса есть [пререквизиты](./intro/ru/prerequisite.md) –- программирование на Python, основы линейной алгебры и машинного обучения, советуем с ними ознакомиться и (опционально) проверить себя с помощью [входного теста](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
 
 Курс обсуждается в [Slack ODS.ai](https://ods.ai/join-community) в канале `#quantum_computing`.
 
 **Желаем успехов!**
-:::
+```
 
-:::{grid-item-card} How to take this course?
+```{grid-item-card} How to take this course?
 It is recommended to take the course in the order indicated in the diagram. The course has [prerequisites](./intro/en/prerequisite.md) -- programming in Python, basics of linear algebra and machine learning, we advise to read them and (optionally) check yourself with [input test](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
 
 The course is discussed in [Slack ODS.ai](https://ods.ai/join-community) in the `#quantum_computing` channel.
@@ -78,19 +73,17 @@ The course is discussed in [Slack ODS.ai](https://ods.ai/join-community) in the 
 All English version course you can found below start from [here](./intro/en/intro.md).
 
 **Good luck!**
-:::
 ```
+````
 
-```{grid}
-:gutter: 2
-
-:::{grid-item-card} Как можно помочь?
+````{grid}
+```{grid-item-card} Как можно помочь?
 Помочь можно словом и делом. Если знаете людей, интересующихся квантовыми вычислениями –- замолвите словечко. Курс разрабатывается сообществом OpenDataScience, такими же «больными», как и организаторы ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). Если горите желанием в чем-то помочь, то создавайте Issue, а лучше сразу Pull Request в [репозитории курса](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
-:::
-
-:::{grid-item-card} How can you help?
-You can help in word and deed. If you know people interested in quantum computing, put in a word. The course is developed by the OpenDataScience community, the same "sick" people as the organizers ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). If you're eager to help with something, then create an Issue, or better yet a Pull Request in [course repository](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
-:::
 ```
+
+```{grid-item-card} How can you help?
+You can help in word and deed. If you know people interested in quantum computing, put in a word. The course is developed by the OpenDataScience community, the same "sick" people as the organizers ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). If you're eager to help with something, then create an Issue, or better yet a Pull Request in [course repository](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
+```
+````
 
 <p style="page-break-after:always;"></p>
