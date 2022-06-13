@@ -794,7 +794,22 @@ const thebe_selector_output = ".output, .cell_output"
      Combinatorial and NP-hard problems
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-mechanics-simulation">
+     Quantum mechanics simulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-and-artificial-intelligence">
+     Machine Learning and Artificial Intelligence
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-will-bitcoin-be-cracked">
+   When will bitcoin be cracked?
+  </a>
  </li>
 </ul>
 
@@ -863,7 +878,22 @@ const thebe_selector_output = ".output, .cell_output"
      Combinatorial and NP-hard problems
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-mechanics-simulation">
+     Quantum mechanics simulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-and-artificial-intelligence">
+     Machine Learning and Artificial Intelligence
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#when-will-bitcoin-be-cracked">
+   When will bitcoin be cracked?
+  </a>
  </li>
 </ul>
 
@@ -940,9 +970,34 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Except for difficulties with Moore law there is another problem with classical computers. There are tasks that likely wont be solved effectively on the classical Turing computer. Even on photonic or grafen one. The good example is the knapsack problem. When we have a knapsack of limited volume and a lot of things with different size and cost. And we want to fill our knapsack in such a manner to maximize the total cost of things inside it. The task looks very simple but it is an example of <a class="reference external" href="https://en.wikipedia.org/wiki/NP-completeness"><span class="math notranslate nohighlight">\(NP\)</span>-complete problems</a>. If we have a big number of different things and a relative big knapsack such problem cannot be solved exactly in reasonable time. Even the finding of the good enough <em>approximate</em> solution of such problem is very hard today!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>I used a word “likely” because the question about existence of the effective solution of NP-complete problems is one of <a class="reference external" href="https://en.wikipedia.org/wiki/P_versus_NP_problem">the major unsolved problems in computer science</a>. Today we do not know any effective algorithm for it. But we still cannot proof that <em>there isn’t such algorithm</em>. Highly likely there isn’t of course and <span class="math notranslate nohighlight">\(P \neq NP\)</span> but no one can proof it.</p>
+<p>I used a word “likely” because the question about existence of the effective solution of NP-complete problems is one of the major unsolved problems in computer science](https://en.wikipedia.org/wiki/P_versus_NP_problem). Today we do not know any effective algorithm for it. But we still cannot proof that <em>there isn’t such algorithm</em>. Highly likely there isn’t of course and <span class="math notranslate nohighlight">\(P \neq NP\)</span> but no one can proof it.</p>
+</div>
+<p>The algorithms are already known for quantum computers that allow potentially effective, albeit <em>approximate</em>, solution of such problems on a quantum computer. These are the traveling salesman problem, the knapsack problem, the graph clustering problem, and many other combinatorial optimization problems. In this course there will be a whole block dedicated to such quantum algorithms as <em>Variational Quantum Eigensolver</em> and <em>Quantum Approximate Optimization Algorithm</em>.</p>
+<div class="figure align-default" id="salesman">
+<img alt="../../../_images/Salesman.png" src="../../../_images/Salesman.png" />
+<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">Visualizing the solution of the salesman’s problem – the shortest route to get around 12 German cities – is a very important task of modern logistics</span><a class="headerlink" href="#salesman" title="Permalink to this image">¶</a></p>
 </div>
 </div>
+<div class="section" id="quantum-mechanics-simulation">
+<h3>Quantum mechanics simulation<a class="headerlink" href="#quantum-mechanics-simulation" title="Permalink to this headline">¶</a></h3>
+<p>This is what Feynman proposed to create quantum computers for. This is a separate big topic, with a lot of quantum mechanics. Several separate lectures in this course will be devoted to it. But let’s try to explain this without going into too much detail.</p>
+<p>The problems of quantum mechanics cannot be solved analytically. It would seem that what is the problem, Newton’s laws for three bodies also cannot be solved analytically, but this does not prevent flying into space, because such a problem can be solved numerically. But there comes a second problem, namely, that explicitly integrate Schrödinger equation in time, or, simply, to solve quantum mechanics numerically also computationally almost impossible for more than two particles.</p>
+<div class="figure align-default" id="schrodinger">
+<a class="reference internal image-reference" href="../../../_images/Schrodinger.jpg"><img alt="../../../_images/Schrodinger.jpg" src="../../../_images/Schrodinger.jpg" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">Erwin Schrodinger, 1887-1961, creator of the famous equation and cat meme</span><a class="headerlink" href="#schrodinger" title="Permalink to this image">¶</a></p>
+</div>
+<p>It would seem, what’s in it for us. After all, quantum mechanics is the lot of theoreticians. But here is the problem: quantum mechanics is the basis of quantum chemistry, which, in its turn, is the basis of all chemistry in general and such of its applications as creating new drugs, developing new batteries for Tesla cars and many other things. And today we are forced to use only very approximate solutions and concepts, the accuracy of which is often insufficient.</p>
+<p>Quantum computers can make a real breakthrough in this case. After all, due to its physical nature, a quantum computer is ideal for simulating quantum mechanics, and hence for solving such important tasks from drug development and design of new materials today.</p>
+</div>
+<div class="section" id="machine-learning-and-artificial-intelligence">
+<h3>Machine Learning and Artificial Intelligence<a class="headerlink" href="#machine-learning-and-artificial-intelligence" title="Permalink to this headline">¶</a></h3>
+<p>Machine learning has reached unprecedented heights in its development over the past 10-15 years. Many tasks that previously seemed impossible to solve with a computer are now successfully solved with machine learning. Examples include playing Go, distinguishing Chihuahua breeds from photographs, recognizing faces in a video stream, composing relatively meaningful texts, and generating Picasso-style paintings from simple photographs. But it is still very far from the capabilities of the human brain. For example, the largest artificial neural networks today are roughly estimated to be the equivalent of 15 million neurons, while the human brain has about 85 billion! The learning speed of modern neural networks also raises questions. Thus, the largest language models today are trained for weeks on clusters of thousands of video cards, while a human with his relatively modest computing power learns to speak for only 2-3 years.</p>
+<p>And here, too, quantum computers can come to the rescue. In this case, quantum analogues of neural networks, as well as their combinations with classical neural networks already show impressive results. For example, there are works showing that 4 quantum neurons are equivalent to a classical artificial neural network with <span class="math notranslate nohighlight">\(\sim 250\)</span> neurons in its expressiveness!</p>
+<p>It is quantum machine learning, and the ways it can be applied, that will be the focus of most in this course. We will try to cover everything from the theory of how quantum machine learning algorithms can be built to how they can be programmed in modern quantum programming languages. If this topic is of interest to you, this course is definitely for you!</p>
+</div>
+</div>
+<div class="section" id="when-will-bitcoin-be-cracked">
+<h2>When will bitcoin be cracked?<a class="headerlink" href="#when-will-bitcoin-be-cracked" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
