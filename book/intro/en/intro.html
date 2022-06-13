@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About quantum computers, bitcoin, and superiority &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,33 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/intro/en/intro.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +69,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +92,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +113,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +372,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +399,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +416,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +438,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +460,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +482,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +519,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +551,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +573,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +595,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +612,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +624,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +656,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,162 +675,168 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/intro/en/intro.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/intro/en/intro.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-the-lecture">
-   About the lecture
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-the-computing-is-this">
-   What the computing is this?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantity-evolution-of-computers">
-     Quantity evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quality-evolution-of-computers">
-     Quality evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-idea-about-quantum-computers">
-     The idea about quantum computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-the-computer-is-this">
-     What the computer is this?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-it">
-   Why do we need it?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#factorization-problem">
-     Factorization problem
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combinatorial-and-np-hard-problems">
-     Combinatorial and NP-hard problems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantum-mechanics-simulation">
-     Quantum mechanics simulation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-learning-and-artificial-intelligence">
-     Machine Learning and Artificial Intelligence
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-will-bitcoin-be-cracked">
-   When will bitcoin be cracked?
-  </a>
- </li>
-</ul>
-
-            </nav>
+            
         </div>
     </div>
+    <div id="rtd-footer-container"></div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/intro/en/intro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/intro/en/intro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>About quantum computers, bitcoin, and superiority</h1>
@@ -826,179 +844,16 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-the-lecture">
-   About the lecture
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-the-computing-is-this">
-   What the computing is this?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantity-evolution-of-computers">
-     Quantity evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quality-evolution-of-computers">
-     Quality evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-idea-about-quantum-computers">
-     The idea about quantum computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-the-computer-is-this">
-     What the computer is this?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-it">
-   Why do we need it?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#factorization-problem">
-     Factorization problem
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combinatorial-and-np-hard-problems">
-     Combinatorial and NP-hard problems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantum-mechanics-simulation">
-     Quantum mechanics simulation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-learning-and-artificial-intelligence">
-     Machine Learning and Artificial Intelligence
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-will-bitcoin-be-cracked">
-   When will bitcoin be cracked?
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="about-quantum-computers-bitcoin-and-superiority">
-<span id="intro-en"></span><h1>About quantum computers, bitcoin, and superiority<a class="headerlink" href="#about-quantum-computers-bitcoin-and-superiority" title="Permalink to this headline">¶</a></h1>
-<p>Author(s):</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Sinchenko Semyon</a></p></li>
-</ul>
-<p>Translation:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Sinchenko Semyon</a></p></li>
-</ul>
-<div class="section" id="about-the-lecture">
-<h2>About the lecture<a class="headerlink" href="#about-the-lecture" title="Permalink to this headline">¶</a></h2>
-<p>The lecture hasn’t any learning meaning but tries to answer questions that can have anyone who faces the topic about quantum computing for a first time:</p>
-<ul class="simple">
-<li><p>what the computing is this?</p></li>
-<li><p>why we need all this stuff?</p></li>
-<li><p>when one will crack bitcoin?</p></li>
-<li><p>what the advantage is said all around?</p></li>
-</ul>
-</div>
-<div class="section" id="what-the-computing-is-this">
-<h2>What the computing is this?<a class="headerlink" href="#what-the-computing-is-this" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="quantity-evolution-of-computers">
-<h3>Quantity evolution of computers<a class="headerlink" href="#quantity-evolution-of-computers" title="Permalink to this headline">¶</a></h3>
-<p>Classical computers which are based on Turing, Von Neumann and Shockley ideas are an organic part of our live. We all used to have an every year growing computational power of such computers. And today’s cheap laptop have a power that supercomputers had 15 years ago.</p>
-<div class="figure align-default" id="moores-law">
-<img alt="../../../_images/Moores_Law.png" src="../../../_images/Moores_Law.png" />
-<p class="caption"><span class="caption-number">Fig. 152 </span><span class="caption-text">A Moore law illustration; a growth of the number of transistors from 1970s</span><a class="headerlink" href="#moores-law" title="Permalink to this image">¶</a></p>
-</div>
-<p>A law that is named a Moore law was formulated by Gordon Moore in the late 60-s. It tell us that the number of transistors by crystal of integral circuit is adding twice every two years. And it have been holding true for the last 60 years.</p>
-</div>
-<div class="section" id="quality-evolution-of-computers">
-<h3>Quality evolution of computers<a class="headerlink" href="#quality-evolution-of-computers" title="Permalink to this headline">¶</a></h3>
-<p>Unfortunately the Moore law holding cannot be endless because there are physical limitations: sooner or later the direct adding twice of the number of transistors could be impossible due tunneling effects. That’s why this is said that the modern computers will have a “quality” revolution. Some say about new materials for creating transistors. Another say about new principles of computers. For example about photonic computers where photons are used instead electrons. But one can hear that the next computers revolution will the invention of quantum computers. That is what we will talk about.</p>
-</div>
-<div class="section" id="the-idea-about-quantum-computers">
-<h3>The idea about quantum computers<a class="headerlink" href="#the-idea-about-quantum-computers" title="Permalink to this headline">¶</a></h3>
-<p>There are few version who was the first one said about using quantum mechanic’s laws for creating the new computer. Like it frequently happens a few scientist independently and at one time came to the same idea. One of them was Richard Phillips Feynman.</p>
-<div class="figure align-default" id="feinman">
-<img alt="../../../_images/Feinman.jpg" src="../../../_images/Feinman.jpg" />
-<p class="caption"><span class="caption-number">Fig. 153 </span><span class="caption-text">Richard Phillips Feynman, 1918-1988</span><a class="headerlink" href="#feinman" title="Permalink to this image">¶</a></p>
-</div>
-<p>In 1981 when there was a very active development of the both classical computers and computational quantum mechanics he said that for solving quantum mechanical problems we should have a quantum computer.</p>
-</div>
-<div class="section" id="what-the-computer-is-this">
-<h3>What the computer is this?<a class="headerlink" href="#what-the-computer-is-this" title="Permalink to this headline">¶</a></h3>
-<p>It is very complicated question and all the first half of our course will try to answer it. It is strange if such a complex question that is discussed in few lectures with hard math could be explained in a few words. It will be wrong to say that classical computers are based on the classical physic’s laws and quantum computers are based on laws of quantum physics because one couldn’t explain the principles of modern transistors without such quantum things like the Fermi level and other stuff. Also it will be wrong to say that classical computers operate with <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> but quantum have all states from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span> because there is the probability Turing machine that works with probabilistic bit that can have all the states from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. Especially we do not want to rush with a lot of complex and unclear terms like a quantum superposition, qubits or quantum entanglement because such a terms mean nothing for anyone who is not in the loop. At first let agree that <em>quantum computers</em> are not only based on new technology like photonic or grafen computers but uses a whole new principles of computation and information representation different from what Turing was invented</p>
-</div>
-</div>
-<div class="section" id="why-do-we-need-it">
-<h2>Why do we need it?<a class="headerlink" href="#why-do-we-need-it" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="factorization-problem">
-<h3>Factorization problem<a class="headerlink" href="#factorization-problem" title="Permalink to this headline">¶</a></h3>
-<p>It seems to me that specifically the invention of the Shor algorithm for effective solving of the factorization problem was the most important step for popularization of quantum computing. After that a lot of specialists and scientists rushed to this field, military forces and corporation pushed a fantastic sum of money to the field, reporters started to talking about the future fail of the bank system and the whole world. Probably the Shor algorithm is the most hype quantum algorithm.</p>
-<p>The reason is that the biggest part of modern cryptography is based on the one simple assuming that there is no polynomial algorithm for the factorization task. In other words if we have a number that is the result of two big prime numbers product we can try to find that prime numbers until the death of the universe. But it is true only for the classical computer. A quantum computer has the effective polynomial algorithm invented by Piter Shor in 1994. And this algorithm can solve the factorization problem in relative short time.</p>
-<div class="figure align-default" id="shor">
-<img alt="../../../_images/Shor.png" src="../../../_images/Shor.png" />
-<p class="caption"><span class="caption-number">Fig. 154 </span><span class="caption-text">Piter Shor. The man who set the world on fire with his algorithm.</span><a class="headerlink" href="#shor" title="Permalink to this image">¶</a></p>
-</div>
-<p>This algorithm will crack the bitcoin and ruin the banking system in the future. But it’s not all that simple: evolution of quantum computers threw scientists to creating of <em>post-quantum</em> cryptography that is based on tasks which cannot be effectively solved on both classical and quantum computers.</p>
-</div>
-<div class="section" id="combinatorial-and-np-hard-problems">
-<h3>Combinatorial and NP-hard problems<a class="headerlink" href="#combinatorial-and-np-hard-problems" title="Permalink to this headline">¶</a></h3>
-<p>Except for difficulties with Moore law there is another problem with classical computers. There are tasks that likely wont be solved effectively on the classical Turing computer. Even on photonic or grafen one. The good example is the knapsack problem. When we have a knapsack of limited volume and a lot of things with different size and cost. And we want to fill our knapsack in such a manner to maximize the total cost of things inside it. The task looks very simple but it is an example of <a class="reference external" href="https://en.wikipedia.org/wiki/NP-completeness"><span class="math notranslate nohighlight">\(NP\)</span>-complete problems</a>. If we have a big number of different things and a relative big knapsack such problem cannot be solved exactly in reasonable time. Even the finding of the good enough <em>approximate</em> solution of such problem is very hard today!</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>I used a word “likely” because the question about existence of the effective solution of NP-complete problems is one of the major unsolved problems in computer science](https://en.wikipedia.org/wiki/P_versus_NP_problem). Today we do not know any effective algorithm for it. But we still cannot proof that <em>there isn’t such algorithm</em>. Highly likely there isn’t of course and <span class="math notranslate nohighlight">\(P \neq NP\)</span> but no one can proof it.</p>
-</div>
-<p>The algorithms are already known for quantum computers that allow potentially effective, albeit <em>approximate</em>, solution of such problems on a quantum computer. These are the traveling salesman problem, the knapsack problem, the graph clustering problem, and many other combinatorial optimization problems. In this course there will be a whole block dedicated to such quantum algorithms as <em>Variational Quantum Eigensolver</em> and <em>Quantum Approximate Optimization Algorithm</em>.</p>
-<div class="figure align-default" id="salesman">
-<img alt="../../../_images/Salesman.png" src="../../../_images/Salesman.png" />
-<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">Visualizing the solution of the salesman’s problem – the shortest route to get around 12 German cities – is a very important task of modern logistics</span><a class="headerlink" href="#salesman" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="quantum-mechanics-simulation">
-<h3>Quantum mechanics simulation<a class="headerlink" href="#quantum-mechanics-simulation" title="Permalink to this headline">¶</a></h3>
-<p>This is what Feynman proposed to create quantum computers for. This is a separate big topic, with a lot of quantum mechanics. Several separate lectures in this course will be devoted to it. But let’s try to explain this without going into too much detail.</p>
-<p>The problems of quantum mechanics cannot be solved analytically. It would seem that what is the problem, Newton’s laws for three bodies also cannot be solved analytically, but this does not prevent flying into space, because such a problem can be solved numerically. But there comes a second problem, namely, that explicitly integrate Schrödinger equation in time, or, simply, to solve quantum mechanics numerically also computationally almost impossible for more than two particles.</p>
-<div class="figure align-default" id="schrodinger">
-<a class="reference internal image-reference" href="../../../_images/Schrodinger.jpg"><img alt="../../../_images/Schrodinger.jpg" src="../../../_images/Schrodinger.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">Erwin Schrodinger, 1887-1961, creator of the famous equation and cat meme</span><a class="headerlink" href="#schrodinger" title="Permalink to this image">¶</a></p>
-</div>
-<p>It would seem, what’s in it for us. After all, quantum mechanics is the lot of theoreticians. But here is the problem: quantum mechanics is the basis of quantum chemistry, which, in its turn, is the basis of all chemistry in general and such of its applications as creating new drugs, developing new batteries for Tesla cars and many other things. And today we are forced to use only very approximate solutions and concepts, the accuracy of which is often insufficient.</p>
-<p>Quantum computers can make a real breakthrough in this case. After all, due to its physical nature, a quantum computer is ideal for simulating quantum mechanics, and hence for solving such important tasks from drug development and design of new materials today.</p>
-</div>
-<div class="section" id="machine-learning-and-artificial-intelligence">
-<h3>Machine Learning and Artificial Intelligence<a class="headerlink" href="#machine-learning-and-artificial-intelligence" title="Permalink to this headline">¶</a></h3>
-<p>Machine learning has reached unprecedented heights in its development over the past 10-15 years. Many tasks that previously seemed impossible to solve with a computer are now successfully solved with machine learning. Examples include playing Go, distinguishing Chihuahua breeds from photographs, recognizing faces in a video stream, composing relatively meaningful texts, and generating Picasso-style paintings from simple photographs. But it is still very far from the capabilities of the human brain. For example, the largest artificial neural networks today are roughly estimated to be the equivalent of 15 million neurons, while the human brain has about 85 billion! The learning speed of modern neural networks also raises questions. Thus, the largest language models today are trained for weeks on clusters of thousands of video cards, while a human with his relatively modest computing power learns to speak for only 2-3 years.</p>
-<p>And here, too, quantum computers can come to the rescue. In this case, quantum analogues of neural networks, as well as their combinations with classical neural networks already show impressive results. For example, there are works showing that 4 quantum neurons are equivalent to a classical artificial neural network with <span class="math notranslate nohighlight">\(\sim 250\)</span> neurons in its expressiveness!</p>
-<p>It is quantum machine learning, and the ways it can be applied, that will be the focus of most in this course. We will try to cover everything from the theory of how quantum machine learning algorithms can be built to how they can be programmed in modern quantum programming languages. If this topic is of interest to you, this course is definitely for you!</p>
-</div>
-</div>
-<div class="section" id="when-will-bitcoin-be-cracked">
-<h2>When will bitcoin be cracked?<a class="headerlink" href="#when-will-bitcoin-be-cracked" title="Permalink to this headline">¶</a></h2>
-</div>
+<span id="intro-en"></span><h1>About quantum computers, bitcoin, and superiority<a class="headerlink" href="#about-quantum-computers-bitcoin-and-superiority" title="Permalink to this headline">#</a></h1>
+<p><em>comming soon</em></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1023,9 +878,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../../leaderboard.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1041,24 +898,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

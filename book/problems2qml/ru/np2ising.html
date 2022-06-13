@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Формулировка задач оптимизации в терминах модели Изинга &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/problems2qml/ru/np2ising.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,90 +677,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/problems2qml/ru/np2ising.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems2qml/ru/np2ising.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems2qml/ru/np2ising.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/problems2qml/ru/np2ising.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#qubo">
    QUBO матрица
@@ -825,12 +929,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Формулировка задач оптимизации в терминах модели Изинга</h1>
@@ -925,18 +1028,19 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="np2ising">
-<span id="id1"></span><h1>Формулировка задач оптимизации в терминах модели Изинга<a class="headerlink" href="#np2ising" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Формулировка задач оптимизации в терминах модели Изинга<a class="headerlink" href="#np2ising" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
 <p>Не зря мы так глубоко изучали <a class="reference internal" href="../../problems/ru/ising.html"><span class="doc std std-doc">модель Изинга</span></a> и <a class="reference internal" href="../../problems/ru/advising.html"><span class="doc std std-doc">анализировали</span></a> ее решения – сегодня увидим, как в терминах этой модели можно сформулировать большинство важных задач <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">комбинаторной оптимизации</span></a>.</p>
 <div class="section" id="qubo">
-<h2>QUBO матрица<a class="headerlink" href="#qubo" title="Permalink to this headline">¶</a></h2>
+<h2>QUBO матрица<a class="headerlink" href="#qubo" title="Permalink to this headline">#</a></h2>
 <p>Но сначала кратко обсудим так называемую <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрицу <span id="id2">[<a class="reference internal" href="../../bibliography.html#id32" title="Fred Glover, Gary Kochenberger, and Yu Du. A tutorial on formulating and using qubo models. 2019. arXiv:1811.11538.">GKD19</a>]</span> – это еще один способ записать задачу модели Изинга, и дальше по курсу иногда будем этим пользоваться.</p>
 <p><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> – это сокращение от <strong>Quadratic Unconstrained Binary Optimization</strong>, или, если переводить, то это <em>задача квадратичной оптимизации без ограничений</em>. То есть это такие задачи, для которых нет отдельных ограничений, например, равенств или неравенств, а функция стоимости представима в виде многочлена второй степени от входных переменных. Решением такой задачи является бинарный вектор <span class="math notranslate nohighlight">\(X = \{x_1, x_2, ..., x_n\}\)</span> такой, что <span class="math notranslate nohighlight">\(x_1, ..., x_n \in \{0, 1\}\)</span>. В этом случае функцию стоимости <span class="math notranslate nohighlight">\(C\)</span> можно записать в виде:</p>
 <div class="math notranslate nohighlight">
@@ -963,7 +1067,7 @@ Q = \begin{pmatrix}
 </div>
 </div>
 <div class="section" id="id3">
-<h2>QUBO как квантовый гамильтониан<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>QUBO как квантовый гамильтониан<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Если вспомнить, как <a class="reference external" href="../../problems/ru/advising.html#id2">выглядит</a> модель Изинга, то легко заметить, что там, как и в <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-проблемах, есть лишь члены первой и второй степени. Вот только <a class="reference external" href="../../qc/ru/qubit.html#hat-sigma-z">спиновые операторы (матрицы Паули) имеют собственные значения</a> <span class="math notranslate nohighlight">\(\pm 1\)</span>, а не <span class="math notranslate nohighlight">\(\{0, 1\}\)</span>, которые фигурируют в <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>. Это проблема, так как квадраты этих значений не равны им самим. Но это легко можно исправить введя “бинарный” оператор <span class="math notranslate nohighlight">\(\hat{x}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -985,7 +1089,7 @@ C = \sum_{i, j \in \{1, ..., |X|\}} J_{i, j} sz_i sz_j + \sum_{i \in {\{1, ..., 
 <p>Причем в силу того, что у в выражении для <span class="math notranslate nohighlight">\(\hat{H}\)</span> фигурируют лишь <span class="math notranslate nohighlight">\(\sigma^z\)</span>, основное состояние гамильтониана является “классическим”, то есть все спины “ориентированы” либо вверх, либо вниз, но не находятся в суперпозиции. Другими словами, гамильтониан диагонализируется в <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базисе.</p>
 </div>
 <div class="section" id="id4">
-<h2>Поиск основного состояния<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Поиск основного состояния<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Как увидели, задачи, сформулированные в терминах <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>, можно свести к задаче нахождения основного состояния квантовой системы, которая описывается некоторым оператором. Но что это вообще значит? И что это за гамильтониан такой, о котором все время говорим? Вообще говоря, гамильтониан – это оператор энергии:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1006,11 +1110,11 @@ C = \sum_{i, j \in \{1, ..., |X|\}} J_{i, j} sz_i sz_j + \sum_{i \in {\{1, ..., 
 <p>Важное преимущество квантового представления <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-задач – в том, что наш мир устроен таким образом, что любая квантовая система всегда стремится в состояние с минимальной энергией, то есть основное. На этом построен даже целый класс квантовых аннилеров. Но и для вариационных квантовых алгоритмов это также дает свои преимущества.</p>
 </div>
 <div class="section" id="ising-formulations-of-many-np-problems">
-<h2>Статья “Ising formulations of many NP problems”<a class="headerlink" href="#ising-formulations-of-many-np-problems" title="Permalink to this headline">¶</a></h2>
+<h2>Статья “Ising formulations of many NP problems”<a class="headerlink" href="#ising-formulations-of-many-np-problems" title="Permalink to this headline">#</a></h2>
 <p>Основным источником информации для нас будет статья <em>“Ising formulations of many NP problems”</em> <span id="id6">[<a class="reference internal" href="../../bibliography.html#id25" title="Andrew Lucas. Ising formulations of many np problems. Frontiers in physics, 2:5, 2014. URL: https://arxiv.org/abs/1302.5843, doi:https://doi.org/10.3389/fphy.2014.00005.">Luc14</a>]</span>, вышедшая в 2014-м году (версия 3). В данной лекции рассмотрим лишь часть примеров из этой работы, хотя наше рассмотрение будет чуть более подробным. В целом эта статья может быть использована как прекрасный справочник.</p>
 </div>
 <div class="section" id="id7">
-<h2>Задача о максимальном разрезе в графе (повторение)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>Задача о максимальном разрезе в графе (повторение)<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Уже рассматривали эту задачу в <a class="reference internal" href="../../problems/ru/ising.html"><span class="doc std std-doc">лекции о модели Изинга</span></a> и в <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">лекции про задачи комбинаторной оптимизации</span></a>, но теперь повторим еще раз. Итак, есть граф на множестве вершин <span class="math notranslate nohighlight">\(V\)</span>, связанных множеством ребер <span class="math notranslate nohighlight">\(E\)</span>. Каждое ребро соединяет вершины <span class="math notranslate nohighlight">\(u,v\)</span>. Для простоты будем рассматривать случай ненаправленного графа. Каждое ребро имеет вес <span class="math notranslate nohighlight">\(w\)</span>. Цель – разбить множество вершин <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся сообщества <span class="math notranslate nohighlight">\(V_1, V_2\)</span> таким образом, чтобы суммарный вес ребер, соединяющих вершины из разных сообществ, был максимален:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1018,11 +1122,11 @@ C = \sum_{i, j \in \{1, ..., |X|\}} J_{i, j} sz_i sz_j + \sum_{i \in {\{1, ..., 
 \]</div>
 <div class="figure align-default" id="maxcut3">
 <a class="reference internal image-reference" href="../../../_images/Max-cut.png"><img alt="../../../_images/Max-cut.png" src="../../../_images/Max-cut.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 124 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 124 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut3" title="Permalink to this image">#</a></p>
 </div>
 <p>Эта задача уже является задачей без ограничений и может быть сразу сформулирована в терминах <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> и модели Изинга.</p>
 <div class="section" id="id8">
-<h3><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрица<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрица<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрица для этой задачи имеет размер <span class="math notranslate nohighlight">\(|V| \times |V|\)</span>, а вектор решения <span class="math notranslate nohighlight">\(X\)</span> это, соответственно, будет бинарный вектор длины <span class="math notranslate nohighlight">\(|V|\)</span>. Для простоты обозначим сообщество <span class="math notranslate nohighlight">\(V_1\)</span> как вершины, для которых <span class="math notranslate nohighlight">\(x_i = 0\)</span>, а <span class="math notranslate nohighlight">\(V_2\)</span> это будут вершины с <span class="math notranslate nohighlight">\(x_i = 1\)</span>. Еще хотим решать задачу минимизации вместо задачи максимизации. Запишем новую целевую функцию:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1039,7 +1143,7 @@ QUBO = \begin{pmatrix}
 \end{split}\]</div>
 </div>
 <div class="section" id="id9">
-<h3>Гамильтониан Изинга<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Гамильтониан Изинга<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>В случае этой задачи можно сказать, что она изначально имеет вид модели Изинга. И действительно, наиболее вероятная конфигурация спинов для основного состояния системы с гамильтонианом такого вида:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1049,7 +1153,7 @@ QUBO = \begin{pmatrix}
 </div>
 </div>
 <div class="section" id="id10">
-<h2>Задача коммивояжера<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>Задача коммивояжера<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Задача коммивояжера обсуждалась в <a class="reference external" href="../../problems/ru/copt.html#id7">лекции по комбинаторной оптимизации</a>, где были получены выражения для представления данной задачи в виде “без ограничений”. Напомним, что удалось добиться этого, “внеся” ограничения в выражения для целевой функции в виде штрафа за отклонение от ограничений. А также добавили соответствующие коэффициенты. Полученное в той лекции выражение имеет вид:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1062,27 +1166,27 @@ C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} 
 </div>
 </div>
 <div class="section" id="id11">
-<h2>Задача о выделении сообществ в графе<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<h2>Задача о выделении сообществ в графе<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Уже <a class="reference external" href="../../problems/ru/copt.html#id3">говорили об этой задаче</a> в лекции про комбинаторную оптимизацию. Для этой задачи было разработано немало эвристических алгоритмов поиска <span id="id12">[<a class="reference internal" href="../../bibliography.html#id64" title="Stanislav Sobolevsky, Riccardo Campari, Alexander Belyi, and Carlo Ratti. General optimization technique for high-quality community detection in complex networks. Phys. Rev. E, 90:012811, Jul 2014. URL: https://link.aps.org/doi/10.1103/PhysRevE.90.012811, doi:10.1103/PhysRevE.90.012811.">SCBR14</a>]</span>, а в этой части сосредоточимся на формулировке как задачи <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>.</p>
 <div class="section" id="k-2">
-<h3><span class="math notranslate nohighlight">\(k = 2\)</span> сообществ<a class="headerlink" href="#k-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="math notranslate nohighlight">\(k = 2\)</span> сообществ<a class="headerlink" href="#k-2" title="Permalink to this headline">#</a></h3>
 <p>В случае всего двух сообществ будем использовать двоичные спиновые переменные <span class="math notranslate nohighlight">\(s_i \in \{-1,1\}\)</span> для кодирования того, к какому именно сообществу принадлежит вершина <span class="math notranslate nohighlight">\(i\)</span>. <span class="math notranslate nohighlight">\(\frac{1 + s_is_j}{2}\)</span> будет равняться <span class="math notranslate nohighlight">\(1\)</span>, если <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> принадлежат одному сообществу, и <span class="math notranslate nohighlight">\(0\)</span> – в противном случае. Модулярность при этом будет следующей</p>
 <div class="math notranslate nohighlight" id="equation-eqn-comdet-2">
-<span class="eqno">(41)<a class="headerlink" href="#equation-eqn-comdet-2" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(41)<a class="headerlink" href="#equation-eqn-comdet-2" title="Permalink to this equation">#</a></span>\[\begin{split}
 M = \frac{1}{4m} s^T B s \\
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-eqn-comdet-3">
-<span class="eqno">(42)<a class="headerlink" href="#equation-eqn-comdet-3" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(42)<a class="headerlink" href="#equation-eqn-comdet-3" title="Permalink to this equation">#</a></span>\[
 B_{ij} = (A_{ij} - \frac{g_i g_j}{2m})
 \]</div>
 <p>При <span class="math notranslate nohighlight">\(s_i = 2 x_i - 1\)</span> между спиновыми <span class="math notranslate nohighlight">\(s_i \in \{-1,1\}\)</span> и битовыми <span class="math notranslate nohighlight">\(x_i \in \{0, 1\}\)</span> переменными соответственно, а также <span class="math notranslate nohighlight">\(\sum_{i,j} B_{i,j} = 0\)</span>, максимизация модулярности <a class="reference internal" href="#equation-eqn-comdet-3">(42)</a> может быть эквивалентна выражению задачи минимизации в форме <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> с гамильтонианом <span class="math notranslate nohighlight">\(H = - \frac{1}{m} x^T B x\)</span> и с <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрицей <span class="math notranslate nohighlight">\(Q = - \frac{B}{m}\)</span>.</p>
 </div>
 <div class="section" id="id13">
-<h3>Множественные сообщества (<span class="math notranslate nohighlight">\(k &gt; 2\)</span>)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<h3>Множественные сообщества (<span class="math notranslate nohighlight">\(k &gt; 2\)</span>)<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Чтобы сформулировать задачу выделения <span class="math notranslate nohighlight">\(k\)</span> сообществ в канонической форме <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>, сначала одновременно кодируем двоичные переменные <span class="math notranslate nohighlight">\(x_i\)</span>, а затем строим <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-гамильтониан.</p>
 <p>Используем схему однократного кодирования (one-hot encoding), в которой задаем <span class="math notranslate nohighlight">\(x_{i,c} = 1\)</span>, если вершина <span class="math notranslate nohighlight">\(i \in c\)</span>, и <span class="math notranslate nohighlight">\(x_{i,c} = 0\)</span> в противном случае, то есть,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-comdet-4">
-<span class="eqno">(43)<a class="headerlink" href="#equation-eqn-comdet-4" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(43)<a class="headerlink" href="#equation-eqn-comdet-4" title="Permalink to this equation">#</a></span>\[\begin{split}
 x_{i,c} = \begin{cases}
     1, если \ i \in c \\
     0, иначе
@@ -1096,7 +1200,7 @@ x_{i,c} = \begin{cases}
 H_M = - \frac{1}{m} x^T B x
 \]</div>
 <div class="math notranslate nohighlight" id="equation-eqn-comdet-5">
-<span class="eqno">(44)<a class="headerlink" href="#equation-eqn-comdet-5" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(44)<a class="headerlink" href="#equation-eqn-comdet-5" title="Permalink to this equation">#</a></span>\[\begin{split}
 B = \begin{bmatrix}
     B &amp; ... &amp; 0 \\
     \vdots &amp; \ddots &amp; \vdots \\
@@ -1106,12 +1210,12 @@ B = \begin{bmatrix}
 <p>Поскольку каждый узел <span class="math notranslate nohighlight">\(i = 1, ... , N\)</span> должен находиться ровно в одном сообществе <span class="math notranslate nohighlight">\(c = 1, ... , k\)</span>, необходимо добавить штрафной член, чтобы ограничить решение для распределения сообществ. Формально это ограничение можно записать как <span class="math notranslate nohighlight">\(\sum_{c = 1}^k x_{i,c} = 1\)</span> при <span class="math notranslate nohighlight">\(i = 1, ... , N\)</span>.</p>
 <p>Это линейное ограничение можно добавить в задачу <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> в виде квадратичного штрафного члена:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-comdet-6">
-<span class="eqno">(45)<a class="headerlink" href="#equation-eqn-comdet-6" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(45)<a class="headerlink" href="#equation-eqn-comdet-6" title="Permalink to this equation">#</a></span>\[
 H_P = P \sum_{i=1}^{N} (\sum_{c=1}^{k} x_{i,c} -1)^2
 \]</div>
 <p>с положительным предварительным коэффициентом <span class="math notranslate nohighlight">\(P &gt; 0\)</span>, обеспечивающим выполнение ограничений. Чтобы сформулировать штрафной член в <a class="reference internal" href="#equation-eqn-comdet-6">(45)</a> в <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-гамильтониан <span class="math notranslate nohighlight">\(H_P = x^T Q_P x\)</span>, перенумеруем двоичный вектор решений, используя один подстрочный индекс от <span class="math notranslate nohighlight">\(1\)</span> до <span class="math notranslate nohighlight">\(kN\)</span>, то есть <span class="math notranslate nohighlight">\(x = (x_{1,1}, x_{2,1}, ... , x_{N,1}, ... , x_{N,k}) = (x_1, x_2, ... , x_N , ... , x_{kN} )\)</span>. Тогда штрафной член <a class="reference internal" href="#equation-eqn-comdet-6">(45)</a> может быть переписан как</p>
 <div class="math notranslate nohighlight" id="equation-eqn-comdet-7">
-<span class="eqno">(46)<a class="headerlink" href="#equation-eqn-comdet-7" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(46)<a class="headerlink" href="#equation-eqn-comdet-7" title="Permalink to this equation">#</a></span>\[
 H_P = P (V x - b)^T (V x - b)
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(b\)</span> – вектор всех единиц, а <span class="math notranslate nohighlight">\(V = [I_N, ... , I_N]\)</span> – высокоструктурированная матрица размера <span class="math notranslate nohighlight">\(N \times k_N\)</span> с <span class="math notranslate nohighlight">\(N \times N\)</span> матрицами тождества, сложенными горизонтально рядом друг с другом. Если вес <span class="math notranslate nohighlight">\(P\)</span> достаточно велик, например, находится в диапазоне от <span class="math notranslate nohighlight">\(1/N\)</span> до <span class="math notranslate nohighlight">\(10/N\)</span>, то штрафной гамильтониан <span class="math notranslate nohighlight">\(H_P\)</span> будет стремиться к решению, в котором все ограничения удовлетворены <span class="math notranslate nohighlight">\(V_x = b\)</span>. Поскольку гамильтониан <span class="math notranslate nohighlight">\(H_P\)</span> квадратичен с точностью до константы, его можно переписать в канонической форме <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> как <span class="math notranslate nohighlight">\(H_P = x^T Q_P x\)</span>, с <span class="math notranslate nohighlight">\(Q_P = P(V^TV - 2 \ \text{diag}(V^Tb))\)</span>.</p>
@@ -1123,7 +1227,7 @@ H = H_M + H_p
 </div>
 </div>
 <div class="section" id="id14">
-<h2>Заключение<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<h2>Заключение<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <p>Из этой лекции узнали, что такое <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрица, а также как от такой формулировки оптимизационных задач можно перейти к задаче поиска основного состояния квантомеханической системы. В будущих лекциях познакомимся уже непосредственно с тремя основными методами решения этой задачи:</p>
 <ol class="simple">
 <li><p>квантовый отжиг
@@ -1159,9 +1263,11 @@ H = H_M + H_p
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="problems2qml_intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1177,24 +1283,28 @@ H = H_M + H_p
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

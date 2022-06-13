@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Машинное обучение как пазл &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,31 +19,28 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -71,7 +69,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -80,9 +92,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -100,14 +113,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -124,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -186,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -218,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -235,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -262,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -294,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -336,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -358,7 +372,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -385,7 +399,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -402,7 +416,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -424,7 +438,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -446,7 +460,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -468,7 +482,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -505,7 +519,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -537,7 +551,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -559,7 +573,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -581,7 +595,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -598,7 +612,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -610,7 +624,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -642,7 +656,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -661,110 +675,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/book/ml/ru/ml_l1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/ml/ru/ml_l1.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/ml/ru/ml_l1.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/ml/ru/ml_l1.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/ml/ru/ml_l1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/ml/ru/ml_l1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/ml/ru/ml_l1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/book/ml/ru/ml_l1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Введение
@@ -814,12 +944,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Машинное обучение как пазл</h1>
@@ -885,17 +1014,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="mll1">
-<span id="id1"></span><h1>Машинное обучение как пазл<a class="headerlink" href="#mll1" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Машинное обучение как пазл<a class="headerlink" href="#mll1" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/alexey-pronkin">Кашницкий Юрий</a></p></li>
 </ul>
 <div class="section" id="id2">
-<h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Мы продолжаем вводную часть нашего курса и переходим к машинному обучению. Если тема для вас хорошо знакома, можете пропустить этот блок, при желании можно пройти  <a class="reference external" href="https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a">этот тест</a>, для определения достаточности уровня знаний (там 5 вопросов по Python, 5 – по машинному обучению и столько же – по линейной алгебре). Тест можно проигнорировать, если вы не знакомы с машинным обучением и для вас выглядят магией такие вещи как автоматическая детекция лиц на фото или определение тональности отзыва на товар.</p>
 <p>Про машинное обучение, конечно, уже много всего написано, есть и немало неплохих курсов, сочетающих как теорию, так и практику. Но все же теория в этой области еще не догоняет практику, мы пока не понимаем, “почему оно работает”, а гарантии обобщающей способности алгоритмов (т.е. гарантии того, что модель машинного обучения будет работать на новых данных) в теории даются только для очень простых моделей. Таким образом, работа со сложными моделями остается своего рода искусством с примесью математики, инженерии и просто следования хорошим практикам, выработанным, как правило, в корпорациях или академическом сообществе.</p>
 <p>В этой лекции мы примем сторону практики и расскажем про задачи машинного обучения как некоторый пазл (или лего, кому что ближе) – меняя разные кусочки, мы будем получать разные прикладные задачи/сценарии/модели применения машинного обучения. Для иллюстрации такое описание мы сопроводим 3-мя примерами:</p>
@@ -911,7 +1041,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id3">
-<h2>Составляющие части задачи машинного обучения<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Составляющие части задачи машинного обучения<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Выделим следующие компоненты (“пазлы”), которые просматриваются во многих разных задачах машинного обучения:</p>
 <ul class="simple">
 <li><p>Целевой признак</p></li>
@@ -923,7 +1053,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>По ходу изложения будем обсуждать упомянутые примеры задач машинного обучения.</p>
 <div class="section" id="id4">
-<h3>Целевой признак<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Целевой признак<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Есть задачи, в которых машинное обучение не нужно, а достаточно экспертных знаний. По закону Ома, известно что напряжение пропорционально силе тока и электрическому сопротивлению, и вряд ли захочется предсказывать напряжение в сети каким-то другим образом, кроме как применением закона Ома. То же самое можно сказать про многие другие физические явления.</p>
 <p>Однако, для очень многих явлений вокруг нет хорошего теоретического объяснения или достаточных экспертных знаний. У нас нет “формулы”, которая описала бы, как поставленный лайк к посту в соцсети, возврат кредита, клик по рекомендации товара или локализация заразы в конкретной части легких зависят от прочих факторов. В таких случаях мы можем приблизить такую неизвестную нам формулу с помощью машинного обучения.</p>
 <p>В идеале с помощью машинного обучения мы хотели бы предсказывать какое-то событие, явление или процесс так, чтоб от этого была польза: прибыль компании/клиентов, если речь о бизнес-проекте, или новые знания, если это исследовательский проект. При этом напрямую это сделать вряд ли получится, и надо определить целевой признак, который, как мы считаем, будет связан с целевым событием/явлением. Звучит абстрактно, и дать строгое определение таких событий, явлений или процессов вряд ли получится. Поэтому сразу перейдем к примерам.</p>
@@ -935,7 +1065,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Новостному порталу хочется понять, какой контент нравится пользователям и по каким ссылкам они будут кликать. Здесь <em>событием</em> будет то, что пользователю нравится рекомендуемый контент.</p>
 <div class="figure align-default" id="see-also">
 <a class="reference internal image-reference" href="../../../_images/see_also.png"><img alt="../../../_images/see_also.png" src="../../../_images/see_also.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Блок “Читайте также” на новостном портале</span><a class="headerlink" href="#see-also" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Блок “Читайте также” на новостном портале</span><a class="headerlink" href="#see-also" title="Permalink to this image">#</a></p>
 </div>
 <p>Понятно, что нет возможности установить строгую зависимость такого события от прочих факторов. Поэтому мы определяем целевой признак: факт клика пользователя по показанной рекомендованной ссылке. Мы верим, что клик по ссылке связан с <em>событием</em>: если пользователю  нравится рекомендуемый контент, он/она перейдет по ссылке.</p>
 <p><strong>Пример 2. Автоматическая оценка читаемости научной статьи</strong></p>
@@ -948,16 +1078,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Допустим, стоит задача определения аномалий на рентгенограммах грудной клетки. В идеале мы хотели мы сразу по таким изображениям обнаруживать симптомы симптомов COVID-19 у пациента. Но заголовок этого примера выдает желаемое за действительное, и, конечно, сразу по снимкам диагностировать не получится.</p>
 <div class="figure align-default" id="covid-detection-ct">
 <a class="reference internal image-reference" href="../../../_images/covid_detection_ct.png"><img alt="../../../_images/covid_detection_ct.png" src="../../../_images/covid_detection_ct.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Пример данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/andradaolteanu/siim-COVID-19-box-detect-dcm-metadata">Источник</a></span><a class="headerlink" href="#covid-detection-ct" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Пример данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/andradaolteanu/siim-COVID-19-box-detect-dcm-metadata">Источник</a></span><a class="headerlink" href="#covid-detection-ct" title="Permalink to this image">#</a></p>
 </div>
 <p>Поэтому в такой задаче надо аккуратно определить <em>Целевой признак</em>. В данном случае их несколько. Согласно <a class="reference external" href="https://www.kaggle.com/c/siim-covid19-detection/data">описанию источника данных</a> соревнования, комитет врачей-радиологов проанализировал 6334 рентгенограмм и пометил их метками: ‘Negative for Pneumonia’ (нет пневмонии), ‘Typical Appearance’ (нормально), ‘Indeterminate Appearance’ (неразборчиво) и ‘Atypical Appearance’ (ненормально). Надо четко понимать, что возможности обученной модели будут ограничены имеющейся разметкой и поэтому заголовок “детекция симптомов COVID-19” слегка “желтоват”, в реальности модель детекции сможет выделять участок изображения (bounding box) и помечать это вектором из 4-х значений, соответствующих описанным целевым признакам в обучающей выборке.</p>
 <div class="figure align-default" id="covid-detection-prediction">
 <a class="reference internal image-reference" href="../../../_images/covid_detection_prediction.png"><img alt="../../../_images/covid_detection_prediction.png" src="../../../_images/covid_detection_prediction.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Прогноз модели детекции, обученной на данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/yujiariyasu/catch-up-on-positive-samples-plot-submission-csv">Источник</a></span><a class="headerlink" href="#covid-detection-prediction" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Прогноз модели детекции, обученной на данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/yujiariyasu/catch-up-on-positive-samples-plot-submission-csv">Источник</a></span><a class="headerlink" href="#covid-detection-prediction" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="id5">
-<h3>Данные<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Данные<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Определение <em>Целевого признака</em> неразрывно связано с имеющимися данными. Нет смысла определять целевой признак, который мы не можем измерить или по которому мы не можем собрать данные. Например, если новостной портал не логирует клики пользователей, нет смысла задавать вопрос о том, нравятся ли пользователям показанные рекомендации – для начала надо настроить сервисы для хранения кликов. Другой пример: вряд ли стоит пытаться предсказывать движения денежных активов в микросекундном диапазоне, если нет дорогостоящей инфраструктуры для сбора и обработки таких данных.</p>
 <p>Но <em>Данные</em> – это, конечно, не только <em>Целевой признак</em>. Но и просто <em>признаки</em>, также в эконометрике называемые предикторами или независимыми переменными. С помощью <em>признаков</em> как раз и получится предсказать <em>Целевой признак</em>, а хорошо или плохо – об этом чуть далее.</p>
 <p>Продумывание, сбор, и обработка  <em>признаков</em> – один из наиболее творческих аспектов работы специалистов по машинному обучению. Эта работа может включать в себя общение с представителями предметной области или бизнеса, клиентами, чтение научных статей, применение и более технических приемов, таких как порождение признаков из других признаков (feature engineering) или использование моделей для получения признаков (например, признаки изображения, полученные предобученной искусственной нейросетью).</p>
@@ -976,7 +1106,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Конечно, у снимков есть разные метаданные, да и форматы медицинских данных обычно специфические, но нам для примера подойдет такое упрощение.</p>
 </div>
 <div class="section" id="id6">
-<h3>Модель<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>Модель<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>С моделированием знаком любой исследователь. Чтоб рассчитать минимальную толщину стекла вагона метро для защиты от птиц во время движения по открытым участкам, достаточно представить птицу цилиндром той же массы, и для данной задачи цилиндр будет подходящей моделью птицы.</p>
 <p>Подобным же образом, в задачах машинного обучения с учителем <em>Модель</em> приближает <em>Целевой признак</em> и делает это с помощью <em>Данных</em> и <em>Параметров</em>. (Параметры – это неотъемлемая часть модели, и поэтому мы их не выносим как отдельный компонент задач машинного обучения).</p>
 <p>Надо понимать, что предлагая модель, мы совершаем уже второе упрощение. Сначала, как мы говорили, <em>Целевой признак</em> заменяет нам то, что мы реально хотим знать. А теперь, к тому же, мы заменяем целевой признак на его прогноз с помощью модели.</p>
@@ -989,11 +1119,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Подходов к детекции объектов на изображениях немало, но по соотношению скорости и качества работы особенно хорошо себя зарекомендовала модель <a class="reference external" href="https://github.com/ultralytics/yolov5">YOLOv5</a>. Про принцип работы этой модели можно узнать из лекции <a class="reference external" href="https://www.youtube.com/watch?v=nDPWywWRIRo">“Detection and segmentation”</a> курса cs231n, также на Хабре можно найти <a class="reference external" href="https://habr.com/ru/post/503200/">статью</a> про YOLOv4.</p>
 <div class="figure align-default" id="detection-yolo">
 <a class="reference internal image-reference" href="../../../_images/detection_yolo.jpeg"><img alt="../../../_images/detection_yolo.jpeg" src="../../../_images/detection_yolo.jpeg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Пример обнаружения объектов на изображении. <a class="reference external" href="https://habr.com/ru/post/503200/">Источник</a></span><a class="headerlink" href="#detection-yolo" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Пример обнаружения объектов на изображении. <a class="reference external" href="https://habr.com/ru/post/503200/">Источник</a></span><a class="headerlink" href="#detection-yolo" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="id7">
-<h3>Функция потерь<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>Функция потерь<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Выбор функции потерь (loss function) зависит от конкретной задачи, и это вопрос, изучаемый в курсах машинного обучения. Функция потерь определена для объектов обучающей выборки и по сути говорит, насколько прогноз хорошо соответствует значению целевого признака.</p>
 <p>Тут тонкий момент: примерно для того же нужны метрики качества, о которых речь пойдет ниже. Но функция потерь на практике чаще всего используется именно для того, чтоб задать цель обучения модели (для чего именно ей менять свои параметры) и также оценить, насколько хорошо модель обучилась, попросту, насколько хорошо она “сошлась”.</p>
 <p>В отличие от метрик качества, функции потерь вполне могут быть плохо интерпретируемыми, например как логистическая функция потерь (logloss, на русском про нее можно прочитать в <a class="reference external" href="https://dyakonov.org/2018/03/12/%D0%BB%D0%BE%D0%B3%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F-%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8/">посте</a> А.Г. Дьяконова), и на практике при разработке модели Data Scientist посмотрит на значение функции потерь всего несколько раз:</p>
@@ -1010,7 +1140,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="figure align-default" id="example-styletransfer-png">
 <a class="reference internal image-reference" href="../../../_images/example_styletransfer.png"><img alt="../../../_images/example_styletransfer.png" src="../../../_images/example_styletransfer.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">Пример решения задачи Neural Style Transfer из <a class="reference external" href="https://cs231n.github.io/assignments2020/assignment3/">задания 3</a> стэнфордского курса cs231n.</span><a class="headerlink" href="#example-styletransfer-png" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">Пример решения задачи Neural Style Transfer из <a class="reference external" href="https://cs231n.github.io/assignments2020/assignment3/">задания 3</a> стэнфордского курса cs231n.</span><a class="headerlink" href="#example-styletransfer-png" title="Permalink to this image">#</a></p>
 </div>
 <p>Функция потерь может включать и много составляющих, больше двух, если мы хотим чтоб модель выучила разные аспекты задачи. К примеру, в <a class="reference external" href="https://habr.com/ru/post/562064/">этой статье на Хабре</a> (уровень - продвинутый NLP) Давид Дале описывает дистилляцию нескольких больших NLP моделей для получения маленькой версии русскоязычной модели BERT. Маленький BERT по сути “учится” у больших моделей RuBERT, LaBSE, USE и T5, а описание того, что маленькая модель должна уметь (предсказывать замаскированные токены по контексту, строить представления токенов подобно тому, как это делают большие модели, предсказывать правильный порядок токенов в предложении) – это и есть составление сложной функции потерь.</p>
 <p><strong>Пример 1. Рекомендация новостного контента</strong></p>
@@ -1025,11 +1155,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="figure align-default" id="object-detection-loss">
 <a class="reference internal image-reference" href="../../../_images/object_detection_loss.png"><img alt="../../../_images/object_detection_loss.png" src="../../../_images/object_detection_loss.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">Слайд стэнфордского курса cs231n про функцию потерь в задаче детекции объектов. <a class="reference external" href="http://cs231n.stanford.edu/slides/2020/lecture_12.pdf">Источник</a>.</span><a class="headerlink" href="#object-detection-loss" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">Слайд стэнфордского курса cs231n про функцию потерь в задаче детекции объектов. <a class="reference external" href="http://cs231n.stanford.edu/slides/2020/lecture_12.pdf">Источник</a>.</span><a class="headerlink" href="#object-detection-loss" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="id8">
-<h3>Решатель<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>Решатель<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Когда мы определились с целевым признаком, обучающими данными, моделью и функцией потерь, мы наконец можем собственно обучать модель – то есть менять ее параметры так, чтобы все лучше и лучше предсказывать целевой признак, что меряется с помощью функции потерь.</p>
 <p>Наиболее часто используемых вариантов два:</p>
 <ul class="simple">
@@ -1043,7 +1173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Иногда такие градиенты функции потерь можно найти аналитически, например, в случае линейной или логистической регрессии. Но как правило, в случае более сложных моделей с большим числом параметров аналитическое выражение для градиента функции потерь выглядит слишком громоздко, лучше вычислять его численно. Это задача методов автоматического дифференцирования. В частности, возможно, величайший алгоритм машинного обучения всех времен - алгоритм обратного распространения ошибки (backpropagation) – не что иное как численный метод нахождения производных функции потерь по параметрам модели.</p>
 </div>
 <div class="section" id="id9">
-<h3>Схема валидации и метрика качества<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Схема валидации и метрика качества<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Наконец, когда мы определились с целевым признаком, обучающими данными, моделью, функцией потерь, а также научились подбирать параметры модели так, чтоб функция потерь уменьшалась, остался последний шаг – решить, как мы действительно поймем, что решаем задачу хорошо.</p>
 <p>Выбор метрики качества напрямую связан с тем, чего мы хотим от модели машинного обучения в более широком контексте. Например, в бизнес-процессе могут быть ключевые показатели, которые мы <em>опосредованно</em> можем улучшать с помощью машинного обучения. Ключевыми показателями могут быть такие вещи как дневная аудитория приложения, Life-Time Value, показатели, связанные с удержанием (retention) клиентов/сотрудников, удовлетворенность клиентов и т.д. Многие из этих показателей нельзя замерять напрямую и оптимизировать, и тогда искусство Data Scientist-а заключается в том, чтобы выбрать простую метрику качества, которая бы задавалась понятной формулой (например, доля верных ответов или полнота) и при этом неплохо “коррелировала” с тем показателем бизнес-процесса, который хочется оптимизировать и таким образом приносить деньги компании или уменьшать операционные расходы.</p>
 <p>Определение схемы валидации нужно, чтобы ответить на следующие вопросы:</p>
@@ -1055,7 +1185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Во многом это связано с переобучением. Недостаточно просто замерить метрику качества на обучающей выборке. Надо хотя бы разбить выборку на 2 части: на одной обучать модель, на второй – проверить метрику качества. И чаще всего при больших объемах данных и больших моделях ровно так и делают. Но в мире “малых данных” и легковесных моделей более предпочтительна кросс-валидация. В этой схеме выборка делится на несколько частей, а модель обучается столько же раз. При этом каждая из подвыборок один раз является тестовой частью, на которой измеряется качество прогнозов, а все остальные разы она участвует в обучении модели. Таким образом, кросс-валидация дает более надежную оценку того, как модель сработает на новых данных, в сравнении с простым разбиением обучающей выборки на две части.</p>
 <div class="figure align-default" id="k-fold-cross-validation-png">
 <a class="reference internal image-reference" href="../../../_images/k_fold_cross_validation.png"><img alt="../../../_images/k_fold_cross_validation.png" src="../../../_images/k_fold_cross_validation.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">Схема K-fold кросс-валидации.</span><a class="headerlink" href="#k-fold-cross-validation-png" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">Схема K-fold кросс-валидации.</span><a class="headerlink" href="#k-fold-cross-validation-png" title="Permalink to this image">#</a></p>
 </div>
 <p>Вы вряд ли ошибетесь, если на практике будете применять 5-кратную стратифицированную (такую что распределение целевого признака примерно одинаковое в каждой подвыборке) кросс-валидацию, но надо понимать, что кросс-валидация – не панацея. И схема валидации, которую мы тут описываем, – это больше, чем просто кросс-валидация.</p>
 <p>Часто выделяют “офлайн” и “онлайн” режимы валидации. И метрики, полученные на кросс-валидации относятся к первому режиму, “офлайн”. То есть мы один раз собрали обучающие данные, они больше не меняются, и вот с таким статическим срезом данных мы работаем, создаем признаки, обучаем модели, измеряем значения метрик на кросс-валидации. Но это не отвечает на вопрос, что получится, когда мы “выкатим модель в прод”, какие значения метрик ожидать на новых данных. И тут, как правило, устраиваются A/B-тесты, которые позволяют понять, а действительно ли мы видим эффект от модели, лучше ли вообще с моделью, чем без нее, а если лучше с моделью, то какую модель выбрать. A/B-тестирование – это очень обширная тема, выходящая за рамки данной статьи, и развивать ее тут мы не будем. Только отметим, что определение схемы валидации – зачастую нетривиальный процесс и в зависимости от проекта может быть методологически сложным, в том числе и приводить к ошибкам.</p>
@@ -1070,7 +1200,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Здесь схема проверки модели очень похожа на предыдущую. Сначала кросс-валидация или проверка модели на отложенной части, а потом – проверка предсказаний модели экспертами. Конечно, никто не будет по одной только кросс-валидации или результатам участников в соревновании Kaggle заключать, что модель прекрасно работает и ее можно нести врачам. В данном случае надо проверить модель на данных, приближенных к тем, которые будут использоваться врачами на практике. Чтобы не было <a class="reference external" href="https://www.technologyreview.com/2020/04/27/1000658/google-medical-ai-accurate-lab-real-life-clinic-covid-diabetes-retina-disease/">таких историй</a>, как у Google Health, когда Deep Learning модель достигала 90% верных ответов при определении диабетической ретинопатии по фото зрачка, но при обучении на качественных снимках высокого разрешения. А при работе с менее качественными снимками система просто слишком часто отказывалась выносить вердикт из-за того, что была недостаточно уверена в прогнозе.</p>
 </div>
 <div class="section" id="id10">
-<h3>Заключение<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<h3>Заключение<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>В этой лекции мы описали, из чего складывается постановка задачи машинного обучения и рассмотрели, как общие компоненты проглядываются в разных по своей природе задачах. При этом мы поговорили о моделях-рабочих лошадках в трех разных областях: градиентном бустинге для табличных данных, BERT для текстов и YOLO для детекции изображений.</p>
 <p>Немного пожертвовав, возможно, строгостью определения таких понятий как целевой признак или решатель, мы, надеюсь, описали все “пазлы” достаточно абстрактно, чтоб сложилось общее представление о том, как машинное обучение применяется в разных задачах, а также какие подводные камни стоит ожидать при боевом применении машинного обучения. Надеемся, это позволит лучше осознать взаимосвязь разных компонентов в квантово-классических схемах обучения, о которых речь пойдет далее в курсе.</p>
 </div>
@@ -1099,9 +1229,11 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="ml_intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1117,24 +1249,28 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

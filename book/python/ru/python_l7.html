@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Словари &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,31 +19,28 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -71,7 +69,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -80,9 +92,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -100,14 +113,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -124,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -186,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -218,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -235,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -262,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -294,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -336,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -358,7 +372,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -385,7 +399,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -402,7 +416,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -424,7 +438,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -446,7 +460,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -468,7 +482,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -505,7 +519,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -537,7 +551,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -559,7 +573,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -581,7 +595,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -598,7 +612,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -610,7 +624,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -642,7 +656,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -661,110 +675,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/book/python/ru/python_l7.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/python/ru/python_l7.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/python/ru/python_l7.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/python/ru/python_l7.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/python/ru/python_l7.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/python/ru/python_l7.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/python/ru/python_l7.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/book/python/ru/python_l7.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Описание лекции
@@ -887,12 +1017,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Словари</h1>
@@ -1031,17 +1160,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="python-l7">
-<span id="id1"></span><h1>Словари<a class="headerlink" href="#python-l7" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Словари<a class="headerlink" href="#python-l7" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/alexmorphine">Овсянникова Александра</a></p></li>
 </ul>
 <div class="section" id="id2">
-<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы расскажем про:</p>
 <ul class="simple">
 <li><p>то, что такое <code class="docutils literal notranslate"><span class="pre">dict</span></code>;</p></li>
@@ -1051,11 +1181,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="dict">
-<h2>Что такое <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#dict" title="Permalink to this headline">¶</a></h2>
+<h2>Что такое <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#dict" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">dict</span></code> (от английского <em>“dictionary”</em>, словарь) – еще один тип данных в Python. Словари хранят пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>. То есть в списках можно достать элемент, если указать его позицию в виде целого числа, а в словарях – тот самый <code class="docutils literal notranslate"><span class="pre">ключ</span></code>. Обратите внимание, <code class="docutils literal notranslate"><span class="pre">dict</span></code> – <strong>неупорядоченный</strong> тип данных, поэтому достать элемент по номеру не получится, но отображение содержимого будет <strong>в порядке добавления</strong> элементов. <strong>Уникальность</strong> ключей должна поддерживаться, чтобы всегда можно было быстро найти одно единственно верное <code class="docutils literal notranslate"><span class="pre">значение</span></code>.</p>
 <p>В некоторых языках программирования можно встретить ассоциативные массивы – полную аналогию <code class="docutils literal notranslate"><span class="pre">dict</span></code>. Также вспомним базы данных, широко использующиеся во всем мире для хранения информации: в таблице можно установить первичный ключ, который уникально идентифицирует запись, как и <code class="docutils literal notranslate"><span class="pre">ключ</span></code> соответствует <code class="docutils literal notranslate"><span class="pre">значению</span></code> в словаре. Самый простой пример ключа - порядковый номер объекта!</p>
 <div class="section" id="id3">
-<h3>Создание словаря<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>Создание словаря<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>Использовать словарь стоит, когда нужно сохранять объекты с какими-то ключами и обращаться к объектам по известным ключам. Один из способов определения словаря: указание пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> через <strong>запятую</strong> внутри фигурных скобок <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Напоминает <code class="docutils literal notranslate"><span class="pre">set</span></code>, правда? <code class="docutils literal notranslate"><span class="pre">{}</span></code> позволяет создать <strong>пустой</strong> словарь, но не пустое множество.</p>
 <p>Например, вы решили упростить себе жизнь и больше не запоминать дни рождения коллег. Вместо этого, лучше хранить их в одном месте:</p>
 <div class="cell docutils container">
@@ -1075,7 +1205,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>В примере <code class="docutils literal notranslate"><span class="pre">dates</span></code> имеет две пары значений. В первой паре строка <code class="docutils literal notranslate"><span class="pre">&quot;Кунг</span> <span class="pre">Фьюри&quot;</span></code> является <em>ключом</em>, а <code class="docutils literal notranslate"><span class="pre">&quot;1968-09-09&quot;</span></code> – его <em>значением</em>.</p>
 </div>
 <div class="section" id="id4">
-<h3>Получение значения по ключу<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Получение значения по ключу<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Чтобы получить значение по ключу, необходимо обратиться к переменной, содержащей словарь, и указать ключ в квадратных скобках <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1110,7 +1240,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id5">
-<h3>Изменение и добавление значений<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Изменение и добавление значений<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Синтаксис изменения значения по ключу и добавления нового ключа со значением одинаковый: в <code class="docutils literal notranslate"><span class="pre">[]</span></code> нужно указать ключ, поставить <code class="docutils literal notranslate"><span class="pre">=</span></code> и указать значение, которое теперь будет соответствовать ключу.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1134,9 +1264,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id6">
-<h2>Основные методы словаря<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>Основные методы словаря<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <div class="section" id="get">
-<h3>Проверка вхождения и <code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>
+<h3>Проверка вхождения и <code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this headline">#</a></h3>
 <p>Помните, ранее говорили, что обращение к несуществующему ключу приводит к ошибке? Пришло время посмотреть пару способов борьбы!</p>
 <p>Можно проверить, есть ли интересующий ключ среди множества ключей словаря. Это делается при помощи бинарного оператора <code class="docutils literal notranslate"><span class="pre">in</span></code>. Слева должен быть указан ключ, справа – переменная со словарем:</p>
 <div class="cell docutils container">
@@ -1208,7 +1338,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id7">
-<h3>Что такое “длина словаря”?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>Что такое “длина словаря”?<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Функция <code class="docutils literal notranslate"><span class="pre">len()</span></code> для словаря будет возвращать количество пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (их столько же, сколько ключей), которое в нем содержится:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1229,7 +1359,7 @@ len(marks) = 2
 </div>
 </div>
 <div class="section" id="id8">
-<h3>Удаление из словаря<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>Удаление из словаря<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Есть несколько способов очистки в словаре: можно убирать по ключу, а можно сразу удалить все!</p>
 <ul class="simple">
 <li><p>при помощи инструкции del (от английского <em>“delete”</em>) можно удалить пару <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (<em>замечу, что удаление ключа эквивалентно удалению пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, так как мы теряем возможность найти то самое <code class="docutils literal notranslate"><span class="pre">значение</span></code></em>), в общем виде:</p></li>
@@ -1317,7 +1447,7 @@ len(marks) = 2
 <p>Обратите внимание на то, как работают методы <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">popitem()</span></code> и <code class="docutils literal notranslate"><span class="pre">clear()</span></code>: как только вызываются, словарь меняет свой состав (<em>изменения происходят in place</em>, то изменить по месту без копирования).</p>
 </div>
 <div class="section" id="id9">
-<h3>Обновление и добавление ключей<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Обновление и добавление ключей<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Мы уже видели, что значения в словарь можно добавлять или менять, обращаясь по ключу. Python предоставляет возможность не писать кучу присваиваний, а использовать лаконичный метод <code class="docutils literal notranslate"><span class="pre">update()</span></code>, который на вход может принимать либо</p>
 <ul class="simple">
 <li><p>другой словарь</p></li>
@@ -1372,10 +1502,10 @@ len(marks) = 2
 </div>
 </div>
 <div class="section" id="id10">
-<h2>Доступ к ключам и значениям<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>Доступ к ключам и значениям<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>В Python можно без проблем извлекать отдельно по ключам или значениям, а также итерироваться по элементам словарей в цикле <code class="docutils literal notranslate"><span class="pre">for</span></code>. Осталось разобраться, как это работает.</p>
 <div class="section" id="id11">
-<h3>Ключи<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3>Ключи<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>По умолчанию, в конструкциях вида</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># после in указано название переменной, хранящей словарь</span>
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dict_var</span><span class="p">:</span>
@@ -1403,7 +1533,7 @@ Harry Potter 1st year
 </div>
 </div>
 <div class="section" id="id12">
-<h3>Значения<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3>Значения<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>При помощи метода <code class="docutils literal notranslate"><span class="pre">values()</span></code> можно получить все значения, хранящиеся по всем ключам словаря:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1435,7 +1565,7 @@ Harry Potter 1st year
 <p><strong>Напрямую по значению получить ключ нельзя</strong></p>
 </div>
 <div class="section" id="id13">
-<h3>Все и сразу<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<h3>Все и сразу<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Существует метод <code class="docutils literal notranslate"><span class="pre">items()</span></code>, который достает пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в виде последовательности кортежей. Его же часто удобно использовать в циклах, чтобы не тащить длинную запись в виде названия словаря и квадратных скобок с ключом при обращении к значению:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1460,7 +1590,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="section" id="id14">
-<h2>Сортировка<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<h2>Сортировка<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <p>Функция <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> доступна и для словарей. По умолчанию ключи словаря поддерживают порядок, в котором были добавлены, но можно отсортировать их в нужном направлении (<em>в зависимости от типа</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1483,11 +1613,11 @@ Player Harry Potter is in 1st year
 <p>Можно ли отсортировать словарь по значениям? Да, можно попробовать самостоятельно разобраться с аргументами функции <a class="reference external" href="https://docs.python.org/3/howto/sorting.html"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a>.</p>
 </div>
 <div class="section" id="id15">
-<h2>Что можно хранить<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h2>Что можно хранить<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <p>Теперь добавим немного технических подробностей: возможно, вы уже заметили самостоятельно, что <code class="docutils literal notranslate"><span class="pre">dict</span></code> может принимать в качестве ключа не всякое значение. На самом деле только <a class="reference external" href="https://docs-python.ru/tutorial/vstroennye-funktsii-interpretatora-python/funktsija-hash/"><strong>хэшируемые</strong></a> объекты <em>(можно вызвать функцию <code class="docutils literal notranslate"><span class="pre">hash()</span></code> и получить значение)</em> могут быть ключами словаря, на значения это ограничение не распространяется. В <code class="docutils literal notranslate"><span class="pre">dict</span></code> и <code class="docutils literal notranslate"><span class="pre">set</span></code> значение хэша от объекта используется для поиска внутри структуры.</p>
 <p>Ключом словаря нельзя сделать объект <strong>изменяемого</strong> типа, например, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> или <strong>сам <code class="docutils literal notranslate"><span class="pre">dict</span></code></strong>, так как значение их хэша может измениться со временем. Неизменяемый кортеж может быть ключом только если не содержит внутри изменяемые объекты.</p>
 <div class="section" id="id16">
-<h3>Изменяемость и неизменяемость<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<h3>Изменяемость и неизменяемость<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p><em>В англоязычной литературе изменяемые типы называют <strong>mutable</strong>, а неизменяемые – <strong>immutable</strong>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types">почитать документацию</a></em></p>
 <p>В Python все – объект. Когда пользователь присваивает значение переменной, она начинает ассоциироваться с ячейкой памяти, где лежит это значение. Переменная знает адрес, откуда можно получить значение. <code class="docutils literal notranslate"><span class="pre">id()</span></code> и <code class="docutils literal notranslate"><span class="pre">hex()</span></code> показывают адрес в памяти компьютера. _<code class="docutils literal notranslate"><span class="pre">id()</span></code> - адрес в десятичном виде, а <code class="docutils literal notranslate"><span class="pre">hex()</span></code> поможет перевести в <em>шестнадцатеричный</em>.</p>
 <p>По адресу лежит так называемое <strong>внутреннее состояние</strong> переменной:</p>
@@ -1496,7 +1626,7 @@ Player Harry Potter is in 1st year
 <li><p><strong>изменяемые</strong> типы позволяют менять внутреннее состояние переменной при сохранении адреса (возвращаемое <code class="docutils literal notranslate"><span class="pre">id()</span></code> значение не меняется, но <em>значение</em> переменной каким-то образом преобразовывается). Изменение по ссылке называется изменением <em>in place</em></p></li>
 </ul>
 <div class="section" id="id17">
-<h4>Неизменяемые типы<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<h4>Неизменяемые типы<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
 <p>Из стандартных неизменяемыми являются:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
@@ -1516,14 +1646,14 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f8e3bbb5d80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f0da5419d80
 </pre></div>
 </div>
 </div>
 </div>
 <div class="figure align-default" id="mutable-example-0">
 <a class="reference internal image-reference" href="../../../_images/Python-Immutable-Example-1.png"><img alt="../../../_images/Python-Immutable-Example-1.png" src="../../../_images/Python-Immutable-Example-1.png" style="width: 411px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100 (цифры в нижней правой части как раз и показывают тот самый адрес)</span><a class="headerlink" href="#mutable-example-0" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100 (цифры в нижней правой части как раз и показывают тот самый адрес)</span><a class="headerlink" href="#mutable-example-0" title="Permalink to this image">#</a></p>
 </div>
 <p>А теперь поменяем значение <code class="docutils literal notranslate"><span class="pre">counter</span></code>:</p>
 <div class="cell docutils container">
@@ -1534,7 +1664,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f8e3bbb6a00&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f0da541aa00&#39;
 </pre></div>
 </div>
 </div>
@@ -1542,7 +1672,7 @@ Player Harry Potter is in 1st year
 <p>Кажется, что раз значение переменной <code class="docutils literal notranslate"><span class="pre">counter</span></code> поменялось, то и содержимое по предыдущему адресу изменилось? Нет, на самом деле <code class="docutils literal notranslate"><span class="pre">counter</span></code> теперь указывает в другое место:</p>
 <div class="figure align-default" id="mutable-example-1">
 <a class="reference internal image-reference" href="../../../_images/Python-Immutable-Example-2.png"><img alt="../../../_images/Python-Immutable-Example-2.png" src="../../../_images/Python-Immutable-Example-2.png" style="width: 411px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#mutable-example-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#mutable-example-1" title="Permalink to this image">#</a></p>
 </div>
 <p>Из интересного: Python <a class="reference external" href="https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong">заранее создает объекты</a> для чисел от -5 до 256, поэтому для переменных со значением из этого диапазона берутся заранее готовые ссылки.</p>
 <div class="cell docutils container">
@@ -1565,7 +1695,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="section" id="id18">
-<h4>Изменяемые типы<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<h4>Изменяемые типы<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
 <p>Стандартные изменяемые типы это:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
@@ -1585,26 +1715,26 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f8e348a7100
-Стало: 0x7f8e348a7100 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f0d9c106e00
+Стало: 0x7f0d9c106e00 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
 </div>
 <div class="figure align-default" id="mutable-example-2">
 <a class="reference internal image-reference" href="../../../_images/Python-Mutable-Example.png"><img alt="../../../_images/Python-Mutable-Example.png" src="../../../_images/Python-Mutable-Example.png" style="width: 402px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#mutable-example-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#mutable-example-2" title="Permalink to this image">#</a></p>
 </div>
 <p>После добавления еще одного, адрес <code class="docutils literal notranslate"><span class="pre">ratings</span></code> не изменился.</p>
 <div class="figure align-default" id="mutable-example2">
 <a class="reference internal image-reference" href="../../../_images/Python-Mutable-Example-2.png"><img alt="../../../_images/Python-Mutable-Example-2.png" src="../../../_images/Python-Mutable-Example-2.png" style="width: 402px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">#</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="id19">
-<h2>Что мы узнали из лекции<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<h2>Что мы узнали из лекции<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Новый тип данных – <strong>словарь</strong>! Позволяет хранить соответствие <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>;</p></li>
 <li><p>Несколько способов создания <code class="docutils literal notranslate"><span class="pre">dict</span></code>, примеры:</p></li>
@@ -1712,9 +1842,11 @@ flowers.get(&quot;magnolias&quot;) = None
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="python_l6.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1730,24 +1862,28 @@ flowers.get(&quot;magnolias&quot;) = None
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

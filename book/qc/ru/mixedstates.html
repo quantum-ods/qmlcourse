@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Смешанные состояния и матрицы плотности &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/qc/ru/mixedstates.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,110 +677,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/book/qc/ru/mixedstates.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/qc/ru/mixedstates.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qc/ru/mixedstates.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/qc/ru/mixedstates.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/qc/ru/mixedstates.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qc/ru/mixedstates.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/qc/ru/mixedstates.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/book/qc/ru/mixedstates.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Описание лекции
@@ -850,12 +980,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Смешанные состояния и матрицы плотности</h1>
@@ -955,11 +1084,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="mixedstates">
-<span id="id1"></span><h1>Смешанные состояния и матрицы плотности<a class="headerlink" href="#mixedstates" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Смешанные состояния и матрицы плотности<a class="headerlink" href="#mixedstates" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/karelin">Карелин Николай</a></p></li>
@@ -967,7 +1097,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://github.com/ooovector">Беседин Илья</a></p></li>
 </ul>
 <div class="section" id="id2">
-<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Из этой лекции мы узнаем:</p>
 <ul class="simple">
 <li><p>Что такое матрица плотности</p></li>
@@ -977,14 +1107,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>Смешанные состояния<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Смешанные состояния<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Эта глава кратко рассматривает довольно сложный, но крайне важный аспект квантового описания мира: как описать квантовую систему, в которой случайным является не только результат измерения, но и само состояние квантовой системы, иными словами, когда мы не можем описать квантовую систему определенным вектором состояния.</p>
 <p>Как могут появиться такие ситуации?</p>
 <p>Прежде всего, в любой реалистичной ситуации квантовая система будет испытывать влияние окружающей среды. Это воздействие окружающей среды на квантовый компьютер, как правило, может быть охарактеризовано некоторой температурой этой самой среды и скоростью термализации системы с ней. В отличие от классических компьютеров, где шумы редко приводят к ошибкам в вычислениях, квантовые компьютеры очень плохо защищены от шумов. Любое масштабное квантовое вычисление является гонкой с процессами декогеренции и релаксации: за время выполнения алгоритма шумы не должны испортить результат вычислений настолько, чтобы его нельзя было использовать.</p>
 <p>Вторая, более важная причина использования смешанных состояний состоит в их тесной связи с запутанными состояниями, как показано ниже.</p>
 </div>
 <div class="section" id="id4">
-<h2>Почему нельзя обойтись волновой функцией<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Почему нельзя обойтись волновой функцией<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Рассмотрим реальный физический кубит в состоянии равновесия, например, спин ядра атома в магнитном поле.
 Статистическая физика говорит нам, что вероятность обнаружить этот спин ориентированным вдоль внешнего поля выше, чем в
 противоположном полю направлении. Для расчета отношений этих вероятностей можно использовать распределение Больцмана:
@@ -1007,12 +1137,12 @@ const thebe_selector_output = ".output, .cell_output"
 функциям с разным <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
 </div>
 <div class="section" id="id5">
-<h2>Матрица плотности<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>Матрица плотности<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Оказывается, что вместо распределения вероятностей по волновым функциям можно использовать более простую
 конструкцию – матрицу плотности. Если система находится в состояниях <span class="math notranslate nohighlight">\(\Phi_n\)</span> с вероятностями <span class="math notranslate nohighlight">\(p_n\)</span>, то матрицу
 плотности можно определить как</p>
 <div class="math notranslate nohighlight" id="equation-eqn-rho-mixed">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-rho-mixed" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-rho-mixed" title="Permalink to this equation">#</a></span>\[
 \rho = \sum\limits_{n}p_n \ket{\Phi_n}\bra{\Phi_n}.
 \]</div>
 <p>Выражение <span class="math notranslate nohighlight">\(\ket{\Phi_n}\bra{\Phi_n}\)</span> обозначает произведение вектора-столбца на вектор-строку – результатом будет
@@ -1033,15 +1163,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Стоит заметить, что матрица плотности для подсистем была впервые введена в научный оборот знаменитым советским физиком, лауреатом Нобелевской премии Львом Ландау. <span id="id6">[<a class="reference internal" href="../../bibliography.html#id39" title="Иванов М.Г. Как понимать квантовую механику. Регулярная и хаотическая динамика, 2015. URL: https://mipt.ru/upload/medialibrary/533/quant-2.pdf.">15a</a>]</span></p>
 <div class="figure align-default" id="landau">
 <img alt="../../../_images/Landau.jpg" src="../../../_images/Landau.jpg" />
-<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Лев Ландау, 1908-1968</span><a class="headerlink" href="#landau" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Лев Ландау, 1908-1968</span><a class="headerlink" href="#landau" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="id7">
-<h2>Чистые и смешанные состояния<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>Чистые и смешанные состояния<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Состояния, которые описываются одной единственной волновой функцией <span class="math notranslate nohighlight">\(\Psi\)</span>, называются <em>чистыми</em> (англ. <em>pure states</em>).
 Для таких состояний выражение для матрицы плотности получается тривиальным:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-rho-pure">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-rho-pure" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-rho-pure" title="Permalink to this equation">#</a></span>\[
 \rho = \ket{\Psi}\bra{\Psi}
 \]</div>
 <p>Матрица плотности чистого состояния является <em>оператором-проектором</em>: действие оператора на волновую функцию произвольного состояния <span class="math notranslate nohighlight">\(\Phi\)</span>
@@ -1049,7 +1179,7 @@ const thebe_selector_output = ".output, .cell_output"
 Состояния, которые нельзя описать одним вектором состояния, а можно лишь матрицей плотности, называются <em>смешанными</em>
 (англ. <em>mixed states</em>).</p>
 <div class="section" id="id8">
-<h3>Чистота состояния<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>Чистота состояния<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Можно легко показать, для оператора-проектора <a class="reference internal" href="#equation-eqn-rho-pure">(2)</a> выполняется тождество</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1071,24 +1201,24 @@ const thebe_selector_output = ".output, .cell_output"
 характеризующих смешанные и запутанные состояния, о чем будет рассказано в заключительном разделе этой лекции.
 Величина</p>
 <div class="math notranslate nohighlight" id="equation-eqn-purity">
-<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-purity" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-purity" title="Permalink to this equation">#</a></span>\[
 \gamma = \operatorname{Tr} (\rho^2)
 \]</div>
 <p>называется <em>чистотой состояния</em> (<em>quantum state purity</em>).</p>
 </div>
 <div class="section" id="id9">
-<h3>Энтропия<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Энтропия<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Энтропия фон Неймана – это другая численная характеристика того, насколько сильно наша система смешанная. Ее
 выражение очень похоже на выражение для классической <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%8D%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%8F">энтропии Шеннона</a>.
 Только в отличие от классики, в квантовой механике мы имеем <em>матрицу</em> плотности, поэтому в выражении у нас
 фигурирует <a class="reference external" href="https://en.wikipedia.org/wiki/Logarithm_of_a_matrix">матричный логарифм</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-entropy">
-<span class="eqno">(4)<a class="headerlink" href="#equation-eqn-entropy" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(4)<a class="headerlink" href="#equation-eqn-entropy" title="Permalink to this equation">#</a></span>\[
 S = -Tr(\rho\cdot \ln(\rho))
 \]</div>
 </div>
 <div class="section" id="id10">
-<h3>Спектральная декомпозиция матрицы плотности<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<h3>Спектральная декомпозиция матрицы плотности<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Определение матрицы плотности <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> представляет собой сумму матриц плотностей чистых состояний, взятых с
 некоторыми вероятностями. Интересно, что совершенно разным комбинациям чистых состояний могут соответствовать одинаковые
 матрицы плотности. Например, состояние кубита, который с вероятностью 50% находится в состоянии <span class="math notranslate nohighlight">\(\ket{0}\)</span> и с
@@ -1106,7 +1236,7 @@ S = -Tr(\rho\cdot \ln(\rho))
 </div>
 </div>
 <div class="section" id="id11">
-<h2>Смешанные состояния и запутанность<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<h2>Смешанные состояния и запутанность<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Рассмотрим ситуацию, когда описываемую квантовую систему <span class="math notranslate nohighlight">\(\Phi\)</span> можно разделить на две подсистемы,
 <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>, и состояние этой системы <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> является суперпозицией состояний двух подсистем:</p>
 <div class="math notranslate nohighlight">
@@ -1129,7 +1259,7 @@ S = -Tr(\rho\cdot \ln(\rho))
 матрицу плотности. Редуцированная матрица плотности получается из матрицы плотности чистого состояния всей системы
 суммированием по вероятностям различных состояний первой подсистемы:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-partial-dm">
-<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-partial-dm" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-partial-dm" title="Permalink to this equation">#</a></span>\[
 \rho_\psi = \operatorname{Tr}_\phi (\ket{\Phi} \bra{\Phi}) = \sum_{i, j} d_{i, j} \ket{\psi_j} \bra{\psi_i},
 \]</div>
 <p>где</p>
@@ -1148,10 +1278,10 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 В этом случае определение матрицы плотности <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> можно рассматривать как редуцированную матрицу плотности
 <a class="reference internal" href="#equation-eqn-partial-dm">(5)</a>, из которой убрали нерелевантные и неконтролируемые степени свободы.</p>
 <div class="section" id="id12">
-<h3>Запутанные и сепарабельные состояния<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3>Запутанные и сепарабельные состояния<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Давайте вернемся к представлению состояния составной системы и зададимся вопросом: что можно сказать о связи между частями системы с точки зрения квантового описания? Для системы из двух кубитов такая составная система в общем случае может быть записана в явном виде (в этом разделе мы в основном следуем изложению из книги <span id="id13">[<a class="reference internal" href="../../bibliography.html#id71" title="Кокин А. А. Валиев К. А. Квантовые компьютеры: надежды и реальность. НИЦ &quot;Регулярная и хаотическая динамика&quot;, 2001.">01</a>]</span>):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-two-qubit">
-<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-two-qubit" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-two-qubit" title="Permalink to this equation">#</a></span>\[
 \ket{\Phi} = a \ket{0_A 0_B} + b \ket{0_A 1_B} + c \ket{1_A 0_B} + d \ket{1_A 1_B},
 \]</div>
 <p>где индексы <span class="math notranslate nohighlight">\(A\)</span> и <span class="math notranslate nohighlight">\(B\)</span> здесь обозначают первый и второй кубиты, соответственно, а условие нормировки дает</p>
@@ -1223,27 +1353,27 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 <p>(код взят из официальной <a class="reference external" href="https://pennylane.ai/qml/demos/tutorial_advanced_usage.html">демонстрации</a> для библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>)</p>
 </div>
 <div class="section" id="id16">
-<h3>Разложение Шмидта<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<h3>Разложение Шмидта<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>В этом разделе мы познакомимся с важной процедурой – разложением Шмидта, которое тесно связано со спектром редуцированных матриц плотности состояния составной квантовой системы и благодаря которому легко увидеть, является ли состояние системы <em>запутанным</em> или нет.</p>
 <p>Снова запишем чистое двухчастичное состояние <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> квантовой системы, в пространстве <span class="math notranslate nohighlight">\(H_{\phi} \otimes H_{\psi}\)</span> двух подсистем <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>. Покажем тогда, что <em>существуют</em> ортонормированные состояния <span class="math notranslate nohighlight">\(\ket{i_{\phi}}\)</span> системы <span class="math notranslate nohighlight">\(\phi\)</span> и ортонормированные состояния <span class="math notranslate nohighlight">\(\ket{i_{\psi}}\)</span> системы <span class="math notranslate nohighlight">\(\psi\)</span>, которые дадут нам разложение:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-schm">
-<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-schm" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-schm" title="Permalink to this equation">#</a></span>\[
 \ket{\Phi} = \sum_{i} \lambda_{i} \ket{i_{\phi}} \ket{i_{\psi}},
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(\lambda_i\)</span> – неотрицательные числа (коэффициенты Шмидта), удовлетворяющие условию <span class="math notranslate nohighlight">\(\sum_{i} \lambda_{i}^{2} = 1\)</span>.</p>
 <p>Для доказательства рассмотрим случай, когда обе подсистемы имеют пространство одинаковой размерности. Пусть тогда <span class="math notranslate nohighlight">\(\ket{n}\)</span> и <span class="math notranslate nohighlight">\(\ket{k}\)</span> состояния образуют произвольный ортонормированный базис для подсистем  <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>. Соответственно, тогда состояние системы  <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> может быть представлено в виде разложения:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-dec">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-dec" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(8)<a class="headerlink" href="#equation-eqn-dec" title="Permalink to this equation">#</a></span>\[
 \ket{\Phi} = \sum_{n,k} a_{nk} \ket{n} \ket{k},\ \text{где}\ a_{nk} = \bra{nk} \ket{\Phi}
 \]</div>
 <p>Константы разложения <span class="math notranslate nohighlight">\(a_{nk}\)</span> образуют эрмитово-сопряженную комплексную матрицу <span class="math notranslate nohighlight">\(A\)</span>, которую можно привести к диагональному виду. Для этого применим к этой матрице сингулярное разложение (или SVD-разложение) вида: <span class="math notranslate nohighlight">\(A=U \cdot S \cdot V^{*}\)</span>, где <span class="math notranslate nohighlight">\(U\)</span> и <span class="math notranslate nohighlight">\(V\)</span> – унитарные матрицы, а <span class="math notranslate nohighlight">\(S\)</span> – диагональная матрица с неотрицательными действительными числами на диагонали (эти числа называют сингулярными числами матрицы <span class="math notranslate nohighlight">\(A\)</span>, и их набор однозначно определяется матрицей). Тогда разложение <a class="reference internal" href="#equation-eqn-dec">(8)</a> можно привести к виду:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-dec1">
-<span class="eqno">(9)<a class="headerlink" href="#equation-eqn-dec1" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(9)<a class="headerlink" href="#equation-eqn-dec1" title="Permalink to this equation">#</a></span>\[
 \ket{\Phi} = \sum_{i,n,k} u_{in}s_{ii}v_{ik} \ket{n} \ket{k}.
 \]</div>
 <p>Теперь переопределим базис состояний в подсистемах  <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-basis">
-<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-basis" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-basis" title="Permalink to this equation">#</a></span>\[
 \ket{i_{\phi}}=\sum_{n} u_{ni} \ket{n} \mbox{  ,  } \ket{i_{\psi}}=\sum_{k} v_{ik} \ket{k}
 \]</div>
 <p>и обозначим <span class="math notranslate nohighlight">\(s_{ii} \equiv \lambda_{i}\)</span>. В результате разложение <a class="reference internal" href="#equation-eqn-dec1">(9)</a> преобразуется к виду:</p>
@@ -1261,9 +1391,9 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 </div>
 </div>
 <div class="section" id="id17">
-<h2>Описания эволюции смешанного состояния<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<h2>Описания эволюции смешанного состояния<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
 <div class="section" id="id18">
-<h3>Квантовая динамика<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<h3>Квантовая динамика<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>Напомним, что квантовая динамика в терминах волновых функций <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> описывается при помощи уравнения Шредингера:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1282,7 +1412,7 @@ i\hbar \frac{\partial \rho}{\partial t} = [\hat{H}, \rho].
 <p>Важное свойство унитарных матриц – их собственные значения по модулю равны единице. Действие унитарного оператора не изменяет собственных значений матрицы плотности, но вращает собственный ее базис. Исходя из этого можно сделать вывод о том, что ни чистота, ни энтропия не могут изменяться в результате унитарных операций.</p>
 </div>
 <div class="section" id="id19">
-<h3>Измерения и томография<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<h3>Измерения и томография<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>Квантовая механика работает так, что любое <a class="reference external" href="../../qc/ru/qubit.html#id23">измерение</a> приводит к коллапсу волновой функции и является необратимым. А еще измерения, например, состояния <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span> не различимы при измерениях по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – для обоих состояний мы будем получать <span class="math notranslate nohighlight">\(\ket{1}\)</span> и <span class="math notranslate nohighlight">\(\ket{0}\)</span> с вероятностью <span class="math notranslate nohighlight">\(0.5\)</span>, то есть нам нужно измерять по <em>всем</em> базисам. В общем, получается, что восстановить амплитуду и фазу волновой функции <span class="math notranslate nohighlight">\(\Psi\)</span> это большая проблема, если добавить сюда вероятностный характер измерения.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1290,7 +1420,7 @@ i\hbar \frac{\partial \rho}{\partial t} = [\hat{H}, \rho].
 </div>
 <div class="figure align-default" id="id21">
 <a class="reference internal image-reference" href="../../../_images/MarginalDistribution.png"><img alt="../../../_images/MarginalDistribution.png" src="../../../_images/MarginalDistribution.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Иллюстрация фазовой проблемы.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Иллюстрация фазовой проблемы.</span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
 </div>
 <p>Эта задача обычно решается при помощи квантовой томографии, и восстанавливают как раз не волновую функцию <span class="math notranslate nohighlight">\(\Psi\)</span>, а матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span>  (потому что в реальных экспериментах и задачах почти не бывает чистых состояний).
 Представим, что наша квантовая система описывается базисом <span class="math notranslate nohighlight">\(y_i\)</span> – набором из <span class="math notranslate nohighlight">\(2^N\)</span> векторов, причем каждому из этих базисных векторов соответствует свое собственное значение – результат измерения (подробнее об этом было в <a class="reference external" href="../../qc/ru/qubit.html#id31">лекции про кубит</a>). Тогда если у нас будет достаточно много результатов измерений, то мы сможем восстановить нашу матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span> методом максимизации правдоподобия. Выражение для правдоподобия в этом случае можно записать как:</p>
@@ -1303,7 +1433,7 @@ L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
 </div>
 </div>
 <div class="section" id="id20">
-<h2>Что мы узнали?<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<h2>Что мы узнали?<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Формализм матрицы плотности позволяет описывать составные системы (например, один кубит в многокубитной системе)</p></li>
 <li><p>Чаще всего в реальных экспериментах у нас ситуация “мы приготовили состояние, но точно не знаем какое” и волновая функция нам не подходит</p></li>
@@ -1336,9 +1466,11 @@ L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="gates.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1354,24 +1486,28 @@ L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

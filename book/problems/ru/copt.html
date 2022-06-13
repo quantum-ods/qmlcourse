@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Задачи комбинаторной оптимизации &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/problems/ru/copt.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,110 +677,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/book/problems/ru/copt.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/problems/ru/copt.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems/ru/copt.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/problems/ru/copt.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/problems/ru/copt.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems/ru/copt.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/problems/ru/copt.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/book/problems/ru/copt.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Задача о максимальном разрезе в графе
@@ -821,12 +951,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Задачи комбинаторной оптимизации</h1>
@@ -897,11 +1026,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="copt">
-<span id="id1"></span><h1>Задачи комбинаторной оптимизации<a class="headerlink" href="#copt" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Задачи комбинаторной оптимизации<a class="headerlink" href="#copt" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
@@ -918,7 +1048,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Какого-то сложного кода или больших формул с дираковскими значками из квантовой механики тут не будет, так что можно немного передохнуть, расслабиться и насладиться чтением. Для тех, кто хорошо знаком с задачами целочисленной оптимизации, в этой лекции точно не будет ничего нового, и ее можно будет пропускать, ну или пролистать по диагонали.</p>
 <div class="section" id="id2">
-<h2>Задача о максимальном разрезе в графе<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Задача о максимальном разрезе в графе<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Мы уже немного говорили об этой задаче в лекции про <a class="reference external" href="../../problems/ru/ising.html#id3">модель Изинга</a> из-за их очень большого сходства. Но давайте еще раз вспомним, что это за модель такая. Ну и сразу рассмотрим ее максимально общий случай. Итак, у нас есть граф на множестве вершин <span class="math notranslate nohighlight">\(V\)</span>, связанных множеством ребер <span class="math notranslate nohighlight">\(E\)</span>. Каждое ребро имеет две инцидентных вершины <span class="math notranslate nohighlight">\(u,v\)</span>; в общем случае порядок <span class="math notranslate nohighlight">\(u,v\)</span> важен, тогда мы говорим о направленном (<em>directed</em>) графе. Каждому ребру можно также сопоставить действительное число <span class="math notranslate nohighlight">\(w\)</span>, тогда у нас будет так называемый <em>взвешенный</em> граф. Наша цель – разбить множество вершин <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся сообщества <span class="math notranslate nohighlight">\(V_1, V_2\)</span>. Давайте сформулируем функцию стоимости:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -927,11 +1057,11 @@ C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_
 <p>То есть в общем случае это просто сумма всех весов ребер между двумя сообществами. В общем случае эта задача является <span class="math notranslate nohighlight">\(NP\)</span>-полной. В теории к этой задаче можно также свести любую другую <span class="math notranslate nohighlight">\(NP\)</span> задачу за полиномиальное время.</p>
 <div class="figure align-default" id="maxcut2">
 <a class="reference internal image-reference" href="../../../_images/Max-cut.png"><img alt="../../../_images/Max-cut.png" src="../../../_images/Max-cut.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 119 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 119 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut2" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="id3">
-<h2>Задача о выделении сообществ в графах<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Задача о выделении сообществ в графах<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Задача о выделении сообщества в графах это уже более практическая и понятная задача. Она находит применение во многих областях, но одно из самых очевидных применений – это социология (в том числе анализ социальных сетей), когда мы хотим, анализируя контакты людей, выделить из них сообщества для дальнейшего анализа. Эта задача также является <span class="math notranslate nohighlight">\(NP\)</span>-трудной, так как существует экспоненциально много способов разбить вершины на множества и при этом для общего случая не существует полиномиального алгоритма решения. Ну и даже если мы найдем какое-то решение, то проверка того, что оно лучшее возможна также лишь за экспоненциальное время. Хотя для этой задачи и известны относительно быстрые приближенные алгоритмы, нам очень трудно понять, насколько хорошее решение они дают для действительно больших графов.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -987,16 +1117,16 @@ B_{ij} = A_{ij} - \frac{d_i d_j}{2 |E|}
 <p>Мы тут пока описали лишь простой случай модулярности для не взвешенного и ненаправленного графа. Но даже в таком случае для задачи точной оптимизации модулярности не известно полиномиального алгоритма решения. Поэтому обычно применяют приближенные или жадные алгоритмы, и они вроде даже неплохо работают. Но мы почти не знаем, насколько действительно далеко они от самых оптимальных решений, особенно для больших графов.</p>
 </div>
 <div class="section" id="id6">
-<h2>Задача о Гамильтоновых циклах<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>Задача о Гамильтоновых циклах<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Перед тем как перейти к интересной и важной задаче поиска Гамильтоновых циклов, мы вспомним задачу о мостах Кенигсберга (Калининграда). Ведь именно гуляя по этому городу и пытаясь решить эту задачу, Леонард Эйлер изобрел теорию графов. Суть задачи: нужно обойти все острова города, пройдя по каждому мосту лишь один раз, и вернуться на тот остров, откуда стартовал. Эйлер, создав математический аппарат теории графов, сумел доказать, что это невозможно, ну а дальше завертелось, и вот мы с вами тут.</p>
 <div class="figure align-default" id="id16">
 <a class="reference internal image-reference" href="../../../_images/bridges.png"><img alt="../../../_images/bridges.png" src="../../../_images/bridges.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 120 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых, Эйлер изобрел теорию графов</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 120 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых, Эйлер изобрел теорию графов</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
 </div>
 <p>Такой путь в графе, когда мы проходим по каждому ребру лишь один раз, называется Эйлеров цикл. Но нам будет более интересен схожий класс циклов – Гамильтоновы циклы. Это такие циклы, которые проходят через каждую вершину графа ровно один раз.</p>
 <div class="figure align-default" id="id17">
 <a class="reference internal image-reference" href="../../../_images/Hamilton.jpg"><img alt="../../../_images/Hamilton.jpg" src="../../../_images/Hamilton.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 121 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 121 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
 </div>
 <p>Для Гамильтонова цикла мы можем ввести <span class="math notranslate nohighlight">\(N^2\)</span> бинарных переменных <span class="math notranslate nohighlight">\(x_{i,p}\)</span>. Каждая переменная <span class="math notranslate nohighlight">\(x_{i,p}\)</span> равна <span class="math notranslate nohighlight">\(1\)</span>, если <span class="math notranslate nohighlight">\(i\)</span>-я вершина находится на <span class="math notranslate nohighlight">\(p\)</span>-м шаге пути и <span class="math notranslate nohighlight">\(0\)</span> если нет. Тогда легко ввести условия существования такого цикла:</p>
 <div class="math notranslate nohighlight">
@@ -1015,11 +1145,11 @@ C = (1 - \sum_i x_{i,p})^2 + (1 - \sum_p x_{i,p})^2 + \sum_{u,v \notin E} x_{u,p
 <p>Правда, в этом случае мы должны минимизировать, а не максимизировать эту величину.</p>
 </div>
 <div class="section" id="id7">
-<h2>Задача коммивояжера<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>Задача коммивояжера<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Задачу коммивояжера мы (а точнее наш смартфон) решаем каждый раз, когда строим в <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Maps</span></code> маршрут, включающий несколько точек. Зная, как формулируется задача о гамильтоновых циклах, сформулировать задачу коммивояжера очень легко.</p>
 <div class="figure align-default" id="id18">
-<img alt="_static/intro/ru/Salesman.png" src="_static/intro/ru/Salesman.png" />
-<p class="caption"><span class="caption-number">Fig. 122 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<img alt="../../../_images/Salesman.png" src="../../../_images/Salesman.png" />
+<p class="caption"><span class="caption-number">Fig. 122 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
 </div>
 <p>По сути нам требуется взять все Гамильтоновы циклы и выбрать из них тот, для которого сумма весов по содержащимся в нем ребрам будет минимальной. Но надо помнить, что цикл обязательно должен быть в первую очередь Гамильтоновым, поэтому мы добавим веса слагаемых в выражение для стоимости, причем веса, отвечающие за сам цикл, будут больше:</p>
 <div class="math notranslate nohighlight">
@@ -1033,12 +1163,12 @@ C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} 
 </div>
 </div>
 <div class="section" id="id8">
-<h2>Задача о рюкзаке<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2>Задача о рюкзаке<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Довольно простая для понимания задача, к которой, однако, сводится огромное число куда более сложных задач. Например, именно задачей о рюкзаке является проблема оптимизации портфеля биржевых акций, или, например, оптимизации графиков работы сотрудников McDonald’s, учитывая ожидаемое число посетителей и т.д.</p>
 <p>Суть задачи заключается в том, что у нас есть рюкзак ограниченного объема. А еще есть набор разных предметов – каждый из них имеет свой объем и стоимость. Наша цель в данном случае заключается в том, чтобы найти оптимальный набор предметов так, чтобы они влезали в наш рюкзак, при этом их стоимость была бы максимально возможной.</p>
 <div class="figure align-default" id="knapsack">
 <a class="reference internal image-reference" href="../../../_images/Knapsack.png"><img alt="../../../_images/Knapsack.png" src="../../../_images/Knapsack.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 123 </span><span class="caption-text">Иллюстрация задачи о рюкзаке.</span><a class="headerlink" href="#knapsack" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 123 </span><span class="caption-text">Иллюстрация задачи о рюкзаке.</span><a class="headerlink" href="#knapsack" title="Permalink to this image">#</a></p>
 </div>
 <p>Формально это можно записать следующим образом. Пускай у нас есть рюкзак объема <span class="math notranslate nohighlight">\(V\)</span>. Давайте обозначим количество экземпляров <span class="math notranslate nohighlight">\(i\)</span>-й вещи в рюкзаке переменной <span class="math notranslate nohighlight">\(x_i\)</span>, а ее объем <span class="math notranslate nohighlight">\(v_i\)</span>. Ценность <span class="math notranslate nohighlight">\(i\)</span>-го предмета обозначим как <span class="math notranslate nohighlight">\(s_i\)</span>. Решением задачи будет вектор <span class="math notranslate nohighlight">\(X\)</span> из целых чисел <span class="math notranslate nohighlight">\(x_i\)</span>, которые при этом могут быть равны нулю – это будет значить, что <span class="math notranslate nohighlight">\(i\)</span>-я вещь не входит в оптимальный набор. Тогда нам необходимо решить следующую задачу:</p>
 <div class="math notranslate nohighlight">
@@ -1050,14 +1180,14 @@ X = \text{argmax} \{ \sum_i x_i \cdot s_i \} \\
 \end{split}\]</div>
 </div>
 <div class="section" id="id9">
-<h2>Классические алгоритмы<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2>Классические алгоритмы<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>Самый простой и очевидный вариант решения таких проблем – это просто перебор всех возможных комбинаций. Но так как сложность задач растет экспоненциально (<span class="math notranslate nohighlight">\(O(N) \sim e^{N}\)</span>), то очень быстро прямое решение (еще иногда говорят <em>brute force</em> решение, или <em>brute force</em> алгоритм) становится невозможным. Понятно, что можно воспользоваться какими-то эвристиками для конкретной задачи. Это приводит нас к алгоритмам типа <em>ветвей и границ</em> (<em>branch and bound</em>) <span id="id10">[<a class="reference internal" href="../../bibliography.html#id47" title="Ailsa H Land and Alison G Doig. An automatic method for solving discrete programming problems. In 50 Years of Integer Programming 1958-2008, pages 105–132. Springer, 2010.">LD10</a>]</span>, в которых мы обычно строим дерево возможных решений и пытаемся перебирать не все подряд, а лишь “перспективные” ветви этого дерева, отсекая те ветки, где хороших решений точно не будет. Но сложность таких алгоритмов все равно остается экспоненциальной. Другой вариант – это искать не обязательно самое лучше решение, а хотя бы какое-то подходящее решение (<em>feasible solution</em>, решение, которое удовлетворяет ограничениям). Это приводит нас к аппроксимационным алгоритмам, которые каким-то образом пытаются свести экспоненциальную задачу к полиномиальной, пусть и теряя в гарантированном качестве итогового решения.</p>
 <div class="admonition- admonition">
 <p class="admonition-title">Важное замечание</p>
 <p>Задачи комбинаторной оптимизации нельзя точно решить на квантовом компьютере! Квантовые компьютеры лишь дают нам потенциально очень эффективные <em>аппроксимационные</em> алгоритмы. Причем в основе этих алгоритмов лежит обычно как раз квантовое машинное обучение!</p>
 </div>
 <div class="section" id="id11">
-<h3>Общий вид алгоритма ветвей и границ<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3>Общий вид алгоритма ветвей и границ<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>Давайте запишем как в общем виде выглядит алгоритм ветвей и границ (<a class="reference external" href="https://en.wikipedia.org/wiki/Branch_and_bound#Generic_version">источник</a>).</p>
 <ol class="simple">
 <li><p>Найти любое решение <span class="math notranslate nohighlight">\(xh\)</span> проблемы, которое бы удовлетворяло ограничениям. Сохраним значение целевой функции для этого решения: <span class="math notranslate nohighlight">\(B = f(xh)\)</span>. Оно будет определять лучшее из известных на данный момент решений.</p></li>
@@ -1083,7 +1213,7 @@ X = \text{argmax} \{ \sum_i x_i \cdot s_i \} \\
 <p>В целом, данный алгоритм сегодня это, пожалуй, лучшее, что можем использовать, если нам необходимо точное решение. Также всегда есть опция остановить поиск до того, как мы достигнем оптимума – в этом варианте алгоритм становится аппроксимационным.</p>
 </div>
 <div class="section" id="id12">
-<h3>Жадные алгоритмы<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3>Жадные алгоритмы<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Теперь давайте вернемся к аппроксимационным алгоритмам, которые работают относительно быстро, но, к сожалению, часто дают довольное плохие результаты. Ну и самым простым вариантом таких алгоритмов будет жадный алгоритм. Рассматривать его будем на примере задачи о рюкзаке. Пусть у нас есть рюкзак объема <span class="math notranslate nohighlight">\(30\)</span> и набор предметов с их стоимостью и объемом:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1163,7 +1293,7 @@ Total weight of items: 30
 <p>В данном случае это сработало неплохо – мы нашли действительно хорошее решение. Однако можно заметить, что решение из трех элементов <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">3500)</span></code> было бы более выгодным, так как итоговая ценность была бы <span class="math notranslate nohighlight">\(10500\)</span>, что на <span class="math notranslate nohighlight">\(100\)</span> единиц больше жадного решения. Но в силу своей <em>жадности</em> наш алгоритм не смог найти это решение, хотя найденное им и лежит довольно близко к лучшему. Так что очень часто жадные алгоритмы находят очень плохие решения, причем качество решений сильно падает с ростом размерности проблемы.</p>
 </div>
 <div class="section" id="id13">
-<h3>Метод имитации отжига<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<h3>Метод имитации отжига<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Это итеративный алгоритм, который очень часто способен найти действительно неплохое решение. Причем, в отличие от жадных алгоритмов, отжиг специально сделан так, чтобы не “застревать” в каких-то локально-хороших точках пространства решений, а наоборот, искать самое лучшее. Мы разберем работу отжига на примере задачи о максимальном разрезе в графе, а именно, реализуем подобие алгоритма Метрополиса-Гастингса <span id="id14">[<a class="reference internal" href="../../bibliography.html#id34" title="W. K. Hastings. Monte Carlo sampling methods using Markov chains and their applications. Biometrika, 57(1):97-109, 04 1970. URL: https://doi.org/10.1093/biomet/57.1.97, arXiv:https://academic.oup.com/biomet/article-pdf/57/1/97/23940249/57-1-97.pdf, doi:10.1093/biomet/57.1.97.">Has70</a>]</span>. Но для начала давайте сгенерируем случайный граф:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1312,7 +1442,7 @@ P_{acceptance} = e^{\frac{E_{new} - E_{old}}{T}}
 </div>
 </div>
 <div class="section" id="id15">
-<h2>Заключение<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h2>Заключение<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы узнали, что же это за такие <em>NP</em>-задачи, а также познакомились с примерами некоторых из них. Посмотрели, как эти задачи можно решать на классическом компьютере, и какие при этом есть ограничения. В следующих лекциях мы узнаем:</p>
 <ul class="simple">
 <li><p>как задачи комбинаторной оптимизации можно свести к решению модели Изинга (подробнее об этой модели – в <a class="reference internal" href="ising.html"><span class="doc std std-doc">отдельной лекции</span></a>)</p></li>
@@ -1350,9 +1480,11 @@ P_{acceptance} = e^{\frac{E_{new} - E_{old}}{T}}
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="advising.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1368,24 +1500,28 @@ P_{acceptance} = e^{\frac{E_{new} - E_{old}}{T}}
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

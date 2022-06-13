@@ -1,190 +1,200 @@
 @startuml
-package "Week 1" {
-        package "Introduction" #Bisque {
-                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro #14D2EF
-        }
 
-        package "Prerequisites" #Bisque {
-                rectangle "Python Intro" as python_intro #14D2EF
-                rectangle "Linalg & Numpy" as linalg_numpy_intro #14D2EF
-                rectangle "ML Intro" as ml_intro #14D2EF
-        }
+skinparam {
+        BackgroundColor #Black
+        ArrowColor #WhiteSmoke
 }
 
-intro --> python_intro
-intro --> linalg_numpy_intro
-intro --> ml_intro
+package "Week 1" as week_1 #DimGrey {
 
-package "Week 2" {
-        package "Quantum Computing" as qci #Bisque {
-                rectangle "Qubit" as qubit #40B464
-                rectangle "Gates" as gates #40B464
-                rectangle "Mixed Stated" as mixed #FFC864
+        package "Introduction" as sub_intro #DarkGoldenRod {
+                rectangle "Quantum Computers, Bitcoin and Quantum Advantage" as intro_quantum #DeepSkyBlue
         }
 
-        package "Programming QC" #Bisque {
-                rectangle "Frameworks Overview" as frameworks_overview #40B464
-                rectangle "PennyLane" as pennylane #40B464
-                rectangle "Cirq & TFQ" as cirq_tfq #FFC864
-                rectangle "Qiskit" as qiskit #FFC864
+        package "Prerequisites" as sub_prereq #DarkGoldenRod {
+                rectangle "Python Intro" as intro_python #DeepSkyBlue
+                rectangle "Linalg & Numpy" as intro_linalg_numpy #DeepSkyBlue
+                rectangle "ML Intro" as intro_ml #DeepSkyBlue
+
+                intro_python -> intro_linalg_numpy
+                intro_linalg_numpy -> intro_ml
         }
+
+  sub_intro -.-> sub_prereq
 }
 
-python_intro --> qubit
-linalg_numpy_intro --> qubit
-ml_intro --> qubit
+package "Week 2" as week_2 #DimGrey {
 
-qubit --> gates
-qubit -> mixed
+        package "Quantum Computing" as sub_qci #DarkGoldenRod {
+                rectangle "Qubit" as qubit #Green
+                rectangle "Gates" as gates #Green
+                rectangle "Mixed States" as mixed_states #Gold
 
-gates --> frameworks_overview
-frameworks_overview --> pennylane
-cirq_tfq <- frameworks_overview
-frameworks_overview -> qiskit
-
-package "Week 3" {
-        package "Basic Quantum Algorithms" as qalgo #Bisque {
-                rectangle "Quantum Algorithms Overview" as quantum_algorithms_overview #40B464
-                rectangle "Deutsch" as deutsch #40B464
-                rectangle "Quantum Teleportation" as quantum_teleportation #40B464
-                rectangle "Superdense coding" as superdense_coding #40B464
-                rectangle "Grover" as grover #FFC864
-                rectangle "Simon" as saimon #FFC864
+                qubit --> gates
+                qubit -> mixed_states
         }
 
+        sub_prereq ==> sub_qci
+
+        package "Programming QC" as sub_pqc #DarkGoldenRod {
+                rectangle "Frameworks Overview" as frameworks_overview #Green
+                rectangle "PennyLane" as pennylane #Green
+                rectangle "Cirq & TFQ" as cirq_tfq #Gold
+                rectangle "Qiskit" as qiskit #Gold
+
+                frameworks_overview --> pennylane
+                cirq_tfq <- frameworks_overview
+                frameworks_overview -> qiskit
+        }
+
+        sub_qci -.-> sub_pqc
 }
 
-pennylane --> quantum_algorithms_overview
 
-quantum_algorithms_overview --> deutsch
-quantum_algorithms_overview -> grover
-saimon <- quantum_algorithms_overview
+package "Week 3" as week_3 #DimGrey {
 
-deutsch -> quantum_teleportation
-quantum_teleportation --> superdense_coding
+        package "Basic Quantum Algorithms" as sub_qalgo #DarkGoldenRod {
+                rectangle "Quantum Algorithms Overview" as quantum_algorithms_overview #Green
+                rectangle "Deutsch" as deutsch #Green
+                rectangle "Quantum Teleportation" as quantum_teleportation #Green
+                rectangle "Superdense coding" as superdense_coding #Green
+                rectangle "Grover" as grover #Gold
+                rectangle "Simon" as saimon #Gold
 
-package "Week 4" {
-
-        package "NISQ Hardware" #Bisque {
-                rectangle "Hardware Overview" as hardware_overview #40B464
-                rectangle "Superconducting qubits" as superconducting_qubits #E0535C
+                saimon <- quantum_algorithms_overview
+                quantum_algorithms_overview -> grover
+                quantum_algorithms_overview --> deutsch
+                deutsch -> quantum_teleportation
+                quantum_teleportation -> superdense_coding
         }
 
-        package "Quantum ML" #Bisque {
-                rectangle "QML General" as qml_general #40B464
-                rectangle "HHL" as hhl #E0535C
-                rectangle "Quantum KNN" as qknn #E0535C
-        }
-
-        package "VQC" #Bisque {
-                rectangle "VQC" as vqc #40B464
-        }
-
+        sub_pqc ====> sub_qalgo
 }
 
-superdense_coding --> hardware_overview
-hardware_overview -> superconducting_qubits
+package "Week 4" as week_4 #DimGrey {
 
-hardware_overview --> qml_general
+        package "NISQ Hardware" as sub_nisq_hw #DarkGoldenRod {
+                rectangle "Hardware Overview" as hardware_overview #Green
+                rectangle "Superconducting qubits" as superconducting_qubits #Brown
 
-qml_general -> hhl
-qknn <- qml_general
-
-qml_general --> vqc
-
-package "Week 5" {
-
-        package "Gradients" #Bisque {
-                rectangle "Gradients" as gradients #40B464
-                rectangle "High-Order gradients" as high_gradients #FFC864
+                hardware_overview -> superconducting_qubits
         }
 
-        package "Quantum SVM" #Bisque {
-                rectangle "Hybrid SVM" as hybrid_svm #40B464
-                rectangle "Classical SVM" as classical_svm #FFC864
+        sub_qalgo ==> sub_nisq_hw
+
+        package "Quantum ML" as sub_qml #DarkGoldenRod {
+                rectangle "QML General" as qml_general #Green
+                rectangle "HHL" as hhl #Brown
+                rectangle "Quantum KNN" as qknn #Brown
+
+                qml_general -> hhl
+                qknn <- qml_general
         }
 
-        package "Quantum Neural Networks" #Bisque {
-                rectangle "QNN" as quantum_nn #40B464
-'                rectangle "Barren plateaus" as barren #FFC864
-                rectangle "Convolutional VQC" as quantum_cnn #40B464
+        sub_nisq_hw -.-> sub_qml
+
+        package "VQC" as sub_vqc #DarkGoldenRod {
+                rectangle "VQC" as vqc #Green
         }
+
+        sub_qml -.-> sub_vqc
 }
 
-vqc --> gradients
-gradients -> high_gradients
+package "Week 5" as week_5 #DimGrey {
 
-gradients --> hybrid_svm
-hybrid_svm -> classical_svm
+        package "Gradients" as sub_gradient #DarkGoldenRod {
+                rectangle "Gradients" as gradients #Green
+                rectangle "High-Order gradients" as high_gradients #Gold
 
-hybrid_svm --> quantum_nn
-quantum_nn -> quantum_cnn
-
-package "Week 6" {
-        package "Problems for QML" #Bisque {
-                rectangle "Ising model" as ising #40B464
-                rectangle "Advanced Ising" as ising_advanced #FFC864
-                rectangle "Combinatorial Optimization" as combinatorial_optimization #40B464
-                rectangle "Quantum Chemistry" as quantum_chemistry #40B464
-                rectangle "Quantum Chemistry Advanced" as quantum_chemistry_advanced #FFC864
+                gradients -> high_gradients
         }
+
+        sub_vqc ==> sub_gradient
+
+        package "Quantum SVM" as sub_qsvm #DarkGoldenRod {
+                rectangle "Hybrid SVM" as hybrid_svm #Green
+                rectangle "Classical SVM" as classical_svm #Gold
+
+                hybrid_svm -> classical_svm
+        }
+
+        sub_gradient -.-> sub_qsvm
+
+        package "Quantum Neural Networks" as sub_qnn #DarkGoldenRod {
+                rectangle "QNN" as quantum_nn #Green
+                'rectangle "Barren plateaus" as barren #Gold
+                rectangle "Convolutional VQC" as quantum_cnn #Green
+
+                quantum_nn -> quantum_cnn
+        }
+
+        sub_qsvm -.-> sub_qnn
 }
 
-quantum_nn --> ising
-quantum_nn --> combinatorial_optimization
-quantum_nn --> quantum_chemistry
+package "Week 6" as week_6 #DimGrey {
 
-ising_advanced <- ising
-quantum_chemistry_advanced <- quantum_chemistry
+        package "Problems for QML" as sub_problem_qml #DarkGoldenRod {
+                rectangle "Ising model" as ising #Green
+                rectangle "Advanced Ising" as ising_advanced #Gold
+                rectangle "Combinatorial Optimization" as combinatorial_optimization #Green
+                rectangle "Quantum Chemistry" as quantum_chemistry #Green
+                rectangle "Quantum Chemistry Advanced" as quantum_chemistry_advanced #Gold
 
-package "Week 7" {
-        package "From problems to QML" #Bisque {
-                rectangle "NP-problems as Ising model" as np_problem_ising #40B464
-                rectangle "Jordan-Wigner transformation" as jordan_wigner #FFC864
-                rectangle "QUBO" as qubo #FFC864
-                rectangle "Eigenvalues problem" as eigenvalues_problem #40B464
+                ising --> ising_advanced
+                quantum_chemistry --> quantum_chemistry_advanced
         }
 
+        sub_qnn ==> sub_problem_qml
 }
 
-combinatorial_optimization --> np_problem_ising
-ising --> np_problem_ising
-ising --> jordan_wigner
-quantum_chemistry --> jordan_wigner
+package "Week 7" as week_7 #DimGrey {
 
-np_problem_ising --> eigenvalues_problem
-jordan_wigner <- np_problem_ising
-np_problem_ising --> qubo
-jordan_wigner --> eigenvalues_problem
+        package "From problems to QML" as sub_from_problen_to_qml #DarkGoldenRod {
+                rectangle "NP-problems as Ising model" as np_problem_ising #Green
+                rectangle "Jordan-Wigner transformation" as jordan_wigner #Gold
+                rectangle "QUBO" as qubo #Gold
+                rectangle "Eigenvalues problem" as eigenvalues_problem #Green
 
-package "Week 8" {
-        package "VQE" #Bisque {
-                rectangle "VQE" as vqe #40B464
-                rectangle "TSP with VQE" as tsp_with_vqe #FFC864
+                np_problem_ising --> eigenvalues_problem
+                np_problem_ising -> jordan_wigner
+                qubo <- np_problem_ising
+                jordan_wigner --> eigenvalues_problem
         }
 
-        package "D-Wave" #Bisque {
-                rectangle "D-Wave & Sampling" as d_wave #40B464
-                rectangle "Quantum & Classic Annealers" as q_c_annealers #FFC864
-        }
-
-        package "QAOA" #Bisque {
-                rectangle "QAOA" as qaoa #40B464
-        }
-
-        package "Jobs and Perspectives" as jobs #Bisque {
-                rectangle "Academic & Industrial Positions" as academic_industrial #White
-        }
+        sub_problem_qml ====> sub_from_problen_to_qml
 }
 
-eigenvalues_problem --> vqe
-eigenvalues_problem --> d_wave
+package "Week 8" as week_8 #DimGrey {
 
-vqe --> tsp_with_vqe
+        package "VQE" as sub_vqe #DarkGoldenRod {
+                rectangle "VQE" as vqe #Green
+                rectangle "TSP with VQE" as tsp_with_vqe #Gold
 
-q_c_annealers <- d_wave
-d_wave --> qaoa
+                vqe -> tsp_with_vqe
+        }
 
-qaoa --> academic_industrial
+        sub_from_problen_to_qml ====> sub_vqe
+
+        package "D-Wave" as sub_dwave #DarkGoldenRod {
+                rectangle "D-Wave & Sampling" as d_wave #Green
+                rectangle "Quantum & Classic Annealers" as q_c_annealers #Gold
+
+                d_wave -> q_c_annealers
+        }
+
+        sub_vqe -.-> sub_dwave
+
+        package "QAOA" as sub_qaoa #DarkGoldenRod {
+         rectangle "QAOA" as qaoa #Green
+        }
+
+        sub_dwave -.-> sub_qaoa
+
+        package "Jobs and Perspectives" as sub_job_perpsp #DarkGoldenRod {
+          rectangle "Academic & Industrial Positions" as academic_industrial #WhiteSmoke
+        }
+
+        sub_qaoa -.-> sub_job_perpsp
+}
 
 @enduml
