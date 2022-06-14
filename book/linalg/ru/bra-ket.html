@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Скобки &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/linalg/ru/bra-ket.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,110 +677,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/book/linalg/ru/bra-ket.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/linalg/ru/bra-ket.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/linalg/ru/bra-ket.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/linalg/ru/bra-ket.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/linalg/ru/bra-ket.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/linalg/ru/bra-ket.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/linalg/ru/bra-ket.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/book/linalg/ru/bra-ket.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Гильбертово пространство
@@ -831,12 +961,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Скобки</h1>
@@ -917,11 +1046,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="bra-ket">
-<span id="id1"></span><h1>Скобки<a class="headerlink" href="#bra-ket" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Скобки<a class="headerlink" href="#bra-ket" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/m12sl">Озерин Алексей</a></p></li>
@@ -930,7 +1060,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Дисклеймер: нам нужен инструментарий для работы с более абстрактными пространствами!</p>
 <p>Символ Кронекера и остальные специальные тензора – это удобные примитивы для низкоуровневой работы с матрицами и векторами. Физики смогли придумать поверх примитивов линейной алгебры отличный синтаксический сахар, т.н. нотацию Дирака. Но давайте начнем с определения гильбертова пространства.</p>
 <div class="section" id="id2">
-<h2>Гильбертово пространство<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Гильбертово пространство<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Гильбертово пространство – это полное линейное векторное пространство, определяемое:</p>
 <ol class="simple">
 <li><p>скалярным произведением <span class="math notranslate nohighlight">\((u, v)\)</span>, в простейшем частном случае - <span class="math notranslate nohighlight">\((u, v) = u^{\dagger} v\)</span>;</p></li>
@@ -939,11 +1069,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>Полное пространство<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Полное пространство<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>При нахождении предела некоторой последовательности полное метрическое пространство дает возможность не думать о принадлежности этого предела данному пространству, то есть по своей сути разрешает предельный переход и позволяет доказать множество красивых теорем. Подробнее строгое определение можно посмотреть <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE">тут</a>.</p>
 </div>
 <div class="section" id="id4">
-<h2>Нотация Дирака, или Bra-Ket нотация<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Нотация Дирака, или Bra-Ket нотация<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Напомним, что в гильбертовом пространстве для пространства <span class="math notranslate nohighlight">\(H\)</span> определено сопряженное пространство <span class="math notranslate nohighlight">\(H^{\dagger}\)</span>.
 Тогда можно рассмотреть обозначение Ket для элемента <span class="math notranslate nohighlight">\(v\)</span> из <span class="math notranslate nohighlight">\(H\)</span> как вектор-столбец:</p>
 <div class="math notranslate nohighlight">
@@ -965,7 +1095,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Часто, например, требуется показать два граничных  состояния кубита <span class="math notranslate nohighlight">\(\ket{0}\)</span>, <span class="math notranslate nohighlight">\(\ket{1}\)</span>, тогда мы можем записать их просто как вектор-столбцы: <span class="math notranslate nohighlight">\(\ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> и <span class="math notranslate nohighlight">\(\ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>. В следующей лекции этот вопрос будет рассмотрен детальнее.</p>
 </div>
 <div class="section" id="outer-product">
-<h2>Внешнее произведение (outer-product)<a class="headerlink" href="#outer-product" title="Permalink to this headline">¶</a></h2>
+<h2>Внешнее произведение (outer-product)<a class="headerlink" href="#outer-product" title="Permalink to this headline">#</a></h2>
 <p>Также имеет смысл и переставленная запись Ket-Bra, которая называется <a class="reference external" href="https://en.wikipedia.org/wiki/Outer_product"><em>внешним произведением</em></a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -980,7 +1110,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Мы вернемся к Ket-Bra чуть ниже, когда будем говорить про операторы проекции.</p>
 </div>
 <div class="section" id="id5">
-<h2>Эрмитов оператор<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>Эрмитов оператор<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Оператор <span class="math notranslate nohighlight">\(U\)</span> называется <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B8%D1%82%D0%BE%D0%B2_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"><em>эрмитовым</em></a>, если он удовлетворяет равенству <span class="math notranslate nohighlight">\((Uv,u) = (v,Uu)\)</span> для всех <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(v\)</span> из <span class="math notranslate nohighlight">\(H\)</span> или в матричном виде:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -988,7 +1118,7 @@ U=U^{\dagger}
 \]</div>
 </div>
 <div class="section" id="id6">
-<h2>Унитарный оператор<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>Унитарный оператор<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Unitary_operator"><em>Унитарный оператор</em></a> <span class="math notranslate nohighlight">\(\hat{U}:H \rightarrow H\)</span> на гильбертовом пространстве <span class="math notranslate nohighlight">\(H\)</span> – это линейный оператор, который удовлетворяет следующему равенству <span class="math notranslate nohighlight">\((Uv, Uu) = (u,v)\)</span> для любых <span class="math notranslate nohighlight">\(v \in H\)</span>, <span class="math notranslate nohighlight">\(u \in H\)</span>. Или в матричной форме:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1078,10 +1208,10 @@ S \exp(-i \Lambda  + i \Lambda) S^\dagger = S \exp(O) S^\dagger = S I S^\dagger 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U = array([[ 3.00000000e+00+0.00000000e+00j,  1.00000000e+00+1.73205081e+00j,
         -1.11022302e-16+7.77156117e-16j],
-       [ 1.00000000e+00-1.73205081e+00j,  3.00000000e+00+0.00000000e+00j,
+       [ 1.00000000e+00-1.73205081e+00j,  3.00000000e+00-3.98552134e-18j,
          1.00000000e+00+1.73205081e+00j],
        [-1.11022302e-16-7.77156117e-16j,  1.00000000e+00-1.73205081e+00j,
-         3.00000000e+00+0.00000000e+00j]])
+         3.00000000e+00-1.88596895e-17j]])
 D = array([[ 1. +0.j       ,  1. +0.j       ,  1. +0.j       ],
        [ 1. +0.j       ,  0.5-0.8660254j, -0.5-0.8660254j],
        [ 1. +0.j       , -0.5-0.8660254j, -0.5+0.8660254j]])
@@ -1095,7 +1225,7 @@ np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = True
 </div>
 </div>
 <div class="section" id="id7">
-<h3>Пример: оператор-проектор<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>Пример: оператор-проектор<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Оператором проекции является оператор <span class="math notranslate nohighlight">\(P\)</span> со свойством <span class="math notranslate nohighlight">\(P^2=P\)</span>.</p>
 <p>Покажем, что Ket-Bra вида <span class="math notranslate nohighlight">\(\ket{\Psi} \bra{\Psi}\)</span> обладает этим свойством.</p>
 <div class="math notranslate nohighlight">
@@ -1104,7 +1234,7 @@ np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = True
 <p>Оператор Ket-Bra с вектором состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, то есть <span class="math notranslate nohighlight">\(\ket{\Psi} \bra{\Psi}\)</span>рассматривается во <a class="reference internal" href="../../qc/ru/qubit.html"><span class="doc std std-doc">вводной лекции про кубиты</span></a>, а также пригодится позже, когда речь зайдет о <a class="reference internal" href="../../qc/ru/mixedstates.html"><span class="doc std std-doc">смешанных состояниях</span></a>.</p>
 </div>
 <div class="section" id="id8">
-<h3>Пример: оператор поворота<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>Пример: оператор поворота<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Оператором поворота по оси вращения <span class="math notranslate nohighlight">\(v=(x,y,z)\)</span> на угол <span class="math notranslate nohighlight">\(\theta\)</span> является</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1134,7 +1264,7 @@ M = \begin{bmatrix}
 <p>Операторы поворота очень важны в квантовых вычислениях. Они рассматриваются отдельно в <a class="reference internal" href="../../qc/ru/gates.html"><span class="doc std std-doc">лекции про квантовые гейты</span></a> и далее используются в <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc">вариационных квантовых схемах</span></a> для кодирования классических данных в квантовые операторы.</p>
 </div>
 <div class="section" id="id9">
-<h3>Пример: оператор дифференцирования<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Пример: оператор дифференцирования<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>В пространстве многочленов <span class="math notranslate nohighlight">\(P\)</span> с базисом <span class="math notranslate nohighlight">\(\{1,t,t^2,...,t^n\}\)</span> можно задать оператор дифференцирования <span class="math notranslate nohighlight">\(\mathcal{D} \colon P_n \to P_{n-1}\)</span> в виде матрицы:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1158,7 +1288,7 @@ D=\begin{bmatrix}
 </div>
 </div>
 <div class="section" id="id10">
-<h2>Произведение Кронекера<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>Произведение Кронекера<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Давайте рассмотрим еще одну интересную операцию, которая называется матричным тензорным произведением (является тензорным произведением для линейных операторов) или произведением Кронекера.</p>
 <p>Проще всего его необходимость можно продемонстрировать на примере двух игр: Орел/Решка и бросок кубика.
 Мы можем записать состояния этих игр через вероятности событий и давайте возьмем монетку со смешенным центром тяжести и такой же кубик:</p>
@@ -1198,7 +1328,7 @@ A \otimes B = \begin{bmatrix} a_{11} B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp
 <p>Есть и другие нужные тензорные операции, например, чуть больший список вы можете найти в <a class="reference external" href="https://habr.com/ru/post/369925/">этой статье</a> или в рекомендованной литературе по квантовой механике.</p>
 </div>
 <div class="section" id="id11">
-<h2>Рекомендованная литература<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<h2>Рекомендованная литература<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Quantum Mechanics: The Theoretical Minimum Illustrated Edition by Leonard Susskind, Art Friedman <span id="id12">[<a class="reference internal" href="../../bibliography.html#id66" title="Leonard Susskind and Art Friedman. Quantum mechanics: the theoretical minimum. Basic Books, 2014.">SF14</a>]</span> или его русский перевод <span id="id13">[<a class="reference internal" href="../../bibliography.html#id67" title="Леонард Сасскинд and Арт Фридман. Квантовая механика. Теоретический минимум. СПб.: Питер, 2015.">15b</a>]</span>. Книга сочетает в себе довольно строгий формализм вместе с интуицией квантовой механики. Главы построены в виде конкретных примеров или задач, которые понимают, зачем та или иная теория необходима.</p></li>
 <li><p>Mathematics for machine learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong <span id="id14">[<a class="reference internal" href="../../bibliography.html#id26" title="Marc Peter Deisenroth, A Aldo Faisal, and Cheng Soon Ong. Mathematics for machine learning. Cambridge University Press, 2020. \url https://mml-book.github.io/book/mml-book.pdf.">DFO20</a>]</span> - отличная книжка чтобы освежить воспоминания о базовых алгоритмах в машинном обучении и о математике, которая применяется в них. <a class="reference external" href="https://mml-book.github.io/book/mml-book.pdf"><em>Доступна бесплатная электронная версия</em></a>.</p></li>
@@ -1207,7 +1337,7 @@ A \otimes B = \begin{bmatrix} a_{11} B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp
 </ul>
 </div>
 <div class="section" id="id16">
-<h2>Что мы узнали<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<h2>Что мы узнали<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>произвол со скобками</p></li>
 <li><p>Гильбертовы пространства</p></li>
@@ -1240,9 +1370,11 @@ A \otimes B = \begin{bmatrix} a_{11} B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="vectors.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1258,24 +1390,28 @@ A \otimes B = \begin{bmatrix} a_{11} B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

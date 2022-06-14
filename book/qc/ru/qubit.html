@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Квантовый бит &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/qc/ru/qubit.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,110 +677,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/book/qc/ru/qubit.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/qc/ru/qubit.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qc/ru/qubit.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/qc/ru/qubit.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/qc/ru/qubit.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qc/ru/qubit.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/qc/ru/qubit.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/book/qc/ru/qubit.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Описание лекции
@@ -984,12 +1114,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Квантовый бит</h1>
@@ -1223,17 +1352,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="qubit">
-<span id="id1"></span><h1>Квантовый бит<a class="headerlink" href="#qubit" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Квантовый бит<a class="headerlink" href="#qubit" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
 <div class="section" id="id2">
-<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Эта лекция расскажет:</p>
 <ul class="simple">
 <li><p>что такое кубит;</p></li>
@@ -1244,11 +1374,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Это первая лекция основного блока нашего курса. Прежде чем мы начнем детально разбирать понятие кубита, давайте взглянем на общий пайплайн квантовых схем.</p>
 <div class="figure align-default" id="qscheme">
 <img alt="../../../_images/diagram1.png" src="../../../_images/diagram1.png" />
-<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Схема любого квантового алгоритма</span><a class="headerlink" href="#qscheme" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Схема любого квантового алгоритма</span><a class="headerlink" href="#qscheme" title="Permalink to this image">#</a></p>
 </div>
 <p>Любая квантовая схема включает в себя:</p>
 <ul class="simple">
@@ -1259,26 +1389,26 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Эта лекция посвящена разбору операций для одного кубита. Начнем с понятия кубита и его отличий от бита классических компьютеров.</p>
 </div>
 <div class="section" id="id4">
-<h2>Что такое кубит<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Что такое кубит<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Классический компьютер оперирует двоичными числами – нулем и единицей. Минимальный объем информации для классического компьютера называется бит. Квантовый компьютер оперирует квантовыми битами или кубитами, которые тоже имеют два возможных значения – 0 и 1. Так в чем же разница? В чем особенности квантовых компьютеров, которые дают им преимущества над классическими компьютерами?</p>
 <p>Разница в том, что для квантовомеханических систем (и кубитов в частности) их <em>состояния</em> и <em>значения</em> – это не одно и то же.</p>
 </div>
 <div class="section" id="vs">
-<h2>Состояние vs значение<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h2>
+<h2>Состояние vs значение<a class="headerlink" href="#vs" title="Permalink to this headline">#</a></h2>
 <div class="section" id="id5">
-<h3>Состояние классического бита<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Состояние классического бита<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Обычно мы не отличаем состояние классического бита от его значения и считаем, что если бит имеет значение <strong>1</strong>, то и состояние его описывается числом <strong>1</strong>.</p>
 </div>
 <div class="section" id="id6">
-<h3>Кот Шредингера<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h3>Кот Шредингера<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>Давайте вспомним мысленный эксперимента Шредингера. Кот, который одновременно и жив, и мертв. Понятно, что <em>значение</em> кота точно одно: он либо жив, либо мертв. Но <em>состояние</em> его более сложное. Он находится в <em>суперпозиции</em> состояний “жив” и “мертв” одновременно.</p>
 <div class="figure align-default" id="schrodingers-cat">
 <a class="reference internal image-reference" href="../../../_images/Schrodingers_cat.png"><img alt="../../../_images/Schrodingers_cat.png" src="../../../_images/Schrodingers_cat.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Кот Шредингера</span><a class="headerlink" href="#schrodingers-cat" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">Кот Шредингера</span><a class="headerlink" href="#schrodingers-cat" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="id7">
-<h3>Состояние кубита<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>Состояние кубита<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Состояние кубита, если можно так сказать, аналогично состоянию кота Шредингера. Оно отличается от <em>значения</em> кубита и описывается вектором из двух комплексных чисел. Мы будем обозначать состояния (или вектора) символом <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> (кет – вектор-столбец) – это широко принятая в квантовой механике и квантовых вычислениях нотация Дирака:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1324,10 +1454,10 @@ c_1
 </div>
 </div>
 <div class="section" id="id8">
-<h3>Связь состояния и значения кубита<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>Связь состояния и значения кубита<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Разберем подробнее вектор <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> и значение цифр <span class="math notranslate nohighlight">\(c_0, c_1\)</span>. Посмотрим на состояния кубита, значение которого мы знаем точно. То есть “посмотрим на кота Шредингера”, но который точно жив или точно мертв.</p>
 <div class="section" id="id9">
-<h4>Базисные состояния<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<h4>Базисные состояния<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>Посмотрим, как выглядят состояния кубитов с точно определенными значениями:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1383,7 +1513,7 @@ c_1
 \end{split}\]</div>
 </div>
 <div class="section" id="id10">
-<h4>Амплитуды вероятностей<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<h4>Амплитуды вероятностей<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h4>
 <p>Квантовая механика устроена таким интересным образом, что если мы будем измерять <strong>значение</strong> кубита, то вероятность каждого из вариантов будет пропорциональна соответствующему коэффициенту в разложении <strong>состояния</strong>. Но так как амплитуды – это в общем случае комплексные числа, а вероятности должны быть строго действительные, нужно домножить амплитуды на комплексно сопряженные значения. В случае наших значений <span class="math notranslate nohighlight">\(c_0 = c_1 = \frac{1}{\sqrt{2}}\)</span> получаем:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1435,16 +1565,16 @@ True
 </div>
 </div>
 <div class="section" id="id11">
-<h2>Сфера Блоха<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<h2>Сфера Блоха<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Описанный выше базис <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}\)</span> не является единственно возможным. Вектора <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}\)</span> – это лишь самый часто применимый базис, который называют <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> базисом. Но есть и другие варианты.</p>
 <div class="section" id="id12">
-<h3>Возможные базисы<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3>Возможные базисы<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <div class="section" id="z">
-<h4>Z-базис<a class="headerlink" href="#z" title="Permalink to this headline">¶</a></h4>
+<h4>Z-базис<a class="headerlink" href="#z" title="Permalink to this headline">#</a></h4>
 <p>Уже описанные нами <span class="math notranslate nohighlight">\(\ket{0}\)</span> и <span class="math notranslate nohighlight">\(\ket{1}\)</span>.</p>
 </div>
 <div class="section" id="x">
-<h4>X-базис<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
+<h4>X-базис<a class="headerlink" href="#x" title="Permalink to this headline">#</a></h4>
 <p>Базисные состояния <span class="math notranslate nohighlight">\(\ket{+} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}\)</span> и <span class="math notranslate nohighlight">\(\ket{-} = \frac{\ket{0} - \ket{1}}{\sqrt{2}}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1456,7 +1586,7 @@ True
 </div>
 </div>
 <div class="section" id="y">
-<h4>Y-базис<a class="headerlink" href="#y" title="Permalink to this headline">¶</a></h4>
+<h4>Y-базис<a class="headerlink" href="#y" title="Permalink to this headline">#</a></h4>
 <p>Базисные состояния <span class="math notranslate nohighlight">\(\ket{R} = \frac{\ket{0} + i\ket{1}}{\sqrt{2}}\)</span> и <span class="math notranslate nohighlight">\(\ket{L} = \frac{\ket{0} - i\ket{1}}{\sqrt{2}}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1540,16 +1670,16 @@ True
 </div>
 </div>
 <div class="section" id="id13">
-<h3>Сфера Блоха<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<h3>Сфера Блоха<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Обозначения <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}, \ket{+}, \ket{-}, \ket{R}, \ket{L}\)</span> выбраны неслучайно: они имеют геометрический смысл.</p>
 <div class="figure align-default" id="blochcphere">
 <a class="reference internal image-reference" href="../../../_images/Blochsphere.png"><img alt="../../../_images/Blochsphere.png" src="../../../_images/Blochsphere.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochcphere" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochcphere" title="Permalink to this image">#</a></p>
 </div>
 <p>Принято считать, что ось <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – это основная ось, так как физически квантовые компьютеры измеряют именно по ней. Ось <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> “смотрит на нас” и поэтому обозначается <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span>. А ось <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> направлена как бы вдоль, поэтому базис обозначают как “право” (<span class="math notranslate nohighlight">\(\ket{R}\)</span>) и “лево” (<span class="math notranslate nohighlight">\(\ket{L}\)</span>).</p>
 <p>Вектор состояния кубита еще называют волновой функцией, и этот вектор может идти в любую точку сферы Блоха. Сама сфера имеет единичный радиус, и это гарантирует нам, что для всех состояний сумма квадратов амплитуд будет равна единице.</p>
 <div class="section" id="id14">
-<h4>Состояние в полярных координатах<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<h4>Состояние в полярных координатах<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h4>
 <p>Состояние кубита можно выразить через полярные координаты на сфере Блоха:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1564,13 +1694,13 @@ True
 </div>
 </div>
 <div class="section" id="id15">
-<h2>Что можно делать с таким кубитом?<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h2>Что можно делать с таким кубитом?<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <div class="section" id="id16">
-<h3>Линейные операторы<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<h3>Линейные операторы<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>Любое действие, которое мы совершаем с кубитом в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, должно переводить его в другое состояние <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span>. Что переводит один вектор в другой вектор в том же пространстве? Правильно, матрица. Другими словами, линейный оператор. Мы будем обозначать операторы как <span class="math notranslate nohighlight">\(\hat{U}\)</span>.</p>
 </div>
 <div class="section" id="id17">
-<h3>Унитарность<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<h3>Унитарность<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>Как мы уже говорили, квадраты амплитуд – это вероятности. Следовательно, волновая функция должна быть нормирована на единицу. А значит, любой оператор, который переводит одно состояние в другое <span class="math notranslate nohighlight">\(\hat{U}\ket{\Psi} = \ket{\Phi}\)</span>, должен сохранять эту нормировку, то есть должен быть <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A3%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"><em>унитарным</em></a>. Более того, свойство унитарности приводит к тому, что любой квантовый оператор еще и сохраняет скалярное произведение:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1579,7 +1709,7 @@ True
 <p>Другими словами, унитарный оператор удовлетворяет условию <span class="math notranslate nohighlight">\(\hat{U}^\dagger \hat{U} = \hat{I}\)</span>.</p>
 </div>
 <div class="section" id="id18">
-<h3>Обратимость<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<h3>Обратимость<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>Одно из важных следствий унитарности операций над кубитами – это их обратимость. Если вы сделали какую-то последовательность унитарных операций над кубитами <span class="math notranslate nohighlight">\(\hat{U}\)</span>, то их можно вернуть в начальное состояние, ведь у унитарного оператора всегда есть обратный оператор <span class="math notranslate nohighlight">\(\hat{U}^{-1} = \hat{U}^\dagger\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1587,10 +1717,10 @@ True
 </div>
 </div>
 <div class="section" id="id19">
-<h3>Пример оператора<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<h3>Пример оператора<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>В дальнейших лекциях мы разберем много операторов, так как именно операторы (или квантовые <strong>гейты</strong>) являются основой квантовых вычислений. А пока рассмотрим простой пример: оператор Адамара (<strong>Hadamard gate</strong>), который переводит <span class="math notranslate nohighlight">\(\ket{0} \to \ket{+}\)</span>.</p>
 <div class="section" id="id20">
-<h4>Гейт Адамара<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<h4>Гейт Адамара<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h4>
 <p>Начнем с того, что пока у нас лишь один кубит. Состояние одного кубита – это вектор размерности два. Значит, оператор, который переводит его в другой вектор размерности два – это матрица <span class="math notranslate nohighlight">\(2\times 2\)</span>. Запишем оператор Адамара в матричном виде, а потом убедимся, что он унитарный и действительно переводит состояние <span class="math notranslate nohighlight">\(\ket{0} \to \ket{+}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1600,7 +1730,7 @@ True
 \end{bmatrix}
 \end{split}\]</div>
 <div class="section" id="python">
-<h5>Реализация в Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h5>
+<h5>Реализация в Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
@@ -1613,7 +1743,7 @@ True
 </div>
 </div>
 <div class="section" id="id21">
-<h5>Унитарность<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
+<h5>Унитарность<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">h</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
@@ -1643,7 +1773,7 @@ True
 \end{split}\]</div>
 </div>
 <div class="section" id="id22">
-<h5>Проверка<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h5>
+<h5>Проверка<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h5>
 <p>Проверим, что гейт Адамара действительно переводит кубит из состояния <span class="math notranslate nohighlight">\(\ket{0}\)</span> в состояние <span class="math notranslate nohighlight">\(\ket{+}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1678,7 +1808,7 @@ True
 </div>
 </div>
 <div class="section" id="id23">
-<h2>Измерение<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<h2>Измерение<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h2>
 <p><strong>Измерение</strong> в квантовых вычислениях выделяется отдельно именно потому, что оно “открывает” коробку с котом Шредингера: мы точно узнаем, жив он или мертв, и уже никогда не сможем это “забыть” обратно. Вся <em>суперпозиция</em> его состояния исчезает. То есть <em>измерение</em> – это как раз пример одной из не унитарных операций, которые должен уметь делать квантовый компьютер.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1688,7 +1818,7 @@ True
 </div>
 <p>Как мы уже говорили, состояние кубита может быть записано в разных базисах: <span class="math notranslate nohighlight">\(\ket{0}, \ket{1}\)</span>, <span class="math notranslate nohighlight">\(\ket{+}, \ket{-}\)</span>, <span class="math notranslate nohighlight">\(\ket{R}, \ket{L}\)</span>. <em>Значение</em> кубита в каждом из этих базисов может быть измерено. Но что такое измерение с точки зрения математики?</p>
 <div class="section" id="id24">
-<h3><a class="reference internal" href="../../glossary.html#term-23"><span class="xref std std-term">Операторы Паули</span></a><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference internal" href="../../glossary.html#term-23"><span class="xref std std-term">Операторы Паули</span></a><a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <p>На самом деле, любая наблюдаемая величина соответствует какому-то оператору. Например, измерения в разных базисах <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> соответствуют операторам Паули:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1719,13 +1849,13 @@ i &amp; 0
 <p>Эти операторы очень важны, рекомендуется знать их наизусть, так как они встречаются в каждой второй статье по квантовым вычислениям, а также постоянно фигурируют в документации всех основных библиотек для квантового машинного обучения.</p>
 </div>
 <div class="section" id="id25">
-<h3>Собственные значения<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<h3>Собственные значения<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h3>
 <p>Мы поняли, что есть связь между нашими измерениями и операторами. Но какая именно? Что значит, например, что измерения по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> соответствуют оператору <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span>?</p>
 <p>Здесь мы приходим к собственным значениям операторов. Оказывается (так устроен наш мир), что <em>измеряя</em> какую-то величину в квантовой механике, мы всегда будем получать одно из собственных значений соответствующего оператора, а состояние будет коллапсировать в соответствующий собственный вектор этого оператора. Другими словами, <em>измеряя</em> кота Шредингера, мы будем получать значения “жив” или “мертв”, а состояние кота будет переходить в состояние, соответствующее одному из этих значений. А еще <em>измерение</em> не является обратимой операцией: однажды открыв коробку с котом и поняв, жив он или мертв, мы уже не сможем закрыть ее обратно и вернуть кота в суперпозицию.</p>
 <p>Описанное выше – не абстрактные рассуждения из квантовой физики. Оно пригодится, когда мы будем говорить о решении практических комбинаторных задач, таких как задача о выделении сообществ в графе.</p>
 </div>
 <div class="section" id="hat-sigma-z">
-<h3>Собственные вектора <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span><a class="headerlink" href="#hat-sigma-z" title="Permalink to this headline">¶</a></h3>
+<h3>Собственные вектора <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span><a class="headerlink" href="#hat-sigma-z" title="Permalink to this headline">#</a></h3>
 <p>Вернемся к нашему оператору <span class="math notranslate nohighlight">\(\hat{\sigma}^z\)</span>. Легко убедиться, что его собственные значения равны 1 и -1, а соответствующие им собственные вектора – это <span class="math notranslate nohighlight">\(\begin{bmatrix}1 \\ 0\end{bmatrix}\)</span> и <span class="math notranslate nohighlight">\(\begin{bmatrix}0 \\ 1\end{bmatrix}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1747,7 +1877,7 @@ i &amp; 0
 </div>
 </div>
 <div class="section" id="id26">
-<h3>Формальная запись<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<h3>Формальная запись<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
 <p>Формально мы можем записать для любого <a class="reference external" href="https://en.wikipedia.org/wiki/Hermitian_adjoint#Hermitian_operators">эрмитова</a> оператора <span class="math notranslate nohighlight">\(\hat{U}\)</span>, что собственные состояния этого оператора являются его собственными векторами, а собственные значения в этом случае являются наблюдаемыми значениями:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1755,7 +1885,7 @@ i &amp; 0
 \]</div>
 </div>
 <div class="section" id="id27">
-<h3>Другие операторы Паули<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<h3>Другие операторы Паули<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h3>
 <p>Убедимся, что у остальных операторов собственные значения такие же:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1785,7 +1915,7 @@ i &amp; 0
 </div>
 </div>
 <div class="section" id="id28">
-<h3>Ожидаемое значение при измерении<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<h3>Ожидаемое значение при измерении<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
 <p>Мы не будем писать с нуля полный симулятор кубитов, который включает измерения – это требует введения сложного случайного процесса. Но мы можем легко ответить на другой вопрос. А именно: можно ли сказать, какое будет <em>ожидаемое</em> значение оператора <span class="math notranslate nohighlight">\(\hat{U}\)</span> для состояния <span class="math notranslate nohighlight">\(\Psi\)</span>? Другими словами, какое будет математическое ожидание большого числа измерений? Это можно записать следующим образом:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1799,7 +1929,7 @@ i &amp; 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.+0.j]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.23711432e-17+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1849,7 +1979,7 @@ i &amp; 0
 \end{split}\]</div>
 </div>
 <div class="section" id="id29">
-<h3>Вероятности битовых строк<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<h3>Вероятности битовых строк<a class="headerlink" href="#id29" title="Permalink to this headline">#</a></h3>
 <p>Последнее, чего мы коснемся в части измерений – это битовые строки и метод Шредингера. Мы много говорили о вероятностной интерпретации волновой функции и аналогиях с классическим битом, но пока этого никак не касались на практике. Как же получить вероятность определенной битовой строки для произвольного состояния? Если взять все битовые строки размерности вектора состояния и отсортировать их в лексикографическом порядке (например, <span class="math notranslate nohighlight">\(0 &lt; 1\)</span>, <span class="math notranslate nohighlight">\(00 &lt; 01 &lt; 10 &lt; 11\)</span>, и т.д.), то вероятность каждой битовой строки получается следующим выражением:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1858,9 +1988,9 @@ i &amp; 0
 <p>где <span class="math notranslate nohighlight">\(\vec{s}\)</span> – это вектор, каждая компонента которого соответствует порядковой битовой строке или вектор битовых строк. Другими словами, вероятность получить <em>i</em>-ю битовую строку равна квадрату <em>i</em>-го элемента амплитуды волновой функции. Кажется немного запутанным, но на самом деле <span class="math notranslate nohighlight">\(|\ket{\Psi}|^2\)</span> – это идейно и есть плотность вероятности.</p>
 </div>
 <div class="section" id="id30">
-<h3>Еще пара слов об измерениях<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<h3>Еще пара слов об измерениях<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
 <div class="section" id="id31">
-<h4>Измерение как проекция на пространство собственных векторов<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<h4>Измерение как проекция на пространство собственных векторов<a class="headerlink" href="#id31" title="Permalink to this headline">#</a></h4>
 <p>Мы уже говорили, что при измерении мы как бы “выбираем” один из собственных векторов наблюдаемой. Более строго такой процесс называется проецированием на пространство собственных векторов. Для собственного вектора <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> проекция будет линейным оператором:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1915,7 +2045,7 @@ i &amp; 0
 \end{split}\]</div>
 </div>
 <div class="section" id="id32">
-<h4>Правило Борна<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+<h4>Правило Борна<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h4>
 <p>Как мы уже говорили, любому эрмитову оператору соответствует какая-либо наблюдаемая величина. А какая наблюдаемая величина соответствует оператору проекции на собственный вектор <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span>, про который мы говорили выше? Ответ – вероятность наблюдения собственного значения, которое соответствует этому собственному вектору. Значит, чтобы получить вероятность измерения значения <span class="math notranslate nohighlight">\(\lambda_i\)</span> эрмитова оператора <span class="math notranslate nohighlight">\(\hat{A}\)</span> (которое соответствует собственному вектору <span class="math notranslate nohighlight">\(\ket{\Phi_i}\)</span> этого оператора) в состоянии <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, мы должны измерить величину <span class="math notranslate nohighlight">\(\bra{\Psi} \hat{P}_{\ket{\Phi_i}} \ket{\Psi}\)</span>. Это называется правилом Борна.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2020,7 +2150,7 @@ True
 </div>
 </div>
 <div class="section" id="id33">
-<h2>Что мы узнали?<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+<h2>Что мы узнали?<a class="headerlink" href="#id33" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Состояние и значение для кубита – это не одно и то же.</p></li>
 <li><p>Состояния представляют собой комплекснозначные вектора.</p></li>
@@ -2053,9 +2183,11 @@ True
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="qc_intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2071,24 +2203,28 @@ True
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

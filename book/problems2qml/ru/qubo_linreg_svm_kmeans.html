@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QUBO-формулировки для линейной регрессии, SVM и метода k-средних &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/problems2qml/ru/qubo_linreg_svm_kmeans.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,90 +677,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/problems2qml/ru/qubo_linreg_svm_kmeans.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems2qml/ru/qubo_linreg_svm_kmeans.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems2qml/ru/qubo_linreg_svm_kmeans.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/problems2qml/ru/qubo_linreg_svm_kmeans.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
    Описание лекции
@@ -810,12 +914,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>QUBO-формулировки для линейной регрессии, SVM и метода k-средних</h1>
@@ -895,17 +998,18 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="qubo-svm-k">
-<span id="qubo-linreg-svm-kmeans"></span><h1>QUBO-формулировки для линейной регрессии, SVM и метода k-средних<a class="headerlink" href="#qubo-svm-k" title="Permalink to this headline">¶</a></h1>
+<span id="qubo-linreg-svm-kmeans"></span><h1>QUBO-формулировки для линейной регрессии, SVM и метода k-средних<a class="headerlink" href="#qubo-svm-k" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/dmburd">Бурдейный Дмитрий</a></p></li>
 </ul>
 <div class="section" id="id1">
-<h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Здесь рассмотрим QUBO-формулировки трех задач ML (линейная регрессия, SVM, сбалансированная кластеризация методом k-средних) аналогично тому, как в <a class="reference internal" href="np2ising.html"><span class="doc std std-doc">предыдущей лекции</span></a> было продемонстрировано сведение к QUBO задач о максимальном разрезе в графе, о коммивояжере и о выделении сообществ в графе. Изложение полностью основывается на статье <span id="id2">[<a class="reference internal" href="../../bibliography.html#id60" title="Prasanna Date, Davis Arthur, and Lauren Pusey-Nazzaro. Qubo formulations for training machine learning models. Scientific Reports, 11:10029, May 2021. URL: https://doi.org/10.1038/s41598-021-89461-4, doi:10.1038/s41598-021-89461-4.">DAPN21</a>]</span>.</p>
 <p>Некоторые обозначения, которые будут использоваться в дальнейшем:</p>
 <ul class="simple">
@@ -919,14 +1023,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Общая формулировка QUBO-задачи, которая используется в статье <span id="id3">[<a class="reference internal" href="../../bibliography.html#id60" title="Prasanna Date, Davis Arthur, and Lauren Pusey-Nazzaro. Qubo formulations for training machine learning models. Scientific Reports, 11:10029, May 2021. URL: https://doi.org/10.1038/s41598-021-89461-4, doi:10.1038/s41598-021-89461-4.">DAPN21</a>]</span> и к которой всё сводится, выглядит так:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-general-qubo-in-paper">
-<span class="eqno">(47)<a class="headerlink" href="#equation-eqn-general-qubo-in-paper" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(47)<a class="headerlink" href="#equation-eqn-general-qubo-in-paper" title="Permalink to this equation">#</a></span>\[
 z^T A z + z^T b
     \to \min_{z \in \{0,1\}^M}
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(M\)</span> – натуральное число, <span class="math notranslate nohighlight">\(z\)</span> – бинарный вектор решения, <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{M \times M}\)</span> – QUBO-матрица с действительными элементами, <span class="math notranslate nohighlight">\(b \in \mathbb{R}^{M}\)</span> – QUBO-вектор. Как отмечалось в предыдущей лекции, при <span class="math notranslate nohighlight">\(z_i \in \{0,1\}\)</span> выполняется равенство <span class="math notranslate nohighlight">\(z_i^2 = z_i\)</span>, так что линейные члены в <a class="reference internal" href="#equation-eqn-general-qubo-in-paper">(47)</a> можно включить в квадратичные, но этого делать не будем, т.к. для целей этой лекции и для лучшего понимания удобнее сохранить минимизируемую квадратичную форму именно в виде <a class="reference internal" href="#equation-eqn-general-qubo-in-paper">(47)</a>.</p>
 </div>
 <div class="section" id="id4">
-<h2>Линейная регрессия<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Линейная регрессия<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В задаче линейной регрессии предполагается, что зависимость истинных ответов от признаков тренировочных объектов приближенно линейная:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -934,13 +1038,13 @@ y_i^{(pred)} = \braket{w, x_i} + b, \quad y_i^{(pred)} \approx y_i,
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(y_i^{(pred)}\)</span> – предсказываемое значение, <span class="math notranslate nohighlight">\(y_i\)</span> – истинное значение (из разметки), <span class="math notranslate nohighlight">\(\braket{\cdot, \cdot}\)</span> – скалярное произведение. Удобно сразу избавиться от слагаемого <span class="math notranslate nohighlight">\(b\)</span> (<em>bias</em>), добавив единицу к набору признаков. Тогда bias окажется включенным в веса <span class="math notranslate nohighlight">\(w\)</span>, а тренировочный набор будет иметь по <span class="math notranslate nohighlight">\((d+1)\)</span> признаков на объект: <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{N \times (d+1)}\)</span>. Требуется найти веса <span class="math notranslate nohighlight">\(w\)</span>, при которых квадрат евклидовой нормы невязки минимален:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-lin-reg-orig">
-<span class="eqno">(48)<a class="headerlink" href="#equation-eqn-lin-reg-orig" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(48)<a class="headerlink" href="#equation-eqn-lin-reg-orig" title="Permalink to this equation">#</a></span>\[
 E(w) = || Xw - Y ||^2
     \to \min_{w \in \mathbb{R}^{d+1}}
 \]</div>
 <div class="figure align-default" id="lin-reg-example">
 <a class="reference internal image-reference" href="../../../_images/fig_12.png"><img alt="../../../_images/fig_12.png" src="../../../_images/fig_12.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 125 </span><span class="caption-text">Иллюстрация к задаче линейной регрессии.</span><a class="headerlink" href="#lin-reg-example" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 125 </span><span class="caption-text">Иллюстрация к задаче линейной регрессии.</span><a class="headerlink" href="#lin-reg-example" title="Permalink to this image">#</a></p>
 </div>
 <p>Известно аналитическое решение задачи <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a>:</p>
 <div class="math notranslate nohighlight">
@@ -949,10 +1053,10 @@ w = \left( X^T X \right)^{-1} X^T Y
 \]</div>
 <p>Если <span class="math notranslate nohighlight">\(\left( X^T X \right)^{-1}\)</span> не существует, нужно вычислить <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%B0%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D0%B0">псевдообратную</a> матрицу. ВременнАя сложность решения задачи линейной регрессии равна <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span>, т.к. нужно <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span> для вычисления матрицы <span class="math notranslate nohighlight">\(X^T X\)</span> и <span class="math notranslate nohighlight">\(\mathcal{O}(d^3)\)</span> для вычисления обратной к ней (предполагаем, что <span class="math notranslate nohighlight">\(N \gg d\)</span>).</p>
 <div class="section" id="qubo">
-<h3>QUBO-формулировка<a class="headerlink" href="#qubo" title="Permalink to this headline">¶</a></h3>
+<h3>QUBO-формулировка<a class="headerlink" href="#qubo" title="Permalink to this headline">#</a></h3>
 <p>Перепишем выражение <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-lin-reg-qubo-1">
-<span class="eqno">(49)<a class="headerlink" href="#equation-eqn-lin-reg-qubo-1" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(49)<a class="headerlink" href="#equation-eqn-lin-reg-qubo-1" title="Permalink to this equation">#</a></span>\[
 E(w) =  w^T X^T X w - 2 w^T X^T Y + Y^T Y
         \to \min_{w \in \mathbb{R}^{d+1}}
 \]</div>
@@ -1003,13 +1107,13 @@ P = \left[ -2^l, -2^{l-1}, \dotsc, -2^{-m+1}, -2^{-m}, 2^{-m}, 2^{-m+1}, \dotsc,
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(I_{d+1}\)</span> – единичная матрица размера <span class="math notranslate nohighlight">\((d+1)\)</span>. Матрица <span class="math notranslate nohighlight">\(\mathcal{P}\)</span> имеет размерность <span class="math notranslate nohighlight">\((d+1) \times K(d+1)\)</span>. Исходный вектор весов можно записать как</p>
 <div class="math notranslate nohighlight" id="equation-eqn-w-by-tilde-w">
-<span class="eqno">(50)<a class="headerlink" href="#equation-eqn-w-by-tilde-w" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(50)<a class="headerlink" href="#equation-eqn-w-by-tilde-w" title="Permalink to this equation">#</a></span>\[
 w = \mathcal{P} \tilde{w},
 \]</div>
 <p>где знак “=” на самом деле означает приближенное равенство (наше fixed-point представление имеет конечную точность).</p>
 <p>Всё готово для того, чтобы переписать исходную задачу <a class="reference internal" href="#equation-eqn-lin-reg-qubo-1">(49)</a> в QUBO-формулировке. Подставляем <a class="reference internal" href="#equation-eqn-w-by-tilde-w">(50)</a> в <a class="reference internal" href="#equation-eqn-lin-reg-qubo-1">(49)</a> и получаем</p>
 <div class="math notranslate nohighlight" id="equation-eqn-lin-reg-qubo-2">
-<span class="eqno">(51)<a class="headerlink" href="#equation-eqn-lin-reg-qubo-2" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(51)<a class="headerlink" href="#equation-eqn-lin-reg-qubo-2" title="Permalink to this equation">#</a></span>\[
 E(\tilde{w}) =
     \tilde{w}^T \mathcal{P}^T X^T X \mathcal{P} \tilde{w}
     - 2 \tilde{w}^T \mathcal{P}^T X^T Y
@@ -1018,7 +1122,7 @@ E(\tilde{w}) =
 <p>слагаемое <span class="math notranslate nohighlight">\(Y^T Y\)</span> отброшено, т.к. это константа, никак не влияющая на решение задачи оптимизации без ограничений.</p>
 </div>
 <div class="section" id="id5">
-<h3>Оценка вычислительной сложности<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Оценка вычислительной сложности<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Для исходной задачи регрессии <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a> количество значений в датасете <span class="math notranslate nohighlight">\(X\)</span> равно <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span>. Мы ввели <span class="math notranslate nohighlight">\(K\)</span> бинарных переменных для каждого из <span class="math notranslate nohighlight">\((d+1)\)</span> весов. Значит, получилось <span class="math notranslate nohighlight">\(\mathcal{O}(K d)\)</span> переменных в QUBO-формулировке <a class="reference internal" href="#equation-eqn-lin-reg-qubo-2">(51)</a>. Для решения задачи требуется <span class="math notranslate nohighlight">\(\mathcal{O}(K^2 d^2)\)</span> кубитов (см. <span id="id6">[<a class="reference internal" href="../../bibliography.html#id29" title="Prasanna Date, Robert Patton, and Thomas Potok. Efficiently embedding qubo problems on adiabatic quantum computers. Quantum Information Processing, 18:117, Mar 2019. URL: https://doi.org/10.1007/s11128-019-2236-3, doi:10.1007/s11128-019-2236-3.">DPP19</a>]</span>), это пространственная сложность в рассматриваемом подходе.</p>
 <p>ВременнАя сложность в классической задаче <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span>. В случае QUBO-задачи для временнОй оценки нужно рассмотреть три части:</p>
 <ol class="simple">
@@ -1030,15 +1134,15 @@ E(\tilde{w}) =
 </div>
 </div>
 <div class="section" id="svm">
-<h2>SVM<a class="headerlink" href="#svm" title="Permalink to this headline">¶</a></h2>
+<h2>SVM<a class="headerlink" href="#svm" title="Permalink to this headline">#</a></h2>
 <p>Классический SVM подробно описан в соответствующей <a class="reference internal" href="../../qsvm/ru/classic_svm.html"><span class="doc std std-doc">лекции</span></a>. Рассматривается тренировочный набор <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{N \times d}\)</span> и набор истинных меток <span class="math notranslate nohighlight">\(Y \in \{-1, +1\}^{N}\)</span>. Нужно решить задачу бинарной классификации, найдя веса <span class="math notranslate nohighlight">\(w \in \mathbb{R}^{d}\)</span> и константу <span class="math notranslate nohighlight">\(b \in \mathbb{R}\)</span>, при которых классификатор <span class="math notranslate nohighlight">\(a(x_i) = \text{sign} \left( w^T x_i + b \right)\)</span> допускает как можно меньше ошибок на обучающей выборке.</p>
 <div class="figure align-default" id="svm-example">
 <a class="reference internal image-reference" href="../../../_images/fig_22.png"><img alt="../../../_images/fig_22.png" src="../../../_images/fig_22.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 126 </span><span class="caption-text">Иллюстрация к задаче бинарной классификации с помощью SVM.</span><a class="headerlink" href="#svm-example" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 126 </span><span class="caption-text">Иллюстрация к задаче бинарной классификации с помощью SVM.</span><a class="headerlink" href="#svm-example" title="Permalink to this image">#</a></p>
 </div>
 <p>Двойственная задача <a class="reference internal" href="../../qsvm/ru/classic_svm.html#equation-svmdual">(18)</a> в текущих обозначениях принимает вид</p>
 <div class="math notranslate nohighlight" id="equation-eqn-svm-dual-1">
-<span class="eqno">(52)<a class="headerlink" href="#equation-eqn-svm-dual-1" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(52)<a class="headerlink" href="#equation-eqn-svm-dual-1" title="Permalink to this equation">#</a></span>\[\begin{split}
 \left\{
     \begin{aligned}
         &amp; \mathcal{L}(\lambda) =
@@ -1053,10 +1157,10 @@ E(\tilde{w}) =
 \right.
 \end{split}\]</div>
 <div class="section" id="id8">
-<h3>QUBO-формулировка<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>QUBO-формулировка<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Перепишем <a class="reference internal" href="#equation-eqn-svm-dual-1">(52)</a> как задачу минимизации:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-svm-dual-2">
-<span class="eqno">(53)<a class="headerlink" href="#equation-eqn-svm-dual-2" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(53)<a class="headerlink" href="#equation-eqn-svm-dual-2" title="Permalink to this equation">#</a></span>\[\begin{split}
 \left\{
     \begin{aligned}
         &amp; \mathcal{L}_{neg}(\lambda) =
@@ -1078,7 +1182,7 @@ w = \sum_{i = 1}^{N} \lambda_i y_i x_i
 <p>не зависит. Объекты, соответствующие <span class="math notranslate nohighlight">\(\lambda_i &gt; 0\)</span>, называются <em>опорными</em>.</p>
 <p>Задача минимизации переписывается в виде</p>
 <div class="math notranslate nohighlight" id="equation-eqn-svm-dual-3">
-<span class="eqno">(54)<a class="headerlink" href="#equation-eqn-svm-dual-3" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(54)<a class="headerlink" href="#equation-eqn-svm-dual-3" title="Permalink to this equation">#</a></span>\[\begin{split}
 \left\{
     \begin{aligned}
         &amp; \mathcal{L}_{neg}(\lambda) =
@@ -1098,7 +1202,7 @@ P = \left[2^{-m}, 2^{-m+1}, \dotsc, 2^{l-1}, 2^l \right]^T
 \]</div>
 <p>Вектор <span class="math notranslate nohighlight">\(P\)</span> содержит <span class="math notranslate nohighlight">\(m + 1 + l = K\)</span> элементов (здесь <span class="math notranslate nohighlight">\(K\)</span> никак не связано с <span class="math notranslate nohighlight">\(K\)</span> из раздела про линейную регрессию, просто было решено не вводить новое обозначение для длины нового вектора <span class="math notranslate nohighlight">\(P\)</span>). При подходящем выборе <span class="math notranslate nohighlight">\(m\)</span> и <span class="math notranslate nohighlight">\(l\)</span> достаточно точно выполняется равенство</p>
 <div class="math notranslate nohighlight" id="equation-eqn-real-lambda-by-binary">
-<span class="eqno">(55)<a class="headerlink" href="#equation-eqn-real-lambda-by-binary" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(55)<a class="headerlink" href="#equation-eqn-real-lambda-by-binary" title="Permalink to this equation">#</a></span>\[
 \lambda_i \approx \sum_{k=1}^{K} p_k \tilde{\lambda}_{i k}
 \quad \forall i \in \{1, 2, \dotsc, N\}
 \]</div>
@@ -1124,7 +1228,7 @@ P = \left[2^{-m}, 2^{-m+1}, \dotsc, 2^{l-1}, 2^l \right]^T
 \]</div>
 <p>Подставляя из этого выражения <span class="math notranslate nohighlight">\(\lambda\)</span> в <a class="reference internal" href="#equation-eqn-svm-dual-3">(54)</a>, получаем:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-svm-qubo-1">
-<span class="eqno">(56)<a class="headerlink" href="#equation-eqn-svm-qubo-1" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(56)<a class="headerlink" href="#equation-eqn-svm-qubo-1" title="Permalink to this equation">#</a></span>\[\begin{split}
 \left\{
     \begin{aligned}
     &amp; \mathcal{L}_{neg}(\tilde{\lambda}) =
@@ -1151,7 +1255,7 @@ Penalty^{(hp)} = \frac{\gamma}{2}
 <p>где <span class="math notranslate nohighlight">\(\gamma\)</span> – достаточно большая константа, <em>hp</em> означает <em>hyperplane</em> (гиперплоскость).</p>
 <p>Добавляем <span class="math notranslate nohighlight">\(Penalty^{(hp)}\)</span> к <span class="math notranslate nohighlight">\(\mathcal{L}_{neg}(\tilde{\lambda})\)</span> и получаем итоговую QUBO-формулировку:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-svm-qubo-2">
-<span class="eqno">(57)<a class="headerlink" href="#equation-eqn-svm-qubo-2" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(57)<a class="headerlink" href="#equation-eqn-svm-qubo-2" title="Permalink to this equation">#</a></span>\[
     \frac{1}{2}
         \tilde{\lambda}^T \mathcal{P}^T
         \left(
@@ -1163,7 +1267,7 @@ Penalty^{(hp)} = \frac{\gamma}{2}
 \]</div>
 </div>
 <div class="section" id="id9">
-<h3>Оценка вычислительной сложности<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Оценка вычислительной сложности<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Задача <a class="reference internal" href="#equation-eqn-svm-dual-3">(54)</a> содержит <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span> значений в данных и <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> параметров (<span class="math notranslate nohighlight">\(\lambda\)</span>). QUBO-формулировка <a class="reference internal" href="#equation-eqn-svm-qubo-2">(57)</a> содержит то же количество данных, а число параметров в <span class="math notranslate nohighlight">\(K\)</span> раз больше, т.е. <span class="math notranslate nohighlight">\(\mathcal{O}(K N)\)</span>. Значит, потребуется <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 K^2)\)</span> кубитов.</p>
 <p>ВременнАя сложность классического SVM в типичных реализациях (например, <a class="reference external" href="https://en.wikipedia.org/wiki/LIBSVM">LIBSVM</a>) равна <span class="math notranslate nohighlight">\(\mathcal{O}(N^3)\)</span>. Для оценки временнОй сложности QUBO рассматриваем три составляющие (как в задаче линейной регрессии):</p>
 <ol class="simple">
@@ -1175,28 +1279,28 @@ Penalty^{(hp)} = \frac{\gamma}{2}
 </div>
 </div>
 <div class="section" id="k">
-<h2>Сбалансированная кластеризация методом k-средних<a class="headerlink" href="#k" title="Permalink to this headline">¶</a></h2>
+<h2>Сбалансированная кластеризация методом k-средних<a class="headerlink" href="#k" title="Permalink to this headline">#</a></h2>
 <p>Кластеризация методом k-средних – ML-задача обучения без учителя (<em>unsupervised</em>). Требуется распределить тренировочные объекты по <span class="math notranslate nohighlight">\(k\)</span> кластерам так, чтобы суммарное отклонение тренировочных объектов, принадлежащих кластерам, от центроидов (центров масс) соответствующих кластеров было минимальным. Сбалансированная кластеризация методом k-средних – частный случай, в котором каждый кластер содержит примерно одно и то же количество объектов <span class="math notranslate nohighlight">\(N/k\)</span>, как показано на <a class="reference internal" href="#kmeans-clustering-example"><span class="std std-numref">Fig. 127</span></a>.</p>
 <div class="figure align-default" id="kmeans-clustering-example">
 <a class="reference internal image-reference" href="../../../_images/fig_32.png"><img alt="../../../_images/fig_32.png" src="../../../_images/fig_32.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">Иллюстрация к задаче сбалансированной кластеризации методом k-средних.</span><a class="headerlink" href="#kmeans-clustering-example" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">Иллюстрация к задаче сбалансированной кластеризации методом k-средних.</span><a class="headerlink" href="#kmeans-clustering-example" title="Permalink to this image">#</a></p>
 </div>
 <p>Нужно распределить <span class="math notranslate nohighlight">\(N\)</span> объектов из тренировочного набора <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{N \times d}\)</span> по <span class="math notranslate nohighlight">\(k\)</span> кластерам <span class="math notranslate nohighlight">\(\Phi = \{\phi_1, \dotsc, \phi_k\}\)</span>. Пусть <span class="math notranslate nohighlight">\(\mu_i\)</span> – центроид кластера <span class="math notranslate nohighlight">\(\phi_i\)</span>. В общем случае задача кластеризации методом k-средних формулируется так:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-general-kmeans">
-<span class="eqno">(58)<a class="headerlink" href="#equation-eqn-general-kmeans" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(58)<a class="headerlink" href="#equation-eqn-general-kmeans" title="Permalink to this equation">#</a></span>\[
 \sum_{i=1}^{k} \frac{1}{2 |\phi_i|}
     \sum_{x,y \in \phi_i} || x - y ||^2
     \to \min_{\Phi}
 \]</div>
 <p>Если размеры <span class="math notranslate nohighlight">\(|\phi_i|\)</span> всех кластеров одинаковые, то формулировка переписывается так:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-kmeans-equal-clusters">
-<span class="eqno">(59)<a class="headerlink" href="#equation-eqn-kmeans-equal-clusters" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(59)<a class="headerlink" href="#equation-eqn-kmeans-equal-clusters" title="Permalink to this equation">#</a></span>\[
 \sum_{i=1}^{k} \sum_{x,y \in \phi_i} || x - y ||^2
     \to \min_{\Phi}
 \]</div>
 <p>В прикладных задачах кластеризации размеры кластеров только приближенно равны друг другу, поэтому решение задачи <a class="reference internal" href="#equation-eqn-kmeans-equal-clusters">(59)</a> не является точным решением задачи <a class="reference internal" href="#equation-eqn-general-kmeans">(58)</a>. Для решения задачи кластеризации методом k-средних можно использовать, например, <a class="reference external" href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">алгоритм Ллойда</a>. Существует модификация алгоритма Ллойда для случая сбалансированной кластеризации.</p>
 <div class="section" id="id10">
-<h3>QUBO-формулировка<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<h3>QUBO-формулировка<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Вводим матрицу <span class="math notranslate nohighlight">\(D \in \mathbb{R}^{N \times N}\)</span>, элементы которой равны квадратам попарных расстояний между тренировочными объектами:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1226,7 +1330,7 @@ d_{i j} = || x_i - x_j ||^2
 \]</div>
 <p>При условии, что ограничения на <span class="math notranslate nohighlight">\(\tilde{w}\)</span> выполнены, запишем задачу <a class="reference internal" href="#equation-eqn-kmeans-equal-clusters">(59)</a> в эквивалентном виде</p>
 <div class="math notranslate nohighlight" id="equation-eqn-sqr-form-without-constraints">
-<span class="eqno">(60)<a class="headerlink" href="#equation-eqn-sqr-form-without-constraints" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(60)<a class="headerlink" href="#equation-eqn-sqr-form-without-constraints" title="Permalink to this equation">#</a></span>\[
 \tilde{w}^T \left( I_k \otimes D \right) \tilde{w}
     \to \min_{\tilde{w}}
 \]</div>
@@ -1313,7 +1417,7 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
 \]</div>
 <p>Соберем вместе квадратичную форму <a class="reference internal" href="#equation-eqn-sqr-form-without-constraints">(60)</a> (записанную без учета ограничений) и штрафы <span class="math notranslate nohighlight">\(Penalty^{(col)}\)</span>, <span class="math notranslate nohighlight">\(Penalty^{(row)}\)</span> в одно финальное выражение, которое и является QUBO-формулировкой задачи о сбалансированной кластеризации методом k-средних:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-final-qubo-kmeans">
-<span class="eqno">(61)<a class="headerlink" href="#equation-eqn-final-qubo-kmeans" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(61)<a class="headerlink" href="#equation-eqn-final-qubo-kmeans" title="Permalink to this equation">#</a></span>\[
 \tilde{w}^T
     \left(
         I_k \otimes (D + \alpha F)
@@ -1324,7 +1428,7 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
 \]</div>
 </div>
 <div class="section" id="id11">
-<h3>Оценка вычислительной сложности<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3>Оценка вычислительной сложности<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>Задача <a class="reference internal" href="#equation-eqn-kmeans-equal-clusters">(59)</a> содержит <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span> значений в данных и <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> переменных. В QUBO-формулировке вводим по <span class="math notranslate nohighlight">\(k\)</span> бинарных переменных для каждой исходной. Получается <span class="math notranslate nohighlight">\(\mathcal{O}(N k)\)</span> переменных, а значит, требуется <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 k^2)\)</span> кубитов.</p>
 <p>Известно, что классический алгоритм сбалансированной кластеризации методом k-средних сходится за время <span class="math notranslate nohighlight">\(\mathcal{O}(N^{3.5} k^{3.5})\)</span> в худшем случае (см. ссылки в статье <span id="id12">[<a class="reference internal" href="../../bibliography.html#id60" title="Prasanna Date, Davis Arthur, and Lauren Pusey-Nazzaro. Qubo formulations for training machine learning models. Scientific Reports, 11:10029, May 2021. URL: https://doi.org/10.1038/s41598-021-89461-4, doi:10.1038/s41598-021-89461-4.">DAPN21</a>]</span>). Для оценки временнОй сложности QUBO рассматриваем три составляющие:</p>
 <ol class="simple">
@@ -1336,7 +1440,7 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
 </div>
 </div>
 <div class="section" id="id13">
-<h2>Заключение<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<h2>Заключение<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции были рассмотрены три важные задачи машинного обучения, которые можно переформулировать в виде QUBO (<em>Quadratic Unconstrained Binary Optimization</em>) для решения на квантовом аннилере путем сведения к задаче нахождения основного состояния квантовой системы. Общий подход заключается в том, что минимизируемый в классической формулировке функционал переписывается в виде квадратичной формы относительно бинарных переменных, а вместо условий-ограничений в финальную квадратичную форму QUBO-задачи вводятся штрафы за нарушение этих ограничений. Есть надежда на то, что при некотором количестве кубитов квантовые алгоритмы будут иметь преимущество перед классическими по времени выполнения.</p>
 </div>
 </div>
@@ -1363,9 +1467,11 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="np2ising.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1381,24 +1487,28 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

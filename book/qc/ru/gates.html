@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Квантовые гейты &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/qc/ru/gates.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,110 +677,226 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../../_sources/book/qc/ru/gates.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/qc/ru/gates.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qc/ru/gates.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/qc/ru/gates.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/qc/ru/gates.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qc/ru/gates.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/qc/ru/gates.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../../../_sources/book/qc/ru/gates.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Описание лекции
@@ -938,12 +1068,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Квантовые гейты</h1>
@@ -1131,18 +1260,19 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="gates">
-<span id="id1"></span><h1>Квантовые гейты<a class="headerlink" href="#gates" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Квантовые гейты<a class="headerlink" href="#gates" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ooovector">Беседин Илья</a></p></li>
 </ul>
 <div class="section" id="id2">
-<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Из этой лекции мы узнаем:</p>
 <ul class="simple">
 <li><p>какие есть основные однокубитные и многокубитные гейты;</p></li>
@@ -1152,20 +1282,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Квантовые гейты являются основными <em>строительными</em> блоками для любых квантовых схем, в том числе и тех, что применяются для машинного обучения. Можно сказать, что это своеобразный алфавит квантовых вычислений. Он необходим, чтобы сходу понимать, например, что изображено на подобных схемах:</p>
 <div class="figure align-default" id="lvqe">
 <a class="reference internal image-reference" href="../../../_images/Layer-VQE.png"><img alt="../../../_images/Layer-VQE.png" src="../../../_images/Layer-VQE.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text"><a class="reference external" href="https://arxiv.org/abs/2102.05566">Схема Layered-VQE</a></span><a class="headerlink" href="#lvqe" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text"><a class="reference external" href="https://arxiv.org/abs/2102.05566">Схема Layered-VQE</a></span><a class="headerlink" href="#lvqe" title="Permalink to this image">#</a></p>
 </div>
 </div>
 <div class="section" id="id4">
-<h2>Основные однокубитные гейты<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Основные однокубитные гейты<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В прошлый раз мы познакомились с <a class="reference external" href="../../qc/ru/qubit.html#id24">операторами Паули</a>, а также <a class="reference external" href="../../qc/ru/qubit.html#id20">гейтом Адамара</a>. Как для обычных квантовых алгоритмов, так и
 для QML-алгоритмов нужны и другие гейты, потому что одни только эти гейты не позволяют перейти во все возможные квантовые состояния.
 Теперь давайте посмотрим, какие еще однокубитные гейты часто применяются в квантовых вычислениях и квантовом машинном обучении.</p>
 <div class="section" id="t">
-<h3>T-гейт<a class="headerlink" href="#t" title="Permalink to this headline">¶</a></h3>
+<h3>T-гейт<a class="headerlink" href="#t" title="Permalink to this headline">#</a></h3>
 <p>T-гейт очень популярен в универсальных квантовых вычислениях. Его матрица имеет вид:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1178,17 +1308,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Помимо важной роли в математике квантовых вычислений, гейт Адамара и T-гейт интересны тем, что именно на них построено большинство предложений по реализации квантовых вычислений с топологической защитой или с коррекцией ошибок. На сегодняшний день эти схемы реально пока не очень работают: никаких топологически защищенных кубитов продемонстрировано не было, а коррекция ошибок не выходит за пределы двух логических кубитов.</p>
 </div>
 <div class="section" id="id5">
-<h3>Гейты поворота вокруг оси<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3>Гейты поворота вокруг оси<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Поворотные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:</p>
 <div class="figure align-default" id="blochsphere">
 <a class="reference internal image-reference" href="../../../_images/Blochsphere.png"><img alt="../../../_images/Blochsphere.png" src="../../../_images/Blochsphere.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochsphere" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochsphere" title="Permalink to this image">#</a></p>
 </div>
 <p>Любой однокубитный гейт можно представить как вращение вектора состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> на некоторый угол вокруг некоторой оси, проходящей через центр сферы Блоха.</p>
 <p>Гейты <span class="math notranslate nohighlight">\(\hat{RX}(\phi), \hat{RY}(\phi), \hat{RZ}(\phi)\)</span> осуществляют поворот на определенный угол <span class="math notranslate nohighlight">\(\phi\)</span> вокруг соответствующей оси на сфере Блоха.</p>
 <p>Давайте внимательно рассмотрим это на примере гейта <span class="math notranslate nohighlight">\(\hat{RY}\)</span>.</p>
 <div class="section" id="hat-ry">
-<h4>Гейт <span class="math notranslate nohighlight">\(\hat{RY}\)</span><a class="headerlink" href="#hat-ry" title="Permalink to this headline">¶</a></h4>
+<h4>Гейт <span class="math notranslate nohighlight">\(\hat{RY}\)</span><a class="headerlink" href="#hat-ry" title="Permalink to this headline">#</a></h4>
 <p>Сам гейт определяется следующим образом:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1284,7 +1414,7 @@ X after RY:
 </div>
 </div>
 <div class="section" id="id6">
-<h4>Другие гейты вращений<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<h4>Другие гейты вращений<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p>Аналогичным образом определяются гейты <span class="math notranslate nohighlight">\(\hat{RX}\)</span> и <span class="math notranslate nohighlight">\(\hat{RZ}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1298,7 +1428,7 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 \end{split}\]</div>
 </div>
 <div class="section" id="id7">
-<h4>Общая форма записи однокубитных гейтов<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<h4>Общая форма записи однокубитных гейтов<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <p>В общем случае однокубитные гейты могут быть также записаны следующим образом:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1313,7 +1443,7 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 </div>
 </div>
 <div class="section" id="phase-shift">
-<h3>Phase-shift гейт<a class="headerlink" href="#phase-shift" title="Permalink to this headline">¶</a></h3>
+<h3>Phase-shift гейт<a class="headerlink" href="#phase-shift" title="Permalink to this headline">#</a></h3>
 <p>Другой важный гейт – это так называемый phase-shift гейт, или <span class="math notranslate nohighlight">\(\hat{U}_1\)</span> гейт. Его матричная форма имеет следующий вид:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1334,7 +1464,7 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 Он играет важную роль в квантовых ядерных методах.</p>
 </div>
 <div class="section" id="hat-u-2-hat-u-3">
-<h3>Гейты <span class="math notranslate nohighlight">\(\hat{U}_2\)</span> и <span class="math notranslate nohighlight">\(\hat{U}_3\)</span><a class="headerlink" href="#hat-u-2-hat-u-3" title="Permalink to this headline">¶</a></h3>
+<h3>Гейты <span class="math notranslate nohighlight">\(\hat{U}_2\)</span> и <span class="math notranslate nohighlight">\(\hat{U}_3\)</span><a class="headerlink" href="#hat-u-2-hat-u-3" title="Permalink to this headline">#</a></h3>
 <p>Более редкие в QML гейты, которые однако все равно встречаются в статьях.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1387,7 +1517,7 @@ e^{1j\phi}\sin(\frac{\theta}{2}) &amp; e^{1j(\phi + \lambda)}\cos(\frac{\theta}{
 <p>Читатель может сам легко убедиться, что эти формы записи эквивалентны. Для этого надо написать примерно такой же код, что мы писали раньше для <span class="math notranslate nohighlight">\(\hat{U}_2\)</span>.</p>
 </div>
 <div class="section" id="id8">
-<h3>Еще пара слов об однокубитных гейтах<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>Еще пара слов об однокубитных гейтах<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>На этом мы завершаем обзор основных однокубитных гейтов. Маленькое замечание: гейты, связанные со сдвигом фазы, никак не меняют состояние кубита, если оно сейчас <span class="math notranslate nohighlight">\(\ket{0}\)</span>. Так как мы всегда предполагаем, что начальное состояние кубитов – это именно <span class="math notranslate nohighlight">\(\ket{0}\)</span>, то перед применением, например, <span class="math notranslate nohighlight">\(\hat{U}_1\)</span>, рекомендуется применить гейт Адамара:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1406,7 +1536,7 @@ False
 </div>
 </div>
 <div class="section" id="id9">
-<h4>Единичный гейт<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<h4>Единичный гейт<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>Самое последнее об однокубитных гейтах – это единичный гейт <span class="math notranslate nohighlight">\(\hat{I}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1434,10 +1564,10 @@ False
 </div>
 </div>
 <div class="section" id="id10">
-<h2>Многокубитные состояния и гейты<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>Многокубитные состояния и гейты<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Очевидно, что с одним кубитом ничего интересного, кроме разве что генератора истинно-случайных чисел, мы не сделаем. Для начала разберемся, как выглядят состояния для многокубитных систем.</p>
 <div class="section" id="id11">
-<h3>Многокубитные состояния<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<h3>Многокубитные состояния<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>В классическом компьютере один бит имеет два значения – 0 и 1. Два бита имеют четыре значения – 00, 01, 10, 11. Три бита имеют восемь значений и так далее. Аналогично состояние двух кубитов – это вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^4\)</span>, состояние трех кубитов – вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^8\)</span>, то есть состояние <span class="math notranslate nohighlight">\(N\)</span> кубитов описывается вектором размерности <span class="math notranslate nohighlight">\(2^N\)</span> в комплексном пространстве. Вероятности каждой из возможных битовых строк (<span class="math notranslate nohighlight">\(0000...00\)</span>, <span class="math notranslate nohighlight">\(0000...01\)</span>, <span class="math notranslate nohighlight">\(0000...10\)</span>, и так далее) получаются по методу Шредингера, который мы обсуждали <a class="reference external" href="../../qc/ru/qubit.html#id29">в конце прошлой лекции</a>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1447,11 +1577,11 @@ False
 <p>Формально, многокубитные состояния описываются с помощью математического концепта так называемого <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%B7%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"><em>тензорного произведения</em></a>, которое в случае линейных операторов идентично <em>произведению Кронекера</em>, обозначаемого значком <span class="math notranslate nohighlight">\(\otimes\)</span>. Так, если <span class="math notranslate nohighlight">\(\ket{\Psi}_A \in \mathrm{H}_A\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_B \in \mathrm{H}_B\)</span>, то <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB} = \ket{\Psi}_A \otimes \ket{\Psi}_B \in \mathrm{H}_{AB} = \mathrm{H}_{A} \otimes \mathrm{H}_{B}\)</span>. О том, как элементы вектора <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB}\)</span> выражаются через элементы векторов <span class="math notranslate nohighlight">\(\ket{\Psi}_{A}\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_{B}\)</span>, можно прочитать на Википедии в статье <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0">“Произведение Кронекера”</a>.</p>
 </div>
 <div class="section" id="id12">
-<h3>Многокубитные операторы<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3>Многокубитные операторы<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Как мы уже обсуждали ранее, квантовые операторы должны переводить текущее состояние в новое в том же пространстве и сохранять нормировку, а еще должны быть обратимыми. Значит, оператор для состояния из <span class="math notranslate nohighlight">\(N\)</span> кубитов – это унитарная комплексная матрица размерности <span class="math notranslate nohighlight">\(2^N \times 2^N\)</span>.</p>
 </div>
 <div class="section" id="id13">
-<h3>Конструирование многокубитных операторов<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<h3>Конструирование многокубитных операторов<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Прежде чем мы начнем обсуждать двухкубитные операторы, рассмотрим ситуацию. Представим, что у нас есть состояние из двух кубитов и мы хотим подействовать на первый кубит оператором Адамара. Как же тогда нам написать такой двухкубитный оператор? Мы знаем, что действуем на первый кубит оператором, а что происходит со вторым кубитом? Ничего не происходит – и это эквивалентно тому, что мы действуем на второй кубит единичным оператором. А финальный оператор <span class="math notranslate nohighlight">\(2^2 \times 2^2\)</span> записывается через произведение Кронекера:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1486,7 +1616,7 @@ False
 </div>
 </div>
 <div class="section" id="id14">
-<h3>Наблюдаемые для многокубитных гейтов<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<h3>Наблюдаемые для многокубитных гейтов<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>Аналогичным образом можно сконструировать и наблюдаемые. Например, если мы хотим измерять одновременно два спина по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, то наблюдаемая будет выглядеть так:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1512,14 +1642,14 @@ False
 </div>
 </div>
 <div class="section" id="id15">
-<h2>Основные двухкубитные гейты<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<h2>Основные двухкубитные гейты<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <p>Основные многокубитные гейты, которые предоставляют современные квантовые компьютеры, – это двухкубитные гейты.</p>
 <div class="section" id="cnot-cx">
-<h3>CNOT (CX)<a class="headerlink" href="#cnot-cx" title="Permalink to this headline">¶</a></h3>
+<h3>CNOT (CX)<a class="headerlink" href="#cnot-cx" title="Permalink to this headline">#</a></h3>
 <p>Квантовый гейт контролируемого инвертирования – это гейт, который действует на два кубита: <em>рабочий</em> и <em>контрольный</em>. В зависимости от того, имеет ли контрольный кубит значение 1 или 0, этот гейт инвертирует или не инвертирует рабочий кубит.</p>
 <div class="figure align-default" id="cnot">
 <a class="reference internal image-reference" href="../../../_images/CNOT_gate.png"><img alt="../../../_images/CNOT_gate.png" src="../../../_images/CNOT_gate.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Гейт CNOT</span><a class="headerlink" href="#cnot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Гейт CNOT</span><a class="headerlink" href="#cnot" title="Permalink to this image">#</a></p>
 </div>
 <p>Иногда этот гейт также называют гейтом CX. В матричном виде этот оператор можно записать так:</p>
 <div class="math notranslate nohighlight">
@@ -1559,7 +1689,7 @@ True
 <p>Заметьте, тут мы воспользовались тем, что <span class="math notranslate nohighlight">\(\hat{\sigma^x}\)</span> работает так же, как инвертор кубитов: он превращает <span class="math notranslate nohighlight">\(\ket{0}\)</span> в <span class="math notranslate nohighlight">\(\ket{1}\)</span> и наоборот.</p>
 </div>
 <div class="section" id="cy-cz">
-<h3>Гейты CY и CZ<a class="headerlink" href="#cy-cz" title="Permalink to this headline">¶</a></h3>
+<h3>Гейты CY и CZ<a class="headerlink" href="#cy-cz" title="Permalink to this headline">#</a></h3>
 <p>Схожие по принципу гейты – это гейты <span class="math notranslate nohighlight">\(\hat{CY}\)</span> и <span class="math notranslate nohighlight">\(\hat{CZ}\)</span>. В зависимости от значения управляющего кубита к рабочему кубиту применяют соответствующий оператор Паули:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1577,7 +1707,7 @@ True
 \end{split}\]</div>
 </div>
 <div class="section" id="iswap">
-<h3>Гейт iSWAP<a class="headerlink" href="#iswap" title="Permalink to this headline">¶</a></h3>
+<h3>Гейт iSWAP<a class="headerlink" href="#iswap" title="Permalink to this headline">#</a></h3>
 <p>Гейты <span class="math notranslate nohighlight">\(\hat{CX}\)</span>, <span class="math notranslate nohighlight">\(\hat{CY}\)</span> и <span class="math notranslate nohighlight">\(\hat{CZ}\)</span> эквивалентны с точностью до однокубитных гейтов. Это означает, что любой из них можно получить, добавив необходимые однокубитные гейты до и после другого гейта. Например:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1595,7 +1725,7 @@ True
 \end{split}\]</div>
 </div>
 <div class="section" id="fsim">
-<h3>Гейт fSim<a class="headerlink" href="#fsim" title="Permalink to this headline">¶</a></h3>
+<h3>Гейт fSim<a class="headerlink" href="#fsim" title="Permalink to this headline">#</a></h3>
 <p>Для разных архитектур квантовых процессоров “естественный” гейт может выглядеть по-разному. Например, в квантовом процессоре Google Sycamore естественным является так называемый fermionic simulation gate или fSim. Это двухпараметрическое семейство гейтов вида:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1611,7 +1741,7 @@ True
 </div>
 </div>
 <div class="section" id="pennylane">
-<h2>Первое знакомство с PennyLane<a class="headerlink" href="#pennylane" title="Permalink to this headline">¶</a></h2>
+<h2>Первое знакомство с PennyLane<a class="headerlink" href="#pennylane" title="Permalink to this headline">#</a></h2>
 <p>На сегодняшний день существует достаточно много фреймворков для программирования квантовых компьютеров. Для целей этого курса мы будем использовать <a class="reference external" href="https://pennylane.ai/">PennyLane</a>. Эта библиотека предоставляет высокоуровневый <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">API</span></code> и создана специально для решения задач квантового машинного обучения.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1621,7 +1751,7 @@ True
 </div>
 </div>
 <div class="section" id="device">
-<h3>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h3>
+<h3>Device<a class="headerlink" href="#device" title="Permalink to this headline">#</a></h3>
 <p>Для объявления квантового устройства используется класс <code class="docutils literal notranslate"><span class="pre">Device</span></code>. <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> поддерживает работу с большинством существующих квантовых компьютеров, но для целей курса мы будем запускать все наши программы лишь на самом простом симуляторе идеального квантового компьютера:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1637,10 +1767,10 @@ True
 <p>Первый аргумент тут – указание устройства, а второй – число кубитов.</p>
 </div>
 <div class="section" id="qnode">
-<h3>QNode<a class="headerlink" href="#qnode" title="Permalink to this headline">¶</a></h3>
+<h3>QNode<a class="headerlink" href="#qnode" title="Permalink to this headline">#</a></h3>
 <p>Основной <em>строительный блок</em> в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> – это <code class="docutils literal notranslate"><span class="pre">qnode</span></code>. Это функция, которая отмечена специальным декоратором и включает в себя несколько операций с кубитами. Результатом такой функции всегда является измерение. Напишем функцию, которая поворачивает первый кубит на <span class="math notranslate nohighlight">\(45^o\)</span>, после чего измеряет оба кубита по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>.</p>
 <div class="section" id="numpy">
-<h4>Сначала на NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h4>
+<h4>Сначала на NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
@@ -1659,7 +1789,7 @@ True
 </div>
 </div>
 <div class="section" id="id16">
-<h4>Теперь через QNode<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<h4>Теперь через QNode<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
@@ -1673,7 +1803,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865475
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865472
 </pre></div>
 </div>
 </div>
@@ -1682,7 +1812,7 @@ True
 </div>
 </div>
 <div class="section" id="id17">
-<h2>Заключение<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<h2>Заключение<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
 <p>Это последняя вводная лекция, где мы сами писали операторы и операции на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>: это должно помочь лучше понять ту математику, которая лежит “под капотом” у квантовых вычислений. Дальше мы будем пользоваться только <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> и в отдельной лекции расскажем, как работать с этим фреймворком.</p>
 <p>Итого:</p>
 <ul class="simple">
@@ -1694,7 +1824,7 @@ True
 <p>Теперь мы готовы к тому, чтобы знакомиться с квантовыми вариационными схемами и переходить непосредственно к построению моделей квантового машинного обучения.</p>
 </div>
 <div class="section" id="id18">
-<h2>Задачи<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<h2>Задачи<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Как связаны ось и угол вращения на сфере Блоха с собственными значениями и собственными векторами матрицы однокубитного гейта? Для этого найдите собственные векторы и собственные значения гейта <span class="math notranslate nohighlight">\(R^\vec{n}\left(\alpha\right)\)</span>.</p></li>
 <li><p>Вокруг какой оси и на какой угол вращает состояние гейт Адамара?</p></li>
@@ -1736,9 +1866,11 @@ True
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="qubit.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1754,24 +1886,28 @@ True
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

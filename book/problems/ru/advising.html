@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Точное аналитическое решение одномерной модели Изинга. Метод трансфер-матрицы. &#8212; QMLCourse</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,38 +19,35 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/problems/ru/advising.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -73,7 +71,21 @@ const thebe_selector_output = ".output, .cell_output"
                     </script>
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -82,9 +94,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -102,14 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../index.html">
-   Приветствие / Welcome
-  </a>
- </li>
-</ul>
-<p class="caption">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Приветствие / Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Введение
  </span>
@@ -126,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы Python
  </span>
@@ -188,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Линейная алгебра и numpy
  </span>
@@ -220,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Основы машинного обучения
  </span>
@@ -237,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые вычисления
  </span>
@@ -264,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Фреймворки
  </span>
@@ -296,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Базовые квантовые алгоритмы
  </span>
@@ -338,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Железо квантовых компьютеров
  </span>
@@ -360,7 +374,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовое машинное обучение
  </span>
@@ -387,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Вариационные схемы
  </span>
@@ -404,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые градиенты
  </span>
@@ -426,7 +440,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовый SVM
  </span>
@@ -448,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Квантовые нейронные сети
  </span>
@@ -470,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Проблемы квантового машинного обучения
  </span>
@@ -507,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   От проблем к обучению
  </span>
@@ -539,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   VQE
  </span>
@@ -561,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   D-Wave – квантовый отжиг и семплирование
  </span>
@@ -583,7 +597,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   QAOA
  </span>
@@ -600,7 +614,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Перспективы
  </span>
@@ -612,7 +626,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   О КУРСЕ / ABOUT THE COURSE
  </span>
@@ -644,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Intro
  </span>
@@ -663,90 +677,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/book/problems/ru/advising.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/quantum-ods/qmlcourse"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems/ru/advising.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/problems/ru/advising.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/book/problems/ru/advising.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Модель Изинга
@@ -769,12 +873,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Точное аналитическое решение одномерной модели Изинга. Метод трансфер-матрицы.</h1>
@@ -813,18 +916,19 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="advising">
-<span id="id1"></span><h1>Точное аналитическое решение одномерной модели Изинга. Метод трансфер-матрицы.<a class="headerlink" href="#advising" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Точное аналитическое решение одномерной модели Изинга. Метод трансфер-матрицы.<a class="headerlink" href="#advising" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/dbazhanov">Бажанов Дмитрий</a></p></li>
 </ul>
 <p>В этой лекции более подробно обсудим модель Изинга, <a class="reference internal" href="ising.html"><span class="doc std std-doc">рассмотренную ранее</span></a>. Чуть глубже погрузимся в физику этой модели, а также рассмотрим ее частные случае, которые имеют точные аналитические решения. Для этого также познакомимся с методом <em>трансфер-матрицы</em>.</p>
 <div class="section" id="id2">
-<h2>Модель Изинга<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>Модель Изинга<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Модель Изинга представляет собой широко распространенную математическую модель статистической физики, которая может применяться в различных областях человеческой деятельности.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -832,11 +936,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="figure align-default" id="id7">
 <a class="reference internal image-reference" href="../../../_images/Ernst_Ising.png"><img alt="../../../_images/Ernst_Ising.png" src="../../../_images/Ernst_Ising.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 118 </span><span class="caption-text">Эрнст Изинг, 1900-1998</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 118 </span><span class="caption-text">Эрнст Изинг, 1900-1998</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </div>
 <p>Суть самой модели можно постичь, например, при стремлении описать свойства намагничивания материала. Представим себе, что имеется магнитная решетка (она может быть одномерной, двумерной или трехмерной) каждой вершине которой сопоставляется число называемое <em>спином</em> (<span class="math notranslate nohighlight">\(\sigma\)</span>) и принимающее значение <span class="math notranslate nohighlight">\(+1\)</span> или <span class="math notranslate nohighlight">\(−1\)</span> (соответственно поле  «<span class="math notranslate nohighlight">\(\uparrow\)</span>» или поле «<span class="math notranslate nohighlight">\(\downarrow\)</span>»). Каждому из <span class="math notranslate nohighlight">\(2^N\)</span> (где <span class="math notranslate nohighlight">\(N\)</span> – число вершин решетки) возможных вариантов расположения спинов (или намагниченности) приписывается энергия, величина которой определяется условиями попарного взаимодействия спинов соседних вершин. Например, энергия одномерной модели Изинга, в которой спины взаимодействуют только c ближайшими соседями (посредством параметра обменного взаимодействия <span class="math notranslate nohighlight">\(J\)</span>) и с однородным внешним полем (<span class="math notranslate nohighlight">\(H\)</span>), имеет вид:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-1">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-1" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-1" title="Permalink to this equation">#</a></span>\[
 E(\{\sigma\}) = -J\sum_{i=1}^N \sigma_i \sigma_{i+1} - H\sum_{i=1}^N \sigma_i.
 \]</div>
 <p>Это выражение соответствует периодическим граничным условиям, при которых первый и <span class="math notranslate nohighlight">\(N+1\)</span>-й спины отождествляются, то есть</p>
@@ -847,7 +951,7 @@ E(\{\sigma\}) = -J\sum_{i=1}^N \sigma_i \sigma_{i+1} - H\sum_{i=1}^N \sigma_i.
 <p>В этом случае можно считать, что система спинов находится на окружности, то есть первый и <span class="math notranslate nohighlight">\(N\)</span>-й спины являются ближайшими соседями и взаимодействуют между собой. Для описания такой системы необходимо найти статистическую сумму <span class="math notranslate nohighlight">\(Z\)</span>, в которой содержится полная информация о всех состояниях системы. Тогда другие характеристики системы, такие как удельная энергия, свободная энергия, энтропия, намагниченность, магнитная восприимчивость и др.  вычисляются через статистическую сумму или ее производные.</p>
 <p>Статистическая сумма рассматриваемой модели при температуре <span class="math notranslate nohighlight">\(\theta\)</span> есть сумма по всем спиновым конфигурациям <span class="math notranslate nohighlight">\(\{\sigma\}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-2">
-<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-2" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-2" title="Permalink to this equation">#</a></span>\[
 Z(\theta,H,N) = \sum_{\{\sigma\}} e^{-\frac{E(\{\sigma\})}{\theta}}.
 \]</div>
 <p>Сумму по состояниям <span class="math notranslate nohighlight">\(\{\sigma\}\)</span> можно понимать как последовательное суммирование по значениям всех переменных <span class="math notranslate nohighlight">\(\sigma_i\)</span>:</p>
@@ -858,15 +962,15 @@ Z(\theta,H,N) = \sum_{\{\sigma\}} e^{-\frac{E(\{\sigma\})}{\theta}}.
 <p>Следует заметить, что количество членов статистической суммы экспоненциально растет с увеличением числа вершин, соответственно увеличивается и время расчета термодинамических параметров для большого количества частиц.</p>
 </div>
 <div class="section" id="id4">
-<h2>Матричный подход<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>Матричный подход<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Для аналитического решения модели Изинга как правило применяется матричный подход. В рамках такого подхода статистическая сумма многих решеточных моделей Изинга может быть записана в виде следа некоторой степени <em>трансфер-матрицы</em>. Чтобы выразить статистическую сумму <a class="reference internal" href="#equation-eqn-2">(22)</a> через трансфер-матрицу, сначала представим гиббсовскую экспоненту в виде произведения <span class="math notranslate nohighlight">\(N\)</span> множителей</p>
 <div class="math notranslate nohighlight" id="equation-eqn-3">
-<span class="eqno">(23)<a class="headerlink" href="#equation-eqn-3" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(23)<a class="headerlink" href="#equation-eqn-3" title="Permalink to this equation">#</a></span>\[
 e^{-\frac{E(\{\sigma\})}{\theta}} = T_{\sigma_1 \sigma_2} T_{\sigma_2 \sigma_3} \ldots  T_{\sigma_{N-1} \sigma_N} T_{\sigma_N \sigma_1} = \prod_{j=1}^N T_{\sigma_j, \sigma_{j + 1}},
 \]</div>
 <p>где</p>
 <div class="math notranslate nohighlight" id="equation-eqn-4">
-<span class="eqno">(24)<a class="headerlink" href="#equation-eqn-4" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(24)<a class="headerlink" href="#equation-eqn-4" title="Permalink to this equation">#</a></span>\[
 T_{\sigma \sigma'} = \langle \sigma|T|\sigma' \rangle = e^{t\sigma\sigma' +\frac{h}{2}(\sigma + \sigma')},
 \]</div>
 <p>а <span class="math notranslate nohighlight">\(t\)</span> и <span class="math notranslate nohighlight">\(h\)</span> введены для более компактного написания формул и выражаются через <span class="math notranslate nohighlight">\(J\)</span>, <span class="math notranslate nohighlight">\(H\)</span> и <span class="math notranslate nohighlight">\(\theta\)</span> следующим образом</p>
@@ -876,7 +980,7 @@ t = \frac{J}{\theta}, \quad h = \frac{H}{\theta}.
 \]</div>
 <p>Числа <span class="math notranslate nohighlight">\(T_{\sigma \sigma'}\)</span> <a class="reference internal" href="#equation-eqn-4">(24)</a> будем дальше рассматривать как матричные элементы матрицы <span class="math notranslate nohighlight">\(T\)</span>, строки и столбцы которой вместо натуральных чисел нумеруются изинговскими переменными <span class="math notranslate nohighlight">\(\sigma\)</span> и <span class="math notranslate nohighlight">\(\sigma'\)</span>. Так как изинговские переменные принимают два значения: <span class="math notranslate nohighlight">\(\sigma, \sigma' = \pm 1\)</span>, то матрица <span class="math notranslate nohighlight">\(T\)</span> является квадратной матрицей размера <span class="math notranslate nohighlight">\(2 \times 2\)</span>. Договоримся дальше считать, что значение <span class="math notranslate nohighlight">\(\sigma = 1\)</span> (<span class="math notranslate nohighlight">\(\sigma' = 1\)</span>) соответствует первой строке (первому столбцу), а значение <span class="math notranslate nohighlight">\(\sigma = -1\)</span> (<span class="math notranslate nohighlight">\(\sigma' = -1\)</span>) соответствует второй строке (второму столбцу). Матрица <span class="math notranslate nohighlight">\(T\)</span> с элементами <a class="reference internal" href="#equation-eqn-4">(24)</a> в таком случае имеет следующий явный вид:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-5">
-<span class="eqno">(25)<a class="headerlink" href="#equation-eqn-5" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(25)<a class="headerlink" href="#equation-eqn-5" title="Permalink to this equation">#</a></span>\[\begin{split}
 T = \begin{vmatrix}
     T_{1,1} &amp; T_{1,-1} \\
     T_{-1, 1} &amp; T_{-1, -1}
@@ -889,12 +993,12 @@ T = \begin{vmatrix}
 <p>Матрица <span class="math notranslate nohighlight">\(T\)</span> называется <em>трансфер-матрицей</em> Крамерса–Ваннье.</p>
 <p>Равенство <a class="reference internal" href="#equation-eqn-3">(23)</a> позволяет записать статистическую сумму <a class="reference internal" href="#equation-eqn-2">(22)</a> в следующем виде</p>
 <div class="math notranslate nohighlight" id="equation-eqn-6">
-<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-6" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-6" title="Permalink to this equation">#</a></span>\[
 Z(\theta, H, N) = \sum_{\sigma_1 = \pm 1} \sum_{\sigma_2 = \pm 1} \ldots \sum_{\sigma_{N-1} = \pm 1}\sum_{\sigma_N = \pm 1} T_{\sigma_1 \sigma_2} T_{\sigma_2 \sigma_3} \ldots T_{\sigma_{N-1} \sigma_N}  T_{\sigma_N \sigma_1}.
 \]</div>
 <p>Структура слагаемых позволяет переписать сумму в правой части последнего равенства следующим образом:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-7">
-<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-7" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-7" title="Permalink to this equation">#</a></span>\[
 \sum_{\sigma_1 = \pm 1} \sum_{\sigma_2 = \pm 1} \ldots \sum_{\sigma_{N-1} = \pm 1} \sum_{\sigma_N = \pm 1} T_{\sigma_1 \sigma_2} T_{\sigma_2 \sigma_3} \ldots T_{\sigma_{N-1} \sigma_N}  T_{\sigma_N \sigma_1} =
 \]</div>
 <div class="math notranslate nohighlight">
@@ -910,7 +1014,7 @@ Z(\theta, H, N) = \sum_{\sigma_1 = \pm 1} \sum_{\sigma_2 = \pm 1} \ldots \sum_{\
 \]</div>
 <p>равна <span class="math notranslate nohighlight">\(T_{\sigma_{N-1} \sigma_1}^2\)</span>, то есть матричному элементу матрицы <span class="math notranslate nohighlight">\(T^2\)</span>, которая получается в результате (матричного) умножения двух матриц <span class="math notranslate nohighlight">\(T\)</span> (является квадратом матрицы <span class="math notranslate nohighlight">\(T\)</span>). Тогда сумма в правой части равенства <a class="reference internal" href="#equation-eqn-7">(27)</a> равна</p>
 <div class="math notranslate nohighlight" id="equation-eqn-8">
-<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-8" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-8" title="Permalink to this equation">#</a></span>\[
 \sum_{\sigma_1 = \pm 1}\sum_{\sigma_2 = \pm 1} \ldots \sum_{\sigma_{N-1}} T_{\sigma_1 \sigma_2} T_{\sigma_2 \sigma_3} \ldots T_{\sigma_{N-2} \sigma_{N-1}} T^2_{\sigma_{N-1} \sigma_1}.
 \]</div>
 <p>Дальше используем равенство</p>
@@ -930,7 +1034,7 @@ Z(\theta, H, N) = \sum_{\sigma_1 = \pm 1} T^N_{\sigma_1 \sigma_1}
 \]</div>
 <p>В последнем равенстве суммируются диагональные элементы матрицы <span class="math notranslate nohighlight">\(T^N\)</span>, которая есть матрица <span class="math notranslate nohighlight">\(T\)</span> в степени <span class="math notranslate nohighlight">\(N\)</span>. Сумма диагональных элементов матрицы – это след данной матрицы. Таким образом, окончательно получаем для статистической суммы одномерной модели Изинга с взаимодействием ближайших соседей и внешним полем, при периодических граничных условиях, следующую формулу:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-9">
-<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-9" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-9" title="Permalink to this equation">#</a></span>\[
 Z(\theta, H, N) = \mbox{Tr}\, T^N.
 \]</div>
 <p>Отметим несколько обстоятельств, связанных с полученным выражением для статистической суммы:</p>
@@ -944,34 +1048,34 @@ Z(\theta, H, N) = \mbox{Tr}\, T^N.
     \]</div>
 <p>где символом <span class="math notranslate nohighlight">\(dgn\)</span> обозначена диагональная матрица, на главной диагонали которой расположены ее собственные значения. В общем случае размерность такой матрицы равна величине <span class="math notranslate nohighlight">\(r=s^n\)</span>, где <span class="math notranslate nohighlight">\(s\)</span> – число состояний спина в вершине, а <span class="math notranslate nohighlight">\(n\)</span> – число обменных взаимодействий спинов цепочки (в рассматриваемой нами одномерной модели Изинга <span class="math notranslate nohighlight">\(s=2\)</span> и <span class="math notranslate nohighlight">\(n=1\)</span>). В этом случае статистическая сумма <a class="reference internal" href="#equation-eqn-9">(29)</a> переписывается к следующему виду:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-10">
-<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-10" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-10" title="Permalink to this equation">#</a></span>\[
     Z(\theta, H, N) = \mbox{Tr}\, \grave{T}^N = \sum_{i}^{r} \lambda_{i}^{N},
     \]</div>
 <p>При этом величина статистической суммы не меняется, поскольку след матрицы является ее инвариантом. Отметим, что процедуру диагонализации трансфер-матрицы можно провести множеством способов. В зависимости от подбора диагонализирующей матрицы <span class="math notranslate nohighlight">\(U\)</span> её можно провести таким образом, что на первом месте в матрице <span class="math notranslate nohighlight">\(\grave{T}\)</span> будет стоять её главное (единственное максимальное вещественное) собственное значение, которое всегда существует по теореме Фробениуса–Перрона. Если на первое место в спектре трансфер-матрицы поставить ее главное собственное значение, то статистическую сумму <a class="reference internal" href="#equation-eqn-10">(30)</a> можно переписать как:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-11">
-<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-11" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-11" title="Permalink to this equation">#</a></span>\[
     Z(\theta, H, N) = \lambda_1^N \left[ 1 + \left(\frac{\lambda_2}{\lambda_{1}}\right)^N + ... + \left(\frac{\lambda_r}{\lambda_{1}}\right)^N \right]
     \]</div>
 <p>Тогда при переходе к термодинамическому пределу <span class="math notranslate nohighlight">\((N \to \infty)\)</span> в выражении <a class="reference internal" href="#equation-eqn-11">(31)</a> все слагаемые, кроме первого, стремятся к нулю,</p>
 <div class="math notranslate nohighlight" id="equation-eq-lim">
-<span class="eqno">(32)<a class="headerlink" href="#equation-eq-lim" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(32)<a class="headerlink" href="#equation-eq-lim" title="Permalink to this equation">#</a></span>\[\begin{split}
     &amp;\lim_{N \to \infty} \left(\frac{\lambda_i}{\lambda_{1}}\right)^N =0, \\
     &amp;\hspace{0.5cm} i=2,3,..,r
     \end{split}\]</div>
 <p>и выражение для статистической суммы преобразуется к виду <span class="math notranslate nohighlight">\(Z = \lambda^{N}_{1}\)</span>.</p>
 <p>В результате все термодинамические и магнитные функции системы – свободная энергия системы, приходящаяся на один спин,</p>
 <div class="math notranslate nohighlight" id="equation-eq-fren">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eq-fren" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(33)<a class="headerlink" href="#equation-eq-fren" title="Permalink to this equation">#</a></span>\[
     F = -\frac{\theta}{N} \mbox{ln} Z = -\theta \mbox{ln} \lambda_1,
     \]</div>
 <p>энтропия</p>
 <div class="math notranslate nohighlight" id="equation-eq-entropy">
-<span class="eqno">(34)<a class="headerlink" href="#equation-eq-entropy" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(34)<a class="headerlink" href="#equation-eq-entropy" title="Permalink to this equation">#</a></span>\[
     S = -\frac{\partial F}{\partial \theta} = \mbox{ln} \lambda_1 + \frac{\theta}{\lambda_1} \frac{\partial \lambda_1}{\partial \theta},
     \]</div>
 <p>теплоемкость</p>
 <div class="math notranslate nohighlight" id="equation-eq-c">
-<span class="eqno">(35)<a class="headerlink" href="#equation-eq-c" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(35)<a class="headerlink" href="#equation-eq-c" title="Permalink to this equation">#</a></span>\[
     C = - \theta \frac{\partial^2 F}{\partial \theta^2} =
     2 \frac{\theta}{\lambda_1}\frac{\partial \lambda_1}{\partial \theta} +
     \frac{\theta^2}{\lambda_1}
@@ -980,12 +1084,12 @@ Z(\theta, H, N) = \mbox{Tr}\, T^N.
     \]</div>
 <p>намагниченность</p>
 <div class="math notranslate nohighlight" id="equation-eq-mag">
-<span class="eqno">(36)<a class="headerlink" href="#equation-eq-mag" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(36)<a class="headerlink" href="#equation-eq-mag" title="Permalink to this equation">#</a></span>\[
     M= -\frac{\partial F}{\partial H} =  \frac{\theta}{\lambda_1} \frac{\partial \lambda_1}{\partial H},
     \]</div>
 <p>и магнитная восприимчивость</p>
 <div class="math notranslate nohighlight" id="equation-eq-chi">
-<span class="eqno">(37)<a class="headerlink" href="#equation-eq-chi" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(37)<a class="headerlink" href="#equation-eq-chi" title="Permalink to this equation">#</a></span>\[
     \chi = -\frac{\partial^2 F}{\partial H^2} =
     \frac{\partial M}{\partial H} =
     -\frac{\theta}{\lambda_{1}^{2}} \left( \frac{\partial \lambda_1}{\partial H} \right)^2 +
@@ -996,10 +1100,10 @@ Z(\theta, H, N) = \mbox{Tr}\, T^N.
 </ol>
 </div>
 <div class="section" id="id5">
-<h2>Решение одномерной модели<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>Решение одномерной модели<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Теперь вернемся к аналитическому решению рассматриваемой нами классической одномерной модели Изинга (<span class="math notranslate nohighlight">\(s=2\)</span> и <span class="math notranslate nohighlight">\(n=1\)</span>). Как показали выше, задача сводится к сведению трансфер-матрицы <a class="reference internal" href="#equation-eqn-5">(25)</a> диагональному виду. Для этого воспользуемся правилами линейной алгебры и решим характеристическое уравнение для трансфер-матрицы и найдем её собственные значения:</p>
 <div class="math notranslate nohighlight" id="equation-eq-determ">
-<span class="eqno">(38)<a class="headerlink" href="#equation-eq-determ" title="Permalink to this equation">¶</a></span>\[\begin{split}
+<span class="eqno">(38)<a class="headerlink" href="#equation-eq-determ" title="Permalink to this equation">#</a></span>\[\begin{split}
 det \left( T - \lambda I \right) = det \left( T - \lambda \left(\begin{vmatrix}
     1 &amp; 0 \\
     0 &amp; 1
@@ -1007,12 +1111,12 @@ det \left( T - \lambda I \right) = det \left( T - \lambda \left(\begin{vmatrix}
 \end{split}\]</div>
 <p>где <span class="math notranslate nohighlight">\(I\)</span> – единичная матрица, <span class="math notranslate nohighlight">\(\lambda\)</span> – действительная переменная. Раскрывая определитель <a class="reference internal" href="#equation-eq-determ">(38)</a>, находим искомое характеристическое уравнение:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cheq">
-<span class="eqno">(39)<a class="headerlink" href="#equation-eq-cheq" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(39)<a class="headerlink" href="#equation-eq-cheq" title="Permalink to this equation">#</a></span>\[
 \lambda^{2} - \lambda \left( e^{t+h} + e^{t-h} \right) + e^{2t} - e^{-2t} = 0
 \]</div>
 <p>решением которого являются два собственных значения:</p>
 <div class="math notranslate nohighlight" id="equation-eq-eigen">
-<span class="eqno">(40)<a class="headerlink" href="#equation-eq-eigen" title="Permalink to this equation">¶</a></span>\[
+<span class="eqno">(40)<a class="headerlink" href="#equation-eq-eigen" title="Permalink to this equation">#</a></span>\[
 \lambda_{\pm} = \frac{1}{2} e^{t} \left( e^{h} + e^{-h} \right) \pm  \frac{1}{2} \sqrt{ e^{2t} \left( e^{h} + e^{-h} \right)^{2} - 4e^{2t} + 4e^{-2t} } = e^{t} ch(h) \pm \sqrt{e^{2t} sh^{2}(h) + e^{-2t}},
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(ch (h) = \frac{e^{h} + e^{-h}}{2}\)</span> – гиперболический косинус и <span class="math notranslate nohighlight">\(sh (h) = \frac{e^{h} - e^{-h}}{2}\)</span> – гиперболический синус. Следовательно статистическая сумма рассматриваемой модели записывается в следующем виде:</p>
@@ -1033,7 +1137,7 @@ m = -\frac{\partial f(t,h)}{\partial h} = \frac{sh(h) + \frac{sh(h)ch(h)} {\sqrt
 <p>которая является аналитической функцией <span class="math notranslate nohighlight">\(h\)</span> и исчезает при <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span> (так как <span class="math notranslate nohighlight">\(sh(h) \rightarrow 0\)</span>). Таким образом рассматриваемая модель не допускает фазового перехода при любой положительной температуре (<span class="math notranslate nohighlight">\(\theta &gt; 0\)</span>). Она претерпевает <em>парамагнитный-ферромагнитный</em> фазовый переход только при <span class="math notranslate nohighlight">\(\theta = 0\)</span>, в этом случае спонтанная намагниченность равна <span class="math notranslate nohighlight">\(|m| = 1\)</span>.</p>
 </div>
 <div class="section" id="id6">
-<h2>Заключение<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>Заключение<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции ознакомились с аналитическим решением одномерной модели Изинга методом <em>трансфер-матрицы</em>. В заключении хотелось бы сказать, что модель Изинга поддается многим обобщениям, будь то более высокие измерения, различные решетки или модифицированные взаимодействия.</p>
 </div>
 </div>
@@ -1060,9 +1164,11 @@ m = -\frac{\partial f(t,h)}{\partial h} = \frac{sh(h) + \frac{sh(h)ch(h)} {\sqrt
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="ising.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1078,24 +1184,28 @@ m = -\frac{\partial f(t,h)}{\partial h} = \frac{sh(h) + \frac{sh(h)ch(h)} {\sqrt
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ODS Quantum Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ODS Quantum Community<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
