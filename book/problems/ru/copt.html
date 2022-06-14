@@ -1148,7 +1148,7 @@ C = (1 - \sum_i x_{i,p})^2 + (1 - \sum_p x_{i,p})^2 + \sum_{u,v \notin E} x_{u,p
 <h2>Задача коммивояжера<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Задачу коммивояжера мы (а точнее наш смартфон) решаем каждый раз, когда строим в <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Maps</span></code> маршрут, включающий несколько точек. Зная, как формулируется задача о гамильтоновых циклах, сформулировать задачу коммивояжера очень легко.</p>
 <div class="figure align-default" id="id18">
-<img alt="_static/intro/ru/Salesman.png" src="_static/intro/ru/Salesman.png" />
+<img alt="../../../_images/Salesman.png" src="../../../_images/Salesman.png" />
 <p class="caption"><span class="caption-number">Fig. 122 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
 </div>
 <p>По сути нам требуется взять все Гамильтоновы циклы и выбрать из них тот, для которого сумма весов по содержащимся в нем ребрам будет минимальной. Но надо помнить, что цикл обязательно должен быть в первую очередь Гамильтоновым, поэтому мы добавим веса слагаемых в выражение для стоимости, причем веса, отвечающие за сам цикл, будут больше:</p>
