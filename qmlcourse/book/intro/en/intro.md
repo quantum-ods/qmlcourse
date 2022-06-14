@@ -28,7 +28,6 @@ Translation:
  Classical computers which are based on Turing, Von Neumann and Shockley ideas are an organic part of our live. We all used to have an every year growing computational power of such computers. And today's cheap laptop have a power that supercomputers had 15 years ago.
 
  ```{figure} /_static/intro/Moores_Law.png
- :name: moores_law
 
  A Moore law illustration; a growth of the number of transistors from 1970s
  ```
@@ -44,7 +43,6 @@ Translation:
  There are few version who was the first one said about using quantum mechanic's laws for creating the new computer. Like it frequently happens a few scientist independently and at one time came to the same idea. One of them was Richard Phillips Feynman.
 
  ```{figure} /_static/intro/Feinman.jpg
- :name: feinman
 
  Richard Phillips Feynman, 1918-1988
  ```
@@ -64,7 +62,6 @@ Translation:
  The reason is that the biggest part of modern cryptography is based on the one simple assuming that there is no polynomial algorithm for the factorization task. In other words if we have a number that is the result of two big prime numbers product we can try to find that prime numbers until the death of the universe. But it is true only for the classical computer. A quantum computer has the effective polynomial algorithm invented by Piter Shor in 1994. And this algorithm can solve the factorization problem in relative short time.
 
  ```{figure} /_static/intro/Shor.png
- :name: shor
 
  Piter Shor. The man who set the world on fire with his algorithm.
  ```
@@ -82,7 +79,6 @@ Translation:
 The algorithms are already known for quantum computers that allow potentially effective, albeit _approximate_, solution of such problems on a quantum computer. These are the traveling salesman problem, the knapsack problem, the graph clustering problem, and many other combinatorial optimization problems. In this course there will be a whole block dedicated to such quantum algorithms as _Variational Quantum Eigensolver_ and _Quantum Approximate Optimization Algorithm_.
 
 ```{figure} /_static/intro/Salesman.png
-:name: salesman
 
 Visualizing the solution of the salesman's problem -- the shortest route to get around 12 German cities -- is a very important task of modern logistics
 ```
@@ -94,7 +90,6 @@ The problems of quantum mechanics cannot be solved analytically. It would seem t
 
 ```{figure} /_static/intro/Schrodinger.jpg
 :width: 350px
-:name: schrodinger
 
 Erwin Schrodinger, 1887-1961, creator of the famous equation and cat meme
 ```
@@ -117,7 +112,6 @@ This is probably one of the main questions that arise when reading such articles
 
 ```{figure} /_static/intro/Bitcoin.jpg
 :width: 350px
-:name: bitcoin
 
 Bitcoin, like many other electronic media will be forced to switch to post-quantum cryptography
 ```
@@ -145,7 +139,6 @@ Let's say that quantum computers already exist today. Except that all manufactur
 
 ```{figure} /_static/intro/quantum_computer.jpg
 :width: 350px
-:name: qc
 
 IBM's quantum computer looks something like this
 ```
@@ -180,7 +173,6 @@ The concept itself was formulated back in 2012 by renowned physicist theorist Jo
 
 ```{figure} /_static/intro/Preskill.jpg
 :width: 350px
-:name: preskill
 
 John Preskill, who coined the term. He is also famous for his famous bet with another physicist, Stephen Hawking (which Hawking lost)
 ```
