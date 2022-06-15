@@ -32,4 +32,18 @@ If you don't understand any of the topics, it is highly recommended that you ref
 
 ## Linear algebra and `Numpy`
 
+To understand basic quantum algorithms and quantum machine learning algorithms, just as in classical machine learning, one cannot do without linear algebra. If you have time to take mathematics seriously, we recommend [Gilbert Strang](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/) or [D.V. Beklemishev (RU)](https://www.litres.ru/d-v-beklemishev/kurs-analiticheskoy-geometrii-i-lineynoy-algebry-66005405/) courses, as well as [A.I. Kostrikin's problem book (RU)](https://biblio.mccme.ru/node/2192). And if you have ever studied linear algebra, but have forgotten it, a block of our course will help. We want you to have no problems with such concepts as:
+
+- vector-line and vector-column;
+- linear Dependence of Vectors;
+- systems of linear equations;
+- matrices, determinant and trace of a matrix;
+- linear operator;
+- complex and hermite conjugation;
+- scalar and vector product;
+- hilbert space.
+
+The list is obviously not exhaustive, and it is likely that you will not list all the things that can be encountered as you study quantum algorithms.
+
+## Machime Learning
 
