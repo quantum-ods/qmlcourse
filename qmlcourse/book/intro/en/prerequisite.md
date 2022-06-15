@@ -47,3 +47,17 @@ The list is obviously not exhaustive, and it is likely that you will not list al
 
 ## Machime Learning
 
+Finally, to talk about quantum machine learning, you need to have a good understanding the machine learning. [This course unit](../../ml/en/ml_intro.md) describes what different machine learning tasks have in common and how the various applications of machine learning models are put together like a jigsaw puzzle. This block, however, does not replace a good book or course on machine learning (like [Andrew Ng course](https://www.coursera.org/learn/machine-learning), [Yandex and MIPT specialization (RU)](https://datasciencecourse.ru/), [mlcourse.ai](https://mlcourse.ai) or [Machine Learning course at FKN HSE -- E. A. Sokolov (RU)](https://github.com/esokolov/ml-course-hse)) covering topics such as:
+
+- teacher-assisted and non-teacher-assisted learning, reinforcement learning;
+- quality metrics in learning tasks with a teacher;
+- loss functions and reduction of machine learning problems to optimization problems;
+- feature processing and construction;
+- model quality assessment and cross validation;
+- classification and regression algorithms: decision trees, forest, boosting, logistic regression, etc;
+- ranking algorithms, ranking quality metrics;
+- teacherless learning: dimensionality reduction, clustering, anomaly search;
+- bayesian view of machine learning;
+- representation learning.
+
+Again, this is not an exhaustive list, and it covers only the "classics," ignoring deep learning. But if any of these things are confusing or if the entry [test](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a) fails, it may be worth referring to the courses mentioned above.
