@@ -15,8 +15,9 @@ RUN poetry run jupyter-book build ./qmlcourse --keep-going
 RUN poetry run jupyter-book build ./qmlcourse --builder latex --keep-going
 
 FROM continuumio/miniconda3:latest
+COPY . .
 RUN conda create -n qmlcourse python=3.8 --yes
-RUN conda run -n qmlcourse conda install psi4 python=3.8 -c psi4 -y
-RUN conda run -n python -m pip install -r requirements.txt
-RUN conda run -n qmlcourse conda install -c conda-forge jupyterlab -y
-CMD ["/bin/sh", "-c", "conda run -n qmlcourse.ai jupyter lab"]
+RUN conda run -n qmlcourse conda install psi4 python=3.8 -c psi4 --yes
+RUN conda run -n qmlcourse python -m pip install -r requirements.txt
+RUN conda run -n qmlcourse conda install -c conda-forge jupyterlab --yes
+CMD ["/bin/sh", "-c", "conda run -n qmlcourse jupyter lab --allow-root --p 8989"]
