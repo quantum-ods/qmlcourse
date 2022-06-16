@@ -3,7 +3,7 @@ from subprocess import call
 
 import yaml
 
-PREFIX = ''#'qmlcourse'+'/'
+PREFIX = 'qmlcourse'+'/'
 
 with open('qmlcourse/_toc.yml') as f:
     toc = yaml.safe_load(f)

@@ -8,7 +8,6 @@ RUN python3 -m pip install poetry
 
 #RUN apt update && apt install -y git && git clone https://github.com/quantum-ods/qmlcourse.git
 COPY . .
-WORKDIR ./qmlcourse
 RUN poetry install --no-interaction --no-root
 RUN poetry run python scripts/convert2ipynb.py
 RUN poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
