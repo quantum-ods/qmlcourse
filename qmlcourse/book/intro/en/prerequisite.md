@@ -32,7 +32,7 @@ If you don't understand any of the topics, it is highly recommended that you ref
 
 ## Linear algebra and `Numpy`
 
-To understand basic quantum algorithms and quantum machine learning algorithms, just as in classical machine learning, one cannot do without linear algebra. If you have time to take mathematics seriously, we recommend [Gilbert Strang](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/) or [D.V. Beklemishev (RU)](https://www.litres.ru/d-v-beklemishev/kurs-analiticheskoy-geometrii-i-lineynoy-algebry-66005405/) courses, as well as [A.I. Kostrikin's problem book (RU)](https://biblio.mccme.ru/node/2192) and and [SHAD's Machine Learning Tutorial](https://ml-handbook.ru/). And if you have ever studied linear algebra, but have forgotten it, a block of our course will help. We want you to have no problems with such concepts as:
+To understand basic quantum algorithms and quantum machine learning algorithms, just as in classical machine learning, one cannot do without linear algebra. If you have time to take mathematics seriously, we recommend [Gilbert Strang](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/) or [D.V. Beklemishev (RU)](https://www.litres.ru/d-v-beklemishev/kurs-analiticheskoy-geometrii-i-lineynoy-algebry-66005405/) courses, as well as [A.I. Kostrikin's problem book (RU)](https://biblio.mccme.ru/node/2192). And if you have ever studied linear algebra, but have forgotten it, a block of our course will help. We want you to have no problems with such concepts as:
 
 - vector-line and vector-column;
 - linear dependence of vectors;
@@ -47,7 +47,7 @@ The list is obviously not exhaustive, and it is likely that you will not list al
 
 ## Machime Learning
 
-Finally, to talk about quantum machine learning, you need to have a good understanding the machine learning. [This course unit](../../ml/en/ml_intro.md) describes what different machine learning tasks have in common and how the various applications of machine learning models are put together like a jigsaw puzzle. This block, however, does not replace a good book or course on machine learning (like [Andrew Ng course](https://www.coursera.org/learn/machine-learning), [Yandex and MIPT specialization (RU)](https://datasciencecourse.ru/), [mlcourse.ai](https://mlcourse.ai) or [Machine Learning course at FKN HSE -- E. A. Sokolov (RU)](https://github.com/esokolov/ml-course-hse)) covering topics such as:
+Finally, to talk about quantum machine learning, you need to have a good understanding the machine learning. [This course unit](../../ml/en/ml_intro.md) describes what different machine learning tasks have in common and how the various applications of machine learning models are put together like a jigsaw puzzle. This block, however, does not replace a good book or course on machine learning (like [Andrew Ng course](https://www.coursera.org/learn/machine-learning), [Yandex and MIPT specialization (RU)](https://datasciencecourse.ru/), [mlcourse.ai](https://mlcourse.ai), [Machine Learning course at FKN HSE -- E. A. Sokolov (RU)](https://github.com/esokolov/ml-course-hse) or [SHAD's Machine Learning Tutorial (RU)](https://ml-handbook.ru/)) covering topics such as:
 
 - teacher-assisted and non-teacher-assisted learning, reinforcement learning;
 - quality metrics in learning tasks with a teacher;
