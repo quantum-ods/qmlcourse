@@ -1,9 +1,9 @@
-# Purpose of the builder is to make all lectures, convert them into ipython notebooks (.ipynb). This operation is time costly and take a lot of space on the HDD. 
+# Purpose of the builder is to make all lectures, convert them into ipython notebooks (.ipynb). This operation is time costly and take a lot of space on the HDD.
 # After that we could use lightweight environment
 FROM ubuntu:20.04 as builder
 
 RUN apt update && apt install -y build-essential && apt install -y wget
-RUN apt update && apt install -y python3-pip 
+RUN apt update && apt install -y python3-pip
 RUN python3 -m pip install poetry
 
 #RUN apt update && apt install -y git && git clone https://github.com/quantum-ods/qmlcourse.git
@@ -14,6 +14,7 @@ RUN poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc
 RUN poetry run jupyter-book build ./qmlcourse --keep-going
 RUN poetry run jupyter-book build ./qmlcourse --builder latex --keep-going
 
+# Purpose of this stage is to get all packages from lectures and jupyter lab to interact with lectures.
 FROM continuumio/miniconda3:latest
 COPY . .
 RUN conda create -n qmlcourse python=3.8 --yes
