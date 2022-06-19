@@ -46,7 +46,7 @@ $$
 
 The operation of multiplying a vector by a number can be interpreted geometrically as a contraction/extension of a vector.
 
-Using these two operations, we can count **linear combinations of vectors**: $\alpha_1 \mathbf{a}_1 + \alpha_2 \mathbf{a}_2 + ... + \alpha_n \mathbf{a}_n ,$ where $\mathbf{a}_1, \mathbf{a}_2, ..., \mathbf{a}_n$ are vectors and $\alpha_1, \alpha_2, ..., \alpha_n$ are numbers.
+Using these two operations, we can define **linear combinations of vectors**: $\alpha_1 \mathbf{a}_1 + \alpha_2 \mathbf{a}_2 + ... + \alpha_n \mathbf{a}_n ,$ where $\mathbf{a}_1, \mathbf{a}_2, ..., \mathbf{a}_n$ are vectors and $\alpha_1, \alpha_2, ..., \alpha_n$ are numbers.
 
 ## The norm (length) of a vector
 
