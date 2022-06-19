@@ -149,7 +149,7 @@ $$
 
 So, vector $\begin{pmatrix} 2 \\\ 3 \end{pmatrix}$$ in the basis of unit orthons is represented as $\begin{pmatrix} -1 \\\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
 
-But a basis, as said before, not any set of vectors** will do.
+But, as mentioned before, **not any set of vectors**  makes a basis.
 
 For example, through the basis $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \3 \0 \end{pmatrix}$$ cannot decompose the vector $\begin{pmatrix} 2 \\3 \end{pmatrix}$, so this set of vectors is not a basis.
 
