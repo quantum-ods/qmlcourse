@@ -38,7 +38,7 @@ $$
 \mathbf{a} + \mathbf{b} = (a_1 + b_1) \mathbf{e}_1 + (a_2 + b_2) \mathbf{e}_2 + ... + (a_n + b_n) \mathbf{e}_n = \ = \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ ... \ b_n \end{pmatrix} = \begin{pmatrix} a_1 + b_1 \ a_2 + b_2 \\ ... \ a_n + b_n \end{pmatrix}
 $$
 
-- of multiplying a vector by a number (scalar):
+- multiplication of a vector by a number (scalar):
 
 $$
 \lambda \mathbf{a} = \lambda a_1 \mathbf{e}_1 + \lambda a_2 \mathbf{e}_2 + ... + \lambda a_n \mathbf{e}_n = \lambda \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\\ \lambda a_2 \\ ... \ \lambda a_n \end{pmatrix}
