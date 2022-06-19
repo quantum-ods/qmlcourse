@@ -158,7 +158,7 @@ What is the fundamental difference between these bases, and can the basis of a t
 Linear algebra has an answer to this:
 **Any $n$ linearly independent vectors of $n$-dimensional vector space form the basis of that space.
 
-It is because of the linear dependence of the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}$$ they can't be the basis of a two-dimensional space.
+Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}$$ can't be the basis of a two-dimensional space.
 
 ## What did we learn?
 
