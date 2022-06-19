@@ -157,7 +157,7 @@ Here we mean accordingly:
 - photons, which seem to be good for everything, except that the programming on them is aligning lenses and lasers on an optical table
 ```
 
-It is worth adding that the record in exact and scalable as well as programmable (topological) qubits today is exactly 2 qubits. Seriously, the interaction of two logical qubits was published in `Nature' this year (2021).
+It is worth adding that the record in exact and scalable as well as programmable (topological) qubits today is exactly 2 qubits. Seriously, the interaction of two logical qubits was published in `Nature` this year (2021).
 
 ### What plans do the leading players in this market have?
 

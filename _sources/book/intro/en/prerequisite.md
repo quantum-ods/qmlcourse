@@ -15,20 +15,20 @@ To be successful in the course you must be able to do and understand such things
 
 - copying files from GitHub;
 - installing `Poetry` and the `Python` libraries;
-- how to run/start the `Jupyter Notebook';
-- the basic keyboard shortcuts in `Jupyter Notebook';
-- how to run code in `Jupyter Notebook';
-- what simple data types exist in `Python';
+- how to run/start the `Jupyter Notebook`;
+- the basic keyboard shortcuts in `Jupyter Notebook`;
+- how to run code in `Jupyter Notebook`;
+- what simple data types exist in `Python`;
 - how to work with complex container types (`list`, `dict`, `tuple`), including the most popular methods of each;
-- how `Python arithmetic' works and how variables of different types relate to one another;
+- how `Python arithmetic` works and how variables of different types relate to one another;
 - what are conditional constructs and branching logic;
 - what is a block of code in `Python` and why indents (tabs) are needed;
 - what loops are and how they can be used with complex data types;
-- how to write functions in `Python' and what function arguments are and what they are;
+- how to write functions in `Python` and what function arguments are and what they are;
 - what a decorator is and how to use it;
 - basic OOP: class declaration, the concept of a class object, the ability to write class methods.
 
-If you don't understand any of the topics, it is highly recommended that you refresh your knowledge (or even acquire it) by taking the corresponding lessons in Python Basics. Even if you have experience working with it and writing code, you are encouraged to learn how to install all the necessary dependencies and libraries, as well as the hotkeys and various functions in the `Jupyter Notebook' (lesson 3).
+If you don't understand any of the topics, it is highly recommended that you refresh your knowledge (or even acquire it) by taking the corresponding lessons in Python Basics. Even if you have experience working with it and writing code, you are encouraged to learn how to install all the necessary dependencies and libraries, as well as the hotkeys and various functions in the `Jupyter Notebook`.
 
 ## Linear algebra and `Numpy`
 
