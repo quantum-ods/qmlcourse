@@ -19,7 +19,7 @@ The vector $\mathbf{a}$ in this coordinate system can be written as follows: $\m
 
 **Note 1**: Vector coordinates do not uniquely define its position in the plane, but only the position of the vector's end relative to its start. For example, a vector $\begin{pmatrix} 3 \\\ 4 \end{pmatrix}$$ can be drawn either from the origin $\begin{pmatrix} 0 , 0 \end{pmatrix}$ with the end at $\begin{pmatrix} 3 , 4 \end{pmatrix}$, or from an arbitrary point, e.g. $\begin{pmatrix} 1 , 1 \end{pmatrix}$$ with the end at $\begin{pmatrix} 4 , 5 \end{pmatrix}$. Both of these vectors correspond to 3 orthogonal unite vectors on the $x$-axis and 4 on the $y$-axis. Normally, unless otherwise stated, it is assumed that the vector is deferred from the origin.
 
-**Note 2**: A vector can be represented either as a column vector $\begin{pmatrix} a_1 \ a_2 \end{pmatrix}$ or as a string vector $\begin{pmatrix} a_1 \ a_2 \end{pmatrix}$. Hereinafter, by a vector we mean a column vector, unless otherwise stated.
+**Note 2**: A vector can be represented either as a column vector $\begin{pmatrix} a_1 \ a_2 \end{pmatrix}$ or as a row vector $\begin{pmatrix} a_1 \ a_2 \end{pmatrix}$. Hereinafter, by a vector we mean a column vector, unless otherwise stated.
 
 The notion of a vector in the plane can be generalized to 3-dimensional space, and, in general, to $n$-dimensional space (which can no longer be visualized):
 
