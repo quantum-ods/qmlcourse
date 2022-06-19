@@ -14,7 +14,7 @@ Translation:
 
 ## About the lecture
 
-The lecture has no learning meaning but tries to answer questions that can have anyone who faces the topic of quantum computing for the first time
+The lecture has no learning meaning but tries to answer questions that can have anyone who faces the topic of quantum computing for the first time:
 
 - what is computing this?
 - why do we need all this stuff?
@@ -118,7 +118,7 @@ Bitcoin, like many other electronic media will be forced to switch to post-quant
 
 ### How many qubits are needed for different tasks?
 
-Probably at once it is necessary to estimate the size that a quantum computer must have in order to effectively solve the tasks described above. Approximate figures are as follows
+Probably at once it is necessary to estimate the size that a quantum computer must have in order to effectively solve the tasks described above. Approximate figures are as follows:
 
 - Shor's algorithm and breaking of modern cryptography (including bitcoin): $\sim 20\cdot 10^6$ (20 million) qubits
 - optimization problems: $\sim 100 \cdot 10^3$ (100 thousand) qubits
@@ -143,7 +143,7 @@ Let's say that quantum computers already exist today. Except that all manufactur
 IBM's quantum computer looks something like this
 ```
 
-There are quantum computers with different architectures. Some have more qubits, but also a higher error rate. Others have a low error rate, but they are difficult to scale. The topic of quantum iron in this course will be a separate block of several lectures. But in brief, we can name the following figures
+There are quantum computers with different architectures. Some have more qubits, but also a higher error rate. Others have a low error rate, but they are difficult to scale. The topic of quantum iron in this course will be a separate block of several lectures. But in brief, we can name the following figures:
 
 - the record in relatively easily scalable but noisy quantum computers is $\sim 55$ qubits
 - the record in relatively accurate but slow and poorly scalable computers is $\sim 20$ qubits
