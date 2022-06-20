@@ -11,7 +11,7 @@
 
 Vector is a term that has several interpretations: mathematical, geometric, physical, etc. The exact meaning of the term depends on the context.
 
-Formally, a vector is defined as an element of vector space -- a set on which the operations **addition** and **multiplication of a vector by a number (scalar)** are defined, which must satisfy [8 axioms](https://en.wikipedia.org/wiki/Vector_space).
+Formally, a vector is defined as an element of vector space -- a set with **addition** and **multiplication of a vector by a number (scalar)** operations, which satisfy [8 axioms](https://en.wikipedia.org/wiki/Vector_space).
 
 For simplicity of understanding, let us consider the rectangular (Cartesian) coordinate system in the plane, familiar from school days -- two perpendicular to each other axes $x$ and $y$, selected unit vectors (orthogonal) $\mathbf{e}_1$, $\mathbf{e}_2$ on them and the origin of coordinates.
 
