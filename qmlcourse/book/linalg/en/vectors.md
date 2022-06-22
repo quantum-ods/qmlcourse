@@ -125,7 +125,7 @@ So where do quantitative measurements come from? To make this clear, we need to 
 
 A basis is a finite set of vectors in a vector space such that any vector in that space can be uniquely represented as a linear combination of vectors of that set.
 
-Recall one of the examples above, where we represented a rectangular coordinate system in the plane and unit vectors $\mathbf{e}_1$, $\mathbf{e}_2$. $\mathbf{e}_1$ = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \mathbf{e}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$
+Recall one of the examples above, where we represented a rectangular coordinate system in the plane and unit vectors $\mathbf{e}_1$, $\mathbf{e}_2$. $\mathbf{e}_1$ = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \mathbf{e}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$.
 In this example, we decompose the arbitrary vector $\mathbf{a}$ as follows:
 
 $$
@@ -161,6 +161,7 @@ For example, through the set of vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \
 What is the fundamental difference between these bases, and can the basis of a two-dimensional space consist of more or fewer vectors than 2, for example?
 
 Linear algebra has an answer to this:
+
 **Any $n$ linearly independent vectors of $n$-dimensional vector space form the basis of that space.
 
 Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}$$ can't be the basis of a two-dimensional space.
