@@ -223,3 +223,7 @@
       title: 🟦 About quantum computers
     - file: book/intro/en/prerequisite.md
       title: ⬜ Prerequisite
+- part: Linear Algebra and Numpy
+  chapters:
+    - file: book/linalg/ru/vectors.md
+      title: 🟦 Vectors
