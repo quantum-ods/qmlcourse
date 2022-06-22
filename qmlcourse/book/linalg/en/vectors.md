@@ -31,7 +31,6 @@ $$
     \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + ... + a_n \mathbf{e}_n = \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix}
 $$
 
-
 ## Vector operations
 
 As stated earlier, there are two basic operations on vectors in the formal definition:
