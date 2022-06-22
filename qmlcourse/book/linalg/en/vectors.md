@@ -136,7 +136,7 @@ It turns out that the orthogonal vectors $\mathbf{e}_1$, $\mathbf{e}_2$ **are th
 
 The question arises, is this basis unique in two-dimensional space, or not?
 
-The answer to this question is no. In fact, one can take any two vectors (**almost any**) and they too will be a basis, provided that any vector can be decomposed by their linear combination.
+The answer to this question is no. In fact, one can take any two vectors (**almost any**) and they will also form a basis, provided that any vector can be decomposed by their linear combination.
 
 **Example**.
 
