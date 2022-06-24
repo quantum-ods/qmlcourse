@@ -60,7 +60,7 @@ Formally the norm is defined as a functional in the vector space satisfying [3 a
 There are many functionals satisfying this definition of norm, but we will consider the most commonly used one -- **Euclidean norm**.
 
 For simplicity, let us consider a vector in the plane. Geometrically, it is a directional segment. The directionality of a vector has no effect on its length, so we can work with it as a segment in the plane and calculate its length using school formulas.
-Note the fact that the vector coordinates correspond to the numbers multiplied by the coordinate axis orthogonal vectors, so the vector length formula is as follows: $\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}$. Accordingly, in general, the formula is as follows: $\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}$
+Note that the vector coordinates correspond to the numbers multiplying coordinate axis orthogonal vectors, so the vector length formula is: $\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}$. Accordingly, in general, the formula is  $\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}$.
 
 ## Scalar product
 
