@@ -131,7 +131,7 @@ $$
     \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = a_1 \begin{pmatrix} 1 \0 \end{pmatrix} + a_2 \begin{pmatrix} 0 \1 \end{pmatrix} = \begin{pmatrix} a_1 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ a_2 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}
 $$
 
-It turns out that the orthogonal vectors $\mathbf{e}_1$, $\mathbf{e}_2$ **are the basis of the two-dimensional vector space**, and by linear combination of these vectors we can only represent any vector in this space.
+It turns out that the orthogonal vectors $\mathbf{e}_1$, $\mathbf{e}_2$ **are the basis of the two-dimensional vector space**, and by linear combination of these vectors we can uniquely represent any vector in this space.
 
 The question arises, is this basis unique in two-dimensional space, or not?
 
