@@ -1,3 +1,6 @@
+from typing import List
+from typing import Set
+
 prohibited_packages_listner = set(
     [
         "python",
@@ -5,15 +8,19 @@ prohibited_packages_listner = set(
         "jupyter-book",
         "pyyaml",
         "pylatexenc",
+        "pyppeteer",
+        "sphinx-jupyterbook-latex",
+        "sphinx-sitemap",
         "paramiko",
         "scp",
+        "Jinja2",
         "",
-    ]
+    ],
 )
 prohibited_packages_dev = set(["python", ""])
 
 
-def get_packages(prohibited_packages):
+def get_packages(prohibited_packages: Set[str]) -> List[str]:
     """
     Remove prohibited packages and creates text for requirements.txt
     prohibited_packages: set of prohibited packages
@@ -26,7 +33,7 @@ def get_packages(prohibited_packages):
             if line == "[tool.poetry.dependencies]":
                 packages_flag = True
                 continue
-            elif line == "[build-system]":
+            elif line in ["[build-system]", "# [tool.poetry.dev-dependencies]"]:
                 packages_flag = False
             elif line == "":
                 continue
@@ -38,7 +45,7 @@ def get_packages(prohibited_packages):
                     if version.startswith("^"):
                         if len(version.split(".")) == 3:
                             packages.append(
-                                package + ">=" + version[1:]
+                                package + ">=" + version[1:],
                             )  # choose major version, needed for security bugfixes
                         else:
                             packages.append(package + "==" + version[1:])
@@ -50,7 +57,9 @@ def get_packages(prohibited_packages):
 if __name__ == "__main__":
     with open("requirements.txt", "w") as req_file:
         req_file.writelines("\n".join(get_packages(prohibited_packages=prohibited_packages_listner)))
+        req_file.writelines("\n")
 
     # Devs now only with poetry
-    # with open("requirements.txt", 'w') as req_file:
+    # with open("requirements-dev.txt", 'w') as req_file:
     #     req_file.writelines("\n".join(get_packages(prohibited_packages=prohibited_packages_dev)))
+    #     req_file.writelines("\n")
