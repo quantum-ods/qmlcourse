@@ -114,7 +114,7 @@ A set of vectors is linearly dependent if and only if one of the elements of tha
 
 **Note**: If vectors represent some characteristics of objects, then linear dependence can be interpreted as data redundancy.
 
-The notion of linear independence introduces the concept of **dimensionality** of a vector space -- it is the maximum number of linearly independent vectors in it.
+The notion of linear independence introduces the concept of **dimensionality** of a vector space -- the maximum number of linearly independent vectors in it.
 
 ## Basis
 
