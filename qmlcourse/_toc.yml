@@ -225,5 +225,5 @@
       title: ⬜ Prerequisite
 - part: Linear Algebra and Numpy
   chapters:
-    - file: book/linalg/ru/vectors.md
+    - file: book/linalg/en/vectors.md
       title: 🟦 Vectors

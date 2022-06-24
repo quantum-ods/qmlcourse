@@ -3,7 +3,7 @@
 
 Author(s):
 
-- [Эль-Айясс Дани](http://github.com/dayyass)
+- [El-Ayyass Dani](http://github.com/dayyass)
 
 Translation:
 
@@ -13,7 +13,7 @@ Translation:
 
 ## Definition
 
-The term ``vector`` has several interpretations: mathematical, geometric, physical, etc. The exact meaning of the term depends on the context.
+The term `vector` has several interpretations: mathematical, geometric, physical, etc. The exact meaning of the term depends on the context.
 
 Formally, a vector is defined as an element of vector space -- a set with **addition** and **multiplication of a vector by a number (scalar)** operations, which satisfy [8 axioms](https://en.wikipedia.org/wiki/Vector_space).
 
