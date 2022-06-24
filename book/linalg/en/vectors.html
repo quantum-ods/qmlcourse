@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>О блоке “VQE” &#8212; QMLCourse</title>
+    <title>Vectors &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -46,12 +46,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/vqe/ru/vqe_intro.html" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/linalg/en/vectors.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Variational Quantum Eigensolver" href="vqe.html" />
-    <link rel="prev" title="Проблема собственных значений" href="../../problems2qml/ru/eigenvals.html" />
+    <link rel="prev" title="Prerequisite" href="../../intro/en/prerequisite.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -207,27 +208,27 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../linalg/ru/linalg_intro.html">
+  <a class="reference internal" href="../ru/linalg_intro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../linalg/ru/vectors.html">
+  <a class="reference internal" href="../ru/vectors.html">
    🟦 Векторы
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../linalg/ru/bra-ket.html">
+  <a class="reference internal" href="../ru/bra-ket.html">
    🟦 Нотация Дирака
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../linalg/ru/matrices.html">
+  <a class="reference internal" href="../ru/matrices.html">
    🟦 Матрицы
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../linalg/ru/numpy.html">
+  <a class="reference internal" href="../ru/numpy.html">
    🟦 Numpy fun
   </a>
  </li>
@@ -556,19 +557,19 @@ const thebe_selector_output = ".output, .cell_output"
   VQE
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../vqe/ru/vqe_intro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="vqe.html">
+  <a class="reference internal" href="../../vqe/ru/vqe.html">
    🟩 Основы VQE
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tspvqe.html">
+  <a class="reference internal" href="../../vqe/ru/tspvqe.html">
    🟧 VQE - практика
   </a>
  </li>
@@ -678,9 +679,9 @@ const thebe_selector_output = ".output, .cell_output"
   Linear Algebra and Numpy
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../linalg/en/vectors.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    🟦 Vectors
   </a>
  </li>
@@ -774,7 +775,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/vqe/ru/vqe_intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/quantum-ods/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/linalg/en/vectors.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -802,7 +803,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/book/vqe/ru/vqe_intro.md"
+        <a href="../../../_sources/book/linalg/en/vectors.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -839,23 +840,120 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition">
+   Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-operations">
+   Vector operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-norm-length-of-a-vector">
+   The norm (length) of a vector
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalar-product">
+   Scalar product
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-independence">
+   Linear independence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basis">
+   Basis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-did-we-learn">
+   What did we learn?
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>О блоке “VQE”</h1>
+                <h1>Vectors</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition">
+   Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vector-operations">
+   Vector operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-norm-length-of-a-vector">
+   The norm (length) of a vector
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalar-product">
+   Scalar product
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-independence">
+   Linear independence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basis">
+   Basis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-did-we-learn">
+   What did we learn?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -863,10 +961,150 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vqe">
-<span id="vqe-intro"></span><h1>О блоке “VQE”<a class="headerlink" href="#vqe" title="Permalink to this headline">#</a></h1>
-<p>Этот блок будет полностью посвящен вариационному алгоритму нахождения собственных значений операторов – <code class="docutils literal notranslate"><span class="pre">Variational</span> <span class="pre">Quantum</span> <span class="pre">Eigensolver</span></code>.</p>
-<p>Базовая лекция расскажет верхнеуровневую интуицию алгоритма и в ней будет пример решения простой задачи Изинга. В продвинутой лекции будет практика решения на квантовом компьютере реальной комбинаторной задачи от начала и до конца.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="vectors">
+<span id="id1"></span><h1>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h1>
+<p>Author(s):</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://github.com/dayyass">El-Ayyass Dani</a></p></li>
+</ul>
+<p>Translation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://github.com/alexey-pronkin">Pronkin Alexey</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Randl">Evgenii Zheltonozhskii</a></p></li>
+<li><p><a class="reference external" href="https://github.com/vtrokhymenko">Trohimenko Viktor</a></p></li>
+</ul>
+<div class="section" id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h2>
+<p>The term <code class="docutils literal notranslate"><span class="pre">vector</span></code> has several interpretations: mathematical, geometric, physical, etc. The exact meaning of the term depends on the context.</p>
+<p>Formally, a vector is defined as an element of vector space – a set with <strong>addition</strong> and <strong>multiplication of a vector by a number (scalar)</strong> operations, which satisfy <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_space">8 axioms</a>.</p>
+<p>For simplicity of understanding, let us consider the rectangular (Cartesian) coordinate system in the plane, familiar from school days – two perpendicular to each other axes <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, selected unit vectors (orthogonal) <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> on them and the origin of coordinates.</p>
+<p>The vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in this coordinate system can be written as follows: <span class="math notranslate nohighlight">\(\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}\)</span></p>
+<p><strong>Note 1</strong>: Vector coordinates do not uniquely define its position in the plane, but only the position of the vector’s end relative to its start. For example, a vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 3 \\\ 4 \end{pmatrix}\)</span><span class="math notranslate nohighlight">\( can be drawn either from the origin \)</span>\begin{pmatrix} 0 , 0 \end{pmatrix}<span class="math notranslate nohighlight">\( with the end at \)</span>\begin{pmatrix} 3 , 4 \end{pmatrix}<span class="math notranslate nohighlight">\(, or from an arbitrary point, e.g. \)</span>\begin{pmatrix} 1 , 1 \end{pmatrix}$<span class="math notranslate nohighlight">\( with the end at \)</span>\begin{pmatrix} 4 , 5 \end{pmatrix}<span class="math notranslate nohighlight">\(. Both of these vectors correspond to 3 orthogonal unite vectors on the \)</span>x<span class="math notranslate nohighlight">\(-axis and 4 on the \)</span>y$-axis. Normally, unless otherwise stated, it is assumed that the vector is deferred from the origin.</p>
+<p><strong>Note 2</strong>: A vector can be represented either as a column vector <span class="math notranslate nohighlight">\(\begin{pmatrix} a_1 \ a_2 \end{pmatrix}\)</span> or as a row vector <span class="math notranslate nohighlight">\(\begin{pmatrix} a_1 \ a_2 \end{pmatrix}\)</span>. Hereinafter, by a vector we mean a column vector, unless otherwise stated.</p>
+<p>The notion of a vector in the plane can be generalized to 3-dimensional space, and, in general, to <span class="math notranslate nohighlight">\(n\)</span>-dimensional space (which can no longer be visualized):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + ... + a_n \mathbf{e}_n = \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix}
+\end{split}\]</div>
+</div>
+<div class="section" id="vector-operations">
+<h2>Vector operations<a class="headerlink" href="#vector-operations" title="Permalink to this headline">#</a></h2>
+<p>As stated earlier, there are two basic operations on vectors in the formal definition:</p>
+<ul class="simple">
+<li><p>addition:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{a} + \mathbf{b} = (a_1 + b_1) \mathbf{e}_1 + (a_2 + b_2) \mathbf{e}_2 + ... + (a_n + b_n) \mathbf{e}_n = \ = \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ ... \ b_n \end{pmatrix} = \begin{pmatrix} a_1 + b_1 \ a_2 + b_2 \\ ... \ a_n + b_n \end{pmatrix}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>multiplication of a vector by a number (scalar):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \lambda \mathbf{a} = \lambda a_1 \mathbf{e}_1 + \lambda a_2 \mathbf{e}_2 + ... + \lambda a_n \mathbf{e}_n = \lambda \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\\ \lambda a_2 \\ ... \ \lambda a_n \end{pmatrix}
+\end{split}\]</div>
+<p>The operation of multiplying a vector by a number can be interpreted geometrically as a contraction/extension of a vector.</p>
+<p>Using these two operations, we can define <strong>linear combinations of vectors</strong>: <span class="math notranslate nohighlight">\(\alpha_1 \mathbf{a}_1 + \alpha_2 \mathbf{a}_2 + ... + \alpha_n \mathbf{a}_n ,\)</span> where <span class="math notranslate nohighlight">\(\mathbf{a}_1, \mathbf{a}_2, ..., \mathbf{a}_n\)</span> are vectors and <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2, ..., \alpha_n\)</span> are numbers.</p>
+</div>
+<div class="section" id="the-norm-length-of-a-vector">
+<h2>The norm (length) of a vector<a class="headerlink" href="#the-norm-length-of-a-vector" title="Permalink to this headline">#</a></h2>
+<p>In linear algebra, the term <strong>norm</strong> is used to generalize the notion of vector length. It can be said that the notions of length and norm are equivalent.</p>
+<p>Formally the norm is defined as a functional in the vector space satisfying <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_(mathematics)">3 axioms</a> and mapping elements of this space (vectors) to the set of non-negative real numbers.</p>
+<p>There are many functionals satisfying this definition of norm, but we will consider the most commonly used one – <strong>Euclidean norm</strong>.</p>
+<p>For simplicity, let us consider a vector in the plane. Geometrically, it is a directional segment. The directionality of a vector has no effect on its length, so we can work with it as a segment in the plane and calculate its length using school formulas.
+Note the fact that the vector coordinates correspond to the numbers multiplied by the coordinate axis orthogonal vectors, so the vector length formula is as follows: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}\)</span>. Accordingly, in general, the formula is as follows: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}\)</span></p>
+</div>
+<div class="section" id="scalar-product">
+<h2>Scalar product<a class="headerlink" href="#scalar-product" title="Permalink to this headline">#</a></h2>
+<p>One of the most common operations on two vectors is the so-called <strong>scalar product</strong>, the result of which is a number (scalar) – hence the name of the operation.</p>
+<p><strong>Note</strong>: In addition to scalar product there is also <a class="reference external" href="https://en.wikipedia.org/wiki/Cross_product">vector product or cross product</a> over a pair of vectors, the result of which is a vector. There is also <a class="reference external" href="https://en.wikipedia.org/wiki/Triple_product">triple product</a> over a triplet of vectors, the result of which is a number. These operations will not be covered in this course.</p>
+<p>Scalar product is used in determining the length of vectors and the angle between them. This operation has two definitions:</p>
+<ul class="simple">
+<li><p>Algebraic: <span class="math notranslate nohighlight">\( \mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + ... + a_n b_n\)</span></p></li>
+<li><p>geometric: <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} = \lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert \cos{\\theta},\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between the vectors <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>.</p></li>
+</ul>
+<p>Using both of these definitions, we can derive a formula for calculating the cosine of the angle between the vectors:</p>
+<div class="math notranslate nohighlight">
+\[
+    \cos{\theta} = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert} = \frac{a_1 b_1 + a_2 b_2 + ... + a_n b_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}
+\]</div>
+<p>Using this formula we can arrive at one of the main properties of scalar product, which is that <strong>two vectors are perpendicular if and only if their scalar product is 0</strong>: <span class="math notranslate nohighlight">\(\mathbf{a} \perp \mathbf{b} \leftrightarrow \cos{\theta} = 0 \leftrightarrow \mathbf{a} \cdot \mathbf{b} = 0\)</span></p>
+<p>The scalar product can be used to calculate the vector norm as follows: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{\mathbf{a} \cdot \mathbf{a}}\)</span></p>
+</div>
+<div class="section" id="linear-independence">
+<h2>Linear independence<a class="headerlink" href="#linear-independence" title="Permalink to this headline">#</a></h2>
+<p>One of the fundamental concepts of linear algebra is <strong>linear dependence/independence</strong>.</p>
+<p>To define this concept, consider a set of several vectors. A set of vectors is <strong>linearly dependent</strong> if there exists such a nonzero linear combination of vectors of this set (at least one element of this combination is not 0) equal to a zero vector (a vector consisting only of 0):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\\ 0 \ ... \ 0 \end{pmatrix}, \ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
+\end{split}\]</div>
+<p>If a set of vectors is not linearly dependent, that is, there is no nonzero linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called <strong>linearly independent</strong>.</p>
+<p><strong>Example</strong>:</p>
+<ul class="simple">
+<li><p>A linearly independent set of vectors (only the zero coefficients of a linear combination lead to a zero vector):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \ 0 \end{pmatrix} \begin{pmatrix} 0 \\\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \ 0 \ 0 \ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \ 1 \ 0 \ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \ 0 \ 1 \end{pmatrix} = \begin{pmatrix} 0 \\\ 0 \\\ 0 \end{pmatrix}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>linearly dependent set of vectors (there are non-zero coefficients of the linear combination that lead to the zero vector):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \ 1 \ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\end{split}\]</div>
+<p>The following property can be deduced from the definition of linear dependence:
+A set of vectors is linearly dependent if and only if one of the elements of that set can be expressed through the remaining elements.</p>
+<p><strong>Note</strong>: If vectors are treated as any characteristics of objects, then linear dependence can be interpreted as data redundancy.</p>
+<p>The notion of linear independence introduces the concept of <strong>dimensionality</strong> of a vector space – it is the maximum number of linearly independent vectors in it.</p>
+</div>
+<div class="section" id="basis">
+<h2>Basis<a class="headerlink" href="#basis" title="Permalink to this headline">#</a></h2>
+<p>In the formal definition of a vector there are no quantitative interpretations of it, just two operations on vectors and 8 axioms.</p>
+<p>So where do quantitative measurements come from? To make this clear, we need to introduce the concept of <strong>basis</strong>.</p>
+<p>A basis is a finite set of vectors in a vector space such that any vector in that space can be uniquely represented as a linear combination of vectors of that set.</p>
+<p>Recall one of the examples above, where we represented a rectangular coordinate system in the plane and unit vectors <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span>. <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span> = \begin{pmatrix} 1 \ 0 \end{pmatrix}, \mathbf{e}_2 = \begin{pmatrix} 0 \ 1 \end{pmatrix}<span class="math notranslate nohighlight">\(.
+In this example, we decompose the arbitrary vector \)</span>\mathbf{a}$ as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = a_1 \begin{pmatrix} 1 \0 \end{pmatrix} + a_2 \begin{pmatrix} 0 \1 \end{pmatrix} = \begin{pmatrix} a_1 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ a_2 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}
+\end{split}\]</div>
+<p>It turns out that the orthogonal vectors <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> <strong>are the basis of the two-dimensional vector space</strong>, and by linear combination of these vectors we can only represent any vector in this space.</p>
+<p>The question arises, is this basis unique in two-dimensional space, or not?</p>
+<p>The answer to this question is no. In fact, one can take any two vectors (<strong>almost any</strong>) and they will also form a basis, provided that any vector can be decomposed by their linear combination.</p>
+<p><strong>Example</strong>.</p>
+<p>Suppose we have a vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\\ 3 \end{pmatrix}\)</span> in a basis of unit orthogonal vectors, and we want to decompose it in another basis <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \alpha_1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + \alpha_2 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\3 \end{pmatrix}
+\end{split}\]</div>
+<p>From where we can find that <span class="math notranslate nohighlight">\(\alpha_1 = -1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2 = -1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+\end{split}\]</div>
+<p>So, vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\\ 3 \end{pmatrix}\)</span><span class="math notranslate nohighlight">\( in the basis of unit orthogonal vectors is represented as \)</span>\begin{pmatrix} -1 \ -1 \end{pmatrix}<span class="math notranslate nohighlight">\( in the \)</span>\begin{pmatrix} -2 \ 0 \end{pmatrix} \begin{pmatrix} 0 \ -3 \end{pmatrix}$.</p>
+<p>But, as mentioned before, <strong>not any set of vectors</strong>  makes a basis.</p>
+<p>For example, through the set of vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \3 \0 \end{pmatrix}\)</span><span class="math notranslate nohighlight">\( cannot decompose the vector \)</span>\begin{pmatrix} 2 \3 \end{pmatrix}$, so this set of vectors is not a basis.</p>
+<p>What is the fundamental difference between these bases, and can the basis of a two-dimensional space consist of more or fewer vectors than 2, for example?</p>
+<p>Linear algebra has an answer to this:</p>
+<p>**Any <span class="math notranslate nohighlight">\(n\)</span> linearly independent vectors of <span class="math notranslate nohighlight">\(n\)</span>-dimensional vector space form the basis of that space.</p>
+<p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}\)</span>$ can’t be the basis of a two-dimensional space.</p>
+</div>
+<div class="section" id="what-did-we-learn">
+<h2>What did we learn?<a class="headerlink" href="#what-did-we-learn" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The definition of a vector;</p></li>
+<li><p>The operations on vectors;</p></li>
+<li><p>The vector norm (length);</p></li>
+<li><p>The scalar product;</p></li>
+<li><p>The linear independence;</p></li>
+<li><p>The basis.</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -882,7 +1120,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./book/vqe/ru"
+            path: "./book/linalg/en"
         },
         predefinedOutput: true
     }
@@ -896,19 +1134,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../problems2qml/ru/eigenvals.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../../intro/en/prerequisite.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Проблема собственных значений</p>
+            <p class="prev-next-title">Prerequisite</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="vqe.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Variational Quantum Eigensolver</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

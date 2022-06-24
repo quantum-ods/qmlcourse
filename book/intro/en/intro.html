@@ -46,8 +46,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <link rel="canonical" href="https://quantum-ods.github.io/qmlcourse/book/book/intro/en/intro.html" />
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -675,6 +673,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear Algebra and Numpy
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../linalg/en/vectors.html">
+   🟦 Vectors
+  </a>
+ </li>
+</ul>
 
     </div>
 </nav></div>
@@ -829,144 +839,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-the-lecture">
-   About the lecture
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-the-computing-is-this">
-   What the computing is this?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantity-evolution-of-computers">
-     Quantity evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quality-evolution-of-computers">
-     Quality evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-idea-about-quantum-computers">
-     The idea about quantum computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-the-computer-is-this">
-     What the computer is this?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-it">
-   Why do we need it?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#factorization-problem">
-     Factorization problem
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combinatorial-and-np-hard-problems">
-     Combinatorial and NP-hard problems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantum-mechanics-simulation">
-     Quantum mechanics simulation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-learning-and-artificial-intelligence">
-     Machine Learning and Artificial Intelligence
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-will-bitcoin-be-cracked">
-   When will bitcoin be cracked?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-many-qubits-are-needed-for-different-tasks">
-     How many qubits are needed for different tasks?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logical-vs-physical-qubits">
-     Logical vs Physical Qubits
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-many-cubits-are-there-today">
-     How many cubits are there today?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-plans-do-the-leading-players-in-this-market-have">
-     What plans do the leading players in this market have?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#on-quantum-superiority">
-   On Quantum Superiority
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-concept-of-quantum-superiority">
-     The concept of quantum superiority
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#timeline-of-events">
-     Timeline of events
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-does-it-even-look-like-and-how-much-does-it-cost">
-   What does it even look like? And how much does it cost?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -978,127 +856,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-the-lecture">
-   About the lecture
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-the-computing-is-this">
-   What the computing is this?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantity-evolution-of-computers">
-     Quantity evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quality-evolution-of-computers">
-     Quality evolution of computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-idea-about-quantum-computers">
-     The idea about quantum computers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-the-computer-is-this">
-     What the computer is this?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-do-we-need-it">
-   Why do we need it?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#factorization-problem">
-     Factorization problem
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combinatorial-and-np-hard-problems">
-     Combinatorial and NP-hard problems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#quantum-mechanics-simulation">
-     Quantum mechanics simulation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#machine-learning-and-artificial-intelligence">
-     Machine Learning and Artificial Intelligence
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#when-will-bitcoin-be-cracked">
-   When will bitcoin be cracked?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-many-qubits-are-needed-for-different-tasks">
-     How many qubits are needed for different tasks?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#logical-vs-physical-qubits">
-     Logical vs Physical Qubits
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-many-cubits-are-there-today">
-     How many cubits are there today?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-plans-do-the-leading-players-in-this-market-have">
-     What plans do the leading players in this market have?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#on-quantum-superiority">
-   On Quantum Superiority
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-concept-of-quantum-superiority">
-     The concept of quantum superiority
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#timeline-of-events">
-     Timeline of events
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-does-it-even-look-like-and-how-much-does-it-cost">
-   What does it even look like? And how much does it cost?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -1108,192 +865,7 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="about-quantum-computers-bitcoin-and-superiority">
 <span id="intro-en"></span><h1>About quantum computers, bitcoin, and superiority<a class="headerlink" href="#about-quantum-computers-bitcoin-and-superiority" title="Permalink to this headline">#</a></h1>
-<p>Author(s):</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Sinchenko Semyon</a></p></li>
-</ul>
-<p>Translation:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Sinchenko Semyon</a></p></li>
-<li><p><a class="reference external" href="https://github.com/vtrokhymenko">Trohimenko Viktor</a></p></li>
-</ul>
-<div class="section" id="about-the-lecture">
-<h2>About the lecture<a class="headerlink" href="#about-the-lecture" title="Permalink to this headline">#</a></h2>
-<p>The lecture hasn’t any learning meaning but tries to answer questions that can have anyone who faces the topic about quantum computing for a first time:</p>
-<ul class="simple">
-<li><p>what the computing is this?</p></li>
-<li><p>why we need all this stuff?</p></li>
-<li><p>when one will crack bitcoin?</p></li>
-<li><p>what the advantage is said all around?</p></li>
-</ul>
-</div>
-<div class="section" id="what-the-computing-is-this">
-<h2>What the computing is this?<a class="headerlink" href="#what-the-computing-is-this" title="Permalink to this headline">#</a></h2>
-<div class="section" id="quantity-evolution-of-computers">
-<h3>Quantity evolution of computers<a class="headerlink" href="#quantity-evolution-of-computers" title="Permalink to this headline">#</a></h3>
-<p>Classical computers which are based on Turing, Von Neumann and Shockley ideas are an organic part of our live. We all used to have an every year growing computational power of such computers. And today’s cheap laptop have a power that supercomputers had 15 years ago.</p>
-<div class="figure align-default" id="id1">
-<img alt="../../../_images/Moores_Law.png" src="../../../_images/Moores_Law.png" />
-<p class="caption"><span class="caption-number">Fig. 152 </span><span class="caption-text">A Moore law illustration; a growth of the number of transistors from 1970s</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</div>
-<p>A law that is named a Moore law was formulated by Gordon Moore in the late 60-s. It tell us that the number of transistors by crystal of integral circuit is adding twice every two years. And it have been holding true for the last 60 years.</p>
-</div>
-<div class="section" id="quality-evolution-of-computers">
-<h3>Quality evolution of computers<a class="headerlink" href="#quality-evolution-of-computers" title="Permalink to this headline">#</a></h3>
-<p>Unfortunately the Moore law holding cannot be endless because there are physical limitations: sooner or later the direct adding twice of the number of transistors could be impossible due tunneling effects. That’s why this is said that the modern computers will have a “quality” revolution. Some say about new materials for creating transistors. Another say about new principles of computers. For example about photonic computers where photons are used instead electrons. But one can hear that the next computers revolution will the invention of quantum computers. That is what we will talk about.</p>
-</div>
-<div class="section" id="the-idea-about-quantum-computers">
-<h3>The idea about quantum computers<a class="headerlink" href="#the-idea-about-quantum-computers" title="Permalink to this headline">#</a></h3>
-<p>There are few version who was the first one said about using quantum mechanic’s laws for creating the new computer. Like it frequently happens a few scientist independently and at one time came to the same idea. One of them was Richard Phillips Feynman.</p>
-<div class="figure align-default" id="id2">
-<img alt="../../../_images/Feinman.jpg" src="../../../_images/Feinman.jpg" />
-<p class="caption"><span class="caption-number">Fig. 153 </span><span class="caption-text">Richard Phillips Feynman, 1918-1988</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
-</div>
-<p>In 1981 when there was a very active development of the both classical computers and computational quantum mechanics he said that for solving quantum mechanical problems we should have a quantum computer.</p>
-</div>
-<div class="section" id="what-the-computer-is-this">
-<h3>What the computer is this?<a class="headerlink" href="#what-the-computer-is-this" title="Permalink to this headline">#</a></h3>
-<p>It is very complicated question and all the first half of our course will try to answer it. It is strange if such a complex question that is discussed in few lectures with hard math could be explained in a few words. It will be wrong to say that classical computers are based on the classical physic’s laws and quantum computers are based on laws of quantum physics because one couldn’t explain the principles of modern transistors without such quantum things like the Fermi level and other stuff. Also it will be wrong to say that classical computers operate with <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> but quantum have all states from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span> because there is the probability Turing machine that works with probabilistic bit that can have all the states from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. Especially we do not want to rush with a lot of complex and unclear terms like a quantum superposition, qubits or quantum entanglement because such a terms mean nothing for anyone who is not in the loop. At first let agree that <em>quantum computers</em> are not only based on new technology like photonic or grafen computers but uses a whole new principles of computation and information representation different from what Turing was invented</p>
-</div>
-</div>
-<div class="section" id="why-do-we-need-it">
-<h2>Why do we need it?<a class="headerlink" href="#why-do-we-need-it" title="Permalink to this headline">#</a></h2>
-<div class="section" id="factorization-problem">
-<h3>Factorization problem<a class="headerlink" href="#factorization-problem" title="Permalink to this headline">#</a></h3>
-<p>It seems to me that specifically the invention of the Shor algorithm for effective solving of the factorization problem was the most important step for popularization of quantum computing. After that a lot of specialists and scientists rushed to this field, military forces and corporation pushed a fantastic sum of money to the field, reporters started to talking about the future fail of the bank system and the whole world. Probably the Shor algorithm is the most hype quantum algorithm.</p>
-<p>The reason is that the biggest part of modern cryptography is based on the one simple assuming that there is no polynomial algorithm for the factorization task. In other words if we have a number that is the result of two big prime numbers product we can try to find that prime numbers until the death of the universe. But it is true only for the classical computer. A quantum computer has the effective polynomial algorithm invented by Piter Shor in 1994. And this algorithm can solve the factorization problem in relative short time.</p>
-<div class="figure align-default" id="id3">
-<img alt="../../../_images/Shor.png" src="../../../_images/Shor.png" />
-<p class="caption"><span class="caption-number">Fig. 154 </span><span class="caption-text">Piter Shor. The man who set the world on fire with his algorithm.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
-</div>
-<p>This algorithm will crack the bitcoin and ruin the banking system in the future. But it’s not all that simple: evolution of quantum computers threw scientists to creating of <em>post-quantum</em> cryptography that is based on tasks which cannot be effectively solved on both classical and quantum computers.</p>
-</div>
-<div class="section" id="combinatorial-and-np-hard-problems">
-<h3>Combinatorial and NP-hard problems<a class="headerlink" href="#combinatorial-and-np-hard-problems" title="Permalink to this headline">#</a></h3>
-<p>Except for difficulties with Moore law there is another problem with classical computers. There are tasks that likely wont be solved effectively on the classical Turing computer. Even on photonic or grafen one. The good example is the knapsack problem. When we have a knapsack of limited volume and a lot of things with different size and cost. And we want to fill our knapsack in such a manner to maximize the total cost of things inside it. The task looks very simple but it is an example of <a class="reference external" href="https://en.wikipedia.org/wiki/NP-completeness"><span class="math notranslate nohighlight">\(NP\)</span>-complete problems</a>. If we have a big number of different things and a relative big knapsack such problem cannot be solved exactly in reasonable time. Even the finding of the good enough <em>approximate</em> solution of such problem is very hard today!</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>I used a word “likely” because the question about existence of the effective solution of NP-complete problems is one of the major unsolved problems in computer science](https://en.wikipedia.org/wiki/P_versus_NP_problem). Today we do not know any effective algorithm for it. But we still cannot proof that <em>there isn’t such algorithm</em>. Highly likely there isn’t of course and <span class="math notranslate nohighlight">\(P \neq NP\)</span> but no one can proof it.</p>
-</div>
-<p>The algorithms are already known for quantum computers that allow potentially effective, albeit <em>approximate</em>, solution of such problems on a quantum computer. These are the traveling salesman problem, the knapsack problem, the graph clustering problem, and many other combinatorial optimization problems. In this course there will be a whole block dedicated to such quantum algorithms as <em>Variational Quantum Eigensolver</em> and <em>Quantum Approximate Optimization Algorithm</em>.</p>
-<div class="figure align-default" id="id4">
-<img alt="../../../_images/Salesman.png" src="../../../_images/Salesman.png" />
-<p class="caption"><span class="caption-number">Fig. 155 </span><span class="caption-text">Visualizing the solution of the salesman’s problem – the shortest route to get around 12 German cities – is a very important task of modern logistics</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="quantum-mechanics-simulation">
-<h3>Quantum mechanics simulation<a class="headerlink" href="#quantum-mechanics-simulation" title="Permalink to this headline">#</a></h3>
-<p>This is what Feynman proposed to create quantum computers for. This is a separate big topic, with a lot of quantum mechanics. Several separate lectures in this course will be devoted to it. But let’s try to explain this without going into too much detail.</p>
-<p>The problems of quantum mechanics cannot be solved analytically. It would seem that what is the problem, Newton’s laws for three bodies also cannot be solved analytically, but this does not prevent flying into space, because such a problem can be solved numerically. But there comes a second problem, namely, that explicitly integrate Schrödinger equation in time, or, simply, to solve quantum mechanics numerically also computationally almost impossible for more than two particles.</p>
-<div class="figure align-default" id="id5">
-<a class="reference internal image-reference" href="../../../_images/Schrodinger.jpg"><img alt="../../../_images/Schrodinger.jpg" src="../../../_images/Schrodinger.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 156 </span><span class="caption-text">Erwin Schrodinger, 1887-1961, creator of the famous equation and cat meme</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
-</div>
-<p>It would seem, what’s in it for us. After all, quantum mechanics is the lot of theoreticians. But here is the problem: quantum mechanics is the basis of quantum chemistry, which, in its turn, is the basis of all chemistry in general and such of its applications as creating new drugs, developing new batteries for Tesla cars and many other things. And today we are forced to use only very approximate solutions and concepts, the accuracy of which is often insufficient.</p>
-<p>Quantum computers can make a real breakthrough in this case. After all, due to its physical nature, a quantum computer is ideal for simulating quantum mechanics, and hence for solving such important tasks from drug development and design of new materials today.</p>
-</div>
-<div class="section" id="machine-learning-and-artificial-intelligence">
-<h3>Machine Learning and Artificial Intelligence<a class="headerlink" href="#machine-learning-and-artificial-intelligence" title="Permalink to this headline">#</a></h3>
-<p>Machine learning has reached unprecedented heights in its development over the past 10-15 years. Many tasks that previously seemed impossible to solve with a computer are now successfully solved with machine learning. Examples include playing Go, distinguishing Chihuahua breeds from photographs, recognizing faces in a video stream, composing relatively meaningful texts, and generating Picasso-style paintings from simple photographs. But it is still very far from the capabilities of the human brain. For example, the largest artificial neural networks today are roughly estimated to be the equivalent of 15 million neurons, while the human brain has about 85 billion! The learning speed of modern neural networks also raises questions. Thus, the largest language models today are trained for weeks on clusters of thousands of video cards, while a human with his relatively modest computing power learns to speak for only 2-3 years.</p>
-<p>And here, too, quantum computers can come to the rescue. In this case, quantum analogues of neural networks, as well as their combinations with classical neural networks already show impressive results. For example, there are works showing that 4 quantum neurons are equivalent to a classical artificial neural network with <span class="math notranslate nohighlight">\(\sim 250\)</span> neurons in its expressiveness!</p>
-<p>It is quantum machine learning, and the ways it can be applied, that will be the focus of most in this course. We will try to cover everything from the theory of how quantum machine learning algorithms can be built to how they can be programmed in modern quantum programming languages. If this topic is of interest to you, this course is definitely for you!</p>
-</div>
-</div>
-<div class="section" id="when-will-bitcoin-be-cracked">
-<h2>When will bitcoin be cracked?<a class="headerlink" href="#when-will-bitcoin-be-cracked" title="Permalink to this headline">#</a></h2>
-<p>This is probably one of the main questions that arise when reading such articles. And let’s answer right away: they won’t crack soon, there is still plenty of time, 10 years for sure.</p>
-<div class="figure align-default" id="id6">
-<a class="reference internal image-reference" href="../../../_images/Bitcoin.jpg"><img alt="../../../_images/Bitcoin.jpg" src="../../../_images/Bitcoin.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 157 </span><span class="caption-text">Bitcoin, like many other electronic media will be forced to switch to post-quantum cryptography</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
-</div>
-<div class="section" id="how-many-qubits-are-needed-for-different-tasks">
-<h3>How many qubits are needed for different tasks?<a class="headerlink" href="#how-many-qubits-are-needed-for-different-tasks" title="Permalink to this headline">#</a></h3>
-<p>Probably at once it is necessary to estimate the size that a quantum computer must have in order to effectively solve the tasks described above. Approximate figures are as follows:</p>
-<ul class="simple">
-<li><p>Shor’s algorithm and breaking of modern cryptography (including bitcoin): <span class="math notranslate nohighlight">\(\sim 20\cdot 10^6\)</span> (20 million) cubits</p></li>
-<li><p>optimization problems: <span class="math notranslate nohighlight">\(\sim 100 \cdot 10^3\)</span> (100 thousand) cubits</p></li>
-<li><p>first useful problems in quantum chemistry: <span class="math notranslate nohighlight">\(\sim 1\cdot 10^3\)</span> (1 thousand) cubits</p></li>
-<li><p>quantum machine learning: <span class="math notranslate nohighlight">\(\sim 100-500\)</span> qubits</p></li>
-</ul>
-<p>This is, by the way, one of the reasons why our course is mostly about quantum machine learning.</p>
-</div>
-<div class="section" id="logical-vs-physical-qubits">
-<h3>Logical vs Physical Qubits<a class="headerlink" href="#logical-vs-physical-qubits" title="Permalink to this headline">#</a></h3>
-<p>There is also the problem that all quantum mechanics is probabilistic. There is also the problem that quantum computers operate in the microcosm and are very sensitive to any noise from outside. This leads to a completely unacceptable level of errors in calculations and their low determinism. For example, a good level of accuracy for quantum computers today is 99% per operation. But each algorithm includes hundreds or even thousands of operations! And then the error rate becomes quite sad.</p>
-<p>But there is some good news. There are now many cool error-correcting algorithms that allow you to use several physical qubits with high error rates to create one logical qubit that has a very low error rate. That is, the programmer will write code that performs operations on one qubit, and on the physical level, it will be an operation on several qubits. All in all, the problem is solvable. Except that up to a thousand physical qubits might be needed to create one quality logical qubit! The estimates we gave above are just about logical qubits, i.e. qubits with very high precision of operations at the level of classical computers.</p>
-</div>
-<div class="section" id="how-many-cubits-are-there-today">
-<h3>How many cubits are there today?<a class="headerlink" href="#how-many-cubits-are-there-today" title="Permalink to this headline">#</a></h3>
-<p>Let’s say that quantum computers already exist today. Except that all manufacturers, when they write about a new record, mean physical qubits most often.</p>
-<div class="figure align-default" id="id7">
-<a class="reference internal image-reference" href="../../../_images/quantum_computer.jpg"><img alt="../../../_images/quantum_computer.jpg" src="../../../_images/quantum_computer.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 158 </span><span class="caption-text">IBM’s quantum computer looks something like this</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
-</div>
-<p>There are quantum computers with different architectures. Some have more cubits, but also a higher error rate. Others have a low error rate, but they are difficult to scale. The topic of quantum iron in this course will be a separate block of several lectures. But in brief, we can name the following figures:</p>
-<ul class="simple">
-<li><p>the record in relatively easily scalable but noisy quantum computers is <span class="math notranslate nohighlight">\(\sim 55\)</span> cubits</p></li>
-<li><p>the record in relatively accurate but slow and poorly scalable computers is <span class="math notranslate nohighlight">\(\sim 20\)</span> kubits</p></li>
-<li><p>the record in accurate and scalable but very difficult to program computers is <span class="math notranslate nohighlight">\(\sim 25\)</span> kubits</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here we mean accordingly:</p>
-<ul class="simple">
-<li><p>superconducting qubits, which are the easiest to scale today</p></li>
-<li><p>trapped ions, which have one of the highest accuracies</p></li>
-<li><p>photons, which seem to be good for everything, except that the programming on them is aligning lenses and lasers on an optical table</p></li>
-</ul>
-</div>
-<p>It is worth adding that the record in exact and scalable as well as programmable (topological) qubits today is exactly 2 qubits. Seriously, the interaction of two logical qubits was published in `Nature’ this year (2021).</p>
-</div>
-<div class="section" id="what-plans-do-the-leading-players-in-this-market-have">
-<h3>What plans do the leading players in this market have?<a class="headerlink" href="#what-plans-do-the-leading-players-in-this-market-have" title="Permalink to this headline">#</a></h3>
-<p>It would seem that with such a scale bitcoin has nothing to fear, and in general the area does not look the most promising. But there is one nuance. All the major players in the market of creating quantum computers (<em>Google Quantum</em>, <em>IBM Quantum</em>, <em>IonQ</em>, <em>Xanadu</em>) have announced plans to have about one million physical cubits by 2030, which is equivalent to about a thousand logical cubits. That’s not terrible for cryptography yet, but many useful tasks will already be able to be solved. And it is worth looking again at the graph of Moore’s Law for classical computers, which show approximately the same progress every ten years!</p>
-</div>
-</div>
-<div class="section" id="on-quantum-superiority">
-<h2>On Quantum Superiority<a class="headerlink" href="#on-quantum-superiority" title="Permalink to this headline">#</a></h2>
-<p>It is very common to hear talk about quantum superiority being achieved or disproved. Let’s try, near the end of the lecture, to understand what it is and why it is important (or not).</p>
-<div class="section" id="the-concept-of-quantum-superiority">
-<h3>The concept of quantum superiority<a class="headerlink" href="#the-concept-of-quantum-superiority" title="Permalink to this headline">#</a></h3>
-<p>The concept itself was formulated back in 2012 by renowned physicist theorist John Preskill.</p>
-<div class="figure align-default" id="id8">
-<a class="reference internal image-reference" href="../../../_images/Preskill.jpg"><img alt="../../../_images/Preskill.jpg" src="../../../_images/Preskill.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 159 </span><span class="caption-text">John Preskill, who coined the term. He is also famous for his famous bet with another physicist, Stephen Hawking (which Hawking lost)</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
-</div>
-<p>Quantum superiority is a solution on a quantum computer to a problem that cannot be solved on a classical computer in reasonable time (10 thousand years is not considered reasonable time). Achieving quantum superiority is definitely a new level in development of quantum computing. But there is one catch. The fact is that we are talking about absolutely any task, no matter how useful or useless it is.</p>
-<p>So when someone claims to achieve quantum superiority, it is an important reason for scientists and developers of quantum computers, but most likely it is a very unimportant fact, from the point of view of the common man.</p>
-</div>
-<div class="section" id="timeline-of-events">
-<h3>Timeline of events<a class="headerlink" href="#timeline-of-events" title="Permalink to this headline">#</a></h3>
-<p>Finally, here is a brief chronology of events.</p>
-<ul class="simple">
-<li><p>2019, <em>Google</em> claims to achieve quantum superiority. The task chosen is as convenient as possible for a quantum computer and completely devoid of practical sense. According to the developers from <em>Google</em>, their quantum computer in 4 minutes solved a problem that a classical supercomputer would take 10 thousand years to solve. Their quantum computer had 54 qubits</p></li>
-<li><p>2019, <em>IBM</em> says that <em>Google</em> failed to consider that their problem could be solved more optimally on a classical computer, but without experiments</p></li>
-<li><p>2020, <em>Alibaba</em> implements the <em>IBM</em> algorithm on its supercomputer and solves the problem in <span class="math notranslate nohighlight">\(\sim 20\)</span> days</p></li>
-<li><p>2021, a group of Chinese scientists optimizes the classical algorithm and solves the problem on 60 <em>NVIDIA</em> video cards in 7 days</p></li>
-<li><p>2021, a group of other Chinese scientists claims to have achieved a new superiority on a 56-cubit quantum computer</p></li>
-</ul>
-<p>All in all, there is a rather interesting process of sword and shield warfare going on right now. While some scientists build more powerful quantum computers, others come up with more advanced algorithms to simulate them. Although, of course, all scientists say that at about 60-70 qubits this story will finally end in favor of quantum computers.</p>
-</div>
-</div>
-<div class="section" id="what-does-it-even-look-like-and-how-much-does-it-cost">
-<h2>What does it even look like? And how much does it cost?<a class="headerlink" href="#what-does-it-even-look-like-and-how-much-does-it-cost" title="Permalink to this headline">#</a></h2>
-<p>As of today, almost all known technologies for creating quantum computers require something of:</p>
-<ul class="simple">
-<li><p>ultra-low temperatures</p></li>
-<li><p>ultrahigh vacuum</p></li>
-<li><p>ultra-precise alignment of lasers on the optical bench</p></li>
-</ul>
-<p>Or even all at once. That is why today almost all quantum computers are sold through cloud services. For example, relatively recently, the leading cloud technology provider <em>Amazon</em> added a new product to its <code class="docutils literal notranslate"><span class="pre">AWS</span></code> service <a class="reference external" href="https://aws.amazon.com/braket/">Amazon Braket</a>. This product allows you to rent a real computer, just as we are used to rent processors, video cards or hard drives. Similar products are now provided by other major players in the market of cloud services. This is all for research purposes only, though. After all, as we have already understood, today quantum computers are not yet able to solve real problems. For example, you can run your quantum program on a 32-bit <code class="docutils literal notranslate"><span class="pre">Aspen-9</span></code> computer for only $0.3 (per-task).</p>
-<p>Some manufacturers go further and offer relatively compact solutions. For example, recently <a class="reference external" href="https://phys.org/news/2021-06-compact-quantum-server-centers.amp?__twitter_impression=true">a 24-cube solution was introduced</a>, which fits in two standard server racks. But the scalability of such devices raises questions.</p>
-<p>In any case, in the next 15-20 years definitely should not wait for the appearance of a pocket quantum computer, or at least a quantum coprocessor in the home PC. And it does not make much sense, because few people at home need to hack bitcoin, solve a logistics problem or develop a high-temperature superconductor.</p>
-</div>
-<div class="section" id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>This is an introductory lecture; it will not give you any special knowledge. Rather, its purpose is to interest the reader. The most interesting part will be in the main part of the course where we will be dealing with quantum algorithms, trying to simulate quantum mechanics and training real quantum neural networks! We are waiting for you at the course!</p>
-<p style="page-break-after:always;"></p>
-</div>
+<p><em>comming soon</em></p>
 </div>
 
     <script type="text/x-thebe-config">
