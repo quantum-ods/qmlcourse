@@ -100,13 +100,13 @@ If a set of vectors is not linearly dependent, that is, there is no nontrivial l
 - A linearly independent set of vectors (only the zero coefficients of a linear combination lead to a zero vector):
 
 $$
-    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \ 0 \end{pmatrix} \begin{pmatrix} 0 \\\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \ 0 \ 0 \ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \ 1 \ 0 \ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \ 0 \ 1 \end{pmatrix} = \begin{pmatrix} 0 \\\ 0 \\\ 0 \end{pmatrix}
+    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \\ 0 \\ 0  \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
 $$
 
 - linearly dependent set of vectors (there are non-zero coefficients of the linear combination that lead to the zero vector):
 
 $$
-    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \ 1 \ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
 $$
 
 The following property can be deduced from the definition of linear dependence:
@@ -139,7 +139,7 @@ The answer to this question is no. In fact, one can take any two vectors (**almo
 
 **Example**.
 
-Suppose we have a vector $\begin{pmatrix} 2 \\\ 3 \end{pmatrix}$ in a basis of unit orthogonal vectors, and we want to decompose it in another basis $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$:
+Suppose we have a vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ in a basis of unit orthogonal vectors, and we want to decompose it in another basis $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$:
 
 $$
     \alpha_1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + \alpha_2 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\3 \end{pmatrix}
@@ -148,14 +148,14 @@ $$
 From where we can find that $\alpha_1 = -1$, $\alpha_2 = -1$:
 
 $$
-    -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+    -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 $$
 
-So, vector $\begin{pmatrix} 2 \\\ 3 \end{pmatrix}$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
+So, vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
 
 But, as mentioned before, **not any set of vectors**  makes a basis.
 
-For example, through the set of vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\ 3 \\ 0 \end{pmatrix}$ cannot decompose the vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$, so this set of vectors is not a basis.
+For example, through the set of vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\ 0 \end{pmatrix}$ cannot decompose the vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$, so this set of vectors is not a basis.
 
 What is the fundamental difference between these bases, and can the basis of a two-dimensional space consist of more or fewer vectors than 2, for example?
 
@@ -163,7 +163,7 @@ Linear algebra has an answer to this:
 
 **Any $n$ linearly independent vectors of $n$-dimensional vector space form the basis of that space.
 
-Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\\ 0 \end{pmatrix}$ can't be the basis of a two-dimensional space.
+Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\ 0 \end{pmatrix}$ can't be the basis of a two-dimensional space.
 
 ## What did we learn?
 

@@ -1047,14 +1047,14 @@ Note that the vector coordinates correspond to the numbers multiplying coordinat
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \ 0 \end{pmatrix} \begin{pmatrix} 0 \\\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \ 0 \ 0 \ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \ 1 \ 0 \ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \ 0 \ 1 \end{pmatrix} = \begin{pmatrix} 0 \\\ 0 \\\ 0 \end{pmatrix}
+    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \\ 0 \\ 0  \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
 \end{split}\]</div>
 <ul class="simple">
 <li><p>linearly dependent set of vectors (there are non-zero coefficients of the linear combination that lead to the zero vector):</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \ 1 \ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
 \end{split}\]</div>
 <p>The following property can be deduced from the definition of linear dependence:
 A set of vectors is linearly dependent if and only if one of the elements of that set can be expressed through the remaining elements.</p>
@@ -1076,7 +1076,7 @@ In this example, we decompose the arbitrary vector <span class="math notranslate
 <p>The question arises, is this basis unique in two-dimensional space, or not?</p>
 <p>The answer to this question is no. In fact, one can take any two vectors (<strong>almost any</strong>) and they will also form a basis, provided that any vector can be decomposed by their linear combination.</p>
 <p><strong>Example</strong>.</p>
-<p>Suppose we have a vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\\ 3 \end{pmatrix}\)</span> in a basis of unit orthogonal vectors, and we want to decompose it in another basis <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>:</p>
+<p>Suppose we have a vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> in a basis of unit orthogonal vectors, and we want to decompose it in another basis <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \alpha_1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + \alpha_2 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\3 \end{pmatrix}
@@ -1084,15 +1084,15 @@ In this example, we decompose the arbitrary vector <span class="math notranslate
 <p>From where we can find that <span class="math notranslate nohighlight">\(\alpha_1 = -1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2 = -1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+    -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 \end{split}\]</div>
-<p>So, vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\\ 3 \end{pmatrix}\)</span> in the basis of unit orthogonal vectors is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} -1 \\\ -1 \end{pmatrix}\)</span> in the <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>.</p>
+<p>So, vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span> in the basis of unit orthogonal vectors is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} -1 \\ -1 \end{pmatrix}\)</span> in the <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>.</p>
 <p>But, as mentioned before, <strong>not any set of vectors</strong>  makes a basis.</p>
-<p>For example, through the set of vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\ 3 \\ 0 \end{pmatrix}\)</span> cannot decompose the vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span>, so this set of vectors is not a basis.</p>
+<p>For example, through the set of vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span> cannot decompose the vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span>, so this set of vectors is not a basis.</p>
 <p>What is the fundamental difference between these bases, and can the basis of a two-dimensional space consist of more or fewer vectors than 2, for example?</p>
 <p>Linear algebra has an answer to this:</p>
 <p>**Any <span class="math notranslate nohighlight">\(n\)</span> linearly independent vectors of <span class="math notranslate nohighlight">\(n\)</span>-dimensional vector space form the basis of that space.</p>
-<p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\\ 0 \end{pmatrix}\)</span> can’t be the basis of a two-dimensional space.</p>
+<p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span> can’t be the basis of a two-dimensional space.</p>
 </div>
 <div class="section" id="what-did-we-learn">
 <h2>What did we learn?<a class="headerlink" href="#what-did-we-learn" title="Permalink to this headline">#</a></h2>
