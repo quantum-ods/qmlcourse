@@ -151,7 +151,7 @@ $$
     -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 $$
 
-So, vector $\begin{pmatrix} 2 \\\ 3 \end{pmatrix}$$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
+So, vector $\begin{pmatrix} 2 \\\ 3 \end{pmatrix}$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
 
 But, as mentioned before, **not any set of vectors**  makes a basis.
 
@@ -163,7 +163,7 @@ Linear algebra has an answer to this:
 
 **Any $n$ linearly independent vectors of $n$-dimensional vector space form the basis of that space.
 
-Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}$ can't be the basis of a two-dimensional space.
+Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\\ 0 \end{pmatrix}$ can't be the basis of a two-dimensional space.
 
 ## What did we learn?
 
