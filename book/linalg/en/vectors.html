@@ -979,7 +979,7 @@ title="Print to PDF"
 <p>Formally, a vector is defined as an element of vector space – a set with <strong>addition</strong> and <strong>multiplication of a vector by a number (scalar)</strong> operations, which satisfy <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_space">8 axioms</a>.</p>
 <p>For simplicity of understanding, let us consider the rectangular (Cartesian) coordinate system in the plane, familiar from school days – two perpendicular to each other axes <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, selected unit vectors (orthogonal) <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> on them and the origin of coordinates.</p>
 <p>The vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in this coordinate system can be written as follows: <span class="math notranslate nohighlight">\(\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}\)</span></p>
-<p><strong>Note 1</strong>: Vector coordinates do not uniquely define its position in the plane, but only the position of the vector’s end relative to its start. For example, a vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 3 \\\ 4 \end{pmatrix}\)</span><span class="math notranslate nohighlight">\( can be drawn either from the origin \)</span>\begin{pmatrix} 0 , 0 \end{pmatrix}<span class="math notranslate nohighlight">\( with the end at \)</span>\begin{pmatrix} 3 , 4 \end{pmatrix}<span class="math notranslate nohighlight">\(, or from an arbitrary point, e.g. \)</span>\begin{pmatrix} 1 , 1 \end{pmatrix}$<span class="math notranslate nohighlight">\( with the end at \)</span>\begin{pmatrix} 4 , 5 \end{pmatrix}<span class="math notranslate nohighlight">\(. Both of these vectors correspond to 3 orthogonal unite vectors on the \)</span>x<span class="math notranslate nohighlight">\(-axis and 4 on the \)</span>y$-axis. Normally, unless otherwise stated, it is assumed that the vector is deferred from the origin.</p>
+<p><strong>Note 1</strong>: Vector coordinates do not uniquely define its position in the plane, but only the position of the vector’s end relative to its start. For example, a vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 3 \\ 4 \end{pmatrix}\)</span> can be drawn either from the origin <span class="math notranslate nohighlight">\(\begin{pmatrix} 0 , 0 \end{pmatrix}\)</span> with the end at <span class="math notranslate nohighlight">\(\begin{pmatrix} 3 , 4 \end{pmatrix}\)</span>, or from an arbitrary point, e.g. <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 , 1 \end{pmatrix}\)</span> with the end at <span class="math notranslate nohighlight">\(\begin{pmatrix} 4 , 5 \end{pmatrix}\)</span>. Both of these vectors correspond to 3 orthogonal unite vectors on the <span class="math notranslate nohighlight">\(x\)</span>-axis and 4 on the <span class="math notranslate nohighlight">\(y\)</span>-axis. Normally, unless otherwise stated, it is assumed that the vector is deferred from the origin.</p>
 <p><strong>Note 2</strong>: A vector can be represented either as a column vector <span class="math notranslate nohighlight">\(\begin{pmatrix} a_1 \ a_2 \end{pmatrix}\)</span> or as a row vector <span class="math notranslate nohighlight">\(\begin{pmatrix} a_1 \ a_2 \end{pmatrix}\)</span>. Hereinafter, by a vector we mean a column vector, unless otherwise stated.</p>
 <p>The notion of a vector in the plane can be generalized to 3-dimensional space, and, in general, to <span class="math notranslate nohighlight">\(n\)</span>-dimensional space (which can no longer be visualized):</p>
 <div class="math notranslate nohighlight">
@@ -1013,7 +1013,7 @@ title="Print to PDF"
 <p>Formally the norm is defined as a functional in the vector space satisfying <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_(mathematics)">3 axioms</a> and mapping elements of this space (vectors) to the set of non-negative real numbers.</p>
 <p>There are many functionals satisfying this definition of norm, but we will consider the most commonly used one – <strong>Euclidean norm</strong>.</p>
 <p>For simplicity, let us consider a vector in the plane. Geometrically, it is a directional segment. The directionality of a vector has no effect on its length, so we can work with it as a segment in the plane and calculate its length using school formulas.
-Note the fact that the vector coordinates correspond to the numbers multiplied by the coordinate axis orthogonal vectors, so the vector length formula is as follows: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}\)</span>. Accordingly, in general, the formula is as follows: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}\)</span></p>
+Note that the vector coordinates correspond to the numbers multiplying coordinate axis orthogonal vectors, so the vector length formula is: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}\)</span>. Accordingly, in general, the formula is  <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}\)</span>.</p>
 </div>
 <div class="section" id="scalar-product">
 <h2>Scalar product<a class="headerlink" href="#scalar-product" title="Permalink to this headline">#</a></h2>
@@ -1035,7 +1035,7 @@ Note the fact that the vector coordinates correspond to the numbers multiplied b
 <div class="section" id="linear-independence">
 <h2>Linear independence<a class="headerlink" href="#linear-independence" title="Permalink to this headline">#</a></h2>
 <p>One of the fundamental concepts of linear algebra is <strong>linear dependence/independence</strong>.</p>
-<p>To define this concept, consider a set of several vectors. A set of vectors is <strong>linearly dependent</strong> if there exists such a nonzero linear combination of vectors of this set (at least one element of this combination is not 0) equal to a zero vector (a vector consisting only of 0):</p>
+<p>To define this concept, consider a set of several vectors. A set of vectors is <strong>linearly dependent</strong> if there exists nontrivial linear combination of vectors of this set (at least one element of this combination is not 0) equal to a zero vector (a vector consisting only of 0):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\\ 0 \ ... \ 0 \end{pmatrix}, \ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
@@ -1058,21 +1058,21 @@ Note the fact that the vector coordinates correspond to the numbers multiplied b
 \end{split}\]</div>
 <p>The following property can be deduced from the definition of linear dependence:
 A set of vectors is linearly dependent if and only if one of the elements of that set can be expressed through the remaining elements.</p>
-<p><strong>Note</strong>: If vectors are treated as any characteristics of objects, then linear dependence can be interpreted as data redundancy.</p>
-<p>The notion of linear independence introduces the concept of <strong>dimensionality</strong> of a vector space – it is the maximum number of linearly independent vectors in it.</p>
+<p><strong>Note</strong>: If vectors represent some characteristics of objects, then linear dependence can be interpreted as data redundancy.</p>
+<p>The notion of linear independence introduces the concept of <strong>dimensionality</strong> of a vector space – the maximum number of linearly independent vectors in it.</p>
 </div>
 <div class="section" id="basis">
 <h2>Basis<a class="headerlink" href="#basis" title="Permalink to this headline">#</a></h2>
 <p>In the formal definition of a vector there are no quantitative interpretations of it, just two operations on vectors and 8 axioms.</p>
 <p>So where do quantitative measurements come from? To make this clear, we need to introduce the concept of <strong>basis</strong>.</p>
 <p>A basis is a finite set of vectors in a vector space such that any vector in that space can be uniquely represented as a linear combination of vectors of that set.</p>
-<p>Recall one of the examples above, where we represented a rectangular coordinate system in the plane and unit vectors <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span>. <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span> = \begin{pmatrix} 1 \ 0 \end{pmatrix}, \mathbf{e}_2 = \begin{pmatrix} 0 \ 1 \end{pmatrix}<span class="math notranslate nohighlight">\(.
-In this example, we decompose the arbitrary vector \)</span>\mathbf{a}$ as follows:</p>
+<p>Recall one of the examples above, where we represented a rectangular coordinate system in the plane and unit vectors <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span>. <span class="math notranslate nohighlight">\(\mathbf{e}_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>.
+In this example, we decompose the arbitrary vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = a_1 \begin{pmatrix} 1 \0 \end{pmatrix} + a_2 \begin{pmatrix} 0 \1 \end{pmatrix} = \begin{pmatrix} a_1 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ a_2 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}
+    \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = a_1 \begin{pmatrix} 1 \\ 0 \end{pmatrix} + a_2 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} a_1 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ a_2 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}
 \end{split}\]</div>
-<p>It turns out that the orthogonal vectors <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> <strong>are the basis of the two-dimensional vector space</strong>, and by linear combination of these vectors we can only represent any vector in this space.</p>
+<p>It turns out that the orthogonal vectors <span class="math notranslate nohighlight">\(\mathbf{e}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{e}_2\)</span> <strong>are the basis of the two-dimensional vector space</strong>, and by linear combination of these vectors we can uniquely represent any vector in this space.</p>
 <p>The question arises, is this basis unique in two-dimensional space, or not?</p>
 <p>The answer to this question is no. In fact, one can take any two vectors (<strong>almost any</strong>) and they will also form a basis, provided that any vector can be decomposed by their linear combination.</p>
 <p><strong>Example</strong>.</p>
@@ -1088,11 +1088,11 @@ In this example, we decompose the arbitrary vector \)</span>\mathbf{a}$ as follo
 \end{split}\]</div>
 <p>So, vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\\ 3 \end{pmatrix}\)</span><span class="math notranslate nohighlight">\( in the basis of unit orthogonal vectors is represented as \)</span>\begin{pmatrix} -1 \ -1 \end{pmatrix}<span class="math notranslate nohighlight">\( in the \)</span>\begin{pmatrix} -2 \ 0 \end{pmatrix} \begin{pmatrix} 0 \ -3 \end{pmatrix}$.</p>
 <p>But, as mentioned before, <strong>not any set of vectors</strong>  makes a basis.</p>
-<p>For example, through the set of vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \3 \0 \end{pmatrix}\)</span><span class="math notranslate nohighlight">\( cannot decompose the vector \)</span>\begin{pmatrix} 2 \3 \end{pmatrix}$, so this set of vectors is not a basis.</p>
+<p>For example, through the set of vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\ 3 \\ 0 \end{pmatrix}\)</span> cannot decompose the vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span>, so this set of vectors is not a basis.</p>
 <p>What is the fundamental difference between these bases, and can the basis of a two-dimensional space consist of more or fewer vectors than 2, for example?</p>
 <p>Linear algebra has an answer to this:</p>
 <p>**Any <span class="math notranslate nohighlight">\(n\)</span> linearly independent vectors of <span class="math notranslate nohighlight">\(n\)</span>-dimensional vector space form the basis of that space.</p>
-<p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}\)</span>$ can’t be the basis of a two-dimensional space.</p>
+<p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}\)</span> can’t be the basis of a two-dimensional space.</p>
 </div>
 <div class="section" id="what-did-we-learn">
 <h2>What did we learn?<a class="headerlink" href="#what-did-we-learn" title="Permalink to this headline">#</a></h2>
