@@ -8,8 +8,9 @@ Author(s):
 Translation:
 
 - [Pronkin Alexey](http://github.com/alexey-pronkin)
-- [Evgenii Zheltonozhskii](https://github.com/Randl)
+- [Zheltonozhskii Evgenii](https://github.com/Randl)
 - [Trohimenko Viktor](https://github.com/vtrokhymenko)
+
 
 ## Definition
 
