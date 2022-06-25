@@ -55,7 +55,7 @@ Using these two operations, we can define **linear combinations of vectors**: $\
 
 In linear algebra, the term **norm** is used to generalize the notion of vector length. It can be said that the notions of length and norm are equivalent.
 
-Formally the norm is defined as a functional in the vector space satisfying [3 axioms](https://en.wikipedia.org/wiki/Norm_(mathematics)) and mapping elements of this space (vectors) to the set of non-negative real numbers.
+Formally the norm is defined as a functional in the vector space satisfying [3 axioms](https://en.wikipedia.org/wiki/Norm_(mathematics)), norm is mapping elements of this space (vectors) to the set of non-negative real numbers.
 
 There are many functionals satisfying this definition of norm, but we will consider the most commonly used one -- **Euclidean norm**.
 
