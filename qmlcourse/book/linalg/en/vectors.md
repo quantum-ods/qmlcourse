@@ -93,7 +93,7 @@ $$
     \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\\ 0 \ ... \ 0 \end{pmatrix}, \ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
 $$
 
-If a set of vectors is not linearly dependent, that is, there is no nonzero linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called **linearly independent**.
+If a set of vectors is not linearly dependent, that is, there is no nontrivial linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called **linearly independent**.
 
 **Example**:
 
