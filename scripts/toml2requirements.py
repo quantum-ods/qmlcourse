@@ -48,7 +48,7 @@ def get_packages(prohibited_packages: Set[str]) -> List[str]:
                                 package + ">=" + version[1:],
                             )  # choose major version, needed for security bugfixes
                         else:
-                            packages.append(package + "==" + version[1:])
+                            packages.append(package + ">=" + version[1:])
                     else:
                         packages.append(package + "==" + version)
     return sorted(packages)
