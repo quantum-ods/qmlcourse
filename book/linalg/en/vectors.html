@@ -1010,7 +1010,7 @@ title="Print to PDF"
 <div class="section" id="the-norm-length-of-a-vector">
 <h2>The norm (length) of a vector<a class="headerlink" href="#the-norm-length-of-a-vector" title="Permalink to this headline">#</a></h2>
 <p>In linear algebra, the term <strong>norm</strong> is used to generalize the notion of vector length. It can be said that the notions of length and norm are equivalent.</p>
-<p>Formally the norm is defined as a functional in the vector space satisfying <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_(mathematics)">3 axioms</a> and mapping elements of this space (vectors) to the set of non-negative real numbers.</p>
+<p>Formally the norm is defined as a functional in the vector space satisfying <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_(mathematics)">3 axioms</a>, norm is mapping elements of this space (vectors) to the set of non-negative real numbers.</p>
 <p>There are many functionals satisfying this definition of norm, but we will consider the most commonly used one – <strong>Euclidean norm</strong>.</p>
 <p>For simplicity, let us consider a vector in the plane. Geometrically, it is a directional segment. The directionality of a vector has no effect on its length, so we can work with it as a segment in the plane and calculate its length using school formulas.
 Note that the vector coordinates correspond to the numbers multiplying coordinate axis orthogonal vectors, so the vector length formula is: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}\)</span>. Accordingly, in general, the formula is  <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}\)</span>.</p>
@@ -1040,7 +1040,7 @@ Note that the vector coordinates correspond to the numbers multiplying coordinat
 \[\begin{split}
     \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\\ 0 \ ... \ 0 \end{pmatrix}, \ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
 \end{split}\]</div>
-<p>If a set of vectors is not linearly dependent, that is, there is no nonzero linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called <strong>linearly independent</strong>.</p>
+<p>If a set of vectors is not linearly dependent, that is, there is no nontrivial linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called <strong>linearly independent</strong>.</p>
 <p><strong>Example</strong>:</p>
 <ul class="simple">
 <li><p>A linearly independent set of vectors (only the zero coefficients of a linear combination lead to a zero vector):</p></li>
@@ -1086,13 +1086,13 @@ In this example, we decompose the arbitrary vector <span class="math notranslate
 \[\begin{split}
     -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 \end{split}\]</div>
-<p>So, vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\\ 3 \end{pmatrix}\)</span><span class="math notranslate nohighlight">\( in the basis of unit orthogonal vectors is represented as \)</span>\begin{pmatrix} -1 \ -1 \end{pmatrix}<span class="math notranslate nohighlight">\( in the \)</span>\begin{pmatrix} -2 \ 0 \end{pmatrix} \begin{pmatrix} 0 \ -3 \end{pmatrix}$.</p>
+<p>So, vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\\ 3 \end{pmatrix}\)</span> in the basis of unit orthogonal vectors is represented as <span class="math notranslate nohighlight">\(\begin{pmatrix} -1 \\\ -1 \end{pmatrix}\)</span> in the <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}\)</span>.</p>
 <p>But, as mentioned before, <strong>not any set of vectors</strong>  makes a basis.</p>
 <p>For example, through the set of vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\ 3 \\ 0 \end{pmatrix}\)</span> cannot decompose the vector <span class="math notranslate nohighlight">\(\begin{pmatrix} 2 \\ 3 \end{pmatrix}\)</span>, so this set of vectors is not a basis.</p>
 <p>What is the fundamental difference between these bases, and can the basis of a two-dimensional space consist of more or fewer vectors than 2, for example?</p>
 <p>Linear algebra has an answer to this:</p>
 <p>**Any <span class="math notranslate nohighlight">\(n\)</span> linearly independent vectors of <span class="math notranslate nohighlight">\(n\)</span>-dimensional vector space form the basis of that space.</p>
-<p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}\)</span> can’t be the basis of a two-dimensional space.</p>
+<p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\\ 0 \end{pmatrix}\)</span> can’t be the basis of a two-dimensional space.</p>
 </div>
 <div class="section" id="what-did-we-learn">
 <h2>What did we learn?<a class="headerlink" href="#what-did-we-learn" title="Permalink to this headline">#</a></h2>

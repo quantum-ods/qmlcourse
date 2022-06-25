@@ -55,7 +55,7 @@ Using these two operations, we can define **linear combinations of vectors**: $\
 
 In linear algebra, the term **norm** is used to generalize the notion of vector length. It can be said that the notions of length and norm are equivalent.
 
-Formally the norm is defined as a functional in the vector space satisfying [3 axioms](https://en.wikipedia.org/wiki/Norm_(mathematics)) and mapping elements of this space (vectors) to the set of non-negative real numbers.
+Formally the norm is defined as a functional in the vector space satisfying [3 axioms](https://en.wikipedia.org/wiki/Norm_(mathematics)), norm is mapping elements of this space (vectors) to the set of non-negative real numbers.
 
 There are many functionals satisfying this definition of norm, but we will consider the most commonly used one -- **Euclidean norm**.
 
@@ -93,7 +93,7 @@ $$
     \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\\ 0 \ ... \ 0 \end{pmatrix}, \ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
 $$
 
-If a set of vectors is not linearly dependent, that is, there is no nonzero linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called **linearly independent**.
+If a set of vectors is not linearly dependent, that is, there is no nontrivial linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called **linearly independent**.
 
 **Example**:
 
@@ -151,7 +151,7 @@ $$
     -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 $$
 
-So, vector $\begin{pmatrix} 2 \\\ 3 \end{pmatrix}$$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
+So, vector $\begin{pmatrix} 2 \\\ 3 \end{pmatrix}$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
 
 But, as mentioned before, **not any set of vectors**  makes a basis.
 
@@ -163,7 +163,7 @@ Linear algebra has an answer to this:
 
 **Any $n$ linearly independent vectors of $n$-dimensional vector space form the basis of that space.
 
-Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\\ 0 \end{pmatrix}$ can't be the basis of a two-dimensional space.
+Exactly due to the linear dependence, the vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\\ 0 \end{pmatrix}$ can't be the basis of a two-dimensional space.
 
 ## What did we learn?
 
