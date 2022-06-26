@@ -2,7 +2,7 @@
 
 # About "Linear Algebra and Numpy"
 
-This unit is designed to discuss the basic concepts and ideas of linear algebra and is a quick reference guide; **is not** a full-fledged textbook. For a more detailed dive into the topic we recommend the textbook ["Matrix Analysis and Linear Algebra"(RU)](https://www.inm.ras.ru/wp-content/uploads/library/Monographies/all.pdf) by Tyrtyshnikov E. Е..
+This unit is designed to discuss the basic concepts and ideas of linear algebra and is a quick reference guide; **is not** a full-fledged textbook. For a more detailed dive into the topic we recommend the textbook ["Matrix Analysis and Linear Algebra"(RU)](https://www.inm.ras.ru/wp-content/uploads/library/Monographies/all.pdf) by Tyrtyshnikov E. Е. or the textbook ["Matrix Analysis" (EN)](http://www.cse.zju.edu.cn/eclass/attachments/2015-10/01-1446086008-145421.pdf) by Roger A. Horn, Charles R. Johnson. 
 
 Within the unit:
 
