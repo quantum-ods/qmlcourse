@@ -1,12 +1,12 @@
 (vectors)=
 # Векторы
 
+## Определение
+
 Автор(ы):
 
 - [Эль-Айясс Дани](http://github.com/dayyass)
 
-
-## Определение
 
 Вектор -- это термин, который имеет несколько различных интерпретаций: математическую, геометрическую, физическую и др. Точный смысл данного термина зависит от контекста.
 
@@ -23,7 +23,7 @@
 Понятие вектора на плоскости можно обобщить на 3-мерное пространство, и, в общем случае, на $n$-мерное пространство (которое уже не получится визуализировать):
 
 $$
-    \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + ... + a_n \mathbf{e}_n = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix}
+\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + ... + a_n \mathbf{e}_n = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix}
 $$
 
 ## Операции с векторами
@@ -33,13 +33,13 @@ $$
 - сложение:
 
 $$
-    \mathbf{a} + \mathbf{b} = (a_1 + b_1) \mathbf{e}_1 + (a_2 + b_2) \mathbf{e}_2 + ... + (a_n + b_n) \mathbf{e}_n = \\ = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ ... \\ b_n \end{pmatrix} = \begin{pmatrix} a_1 + b_1 \\ a_2 + b_2 \\ ... \\ a_n + b_n \end{pmatrix}
+\mathbf{a} + \mathbf{b} = (a_1 + b_1) \mathbf{e}_1 + (a_2 + b_2) \mathbf{e}_2 + ... + (a_n + b_n) \mathbf{e}_n = \\ = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} + \begin{pmatrix} b_1 \\ b_2 \\ ... \\ b_n \end{pmatrix} = \begin{pmatrix} a_1 + b_1 \\ a_2 + b_2 \\ ... \\ a_n + b_n \end{pmatrix}
 $$
 
 - умножения вектора на число (скаляр):
 
 $$
-    \lambda \mathbf{a} = \lambda a_1 \mathbf{e}_1 + \lambda a_2 \mathbf{e}_2 + ... + \lambda a_n \mathbf{e}_n = \lambda  \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\ \lambda a_2 \\ ... \\ \lambda a_n \end{pmatrix}
+\lambda \mathbf{a} = \lambda a_1 \mathbf{e}_1 + \lambda a_2 \mathbf{e}_2 + ... + \lambda a_n \mathbf{e}_n = \lambda  \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\ \lambda a_2 \\ ... \\ \lambda a_n \end{pmatrix}
 $$
 
 Операцию умножения вектора на число можно интерпретировать геометрически, как сжатие / растяжение вектора.
@@ -64,14 +64,13 @@ $$
 **Замечание**: Кроме скалярного произведения существует также [векторное произведение](https://ru.wikipedia.org/wiki/Векторное_произведение) над парой векторов, результатом которого являются вектор. Также существует [смешанное произведение](https://ru.wikipedia.org/wiki/Смешанное_произведение) над тройкой векторов, результатом которого является число. Данные операции в рамках курса рассматриваться не будут.
 
 Скалярное произведение используется в определении длины векторов и угла между ними. Данная операция имеет два определения:
-
 - алгебраическое: $ \mathbf{a} \cdot \mathbf{b} = a_1  b_1 + a_2  b_2 + ... + a_n b_n$
 - геометрическое: $\mathbf{a} \cdot \mathbf{b} = \lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert \cos{\theta},$ где $\theta$ -- угол между векторами $\mathbf{a}$ и $\mathbf{b}$.
 
 Используя оба эти определения можно вывести формулу для расчета косинуса угла между векторами:
 
 $$
-    \cos{\theta} = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert} = \frac{a_1  b_1 + a_2  b_2 + ... + a_n b_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}
+\cos{\theta} = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert \mathbf{a} \rVert \lVert \mathbf{b} \rVert} = \frac{a_1  b_1 + a_2  b_2 + ... + a_n b_n}{\sqrt{a_1^2 + a_2^2 + ... + a_n^2} \sqrt{b_1^2 + b_2^2 + ... + b_n^2}}
 $$
 
 С помощью данной формулы можно прийти к одному из главных свойств скалярного произведения, которое заключается в том, что **два вектора перпендикулярны тогда и только тогда, как их скалярное произведение равно 0**: $\mathbf{a} \perp \mathbf{b} \leftrightarrow \cos{\theta} = 0 \leftrightarrow \mathbf{a} \cdot \mathbf{b} = 0$
@@ -85,7 +84,7 @@ $$
 Для определения данного понятия рассмотрим набор из нескольких векторов. Набор векторов является **линейно зависимым**, если существует такая ненулевая линейная комбинация векторов данного набора (как минимум один элемент данной комбинации не равен 0) равная нулевому вектору (вектор, состоящий только из 0):
 
 $$
-    \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\ 0 \\ ... \\ 0 \end{pmatrix}, \\ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
+\lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\ 0 \\ ... \\ 0 \end{pmatrix}, \\ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
 $$
 
 Если набор векторов не является линейно зависимым, то есть не существует ненулевой линейной комбинации векторов данного набора равной нулевому вектору, то такой набор векторов называется **линейно независимым**.
@@ -95,13 +94,13 @@ $$
 - линейно независимый набор векторов (только нулевые коэффициенты линейно комбинации приводят к нулевому вектору):
 
 $$
-    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} \rightarrow 0 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 0 \cdot \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
 $$
 
 - линейно зависимый набор векторов (существуют ненулевые коэффициенты линейно комбинации, которые приводят к нулевому вектору):
 
 $$
-    \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} \begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} \rightarrow 2 \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} + 3 \cdot \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} - 1 \cdot\begin{pmatrix} 2 \\ 3 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
 $$
 
 Из определения линейной зависимости можно вывести следующее свойство:
@@ -123,7 +122,7 @@ $$
 В данном примере мы разложили произвольный вектор $\mathbf{a}$ следующим образом:
 
 $$
-    \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = a_1 \begin{pmatrix} 1 \\ 0 \end{pmatrix} + a_2 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} a_1 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ a_2 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}
+\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = a_1 \begin{pmatrix} 1 \\ 0 \end{pmatrix} + a_2 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} a_1 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ a_2 \end{pmatrix} = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}
 $$
 
 Получается, что орты $\mathbf{e}_1$, $\mathbf{e}_2$ **являются базисом двумерного векторного пространства**, и с помощью линейной комбинации этих векторов мы можем единственным образом представить любой вектор этого пространства.
@@ -137,20 +136,20 @@ $$
 Пусть у нас есть вектор $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ в базисе единичных орт, и мы хотим разложить его по другому базису $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$:
 
 $$
-    \alpha_1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + \alpha_2 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+\alpha_1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + \alpha_2 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 $$
 
 Откуда мы можем найти, что $\alpha_1 = -1$, $\alpha_2 = -1$:
 
 $$
-    -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
+-1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 $$
 
 Таким образом, вектор $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ в базисе единичных орт представляется как $\begin{pmatrix} -1 \\ -1 \end{pmatrix}$ в базисе $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
 
 Но для базиса, как было сказано ранее, подойдет **не любой набор векторов**.
 
-Например через набор векторов $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\ 0 \end{pmatrix}$ нельзя разложить вектор $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$, поэтому данный набор векторов не является базисом.
+Например через базис $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\ 0 \end{pmatrix}$ нельзя разложить вектор $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$, поэтому данный набор векторов не является базисом.
 
 В чем же принципиальная разница между этими базисами, и может ли базис двумерного пространства состоять, например, из большего или меньшего числа векторов, чем 2?
 
