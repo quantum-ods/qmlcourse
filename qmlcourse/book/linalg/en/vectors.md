@@ -1,4 +1,4 @@
-(vectors)=
+(vectors_en)=
 # Vectors
 
 Author(s):
@@ -18,7 +18,7 @@ The term `vector` has several interpretations: mathematical, geometric, physical
 
 Formally, a vector is defined as an element of vector space -- a set with **addition** and **multiplication of a vector by a number (scalar)** operations, which satisfy [8 axioms](https://en.wikipedia.org/wiki/Vector_space).
 
-For simplicity of understanding, let us consider the rectangular (Cartesian) coordinate system in the plane, familiar from school days -- two perpendicular to each other axes $x$ and $y$, selected unit vectors (orthogonal) $\mathbf{e}_1$, $\mathbf{e}_2$ on them and the origin of coordinates.
+For simplicity, let us consider the rectangular (Cartesian) coordinate system in the plane, familiar from school days -- two perpendicular to each other axes $x$ and $y$, selected unit vectors (orthogonal) $\mathbf{e}_1$, $\mathbf{e}_2$ on them and the origin of coordinates.
 
 The vector $\mathbf{a}$ in this coordinate system can be written as follows: $\mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix}$
 
@@ -45,7 +45,7 @@ $$
 - multiplication of a vector by a number (scalar):
 
 $$
-    \lambda \mathbf{a} = \lambda a_1 \mathbf{e}_1 + \lambda a_2 \mathbf{e}_2 + ... + \lambda a_n \mathbf{e}_n = \lambda \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\\ \lambda a_2 \\ ... \ \lambda a_n \end{pmatrix}
+    \lambda \mathbf{a} = \lambda a_1 \mathbf{e}_1 + \lambda a_2 \mathbf{e}_2 + ... + \lambda a_n \mathbf{e}_n = \lambda \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix} = \begin{pmatrix} \lambda a_1 \\ \lambda a_2 \\ ... \\ \lambda a_n \end{pmatrix}
 $$
 
 The operation of multiplying a vector by a number can be interpreted geometrically as a contraction/extension of a vector.
@@ -56,7 +56,7 @@ Using these two operations, we can define **linear combinations of vectors**: $\
 
 In linear algebra, the term **norm** is used to generalize the notion of vector length. It can be said that the notions of length and norm are equivalent.
 
-Formally the norm is defined as a functional in the vector space satisfying [3 axioms](https://en.wikipedia.org/wiki/Norm_(mathematics)), norm is mapping elements of this space (vectors) to the set of non-negative real numbers.
+Formally the norm is defined as a functional in the vector space satisfying [3 axioms](https://en.wikipedia.org/wiki/Norm_(mathematics)). Norm is mapping elements of this space (vectors) to the set of non-negative real numbers.
 
 There are many functionals satisfying this definition of norm, but we will consider the most commonly used one -- **Euclidean norm**.
 
@@ -91,7 +91,7 @@ One of the fundamental concepts of linear algebra is **linear dependence/indepen
 To define this concept, consider a set of several vectors. A set of vectors is **linearly dependent** if there exists nontrivial linear combination of vectors of this set (at least one element of this combination is not 0) equal to a zero vector (a vector consisting only of 0):
 
 $$
-    \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\ 0 \\ ... \\ 0 \end{pmatrix}, \ \exists \lambda_1 \not = {0} \vee \lambda_2 \not = {0} \vee ... \vee \lambda_m \not = {0}
+    \lambda_1 \mathbf{a}_1 + \lambda_2 \mathbf{a}_2 + ... + \lambda_m \mathbf{a}_m = \begin{pmatrix} 0 \\ 0 \\ ... \\ 0 \end{pmatrix}, \ \exists j, \, \lambda_j \not = {0}
 $$
 
 If a set of vectors is not linearly dependent, that is, there is no nontrivial linear combination of vectors of a given set equal to the zero vector, then such a set of vectors is called **linearly independent**.
@@ -136,7 +136,7 @@ It turns out that the orthogonal vectors $\mathbf{e}_1$, $\mathbf{e}_2$ **are th
 
 The question arises, is this basis unique in two-dimensional space, or not?
 
-The answer to this question is no. In fact, one can take any two vectors (**almost any**) and they will also form a basis, provided that any vector can be decomposed by their linear combination.
+The answer to this question is no. In fact, one can take any two vectors (**almost any**) and they will also form a basis, meaning that any vector can be decomposed by their linear combination.
 
 **Example**.
 
@@ -152,13 +152,13 @@ $$
     -1 \begin{pmatrix} -2 \\ 0 \end{pmatrix} + -1 \begin{pmatrix} 0 \\ -3 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} + \begin{pmatrix} 0 \\ 3 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}
 $$
 
-So, vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\ -1 \end{pmatrix}$ in the $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
+So, vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ in the basis of unit orthogonal vectors is represented as $\begin{pmatrix} -1 \\ -1 \end{pmatrix}$ in the basis $\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} 0 \\ -3 \end{pmatrix}$.
 
 But, as mentioned before, **not any set of vectors**  makes a basis.
 
-For example, through the set of vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\ 0 \end{pmatrix}$ cannot decompose the vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$, so this set of vectors is not a basis.
+For example, the set of vectors $\begin{pmatrix} -2 \\ 0 \end{pmatrix}$, $\begin{pmatrix} -3 \\ 0 \end{pmatrix}$ cannot decompose the vector $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$, so this set of vectors is not a basis.
 
-What is the fundamental difference between these bases, and can the basis of a two-dimensional space consist of more or fewer vectors than 2, for example?
+What is the fundamental difference between these sets, and can the basis of a two-dimensional space consist of more or fewer vectors than 2?
 
 Linear algebra has an answer to this:
 
