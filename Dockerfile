@@ -1,5 +1,7 @@
+####
 # Purpose of the builder is to make all lectures, convert them into ipython notebooks (.ipynb). This operation is time costly and take a lot of space on the HDD.
 # After that we could use lightweight environment
+####
 
 FROM ubuntu:20.04 as dev
 
