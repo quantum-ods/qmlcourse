@@ -49,162 +49,162 @@
 
 - part: Основы машинного обучения
   chapters:
-    - file: book/ml/ru/ml_intro
+    - file: book/ml/ru/ml_intro.md
       title: ⬜ О блоке
-    - file: book/ml/ru/ml_l1
+    - file: book/ml/ru/ml_l1.md
       title: 🟦 Машинное обучение как пазл
 
 - part: Квантовые вычисления
   chapters:
-    - file: book/qc/ru/qc_intro
+    - file: book/qc/ru/qc_intro.md
       title: ⬜ О блоке
-    - file: book/qc/ru/qubit
+    - file: book/qc/ru/qubit.md
       title: 🟩 Квантовый бит
-    - file: book/qc/ru/gates
+    - file: book/qc/ru/gates.md
       title: 🟩 Квантовые гейты
-    - file: book/qc/ru/mixedstates
+    - file: book/qc/ru/mixedstates.md
       title: 🟨 Смешанные состояния
 
 - part: Фреймворки
   chapters:
     - file: book/prog/ru/prog_intro.md
       title: ⬜ О блоке
-    - file: book/prog/ru/progreview
+    - file: book/prog/ru/progreview.md
       title: 🟩 Обзор фреймворков
-    - file: book/prog/ru/pennylane
+    - file: book/prog/ru/pennylane.md
       title: 🟩 PennyLane
-    - file: book/prog/ru/cirq_tfq
+    - file: book/prog/ru/cirq_tfq.md
       title: 🟧 Cirq & TFQ
-    - file: book/prog/ru/qiskit
+    - file: book/prog/ru/qiskit.md
       title: 🟧 Qiskit
 
 - part: Базовые квантовые алгоритмы
   chapters:
-    - file: book/qcalgo/ru/qcalgo_intro
+    - file: book/qcalgo/ru/qcalgo_intro.md
       title: ⬜ О блоке
-    - file: book/qcalgo/ru/quantum_algorithms_overview
+    - file: book/qcalgo/ru/quantum_algorithms_overview.md
       title: 🟩 Обзор квантовых алгоритмов
-    - file: book/qcalgo/ru/deutschs_algorithm
+    - file: book/qcalgo/ru/deutschs_algorithm.md
       title: 🟩 Алгоритм Дойча
-    - file: book/qcalgo/ru/quantum_teleportation
+    - file: book/qcalgo/ru/quantum_teleportation.md
       title: 🟩 Квантовая телепортация
-    - file: book/qcalgo/ru/superdense_coding
+    - file: book/qcalgo/ru/superdense_coding.md
       title: 🟩 Сверхплотное кодирование
-    - file: book/qcalgo/ru/grovers_algorithm
+    - file: book/qcalgo/ru/grovers_algorithm.md
       title: 🟧 Алгоритм Гровера
-    - file: book/qcalgo/ru/simon_algorithm
+    - file: book/qcalgo/ru/simon_algorithm.md
       title: 🟧 Алгоритм Саймона
 
 - part: Железо квантовых компьютеров
   chapters:
-    - file: book/hw/ru/hw_intro
+    - file: book/hw/ru/hw_intro.md
       title: ⬜ О блоке
-    - file: book/hw/ru/hwreview
+    - file: book/hw/ru/hwreview.md
       title: 🟩 Обзор
-    - file: book/hw/ru/scqubits
+    - file: book/hw/ru/scqubits.md
       title: 🟥 Сверхпроводниковые кубиты
 
 - part: Квантовое машинное обучение
   chapters:
     - file: book/qmlkinds/ru/qmlkinds_intro.md
       title: ⬜ О блоке
-    - file: book/qmlkinds/ru/qmlkinds
+    - file: book/qmlkinds/ru/qmlkinds.md
       title: 🟦 Виды QML
-    - file: book/qmlkinds/ru/hhl_algorithm
+    - file: book/qmlkinds/ru/hhl_algorithm.md
       title: 🟥 Алгоритм HHL
-    - file: book/qmlkinds/ru/qknn
+    - file: book/qmlkinds/ru/qknn.md
       title: 🟥 Алгоритм QKNN
 
 - part: Вариационные схемы
   chapters:
-    - file: book/vqc/ru/vqc_intro
+    - file: book/vqc/ru/vqc_intro.md
       title: ⬜ О блоке
-    - file: book/vqc/ru/vqc
+    - file: book/vqc/ru/vqc.md
       title: 🟩 Вариационные схемы
 
 - part: Квантовые градиенты
   chapters:
-    - file: book/grads/ru/grads_intro
+    - file: book/grads/ru/grads_intro.md
       title: ⬜ О блоке
-    - file: book/grads/ru/gradients
+    - file: book/grads/ru/gradients.md
       title: 🟩 Градиенты квантовых схем
-    - file: book/grads/ru/hogradients
+    - file: book/grads/ru/hogradients.md
       title: 🟧 Градиенты высших порядков
 
 - part: Квантовый SVM
   chapters:
-    - file: book/qsvm/ru/qsvm_intro
+    - file: book/qsvm/ru/qsvm_intro.md
       title: ⬜ О блоке
-    - file: book/qsvm/ru/hybridsvm
+    - file: book/qsvm/ru/hybridsvm.md
       title: 🟩 Гибридный SVM
-    - file: book/qsvm/ru/classic_svm
+    - file: book/qsvm/ru/classic_svm.md
       title: 🟧 Классический SVM
 
 - part: Квантовые нейронные сети
   chapters:
-    - file: book/qnn/ru/qnn_intro
+    - file: book/qnn/ru/qnn_intro.md
       title: ⬜ О блоке
-    - file: book/qnn/ru/qnn
+    - file: book/qnn/ru/qnn.md
       title: 🟩 Квантовые нейронные сети
-    - file: book/qnn/ru/qconv
+    - file: book/qnn/ru/qconv.md
       title: 🟩 Квантовые сверточные сети
 
 - part: Проблемы квантового машинного обучения
   chapters:
-    - file: book/problems/ru/problems_intro
+    - file: book/problems/ru/problems_intro.md
       title: ⬜ О блоке
-    - file: book/problems/ru/quantchembasic
+    - file: book/problems/ru/quantchembasic.md
       title: 🟩 Квантовая химия (Введение)
-    - file: book/problems/ru/quantchemadvancedscf
+    - file: book/problems/ru/quantchemadvancedscf.md
       title: 🟧 Квантовая химия (SCF)
-    - file: book/problems/ru/ising
+    - file: book/problems/ru/ising.md
       title: 🟩 Модель Изинга
-    - file: book/problems/ru/advising
+    - file: book/problems/ru/advising.md
       title: 🟧 Продвинутая модель Изинга
-    - file: book/problems/ru/copt
+    - file: book/problems/ru/copt.md
       title: 🟩 Комбинаторная оптимизация
 
 - part: От проблем к обучению
   chapters:
-    - file: book/problems2qml/ru/problems2qml_intro
+    - file: book/problems2qml/ru/problems2qml_intro.md
       title: ⬜ О блоке
-    - file: book/problems2qml/ru/np2ising
+    - file: book/problems2qml/ru/np2ising.md
       title: 🟩 NP как модели Изинга
-    - file: book/problems2qml/ru/qubo_linreg_svm_kmeans
+    - file: book/problems2qml/ru/qubo_linreg_svm_kmeans.md
       title: 🟧 QUBO-формулировки трех задач ML
-    - file: book/problems2qml/ru/jordanwigner
+    - file: book/problems2qml/ru/jordanwigner.md
       title: 🟧 Преобразование Жордана-Вигнера
-    - file: book/problems2qml/ru/eigenvals
+    - file: book/problems2qml/ru/eigenvals.md
       title: 🟩 О собственных значениях
 
 - part: VQE
   chapters:
-    - file: book/vqe/ru/vqe_intro
+    - file: book/vqe/ru/vqe_intro.md
       title: ⬜ О блоке
-    - file: book/vqe/ru/vqe
+    - file: book/vqe/ru/vqe.md
       title: 🟩 Основы VQE
-    - file: book/vqe/ru/tspvqe
+    - file: book/vqe/ru/tspvqe.md
       title: 🟧 VQE - практика
 
 - part: D-Wave – квантовый отжиг и семплирование
   chapters:
-    - file: book/dwave/ru/dwave_intro
+    - file: book/dwave/ru/dwave_intro.md
       title: ⬜ О блоке
-    - file: book/dwave/ru/dwave
+    - file: book/dwave/ru/dwave.md
       title: 🟩 Квантовый отжиг и семплирование
-    - file: book/dwave/ru/annealing_paper_1998
+    - file: book/dwave/ru/annealing_paper_1998.md
       title: 🟧 Сравнение квантовой и классической имитации отжига
 
 - part: QAOA
   chapters:
-    - file: book/qaoa/ru/qaoa_intro
+    - file: book/qaoa/ru/qaoa_intro.md
       title: ⬜ О блоке
-    - file: book/qaoa/ru/qaoa
+    - file: book/qaoa/ru/qaoa.md
       title: 🟩 QAOA
 
 - part: Перспективы
   chapters:
-    - file: book/perspectives/ru/academic_industrial
+    - file: book/perspectives/ru/academic_industrial.md
       title: ⬜ Академия и индустрия
 
 - part: О КУРСЕ / ABOUT THE COURSE
@@ -223,7 +223,11 @@
       title: 🟦 About quantum computers
     - file: book/intro/en/prerequisite.md
       title: ⬜ Prerequisite
+
 - part: Linear Algebra and Numpy
   chapters:
+    - file: book/linalg/en/linalg_intro.md
+      title: ⬜ About
     - file: book/linalg/en/vectors.md
       title: 🟦 Vectors
+
