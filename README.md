@@ -8,7 +8,7 @@
 <a href="https://ods.ai/tracks/qmlcourse" target="_blank">
     <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=critical&up_message=ods.ai&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
 <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
-    <img alt="shield_license" src="https://img.shields.io/badge/license-CC--BY--4.0-brightgreen">
+    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse?style=for-the-badge">
 </a>
 </a>
 
