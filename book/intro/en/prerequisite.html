@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="About “Linear Algebra and Numpy”" href="../../linalg/en/linalg_intro.html" />
+    <link rel="next" title="Vectors" href="../../linalg/en/vectors.html" />
     <link rel="prev" title="About quantum computers, bitcoin, and superiority" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -680,8 +680,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../linalg/en/linalg_intro.html">
-   ⬜ About
+  <a class="reference internal" href="../../linalg/en/vectors.html">
+   🟦 Vectors
   </a>
  </li>
 </ul>
@@ -839,51 +839,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-poetry-and-development-environment">
-   Python, Poetry and development environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-algebra-and-numpy">
-   Linear algebra and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Numpy
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#machime-learning">
-   Machime Learning
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -895,34 +856,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-poetry-and-development-environment">
-   Python, Poetry and development environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-algebra-and-numpy">
-   Linear algebra and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Numpy
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#machime-learning">
-   Machime Learning
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -932,64 +865,7 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="prerequisite">
 <span id="prerequisite-en"></span><h1>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">#</a></h1>
-<p>Translation:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/vtrokhymenko">Trohimenko Viktor</a></p></li>
-</ul>
-<p>This course combines both theory for in-depth understanding of the material and plenty of practice to reinforce skills and work through non-obvious situations/problems. Therefore, it is assumed that you already have some basic knowledge. You can check yourself with the optional <a class="reference external" href="https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a">Entrance Test</a>, which will help you understand if you need to take the introductory “blue” lectures – on Python, math and machine learning (15 questions total, 5 per block). The test is pretty simple, so if you pass it without mistakes or almost without mistakes - that doesn’t say much, anyway it can be difficult. But if you have a lot of mistakes, then you should turn to the introductory “blue” blocks.</p>
-<div class="section" id="python-poetry-and-development-environment">
-<h2>Python, Poetry and development environment<a class="headerlink" href="#python-poetry-and-development-environment" title="Permalink to this headline">#</a></h2>
-<p>To be successful in the course you must be able to do and understand such things as</p>
-<ul class="simple">
-<li><p>copying files from GitHub;</p></li>
-<li><p>installing <code class="docutils literal notranslate"><span class="pre">Poetry</span></code> and the <code class="docutils literal notranslate"><span class="pre">Python</span></code> libraries;</p></li>
-<li><p>how to run/start the <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>;</p></li>
-<li><p>the basic keyboard shortcuts in <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>;</p></li>
-<li><p>how to run code in <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>;</p></li>
-<li><p>what simple data types exist in <code class="docutils literal notranslate"><span class="pre">Python</span></code>;</p></li>
-<li><p>how to work with complex container types (<code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>), including the most popular methods of each;</p></li>
-<li><p>how <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">arithmetic</span></code> works and how variables of different types relate to one another;</p></li>
-<li><p>what are conditional constructs and branching logic;</p></li>
-<li><p>what is a block of code in <code class="docutils literal notranslate"><span class="pre">Python</span></code> and why indents (tabs) are needed;</p></li>
-<li><p>what loops are and how they can be used with complex data types;</p></li>
-<li><p>how to write functions in <code class="docutils literal notranslate"><span class="pre">Python</span></code> and what function arguments are and what they are;</p></li>
-<li><p>what a decorator is and how to use it;</p></li>
-<li><p>basic OOP: class declaration, the concept of a class object, the ability to write class methods.</p></li>
-</ul>
-<p>If you don’t understand any of the topics, it is highly recommended that you refresh your knowledge (or even acquire it) by taking the corresponding lessons in Python Basics. Even if you have experience working with it and writing code, you are encouraged to learn how to install all the necessary dependencies and libraries, as well as the hotkeys and various functions in the <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>.</p>
-</div>
-<div class="section" id="linear-algebra-and-numpy">
-<h2>Linear algebra and <code class="docutils literal notranslate"><span class="pre">Numpy</span></code><a class="headerlink" href="#linear-algebra-and-numpy" title="Permalink to this headline">#</a></h2>
-<p>To understand basic quantum algorithms and quantum machine learning algorithms, just as in classical machine learning, one cannot do without linear algebra. If you have time to take mathematics seriously, we recommend <a class="reference external" href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/">Gilbert Strang</a> or <a class="reference external" href="https://www.litres.ru/d-v-beklemishev/kurs-analiticheskoy-geometrii-i-lineynoy-algebry-66005405/">D.V. Beklemishev (RU)</a> courses, as well as <a class="reference external" href="https://biblio.mccme.ru/node/2192">A.I. Kostrikin’s problem book (RU)</a>. And if you have ever studied linear algebra, but have forgotten it, a block of our course will help. We want you to have no problems with such concepts as</p>
-<ul class="simple">
-<li><p>vector-line and vector-column;</p></li>
-<li><p>linear dependence of vectors;</p></li>
-<li><p>systems of linear equations;</p></li>
-<li><p>matrices, determinants and trace of a matrix;</p></li>
-<li><p>linear operator;</p></li>
-<li><p>complex and Hermite conjugation;</p></li>
-<li><p>scalar and vector product;</p></li>
-<li><p>Hilbert space.</p></li>
-</ul>
-<p>The list is obviously not exhaustive, and it is likely that you will not list all the things that can be encountered as you study quantum algorithms.</p>
-</div>
-<div class="section" id="machime-learning">
-<h2>Machime Learning<a class="headerlink" href="#machime-learning" title="Permalink to this headline">#</a></h2>
-<p>Finally, to talk about quantum machine learning, you need to have a good understanding of machine learning. <span class="xref myst">This course unit</span> describes what different machine learning tasks have in common and how the various applications of machine learning models are put together like a jigsaw puzzle. This block, however, does not replace a good book or course on machine learning (like <a class="reference external" href="https://www.coursera.org/learn/machine-learning">Andrew Ng course</a>, <a class="reference external" href="https://datasciencecourse.ru/">Yandex and MIPT specialization (RU)</a>, <a class="reference external" href="https://mlcourse.ai">mlcourse.ai</a>, <a class="reference external" href="https://github.com/esokolov/ml-course-hse">Machine Learning course at FKN HSE – E. A. Sokolov (RU)</a> or <a class="reference external" href="https://ml-handbook.ru/">SHAD’s Machine Learning Tutorial (RU)</a>) covering topics such as:</p>
-<ul class="simple">
-<li><p>teacher-assisted and non-teacher-assisted learning, reinforcement learning;</p></li>
-<li><p>quality metrics in learning tasks with a teacher;</p></li>
-<li><p>loss functions and reduction of machine learning problems to optimization problems;</p></li>
-<li><p>feature processing and construction;</p></li>
-<li><p>model quality assessment and cross validation;</p></li>
-<li><p>classification and regression algorithms: decision trees, forest, boosting, logistic regression, etc;</p></li>
-<li><p>ranking algorithms, ranking quality metrics;</p></li>
-<li><p>teacherless learning: dimensionality reduction, clustering, anomaly search;</p></li>
-<li><p>bayesian view of machine learning;</p></li>
-<li><p>representation learning.</p></li>
-</ul>
-<p>Again, this is not an exhaustive list, and it covers only the “classics,” ignoring deep learning. But if any of these things are confusing or if the entry <a class="reference external" href="https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a">test</a> fails, it may be worth referring to the courses mentioned above.</p>
-</div>
+<p><em>comming soon</em></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1026,10 +902,10 @@ title="Print to PDF"
             <p class="prev-next-title">About quantum computers, bitcoin, and superiority</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../linalg/en/linalg_intro.html" title="next page">
+    <a class='right-next' id="next-link" href="../../linalg/en/vectors.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">About “Linear Algebra and Numpy”</p>
+        <p class="prev-next-title">Vectors</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
