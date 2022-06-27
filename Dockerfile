@@ -8,7 +8,7 @@ RUN apt update && apt install -y python3-pip
 RUN python3 -m pip install poetry
 
 #RUN apt update && apt install -y git && git clone https://github.com/quantum-ods/qmlcourse.git
-
+WORKDIR qmlcourse
 COPY . .
 RUN poetry install --no-interaction --no-root
 RUN poetry run python scripts/convert2ipynb.py
@@ -21,6 +21,7 @@ RUN poetry run jupyter-book build ./qmlcourse --builder latex --keep-going
 ####
 
 FROM continuumio/miniconda3:latest as listener
+WORKDIR qmlcourse
 COPY . .
 RUN conda create -n qmlcourse python=3.8 --yes
 RUN conda run -n qmlcourse conda install psi4 python=3.8 -c psi4 --yes
@@ -33,6 +34,7 @@ ENV CONDA_DIR=/opt/conda \
 ENV PATH="${SHELL}:${PATH}"
 ENV PATH="${CONDA_DIR}/bin:${PATH}"
 EXPOSE 8989
+# ENTRYPOINT ["/bin/bash", "-c"]
 
 # Starting jupyter lab
 # ENTRYPOINT ["conda", "run", "--name=qmlcourse","jupyter", "lab", "--ip=127.0.0.1", "--allow-root", "--p=8989"]
