@@ -223,3 +223,8 @@
       title: 🟦 About quantum computers
     - file: book/intro/en/prerequisite.md
       title: ⬜ Prerequisite
+
+- part: Linear Algebra and Numpy
+  chapters:
+    - file: book/linalg/en/linalg_intro.md
+      title: ⬜ About
