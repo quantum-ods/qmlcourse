@@ -228,3 +228,5 @@
   chapters:
     - file: book/linalg/en/linalg_intro.md
       title: ⬜ About
+    - file: book/linalg/en/vectors.md
+      title: 🟦 Vectors
