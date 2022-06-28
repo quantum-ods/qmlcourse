@@ -36,7 +36,8 @@ ENV CONDA_DIR=/opt/conda \
 ENV PATH="${SHELL}:${PATH}"
 ENV PATH="${CONDA_DIR}/bin:${PATH}"
 EXPOSE 8989
-# ENTRYPOINT ["/bin/bash", "-c"]
+ENTRYPOINT ["bash"]
 
 # Starting jupyter lab
-# ENTRYPOINT ["conda", "run", "--name=qmlcourse","jupyter", "lab", "--ip=127.0.0.1", "--allow-root", "--p=8989"]
+# conda activate qmlcourse
+# jupyter lab --allow-root --port 8989
