@@ -35,14 +35,7 @@ Refer to [Contributing Guide](./CONTRIBUTING.md) for the definition of all contr
 
 ### Discussions & Issues
 
-Some ideas, suggestions, remarks, etc. you can write on the
-<a href="https://github.com/quantum-ods/qmlcourse/discussions">
-    <img alt="shield_discussions" src="https://img.shields.io/github/discussions/quantum-ods/qmlcourse">
-</a> page.
-Also, we have
-<a href="https://github.com/quantum-ods/qmlcourse/issues">
-    <img alt="shield_issues" src="https://img.shields.io/github/issues/quantum-ods/qmlcourse">
-</a>.
+Some ideas, suggestions, remarks, etc. you can write on the [discussions](https://github.com/quantum-ods/qmlcourse/discussions) page. Also, we have [issues](https://github.com/quantum-ods/qmlcourse/issues).
 
 ## Course Program
 
