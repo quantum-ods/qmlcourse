@@ -58,15 +58,13 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3B94SZ0WNF"></script>
 <script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-51362752-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-3B94SZ0WNF');
+                </script>
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
@@ -680,6 +678,11 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../en/linalg_intro.html">
+   ⬜ About
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../en/vectors.html">
    🟦 Vectors
   </a>
@@ -1075,10 +1078,10 @@ b = array([[0., 0.],
 c = array([[1., 0., 0.],
        [0., 1., 0.],
        [0., 0., 1.]])
-q = array([[0.24688798, 0.63785738, 0.3401404 , 0.0750334 , 0.31853982,
-        0.76887955, 0.47758042, 0.29494615, 0.92075133, 0.78191385,
-        0.78979339, 0.13440072, 0.27343233, 0.94326149, 0.42261526,
-        0.26228688, 0.26255484, 0.88949397, 0.94587256, 0.18100983]])
+q = array([[0.85185594, 0.75092896, 0.98270259, 0.91650424, 0.67722515,
+        0.42052336, 0.22134819, 0.1157866 , 0.86199285, 0.24662367,
+        0.60309068, 0.00655883, 0.43865912, 0.10141548, 0.84026941,
+        0.31964677, 0.18807198, 0.3159119 , 0.99195717, 0.02280443]])
 </pre></div>
 </div>
 </div>
@@ -1389,15 +1392,15 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 np.eye(3, k=-1, dtype=int) = array([[0, 0, 0],
        [1, 0, 0],
        [0, 1, 0]])
-np.random.beta(1, 2) = 0.4068434949354081
-np.random.randint(1, 5, (2, 3)) = array([[4, 1, 2],
-       [4, 2, 2]])
-a = array([[4, 1, 4],
-       [3, 2, 4],
-       [3, 4, 1]])
-a = array([[4, 1, 4],
-       [3, 4, 4],
-       [3, 4, 4]])
+np.random.beta(1, 2) = 0.010862463203811833
+np.random.randint(1, 5, (2, 3)) = array([[3, 2, 2],
+       [4, 3, 3]])
+a = array([[1, 4, 2],
+       [1, 4, 3],
+       [1, 4, 4]])
+a = array([[4, 4, 2],
+       [1, 4, 3],
+       [1, 4, 4]])
 np.diag(a) = array([4, 4, 4])
 </pre></div>
 </div>
