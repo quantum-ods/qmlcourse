@@ -2,7 +2,7 @@
 
 # QMLCourse
 
-<a href="https://quantum-ods.github.io/qmlcourse/book/index.html" target="_blank">
+<a href="https://quantum-ods.github.io/qmlcourse/" target="_blank">
     <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fquantum-ods.github.io%2Fqmlcourse%2Fbook%2Findex.html">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse" target="_blank">
