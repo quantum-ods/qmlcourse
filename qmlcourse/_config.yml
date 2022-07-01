@@ -17,7 +17,7 @@ html:
   use_repository_button: true
   use_issues_button: true
   baseurl: https://quantum-ods.github.io/qmlcourse/book/
-  google_analytics_id: UA-51362752-1
+  google_analytics_id: G-3B94SZ0WNF
 
 notebook_interface: "notebook"
 
