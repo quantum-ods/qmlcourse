@@ -32,7 +32,6 @@ jobs:
           installer-parallel: true
 
       - name: load cached venv
-        id: cached-poetry-dependencies
         uses: actions/cache@v2
         with:
           path: .venv

@@ -7,14 +7,14 @@ jobs:
 
   create_folder_for_latex:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 1
 
     steps:
-      - name: checkout to `web-page-stage` branch
+      - name: checkout to building branch
         uses: actions/checkout@v3
         with:
           ref: web-page-stage
-      
+
       - run: |
           mkdir ./latex/
 
@@ -44,7 +44,7 @@ jobs:
           installer-parallel: true
 
       - name: load cached venv
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
@@ -60,7 +60,7 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: update publish dir to `web-page-stage`
+      - name: update publish dir to building branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -73,7 +73,7 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse --builder latex
 
-      - name: update latex dir to `web-page-stage`
+      - name: update latex dir to building branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
