@@ -1,0 +1,24 @@
+name: pre-commits
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+
+  pre_commits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v4
+
+      - name: run pre-commit action
+        uses: pre-commit/action@v3.0.0
+        with:
+          extra_args: --all-files
