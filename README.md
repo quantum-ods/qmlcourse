@@ -13,8 +13,8 @@
 </a>
 
 <p align="left">
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
-    <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commits.yml">
+    <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commits.yml/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book-master.yml">
     <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book-master.yml/badge.svg">
