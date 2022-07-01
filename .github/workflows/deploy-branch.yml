@@ -52,9 +52,9 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse --builder latex
 
-      - name: update publish dir to `deploy-any-branch`
+      - name: update publish dir to `web-page-stage`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
-          publish_branch: deploy-any-branch
+          publish_branch: web-page-stage
