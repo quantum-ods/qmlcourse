@@ -49,15 +49,15 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: build latex files
-        run: |
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
-
-          poetry run jupyter-book build ./qmlcourse --builder latex
-
-      - name: gh-pages action to `web-page-master`
+      - name: update publish dir to `web-page-master`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: web-page-master
+
+      - name: build latex files
+        run: |
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+
+          poetry run jupyter-book build ./qmlcourse --builder latex

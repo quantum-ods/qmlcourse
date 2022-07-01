@@ -11,14 +11,14 @@ jobs:
 
     steps:
       - name: checkout branch for build
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: install imagemagick
         run: |
           sudo apt install -y imagemagick
 
       - name: set up py3.8
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8
 
@@ -30,7 +30,7 @@ jobs:
           installer-parallel: true
 
       - name: load cached venv
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
@@ -45,6 +45,13 @@ jobs:
           poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
 
           poetry run jupyter-book build ./qmlcourse
+
+      - name: update publish dir to `web-page-stage`
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/html/
+          publish_branch: web-page-stage
 
       - name: build latex files
         run: |
