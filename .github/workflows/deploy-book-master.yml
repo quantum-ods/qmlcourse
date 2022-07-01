@@ -62,7 +62,7 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: update publish dir to `web-page-master`
+      - name: update publish dir to building branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -74,3 +74,11 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
 
           poetry run jupyter-book build ./qmlcourse --builder latex
+
+      - name: update latex dir to building branch
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/html/
+          destination_dir: ./latex/
+          publish_branch: web-page-master
