@@ -57,9 +57,9 @@ Building the PDF-version of the book is very time-expensive and could not be aut
 
   ```
   git clone https://github.com/quantum-ods/qmlcourse.git
-  cd qmlcourse
-  git checkout gh-artifacts
-  cd _build/latex
+  cd qmlcourse/
+  git checkout web-page-master
+  cd latex/
   ```
 
   ```
