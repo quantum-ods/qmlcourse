@@ -58,15 +58,13 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3B94SZ0WNF"></script>
 <script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-51362752-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-3B94SZ0WNF');
+                </script>
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
@@ -1080,10 +1078,10 @@ b = array([[0., 0.],
 c = array([[1., 0., 0.],
        [0., 1., 0.],
        [0., 0., 1.]])
-q = array([[0.39510743, 0.21264886, 0.93280463, 0.64639226, 0.74759134,
-        0.23541921, 0.09783793, 0.15255043, 0.31589534, 0.4667414 ,
-        0.16839605, 0.42312147, 0.1706585 , 0.66170054, 0.36766682,
-        0.63120876, 0.05718094, 0.66645987, 0.35090099, 0.98426589]])
+q = array([[0.50092296, 0.03584521, 0.85778861, 0.70663551, 0.50539529,
+        0.98317336, 0.45910032, 0.41367314, 0.70866621, 0.24754257,
+        0.80392416, 0.62862932, 0.82922112, 0.63865667, 0.63742287,
+        0.95982011, 0.271036  , 0.73936265, 0.97771529, 0.04022721]])
 </pre></div>
 </div>
 </div>
@@ -1394,15 +1392,15 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 np.eye(3, k=-1, dtype=int) = array([[0, 0, 0],
        [1, 0, 0],
        [0, 1, 0]])
-np.random.beta(1, 2) = 0.3732871547678465
-np.random.randint(1, 5, (2, 3)) = array([[4, 4, 3],
-       [1, 2, 4]])
-a = array([[4, 3, 3],
+np.random.beta(1, 2) = 0.5827833391887044
+np.random.randint(1, 5, (2, 3)) = array([[4, 1, 4],
+       [3, 2, 4]])
+a = array([[3, 4, 2],
        [4, 3, 1],
-       [3, 1, 4]])
-a = array([[4, 3, 3],
+       [2, 1, 4]])
+a = array([[4, 4, 2],
        [4, 4, 1],
-       [3, 1, 4]])
+       [2, 1, 4]])
 np.diag(a) = array([4, 4, 4])
 </pre></div>
 </div>

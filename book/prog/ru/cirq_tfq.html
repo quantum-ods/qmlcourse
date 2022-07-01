@@ -60,15 +60,13 @@ const thebe_selector_output = ".output, .cell_output"
 
     <!-- Google Analytics -->
     
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3B94SZ0WNF"></script>
 <script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-51362752-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-3B94SZ0WNF');
+                </script>
 
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
@@ -1192,7 +1190,7 @@ dtype: float64
 100 сэмплов: (0, 0)    0.54
 dtype: float64
 
-1000 сэмплов: (0, 0)    0.489
+1000 сэмплов: (0, 0)    0.482
 dtype: float64
 </pre></div>
 </div>
@@ -1210,7 +1208,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=0110110101111001001010101
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=1101010001110101010011101
 </pre></div>
 </div>
 </div>
@@ -1475,11 +1473,11 @@ _________________________________________________________________
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.29 s, sys: 66.2 ms, total: 4.35 s
-Wall time: 3.93 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.33 s, sys: 73.8 ms, total: 4.4 s
+Wall time: 3.97 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f213d1a8c70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f9e2cbcf520&gt;
 </pre></div>
 </div>
 </div>
