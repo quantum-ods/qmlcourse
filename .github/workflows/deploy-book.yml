@@ -55,9 +55,9 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse --builder latex
 
-      - name: gh-pages action to `pages-gh`
+      - name: gh-pages action to `web-page-master`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
-          publish_branch: pages-gh
+          publish_branch: web-page-master

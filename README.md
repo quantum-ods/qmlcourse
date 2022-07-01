@@ -2,7 +2,7 @@
 
 # QMLCourse
 
-<a href="https://quantum-ods.github.io/qmlcourse/book/index.html" target="_blank">
+<a href="https://quantum-ods.github.io/qmlcourse/" target="_blank">
     <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fquantum-ods.github.io%2Fqmlcourse%2Fbook%2Findex.html">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse" target="_blank">
@@ -19,7 +19,7 @@
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
     <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
-  <a href="https://qmlc-deploy-branch.netlify.app/book/index.html">
+  <a href="https://qmlc-web-page-stage.netlify.app/">
     <img alt="netlify_status" src="https://api.netlify.com/api/v1/badges/ff3a4d3f-49a9-47db-9335-364525652b89/deploy-status">
   </a>
 </p>
