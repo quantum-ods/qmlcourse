@@ -5,7 +5,21 @@ on:
 
 jobs:
 
+  create_folder_for_latex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: checkout to `web-page-stage` branch
+        uses: actions/checkout@v3
+        with:
+          ref: web-page-stage
+      
+      - run: |
+          mkdir ./latex/
+
   deploy_branch:
+    needs: [create_folder_for_latex]
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -52,16 +66,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: web-page-stage
-
-      - name: checkout to `web-page-stage` branch & create folder for latex
-        uses: actions/checkout@v3
-        with:
-          ref: web-page-stage
-      - run: |
-          mkdir ./latex/
-
-      - name: checkout to branch where it was run
-        uses: actions/checkout@v3
 
       - name: build latex files
         run: |
