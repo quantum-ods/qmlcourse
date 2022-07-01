@@ -110,7 +110,7 @@ make build-linux-macos
 ```
 
 ```{hint}
-Первая команда установит `Python`, [`poetry`](https://python-poetry.org) - это еще один менеджер, который отвечает за управление библиотеками `Python` и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет [jupyter book](https://jupyterbook.org/intro.html), то что по ссылке [https://quantum-ods.github.io/qmlcourse/book/index.html](https://quantum-ods.github.io/qmlcourse/book/index.html) (так что можете не выполнять если не хотите, трава и так будет расти)
+Первая команда установит `Python`, [`poetry`](https://python-poetry.org) - это еще один менеджер, который отвечает за управление библиотеками `Python` и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет [jupyter book](https://jupyterbook.org/intro.html), то что по ссылке [https://quantum-ods.github.io/qmlcourse/](https://quantum-ods.github.io/qmlcourse/) (так что можете не выполнять если не хотите, трава и так будет расти)
 ```
 
 ### Colab
