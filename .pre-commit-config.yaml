@@ -48,7 +48,7 @@ repos:
     hooks:
       - id: mypy
 
-- repo: https://github.com/ComPWA/mirrors-pyright
+  - repo: https://github.com/ComPWA/mirrors-pyright
     rev: v1.1.256
     hooks:
       - id: pyright
