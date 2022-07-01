@@ -53,15 +53,26 @@ jobs:
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: web-page-stage
 
+      - name: checkout to `web-page-stage` branch & create folder for latex
+        uses: actions/checkout@v3
+        with:
+          ref: web-page-stage
+      - run: |
+          mkdir ./latex/
+
+      - name: checkout to branch where it was run
+        uses: actions/checkout@v3
+
       - name: build latex files
         run: |
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
 
           poetry run jupyter-book build ./qmlcourse --builder latex
 
-      - name: update publish dir to `web-page-stage`
+      - name: update latex dir to `web-page-stage`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
+          destination_dir: ./latex/
           publish_branch: web-page-stage
