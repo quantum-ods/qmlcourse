@@ -1,5 +1,0 @@
-# Список литературы / Bibliography
-
-```{bibliography}
-
-```
