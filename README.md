@@ -54,18 +54,17 @@ Some ideas, suggestions, remarks, etc. you can write on the [discussions](https:
 Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
 
 - `xelatex` (for Debian-based Linux platforms ):
+  ```
+  sudo apt-get install texlive-latex-recommended texlive-latex-extra \
+                       texlive-fonts-recommended texlive-fonts-extra \
+                       texlive-xetex latexmk
+  ```
 
   ```
   git clone https://github.com/quantum-ods/qmlcourse.git
   cd qmlcourse/
   git checkout web-page-master
   cd latex/
-  ```
-
-  ```
-  sudo apt-get install texlive-latex-recommended texlive-latex-extra \
-                       texlive-fonts-recommended texlive-fonts-extra \
-                       texlive-xetex latexmk
   ```
 
   ```
