@@ -63,6 +63,12 @@ Building the PDF-version of the book is very time-expensive and could not be aut
   ```
 
   ```
+  sudo apt-get install texlive-latex-recommended texlive-latex-extra \
+                       texlive-fonts-recommended texlive-fonts-extra \
+                       texlive-xetex latexmk
+  ```
+
+  ```
   xelatex -interaction nonstopmode qmlcourse.tex
   ```
 
