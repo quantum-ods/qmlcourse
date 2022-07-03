@@ -18,7 +18,7 @@ jobs:
           ref: web-page-master
 
       - run: |
-          mkdir ./latex/
+          mkdir -p ./latex/
 
   deploy_book_master:
     needs: [create_folder_for_latex]
@@ -33,11 +33,6 @@ jobs:
         run: |
           sudo apt install -y imagemagick
 
-      - name: set up py3.8
-        uses: actions/setup-python@v2.2.2
-        with:
-          python-version: 3.8
-
       - name: set up poetry
         uses: snok/install-poetry@v1.3.1
         with:
@@ -45,11 +40,11 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
 
-      - name: load cached venv
-        uses: actions/cache@v2
+      - name: set up py3.8
+        uses: actions/setup-python@v4
         with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+          python-version: 3.8
+          cache: 'poetry'
 
       - name: install dependencies
         run: |
