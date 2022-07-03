@@ -16,8 +16,8 @@
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
     <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
-    <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book-master.yml">
+    <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book-master.yml/badge.svg">
   </a>
   <a href="https://qmlc-web-page-stage.netlify.app/">
     <img alt="netlify_status" src="https://api.netlify.com/api/v1/badges/ff3a4d3f-49a9-47db-9335-364525652b89/deploy-status">
@@ -53,13 +53,18 @@ Some ideas, suggestions, remarks, etc. you can write on the [discussions](https:
 
 Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
 
-`xelatex` (Linux):
+- `xelatex` (for Debian-based Linux platforms ):
+  ```
+  sudo apt-get install texlive-latex-recommended texlive-latex-extra \
+                       texlive-fonts-recommended texlive-fonts-extra \
+                       texlive-xetex latexmk
+  ```
 
   ```
   git clone https://github.com/quantum-ods/qmlcourse.git
-  cd qmlcourse
-  git checkout gh-artifacts
-  cd _build/latex
+  cd qmlcourse/
+  git checkout web-page-master
+  cd latex/
   ```
 
   ```
