@@ -16,7 +16,14 @@ RUN poetry install --no-interaction --no-root
 RUN poetry run python scripts/convert2ipynb.py
 RUN poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
 RUN poetry run jupyter-book build ./qmlcourse --keep-going
+RUN apt update && apt -y install texlive-latex-recommended texlive-latex-extra \
+                       texlive-fonts-recommended texlive-fonts-extra \
+                       texlive-xetex latexmk
 RUN poetry run jupyter-book build ./qmlcourse --builder latex --keep-going
+
+CMD["/bin/bash"]
+
+# xelatex -interaction nonstopmode qmlcourse.tex
 
 ####
 # Purpose of this stage is to get all packages from lectures and jupyter lab to interact with lectures.
