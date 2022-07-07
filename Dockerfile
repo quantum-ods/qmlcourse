@@ -2,27 +2,30 @@
 # Purpose of the builder is to make all lectures, convert them into ipython notebooks (.ipynb). This operation is time costly and take a lot of space on the HDD.
 # After that we could use lightweight environment
 ####
-
+ARG GIT-BRANCH=master
 FROM ubuntu:20.04 as dev
-
-RUN apt update && apt install -y build-essential && apt install -y wget
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/London
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt update && apt install -y build-essential git wget tzdata
 RUN apt update && apt install -y python3-pip
 RUN python3 -m pip install poetry
+RUN apt update && apt install -y
+# Needed if we pull from dockerhub without local repo.
+# RUN git clone https://github.com/quantum-ods/qmlcourse.git
 
-#RUN apt update && apt install -y git && git clone https://github.com/quantum-ods/qmlcourse.git
 WORKDIR qmlcourse
 COPY . .
+# RUN git checkout ${GIT-BRANCH}
 RUN poetry install --no-interaction --no-root
-RUN poetry run python scripts/convert2ipynb.py
-RUN poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
-RUN poetry run jupyter-book build ./qmlcourse --keep-going
-RUN apt update && apt -y install texlive-latex-recommended texlive-latex-extra \
-                       texlive-fonts-recommended texlive-fonts-extra \
-                       texlive-xetex latexmk
-RUN poetry run jupyter-book build ./qmlcourse --builder latex --keep-going
-
-CMD["/bin/bash"]
-
+RUN apt update && apt install -y texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
+# ENTRYPOINT ["/bin/bash"]
+# RUN poetry run python scripts/convert2ipynb.py
+# RUN poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
+# RUN poetry run jupyter-book build ./qmlcourse --keep-going
+# # Get latex file
+# RUN poetry run jupyter-book build ./qmlcourse --builder latex --keep-going
+# Building pdf
 # xelatex -interaction nonstopmode qmlcourse.tex
 
 ####
