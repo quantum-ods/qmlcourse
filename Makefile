@@ -31,22 +31,4 @@ install-python-dependencies:
 
 build-linux-macos:
 #	cd $(HOME)/psi4conda/etc/profile.d/ && source conda.sh && conda activate && cd - && poetry run psi4 --test
-	poetry run jupyter-book build ./qmlcourseRU
-
-install-windows:
-	cmd /C curl https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe --output "%TMP%\python-3.8.5.exe" && "%TMP%\python-3.8.5.exe" /silent
-	cmd /C curl https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py --output "%TMP%\get-poetry.py"
-	cmd /C py -V
-
-	cmd /C py "%TMP%\get-poetry.py"
-#	cmd /C "C:\tools\miniconda3\Scripts\conda install psi4=1.4rc4.dev1 python=3.8 -c psi4/label/dev -c conda-forge"
-#	cmd /C "%USERPROFILE%\.poetry\bin\poetry remove tensorflow-quantum"
-
-	cmd /C "%USERPROFILE%\.poetry\bin\poetry install"
-
-build-windows:
-#	cmd /C "%USERPROFILE%\.poetry\bin\poetry run psi4 --test"
-	cmd /C "%USERPROFILE%\.poetry\bin\poetry run jupyter-book build ./qmlcourseRU"
-
-# install-psi4:
-# 	bash Psi4conda-1.4rc3-py38.sh -b -u -p $(HOME)/psi4conda
+	poetry run jupyter-book build ./qmlcourse
