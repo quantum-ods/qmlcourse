@@ -17,6 +17,7 @@ def convert_md2ipynb(toc: List[Dict[str, Dict]]) -> None:
     for part in toc[1:]:
         for chapter in part["chapters"]:
             file_path = PREFIX / Path(chapter["file"])
+            print(file_path)
             call(["poetry", "run", "jupytext", file_path.absolute(), "--to", "ipynb"])
             os.makedirs(
                 Path("notebooks") / Path("/".join(chapter["file"].split("/")[1:-1])),
@@ -25,7 +26,7 @@ def convert_md2ipynb(toc: List[Dict[str, Dict]]) -> None:
             try:
                 os.replace(
                     PREFIX / Path(chapter["file"].split(".")[0] + ".ipynb"),
-                    Path("notebooks") / Path("/".join(chapter["file"].split("/")[1:]) + ".ipynb"),
+                    Path("notebooks") / Path("/".join(chapter["file"].split(".")[0].split("/")[1:]) + ".ipynb"),
                 )
             except FileNotFoundError:
                 print("Problem with", Path(chapter["file"]))
