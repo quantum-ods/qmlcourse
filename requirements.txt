@@ -12,3 +12,5 @@ scikit-learn>=0.24.1
 sympy==1.8
 tensorflow-quantum==0.6.0
 tensorflow==2.7.2
+pre-commit
+jupytext
