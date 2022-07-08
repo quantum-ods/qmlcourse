@@ -513,7 +513,6 @@ _build*
 
 # VSCode settings dir
 .vscode
-_tmp_notebooks
 
 # Notebooks dir
 notebooks
