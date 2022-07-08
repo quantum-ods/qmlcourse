@@ -513,6 +513,4 @@ _build*
 
 # VSCode settings dir
 .vscode
-
-# Docker volume
-lecture_notebooks
+_tmp_notebooks

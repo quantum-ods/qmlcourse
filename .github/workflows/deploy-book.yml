@@ -2,11 +2,6 @@ name: deploy-book
 
 on:
   workflow_dispatch:
-    inputs:
-      DisableCache:
-        description: 'Disable cache'
-        required: false
-        default: 'false'
   push:
     branches: [ master ]
 
@@ -14,83 +9,55 @@ jobs:
 
   deploy_book:
     runs-on: ubuntu-latest
-    env:
-      TF_CPP_MIN_LOG_LEVEL: 3
+    timeout-minutes: 20
 
     steps:
-      - name: Checkout branch for build
+      - name: checkout branch for build
         uses: actions/checkout@v2
 
-      - name: Checkout branch with cache
-        uses: actions/checkout@v2
-        with:
-          ref: "gh-pages"
-          path: ./gh-pages
-
-      - name: Copy cache for build book
-        if: ${{ github.event.inputs.DisableCache != 'true' }}
+      - name: install imagemagick
         run: |
-          cp -r ./gh-pages/_build/ ./qmlcourseRU/ || exit 0
+          sudo apt install -y imagemagick
 
-      # Install dependencies
-      - name: Set up Python 3.8
+      - name: set up py3.8
         uses: actions/setup-python@v2.2.2
         with:
           python-version: 3.8
 
-      - name: Set up poetry
-        uses: snok/install-poetry@v1.1.6
+      - name: set up poetry
+        uses: snok/install-poetry@v1.3.1
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
+          installer-parallel: true
 
-      #Use cache
-      - name: Copy cache dir for dependecies
+      - name: load cached venv
+        id: cached-poetry-dependencies
         uses: actions/cache@v2
-        env:
-          cache-name: cache-poetry-modules
         with:
           path: .venv
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
 
-      - name: Install dependencies
+      - name: install dependencies
         run: |
-          poetry install
+          poetry install --no-interaction --no-root
 
-      # todo: replace with a more sane solution
-      - name: install tensorflow_quantum # https://www.tensorflow.org/quantum/install
+      - name: build the book
         run: |
-          poetry run pip install --upgrade pip
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
 
-          poetry run pip install -U tensorflow==2.5.1
-          poetry run pip install -U tensorflow_quantum
-          poetry run pip install -U tfq-nightly
+          poetry run jupyter-book build ./qmlcourse
 
-      - name: export some tokens
-        env:
-          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+      - name: build latex files
         run: |
-          export DWAVE_TOKEN="$DWAVE_TOKEN"
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
 
-      - name: Build the book
-        run: |
-          poetry run jupyter-book build ./qmlcourseRU
+          poetry run jupyter-book build ./qmlcourse --builder latex
 
-      # Push the book's HTML to github-pages
-      - name: GitHub Pages action
+      - name: gh-pages action to `pages-gh`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU
-
-      - name: Build PDF file
-        run: |
-          poetry run jupyter-book build ./qmlcourseRU --builder pdfhtml
-          mv ./qmlcourseRU/_build/pdf/book.pdf ./qmlcourseRU/_build/pdf/all_book.pdf
-
-      - name: Deploy only pdf files
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourseRU/_build/pdf/
-          destination_dir: pdf
+          publish_dir: ./qmlcourse/_build/html/
+          publish_branch: pages-gh

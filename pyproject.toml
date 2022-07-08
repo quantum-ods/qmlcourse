@@ -1,30 +1,38 @@
 [tool.poetry]
-name = "qmlcourse.ai"
+name = "qmlcourse"
 version = "0.1.1"
 description = ""
-authors = ["SemyonSinchenko <semyonsinchenko@yahoo.com>"]
+authors = ["Quantum Machine Learning Community Course <qmlcourse.ods@gmail.com>"]
 license = "CCBY-4.0"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<=3.9"
-PennyLane = "^0.18.0"
-numpy = "^1.19.2"
+cirq = "0.11.0"
+dwave-system = "^1.10.0"
+dwavebinarycsp = "^0.1.3"
+jupyter-book = "0.13"
 matplotlib = "^3.3.4"
-jupyter-book = "^0.10.1"
-scikit-learn = "^0.24.1"
-cirq = "^0.11.0"
-pre-commit = "^2.13.0"
+networkx = "^2.6.3"
+numpy = "^1.19.2"
+paramiko = "^2.10.1"
+penaltymodel-maxgap = "^0.5.5"
+PennyLane = "0.20.0"
+pylatexenc = "^2.10"
 pyppeteer  = "^0.2.6"
 pyyaml  = "^5.4.1"
 qiskit = "^0.31.0"
-dwave-system = "^1.10.0"
-dwavebinarycsp = "^0.1.3"
-networkx = "^2.6.3"
-penaltymodel-maxgap = "^0.5.5"
-sympy = "1.5"
-pylatexenc = "^2.10"
-paramiko = "^2.8.0"
+scikit-learn = "^0.24.1"
 scp = "^0.14.1"
+sympy = "1.8"
+netket = "^3.2"
+sphinx-sitemap = "^2.2.0"
+sphinx-jupyterbook-latex = "^0.4.6"
+tensorflow = "2.7.2"
+tensorflow-quantum = "0.6.0"
+
+Jinja2 = "3.0.3"
+# [tool.poetry.dev-dependencies]
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
