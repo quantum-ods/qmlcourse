@@ -5,23 +5,23 @@ on:
 
 jobs:
 
-  create_folder_for_latex:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
+  # create_folder_for_latex:
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 1
 
-    steps:
-      - name: checkout to building branch
-        uses: actions/checkout@v3
-        with:
-          ref: web-page-stage
+  #   steps:
+  #     - name: checkout to building branch
+  #       uses: actions/checkout@v3
+  #       with:
+  #         ref: web-page-stage
 
-      - run: |
-          mkdir -p ./latex/
+  #     - run: |
+  #         mkdir -p ./latex/
 
   deploy_book_stage:
-    needs: [create_folder_for_latex]
+    # needs: [create_folder_for_latex]
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: checkout branch for build
@@ -62,16 +62,23 @@ jobs:
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: web-page-stage
 
-      - name: build latex files
+      - name: build pdf book
         run: |
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
 
+          sudo apt-get install texlive-latex-recommended \
+                               texlive-latex-extra texlive-fonts-recommended \
+                               texlive-fonts-extra texlive-xetex latexmk
+
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourse --builder latex
 
-      - name: update latex dir to building branch
+          cd latex
+          xelatex -interaction nonstopmode qmlcourse.tex
+
+      - name: send pdf book to building branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/latex/
-          destination_dir: ./latex/
+          publish_dir: ./qmlcourse/_build/latex/qmlcourse.pdf
+          # destination_dir: ./latex/
           publish_branch: web-page-stage
