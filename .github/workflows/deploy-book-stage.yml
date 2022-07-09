@@ -72,7 +72,7 @@ jobs:
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
-        if: ${{ success() || failure() }}
+        if: always()
         run: |
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
