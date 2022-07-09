@@ -2,17 +2,20 @@
 
 # QMLCourse
 
-<a href="https://quantum-ods.github.io/qmlcourse/" target="_blank">
-    <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fquantum-ods.github.io%2Fqmlcourse%2Fbook%2Findex.html">
+<a href="https://quantum-ods.github.io/qmlcourse/">
+    <img alt="shield_website_jb" src="https://img.shields.io/badge/jb-nightly--buil-blueviolet?style=for-the-badge">
 </a>
-<a href="https://ods.ai/tracks/qmlcourse" target="_blank">
-    <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=critical&up_message=ods.ai&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
-<a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
-    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse?style=for-the-badge">
+<a href="https://ods.ai/tracks/qmlcourse">
+    <img alt="shield_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
 </a>
+<a href="https://github.com/quantum-ods/qmlcourse/raw/web-page-master/latex/qmlcourse.pdf">
+    <img alt="shield_download_pdf_book" src="https://img.shields.io/badge/pdf%20book-download-information?style=for-the-badge">
 </a>
 
 <p align="left">
+  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
+    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse">
+  </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
     <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
@@ -48,28 +51,6 @@ Some ideas, suggestions, remarks, etc. you can write on the [discussions](https:
 - **YELLOW** &mdash; highly recommended facultative lectures which explain additional topics about QML and QC;
 - **RED** &mdash; advanced-level lectures that deeply explain the math and the principles underlying QML.
 - **WHITE** &mdash; career in quantum computations and quantum QML
-
-## Build the book
-
-Building the PDF-version of the book is very time-expensive and could not be automated via GutHub actions. If you want the PDF-version of the book you should run the following commands:
-
-- `xelatex` (for Debian-based Linux platforms):
-  ```
-  sudo apt-get install texlive-latex-recommended texlive-latex-extra \
-                       texlive-fonts-recommended texlive-fonts-extra \
-                       texlive-xetex latexmk
-  ```
-
-  ```
-  git clone https://github.com/quantum-ods/qmlcourse.git
-  cd qmlcourse/
-  git checkout web-page-master
-  cd latex/
-  ```
-
-  ```
-  xelatex -interaction nonstopmode qmlcourse.tex
-  ```
 
 ## Team
 
