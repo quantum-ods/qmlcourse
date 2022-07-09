@@ -1,28 +1,63 @@
-name: check-links
+name: test-makefile-os
 
+# Only run this when the master branch changes
 on:
   workflow_dispatch:
+    inputs:
+      os:
+        description: 'Choose OS for test'
+        required: false
+        default: 'ubuntu-latest, macos-latest'
 
 jobs:
 
-  check_links:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+  deploy-book-linux:
+    if: contains(github.event.inputs.os, 'ubuntu-latest')
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
-      - name: checkout branch for build
-        uses: actions/checkout@v3
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
 
-      - name: set up py3.8
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8
-
-      - name: install dependencies
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
-          pip install -U jupyter-book sphinx-sitemap
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
 
-      - name: check links
+      - name: Install dependencies
+        run: make install-${{ matrix.os }}
+
+      - name: Build the book
         run: |
-          jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
-          jupyter-book build ./qmlcourse --builder linkcheck
+          export DWAVE_TOKEN=${{ secrets.DWAVE_TOKEN }}
+          make build-linux-macos
+
+  deploy-book-macos:
+    if: contains(github.event.inputs.os, 'macos-latest')
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout branch for build
+        uses: actions/checkout@v2
+
+      - name: export some tokens
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          export DWAVE_TOKEN="$DWAVE_TOKEN"
+
+      - name: Install dependencies
+        run: make install-${{ matrix.os }}
+
+      - name: Build the book
+        run: |
+          make build-linux-macos
