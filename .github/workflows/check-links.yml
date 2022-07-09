@@ -1,0 +1,28 @@
+name: check-links
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  check_links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: checkout branch for build
+        uses: actions/checkout@v3
+
+      - name: set up py3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: install dependencies
+        run: |
+          pip install -U jupyter-book sphinx-sitemap
+
+      - name: check links
+        run: |
+          jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
+          jupyter-book build ./qmlcourse --builder linkcheck
