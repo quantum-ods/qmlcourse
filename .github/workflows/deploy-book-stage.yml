@@ -74,7 +74,7 @@ jobs:
       - name: create pdf book
         run: |
           cd ./qmlcourse/_build/latex/
-          xelatex -interaction=nonstopmode qmlcourse.tex
+          xelatex -interaction=nonstopmode -halt-on-error qmlcourse.tex
 
       - name: send pdf book to building branch
         uses: peaceiris/actions-gh-pages@v3.8.0
