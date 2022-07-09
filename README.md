@@ -2,17 +2,20 @@
 
 # QMLCourse
 
-<a href="https://quantum-ods.github.io/qmlcourse/" target="_blank">
-    <img alt="shield_website_jb" src="https://img.shields.io/website?style=for-the-badge&up_color=blueviolet&up_message=nightly-build&url=https%3A%2F%2Fquantum-ods.github.io%2Fqmlcourse%2Fbook%2Findex.html">
+<a href="https://quantum-ods.github.io/qmlcourse/">
+    <img alt="shield_website_jb" src="https://img.shields.io/badge/jb-nightly--buil-blueviolet?style=for-the-badge">
 </a>
-<a href="https://ods.ai/tracks/qmlcourse" target="_blank">
-    <img alt="shield_website_ods" src="https://img.shields.io/website?style=for-the-badge&up_color=critical&up_message=ods.ai&url=https%3A%2F%2Fods.ai%2Ftracks%2Fqmlcourse">
-<a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
-    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse?style=for-the-badge">
+<a href="https://ods.ai/tracks/qmlcourse">
+    <img alt="shield_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
 </a>
+<a href="https://github.com/quantum-ods/qmlcourse/raw/web-page-stage/latex/qmlcourse.pdf">
+    <img alt="shield_download_pdf_book" src="https://img.shields.io/badge/pdf%20book-download-information?style=for-the-badge">
 </a>
 
 <p align="left">
+  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
+    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse">
+  </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
     <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
