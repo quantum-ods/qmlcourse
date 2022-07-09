@@ -215,7 +215,7 @@
     - file: book/acknowledgments.md
     - file: book/leaderboard.md
     - url: https://github.com/quantum-ods/qmlcourse/raw/web-page-stage/latex/qmlcourse.pdf
-      title: Скачать книгу (pdf) / Download the book (pdf)
+      title: Скачать pdf книгу / Download pdf book
 
 # :en:
 
