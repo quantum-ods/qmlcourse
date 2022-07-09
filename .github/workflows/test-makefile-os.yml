@@ -24,4 +24,5 @@ jobs:
 
       - name: check links
         run: |
+          jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
           jupyter-book build ./qmlcourse --builder linkcheck
