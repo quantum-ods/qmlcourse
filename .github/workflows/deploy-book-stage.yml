@@ -72,9 +72,10 @@ jobs:
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
+        if: ${{ success() || failure() }}
         run: |
           cd ./qmlcourse/_build/latex/
-          xelatex -interaction=nonstopmode -halt-on-error qmlcourse.tex
+          xelatex -interaction=nonstopmode qmlcourse.tex
 
       - name: send pdf book to building branch
         uses: peaceiris/actions-gh-pages@v3.8.0
