@@ -5,21 +5,21 @@ on:
 
 jobs:
 
-  # create_folder_for_latex:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 1
+  create_folder_for_latex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
 
-  #   steps:
-  #     - name: checkout to building branch
-  #       uses: actions/checkout@v3
-  #       with:
-  #         ref: web-page-stage
+    steps:
+      - name: checkout to building branch
+        uses: actions/checkout@v3
+        with:
+          ref: web-page-stage
 
-  #     - run: |
-  #         mkdir -p ./latex/
+      - run: |
+          mkdir -p ./latex/
 
   deploy_book_stage:
-    # needs: [create_folder_for_latex]
+    needs: [create_folder_for_latex]
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -81,6 +81,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/latex/qmlcourse.pdf
-          # destination_dir: ./latex/
+          publish_dir: ./qmlcourse/_build/latex/
+          destination_dir: ./latex/
           publish_branch: web-page-stage
