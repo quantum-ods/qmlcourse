@@ -64,9 +64,7 @@ jobs:
 
       - name: build latex files
         run: |
-          sudo apt-get install texlive-latex-recommended \
-                               texlive-latex-extra texlive-fonts-recommended \
-                               texlive-fonts-extra texlive-xetex latexmk
+          sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
 
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourse --builder latex
