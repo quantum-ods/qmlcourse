@@ -72,7 +72,7 @@ jobs:
           export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourse --builder latex
 
-          cd latex
+          cd ./qmlcourse/_build/latex/latex
           xelatex -interaction nonstopmode qmlcourse.tex
 
       - name: send pdf book to building branch
