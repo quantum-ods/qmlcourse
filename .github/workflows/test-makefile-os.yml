@@ -20,7 +20,7 @@ jobs:
 
       - name: install dependencies
         run: |
-          pip install -U jupyter-book
+          pip install -U jupyter-book sphinx-sitemap
 
       - name: check links
         run: |
