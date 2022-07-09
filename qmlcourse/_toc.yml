@@ -214,7 +214,7 @@
     - file: book/glossary.md
     - file: book/acknowledgments.md
     - file: book/leaderboard.md
-    - url: https://github.com/quantum-ods/qmlcourse/raw/web-page-stage/latex/qmlcourse.pdf
+    - url: https://github.com/quantum-ods/qmlcourse/raw/web-page-master/latex/qmlcourse.pdf
       title: Скачать pdf книгу / Download pdf book
 
 # :en:

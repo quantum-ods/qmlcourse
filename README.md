@@ -8,7 +8,7 @@
 <a href="https://ods.ai/tracks/qmlcourse">
     <img alt="shield_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
 </a>
-<a href="https://github.com/quantum-ods/qmlcourse/raw/web-page-stage/latex/qmlcourse.pdf">
+<a href="https://github.com/quantum-ods/qmlcourse/raw/web-page-master/latex/qmlcourse.pdf">
     <img alt="shield_download_pdf_book" src="https://img.shields.io/badge/pdf%20book-download-information?style=for-the-badge">
 </a>
 
