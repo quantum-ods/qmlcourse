@@ -66,11 +66,18 @@ jobs:
 
       - name: build latex files
         run: |
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
 
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourse --builder latex
 
-      - name: update latex dir to building branch
+      - name: create pdf book
+        continue-on-error: true
+        run: |
+          cd ./qmlcourse/_build/latex/
+          xelatex -interaction=nonstopmode qmlcourse.tex
+
+      - name: send pdf book to building branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
