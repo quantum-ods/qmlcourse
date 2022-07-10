@@ -1,76 +1,112 @@
-name: test-psi4-setup
+name: deploy-book-test
 
-# Only run this when the master branch changes
 on:
   workflow_dispatch:
+  push:
+    branches: [ master ]
 
 jobs:
 
-  deploy-book:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
+  create_folder_for_latex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
 
     steps:
-      - name: Checkout branch for build
-        uses: actions/checkout@v2
-
-#       - name: Checkout branch to gh-artifacts
-#         uses: actions/checkout@v2
-#         with:
-#           ref: "gh-artifacts"
-#           path: ./gh-artifacts
-
-      - name: Copy cache for build book
-        run: |
-          cp -r ./gh-artifacts/_build/ ./qmlcourse/ || exit 0
-
-      # Install dependencies
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2.2.2
+      - name: checkout to building branch
+        if: ${{ github.ref == 'ref/heads/master' }}
+        uses: actions/checkout@v3
         with:
-          python-version: 3.8
+          ref: web-page-master  # todo: add if
 
-      - name: Set up poetry
-        uses: snok/install-poetry@v1.1.7
+      - name: checkout to building branch
+        if: ${{ github.ref != 'ref/heads/master' }}
+        uses: actions/checkout@v3
+        with:
+          ref: web-page-stage  # todo: add if
+
+      - run: |
+          mkdir -p ./latex/
+
+  deploy_book:
+    needs: [create_folder_for_latex]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: checkout branch for build
+        uses: actions/checkout@v3
+
+      - name: install imagemagick
+        run: |
+          sudo apt install -y imagemagick
+
+      - name: set up poetry
+        uses: snok/install-poetry@v1.3.1
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
+          installer-parallel: true
 
-      # Test setup conda
-      - name: Setup conda
-        uses: s-weigand/setup-conda@v1
+      - name: set up py3.8
+        uses: actions/setup-python@v4
         with:
-          update-conda: true
           python-version: 3.8
-          conda-channels: anaconda, conda-forge
+          cache: 'poetry'
 
-      # Use cache
-      - name: Copy cache dir for dependecies
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-poetry-modules
-        with:
-          path: .venv
-          key: venv2-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Install dependencies
+      - name: install dependencies
         run: |
-          poetry install
-          conda install psi4=1.4rc3 python=3.8 -c psi4/label/dev -y
+          poetry install --no-interaction --no-root
 
-      - name: poetry run psi4 --test
+      - name: build the book
         run: |
-          poetry run psi4 --test
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
 
-      - name: export some tokens
-        env:
-          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-        run: |
-          export DWAVE_TOKEN="$DWAVE_TOKEN"
-
-      - name: Build the book
-        run: |
           poetry run jupyter-book build ./qmlcourse
+
+      - name: update publish dir to building branch
+        if: ${{ github.ref == 'ref/heads/master' }}
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/html/
+          publish_branch: web-page-master
+
+      - name: update publish dir to building branch
+        if: ${{ github.ref != 'ref/heads/master' }}
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/html/
+          publish_branch: web-page-stage
+
+      - name: build latex files
+        run: |
+          sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
+
+          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
+          poetry run jupyter-book build ./qmlcourse --builder latex
+
+      - name: create pdf book
+        continue-on-error: true
+        run: |
+          cd ./qmlcourse/_build/latex/
+          xelatex -interaction=nonstopmode qmlcourse.tex
+
+      - name: send pdf book to building branch
+        if: ${{ github.ref == 'ref/heads/master' }}
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/latex/
+          destination_dir: ./latex/
+          publish_branch: web-page-master
+
+      - name: send pdf book to building branch
+        if: ${{ github.ref != 'ref/heads/master' }}
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/latex/
+          destination_dir: ./latex/
+          publish_branch: web-page-stage
