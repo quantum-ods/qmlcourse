@@ -4,7 +4,7 @@
 
 [_Jupyter book does not work with python 3.8+ on Windows_](https://github.com/jupyter/nbclient/issues/85). So, please use docker/WSL2 for the contributing instead.
 
-If packages conflicts, then update conda:
+If packages conflict, then update conda:
 
 ```shell
 conda deactivate

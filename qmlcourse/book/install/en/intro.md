@@ -8,7 +8,7 @@ Clone this repository using git or manually download using GitHub web version an
 
 ```shell
 git clone https://github.com/SemyonSinchenko/qmlcourse.git
-cd qmlcorse
+cd qmlcourse
 ```
 
 ## Poetry
@@ -29,7 +29,7 @@ Then you have to create an empty environment for the course, let's name it `qmlc
 conda create -n qmlcourse python=3.8 --yes
 ```
 
-after that, you need to activate this env by the following command
+after that, you need to activate this env by the following command (do this also after restart of the command line)
 
 ```shell
 conda activate qmlcourse
@@ -39,6 +39,12 @@ and install listener packages. On Linux and OSX you could install a stable versi
 
 ```shell
 conda install psi4 python=3.8 -c psi4 --yes
+```
+
+**Note** : If you don't want to activate env, you could use all following command with `conda run -n qmlcourse`, e.g.:
+
+```shell
+conda run -n qmlcourse conda install psi4 python=3.8 -c psi4 --yes
 ```
 
 On Windows, you need to install nightly build:
@@ -84,13 +90,13 @@ In other cases (python3, py3, pip3, poetry run, etc.), you need to know what you
 You could always use aliases and macros for shortcuts like
 
 ```bash
-alias qml='conda activate qmlcourse.ai && python -m jupyter notebook'
+alias qml='conda activate qmlcourse && python -m jupyter notebook'
 ```
 
 or for Windows:
 
 ```bat
-doskey qml=conda activate qmlcourse.ai $T python -m jupyter notebook
+doskey qml=conda activate qmlcourse $T python -m jupyter notebook
 ```
 
 And then printing `qml` in your terminal gives you the proper jupyter notebook kernel (do not forget to back up your ".dotfiles" somewhere. You could search on the Internet which files you need to back up to save all your aliases).

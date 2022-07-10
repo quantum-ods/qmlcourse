@@ -30,13 +30,13 @@ jobs:
       - name: install psi-4 Non-Windows
         if: ${{ matrix.os }} != "windows-latest"
         shell: bash -l {0}
-        run: conda install psi4 python=3.8 -c psi4 --yes
+        run: conda run -n qmlcourse conda install psi4 python=3.8 -c psi4 --yes
       - name: install psi-4 Windows
         if: ${{ matrix.os }} == "windows-latest"
-        run: conda install psi4 python=3.8 -c psi4/label/dev -c conda-forge --yes
+        run: conda run -n qmlcourse conda install psi4 python=3.8 -c psi4/label/dev -c conda-forge --yes
       - name: install all other packages
         run: |
-          python -m pip install -r requirements.txt
-          conda install -c conda-forge jupyterlab --yes
+          conda run -n qmlcourse python -m pip install -r requirements.txt
+          conda run -n qmlcourse conda install -c conda-forge jupyterlab --yes
       - name: test jupyter
-        run: jupyter --version
+        run: conda run -n qmlcourse jupyter --version
