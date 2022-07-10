@@ -12,17 +12,17 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: checkout to building branch
+      - name: checkout to `web-page-master`
         if: ${{ github.ref == 'ref/heads/master' }}
         uses: actions/checkout@v3
         with:
-          ref: web-page-master  # todo: add if
+          ref: web-page-master
 
-      - name: checkout to building branch
+      - name: checkout to `web-page-stage`
         if: ${{ github.ref != 'ref/heads/master' }}
         uses: actions/checkout@v3
         with:
-          ref: web-page-stage  # todo: add if
+          ref: web-page-stage
 
       - run: |
           mkdir -p ./latex/
@@ -64,7 +64,7 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: update publish dir to building branch
+      - name: update publish dir to `web-page-master`
         if: ${{ github.ref == 'ref/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
@@ -72,7 +72,7 @@ jobs:
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: web-page-master
 
-      - name: update publish dir to building branch
+      - name: update publish dir to `web-page-stage`
         if: ${{ github.ref != 'ref/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
@@ -93,7 +93,7 @@ jobs:
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
 
-      - name: send pdf book to building branch
+      - name: send pdf book to `web-page-master`
         if: ${{ github.ref == 'ref/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
@@ -102,7 +102,7 @@ jobs:
           destination_dir: ./latex/
           publish_branch: web-page-master
 
-      - name: send pdf book to building branch
+      - name: send pdf book to `web-page-stage`
         if: ${{ github.ref != 'ref/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
