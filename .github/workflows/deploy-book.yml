@@ -24,8 +24,7 @@ jobs:
       - name: use conditional value
         run: echo "${{ steps.condval.outputs.value }}"
 
-      - name: checkout to `${{ steps.condval.outputs.value }}`
-        if: github.ref_name == 'master'
+      - name: checkout to build branch
         uses: actions/checkout@v3
         with:
           ref: ${{ steps.condval.outputs.value }}
@@ -83,7 +82,7 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: update publish dir to `${{ steps.condval.outputs.value }}`
+      - name: update publish dir to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -104,7 +103,7 @@ jobs:
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
 
-      - name: send pdf book to `${{ steps.condval.outputs.value }}`
+      - name: send pdf book to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
