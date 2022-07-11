@@ -17,7 +17,7 @@ jobs:
         uses: haya14busa/action-cond@v1.1.0
         id: condval
         with:
-          cond: github.ref_name == 'master'
+          cond: ${{ github.ref_name == 'master' }}
           if_true: web-page-master
           if_false: web-page-stage
 
