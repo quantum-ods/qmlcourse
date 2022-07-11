@@ -12,17 +12,23 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: checkout to `web-page-master`
+
+      - name: choose ref to build
+        uses: haya14busa/action-cond@v1.1.0
+        id: condval
+        with:
+          cond: github.ref_name == 'master'
+          if_true: web-page-master
+          if_false: web-page-stage
+
+      - name: use conditional value
+        run: echo "${{ steps.condval.outputs.value }}"
+
+      - name: checkout to `${{ steps.condval.outputs.value }}`
         if: github.ref_name == 'master'
         uses: actions/checkout@v3
         with:
-          ref: web-page-master
-
-      - name: checkout to `web-page-stage`
-        if: github.ref_name != 'master'
-        uses: actions/checkout@v3
-        with:
-          ref: web-page-stage
+          ref: ${{ steps.condval.outputs.value }}
 
       - run: |
           mkdir -p ./latex/
@@ -33,6 +39,18 @@ jobs:
     timeout-minutes: 20
 
     steps:
+
+      - name: choose ref to build
+        uses: haya14busa/action-cond@v1.1.0
+        id: condval
+        with:
+          cond: github.ref_name == 'master'
+          if_true: web-page-master
+          if_false: web-page-stage
+
+      - name: use conditional value
+        run: echo "${{ steps.condval.outputs.value }}"
+
       - name: checkout branch for build
         uses: actions/checkout@v3
 
@@ -65,21 +83,12 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: update publish dir to `web-page-master`
-        if: github.ref_name == 'master'
+      - name: update publish dir to `${{ steps.condval.outputs.value }}`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
-          publish_branch: web-page-master
-
-      - name: update publish dir to `web-page-stage`
-        if: github.ref_name != 'master'
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/html/
-          publish_branch: web-page-stage
+          publish_branch: ${{ steps.condval.outputs.value }}
 
       - name: build latex files
         env:
@@ -95,20 +104,10 @@ jobs:
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
 
-      - name: send pdf book to `web-page-master`
-        if: github.ref_name == 'master'
+      - name: send pdf book to `${{ steps.condval.outputs.value }}`
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
           destination_dir: ./latex/
-          publish_branch: web-page-master
-
-      - name: send pdf book to `web-page-stage`
-        if: github.ref_name != 'master'
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/latex/
-          destination_dir: ./latex/
-          publish_branch: web-page-stage
+          publish_branch: ${{ steps.condval.outputs.value }}
