@@ -10,7 +10,7 @@ penaltymodel-maxgap>=0.5.5
 qiskit>=0.31.0
 scikit-learn>=0.24.1
 sympy==1.8
-tensorflow-quantum==0.6.0
+tensorflow-quantum
 tensorflow==2.7.2
 pre-commit
 jupytext

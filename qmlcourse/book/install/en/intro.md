@@ -25,6 +25,7 @@ poetry install --no-interaction --no-root
 First of all, install miniconda for your operating system https://docs.conda.io/en/latest/miniconda.html
 Then you have to create an empty environment for the course, let's name it `qmlcourse`. For this course, we use some features of python 3.8, so you need at this version of python.
 
+**If you are Windows user go to [docker](docker.md) lecture or (hard way) [windows](intro-windows.md) lecture.
 ```shell
 conda create -n qmlcourse python=3.8 --yes
 ```
@@ -45,12 +46,6 @@ conda install psi4 python=3.8 -c psi4 --yes
 
 ```shell
 conda run -n qmlcourse conda install psi4 python=3.8 -c psi4 --yes
-```
-
-On Windows, you need to install nightly build:
-
-```shell
-conda install psi4 python=3.8 -c psi4/label/dev -c conda-forge --yes
 ```
 
 Then install all other packages:

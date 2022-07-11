@@ -47,10 +47,10 @@ ENV CONDA_DIR=/opt/conda \
     SHELL=/bin/bash
 ENV PATH="${SHELL}:${PATH}"
 ENV PATH="${CONDA_DIR}/bin:${PATH}"
-EXPOSE 8989
+EXPOSE 8888
 ENTRYPOINT ["bash"]
 
 # Starting jupyter lab in interactive docker shell:
-# docker run -it -p 8989:8989 qmlcourse:latest /bin/bash
+# docker run -it -p 8888:8888 qmlcourse:latest
 # conda activate qmlcourse
-# jupyter lab --allow-root --port 8989
+# jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root

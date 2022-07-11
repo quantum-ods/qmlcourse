@@ -79,7 +79,7 @@ poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
 poetry run jupyter-book build ./qmlcourse --builder latex --keep-going
 ```
 
-Then change directory to qmlcourse/\_build/latex and use xelatex:
+Then change directory to `qmlcourse/\_build/latex` and use xelatex:
 
 ```shell
 xelatex -interaction nonstopmode qmlcourse.tex
@@ -87,34 +87,38 @@ xelatex -interaction nonstopmode qmlcourse.tex
 
 ## Listener
 
-### Starting jupyter:
+Build listener container:
+
+```
+docker build . --tag qmlcourse:latest --target listener
+```
 
 Run docker in interactive regime with port forwarding:
 
 ```shell
-docker run -it -p 8989:8989 qmlcourse:latest /bin/bash
+docker run -it -p 8888:8888 qmlcourse:latest
 ```
+
+### Starting jupyter:
 
 In docker bash:
 
 ```bash
 conda activate qmlcourse
-jupyter lab --allow-root --port 8989
+jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser --allow-root
 ```
-
-then see forwarding ip from docker in another shell:
 
 ### Starting Jupyter Lab
 
 Run docker in interactive regime with port forwarding:
 
 ```shell
-docker run -it -p 8989:8989 qmlcourse:latest /bin/bash
+docker run -it -p 8888:8888 qmlcourse:latest
 ```
 
 In docker bash:
 
 ```bash
 conda activate qmlcourse
-jupyter lab --allow-root --port 8989
+jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root
 ```
