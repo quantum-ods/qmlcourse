@@ -13,13 +13,13 @@ jobs:
 
     steps:
       - name: checkout to `web-page-master`
-        if: ${{ github.ref == 'ref/heads/master' }}
+        if: github.ref == 'ref/heads/master'
         uses: actions/checkout@v3
         with:
           ref: web-page-master
 
       - name: checkout to `web-page-stage`
-        if: ${{ github.ref != 'ref/heads/master' }}
+        if: github.ref != 'ref/heads/master'
         uses: actions/checkout@v3
         with:
           ref: web-page-stage
@@ -66,7 +66,7 @@ jobs:
           poetry run jupyter-book build ./qmlcourse
 
       - name: update publish dir to `web-page-master`
-        if: ${{ github.ref == 'ref/heads/master' }}
+        if: github.ref == 'ref/heads/master'
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -74,7 +74,7 @@ jobs:
           publish_branch: web-page-master
 
       - name: update publish dir to `web-page-stage`
-        if: ${{ github.ref != 'ref/heads/master' }}
+        if: github.ref != 'ref/heads/master'
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -96,7 +96,7 @@ jobs:
           xelatex -interaction=nonstopmode qmlcourse.tex
 
       - name: send pdf book to `web-page-master`
-        if: ${{ github.ref == 'ref/heads/master' }}
+        if: github.ref == 'ref/heads/master'
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -105,7 +105,7 @@ jobs:
           publish_branch: web-page-master
 
       - name: send pdf book to `web-page-stage`
-        if: ${{ github.ref != 'ref/heads/master' }}
+        if: github.ref != 'ref/heads/master'
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
