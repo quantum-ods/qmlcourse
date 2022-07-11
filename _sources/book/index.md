@@ -78,7 +78,7 @@ All English version course you can found below start from [here](./intro/en/intr
 
 ````{grid}
 ```{grid-item-card} Как можно помочь?
-Помочь можно словом и делом. Если знаете людей, интересующихся квантовыми вычислениями –- замолвите словечко. Курс разрабатывается сообществом OpenDataScience, такими же «больными», как и организаторы ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). Если горите желанием в чем-то помочь, то создавайте Issue, а лучше сразу Pull Request в [репозитории курса](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
+Помочь можно словом и делом. Если знаете людей, интересующихся квантовыми вычислениями –- замолвите словечко. Курс разрабатывается сообществом OpenDataScience, такими же "больными", как и организаторы ([@sem](https://opendatascience.slack.com/team/U7SFPUVQF) [@yorko](https://opendatascience.slack.com/team/U1UNFRQ1K) [@vtrohimenko](https://opendatascience.slack.com/team/U3KBYJQSF)). Если горите желанием в чем-то помочь, то создавайте Issue, а лучше сразу Pull Request в [репозитории курса](http://github.com/quantum-ods/qmlcourse/) ([Contributing guide](https://github.com/quantum-ods/qmlcourse/blob/master/CONTRIBUTING.md)).
 ```
 
 ```{grid-item-card} How can you help?
