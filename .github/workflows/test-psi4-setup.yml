@@ -58,8 +58,9 @@ jobs:
           poetry install --no-interaction --no-root
 
       - name: build the book
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
 
           poetry run jupyter-book build ./qmlcourse
@@ -81,10 +82,11 @@ jobs:
           publish_branch: web-page-stage
 
       - name: build latex files
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
           sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
 
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
