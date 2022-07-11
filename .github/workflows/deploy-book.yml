@@ -13,13 +13,13 @@ jobs:
 
     steps:
       - name: checkout to `web-page-master`
-        if: github.ref == 'ref/heads/master'
+        if: github.ref == 'ref/heads/main'
         uses: actions/checkout@v3
         with:
           ref: web-page-master
 
       - name: checkout to `web-page-stage`
-        if: github.ref != 'ref/heads/master'
+        if: github.ref != 'ref/heads/main'
         uses: actions/checkout@v3
         with:
           ref: web-page-stage
