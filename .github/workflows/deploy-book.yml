@@ -15,7 +15,7 @@ jobs:
 
       - name: choose ref to build
         uses: haya14busa/action-cond@v1.1.0
-        id: condval
+        id: choose_branch_to_build
         with:
           cond: ${{ github.ref_name == 'master' }}
           if_true: web-page-master
@@ -24,7 +24,7 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
         with:
-          ref: ${{ steps.condval.outputs.value }}
+          ref: ${{ steps.choose_branch_to_build.outputs.value }}
 
       - run: |
           mkdir -p ./latex/
@@ -38,7 +38,7 @@ jobs:
 
       - name: choose ref to build
         uses: haya14busa/action-cond@v1.1.0
-        id: condval
+        id: choose_branch_to_build
         with:
           cond: ${{ github.ref_name == 'master' }}
           if_true: web-page-master
@@ -81,7 +81,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
-          publish_branch: ${{ steps.condval.outputs.value }}
+          publish_branch: ${{ steps.choose_branch_to_build.outputs.value }}
 
       - name: build latex files
         env:
@@ -103,4 +103,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
           destination_dir: ./latex/
-          publish_branch: ${{ steps.condval.outputs.value }}
+          publish_branch: ${{ steps.choose_branch_to_build.outputs.value }}
