@@ -21,9 +21,6 @@ jobs:
           if_true: web-page-master
           if_false: web-page-stage
 
-      - name: use conditional value
-        run: echo "${{ steps.condval.outputs.value }}"
-
       - name: checkout to build branch
         uses: actions/checkout@v3
         with:
@@ -46,9 +43,6 @@ jobs:
           cond: ${{ github.ref_name == 'master' }}
           if_true: web-page-master
           if_false: web-page-stage
-
-      - name: use conditional value
-        run: echo "${{ steps.condval.outputs.value }}"
 
       - name: checkout branch for build
         uses: actions/checkout@v3
