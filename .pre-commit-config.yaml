@@ -12,7 +12,7 @@ repos:
         args: ["--line-length=119"]
 
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.9.2
+    rev: 4.0.1
     hooks:
       - id: flake8
         args: ["--ignore=E501,W503", "--max-line-length=119"]
