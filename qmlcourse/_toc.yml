@@ -225,7 +225,7 @@
       title: 🟦 About quantum computers
     - file: book/intro/en/prerequisite.md
       title: ⬜ Prerequisite
-  
+
 - part: Installation
   chapters:
     - file: book/install/en/intro.md
@@ -234,7 +234,7 @@
       title: 🟩 Working with docker
     - file: book/install/en/advanced.md
       title: 🟧 Optimization environment for production or GPU use
-  
+
 - part: Linear Algebra and Numpy
   chapters:
     - file: book/linalg/en/linalg_intro.md

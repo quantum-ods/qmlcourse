@@ -91,12 +91,12 @@ Or for gpu version:
 conda install tensorflow-gpu
 ```
 
-For netket is nessesary to install cmake and export C++ compiling parts. 
+For netket is nessesary to install cmake and export C++ compiling parts.
 
 #### MinGW
 
 
-VC C++ 
+VC C++
 
  [Microsoft Build Tools](https://aka.ms/vs/17/release/vs_BuildTools.exe) и
 
@@ -117,4 +117,4 @@ conda install -c conda-forge netket
 For windows you need to compile tensorflow with [tensorflow quantum from sources](https://www.tensorflow.org/quantum/install). For netket you could download visual code build C++ tools and activate properly cmake
 
 
- Or just use the docker. 
+ Or just use the docker.
