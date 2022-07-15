@@ -1,7 +1,7 @@
 repos:
 
   - repo: https://github.com/asottile/reorder_python_imports
-    rev: v3.1.0
+    rev: v3.8.1
     hooks:
       - id: reorder-python-imports
 
@@ -12,7 +12,7 @@ repos:
         args: ["--line-length=119"]
 
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 4.0.1
+    rev: 3.9.2
     hooks:
       - id: flake8
         args: ["--ignore=E501,W503", "--max-line-length=119"]
@@ -47,9 +47,10 @@ repos:
     rev: v0.961
     hooks:
       - id: mypy
+        args: [--no-strict-optional, --ignore-missing-imports]
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.256
+    rev: v1.1.260
     hooks:
       - id: pyright
 
