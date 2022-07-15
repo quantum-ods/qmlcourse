@@ -158,7 +158,7 @@
 ### Ш
 
 ```{glossary}
-«Шумные» квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)
+"Шумные" квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)
     Термин введен Прескиллом в работе [https://arxiv.org/abs/1801.00862](https://arxiv.org/abs/1801.00862) для описания сегодняшнего состояния квантовых вычислений, когда "настоящие" квантовые вычисления (на миллионах кубит) еще невозможны, но совеменные квантовые компьютеры уже могут выполнять вычисления, которые невозможны на обычных, классических компьютерах. См. также краткое обсуждение в [https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology](https://quantumcomputing.stackexchange.com/questions/1885/what-is-meant-by-noisy-intermediate-scale-quantum-nisq-technology), и перевод на термина русский [https://www.osp.ru/os/2019/03/13055130](https://www.osp.ru/os/2019/03/13055130)
 ```
 

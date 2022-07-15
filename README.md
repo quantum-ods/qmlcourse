@@ -19,8 +19,8 @@
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
     <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book-master.yml">
-    <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book-master.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
+    <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
   <a href="https://qmlc-web-page-stage.netlify.app/">
     <img alt="netlify_status" src="https://api.netlify.com/api/v1/badges/ff3a4d3f-49a9-47db-9335-364525652b89/deploy-status">

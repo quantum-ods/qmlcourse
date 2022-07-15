@@ -1,7 +1,9 @@
-name: deploy-book-stage
+name: deploy-book
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ master ]
 
 jobs:
 
@@ -10,20 +12,38 @@ jobs:
     timeout-minutes: 1
 
     steps:
-      - name: checkout to building branch
+
+      - name: choose ref to build
+        uses: haya14busa/action-cond@v1.1.0
+        id: choose_branch_to_build
+        with:
+          cond: ${{ github.ref_name == 'master' }}
+          if_true: web-page-master
+          if_false: web-page-stage
+
+      - name: checkout to build branch
         uses: actions/checkout@v3
         with:
-          ref: web-page-stage
+          ref: ${{ steps.choose_branch_to_build.outputs.value }}
 
       - run: |
           mkdir -p ./latex/
 
-  deploy_book_stage:
+  deploy_book:
     needs: [create_folder_for_latex]
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
     steps:
+
+      - name: choose ref to build
+        uses: haya14busa/action-cond@v1.1.0
+        id: choose_branch_to_build
+        with:
+          cond: ${{ github.ref_name == 'master' }}
+          if_true: web-page-master
+          if_false: web-page-stage
+
       - name: checkout branch for build
         uses: actions/checkout@v3
 
@@ -49,24 +69,26 @@ jobs:
           poetry install --no-interaction --no-root
 
       - name: build the book
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: update publish dir to building branch
+      - name: update publish dir to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
-          publish_branch: web-page-stage
+          publish_branch: ${{ steps.choose_branch_to_build.outputs.value }}
 
       - name: build latex files
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
           sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
 
-          export DWAVE_TOKEN="${{ secrets.DWAVE_TOKEN }}"
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
@@ -75,10 +97,10 @@ jobs:
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
 
-      - name: send pdf book to building branch
+      - name: send pdf book to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
           destination_dir: ./latex/
-          publish_branch: web-page-stage
+          publish_branch: ${{ steps.choose_branch_to_build.outputs.value }}
