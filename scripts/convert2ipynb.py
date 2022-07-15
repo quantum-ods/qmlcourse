@@ -4,7 +4,7 @@ from subprocess import call
 from typing import Dict
 from typing import List
 
-import yaml
+import yaml  # type: ignore
 
 PREFIX = Path("qmlcourse")
 

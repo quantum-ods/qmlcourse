@@ -3,7 +3,7 @@ import pathlib
 import unittest
 from unittest import TestCase
 
-import yaml
+import yaml  # type: ignore
 from convert2ipynb import convert_md2ipynb
 
 ##
