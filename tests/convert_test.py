@@ -1,8 +1,9 @@
 import os
 from pathlib import Path
 
-import yaml  # type: md_to_ipynb
-from tools.convert import convert_md2ipynb
+import yaml  # type: ignore
+
+from tools.convert import md_to_ipynb
 
 test_toc = """
 - file: book/index.md
@@ -17,11 +18,12 @@ test_toc = """
 
 
 def test_md_to_ipynb(
-    test_md_file_path = Path("./tests/test.md"),
-    test_ipynb_file_path = Path("./tests/test.ipynb"),
-)-> (None):
-    
-    convert_md2ipynb(toc=yaml.safe_load(test_toc))
+    test_md_file_path=Path("./tests/test.md"),
+    test_ipynb_file_path=Path("./tests/test.ipynb"),
+) -> (None):
+
+    # todo: update args
+    md_to_ipynb(yaml.safe_load(test_toc))
 
     os.chdir("scripts")
 
