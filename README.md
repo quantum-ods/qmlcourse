@@ -13,8 +13,8 @@
 </a>
 
 <p align="left">
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment">
-    <img alt="shield_gh_page" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
+    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
     <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
