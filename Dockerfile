@@ -21,7 +21,7 @@ COPY . .
 # RUN git checkout ${GIT-BRANCH}
 RUN poetry install --no-interaction --no-root
 RUN apt update && apt install -y texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
-RUN poetry run python scripts/convert2ipynb.py
+RUN poetry run python tools/convert2ipynb.py
 RUN poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
 RUN poetry run jupyter-book build ./qmlcourse --keep-going
 # Get latex file

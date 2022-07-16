@@ -52,7 +52,7 @@ python -m jupytext lecture.md --to ipynb
 or use our script that creates notebook folder and get all lectures into it.
 
 ```shell
-python scripts/convert2ipynb.py
+python tools/convert2ipynb.py
 ```
 
 Or copy from docker folder to your machine folder all notebooks:

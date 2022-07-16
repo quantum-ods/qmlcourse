@@ -1,4 +1,4 @@
-name: pre-commit
+name: pre-commit-tests
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
 
   pre_commit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 4
 
     steps:
       - name: checkout code
@@ -19,8 +19,33 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.8
+          cache: 'pip'
 
       - name: run pre-commit action
         uses: pre-commit/action@v3.0.0
         with:
           extra_args: --all-files
+
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: set up py3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+          cache: 'pip'
+
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+          pip install pytest
+
+      - name: run tests
+        run: |
+          pytest ./tests/
