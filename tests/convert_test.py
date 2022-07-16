@@ -6,12 +6,12 @@ from tools.convert import md_to_ipynb
 
 
 # todo: add tests for exception
-def test_md_to_ipynb(get_ipynb_file: str) -> (None):  # noqa: F811
+def test_md_to_ipynb(get_ipynb_file: str) -> (None):
+
+    path_2_converted_lecture_to_ipynb = Path("./tests/data/lecture.ipynb")
 
     try:
         md_to_ipynb(dir_2_toc="./tests/data", dir_2_ipynb="./tests", testing=True)
-
-        path_2_converted_lecture_to_ipynb = Path("./tests/data/lecture.ipynb")
 
         with open(path_2_converted_lecture_to_ipynb, "r") as test_ipynb_file:
             converted_lecture_to_ipynb = test_ipynb_file.read()
