@@ -1,7 +1,8 @@
 import pytest
 
+
 @pytest.fixture()
-def get_toc_file() -> (None):
+def get_toc_file() -> (str):
     toc_file = """
     - file: book/index.md
 
@@ -15,8 +16,9 @@ def get_toc_file() -> (None):
 
     return toc_file
 
+
 @pytest.fixture()
-def get_md_file() -> (None):
+def get_md_file() -> (str):
     md_file = """
     # Test
 
@@ -34,8 +36,9 @@ def get_md_file() -> (None):
 
     return md_file
 
+
 @pytest.fixture()
-def get_ipynb_file() -> (None):
+def get_ipynb_file() -> (str):
     ipynb_file = """
 
     """
