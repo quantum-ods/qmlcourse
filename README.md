@@ -13,17 +13,17 @@
 </a>
 
 <p align="left">
-  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
-    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse">
-  </a>
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
-    <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment">
+    <img alt="shield_gh_page" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
     <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
+    <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+  </a>
   <a href="https://qmlc-web-page-stage.netlify.app/">
-    <img alt="netlify_status" src="https://api.netlify.com/api/v1/badges/ff3a4d3f-49a9-47db-9335-364525652b89/deploy-status">
+    <img alt="netlify_status" src="https://img.shields.io/netlify/ff3a4d3f-49a9-47db-9335-364525652b89">
   </a>
 </p>
 </br>
