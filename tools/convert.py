@@ -24,7 +24,7 @@ def md_to_ipynb(dir_2_toc: str = "./qmlcourse", dir_2_ipynb: str = "./notebooks"
 
     # open table of contents
     with open(f"{path_2_toc}/_toc.yml", "r", encoding="utf-8") as toc_file:
-        toc: List[Dict[str, Dict]] = yaml.safe_load(toc_file)
+        toc: List[Dict[str, Dict[List[Dict[str, str]]]]] = yaml.safe_load(toc_file)
 
     for part in toc[1:]:
         for chapter in part["chapters"]:
