@@ -10,6 +10,9 @@ from loguru import logger
 # fire guide: https://github.com/google/python-fire/blob/master/docs/guide.md
 
 
+# todo: add toml2requirements.py like seperate module
+
+
 def md_to_ipynb(dir_2_toc: str = "./qmlcourse", dir_2_ipynb: str = "./notebooks") -> (None):
     """
     Convert MyST files from toc to ipython notebooks.
