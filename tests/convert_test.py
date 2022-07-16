@@ -13,7 +13,6 @@ def test_md_to_ipynb(get_ipynb_file: str) -> (None):  # noqa: F811
 
         path_2_converted_lecture_to_ipynb = Path("./tests/data/lecture.ipynb")
 
-        # Test len ipynb
         with open(path_2_converted_lecture_to_ipynb, "r") as test_ipynb_file:
             converted_lecture_to_ipynb = test_ipynb_file.read()
 

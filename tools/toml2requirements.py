@@ -20,7 +20,7 @@ prohibited_packages_listner = set(
 prohibited_packages_dev = set(["python", ""])
 
 
-def get_packages(prohibited_packages: Set[str]) -> List[str]:
+def get_packages(prohibited_packages: Set[str]) -> (List[str]):
     """
     Remove prohibited packages and creates text for requirements.txt
     prohibited_packages: set of prohibited packages
