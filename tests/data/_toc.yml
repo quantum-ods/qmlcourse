@@ -1,0 +1,8 @@
+- file: book/index.md
+
+# :ru:
+
+- part: Test
+  chapters:
+    - file: lecture.md
+      title: 🟦 Just test
