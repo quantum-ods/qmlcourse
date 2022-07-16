@@ -13,7 +13,7 @@ from loguru import logger
 # todo: add toml2requirements.py like seperate module
 
 
-def md_to_ipynb(dir_2_toc: str = "./qmlcourse", dir_2_ipynb: str = "./notebooks") -> (None):
+def md_to_ipynb(dir_2_toc: str = "./qmlcourse", dir_2_ipynb: str = "./notebooks", testing: bool = False) -> (None):
     """
     Convert MyST files from toc to ipython notebooks.
     toc: YAML list of the dicts with table of contents for jupyter book.
@@ -24,7 +24,7 @@ def md_to_ipynb(dir_2_toc: str = "./qmlcourse", dir_2_ipynb: str = "./notebooks"
 
     # open table of contents
     with open(f"{path_2_toc}/_toc.yml", "r", encoding="utf-8") as toc_file:
-        toc: List[Dict[str, Dict[List[Dict[str, str]]]]] = yaml.safe_load(toc_file)
+        toc: List[Dict[str, List[Dict[str, str]]]] = yaml.safe_load(toc_file)
 
     for part in toc[1:]:
         for chapter in part["chapters"]:
@@ -40,13 +40,16 @@ def md_to_ipynb(dir_2_toc: str = "./qmlcourse", dir_2_ipynb: str = "./notebooks"
             )
 
             try:
-                Path.replace(
-                    path_2_toc / Path(chapter["file"].split(".")[0] + ".ipynb"),
-                    path_2_ipynb / Path("/".join(chapter["file"].split(".")[0].split("/")[1:]) + ".ipynb"),
-                )
+                if not testing:
+                    Path.replace(
+                        path_2_toc / Path(chapter["file"].split(".")[0] + ".ipynb"),
+                        path_2_ipynb / Path("/".join(chapter["file"].split(".")[0].split("/")[1:]) + ".ipynb"),
+                    )
             except FileNotFoundError:
                 logger.error("Problem with", Path(chapter["file"]))
 
 
 if __name__ == "__main__":
+
+    # python tools/convert.py md_to_ipynb
     fire.Fire()
