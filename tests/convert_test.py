@@ -20,5 +20,5 @@ def test_md_to_ipynb(get_ipynb_file: str) -> (None):
 
     except FileNotFoundError:
         logger.error("file not found")
-    finally:
-        path_2_converted_lecture_to_ipynb.unlink()  # pyright: ignore reportUnboundVariable
+    # finally:
+    #     path_2_converted_lecture_to_ipynb.unlink()  # pyright: ignore reportUnboundVariable
