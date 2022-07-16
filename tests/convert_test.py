@@ -12,10 +12,10 @@ def test_md_to_ipynb(get_ipynb_file: str) -> (None):
 
         md_to_ipynb(dir_2_toc="./tests/data", dir_2_ipynb="./tests", testing=True)
 
-        path_to_converted_lecture_to_ipynb = Path("./tests/data/lecture.ipynb")
+        path_2_converted_lecture_to_ipynb = Path("./tests/data/lecture.ipynb")
 
         # Test len ipynb
-        with open(path_to_converted_lecture_to_ipynb, "r") as test_ipynb_file:
+        with open(path_2_converted_lecture_to_ipynb, "r") as test_ipynb_file:
             converted_lecture_to_ipynb = test_ipynb_file.read()
 
         assert len(get_ipynb_file) == len(converted_lecture_to_ipynb)
@@ -23,4 +23,4 @@ def test_md_to_ipynb(get_ipynb_file: str) -> (None):
     except FileNotFoundError:
         logger.error("file not found")
     finally:
-        path_to_converted_lecture_to_ipynb.unlink()  # pyright: ignore reportUnboundVariable
+        path_2_converted_lecture_to_ipynb.unlink()  # pyright: ignore reportUnboundVariable
