@@ -9,7 +9,7 @@ import yaml  # type: ignore
 PREFIX = Path("qmlcourse")
 
 
-def convert_md2ipynb(toc: List[Dict[str, Dict]]) -> None:
+def convert_md2ipynb(toc: List[Dict[str, Dict]]) -> (None):
     """
     Convert MyST files from toc to ipython notebooks.
     toc: YAML list of the dicts with table of contents for jupyter book.
@@ -35,7 +35,7 @@ def convert_md2ipynb(toc: List[Dict[str, Dict]]) -> None:
 if __name__ == "__main__":
 
     # Open table of content
-    with open("qmlcourse/_toc.yml", "r", encoding="utf-8") as f:
+    with open(f"{PREFIX}/_toc.yml", "r", encoding="utf-8") as f:
         toc = yaml.safe_load(f)
 
     # make dir for ipynbs
