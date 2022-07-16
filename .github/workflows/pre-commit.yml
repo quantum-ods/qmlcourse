@@ -25,7 +25,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
-          pip install loguru fire jupytext pytest
+          pip install fire jupytext pytest loguru loguru_caplog
 
       - name: run pre-commit action
         uses: pre-commit/action@v3.0.0
@@ -51,7 +51,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
-          pip install loguru fire jupytext pytest
+          pip install fire jupytext pytest loguru loguru_caplog
 
       - name: run tests
         run: |
