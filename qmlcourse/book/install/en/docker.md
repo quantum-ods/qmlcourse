@@ -9,6 +9,44 @@ docker run hello-world
 
 You need to see docker version and then short instructions and links to the documentation. If you see that command docker is not find, then you need to add docker to PATH, and if you see permitions issues, than you didn't do post-instalaltion steps and didn't reboot your system, see the documentation on the docker website.
 
+## Listener
+
+Build listener container:
+
+```
+docker build . --tag qmlcourse:latest --target listener
+```
+
+Run docker in interactive regime with port forwarding:
+
+```shell
+docker run -it -p 8888:8888 qmlcourse:latest
+```
+
+### Starting jupyter
+
+In docker bash:
+
+```bash
+conda activate qmlcourse
+jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser --allow-root
+```
+
+### Starting Jupyter Lab
+
+Run docker in interactive regime with port forwarding:
+
+```shell
+docker run -it -p 8888:8888 qmlcourse:latest
+```
+
+In docker bash:
+
+```bash
+conda activate qmlcourse
+jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root
+```
+
 ## Contributor
 
 Firstly, you need to git clone repository and build docker image from qmlcourse folder with Dockerfile:
@@ -83,42 +121,4 @@ Then change directory to `qmlcourse/\_build/latex` and use xelatex:
 
 ```shell
 xelatex -interaction nonstopmode qmlcourse.tex
-```
-
-## Listener
-
-Build listener container:
-
-```
-docker build . --tag qmlcourse:latest --target listener
-```
-
-Run docker in interactive regime with port forwarding:
-
-```shell
-docker run -it -p 8888:8888 qmlcourse:latest
-```
-
-### Starting jupyter:
-
-In docker bash:
-
-```bash
-conda activate qmlcourse
-jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser --allow-root
-```
-
-### Starting Jupyter Lab
-
-Run docker in interactive regime with port forwarding:
-
-```shell
-docker run -it -p 8888:8888 qmlcourse:latest
-```
-
-In docker bash:
-
-```bash
-conda activate qmlcourse
-jupyter lab --ip='0.0.0.0' --port=8888 --no-browser --allow-root
 ```

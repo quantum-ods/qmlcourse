@@ -1,5 +1,7 @@
+from pathlib import Path
 from typing import List
 from typing import Set
+
 
 prohibited_packages_listner = set(
     [
@@ -14,6 +16,8 @@ prohibited_packages_listner = set(
         "paramiko",
         "scp",
         "Jinja2",
+        "fire",
+        "loguru",
         "",
     ],
 )
@@ -30,10 +34,10 @@ def get_packages(prohibited_packages: Set[str]) -> (List[str]):
     with open("pyproject.toml", "r") as toml_file:
         for line in toml_file:
             line = line.strip()
-            if line == "[tool.poetry.dependencies]":
+            if line in ["[tool.poetry.dependencies]", "# [tool.poetry.dev-dependencies]"]:
                 packages_flag = True
                 continue
-            elif line in ["[build-system]", "# [tool.poetry.dev-dependencies]"]:
+            elif line in ["[build-system]"]:
                 packages_flag = False
             elif line == "":
                 continue
@@ -45,21 +49,20 @@ def get_packages(prohibited_packages: Set[str]) -> (List[str]):
                     if version.startswith("^"):
                         if len(version.split(".")) == 3:
                             packages.append(
-                                package + ">=" + version[1:],
-                            )  # choose major version, needed for security bugfixes
+                                package + "==" + version[1:],  # remove ^
+                            )
                         else:
-                            packages.append(package + ">=" + version[1:])
+                            packages.append(package + "==" + version[1:])  # remove ^
                     else:
                         packages.append(package + "==" + version)
     return sorted(packages)
 
 
 if __name__ == "__main__":
-    with open("requirements.txt", "w") as req_file:
+    with open(Path("requirements/requirements-listener.txt"), "w") as req_file:
         req_file.writelines("\n".join(get_packages(prohibited_packages=prohibited_packages_listner)))
         req_file.writelines("\n")
 
-    # Devs now only with poetry
-    # with open("requirements-dev.txt", 'w') as req_file:
-    #     req_file.writelines("\n".join(get_packages(prohibited_packages=prohibited_packages_dev)))
-    #     req_file.writelines("\n")
+    with open(Path("requirements/requirements-dev.txt"), "w") as req_file:
+        req_file.writelines("\n".join(get_packages(prohibited_packages=prohibited_packages_dev)))
+        req_file.writelines("\n")

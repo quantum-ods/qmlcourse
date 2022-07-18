@@ -33,6 +33,9 @@ tensorflow-quantum = "0.6.0"
 Jinja2 = "3.0.3"
 # [tool.poetry.dev-dependencies]
 jupytext = "^1.13.8"
+fire = "^0.4.0"
+loguru = "^0.6.0"
+pre-commit = "^2.20.0"
 
 
 [build-system]
