@@ -1,0 +1,36 @@
+# Test docker for dev and listner
+name: test-docker
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  deploy_book:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: checkout branch for build
+        uses: actions/checkout@v2
+      - name: set up docker
+        uses: actions/setup-docker@v1
+      - name: build dev (qml-dev) docker
+        run: |
+          docker build . --tag qml-dev:latest --target dev
+      - name: test dev (qml-dev) docker
+        run: |
+          docker run -it qml-dev:latest /bin/bash
+          exit
+      - name: build listener (qmlcourse) docker
+        run: |
+          docker build . --tag qmlcourse:latest --target listener
+          docker run -it -p 8888:8888 qmlcourse:latest
+      - name: test listener (qmlcourse) docker
+        run: |
+          docker run -it -p 8888:8888 qmlcourse:latest
+          conda activate qmlcourse
+          jupyter --version
+          exit

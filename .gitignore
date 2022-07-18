@@ -511,6 +511,11 @@ _minted*
 # Jupyter Book
 _build*
 
-# VSCode settings dir
+# VSode settings dir
 .vscode
-_tmp_notebooks
+
+# Notebooks dir
+notebooks/
+
+# some tests data
+tests/data/lecture.ipynb
