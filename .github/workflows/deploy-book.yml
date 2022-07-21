@@ -7,20 +7,6 @@ on:
 
 jobs:
 
-  dependency_review:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-    permissions:
-      contents: read
-
-    steps:
-
-      - name: checkout repository
-        uses: actions/checkout@v3
-
-      - name: run dependency review
-        uses: actions/dependency-review-action@v2
-
   create_folder_for_latex:
     runs-on: ubuntu-latest
     timeout-minutes: 1
@@ -44,7 +30,7 @@ jobs:
           mkdir -p ./latex/
 
   deploy_book:
-    needs: [dependency_review, create_folder_for_latex]
+    needs: [create_folder_for_latex]
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
