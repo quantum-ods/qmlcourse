@@ -50,6 +50,6 @@ jobs:
     #   If the Autobuild fails above, remove it and uncomment the following three lines.
     #   modify them (or add more) to build your code if your project, please refer to the EXAMPLE below for guidance.
 
-    - name: build application using script
-      run: |
+    - run: |
+        echo "build application using script"
         ./location_of_script_within_repo/buildscript.sh
