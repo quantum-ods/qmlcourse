@@ -1,0 +1,24 @@
+name: dependency review
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+permissions:
+  contents: read
+
+jobs:
+
+  dependency_review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+
+    steps:
+
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: run dependency review
+        uses: actions/dependency-review-action@v2
