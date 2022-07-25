@@ -1,4 +1,4 @@
-<img src="./qmlcourse/logo.svg" align="left" width="178" height="178"></img>
+<img src="./qmlcourse/logo.svg" align="left" width="207" height="207"></img>
 
 # QMLCourse
 
@@ -13,19 +13,27 @@
 </a>
 
 <p align="left">
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
-    <img alt="deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment">
+<img alt="shield_pages_build_deployment" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment/badge.svg">
   </a>
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
-    <img alt="pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+    <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
+    <img alt="shield_deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
   </a>
   <a href="https://qmlc-web-page-stage.netlify.app/">
-    <img alt="netlify_status" src="https://img.shields.io/netlify/ff3a4d3f-49a9-47db-9335-364525652b89">
+    <img alt="shield_netlify_status" src="https://img.shields.io/netlify/ff3a4d3f-49a9-47db-9335-364525652b89">
   </a>
-  <a href="https://github.com/quantum-ods/qmlcourse/blob/master/LICENSE">
-    <img alt="shield_license" src="https://img.shields.io/github/license/quantum-ods/qmlcourse">
+  </br>
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
+    <img alt="shield_pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
   </a>
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml">
+    <img alt="shield_dependency_review" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml/badge.svg">
+  </a>
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml">
+    <img alt="shield_codeql" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml/badge.svg">
+  </a>  
 </p>
+
 </br>
 
 > **Note**
