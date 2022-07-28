@@ -101,9 +101,10 @@ $$
 ```{code-cell} ipython3
 from pennylane import numpy as np
 import pennylane as qml
+from sklearn.datasets import make_moons
+
 import matplotlib.pyplot as plt
 %config InlineBackend.figure_format = 'retina'
-from sklearn.datasets import make_moons
 ```
 
 Помимо всех привычных, нам еще потребуется классический SVM из `scikit-learn`:
@@ -140,23 +141,23 @@ plt.show()
 dev = qml.device("default.qubit", 2)
 ```
 
-Теперь давайте для начала реализуем наше преобразование над одним из векторов ($U(x)$). Поскольку далее нам потребуется еще и $U(x)^\dagger$, то мы сразу воспользуемся декоратором `@qml.template`, который позволит нам автоматически получить обратную схему.
+Теперь давайте для начала реализуем наше преобразование над одним из векторов ($U(x)$). Поскольку далее нам потребуется еще и $U(x)^\dagger$, то мы сразу воспользуемся `qml.tape.QuantumTape()`, который позволит нам автоматически получить обратную схему.
 
 ```{code-cell} ipython3
-@qml.template
 def var_layer(x):
-    qml.Hadamard(wires=0)
-    qml.Hadamard(wires=1)
+    with qml.tape.QuantumTape() as tape:
+        qml.Hadamard(wires=0)
+        qml.Hadamard(wires=1)
 
-    qml.U1(x[0], wires=0)
-    qml.U1(x[1], wires=1)
+        qml.U1(x[0], wires=0)
+        qml.U1(x[1], wires=1)
 
-    qml.Hadamard(wires=0)
-    qml.Hadamard(wires=1)
+        qml.Hadamard(wires=0)
+        qml.Hadamard(wires=1)
 
-    qml.CNOT(wires=[0, 1])
-    qml.U1(np.pi * np.cos(x[0]) * np.cos(x[1]), wires=1)
-    qml.CNOT(wires=[0, 1])
+        qml.CNOT(wires=[0, 1])
+        qml.U1(np.pi * np.cos(x[0]) * np.cos(x[1]), wires=1)
+        qml.CNOT(wires=[0, 1])
 ```
 
 А теперь реализуем
@@ -177,7 +178,7 @@ $$
 @qml.qnode(dev)
 def dot_prod(x1, x2):
     var_layer(x1)
-    qml.inv(var_layer(x2))
+    qml.adjoint(var_layer(x2))
 
     return qml.probs(wires=[0, 1])
 ```
@@ -188,6 +189,7 @@ def dot_prod(x1, x2):
 def q_dot_prod(i, j):
     x1 = (x[i, 0], x[i, 1])
     x2 = (x[j, 0], x[j, 1])
+
     return dot_prod(x1, x2)[0]
 ```
 
@@ -200,7 +202,7 @@ print(np.allclose(q_dot_prod(0, 1), q_dot_prod(1, 0)))
 И сразу посмотрим на то, как выглядит наша схема:
 
 ```{code-cell} ipython3
-print(dot_prod.draw())
+print(qml.draw(dot_prod)(x1, x2))
 ```
 
 ### Гибридный SVM
