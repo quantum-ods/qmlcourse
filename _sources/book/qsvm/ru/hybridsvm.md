@@ -202,7 +202,7 @@ print(np.allclose(q_dot_prod(0, 1), q_dot_prod(1, 0)))
 И сразу посмотрим на то, как выглядит наша схема:
 
 ```{code-cell} ipython3
-print(qml.draw(dot_prod)(x1, x2))
+print(qml.draw(dot_prod)(x, y))
 ```
 
 ### Гибридный SVM
