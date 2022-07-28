@@ -221,7 +221,7 @@ for i in range(x_samples.shape[0]):
         if i == j:
             gram_mat[i, j] = 1
         if i > j:
-            r = q_dot_prod(i, j)
+            r = q_dot_prod(x_samples, i, j)
             gram_mat[i, j] = r
             gram_mat[j, i] = r
 ```
