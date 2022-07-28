@@ -17,40 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-@qml.template
-def var_layer(x):
-    qml.Hadamard(wires=0)
-    qml.Hadamard(wires=1)
-
-    qml.U1(x[0], wires=0)
-    qml.U1(x[1], wires=1)
-
-    qml.Hadamard(wires=0)
-    qml.Hadamard(wires=1)
-
-    qml.CNOT(wires=[0, 1])
-    qml.U1(np.pi * np.cos(x[0]) * np.cos(x[1]), wires=1)
-    qml.CNOT(wires=[0, 1])
+print(qml.draw(dot_prod)(x1, x2))
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
-Input [0;32mIn [5][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [38;5;129m@qml[39m[38;5;241;43m.[39;49m[43mtemplate[49m
-[1;32m      2[0m [38;5;28;01mdef[39;00m [38;5;21mvar_layer[39m(x):
-[1;32m      3[0m     qml[38;5;241m.[39mHadamard(wires[38;5;241m=[39m[38;5;241m0[39m)
-[1;32m      4[0m     qml[38;5;241m.[39mHadamard(wires[38;5;241m=[39m[38;5;241m1[39m)
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [9][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [38;5;28mprint[39m(qml[38;5;241m.[39mdraw(dot_prod)([43mx1[49m, x2))
 
-File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/pennylane/__init__.py:346[0m, in [0;36m__getattr__[0;34m(name)[0m
-[1;32m    336[0m             [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
-[1;32m    337[0m                 [38;5;124m"[39m[38;5;124mPennyLane-QChem not installed. [39m[38;5;130;01m\n[39;00m[38;5;130;01m\n[39;00m[38;5;124mTo access the qchem [39m[38;5;124m"[39m
-[1;32m    338[0m                 [38;5;124m"[39m[38;5;124mmodule, you can install PennyLane-QChem via pip:[39m[38;5;124m"[39m
-[0;32m   (...)[0m
-[1;32m    341[0m                 [38;5;124m"[39m[38;5;130;01m\n[39;00m[38;5;124mhttps://pennylane.readthedocs.io/en/stable/introduction/chemistry.html[39m[38;5;124m"[39m
-[1;32m    342[0m             )
-[1;32m    344[0m     [38;5;28;01mreturn[39;00m _qchem
-[0;32m--> 346[0m [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mmodule [39m[38;5;132;01m{[39;00m[38;5;18m__name__[39m[38;5;132;01m}[39;00m[38;5;124m has no attribute [39m[38;5;132;01m{[39;00mname[38;5;132;01m}[39;00m[38;5;124m"[39m)
-
-[0;31mAttributeError[0m: module pennylane has no attribute template
-AttributeError: module pennylane has no attribute template
+[0;31mNameError[0m: name 'x1' is not defined
+NameError: name 'x1' is not defined
 

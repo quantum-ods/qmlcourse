@@ -1,7 +1,7 @@
 @startuml
 
 skinparam {
-        BackgroundColor #Black
+        BackgroundColor #transparent
         ArrowColor #WhiteSmoke
 }
 
