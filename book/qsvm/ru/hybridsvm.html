@@ -1239,7 +1239,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">dot_prod</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
     <span class="n">var_layer</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
-    <span class="n">qml</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">var_layer</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+    <span class="n">qml</span><span class="o">.</span><span class="n">adjoint</span><span class="p">(</span><span class="n">var_layer</span><span class="p">)(</span><span class="n">x2</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">qml</span><span class="o">.</span><span class="n">probs</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
@@ -1266,7 +1266,7 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -1285,15 +1285,15 @@ T0 =
  0: ──H──U1(M0)──H──╭C──────────╭C──┤  
  1: ──H──U1(M1)──H──╰X──U1(M2)──╰X──┤  
 M0 =
-[ 0.94925302 -0.17691124]
+[-0.58845562  0.89850604]
 M1 =
-[-0.31061722 -0.01175873]
+[ 0.86223556 -0.47834857]
 M2 =
-[1.74177775 3.09234481]
+[1.70050072 1.73691261]
 
 T1 =
- 0: ──H──U1(1)──H──╭C─────────────╭C──┤  
- 1: ──H──U1(1)──H──╰X──U1(0.917)──╰X──┤  
+ 0: ──╭C──────────────╭C──H──U1(1)───H──┤  
+ 1: ──╰X──U1(-0.917)──╰X──H──U1(-1)──H──┤  
 </pre></div>
 </div>
 </div>

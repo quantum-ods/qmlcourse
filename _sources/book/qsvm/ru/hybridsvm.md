@@ -178,7 +178,7 @@ $$
 @qml.qnode(dev)
 def dot_prod(x1, x2):
     var_layer(x1)
-    qml.adjoint(var_layer(x2))
+    qml.adjoint(var_layer)(x2)
 
     return qml.probs(wires=[0, 1])
 ```
