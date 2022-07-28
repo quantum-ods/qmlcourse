@@ -214,10 +214,10 @@ $$
 $$
 
 ```{code-cell} ipython3
-gram_mat = np.zeros((x.shape[0], x.shape[0]))
+gram_mat = np.zeros((x_samples.shape[0], x_samples.shape[0]))
 
-for i in range(x.shape[0]):
-    for j in range(x.shape[0]):
+for i in range(x_samples.shape[0]):
+    for j in range(x_samples.shape[0]):
         if i == j:
             gram_mat[i, j] = 1
         if i > j:
@@ -230,7 +230,7 @@ for i in range(x.shape[0]):
 
 ```{code-cell} ipython3
 model = SVC(kernel="precomputed")
-model.fit(gram_mat, y)
+model.fit(gram_mat, y_samples)
 ```
 
 Посчитаем предсказания и посмотрим на результат:
@@ -239,7 +239,7 @@ model.fit(gram_mat, y)
 preds = model.predict(X=gram_mat)
 
 plt.figure(figsize=(4, 3))
-cb = plt.scatter(x[:, 0], x[:, 1], c=preds)
+cb = plt.scatter(x_samples[:, 0], x_samples[:, 1], c=preds)
 plt.colorbar(cb)
 plt.show()
 ```
