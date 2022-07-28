@@ -99,8 +99,8 @@ $$
 Для начала необходимые импорты.
 
 ```{code-cell} ipython3
-from pennylane import numpy as np
 import pennylane as qml
+from pennylane import numpy as np
 from sklearn.datasets import make_moons
 
 import matplotlib.pyplot as plt
@@ -141,23 +141,22 @@ plt.show()
 dev = qml.device("default.qubit", 2)
 ```
 
-Теперь давайте для начала реализуем наше преобразование над одним из векторов ($U(x)$). Поскольку далее нам потребуется еще и $U(x)^\dagger$, то мы сразу воспользуемся `qml.tape.QuantumTape()`, который позволит нам автоматически получить обратную схему.
+Теперь давайте для начала реализуем наше преобразование над одним из векторов ($U(x)$).
 
 ```{code-cell} ipython3
 def var_layer(x):
-    with qml.tape.QuantumTape() as tape:
-        qml.Hadamard(wires=0)
-        qml.Hadamard(wires=1)
+    qml.Hadamard(wires=0)
+    qml.Hadamard(wires=1)
 
-        qml.U1(x[0], wires=0)
-        qml.U1(x[1], wires=1)
+    qml.U1(x[0], wires=0)
+    qml.U1(x[1], wires=1)
 
-        qml.Hadamard(wires=0)
-        qml.Hadamard(wires=1)
+    qml.Hadamard(wires=0)
+    qml.Hadamard(wires=1)
 
-        qml.CNOT(wires=[0, 1])
-        qml.U1(np.pi * np.cos(x[0]) * np.cos(x[1]), wires=1)
-        qml.CNOT(wires=[0, 1])
+    qml.CNOT(wires=[0, 1])
+    qml.U1(np.pi * np.cos(x[0]) * np.cos(x[1]), wires=1)
+    qml.CNOT(wires=[0, 1])
 ```
 
 А теперь реализуем
