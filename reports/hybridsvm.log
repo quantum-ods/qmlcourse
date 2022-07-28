@@ -17,10 +17,10 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-gram_mat = np.zeros((x.shape[0], x.shape[0]))
+gram_mat = np.zeros((x_samples.shape[0], x_samples.shape[0]))
 
-for i in range(x.shape[0]):
-    for j in range(x.shape[0]):
+for i in range(x_samples.shape[0]):
+    for j in range(x_samples.shape[0]):
         if i == j:
             gram_mat[i, j] = 1
         if i > j:
@@ -30,12 +30,14 @@ for i in range(x.shape[0]):
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [11][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m gram_mat [38;5;241m=[39m np[38;5;241m.[39mzeros(([43mx[49m[38;5;241m.[39mshape[[38;5;241m0[39m], x[38;5;241m.[39mshape[[38;5;241m0[39m]))
-[1;32m      3[0m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m(x[38;5;241m.[39mshape[[38;5;241m0[39m]):
-[1;32m      4[0m     [38;5;28;01mfor[39;00m j [38;5;129;01min[39;00m [38;5;28mrange[39m(x[38;5;241m.[39mshape[[38;5;241m0[39m]):
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [11][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      6[0m     gram_mat[i, j] [38;5;241m=[39m [38;5;241m1[39m
+[1;32m      7[0m [38;5;28;01mif[39;00m i [38;5;241m>[39m j:
+[0;32m----> 8[0m     r [38;5;241m=[39m [43mq_dot_prod[49m[43m([49m[43mi[49m[43m,[49m[43m [49m[43mj[49m[43m)[49m
+[1;32m      9[0m     gram_mat[i, j] [38;5;241m=[39m r
+[1;32m     10[0m     gram_mat[j, i] [38;5;241m=[39m r
 
-[0;31mNameError[0m: name 'x' is not defined
-NameError: name 'x' is not defined
+[0;31mTypeError[0m: q_dot_prod() missing 1 required positional argument: 'j'
+TypeError: q_dot_prod() missing 1 required positional argument: 'j'
 
