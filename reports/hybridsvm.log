@@ -17,31 +17,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-x_samples, y_samples = make_moons(n_samples=50)
-y_samples = y_samples * 2 - 1
+gram_mat = np.zeros((x.shape[0], x.shape[0]))
 
-def normalize(x):
-    """Переводит значения в интервал от -1 до 1"""
-
-    return 2 * (x - x.min()) / (x.max() - x.min()) - 1
-
-x_samples[:, 0] = normalize(x[:, 0])
-x_samples[:, 1] = normalize(x[:, 1])
-
-plt.figure(figsize=(4, 3))
-cb = plt.scatter(x[:, 0], x_samples[:, 1], c=y_samples)
-plt.colorbar(cb)
-plt.show()
+for i in range(x.shape[0]):
+    for j in range(x.shape[0]):
+        if i == j:
+            gram_mat[i, j] = 1
+        if i > j:
+            r = q_dot_prod(i, j)
+            gram_mat[i, j] = r
+            gram_mat[j, i] = r
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 9>[0;34m()[0m
-[1;32m      5[0m     [38;5;124;03m"""Переводит значения в интервал от -1 до 1"""[39;00m
-[1;32m      7[0m     [38;5;28;01mreturn[39;00m [38;5;241m2[39m [38;5;241m*[39m (x [38;5;241m-[39m x[38;5;241m.[39mmin()) [38;5;241m/[39m (x[38;5;241m.[39mmax() [38;5;241m-[39m x[38;5;241m.[39mmin()) [38;5;241m-[39m [38;5;241m1[39m
-[0;32m----> 9[0m x_samples[:, [38;5;241m0[39m] [38;5;241m=[39m normalize([43mx[49m[:, [38;5;241m0[39m])
-[1;32m     10[0m x_samples[:, [38;5;241m1[39m] [38;5;241m=[39m normalize(x[:, [38;5;241m1[39m])
-[1;32m     12[0m plt[38;5;241m.[39mfigure(figsize[38;5;241m=[39m([38;5;241m4[39m, [38;5;241m3[39m))
+Input [0;32mIn [11][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m gram_mat [38;5;241m=[39m np[38;5;241m.[39mzeros(([43mx[49m[38;5;241m.[39mshape[[38;5;241m0[39m], x[38;5;241m.[39mshape[[38;5;241m0[39m]))
+[1;32m      3[0m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m(x[38;5;241m.[39mshape[[38;5;241m0[39m]):
+[1;32m      4[0m     [38;5;28;01mfor[39;00m j [38;5;129;01min[39;00m [38;5;28mrange[39m(x[38;5;241m.[39mshape[[38;5;241m0[39m]):
 
 [0;31mNameError[0m: name 'x' is not defined
 NameError: name 'x' is not defined

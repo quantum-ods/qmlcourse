@@ -116,19 +116,21 @@ from sklearn.svm import SVC
 Мы будем работать с уже привычным нам набором "Tow Moons". Только в этом случае мы будем использовать чуть-чуть другую нормализацию -- для нашего ядра элементы вектора $x$ должны быть в интервале $[-1, 1]$. Сразу переведем наши данные в этот диапазон:
 
 ```{code-cell} ipython3
-x_samples, y_samples = make_moons(n_samples=50)
-y_samples = y_samples * 2 - 1
-
 def normalize(x):
     """Переводит значения в интервал от -1 до 1"""
 
     return 2 * (x - x.min()) / (x.max() - x.min()) - 1
+```
 
-x_samples[:, 0] = normalize(x[:, 0])
-x_samples[:, 1] = normalize(x[:, 1])
+```{code-cell} ipython3
+x_samples, y_samples = make_moons(n_samples=50)
+y_samples = y_samples * 2 - 1
+
+x_samples[:, 0] = normalize(x_samples[:, 0])
+x_samples[:, 1] = normalize(x_samples[:, 1])
 
 plt.figure(figsize=(4, 3))
-cb = plt.scatter(x[:, 0], x_samples[:, 1], c=y_samples)
+cb = plt.scatter(x_samples[:, 0], x_samples[:, 1], c=y_samples)
 plt.colorbar(cb)
 plt.show()
 ```
