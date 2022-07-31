@@ -99,11 +99,12 @@ $$
 Для начала необходимые импорты.
 
 ```{code-cell} ipython3
-from pennylane import numpy as np
 import pennylane as qml
+from pennylane import numpy as np
+from sklearn.datasets import make_moons
+
 import matplotlib.pyplot as plt
 %config InlineBackend.figure_format = 'retina'
-from sklearn.datasets import make_moons
 ```
 
 Помимо всех привычных, нам еще потребуется классический SVM из `scikit-learn`:
@@ -115,21 +116,21 @@ from sklearn.svm import SVC
 Мы будем работать с уже привычным нам набором "Tow Moons". Только в этом случае мы будем использовать чуть-чуть другую нормализацию -- для нашего ядра элементы вектора $x$ должны быть в интервале $[-1, 1]$. Сразу переведем наши данные в этот диапазон:
 
 ```{code-cell} ipython3
-x, y = make_moons(n_samples=50)
-y = y * 2 - 1
-
 def normalize(x):
     """Переводит значения в интервал от -1 до 1"""
 
-    min_ = x.min()
-    max_ = x.max()
-    return 2 * (x - min_) / (max_ - min_) - 1
+    return 2 * (x - x.min()) / (x.max() - x.min()) - 1
+```
 
-x[:, 0] = normalize(x[:, 0])
-x[:, 1] = normalize(x[:, 1])
+```{code-cell} ipython3
+x_samples, y_samples = make_moons(n_samples=50)
+y_samples = y_samples * 2 - 1
+
+x_samples[:, 0] = normalize(x_samples[:, 0])
+x_samples[:, 1] = normalize(x_samples[:, 1])
 
 plt.figure(figsize=(4, 3))
-cb = plt.scatter(x[:, 0], x[:, 1], c=y)
+cb = plt.scatter(x_samples[:, 0], x_samples[:, 1], c=y_samples)
 plt.colorbar(cb)
 plt.show()
 ```
@@ -140,10 +141,9 @@ plt.show()
 dev = qml.device("default.qubit", 2)
 ```
 
-Теперь давайте для начала реализуем наше преобразование над одним из векторов ($U(x)$). Поскольку далее нам потребуется еще и $U(x)^\dagger$, то мы сразу воспользуемся декоратором `@qml.template`, который позволит нам автоматически получить обратную схему.
+Теперь давайте для начала реализуем наше преобразование над одним из векторов ($U(x)$).
 
 ```{code-cell} ipython3
-@qml.template
 def var_layer(x):
     qml.Hadamard(wires=0)
     qml.Hadamard(wires=1)
@@ -177,7 +177,7 @@ $$
 @qml.qnode(dev)
 def dot_prod(x1, x2):
     var_layer(x1)
-    qml.inv(var_layer(x2))
+    qml.adjoint(var_layer)(x2)
 
     return qml.probs(wires=[0, 1])
 ```
@@ -185,22 +185,23 @@ def dot_prod(x1, x2):
 Ну и сразу вспомогательную функцию, которая нам считает то, что нам было нужно:
 
 ```{code-cell} ipython3
-def q_dot_prod(i, j):
+def q_dot_prod(x, i, j):
     x1 = (x[i, 0], x[i, 1])
     x2 = (x[j, 0], x[j, 1])
+
     return dot_prod(x1, x2)[0]
 ```
 
 Для самопроверки убедимся в том, что наше "скалярное произведение" симметрично:
 
 ```{code-cell} ipython3
-print(np.allclose(q_dot_prod(0, 1), q_dot_prod(1, 0)))
+print(np.allclose(q_dot_prod(x_samples, 0, 1), q_dot_prod(x_samples, 1, 0)))
 ```
 
 И сразу посмотрим на то, как выглядит наша схема:
 
 ```{code-cell} ipython3
-print(dot_prod.draw())
+print(qml.draw(dot_prod)(x_samples, y_samples))
 ```
 
 ### Гибридный SVM
@@ -212,14 +213,14 @@ $$
 $$
 
 ```{code-cell} ipython3
-gram_mat = np.zeros((x.shape[0], x.shape[0]))
+gram_mat = np.zeros((x_samples.shape[0], x_samples.shape[0]))
 
-for i in range(x.shape[0]):
-    for j in range(x.shape[0]):
+for i in range(x_samples.shape[0]):
+    for j in range(x_samples.shape[0]):
         if i == j:
             gram_mat[i, j] = 1
         if i > j:
-            r = q_dot_prod(i, j)
+            r = q_dot_prod(x_samples, i, j)
             gram_mat[i, j] = r
             gram_mat[j, i] = r
 ```
@@ -228,7 +229,7 @@ for i in range(x.shape[0]):
 
 ```{code-cell} ipython3
 model = SVC(kernel="precomputed")
-model.fit(gram_mat, y)
+model.fit(gram_mat, y_samples)
 ```
 
 Посчитаем предсказания и посмотрим на результат:
@@ -237,7 +238,7 @@ model.fit(gram_mat, y)
 preds = model.predict(X=gram_mat)
 
 plt.figure(figsize=(4, 3))
-cb = plt.scatter(x[:, 0], x[:, 1], c=preds)
+cb = plt.scatter(x_samples[:, 0], x_samples[:, 1], c=preds)
 plt.colorbar(cb)
 plt.show()
 ```
