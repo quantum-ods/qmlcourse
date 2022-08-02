@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  create_folder_for_latex:
+  create-folder-for-latex:
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
@@ -19,7 +19,7 @@ jobs:
       - run: |
           mkdir -p ./latex/
 
-  run_book:
+  build-book:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -71,8 +71,8 @@ jobs:
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
 
-  deploy_book:
-    needs: [create_folder_for_latex, run_book]
+  deploy-book:
+    needs: [create-folder-for-latex, build-book]
     runs-on: ubuntu-latest
     timeout-minutes: 2
     environment:
