@@ -3,34 +3,34 @@
 # QMLCourse
 
 <a href="https://quantum-ods.github.io/qmlcourse/">
-    <img alt="shield_website_jb" src="https://img.shields.io/badge/jb-nightly--buil-blueviolet?style=for-the-badge">
+    <img alt="badge_website_jb" src="https://img.shields.io/badge/jb-nightly--buil-blueviolet?style=for-the-badge">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse">
-    <img alt="shield_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
+    <img alt="badge_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
 </a>
 <a href="https://github.com/quantum-ods/qmlcourse/raw/web-page-master/latex/qmlcourse.pdf">
-    <img alt="shield_download_pdf_book" src="https://img.shields.io/badge/pdf%20book-download-information?style=for-the-badge">
+    <img alt="badge_download_pdf_book" src="https://img.shields.io/badge/pdf%20book-download-information?style=for-the-badge">
 </a>
 
 <p align="left">
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment">
-<img alt="shield_pages_build_deployment" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment/badge.svg">
+<img alt="badge_pages_build_deployment" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment/badge.svg">
   </a>
     <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
-    <img alt="shield_deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
+    <img alt="badge_cd-master" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/cd-master.yml/badge.svg">
   </a>
   <a href="https://qmlc-web-page-stage.netlify.app/">
-    <img alt="shield_netlify_status" src="https://img.shields.io/netlify/ff3a4d3f-49a9-47db-9335-364525652b89">
+    <img alt="badge_netlify_status" src="https://img.shields.io/netlify/ff3a4d3f-49a9-47db-9335-364525652b89">
   </a>
   </br>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
-    <img alt="shield_pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+    <img alt="badge_ci" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/ci.yml/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml">
-    <img alt="shield_dependency_review" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml/badge.svg">
+    <img alt="badge_dependency_review" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml">
-    <img alt="shield_codeql" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml/badge.svg">
+    <img alt="badge_codeql" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml/badge.svg">
   </a>  
 </p>
 
