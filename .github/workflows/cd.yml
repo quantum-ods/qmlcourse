@@ -1,4 +1,4 @@
-name: deploy-book
+name: ci
 
 on:
   workflow_dispatch:
@@ -29,7 +29,7 @@ jobs:
       - run: |
           mkdir -p ./latex/
 
-  deploy_book:
+  run_deploy_book:
     needs: [create_folder_for_latex]
     runs-on: ubuntu-latest
     timeout-minutes: 20
