@@ -1,4 +1,4 @@
-<img src="./qmlcourse/logo.svg" align="left" width="207" height="207"></img>
+<img src="./qmlcourse/logo.svg" align="left" width="178" height="178"></img>
 
 # QMLCourse
 
