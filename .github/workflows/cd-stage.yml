@@ -78,7 +78,7 @@ jobs:
     environment:
       name: qmlc-web-page-stage
       url: https://qmlc-web-page-stage.netlify.app
-    
+
     steps:
 
       - name: update publish dir to build branch

@@ -78,8 +78,13 @@ jobs:
     environment:
       name: qmlc-web-page-stage
       url: https://qmlc-web-page-stage.netlify.app
-    
+
     steps:
+
+      - name: checkout to build branch
+        uses: actions/checkout@v3
+        with:
+          ref: web-page-stage
 
       - name: send pdf book to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
