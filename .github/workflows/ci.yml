@@ -1,4 +1,4 @@
-name: pre-commit
+name: ci
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  pre_commit:
+  pre-commit:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
