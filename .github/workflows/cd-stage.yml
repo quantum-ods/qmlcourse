@@ -81,6 +81,9 @@ jobs:
 
     steps:
 
+      - name: checkout to build branch
+        uses: actions/checkout@v3
+
       - name: update publish dir to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
