@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  create-folder-for-latex:
+  create_folder_for_latex:
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
@@ -19,9 +19,11 @@ jobs:
       - run: |
           mkdir -p ./latex/
 
-  build-book:
+  run_book:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      artifacts_jb: ${{ steps.build_book.outputs.data }}
 
     steps:
 
@@ -50,6 +52,7 @@ jobs:
           poetry install --no-interaction --no-root
 
       - name: build the book
+        id: build_book
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
@@ -57,22 +60,24 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-      - name: build latex files
-        env:
-          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-        run: |
-          sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
+          ::set-output name=data::./qmlcourse
 
-          poetry run jupyter-book build ./qmlcourse --builder latex
+      # - name: build latex files
+      #   env:
+      #     DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+      #   run: |
+      #     sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
 
-      - name: create pdf book
-        continue-on-error: true
-        run: |
-          cd ./qmlcourse/_build/latex/
-          xelatex -interaction=nonstopmode qmlcourse.tex
+      #     poetry run jupyter-book build ./qmlcourse --builder latex
 
-  deploy-book:
-    needs: [create-folder-for-latex, build-book]
+      # - name: create pdf book
+      #   continue-on-error: true
+      #   run: |
+      #     cd ./qmlcourse/_build/latex/
+      #     xelatex -interaction=nonstopmode qmlcourse.tex
+
+  deploy_book:
+    needs: [create_folder_for_latex, run_book]
     runs-on: ubuntu-latest
     timeout-minutes: 2
     environment:
@@ -84,17 +89,19 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
+      # - name: update publish dir to build branch
+      #   uses: peaceiris/actions-gh-pages@v3.8.0
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./qmlcourse/_build/html/
+      #     publish_branch: web-page-stage
+
+      - run: needs.run_book.outputs.data
+
       - name: send pdf book to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
           destination_dir: ./latex/
-          publish_branch: web-page-stage
-
-      - name: update publish dir to build branch
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/html/
           publish_branch: web-page-stage
