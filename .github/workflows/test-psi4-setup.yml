@@ -22,8 +22,6 @@ jobs:
   run_book:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    outputs:
-      artifacts_jb: ${{ steps.build_book.outputs.data }}
 
     steps:
 
@@ -60,7 +58,11 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-          echo "::set-output name=data::$./qmlcourse"
+      - name: upload ./qmlcourse
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./qmlcourse/*
+          if-no-files-found: error
 
       # - name: build latex files
       #   env:
@@ -86,22 +88,25 @@ jobs:
 
     steps:
 
-      - name: checkout to build branch
-        uses: actions/checkout@v3
+      # - name: checkout to build branch
+      #   uses: actions/checkout@v3
 
-      # - name: update publish dir to build branch
-      #   uses: peaceiris/actions-gh-pages@v3.8.0
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./qmlcourse/_build/html/
-      #     publish_branch: web-page-stage
+      - name: download ./qmlcourse
+        uses: actions/download-artifact@v3
+        with:
+          path: ./qmlcourse
 
-      - run: echo ${{needs.run_book.outputs.artifacts_jb}}
-
-      - name: send pdf book to build branch
+      - name: update publish dir to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/latex/
-          destination_dir: ./latex/
+          publish_dir: ./qmlcourse/_build/html/
           publish_branch: web-page-stage
+
+      # - name: send pdf book to build branch
+      #   uses: peaceiris/actions-gh-pages@v3.8.0
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./qmlcourse/_build/latex/
+      #     destination_dir: ./latex/
+      #     publish_branch: web-page-stage
