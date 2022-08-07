@@ -60,7 +60,7 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-          ::set-output name=data::./qmlcourse
+          echo "::set-output name=data::./qmlcourse"
 
       # - name: build latex files
       #   env:
@@ -96,7 +96,7 @@ jobs:
       #     publish_dir: ./qmlcourse/_build/html/
       #     publish_branch: web-page-stage
 
-      - run: needs.run_book.outputs.data
+      - run: echo ${{needs.run_book.outputs.artifacts_jb}}
 
       - name: send pdf book to build branch
         uses: peaceiris/actions-gh-pages@v3.8.0
