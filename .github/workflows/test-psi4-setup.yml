@@ -60,7 +60,7 @@ jobs:
 
           poetry run jupyter-book build ./qmlcourse
 
-          echo "::set-output name=data::./qmlcourse"
+          echo "::set-output name=data::$./qmlcourse"
 
       # - name: build latex files
       #   env:
