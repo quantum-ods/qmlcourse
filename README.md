@@ -17,7 +17,7 @@
     <img alt="badge_ci" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/ci.yml/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
-    <img alt="badge_cd_master" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/cd-master.yml/badge.svg">
+    <img alt="badge_cd_prod" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/cd-prod.yml/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml">
     <img alt="badge_dependency_review" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml/badge.svg">

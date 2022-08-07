@@ -1,48 +1,36 @@
-name: ci
+name: cd-prod
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ master ]
+
+env:
+  PUBLISH_BRANCH: web-page-master
 
 jobs:
 
-  create_folder_for_latex:
+  create-folder-for-latex:
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
     steps:
 
-      - name: choose ref to build
-        uses: haya14busa/action-cond@v1.1.0
-        id: choose_branch_to_build
-        with:
-          cond: ${{ github.ref_name == 'master' }}
-          if_true: web-page-master
-          if_false: web-page-stage
-
       - name: checkout to build branch
         uses: actions/checkout@v3
         with:
-          ref: ${{ steps.choose_branch_to_build.outputs.value }}
+          ref: ${{ env.PUBLISH_BRANCH }}
 
       - run: |
           mkdir -p ./latex/
 
-  run_deploy_book:
-    needs: [create_folder_for_latex]
+  build-and-deploy-book:
+    needs: [create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: https://quantum-ods.github.io/qmlcourse/
 
     steps:
-
-      - name: choose ref to build
-        uses: haya14busa/action-cond@v1.1.0
-        id: choose_branch_to_build
-        with:
-          cond: ${{ github.ref_name == 'master' }}
-          if_true: web-page-master
-          if_false: web-page-stage
 
       - name: checkout branch for build
         uses: actions/checkout@v3
@@ -69,6 +57,7 @@ jobs:
           poetry install --no-interaction --no-root
 
       - name: build the book
+        id: build_book
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
@@ -81,7 +70,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
-          publish_branch: ${{ steps.choose_branch_to_build.outputs.value }}
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
 
       - name: build latex files
         env:
@@ -103,4 +92,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
           destination_dir: ./latex/
-          publish_branch: ${{ steps.choose_branch_to_build.outputs.value }}
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
