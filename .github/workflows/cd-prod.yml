@@ -11,6 +11,7 @@ env:
 jobs:
 
   create-folder-for-latex:
+
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
@@ -25,6 +26,7 @@ jobs:
           mkdir -p ./latex/
 
   build-and-deploy-book:
+  
     needs: [create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 20
