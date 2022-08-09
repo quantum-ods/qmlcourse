@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       build_pdf:
-        description: 'build/creare pdf book? (it is increase time workflow)'
+        description: 'build pdf book? (it is increase time workflow)'
         required: true
         default: 'false'
         type: choice
