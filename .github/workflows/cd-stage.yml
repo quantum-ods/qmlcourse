@@ -18,7 +18,6 @@ env:
 jobs:
 
   create-folder-for-latex:
-    if: github.event.inputs.build_pdf == true
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
