@@ -6,7 +6,7 @@ on:
       build_pdf:
         description: 'build pdf book? (it is increase time workflow)'
         required: true
-        default: 'false'
+        default: 'no'
         type: choice
         options:
           - 'yes'
