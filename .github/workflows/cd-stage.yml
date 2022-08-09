@@ -2,6 +2,15 @@ name: cd-stage
 
 on:
   workflow_dispatch:
+    inputs:
+      build_pdf:
+        description: 'build/creare pdf book? (it is increase time workflow)'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 env:
   PUBLISH_BRANCH: web-page-stage
@@ -9,6 +18,7 @@ env:
 jobs:
 
   create-folder-for-latex:
+    if: github.event.inputs.build_pdf == true
     runs-on: ubuntu-latest
     timeout-minutes: 1
 
@@ -73,6 +83,7 @@ jobs:
           publish_branch: ${{ env.PUBLISH_BRANCH }}
 
       - name: build latex files
+        if: github.event.inputs.build_pdf == true
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
@@ -81,12 +92,14 @@ jobs:
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
+        if: github.event.inputs.build_pdf == true
         continue-on-error: true
         run: |
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
 
       - name: send pdf book to build branch
+        if: github.event.inputs.build_pdf == true
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
