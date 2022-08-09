@@ -64,7 +64,6 @@ jobs:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
           poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
-
           poetry run jupyter-book build ./qmlcourse
 
       - name: update publish dir to build branch
@@ -79,7 +78,6 @@ jobs:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
           sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
-
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
