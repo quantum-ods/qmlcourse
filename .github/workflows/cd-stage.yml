@@ -9,8 +9,8 @@ on:
         default: 'false'
         type: choice
         options:
-          - 'true'
-          - 'false'
+          - 'yes'
+          - 'no'
 
 env:
   PUBLISH_BRANCH: web-page-stage
@@ -81,7 +81,7 @@ jobs:
           publish_branch: ${{ env.PUBLISH_BRANCH }}
 
       - name: build latex files
-        if: github.event.inputs.build_pdf == true
+        if: github.event.inputs.build_pdf == 'yes'
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
@@ -89,14 +89,14 @@ jobs:
           poetry run jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
-        if: github.event.inputs.build_pdf == true
+        if: github.event.inputs.build_pdf == 'yes'
         continue-on-error: true
         run: |
           cd ./qmlcourse/_build/latex/
           xelatex -interaction=nonstopmode qmlcourse.tex
 
       - name: send pdf book to build branch
-        if: github.event.inputs.build_pdf == true
+        if: github.event.inputs.build_pdf == 'yes'
         uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
