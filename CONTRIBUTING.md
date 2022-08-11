@@ -195,7 +195,7 @@ The list is sorted alphabetically and you need to place your surname and name (o
 
 ## Translate
 
-All English version start after block **"О КУРСЕ / ABOUT THE COURSE"** where blocks duplicated from Russian. Each lectures folders and pictures have `ru/` & `en/` separate folders to split languages versions.
+All English version start after block **"О КУРСЕ / ABOUT THE COURSE"** where they are duplicated from Russian. Each lectures folders and pictures have `ru/` & `en/` separate folders to split languages versions.
 
 ## Intellectual property rights
 
