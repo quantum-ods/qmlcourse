@@ -173,7 +173,7 @@ Example:
 
 *This part not necessarily, the reviewers will do it for you*
 
-Before the final `git push` you can run hooks, you should install the [pre-commit](https://pre-commit.com/#installation). To execute pre-commit, run (if using poetry)
+Before the final `git push` you should install the [pre-commit](https://pre-commit.com/#installation). To execute pre-commit, run (if using poetry)
 
 ```{shell}
 poetry run pre-commit run --all-files
