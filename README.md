@@ -3,7 +3,7 @@
 # QMLCourse
 
 <a href="https://quantum-ods.github.io/qmlcourse/">
-    <img alt="badge_website_jb" src="https://img.shields.io/badge/jb-nightly--buil-blueviolet?style=for-the-badge">
+    <img alt="badge_website_jb" src="https://img.shields.io/badge/jb-nightly--build-blueviolet?style=for-the-badge">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse">
     <img alt="badge_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
