@@ -17,6 +17,7 @@ html:
   use_repository_button: true
   use_issues_button: true
   use_binder_button: false
+  binderhub_url: ""
   baseurl: https://quantum-ods.github.io/qmlcourse/book/
   google_analytics_id: G-3B94SZ0WNF
 
