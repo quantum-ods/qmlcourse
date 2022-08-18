@@ -1,0 +1,26 @@
+name: test-makefile
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  check-makefile:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: checkout branch for build
+        uses: actions/checkout@v3
+
+      - name: install dependencies
+        run: make install-${{ matrix.os }}
+
+      - name: build the book
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          make build-linux-macos
