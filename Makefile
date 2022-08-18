@@ -27,7 +27,7 @@ install-python-poetry-macos:
 install-python-dependencies:
 #	poetry env use python3.8
 	poetry env list
-	poetry install
+	poetry install --no-interaction --no-root
 
 build-linux-macos:
 #	cd $(HOME)/psi4conda/etc/profile.d/ && source conda.sh && conda activate && cd - && poetry run psi4 --test
