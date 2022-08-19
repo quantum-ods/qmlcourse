@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+
+  pre-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: set up py3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: run pre-commit action
+        uses: pre-commit/action@v3.0.0
+        with:
+          extra_args: --all-files
