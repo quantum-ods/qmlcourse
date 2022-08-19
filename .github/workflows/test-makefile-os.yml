@@ -19,10 +19,14 @@ jobs:
       - name: install dependencies
         run: make install-${{ matrix.os }}
 
+      - name: export poetry
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          export PATH="$HOME/.poetry/bin:$PATH"
+
       - name: build the book
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
-          export PATH="$HOME/.poetry/bin:$PATH"
           poetry run jupyter-book toc migrate /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml -o /home/runner/work/qmlcourse/qmlcourse/qmlcourse/_toc.yml
           make build-linux-macos
