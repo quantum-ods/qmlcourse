@@ -32,7 +32,7 @@ jobs:
       - name: build the book
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-          PATH: '$HOME/.poetry/bin:$PATH'
         run: |
+          export PATH="$HOME/.poetry/bin:$PATH"
           poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
           make build-linux-macos
