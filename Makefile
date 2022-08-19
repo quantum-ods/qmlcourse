@@ -23,7 +23,7 @@ install-python-poetry-macos:
 install-python-dependencies:
 #	poetry env use python3.8
 	poetry env list
-	poetry install
+	poetry install --no-interaction --no-root
 
 build-linux-macos:
 	poetry run jupyter-book build ./qmlcourse

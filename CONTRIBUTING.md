@@ -7,7 +7,7 @@ Still, if you are not comfortable with GitHub at all but can provide valuable fe
 
 ### GitHub intro
 
-If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches. Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
+If you are not familiar with GitHub, please take [a short course](https://learngitbranching.js.org/) on Git branches or the official [training manual](https://githubtraining.github.io/training-manual/#/). Be familiar with what commits, branches, pulls/pushes are. Further, what are Issues and Pull Requests on GitHub. The rest of the work on the course material is built on that.
 
 ## Contributor roles
 
@@ -93,7 +93,7 @@ Matplotlib figures should be
 
 ### Building the project
 
-To watch your result (after `git push`) you can build `Jupyter Book` automatically by GitHub Action: in the page, https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book-stage.yml choose your branch and press `Run workflow`. After 10-15min visit https://qmlc-web-page-stage.netlify.app/ and find your lectures page.
+To watch your result (after `git push`) you can build `Jupyter Book` automatically by GitHub Action: in the [action page](https://github.com/quantum-ods/qmlcourse/actions/workflows/cd-stage.yml) choose your branch and press `Run workflow`. After ~15min visit the [stage book](https://qmlc-web-page-stage.netlify.app/) to find your ended result.
 
 ### Chapters and headers
 
@@ -163,14 +163,17 @@ Example:
 
 ## Pull Requests
 
-- If you were assigned to an issue, you need to create a new branch from the `master`.
-- When you finish your work you make a Pull Request (into `master` branch) where you tag the initial issue and assign yourself (right in the panel).
+- Fork and clone the repository
+- Create a new branch: `git checkout -b my-branch-name`
+- Make your change, and make sure the actions still work
+- Push to your fork and submit a pull request
+- Wait for your pull request to be reviewed and merged.
 
 ### Run pre-commit hooks before building
 
 *This part not necessarily, the reviewers will do it for you*
 
-Before the final `git push` you can run hooks, you should install the [pre-commit](https://pre-commit.com/#installation). To execute pre-commit, run (if using poetry)
+Before the final `git push` you should install the [pre-commit](https://pre-commit.com/#installation). To execute pre-commit, run (if using poetry)
 
 ```{shell}
 poetry run pre-commit run --all-files
@@ -195,7 +198,7 @@ The list is sorted alphabetically and you need to place your surname and name (o
 
 ## Translate
 
-All English version start after block **"О КУРСЕ / ABOUT THE COURSE"** where blocks duplicated from Russian. Each lectures folders and pictures have `ru/` & `en/` separate folders to split languages versions.
+All English version start after block **"О КУРСЕ / ABOUT THE COURSE"** where they are duplicated from Russian. Each lectures folders and pictures have `ru/` & `en/` separate folders to split languages versions.
 
 ## Intellectual property rights
 
