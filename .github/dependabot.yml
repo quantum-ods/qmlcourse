@@ -1,0 +1,20 @@
+version: 2
+updates:
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    commit-message:
+      prefix: "dependabot"
+    assignees:
+      - "octocat"
+    labels:
+      - "dependencies"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    commit-message:
+      prefix: "dependabot"
+    assignees:
+      - "octocat"
+    labels:
+      - "dependencies"
