@@ -333,6 +333,15 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "commonmark"
+version = "0.9.1"
+description = "Python parser for the CommonMark Markdown spec"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
 name = "contourpy"
 version = "1.0.5"
 description = "Python library for calculating contours of 2D quadrilateral grids"
@@ -627,22 +636,25 @@ python-versions = "*"
 
 [[package]]
 name = "flax"
-version = "0.4.2"
+version = "0.5.3"
 description = "Flax: A neural network library for JAX designed for flexibility"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-jax = ">=0.3"
+jax = ">=0.3.2"
 matplotlib = "*"
 msgpack = "*"
 numpy = ">=1.12"
 optax = "*"
+PyYAML = ">=5.4.1"
+rich = ">=11.1,<12.0"
+tensorstore = "*"
 typing-extensions = ">=4.1.1"
 
 [package.extras]
-testing = ["atari-py (==0.2.5)", "clu", "gym (==0.18.3)", "jaxlib", "jraph", "ml-collections", "opencv-python", "pytest", "pytest-cov", "pytest-xdist (==1.34.0)", "pytype", "sentencepiece", "svn", "tensorflow", "tensorflow-datasets", "tensorflow-text (>=2.4.0)", "torch"]
+testing = ["atari-py (==0.2.5)", "clu", "gym (==0.18.3)", "jaxlib", "jraph", "ml-collections", "opencv-python", "pandas", "pytest", "pytest-cov", "pytest-xdist (==1.34.0)", "pytype", "sentencepiece", "svn", "tensorflow", "tensorflow-datasets", "tensorflow-text (>=2.4.0)", "torch"]
 
 [[package]]
 name = "fonttools"
@@ -1636,30 +1648,30 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "netket"
-version = "3.4.3"
+version = "3.5.1"
 description = "Netket : Machine Learning techniques for many-body quantum systems."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-flax = ">=0.4,<0.5"
+flax = ">=0.5,<0.7"
 igraph = ">=0.9.8,<0.10.0"
-jax = ">=0.2.25,<0.4"
-jaxlib = ">=0.1.72"
+jax = ">=0.3.2,<0.4"
+jaxlib = ">=0.3,<0.4"
 numba = ">=0.52,<0.57"
 numba4jax = ">=0.0.10,<0.1"
-numpy = ">=1.18,<2.0"
+numpy = ">=1.19,<2.0"
 optax = ">=0.1.1,<0.2"
 orjson = ">=3.4,<4.0"
-plum-dispatch = ">=1.5.1,<1.6.0"
+plum-dispatch = ">=1.5.1,<2"
 scipy = ">=1.5.3,<2"
 tqdm = ">=4.60,<5.0"
 
 [package.extras]
-all = ["black (==22.3.0)", "coverage (>=5)", "flake8 (==4.0.1)", "mpi4jax (>=0.3.1,<0.4.0)", "mpi4py (>=3.0.1,<4)", "networkx (>=2.4,<3.0)", "openfermion (>=1.0.0)", "pre-commit (>=2.7)", "pytest (>=6)", "pytest-cov (>=2.10.1)", "pytest-json-report (>=1.3)", "pytest-xdist[psutil] (>=2)", "tensorboardx (>=2.0.0)"]
-dev = ["black (==22.3.0)", "coverage (>=5)", "flake8 (==4.0.1)", "networkx (>=2.4,<3.0)", "pre-commit (>=2.7)", "pytest (>=6)", "pytest-cov (>=2.10.1)", "pytest-json-report (>=1.3)", "pytest-xdist[psutil] (>=2)"]
-extra = ["openfermion (>=1.0.0)", "tensorboardx (>=2.0.0)"]
+all = ["black (==22.3.0)", "coverage (>=5)", "flake8 (==5.0.4)", "h5py (>=3.7.0)", "mpi4jax (>=0.3.1,<0.4.0)", "mpi4py (>=3.0.1,<4)", "networkx (>=2.4,<3.0)", "openfermion (>=1.0.0)", "pre-commit (>=2.7)", "pytest (>=6)", "pytest-cov (>=2.10.1)", "pytest-json-report (>=1.3)", "pytest-xdist[psutil] (>=2)", "tensorboardx (>=2.0.0)"]
+dev = ["black (==22.3.0)", "coverage (>=5)", "flake8 (==5.0.4)", "networkx (>=2.4,<3.0)", "pre-commit (>=2.7)", "pytest (>=6)", "pytest-cov (>=2.10.1)", "pytest-json-report (>=1.3)", "pytest-xdist[psutil] (>=2)"]
+extra = ["h5py (>=3.7.0)", "openfermion (>=1.0.0)", "tensorboardx (>=2.0.0)"]
 mpi = ["mpi4jax (>=0.3.1,<0.4.0)", "mpi4py (>=3.0.1,<4)"]
 
 [[package]]
@@ -2590,6 +2602,22 @@ graphviz = ["pillow (>=5.4)"]
 mpl = ["matplotlib (>=3.0)"]
 
 [[package]]
+name = "rich"
+version = "11.2.0"
+description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
+category = "main"
+optional = false
+python-versions = ">=3.6.2,<4.0.0"
+
+[package.dependencies]
+colorama = ">=0.4.0,<0.5.0"
+commonmark = ">=0.9.0,<0.10.0"
+pygments = ">=2.6.0,<3.0.0"
+
+[package.extras]
+jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
+
+[[package]]
 name = "rsa"
 version = "4.8"
 description = "Pure-Python RSA implementation"
@@ -3205,6 +3233,17 @@ sympy = "1.8"
 extras = ["tensorflow (==2.5.1)"]
 
 [[package]]
+name = "tensorstore"
+version = "0.1.27"
+description = "Read and write large, multi-dimensional arrays"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+numpy = ">=1.16.0"
+
+[[package]]
 name = "termcolor"
 version = "1.1.0"
 description = "ANSII Color formatting for output in terminal."
@@ -3467,7 +3506,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "1e24d2a99a71fad4a758e3fac26de85b507791ef4488f6e17dd60268402affdb"
+content-hash = "cf88f9864c8936f47e28aa34dc366ffa625b9a8be5503561703f7b011961e772"
 
 [metadata.files]
 absl-py = [
@@ -3651,6 +3690,9 @@ colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
+commonmark = [
+    {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
+    {file = "commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
 contourpy = [
     {file = "contourpy-1.0.5-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:87121b9428ac568fb84fae4af5e7852fc34f02eadc4e3e91f6c8989327692186"},
     {file = "contourpy-1.0.5-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:1fb782982c42cee667b892a0b0c52a9f6c7ecf1da5c5f4345845f04eaa862f93"},
@@ -3934,8 +3976,8 @@ flatbuffers = [
     {file = "flatbuffers-2.0.tar.gz", hash = "sha256:12158ab0272375eab8db2d663ae97370c33f152b27801fa6024e1d6105fd4dd2"},
 ]
 flax = [
-    {file = "flax-0.4.2-py3-none-any.whl", hash = "sha256:37a3293d79cf7b49ca97e2f8fb99b92949013413474e0f059d3b44eec79b5c5a"},
-    {file = "flax-0.4.2.tar.gz", hash = "sha256:65d3474570f0e23d9e3cf0650a47edbc937695f276445f877addfaf5ed61913f"},
+    {file = "flax-0.5.3-py3-none-any.whl", hash = "sha256:911dc4d6463ccba9808d303f44dfb4a0a6de277be8f3cbfda1471ed1a3e19374"},
+    {file = "flax-0.5.3.tar.gz", hash = "sha256:7ab7f75abc9dd7568ee86279c2e167bbd7ecbeeeac03589d93119b3321036cc0"},
 ]
 fonttools = [
     {file = "fonttools-4.33.3-py3-none-any.whl", hash = "sha256:f829c579a8678fa939a1d9e9894d01941db869de44390adb49ce67055a06cc2a"},
@@ -4653,8 +4695,8 @@ nest-asyncio = [
     {file = "nest_asyncio-1.5.5.tar.gz", hash = "sha256:e442291cd942698be619823a17a86a5759eabe1f8613084790de189fe9e16d65"},
 ]
 netket = [
-    {file = "netket-3.4.3-py3-none-any.whl", hash = "sha256:30d9294a7629bc296ed9ceac20ff149ae6f3b20aa0427044687fad27cb5f4eb3"},
-    {file = "netket-3.4.3.tar.gz", hash = "sha256:881780e93c2204427bd14437423c465a62270f3fc136ed3c60e11174959c627a"},
+    {file = "netket-3.5.1-py3-none-any.whl", hash = "sha256:85dd9f9cbf730ad253e4ed2522a6d4357cc24de47d931a663beb712ef2980a38"},
+    {file = "netket-3.5.1.tar.gz", hash = "sha256:83ede828468a7299b59d56ea9b7284ac348430b2ad55f0f561dfaff3c18cfdcd"},
 ]
 networkx = [
     {file = "networkx-2.8.3-py3-none-any.whl", hash = "sha256:f151edac6f9b0cf11fecce93e236ac22b499bb9ff8d6f8393b9fef5ad09506cc"},
@@ -5473,6 +5515,10 @@ retworkx = [
     {file = "retworkx-0.11.0-cp39-cp39-win_amd64.whl", hash = "sha256:97b0fd2c6cb29031b21e395b1c0ac5f43b4110fb78f1fa448c1c7079180c864a"},
     {file = "retworkx-0.11.0.tar.gz", hash = "sha256:a4c2a5ad3f8402493d41ad20ad91a03777ea214a3636c290272bbfaf36161161"},
 ]
+rich = [
+    {file = "rich-11.2.0-py3-none-any.whl", hash = "sha256:d5f49ad91fb343efcae45a2b2df04a9755e863e50413623ab8c9e74f05aee52b"},
+    {file = "rich-11.2.0.tar.gz", hash = "sha256:1a6266a5738115017bb64a66c59c717e7aa047b3ae49a011ede4abdeffc6536e"},
+]
 rsa = [
     {file = "rsa-4.8-py3-none-any.whl", hash = "sha256:95c5d300c4e879ee69708c428ba566c59478fd653cc3a22243eeb8ed846950bb"},
     {file = "rsa-4.8.tar.gz", hash = "sha256:5c6bd9dc7a543b7fe4304a631f8a8a3b674e2bbfc49c2ae96200cdbe55df6b17"},
@@ -5760,6 +5806,24 @@ tensorflow-quantum = [
     {file = "tensorflow_quantum-0.6.0-cp38-cp38-macosx_10_11_x86_64.whl", hash = "sha256:71009181112ff8a723c8f4d8acc37e9d30107496b0b0902f6d3741aa77faabbb"},
     {file = "tensorflow_quantum-0.6.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:6871e6849d9384cb8d044ba044e659035ba96c18e59c65ce6350df7f2c4e439d"},
     {file = "tensorflow_quantum-0.6.0-cp39-cp39-macosx_12_1_x86_64.whl", hash = "sha256:e3ed5e0195de4ee710f6d2cc7d28618e917f8f4b2d21c28d4342efe4de8b6288"},
+]
+tensorstore = [
+    {file = "tensorstore-0.1.27-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:b51266502e0d680027f0751a0d70805c00fba638caf92926f56d15e97b15bab8"},
+    {file = "tensorstore-0.1.27-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:9b67f3c32b1014b48152b045fa9b265cccf493e6a975ed5dd106d407c8f7c0ad"},
+    {file = "tensorstore-0.1.27-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:073aa2a972bf9a1f5f0eba2eb2906e4469dfe763927838730c8af6d5d837a254"},
+    {file = "tensorstore-0.1.27-cp310-cp310-win_amd64.whl", hash = "sha256:8ecb98667bcc6e13790676aad3f8a3ac6c6f89fc3be241fa0628e7b1a28913ad"},
+    {file = "tensorstore-0.1.27-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:0b65dafc680166789c24ae693cc2c8784a41f83ecab922e0863f600afbd1733e"},
+    {file = "tensorstore-0.1.27-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e357a35ab9fba33b46ee8c57fe4a7321b261756b32a284a1670b3cb6493faf6a"},
+    {file = "tensorstore-0.1.27-cp37-cp37m-win_amd64.whl", hash = "sha256:8b49bd48a0010677cfca823f3a488b8159fd674664d2cf609fe59721252a767b"},
+    {file = "tensorstore-0.1.27-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:39082b1e03c959bc58a869d68dd066ff41cb614e2fb3a2a08bb6ae4586bab8d8"},
+    {file = "tensorstore-0.1.27-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:93b695e21d887d343ccf6c6d34bec33670011ffb8578723e739342c264e43361"},
+    {file = "tensorstore-0.1.27-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:436b9b99c54d6d09af64584fcd915b2933e5e91f8a18b44f945146e895c8aff7"},
+    {file = "tensorstore-0.1.27-cp38-cp38-win_amd64.whl", hash = "sha256:aad041a96ed06861cdc3ababc8efa7d1ec18994fdef60229c9a380be17c37d8e"},
+    {file = "tensorstore-0.1.27-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:73a4406c31a17d37e58b8fd4347b7e861db888dd1a9770b79e515801a2523803"},
+    {file = "tensorstore-0.1.27-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:362b06ad596f7257099f8cc98651508acd949fb6cf4d23a46cc1054533ef8ead"},
+    {file = "tensorstore-0.1.27-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab967146fb00334feb231cf56470f3e3491aee7c1e02242c46388a0cc8666479"},
+    {file = "tensorstore-0.1.27-cp39-cp39-win_amd64.whl", hash = "sha256:0a70dd9541556b905b5821698312962b182622a90af3a28cb992b3235d051c90"},
+    {file = "tensorstore-0.1.27.tar.gz", hash = "sha256:73f1d3cf7d6e6f92c482bcc3ff1a59dbff9194652d15bc9fd1164dbb6578dac5"},
 ]
 termcolor = [
     {file = "termcolor-1.1.0.tar.gz", hash = "sha256:1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b"},
