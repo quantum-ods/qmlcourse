@@ -340,8 +340,7 @@ category = "main"
 optional = false
 python-versions = "*"
 
-[package.extras]
-test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
+[[package]]
 name = "contourpy"
 version = "1.0.5"
 description = "Python library for calculating contours of 2D quadrilateral grids"
@@ -3693,6 +3692,7 @@ colorama = [
 commonmark = [
     {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
     {file = "commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
+]
 contourpy = [
     {file = "contourpy-1.0.5-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:87121b9428ac568fb84fae4af5e7852fc34f02eadc4e3e91f6c8989327692186"},
     {file = "contourpy-1.0.5-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:1fb782982c42cee667b892a0b0c52a9f6c7ecf1da5c5f4345845f04eaa862f93"},
