@@ -1082,7 +1082,7 @@ format-nongpl = ["idna", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3986-va
 
 [[package]]
 name = "jupyter-book"
-version = "0.13.0"
+version = "0.13.1"
 description = "Build a book with Jupyter Notebooks and Sphinx."
 category = "main"
 optional = false
@@ -3467,7 +3467,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "a70e5cd4fefad13e5ac5371e4329fa62c73fd4e23f92956022390421fe51fa1a"
+content-hash = "1e24d2a99a71fad4a758e3fac26de85b507791ef4488f6e17dd60268402affdb"
 
 [metadata.files]
 absl-py = [
@@ -4224,8 +4224,8 @@ jsonschema = [
     {file = "jsonschema-3.2.0.tar.gz", hash = "sha256:c8a85b28d377cc7737e46e2d9f2b4f44ee3c0e1deac6bf46ddefc7187d30797a"},
 ]
 jupyter-book = [
-    {file = "jupyter-book-0.13.0.tar.gz", hash = "sha256:0a956677e7bbee630dd66641c09a84091277887d6dcdd381a676f00fa9de2074"},
-    {file = "jupyter_book-0.13.0-py3-none-any.whl", hash = "sha256:c310a0838ed90e2fa87239856ca24bed91f12a541dedf290cc94ac4e07ead166"},
+    {file = "jupyter-book-0.13.1.tar.gz", hash = "sha256:460a42fc7e09de46dd66c2aec18bbb10e282a9c80cdafe2e52c9ba3d51649d01"},
+    {file = "jupyter_book-0.13.1-py3-none-any.whl", hash = "sha256:b46e8f320b6b136eef44b5ca72bee4d35d7dadc1293e6611b61914fd7e088fd0"},
 ]
 jupyter-cache = [
     {file = "jupyter-cache-0.4.3.tar.gz", hash = "sha256:4c9b5431b1d320bc68440c21fa0a155bbeb29c5b979bef72222e244a7bcd54fc"},
