@@ -34,7 +34,7 @@ jobs:
           python-version: 3.8
 
       - name: Set up poetry
-        uses: snok/install-poetry@v1.1.7
+        uses: snok/install-poetry@v1.3.3
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
@@ -49,7 +49,7 @@ jobs:
 
       # Use cache
       - name: Copy cache dir for dependecies
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         env:
           cache-name: cache-poetry-modules
         with:
