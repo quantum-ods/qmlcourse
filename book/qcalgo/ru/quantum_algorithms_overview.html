@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Обзор квантовых алгоритмов &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -944,14 +948,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="quantum-algorithms-overview">
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-algorithms-overview">
 <span id="id1"></span><h1>Обзор квантовых алгоритмов<a class="headerlink" href="#quantum-algorithms-overview" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SergeiShirkin">Ширкин Сергей</a></p></li>
 </ul>
 <p>Квантовые вычисления открывают новые возможности решения задач, для которых ранее были известны только классические алгоритмы решения. С появлением идеи квантового компьютера стало понятно, что нахождение ответа для многих задач можно значительно ускорить. При этом некоторым сложным задачам, решить которые классическим способом в разумные сроки невозможно, квантовый компьютер дает реальный шанс быть решенными.</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Классификация задач по временной сложности<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Вообще, в соответствии с теорией алгоритмов, задачи можно разбить на классы по временной сложности их решения. Также часто используется классификация задач по объему необходимой памяти (пространственная сложность), но нас в первую очередь волнует, насколько быстро мы сможем найти правильный ответ, так что поговорим о временной сложности. Класс задач <span class="math notranslate nohighlight">\(P\)</span> – это те задачи, которые возможно решить на классическом компьютере за полиномиальное время, их сложность можно представить как <span class="math notranslate nohighlight">\(O(n^k)\)</span>. Соответственно, решение задач этого класса не является драматически затратным по времени (за исключением случаев, когда степень полинома высока, хотя такие алгоритмы и не являются типичными).</p>
 <p>Другой класс задач – <span class="math notranslate nohighlight">\(NP\)</span> (расшифровывается как “недетерминировано полиномиальные”). Это класс задач, для которых неизвестно полиномиальное классическое решение. При этом проверка решения возможна за полиномиальное время. К примеру, нахождение простых множителей большого числа с помощью известных классических алгоритмов – субэкспоненциально сложная задача (работает за время, большее, чем полиномиальное, но меньшее, чем экспоненциальное). Проверить же найденное решение предельно просто: достаточно перемножить найденные простые числа.</p>
@@ -959,24 +963,26 @@ title="Print to PDF"
 <p>Вообще, есть также задачи, которые, хотя и не относятся к классу <span class="math notranslate nohighlight">\(NP\)</span>, но несмотря на это, к ним все же можно свести задачи из <span class="math notranslate nohighlight">\(NP\)</span>-класса. В совокупности с <span class="math notranslate nohighlight">\(NP\)</span>-полными задачами они образуют класс <span class="math notranslate nohighlight">\(NP\)</span>-трудных задач (<span class="math notranslate nohighlight">\(NP\)</span>-hard).</p>
 <p>К примеру, к <span class="math notranslate nohighlight">\(NP\)</span>-hard задачам относится задача коммивояжера, в которой требуется установить кратчайший путь. Как решение, так и его проверка в данном случае займет суперполиномиальное время, так что эта задача не входит в класс <span class="math notranslate nohighlight">\(NP\)</span>-complete. Если же ее немного упростить, так что решением будет являться путь не дольше заданного, то такая разновидность задачи является примером класса <span class="math notranslate nohighlight">\(NP\)</span>-complete, так проверка ее решения не требует времени, большего, чем полиномиальное.</p>
 <p>Если дать возможность классическому компьютеру решать задачи с привнесением случайности, так что компьютер получает правильный ответ с высокой вероятностью (стандартно берут порог не менее <span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>, хотя достаточно, чтобы вероятность была константой больше 0.5), то можно говорить о классе задач <span class="math notranslate nohighlight">\(BPP\)</span> (сокращение от англ. bounded-error, probabilistic, polynomial). Такие задачи получается решить за полиномиальное время, причем точность решения можно сколько угодно увеличивать, повторно запуская алгоритм. Квантовый аналог таких задач – класс <span class="math notranslate nohighlight">\(BQP\)</span> (от англ. bounded error quantum polynomial time). Это задачи, которые получается решить на квантовом компьютере за полиномиальное время, обеспечивая точность решения повторным запуском алгоритма. Наиболее известный пример такой задачи – факторизация чисел, решаемая на квантовом компьютере с помощью алгоритма Шора.</p>
-<div class="figure align-default" id="problem-classes">
+<figure class="align-default" id="problem-classes">
 <a class="reference internal image-reference" href="../../../_images/problem_classes.png"><img alt="../../../_images/problem_classes.png" src="../../../_images/problem_classes.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">Классы задач по временной сложности</span><a class="headerlink" href="#problem-classes" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 59 </span><span class="caption-text">Классы задач по временной сложности</span><a class="headerlink" href="#problem-classes" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>На данный момент можно говорить о том, что класс <span class="math notranslate nohighlight">\(BQP\)</span> включает в себя в том числе и задачи, для которых неизвестно полиномиальное классическое решение, что позволяет относиться к квантовым вычислениям с оптимизмом.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Наиболее известные квантовые алгоритмы<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Квантовые вычисления, несмотря на новые возможности, которые они предоставляют, все же не являются панацеей: не для всех классических “медленных” (то есть, не решаемых за полиномиальное время) алгоритмов пока удалось найти ускоренный квантовый аналог. Более того, многие даже более простые задачи в настоящий момент выгоднее решать на классических компьютерах. Тем не менее, уже найдены квантовые алгоритмы, работающие быстрее классических. Кратко расскажем о наиболее важных из них.</p>
 <p><strong>Алгоритм Шора</strong> – алгоритм, наделавший больше всего шума и привлекший внимание научно-популярных СМИ к квантовым вычислениям. Действительно, этот алгоритм дает повод для беспокойства, так как он позволяет узнавать содержание сообщений, зашифрованных с помощью алгоритма шифрования RSA. Для расшифровки требуется разложить большое число на два простых множителя. Для классического компьютера решение этой задачи может занять несколько тысяч лет, а для алгоритма Шора это дело считанных часов или даже минут. Такая скорость вычислений обусловлена тем, что на квантовом компьютере удается ускорить преобразование Фурье (как прямое так и обратное). Благодаря алгоритму Шора начала развиваться квантовая криптография – шифрование, неуязвимое для атак.</p>
 <p>Еще один алгоритм, способный преобразить мир ИТ – <strong>алгоритм Гровера</strong>. Благодаря ему возможно ускорить поиск по базе данных. Если на классическом компьютере решить задачу поиска элемента в базе данных возможно только перебором всех элементов, то на квантовом компьютере можно получить квадратичное уменьшение сложности, так как за счет использования эффектов суперпозиции и квантовой запутанности алгоритм Гровера “просматривает” одновременно все элементы, хотя и делает это много раз, постепенно выявляя правильное решение.</p>
 <p>Некоторые квантовые алгоритмы пока не выглядят полезными с практической точки зрения, но даже и в таком случае они уже демонстрируют возможности, которых нет в классических вычислениях. К примеру, <strong>алгоритм Дойча</strong> и <strong>алгоритм Саймона</strong> не несут особой практической пользы в силу своей простоты, но даже такие простые примеры квантовых вычислений демонстрируют значительное ускорение (в данном случае экспоненциальное). Эти алгоритмы позволяют быстро установить свойства функций. Если алгоритм Дойча определяет, является ли функция сбалансированной, то с помощью алгоритма Саймона можно вычислить период некоторой функции.</p>
-<div class="section" id="id4">
+<section id="id4">
 <h3>Перспективы квантовых алгоритмов<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>С увеличением числа кубитов и уменьшением количества ошибок в квантовых компьютерах известные квантовые алгоритмы смогут показать себя в полной мере, но также станет возможным находить новые, более сложные и практически полезные квантовые алгоритмы. Заниматься их поиском в ближайшее время будут не только физики и математики, но и программисты, освоившие квантовые вычисления.</p>
-</div>
-</div>
-<div class="section" id="id5">
+</section>
+</section>
+<section id="id5">
 <h2>Алгоритмы в нашем курсе<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Для более глубокого погружения в детали этих квантовых алгоритмов у нас в курсе есть отдельные лекции по:</p>
 <ul class="simple">
@@ -984,8 +990,8 @@ title="Print to PDF"
 <li><p><a class="reference internal" href="quantum_teleportation.html"><span class="doc std std-doc">Квантовая телепортация (начальный уровень) на Qiskit</span></a></p></li>
 <li><p><a class="reference internal" href="grovers_algorithm.html"><span class="doc std std-doc">Алгоритм Гровера (продвинутый уровень)</span></a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

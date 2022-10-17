@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Списки и циклы в Python &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1014,13 +1018,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python">
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
 <span id="python-l6"></span><h1>Списки и циклы в Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/stalkermustang">Котенков Игорь</a></p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>На этом занятии мы разберем следующие темы:</p>
 <ul class="simple">
@@ -1030,8 +1034,8 @@ title="Print to PDF"
 <li><p>цикл <code class="docutils literal notranslate"><span class="pre">for</span></code> и функция <code class="docutils literal notranslate"><span class="pre">range</span></code>;</p></li>
 <li><p>итерация по спискам, list comprehensions.</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>Введение в списки объектов<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В предыдущих лекциях мы оперировали малым количеством переменных. Для каждого блока логики или примера кода вводилось 3-5 объектов, над которыми осуществлялись некоторые операции. Но что делать, если объектов куда больше? Скажем, вам необходимо хранить информацию об учащихся класса – пусть это будет рост, оценка по математике или что-либо другое. Не знаю, как вы, но я нахожу крайне неудобным создание 30 отдельных переменных. А если еще и нужно посчитать среднюю оценку в классе!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average_grade</span> <span class="o">=</span> <span class="n">petrov_math</span> <span class="o">+</span> <span class="n">kosareva_math</span> <span class="o">+</span> <span class="n">zinchenko_math</span> <span class="o">+</span> <span class="n">kotenkov_math</span> <span class="o">+</span> <span class="o">...</span>
@@ -1109,8 +1113,8 @@ avg_grade = 3.9
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code> – функции, они существуют сами по себе;
 <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">extend</span></code> – методы объектов класса <code class="docutils literal notranslate"><span class="pre">list</span></code>, не могут использоваться без них.</p>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Индексация списков<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Теперь, когда стало понятно, с чем предстоит иметь дело, попробуем усложнить пример. Как узнать, какая оценка у третьего студента? Все просто – нужно воспользоваться <strong>индексацией</strong> списка:</p>
 <div class="cell docutils container">
@@ -1136,10 +1140,12 @@ avg_grade = 3.9
 <li><p>Поэтому <code class="docutils literal notranslate"><span class="pre">[3]</span></code> обозначает взятие <strong>четвертой</strong> оценки (и потому выводится четверка, а не тройка);</p></li>
 <li><p>Всего оценок 5, но так как индексация начинается с нуля, то строчка <code class="docutils literal notranslate"><span class="pre">math_journal[5]</span></code> выведет ошибку – нам доступны лишь индексы <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code> для взятия (так называется процедура обращения к элементу списка по индексу – взятие по индексу).</p></li>
 </ol>
-<div class="figure align-default" id="list-indexing">
+<figure class="align-default" id="list-indexing">
 <a class="reference internal image-reference" href="../../../_images/list_indexing_1.png"><img alt="../../../_images/list_indexing_1.png" src="../../../_images/list_indexing_1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Пример списка из трех объектов. Сверху показаны их индексы, включая отрицательные</span><a class="headerlink" href="#list-indexing" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Пример списка из трех объектов. Сверху показаны их индексы, включая отрицательные</span><a class="headerlink" href="#list-indexing" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Также в <code class="docutils literal notranslate"><span class="pre">Python</span></code> существуют отрицательные индексы (-1, -2 …). Они отсчитывают объекты списка, начиная с конца. Так как нуль уже занят (под первый объект), то он не используется.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1174,8 +1180,8 @@ avg_grade = 3.9
 </div>
 </div>
 <p>Все это важно не только для грамотного оперирования конкретными объектами, но и следующей темы -</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Срезы<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Срезы, или slices – это механизм обращения сразу к нескольким объектам списка. Для создания среза нужно в квадратных скобках указать двоеточие, слева от него – индекс начала среза (по умолчанию 0, можно не выставлять) <strong>включительно</strong>, справа – границу среза <strong>не включительно</strong> (пустота означает “до конца списка”). Может показаться нелогичной такая разнородность указания границ, но на самом деле она безумно удобна – особенно вместе с тем, что индексация начинается с нуля. Быстрее объяснить на примере:</p>
 <div class="cell docutils container">
@@ -1229,8 +1235,8 @@ some_slice = [2, 3, 4, 5]
 <li><p>Для проверки вхождения какого-либо объекта в список нужно использовать конструкцию <code class="docutils literal notranslate"><span class="pre">x_obj</span> <span class="pre">in</span> <span class="pre">some_list</span></code>, которая вернет <code class="docutils literal notranslate"><span class="pre">True</span></code>, если массив содержит <code class="docutils literal notranslate"><span class="pre">x_obj</span></code>, и <code class="docutils literal notranslate"><span class="pre">False</span></code> в ином случае;</p></li>
 <li><p>Самый простой способ сделать копию списка - это сделать срез по всему объекту: <code class="docutils literal notranslate"><span class="pre">my_list[:]</span></code>. Однако будьте внимательны – в одних случаях копирование происходит полностью (по значению), а в некоторых сохраняются ссылки (то есть изменив один объект в скопированном списке вы измените объект в исходном). Связано это с типом объектов (mutable/immutable), подробнее об этом будет рассказано в следующей лекции. В общем, если вы работаете с простыми типами (<code class="docutils literal notranslate"><span class="pre">int</span></code>/<code class="docutils literal notranslate"><span class="pre">str</span></code>), то срез вернет копию, и ее изменение не затронет исходный список. Однако для хранения новых данных нужна память, поэтому при копировании десятков миллионов объектов можно получить ошибку, связанную с нехваткой памяти.</p></li>
 </ol>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Циклы<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>До сих пор в примерах мы хоть и обращались к нескольким объектам, добавляли и меняли их, все еще не было рассмотрено взаимодействие сразу с несколькими. Давайте попробуем посчитать, сколько студентов получили оценку от 4 и выше. Для этого интуитивно кажется, что нужно <strong>пройтись по всем оценкам от первой до последней</strong>, сравнить каждую с четверкой. Для прохода по списку, или <strong>итерации</strong>, используются <strong>циклы</strong>.
 Общий синтаксис таков:</p>
@@ -1316,8 +1322,8 @@ some_slice = [2, 3, 4, 5]
 </div>
 <p>В примере <code class="docutils literal notranslate"><span class="pre">student_index</span></code> принимает последовательно все значения от <code class="docutils literal notranslate"><span class="pre">0</span></code> до <code class="docutils literal notranslate"><span class="pre">7</span></code> включительно. <code class="docutils literal notranslate"><span class="pre">len(math_journal)</span></code> равняется <code class="docutils literal notranslate"><span class="pre">8</span></code>, а значит, восьмерка сама не будет включена в набор индексов для перебора. На каждой итерации <code class="docutils literal notranslate"><span class="pre">curent_student_grade</span></code> меняет свое значение, после чего происходит проверка. Если бы была необходимость пробежаться только по студентам, начиная с третьего, то нужно было бы указать <code class="docutils literal notranslate"><span class="pre">range(2,</span> <span class="pre">len(math_journal))</span></code> (двойка вместо тройки потому, что индексация с нуля, ведь мы перебираем индексы массива).</p>
 <p>Выше описаны основные концепции обращения со списками. Их крайне важно понять и хорошо усвоить, без этого писать любой код будет безумно сложно. Скопируйте примеры к себе в <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>-ноутбук, поиграйтесь, поменяйте параметры цикла и проанализируйте изменения.</p>
-</div>
-<div class="section" id="list-comprehensions">
+</section>
+<section id="list-comprehensions">
 <h2>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h2>
 <p>Некоторые циклы настолько просты, что занимают 2 или 3 строчки. Как пример – привести список чисел к списку строк:</p>
 <div class="cell docutils container">
@@ -1342,8 +1348,8 @@ some_slice = [2, 3, 4, 5]
 </div>
 </div>
 <p>Две части кода идентичны за вычетом того, что нижняя – с непонятной конструкцией в скобках – короче. Python позволяет в рамках одной строки произвести какие-либо простые преобразования (помним, что <code class="docutils literal notranslate"><span class="pre">str()</span></code> – это вызов функции, а значит если у вас есть сложная функция, которая делает квантовые вычисления, то ее также можно применить!). Фактически самый частый пример использования – это паттерн “<strong>применение функции к каждому объекту списка</strong>”.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">list</span></code> – это <strong>объект-контейнер, который хранит другие объекты разных типов</strong>. Запись происходит упорядочено и последовательно, а каждому объекту присвоен <strong>целочисленный номер, начиная с нуля</strong>;</p></li>
@@ -1355,8 +1361,8 @@ some_slice = [2, 3, 4, 5]
 <li><p>для итерации по индексам можно использовать <code class="docutils literal notranslate"><span class="pre">range()</span></code>;</p></li>
 <li><p>простые циклы можно свернуть в <strong>list comprehension</strong>, и самый частый паттерн для такого преобразования – это <strong>применение некоторой функции к каждому объекту</strong> списка (если <code class="docutils literal notranslate"><span class="pre">x</span></code> это функция, то синтаксис будет таков: <code class="docutils literal notranslate"><span class="pre">[x(item)</span> <span class="pre">for</span> <span class="pre">item</span> <span class="pre">in</span> <span class="pre">list])</span></code>).</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

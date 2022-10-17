@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Сверхпроводниковые кубиты &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -980,19 +984,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="scqubits">
+  <section class="tex2jax_ignore mathjax_ignore" id="scqubits">
 <span id="id1"></span><h1>Сверхпроводниковые кубиты<a class="headerlink" href="#scqubits" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/ooovector">Беседин Илья</a></p></li>
 </ul>
 <p>Сверхпроводниковые кубиты относятся к наиболее успешным типам кубитов для квантовых вычислений и симуляции на сегодняшний день. Google впервые продемонстрировала квантовое превосходство на квантовом процессоре из 53 сверхпроводниковых кубитов-трансмонов <span id="id2">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span>. Кроме Google, сверхпроводниковые кубиты используют IBM (в том числе для своего открытого облачного проекта IBM Quantum Experience), Riggetti Computing и другие крупные фирмы и лаборатории по всему миру.</p>
-<div class="figure align-default" id="two-qubit-quantum-processor">
+<figure class="align-default" id="two-qubit-quantum-processor">
 <a class="reference internal image-reference" href="../../../_images/two-qubit-chip.png"><img alt="../../../_images/two-qubit-chip.png" src="../../../_images/two-qubit-chip.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">Фотографии, изображения со сканирующего электронного микроскопа и эквивалентная электрическая схема микросхемы сверхпроводникового квантового процессора с двумя кубитами-трансмонами. Синим отмечен электрод одного из трансмонов. Микросхема была изготовлена в НОЦ ФМН в МГТУ им. Баумана, топология разработана в НИТУ МИСиС.</span><a class="headerlink" href="#two-qubit-quantum-processor" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 76 </span><span class="caption-text">Фотографии, изображения со сканирующего электронного микроскопа и эквивалентная электрическая схема микросхемы сверхпроводникового квантового процессора с двумя кубитами-трансмонами. Синим отмечен электрод одного из трансмонов. Микросхема была изготовлена в НОЦ ФМН в МГТУ им. Баумана, топология разработана в НИТУ МИСиС.</span><a class="headerlink" href="#two-qubit-quantum-processor" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Квантовый процессор на сверхпроводниковых кубитах – это электрическая цепь. Эту электрическую цепь можно изобразить в схемы с квазисосредоточенными элементами.</p>
-<div class="section" id="id3">
+<section id="id3">
 <h2>Квантование электрических цепей<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Электрические цепи, как и любые другие физические объекты, могут быть описаны с помощью законов квантовой механики <span id="id4">[<a class="reference internal" href="../../bibliography.html#id14" title="Uri Vool and Michel Devoret. Introduction to quantum electromagnetic circuits. International Journal of Circuit Theory and Applications, 45(7):897–934, 2017. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/cta.2359, doi:10.1002/cta.2359.">VD17</a>]</span>. Для этого следует начать с гамильтонового описания, например с помощью функции Лагранжа. Энергия всей физической системы (электрической цепи) должна быть записана в виде суммы энергий, накопленных ее составными частями (сосредоточенных элементов), выраженной через динамическое переменные системы и их производные. Самые простые электрические элементы, такие как конденсаторы и индукторы, запасают энергию <span class="math notranslate nohighlight">\(E_C\)</span> и <span class="math notranslate nohighlight">\(E_L\)</span> в электрическом и магнитном поле, а выражение для них можно записать либо через заряд на обкладках <span class="math notranslate nohighlight">\(Q\)</span> и поток через кольцо <span class="math notranslate nohighlight">\(\Phi\)</span>, либо через напряжение <span class="math notranslate nohighlight">\(V\)</span> и ток <span class="math notranslate nohighlight">\(I\)</span>, соответственно:</p>
 <div class="math notranslate nohighlight">
@@ -1005,10 +1011,12 @@ E_L = \frac{\Phi^2}{2L}=\frac{LI^2}{2}.
 \]</div>
 <p>Для третьего самого простого линейного элемента электрической цепи, резистора, так сделать не получится. Резистор не накапливает в себе энергию, он ее диссипирует. Диссипативные системы не могут быть описаны исключительно при помощи функции Лагранжа. Это не значит, что резистор совершенно невозможно адекватно описать в гамильтоновом формализме: он может быть представлен как бесконечный резервуар энергии, так как с точки зрения остальной цепи не слишком важно, осталась ли энергия в резисторе или она была рассеяна, если она никогда больше не вернется в остальные элементы цепи. Резисторы не слишком полезны в квантовой обработке информации, так как любые потери энергии приводят к неунитарной эволюции, потере когерентности и в конечном счете – ошибкам вентилей.</p>
 <p>В электротехнике, как правило, используются переменные <span class="math notranslate nohighlight">\(V\)</span> и <span class="math notranslate nohighlight">\(I\)</span>: напряжение и ток можно померить, правильно подключив измерительные приборы к проводникам цепи, в то время как измерения <span class="math notranslate nohighlight">\(Q\)</span> и <span class="math notranslate nohighlight">\(\Phi\)</span> затруднены, так как заряды и потоки локализованы внутри элементов. Но <span class="math notranslate nohighlight">\(V\)</span> и <span class="math notranslate nohighlight">\(I\)</span> не подходят в качестве переменных, от которых зависит функция Лагранжа, так как ни одна из них не является производной другой. Зато из закона сохранения заряда следует, что <span class="math notranslate nohighlight">\(\dot{Q}=-I\)</span>, а закон индукции Фарадея говорит, что <span class="math notranslate nohighlight">\(\dot{\Phi}=V\)</span>, а значит и <span class="math notranslate nohighlight">\(\Phi\)</span>, и <span class="math notranslate nohighlight">\(Q\)</span> могут быть использованы в качестве динамических переменных системы.</p>
-<div class="figure align-default" id="lc-circuit">
+<figure class="align-default" id="lc-circuit">
 <a class="reference internal image-reference" href="../../../_images/LC.png"><img alt="../../../_images/LC.png" src="../../../_images/LC.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 77 </span><span class="caption-text">Электрические схемы одного LC-контура и двух емкостно связанных LC-контуров.</span><a class="headerlink" href="#lc-circuit" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 77 </span><span class="caption-text">Электрические схемы одного LC-контура и двух емкостно связанных LC-контуров.</span><a class="headerlink" href="#lc-circuit" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>В случае одной степени свободы определения для величин <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(\Phi\)</span>, <span class="math notranslate nohighlight">\(V\)</span> и <span class="math notranslate nohighlight">\(I\)</span> однозначны.
 В более сложных случаях в классической электротехнике принято использовать метод контурных токов, либо узловых напряжений. Рассмотрим метод узловых напряжений. Для лагранжевого описания введем узловой поток <span class="math notranslate nohighlight">\(\Phi_i(t)\)</span> как первообразную напряжения на узле с номером <span class="math notranslate nohighlight">\(i\)</span> <span class="math notranslate nohighlight">\(V_i(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1057,8 +1065,8 @@ H = \frac{\hat{Q}_1^2}{2C} + \frac{\hat{\Phi}_1^2}{2L}.
 \hat{H} = \hbar\omega_1(\hat{a}_1^\dagger\hat{a}_1+\frac{1}{2}),
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(\omega_1=(L_1C_1)^{-1/2}\)</span> – частота осциллятора.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Джозефсоновский контакт<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Линейные электрические элементы, такие как емкости и индуктивности, очень полезны при создании электронных приборов. Но из линейных элементов можно создать только линейную электрическую цепь. Это означает, что любые выходные сигналы <span class="math notranslate nohighlight">\(V^\mathrm{out}_i(\omega)\)</span> выражаются через входные сигналы <span class="math notranslate nohighlight">\(V^\mathrm{in}_j(\omega)\)</span> с помощью линейного преобразования</p>
 <div class="math notranslate nohighlight">
@@ -1080,13 +1088,15 @@ E_J = \frac{I_c \Phi_0}{2\pi}(1-\cos \phi),
 L_J=\frac{1}{\frac{\partial^2 E}{\partial \Phi^2}} =
 \frac{2\pi\Phi_0^2}{I_c \Phi_0 (2\pi)^2\cos \phi}=\frac{\Phi_0}{I_c 2\pi \cos \phi}.
 \]</div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Трансмон<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
-<div class="figure align-default" id="transmon-electric-circuit">
+<figure class="align-default" id="transmon-electric-circuit">
 <img alt="../../../_images/Transmon.png" src="../../../_images/Transmon.png" />
-<p class="caption"><span class="caption-number">Fig. 78 </span><span class="caption-text">Электрическая схема трансмона. <span class="math notranslate nohighlight">\(I_c\)</span> – критический ток контакта, <span class="math notranslate nohighlight">\(C_S\)</span> – шунтриующая емкость, <span class="math notranslate nohighlight">\(C_J\)</span> – емкость контакта</span><a class="headerlink" href="#transmon-electric-circuit" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 78 </span><span class="caption-text">Электрическая схема трансмона. <span class="math notranslate nohighlight">\(I_c\)</span> – критический ток контакта, <span class="math notranslate nohighlight">\(C_S\)</span> – шунтриующая емкость, <span class="math notranslate nohighlight">\(C_J\)</span> – емкость контакта</span><a class="headerlink" href="#transmon-electric-circuit" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Самый простой, и в то же время один самых успешных видов сверхпроводниковых кубитов – это трансмон<span id="id7">[<a class="reference internal" href="../../bibliography.html#id7" title="Jens Koch, Terri M Yu, Jay Gambetta, A A Houck, D I Schuster, J Majer, Alexandre Blais, M H Devoret, S M Girvin, and R J Schoelkopf. Charge-insensitive qubit design derived from the Cooper pair box. Physical Review A, 10 2007. doi:10.1103/physreva.76.042319.">KYG+07</a>]</span>. Трансмон представляет собой ангармонический осциллятор на основе наноразмерного джозефсоновского контакта, шунтированного емкостью. Такая цепь хорошо известна в сверхпроводниковой электронике, а ее резонансная частота называется плазменной частотой:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1113,23 +1123,29 @@ E_J=\frac{I_c\Phi_0}{2\pi},
 \hat{H} = 4E_C(\hat{n}-n_g)^2+E_J(1-\cos\hat{\phi}).
 \]</div>
 <p>Уровни энергии стационарных состояний в такой системе будут зависеть от приложенного напряжения (вернее, от наведенного внешним напряжением <span class="math notranslate nohighlight">\(V_g\)</span> зарядом <span class="math notranslate nohighlight">\(n_g\)</span>). Однако эта зависимость ослабевает по мере того, как увеличивается соотношение <span class="math notranslate nohighlight">\(E_J/E_C\)</span>.</p>
-<div class="figure align-default" id="transmon-wavefunctions-and-potential">
+<figure class="align-default" id="transmon-wavefunctions-and-potential">
 <a class="reference internal image-reference" href="../../../_images/transmon-wavefunctions.png"><img alt="../../../_images/transmon-wavefunctions.png" src="../../../_images/transmon-wavefunctions.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 79 </span><span class="caption-text">Уровни энергии в зарядовом кубите и в трансмоне</span><a class="headerlink" href="#transmon-wavefunctions-and-potential" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 79 </span><span class="caption-text">Уровни энергии в зарядовом кубите и в трансмоне</span><a class="headerlink" href="#transmon-wavefunctions-and-potential" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><strong>Трансмоном</strong> называется режим этой электрической цепи, когда <span class="math notranslate nohighlight">\(E_J/E_C \sim 50\)</span>; при таком соотношении между константами зависимость от заряда практически отсутствует. Это очень хорошо, потому что наведенный заряд очень сложно контролировать на практике. Космические частицы и события радиоактивного распада в подложке приводят к запиранию зарядов в случайных местах в подложке, из-за чего зарядово-чувствительные кубиты могут менять частоту перехода между уровнями. Уровни энергии в трансмоне не чувствительны к таким воздействиям, что значительно улучшает их времена когерентности по сравнению с зарядовыми кубитами. Обратной стороной такой схемы является невысокий ангармонизм. Ангармонизмом <span class="math notranslate nohighlight">\(\delta\)</span> называется разность частот между переходами <span class="math notranslate nohighlight">\(|0\rangle \leftrightarrow |1\rangle\)</span> и <span class="math notranslate nohighlight">\(|1\rangle \leftrightarrow |2\rangle\)</span>. У трансмона <span class="math notranslate nohighlight">\(\delta = -E_C\)</span>. По существу, трансмон является слабо ангармоничным осциллятором. Однако расстояния между частотами переходов в трансмоне достаточно большие, чтобы можно было попасть в один переход и при этом не попасть в соседний.</p>
-<div class="figure align-default" id="transmon-energy-levels-and-wavefunctions">
+<figure class="align-default" id="transmon-energy-levels-and-wavefunctions">
 <a class="reference internal image-reference" href="../../../_images/cpb-dispersion.png"><img alt="../../../_images/cpb-dispersion.png" src="../../../_images/cpb-dispersion.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 80 </span><span class="caption-text">Уровни энергии и волновые функции стационарных состояний трансмона с <span class="math notranslate nohighlight">\(E_J/E_C=50\)</span></span><a class="headerlink" href="#transmon-energy-levels-and-wavefunctions" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id8">
+<figcaption>
+<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Уровни энергии и волновые функции стационарных состояний трансмона с <span class="math notranslate nohighlight">\(E_J/E_C=50\)</span></span><a class="headerlink" href="#transmon-energy-levels-and-wavefunctions" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id8">
 <h2>Считывание<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Считывание состояния кубита в сверхпроводящих цепях, как правило, осуществляется методом дисперсионного считывания <span id="id9">[<a class="reference internal" href="../../bibliography.html#id15" title="A. Wallraff, D. I. Schuster, A. Blais, L. Frunzio, J. Majer, M. H. Devoret, S. M. Girvin, and R. J. Schoelkopf. Approaching unit visibility for control of a superconducting qubit with dispersive readout. Physical Review Letters, 95(6):060501, 8 2005. URL: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.060501, arXiv:0502645, doi:10.1103/PhysRevLett.95.060501.">WSB+05</a>]</span>. В основе дисперсионного считывания состояния сверхпроводниковых кубитов стоит архитектура квантовой электродинамики в электрической цепи, в которой сверхпроводниковый кубит связан с микроволновым резонатором. Концепция квантовой электродинамики в электрической цепи возникла по аналогии с квантовой электродинамикой в полости, где уединенный атом помещается в оптическую полость, которая выступает в роли резонатора. Взаимодействие такого атома с излучением сильно отличается от того, что происходит с таким атомом, помещенном в вакуум: из-за отражений от стенок полости, излучение не может эффективно покинуть атом. Это увеличивает время жизни атома, если резонансная частота полости находится вдали от спектральной линии кубита. Напротив, если атом находится в резонансе с полостью, то это стимулирует излучение.</p>
-<div class="figure align-default" id="cqed-electric-circuit">
+<figure class="align-default" id="cqed-electric-circuit">
 <img alt="../../../_images/cQED.png" src="../../../_images/cQED.png" />
-<p class="caption"><span class="caption-number">Fig. 81 </span><span class="caption-text">Эквивалентная электрическая схема трансмона, связанного с резонатором. Синий — электрод резонатора, зеленый — электрод трансмона</span><a class="headerlink" href="#cqed-electric-circuit" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 81 </span><span class="caption-text">Эквивалентная электрическая схема трансмона, связанного с резонатором. Синий — электрод резонатора, зеленый — электрод трансмона</span><a class="headerlink" href="#cqed-electric-circuit" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Для многокубитных схем, как правило, в качестве микроволнового резонатора используется участок копланарной передающей линии на микросхеме. Микроволновый резонатор, в свою очередь, подключается к микроволновой линии.</p>
 <p>Пропускание микроволновых сигналов через линию приводит к изменению квантового состояния электромагнитного излучения в резонаторе; это излучение взаимодействует с кубитом. Преимуществом данной схемы является то, что кубит может быть очень сильно связан с резонатором, но при этом сохраняет когерентность. Если пренебречь влиянием потерь в управляющую линию, то система описывается гамильтонианом вида</p>
 <div class="math notranslate nohighlight">
@@ -1157,12 +1173,14 @@ E_J=\frac{I_c\Phi_0}{2\pi},
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(\omega_q\)</span>, <span class="math notranslate nohighlight">\(\omega_r\)</span> – частоты кубита и резонатора, соответственно; <span class="math notranslate nohighlight">\(\delta_r, \delta_q\)</span> – ангармонизмы мод трансмона и резонатора; <span class="math notranslate nohighlight">\(\chi\)</span> – дисперсионный сдвиг, или кросс-керровская нелинейность между трансмоном и резонатором, <span class="math notranslate nohighlight">\(\hat{a}\)</span>, <span class="math notranslate nohighlight">\(\hat{a}^\dagger\)</span> – одночастичные операторы уничтожения и рождения, действующие на моду трансмона, <span class="math notranslate nohighlight">\(\hat{b}\)</span>, <span class="math notranslate nohighlight">\(\hat{b}^\dagger\)</span> – одночастичные операторы рождения и уничтожения, действующие на моду резонатора, <span class="math notranslate nohighlight">\(\Omega(t)\)</span> – амплитуда возбуждения со стороны микроволновой линии.</p>
 <p>Если емкость <span class="math notranslate nohighlight">\(C_C\)</span> между трансмоном и резонатором маленькая, а их частоты сильно отличаются, то взаимодействие между ними будет нерезонансным, и тогда ангармонизмом резонатора можно пренебречь. А вот наличие дисперсионного сдвига между модой кубита и резонатора приводит к тому, что частота эффективная резонатора, то есть сумма всех чисел перед множителем <span class="math notranslate nohighlight">\(\hat{b}^\dagger\hat{b}\)</span>, зависит от населенности трансмона. В таком случае, измеряя отклик от резонатора на микроволновый импульс вблизи его резонансной частоты, мы можем получить информацию о состоянии кубита.</p>
-<div class="figure align-default" id="dispersive-readout-mean-sample">
+<figure class="align-default" id="dispersive-readout-mean-sample">
 <a class="reference internal image-reference" href="../../../_images/avg_cov.png"><img alt="../../../_images/avg_cov.png" src="../../../_images/avg_cov.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 82 </span><span class="caption-text">Микроволновый прямоугольный импульс, отраженный от резонатора, при различных состояниях трансмона. Усреднено по 10000 повторениям.</span><a class="headerlink" href="#dispersive-readout-mean-sample" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id10">
+<figcaption>
+<p><span class="caption-number">Fig. 82 </span><span class="caption-text">Микроволновый прямоугольный импульс, отраженный от резонатора, при различных состояниях трансмона. Усреднено по 10000 повторениям.</span><a class="headerlink" href="#dispersive-readout-mean-sample" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id10">
 <h2>Микроволновые однокубитные операции<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Логические операции над кубитами выполняют микроволновыми сигналами на резонансной частоте кубита. Поведение трансмона по отношению к внешнему излучению можно представить в виде гамильтониана</p>
 <div class="math notranslate nohighlight">
@@ -1187,10 +1205,12 @@ V_\mathrm{ex1}(t) = V_I(t) \cos \left(\omega_q t + \phi(t) \right) + V_Q(t) \sin
 \frac{1}{2}\left(\Omega(t)e^{i\left(\omega_q t + \phi(t)\right)} + \Omega^*(t)e^{-i\left(\omega_q t + \phi(t)\right)}\right)
 \left(\hat{a}+\hat{a}^\dagger\right).
 \]</div>
-<div class="figure align-default" id="externally-driven-transmon">
+<figure class="align-default" id="externally-driven-transmon">
 <img alt="../../../_images/external-drive.png" src="../../../_images/external-drive.png" />
-<p class="caption"><span class="caption-number">Fig. 83 </span><span class="caption-text">Трансмон с линиями для микроволновых однокубитных операций. Слева – емкостно связанная линия (через конденсатор), справа – индуктивно связанная линия (через индуктивность).</span><a class="headerlink" href="#externally-driven-transmon" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 83 </span><span class="caption-text">Трансмон с линиями для микроволновых однокубитных операций. Слева – емкостно связанная линия (через конденсатор), справа – индуктивно связанная линия (через индуктивность).</span><a class="headerlink" href="#externally-driven-transmon" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Если трансмон использовать как кубит (то есть не возбуждать никаких уровней, кроме основного и первого возбужденного), можно перейти от операторов повышения и понижения к операторам Паули с помощью соотношений</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1269,8 +1289,8 @@ i |\tilde{\psi}(t)\rangle = \left( I(t)\hat{\sigma}_x + Q(t)\hat{\sigma}_y - \fr
 <p>где <span class="math notranslate nohighlight">\(|\tilde{\psi}(t)\rangle = \begin{pmatrix}d_0(t) \\ d_1(t) \end{pmatrix}\)</span>.</p>
 <p>Такой гамильтониан отвечает вращению вектора состояния кубита в представлении сферы Блоха вокруг оси <span class="math notranslate nohighlight">\(\vec{\Omega} = \{I(t), Q(t), \dot{\phi}(t)/2\}\)</span> с угловой скоростью <span class="math notranslate nohighlight">\(|\vec{\Omega}|\)</span>.</p>
 <p>Наиболее часто используются микроволновые импульсы, отвечающие вращениям на углы <span class="math notranslate nohighlight">\(\pi/2\)</span> и <span class="math notranslate nohighlight">\(\pi\)</span> вокруг осей <span class="math notranslate nohighlight">\(x\)</span> или <span class="math notranslate nohighlight">\(y\)</span>, однако реально любая однокубитная операция может быть реализована правильным подбором управляющих сигналов <span class="math notranslate nohighlight">\(I(t)\)</span>, <span class="math notranslate nohighlight">\(Q(t)\)</span>, или <span class="math notranslate nohighlight">\(\phi(t)\)</span>.</p>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h2>Декогеренция в сверхпроводниковых кубитах<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>В отличие от других типов кубитов, сверхпроводниковые кубиты имеют сравнительно низкие времена когерентности. Это означает, что информация, хранящаяся в сверхпроводниковом кубите, может испортиться. Для сверхпроводниковых кубитов декогеренцию можно понимать как неконтролируемое воздействие на кубит со стороны флуктуаций напряжения или тока. Природа флуктуаций может быть очень разной. Наиболее проблематичными являются флуктуации микроскопических зарядов и магнитных моментов внутри самой микросхемы.</p>
 <p>Как правило различают шумы и наводки, которые могут привести самопроизвольному возбуждению или релаксации кубита, а также к переходу в недопустимые состояния типа уровней <span class="math notranslate nohighlight">\(|2\rangle\)</span> и выше, и шумы, которые влияют на частоту переходов между уровнями кубита.</p>
@@ -1290,22 +1310,26 @@ i |\tilde{\psi}(t)\rangle = \left( I(t)\hat{\sigma}_x + Q(t)\hat{\sigma}_y - \fr
 <p>В общем случае, для всех типов марковского шума можно ввести оператор коллапса <span class="math notranslate nohighlight">\(\hat{c}\)</span> и константу декогеренции <span class="math notranslate nohighlight">\(\gamma\)</span>. В случае релаксации, <span class="math notranslate nohighlight">\(\hat{c} = \hat{a}, \gamma=1/T_1\)</span>. Для дефазировки <span class="math notranslate nohighlight">\(\hat{c} = \hat{\sigma}_z, \gamma = 1/2T_{\phi}\)</span>.</p>
 <p>Для того, чтобы измерить эффекты декогеренции на сверхпроводниковые кубиты, используют два основных типа эксперимента. Первый типа эксперимента заключается в возбуждении кубита и считывании его состояния спустя время <span class="math notranslate nohighlight">\(t\)</span>. Эксперимент повторяется много раз с различным временем задержки <span class="math notranslate nohighlight">\(t\)</span>; результат можно зафитовать экспонентой. Время затухания экспоненты в <span class="math notranslate nohighlight">\(e\)</span> будет временем релаксации <span class="math notranslate nohighlight">\(T_1\)</span>.</p>
 <p>Такое измерение нечувствительно к дефазировке кубита. Чтобы измерить влияние дефазировки, кубит помещают в состояние суперпозиции при помощью вращения вокруг оси <span class="math notranslate nohighlight">\(x\)</span> на угол <span class="math notranslate nohighlight">\(\pi/2\)</span>, ждут время <span class="math notranslate nohighlight">\(t\)</span>, делают вращение вокруг оси <span class="math notranslate nohighlight">\(z\)</span> на угол, пропорциональный длительности паузы <span class="math notranslate nohighlight">\(t\)</span>, а затем еще поворачивают на угол <span class="math notranslate nohighlight">\(\pi/2\)</span> вокруг оси <span class="math notranslate nohighlight">\(x\)</span>. В случае идеальной двухкубитной системы зависимость результата измерений от длительности паузы <span class="math notranslate nohighlight">\(t\)</span> будет синусоидальной; при наличии декогеренции в марковской модели осцилляции будут затухать экспоненциально, причем константа затухания <span class="math notranslate nohighlight">\(T_2\)</span> может быть выражена как <span class="math notranslate nohighlight">\(\frac{1}{T_2} = \frac{1}{2T_1} + \frac{1}{T_\phi}\)</span>.</p>
-<div class="figure align-default" id="transmon-decoherence">
+<figure class="align-default" id="transmon-decoherence">
 <a class="reference internal image-reference" href="../../../_images/decoherence.png"><img alt="../../../_images/decoherence.png" src="../../../_images/decoherence.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 84 </span><span class="caption-text">Эксперименты по измерению времени когерентности кубита</span><a class="headerlink" href="#transmon-decoherence" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 84 </span><span class="caption-text">Эксперименты по измерению времени когерентности кубита</span><a class="headerlink" href="#transmon-decoherence" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Процессы декогеренции ограничивают длину алгоритмов, которые могут быть выполнены на сверхпроводниковом квантовом процессоре. Если хотя бы одно событие декогеренции произойдет в течение алгоритма, то результат выполнения может оказаться неправильным. Важно, что считывание в квантовом компьютере имеет принципиально дискретный характер: из-за этого в принципе возможно говорить о дискретных ошибках, а не о непрерывных ошибках, как в аналоговых компьютерах. Кроме того, как и в обычных цифровых компьютерах, в квантовых компьютерах возможна коррекция ошибок. Для того, чтобы измерить вероятность ошибки напрямую, используют рандомизированное тестирование (randomized benchmarking) квантовых вентилей.</p>
 <p>Идея рандомизированного тестирования заключается в том, чтобы выполнять случайную последовательность операций, а зачем сравнивать результат ее выполнения с теоретическим. Существует ряд различных вариаций рандомизированного тестирования, которые отличаются тем, из какой совокупности берутся случайные последовательности. В самом простом случае используют вентили из группы Клиффорда – это такое подмножество логических операций, которые не образуют универсальный набор, но зато алгоритмы целиком состоящие только из таких вентилей можно быстро просимулировать на классическом компьютере даже при большом количестве кубитов. Кроме того, часто используют только такие последовательности вентилей, в конце которых система оказывается не в состоянии суперпозиции, а в определенном состоянии, например в состоянии <span class="math notranslate nohighlight">\(|0\dots0\rangle\)</span>. Ошибки приводят к тому, что вероятность <span class="math notranslate nohighlight">\(\langle F_n \rangle\)</span> получить состояние <span class="math notranslate nohighlight">\(|0\dots0\rangle\)</span> экспоненциально убывает с увеличением длины последовательности вентилей <span class="math notranslate nohighlight">\(N\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \langle F_n \rangle_\mathrm{seq}(N)\sim e^{-F_1n}
 \]</div>
-<div class="figure align-default" id="randomized-benchmarking-protocol-and-result">
+<figure class="align-default" id="randomized-benchmarking-protocol-and-result">
 <a class="reference internal image-reference" href="../../../_images/benchmarking-result.png"><img alt="../../../_images/benchmarking-result.png" src="../../../_images/benchmarking-result.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 85 </span><span class="caption-text">Схема микроволновых импульсов и пример результатов рандомизированного тестирования вентилей из группы Клиффорда. Каналы 1 и 2 генератора сигналов произволной формы подключены к линии считывания, каналы 3 и 4 – к линии управления кубитом. Измерена населенность кубита после случайных последовательностей вентилей разных длин; константа экспоненциального затухания населенности дает точность в расчете на один вентиль <span class="math notranslate nohighlight">\(F_1 = 0.993\)</span>.</span><a class="headerlink" href="#randomized-benchmarking-protocol-and-result" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id12">
+<figcaption>
+<p><span class="caption-number">Fig. 85 </span><span class="caption-text">Схема микроволновых импульсов и пример результатов рандомизированного тестирования вентилей из группы Клиффорда. Каналы 1 и 2 генератора сигналов произволной формы подключены к линии считывания, каналы 3 и 4 – к линии управления кубитом. Измерена населенность кубита после случайных последовательностей вентилей разных длин; константа экспоненциального затухания населенности дает точность в расчете на один вентиль <span class="math notranslate nohighlight">\(F_1 = 0.993\)</span>.</span><a class="headerlink" href="#randomized-benchmarking-protocol-and-result" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id12">
 <h2>Двухкубитные вентили<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
 <p>Для трансмонов существует целый ряд способов реализации двухкубитных операций. Как правило, для этого трансмоны связывают емкостным способом, напрямую или через элемент связи. Мы будем рассматривать двухкубитную операцию iSWAP, реализуемую при помощи параметрического изменения эффективной константы связи между кубитами.</p>
 <p>Так же, как в случае кубита, связанного с резонатором, гамильтониан двух связанных трансмонов описывается в первом приближении соотношением</p>
@@ -1347,10 +1371,12 @@ I_{\mathrm{C SQUID}}(\Phi_x) = \sqrt{\left(I_{\mathrm{Cc1}} + I_{\mathrm{Cc2}}\r
 \sim \Omega\left(\hat{a}^\dagger + \hat{a}\right)\left(\hat{b}^\dagger + \hat{b}\right).
 \]</div>
 <p>Мы не будем здесь подробно рассматривать природу этого слагаемого; подробнее об этом можно почитать, например, в работе <span id="id13">[<a class="reference internal" href="../../bibliography.html#id12" title="Marco Roth, Marc Ganzhorn, Nikolaj Moll, Stefan Filipp, Gian Salis, and Sebastian Schmidt. Analysis of a parametrically driven exchange-type gate and a two-photon excitation gate between superconducting qubits. Physical Review A, 2017. doi:10.1103/PhysRevA.96.062323.">RGM+17</a>]</span>. Ограничимся тем, что это взаимодействие является поперечным, то есть <span class="math notranslate nohighlight">\(xx\)</span>-взаимодействием. Если модулировать поток в СКВИДе в резонансе с разностью частот между кубитами (<span class="math notranslate nohighlight">\(n \omega_m = \omega_1 - \omega_2\)</span>, где <span class="math notranslate nohighlight">\(n\)</span> – номер гармоники), то возбуждение с одного кубита будет переходить на другой, и обратно.</p>
-<div class="figure align-default" id="two-qubit-parametric-gate">
+<figure class="align-default" id="two-qubit-parametric-gate">
 <a class="reference internal image-reference" href="../../../_images/two-qubit-pulse-sequence-parametric.png"><img alt="../../../_images/two-qubit-pulse-sequence-parametric.png" src="../../../_images/two-qubit-pulse-sequence-parametric.png" style="width: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 86 </span><span class="caption-text">Последовательность сигналов, которую нужно подать, чтобы наблюдать осцилляции населенности между кубитами, и результат из наблюдения. iSWAP получается при длительности вентиля <span class="math notranslate nohighlight">\(T_p=500~\mathrm{ns}\)</span></span><a class="headerlink" href="#two-qubit-parametric-gate" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 86 </span><span class="caption-text">Последовательность сигналов, которую нужно подать, чтобы наблюдать осцилляции населенности между кубитами, и результат из наблюдения. iSWAP получается при длительности вентиля <span class="math notranslate nohighlight">\(T_p=500~\mathrm{ns}\)</span></span><a class="headerlink" href="#two-qubit-parametric-gate" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Унитарная матрица этого вентиля имеет вид</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1363,15 +1389,15 @@ I_{\mathrm{C SQUID}}(\Phi_x) = \sqrt{\left(I_{\mathrm{Cc1}} + I_{\mathrm{Cc2}}\r
 \end{pmatrix}.
 \end{split}\]</div>
 <p>Помимо вентиля iSWAP, на трансмонах делают CPHASE, который физически можно реализовать импульсным увеличением константы <span class="math notranslate nohighlight">\(\chi\)</span>, или, например, как IBM Quantum Experience – при помощи кросс-резонансных вентилей.</p>
-</div>
-<div class="section" id="id14">
+</section>
+<section id="id14">
 <h2>Что почитать для дальнейшего изучения вопроса?<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://qiskit.org/learn/intro-qc-qh/">Introduction to Quantum Computing and Quantum Hardware</a></p></li>
 <li><p><a class="reference external" href="https://arxiv.org/abs/1904.06560">A Quantum Engineer’s Guide to Superconducting Qubits</a> <span id="id15">[<a class="reference internal" href="../../bibliography.html#id8" title="P Krantz, M Kjaergaard, F Yan, T P Orlando, S Gustavsson, and W D Oliver. A Guide to Superconducting Qubits for New Quantum Information Engineers. Applied Physics Review, 2019. arXiv:1904.06560v1.">KKY+19</a>]</span></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

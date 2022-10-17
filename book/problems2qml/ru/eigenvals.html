@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Проблема собственных значений &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1098,18 +1102,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="eigenvals">
+  <section class="tex2jax_ignore mathjax_ignore" id="eigenvals">
 <span id="id1"></span><h1>Проблема собственных значений<a class="headerlink" href="#eigenvals" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Мы с вами узнали, что задачи комбинаторной оптимизации и квантовой химии могут быть сведены к решению проблемы поиска минимального собственного значения большого эрмитова оператора – гамильтониана. Для оптимизационных задач это <a class="reference internal" href="np2ising.html"><span class="doc std std-doc">осуществляется</span></a> при помощи сведения к <em>QUBO</em>-матрице и гамильтониану типа Изинга. А для электронных орбиталей из квантовой химии можно <a class="reference internal" href="jordanwigner.html"><span class="doc std std-doc">применить</span></a> преобразование Жордана-Вигнера и также перейти к спиновому гамильтониану.</p>
 <p>Теперь перед нами встает вопрос, а как же искать основное состояние этого гамильтониана? В этой лекции рассмотрим <strong>классические</strong> методы решения этой проблемы, то есть без квантовых компьютеров. Рассмотрение этих методов и их недостатков покажет то, зачем тут так нужен будет квантовый компьютер.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>О проблеме (повторение)<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Эта тема обсуждалась во вводных лекциях по линейной алгебре, в <a class="reference external" href="../../linalg/ru/matrices.html#id9">части про собственные вектора и собственные значения</a>.</p>
 <p>Итак, пусть у имеется диагонализируемая матрица <span class="math notranslate nohighlight">\(A\)</span> размерности <span class="math notranslate nohighlight">\(n \times n\)</span>, она же является линейным оператором <span class="math notranslate nohighlight">\(\hat{A}\)</span>. Из линейной алгебры знаем, что у этой матрицы есть <span class="math notranslate nohighlight">\(n\)</span> таких чисел <span class="math notranslate nohighlight">\(e_i\)</span> и векторов <span class="math notranslate nohighlight">\(\Psi_i\)</span>, что для них выполняется условие:</p>
@@ -1123,15 +1127,17 @@ A \Psi_i = e_i \Psi_i
 \hat{A} \ket{\Psi_i} = e_i\ket{\Psi_i}
 \]</div>
 <p>Таким образом, собственные вектора – это такие вектора, которые при применении оператора не меняют свое направление. Например, в примере ниже собственный вектор – это ось симметрии оператора:</p>
-<div class="figure align-default" id="mona-lisa-eigen">
+<figure class="align-default" id="mona-lisa-eigen">
 <a class="reference internal image-reference" href="../../../_images/Mona_Lisa.png"><img alt="../../../_images/Mona_Lisa.png" src="../../../_images/Mona_Lisa.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 129 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператора не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id4">
+<figcaption>
+<p><span class="caption-number">Fig. 129 </span><span class="caption-text">Синий вектор, в отличии от красного, при применении оператора не меняет направление так как является его собственным вектором.</span><a class="headerlink" href="#mona-lisa-eigen" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
 <h2>Итеративные алгоритмы<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В целом, задача нахождения собственных значений является очень трудной с вычислительной точки зрения, особенно для больших матриц. Для матриц размера более, чем <span class="math notranslate nohighlight">\(3 \times 3\)</span> в общем случае не существует алгоритма нахождения собственных значений и собственных векторов. Однако существует несколько итеративных алгоритмов. Рассмотрим лишь два из них, причем без особых деталей, так как эти алгоритмы, а также доказательство их сходимости являются достаточно сложными.</p>
-<div class="section" id="id5">
+<section id="id5">
 <h3>Степенной метод<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Один из самых простых для понимания алгоритмов, который, тем не менее находит интересные применения. Суть его в том, что берем некоторый случайный вектор <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> и начинаем последовательно действовать на него оператором <span class="math notranslate nohighlight">\(\hat{A}\)</span> (другими словами умножать, на нашу матрицу), при этом нормируя:</p>
 <div class="math notranslate nohighlight">
@@ -1143,8 +1149,8 @@ A \Psi_i = e_i \Psi_i
 <p class="admonition-title">Note</p>
 <p>На самом деле, сеть интернета является графом – множеством связанных между собой вершин. А любой граф можно представить в виде большой-большой, но очень разреженной матрицы, каждый элемент которой это 1 если между соответствующими вершинами есть ребро и 0, если нет. Например, элемент <span class="math notranslate nohighlight">\(L_{ij}\)</span> будет 1, если между вершинами <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> есть ребро.иВ 1998-м году, Ларри Пейдж и Сергей Брин нашли очень эффективный способ подсчета первого собственного вектора этой матрицы, используя именно модификацию степенного метода. Этот алгоритм получил название <code class="docutils literal notranslate"><span class="pre">PageRank</span></code>, причем <em>Page</em> это фамилия автора, а не отсылка к веб-страницам, как можно было бы подумать. Этот алгоритм лег в основу поисковика <em>Google</em>, который в дальнейшем вырос в транснациональную корпорацию!</p>
 </div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>Итерация Арнольди<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>Это гораздо более сложный метод, который, однако, является одним из самых эффективных применительно к разреженным матрицам <span id="id7">[<a class="reference internal" href="../../bibliography.html#id18" title="Walter Edwin Arnoldi. The principle of minimized iterations in the solution of the matrix eigenvalue problem. Quarterly of applied mathematics, 9(1):17–29, 1951. URL: https://www.ams.org/journals/qam/1951-09-01/S0033-569X-1951-42792-9/S0033-569X-1951-42792-9.pdf.">Arn51</a>]</span>. Объяснить его легко, к сожалению, не получится, так как алгоритм требует понимания Крыловских подпространств и других концептов из области линейной алгебры разреженных систем. Но пока достаточно лишь того, что этот алгоритм имеет очень эффективную реализацию – <a class="reference external" href="https://www.caam.rice.edu/software/ARPACK/">ARPACK</a>, написанную в середине 90-х годов на языке <code class="docutils literal notranslate"><span class="pre">FORTRAN77</span></code>. Именно эта библиотека используется “под капотом” у <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, а также во многих других научных пакетах. Давайте посмотрим, как она работает.</p>
 <p>Сгенерируем большую разреженную матрицу.</p>
@@ -1191,8 +1197,8 @@ A \Psi_i = e_i \Psi_i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min E: (-2.7755575615628914e-17+0j)
-Max E: (1.0000000000000004+0j)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min E: (-1.1102230246251565e-16+0j)
+Max E: (1.0000000000000007+0j)
 </pre></div>
 </div>
 </div>
@@ -1212,8 +1218,8 @@ Max E: (1.0000000000000004+0j)
 <p class="admonition-title">Note</p>
 <p>Не у всех матриц все собственные значения являются действительными, поэтому <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> по умолчанию считает комплексные значения, хотя в этом конкретном случае видим, что мнимая часть равна нулю.</p>
 </div>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>Алгоритм Ланкзоша<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Итерация Ланкзоша (<em>англ.</em> Lanzos) <span id="id9">[<a class="reference internal" href="../../bibliography.html#id46" title="Cornelius Lanczos. An iteration method for the solution of the eigenvalue problem of linear differential and integral operators. Journal of Research of the National Bureau of Standards, 1950.">Lan50</a>]</span> – это модификация итерации Арнольди, которая работает с эрмитовыми матрицами и находит максимально широкое применение в том числе для квантовых гамильтонианов. Этот алгоритм по умолчанию включен в большинство математических пакетов, включая <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> и, соответственно, <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>:</p>
 <div class="cell docutils container">
@@ -1226,8 +1232,8 @@ Max E: (1.0000000000000004+0j)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min E: -1.074893821039778e-25
-Max E: 1.0000000000000004
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min E: -8.323011768995762e-25
+Max E: 1.0000000000000002
 </pre></div>
 </div>
 </div>
@@ -1239,12 +1245,12 @@ Max E: 1.0000000000000004
 <li><p><code class="docutils literal notranslate"><span class="pre">LA</span></code> – <em>largest algebraic</em> – алгебраически наибольшие, т.е. с учетом знака</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SA</span></code> – <em>smallest algebraic</em> – алгебраически наименьшие, т.е. с учетом знака</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id10">
+</section>
+</section>
+<section id="id10">
 <h2>Вариационные алгоритмы<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>В этом разделе поговорим о существующих алгоритмах решения задачи об основном состоянии уже в контексте квантовой механики. Хотя, как помним, задачи оптимизации и квантовой физики <a class="reference external" href="../../problems2qml/ru/np2ising.html#id4">тесно связаны</a>. В каком-то смысле, вариационные алгоритмы, а в особенности, квантовый Монте-Карло и различные его модификации в чем-то сильно похожи на классический <a class="reference external" href="../../problems/ru/copt.html#id13">алгоритм имитации отжига</a>.</p>
-<div class="section" id="id11">
+<section id="id11">
 <h3>Вариационный Монте-Карло<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p><strong>V</strong>ariational <strong>M</strong>onte-<strong>C</strong>arlo, или просто <strong>VMC</strong> это очень простой и в тоже время эффективный алгоритм нахождения основного состояния квантомеханической системы.</p>
 <div class="admonition note">
@@ -1272,7 +1278,7 @@ E = \frac{\int |\Psi(X)|^2 \frac{\hat{H}\Psi(X)}{\Psi(X)} dX}{\int |\Psi(X)|^2 d
 <li><p>обновляем параметризацию <em>trial function</em> так, чтобы минимизировать энергию.</p></li>
 </ul>
 <p>Повторяем до сходимости. Ну а дальше посмотрим на некоторые примеры <em>trial wave functions</em>.</p>
-<div class="section" id="jastrow-function">
+<section id="jastrow-function">
 <h4>Jastrow Function<a class="headerlink" href="#jastrow-function" title="Permalink to this headline">#</a></h4>
 <p>Когда есть задача из <span class="math notranslate nohighlight">\(N\)</span> квантовых частиц, каждая из которых описывается координатой или радиус вектором, то можно построить <em>trial wave function</em> в виде суммы попарных функций двухчастичных взаимодействий:</p>
 <div class="math notranslate nohighlight">
@@ -1280,8 +1286,8 @@ E = \frac{\int |\Psi(X)|^2 \frac{\hat{H}\Psi(X)}{\Psi(X)} dX}{\int |\Psi(X)|^2 d
 \Psi(X) = e^{-\sum_{i,j} u(r_i, r_j)},
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(r_i, r_j\)</span> – это радиус-векторы частиц, а <span class="math notranslate nohighlight">\(u(r_i, r_j)\)</span> – симметричная функция, описывающая двухчастичное взаимодействия. Такая функция называется <strong>Jastrow function</strong> <span id="id12">[<a class="reference internal" href="../../bibliography.html#id44" title="Robert Jastrow. Many-body problem with strong forces. Physical Review, 98(5):1479, 1955.">Jas55</a>]</span>. В этом случае, в процессе работы <strong>VMC</strong> будем просто варьировать радиус-векторы частиц также, как варьировали вершины графа в <a class="reference external" href="../../problems/ru/copt.html#id13">обычном отжиге</a>, когда решали задачу комбинаторной оптимизации. Только теперь есть еще и параметризация обменных взаимодействий, которую “варьируем”.</p>
-</div>
-<div class="section" id="hartree-fock-scf">
+</section>
+<section id="hartree-fock-scf">
 <h4>Hartree-Fock (SCF)<a class="headerlink" href="#hartree-fock-scf" title="Permalink to this headline">#</a></h4>
 <p>Для задач квантовой химии, когда работаем с фермионами, существует вид <em>trial wave function</em> на основе Слэтеровского детерминанта, о котором  писали в <a class="reference external" href="../../problems/ru/quantchemadvancedscf.html#id13">продвинутой лекции по квантовой химии</a>:</p>
 <div class="math notranslate nohighlight">
@@ -1297,8 +1303,8 @@ D = \begin{bmatrix}
   \psi_{N / 2}(r_1) &amp; \psi_{N / 2}(r_2) &amp; ... &amp; \psi_{N / 2}(r_{N / 2}) \\
 \end{bmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h4>Jastrow Function для спинов<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h4>
 <p>Дальше нас будут интересовать как раз модели Изинга и спины, а не частицы в пространстве или орбитали из вторичного квантования. Для спинов можем записать Jastrow function следующим образом:</p>
 <div class="math notranslate nohighlight">
@@ -1406,14 +1412,16 @@ WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 
 <img alt="../../../_images/eigenvals_17_0.png" src="../../../_images/eigenvals_17_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="neural-network-quantum-states">
+</section>
+<section id="neural-network-quantum-states">
 <h4>Neural Network Quantum States<a class="headerlink" href="#neural-network-quantum-states" title="Permalink to this headline">#</a></h4>
 <p>Еще более интересный подход к выбору <em>trial wave function</em> – это использование в качестве <span class="math notranslate nohighlight">\(\Psi(X)\)</span> нейронной сети <span id="id15">[<a class="reference internal" href="../../bibliography.html#id23" title="Giuseppe Carleo and Matthias Troyer. Solving the quantum many-body problem with artificial neural networks. Science, 355(6325):602–606, 2017. URL: https://arxiv.org/abs/1606.02318.">CT17</a>]</span>. Уже немного <a class="reference external" href="../../qmlkinds/ru/qmlkinds.html#nqs">касались этой темы</a>, когда речь шла о видах квантового машинного обучения. Хороший вариант, это использовать, например, полносвязную сеть – ограниченную машину Больцмана:</p>
-<div class="figure align-default" id="nqs2">
+<figure class="align-default" id="nqs2">
 <a class="reference internal image-reference" href="../../../_images/NQS.png"><img alt="../../../_images/NQS.png" src="../../../_images/NQS.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 130 </span><span class="caption-text">Нейронная сеть в качестве <em>trial wave function</em> из работы <span id="id16">[<a class="reference internal" href="../../bibliography.html#id23" title="Giuseppe Carleo and Matthias Troyer. Solving the quantum many-body problem with artificial neural networks. Science, 355(6325):602–606, 2017. URL: https://arxiv.org/abs/1606.02318.">CT17</a>]</span>.</span><a class="headerlink" href="#nqs2" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 130 </span><span class="caption-text">Нейронная сеть в качестве <em>trial wave function</em> из работы <span id="id16">[<a class="reference internal" href="../../bibliography.html#id23" title="Giuseppe Carleo and Matthias Troyer. Solving the quantum many-body problem with artificial neural networks. Science, 355(6325):602–606, 2017. URL: https://arxiv.org/abs/1606.02318.">CT17</a>]</span>.</span><a class="headerlink" href="#nqs2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Это также легко может быть реализовано с использованием библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1448,18 +1456,18 @@ WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 
 <p class="admonition-title">Note</p>
 <p>Это интересно, но при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> можно по сути решать проблемы комбинаторной оптимизации <span id="id17">[<a class="reference internal" href="../../bibliography.html#id63" title="Semyon Sinchenko and Dmitry Bazhanov. The deep learning and statistical physics applications to the problems of combinatorial optimization. arXiv preprint arXiv:1911.10680, 2019. URL: https://arxiv.org/abs/1911.10680.">SB19</a>]</span> с помощью методов <em>deep learning</em>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="vmc">
+</section>
+</section>
+<section id="vmc">
 <h3>Проблемы с VMC<a class="headerlink" href="#vmc" title="Permalink to this headline">#</a></h3>
 <p>К сожалению, у метода <strong>VMC</strong> есть свои проблемы. Это относительно плохая масштабируемость – при росте размерности проблемы для того, чтобы подобрать реально хорошую аппроксимацию потребуется все больше итераций и семплов на каждой из них. Также у <strong>VMC</strong> есть ряд фундаментальных проблем, например, так называемая <em>sign problem</em> <span id="id18">[<a class="reference internal" href="../../bibliography.html#id50" title="EY Loh Jr, JE Gubernatis, RT Scalettar, SR White, DJ Scalapino, and RL Sugar. Sign problem in the numerical simulation of many-electron systems. Physical Review B, 41(13):9301, 1990.">LJGS+90</a>]</span>.</p>
-</div>
-</div>
-<div class="section" id="id19">
+</section>
+</section>
+<section id="id19">
 <h2>Заключение<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции рассмотрены известные подходы к решению задачи о минимальном собственном значении на классическом компьютере. Как увидели, все эти методы не могут быть масштабированы на реально большие операторы. Так что для решения этих проблем действительно нужен квантовый компьютер.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Алгоритм Дойча &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -956,7 +960,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="deutschs-algorithm">
+  <section class="tex2jax_ignore mathjax_ignore" id="deutschs-algorithm">
 <span id="id1"></span><h1>Алгоритм Дойча<a class="headerlink" href="#deutschs-algorithm" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1022,10 +1026,12 @@ f_4(1) = 0
 <p>Классический компьютер справляется с задачей за два шага. Например, нам дана некоторая функция-“черный ящик”, и мы должны установить, сбалансирована ли она. На первом шаге мы отправляем в функцию входное значение <span class="math notranslate nohighlight">\(0\)</span>. Допустим, мы получили на выходе также <span class="math notranslate nohighlight">\(0\)</span>. Мы можем сказать, что данная функция – либо <span class="math notranslate nohighlight">\(f_1\)</span> (константная функция, всегда возвращающая <span class="math notranslate nohighlight">\(0\)</span>), либо <span class="math notranslate nohighlight">\(f_3\)</span> (сбалансированная функция, не меняющая входное значение). Для окончательного решения мы должны сделать еще один шаг – отправить в функцию значение <span class="math notranslate nohighlight">\(1\)</span>. Если при этом мы получим опять <span class="math notranslate nohighlight">\(0\)</span>, то это функция <span class="math notranslate nohighlight">\(f_1\)</span>, а если получили на выходе <span class="math notranslate nohighlight">\(1\)</span>, то искомая функция – <span class="math notranslate nohighlight">\(f_3\)</span>.</p>
 <p>Способа, с помощью которого на классическом компьютере можно за одно действие установить, сбалансирована функция или нет, не существует. И здесь свое преимущество показывает квантовый компьютер: он может установить класс функции за одно действие.</p>
 <p>Для начала рассмотрим простейшую схему, с помощью которой можно отправлять число на вход и получать ответ от черного ящика:</p>
-<div class="figure align-default" id="scheme-1">
+<figure class="align-default" id="scheme-1">
 <a class="reference internal image-reference" href="../../../_images/scheme_1.png"><img alt="../../../_images/scheme_1.png" src="../../../_images/scheme_1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">Схема 1</span><a class="headerlink" href="#scheme-1" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">Схема 1</span><a class="headerlink" href="#scheme-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><span class="math notranslate nohighlight">\(U_f\)</span> на данной схеме – это неизвестная функция (ее также часто называют “оракул”), являющаяся унитарным оператором. Обратите внимание, что в квантовой схеме используются два кубита. Это нужно для того, чтобы информация, с которой работает квантовый компьютер, не стиралась. В квантовом компьютере важно, чтобы все действия с кубитами (кроме операции измерения) были обратимыми, а для этого информация должна сохраняться. В верхнем кубите будет записано входное значение, а в нижнем – выходное значение функции. Таким образом, входное значение не будет перезаписано значением, которое вернет функция.</p>
 <p>Но нам важно будет не только сохранить значение <span class="math notranslate nohighlight">\(|x\rangle\)</span>, но также и не разрушить <span class="math notranslate nohighlight">\(|y\rangle\)</span>. Так как кубит <span class="math notranslate nohighlight">\(y\)</span> очевидно имеет некоторое изначальное значение, мы не можем его просто перезаписать тем числом, которое выдаст функция <span class="math notranslate nohighlight">\(f(x)\)</span>. Здесь на помощь приходит операция исключающее ИЛИ - <span class="math notranslate nohighlight">\(XOR\)</span> (также ее можно называть сложением по модулю 2), обозначенная на схеме как <span class="math notranslate nohighlight">\(\oplus\)</span>. В процессе работы черный ящик <span class="math notranslate nohighlight">\(U_f\)</span> не только находит значение <span class="math notranslate nohighlight">\(f(x)\)</span>, но и применяет исключающее ИЛИ к значениям <span class="math notranslate nohighlight">\(y\)</span> и <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <p>Операции <span class="math notranslate nohighlight">\(XOR\)</span> соответствует такая таблица истинности:</p>
@@ -1061,10 +1067,12 @@ f_4(1) = 0
 (a \oplus b) \oplus b = a
 \]</div>
 <p><em>Схема 1</em> пока что не дает преимущества по сравнению с классическим компьютером, но мы можем ее немного усовершенствовать:</p>
-<div class="figure align-default" id="scheme-2">
+<figure class="align-default" id="scheme-2">
 <a class="reference internal image-reference" href="../../../_images/scheme_2.png"><img alt="../../../_images/scheme_2.png" src="../../../_images/scheme_2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">Схема 2</span><a class="headerlink" href="#scheme-2" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text">Схема 2</span><a class="headerlink" href="#scheme-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>В новой схеме оба кубита вначале будут находиться в состоянии <span class="math notranslate nohighlight">\(|0\rangle\)</span>. Затем мы применим к верхнему кубиту оператор Адамара, а к нижнему – гейт <span class="math notranslate nohighlight">\(X\)</span>, а затем так же, как и к верхнему, оператор Адамара. Тем самым мы приведем оба кубита в состояние суперпозиции перед тем, как они попадут на вход функции <span class="math notranslate nohighlight">\(U_f\)</span>.
 Верхний кубит будет находиться в такой суперпозиции:</p>
 <div class="math notranslate nohighlight">
@@ -1142,7 +1150,7 @@ f_4(1) = 0
 <p>С помощью квантовых операторов попробуйте создать <span class="math notranslate nohighlight">\(U_f\)</span> для всех четырех <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <p>Задание рекомендуется сделать до прочтения программистской части по алгоритму Дойча, так как там содержится ответ.</p>
 </div>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Алгоритм Дойча в коде<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Запрограммируем алгоритм с помощью библиотеки PennyLane. Предполагается, что функция, находящаяся в черном ящике, изначально присутствует, но для учебного примера создадим также и ее, точнее, все ее четыре варианта. Для того, чтобы нам не сразу было известно, какая из этих функций анализируется алгоритмом (иначе будет неинтересно), будем использовать случайный выбор функции.</p>
 <p>Импортируем все необходимые библиотеки и модули, а также создадим квантовое устройство-симулятор, рассчитанное на схему из двух кубитов:</p>
@@ -1244,7 +1252,7 @@ f_4(1) = 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f3
 </pre></div>
 </div>
 </div>
@@ -1264,8 +1272,8 @@ f_4(1) = 0
 </div>
 <p>На примере алгоритма Дойча мы видим, что уже двухкубитная схема дает прирост скорости в два раза. Если же увеличивать количество входных параметров (как в аналогичном алгоритме <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%94%D0%BE%D0%B9%D1%87%D0%B0_%E2%80%94_%D0%99%D0%BE%D0%B6%D0%B8">Дойча-Йожи</a>), то ускорение будет экспоненциальным.</p>
 <p>Для специалистов, занимающихся искусственным интеллектом, алгоритм может быть интересен тем, что не просто решает задачу нахождения некоторого значения, действуя как калькулятор, а дает возможность определить скрытую функцию. Это похоже на задачи машинного обучения, когда дата сайентист, производя математические манипуляции с данными, в итоге получает модель (фактически – функцию), описывающую связь признаков с целевой переменной. Таким образом, интерес специалистов ИИ к квантовым вычислениям, вполне понятен, как и перспективы квантовых вычислений в этой области.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

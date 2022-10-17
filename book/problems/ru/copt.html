@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Задачи комбинаторной оптимизации &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1050,7 +1054,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="copt">
+  <section class="tex2jax_ignore mathjax_ignore" id="copt">
 <span id="id1"></span><h1>Задачи комбинаторной оптимизации<a class="headerlink" href="#copt" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1067,7 +1071,7 @@ title="Print to PDF"
 <li><p>метод имитации отжига.</p></li>
 </ul>
 <p>Какого-то сложного кода или больших формул с дираковскими значками из квантовой механики тут не будет, так что можно немного передохнуть, расслабиться и насладиться чтением. Для тех, кто хорошо знаком с задачами целочисленной оптимизации, в этой лекции точно не будет ничего нового, и ее можно будет пропускать, ну или пролистать по диагонали.</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Задача о максимальном разрезе в графе<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Мы уже немного говорили об этой задаче в лекции про <a class="reference external" href="../../problems/ru/ising.html#id3">модель Изинга</a> из-за их очень большого сходства. Но давайте еще раз вспомним, что это за модель такая. Ну и сразу рассмотрим ее максимально общий случай. Итак, у нас есть граф на множестве вершин <span class="math notranslate nohighlight">\(V\)</span>, связанных множеством ребер <span class="math notranslate nohighlight">\(E\)</span>. Каждое ребро имеет две инцидентных вершины <span class="math notranslate nohighlight">\(u,v\)</span>; в общем случае порядок <span class="math notranslate nohighlight">\(u,v\)</span> важен, тогда мы говорим о направленном (<em>directed</em>) графе. Каждому ребру можно также сопоставить действительное число <span class="math notranslate nohighlight">\(w\)</span>, тогда у нас будет так называемый <em>взвешенный</em> граф. Наша цель – разбить множество вершин <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся сообщества <span class="math notranslate nohighlight">\(V_1, V_2\)</span>. Давайте сформулируем функцию стоимости:</p>
 <div class="math notranslate nohighlight">
@@ -1075,12 +1079,14 @@ title="Print to PDF"
 C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_2, v \in V_1))
 \]</div>
 <p>То есть в общем случае это просто сумма всех весов ребер между двумя сообществами. В общем случае эта задача является <span class="math notranslate nohighlight">\(NP\)</span>-полной. В теории к этой задаче можно также свести любую другую <span class="math notranslate nohighlight">\(NP\)</span> задачу за полиномиальное время.</p>
-<div class="figure align-default" id="maxcut2">
+<figure class="align-default" id="maxcut2">
 <a class="reference internal image-reference" href="../../../_images/Max-cut.png"><img alt="../../../_images/Max-cut.png" src="../../../_images/Max-cut.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 119 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut2" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id3">
+<figcaption>
+<p><span class="caption-number">Fig. 119 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
 <h2>Задача о выделении сообществ в графах<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Задача о выделении сообщества в графах это уже более практическая и понятная задача. Она находит применение во многих областях, но одно из самых очевидных применений – это социология (в том числе анализ социальных сетей), когда мы хотим, анализируя контакты людей, выделить из них сообщества для дальнейшего анализа. Эта задача также является <span class="math notranslate nohighlight">\(NP\)</span>-трудной, так как существует экспоненциально много способов разбить вершины на множества и при этом для общего случая не существует полиномиального алгоритма решения. Ну и даже если мы найдем какое-то решение, то проверка того, что оно лучшее возможна также лишь за экспоненциальное время. Хотя для этой задачи и известны относительно быстрые приближенные алгоритмы, нам очень трудно понять, насколько хорошее решение они дают для действительно больших графов.</p>
 <div class="admonition note">
@@ -1094,9 +1100,9 @@ C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_
 <p>Одним из первых известных наборов данных для задачи выделения сообществ является “Клуб каратэ Захари” (Zachary’s Karate Club) <span id="id4">[<a class="reference internal" href="../../bibliography.html#id75" title="Wayne W Zachary. An information flow model for conflict and fission in small groups. Journal of anthropological research, 33(4):452–473, 1977.">Zac77</a>]</span>. Для этого набора данных точно известно, к какому из двух сообществ принадлежит каждая из вершин. В этом клубе карате был внутренний конфликт, и одна часть людей была в группе одного из инструкторов (Mr. Hi), а другая – в группе администратора (Officer).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s1">&#39;retina&#39;</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
 <span class="n">zachary</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">generators</span><span class="o">.</span><span class="n">social</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
@@ -1109,6 +1115,9 @@ C = \sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/copt_1_0.png" src="../../../_images/copt_1_0.png" />
 </div>
 </div>
 <p>Задачу о выделении сообществ в тривиальном случае разбиения графа на два подмножества можно свести к знакомой нам задаче о максимальном разрезе. Правда, в отличие от задачи о максимальном разрезе, в случае с сообществами мы хотим иметь минимальное число ребер между ними. Но это можно сделать просто поменяв пару символов в выражении для стоимости:</p>
@@ -1132,19 +1141,23 @@ B_{ij} = A_{ij} - \frac{d_i d_j}{2 |E|}
 <p>Это интересно, но одним из первых алгоритмов для решения задачи о выделении сообществ в графах был алгоритм имитации отжига, который изначально был создан именно для решения проблемы гамильтонианов типа Изинга. Причина заключается в том, что модулярность очень схожа по виду с выражением энергии для магнетиков.</p>
 </div>
 <p>Мы тут пока описали лишь простой случай модулярности для не взвешенного и ненаправленного графа. Но даже в таком случае для задачи точной оптимизации модулярности не известно полиномиального алгоритма решения. Поэтому обычно применяют приближенные или жадные алгоритмы, и они вроде даже неплохо работают. Но мы почти не знаем, насколько действительно далеко они от самых оптимальных решений, особенно для больших графов.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Задача о Гамильтоновых циклах<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Перед тем как перейти к интересной и важной задаче поиска Гамильтоновых циклов, мы вспомним задачу о мостах Кенигсберга (Калининграда). Ведь именно гуляя по этому городу и пытаясь решить эту задачу, Леонард Эйлер изобрел теорию графов. Суть задачи: нужно обойти все острова города, пройдя по каждому мосту лишь один раз, и вернуться на тот остров, откуда стартовал. Эйлер, создав математический аппарат теории графов, сумел доказать, что это невозможно, ну а дальше завертелось, и вот мы с вами тут.</p>
-<div class="figure align-default" id="id16">
+<figure class="align-default" id="id16">
 <a class="reference internal image-reference" href="../../../_images/bridges.png"><img alt="../../../_images/bridges.png" src="../../../_images/bridges.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 120 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых, Эйлер изобрел теорию графов</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 120 </span><span class="caption-text">Мосты Кеннингсберга, думая о которых, Эйлер изобрел теорию графов</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Такой путь в графе, когда мы проходим по каждому ребру лишь один раз, называется Эйлеров цикл. Но нам будет более интересен схожий класс циклов – Гамильтоновы циклы. Это такие циклы, которые проходят через каждую вершину графа ровно один раз.</p>
-<div class="figure align-default" id="id17">
+<figure class="align-default" id="id17">
 <a class="reference internal image-reference" href="../../../_images/Hamilton.jpg"><img alt="../../../_images/Hamilton.jpg" src="../../../_images/Hamilton.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 121 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 121 </span><span class="caption-text">Сер Уильям Роуэн Гамильтон, 1805 - 1865</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Для Гамильтонова цикла мы можем ввести <span class="math notranslate nohighlight">\(N^2\)</span> бинарных переменных <span class="math notranslate nohighlight">\(x_{i,p}\)</span>. Каждая переменная <span class="math notranslate nohighlight">\(x_{i,p}\)</span> равна <span class="math notranslate nohighlight">\(1\)</span>, если <span class="math notranslate nohighlight">\(i\)</span>-я вершина находится на <span class="math notranslate nohighlight">\(p\)</span>-м шаге пути и <span class="math notranslate nohighlight">\(0\)</span> если нет. Тогда легко ввести условия существования такого цикла:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1160,14 +1173,16 @@ B_{ij} = A_{ij} - \frac{d_i d_j}{2 |E|}
 C = (1 - \sum_i x_{i,p})^2 + (1 - \sum_p x_{i,p})^2 + \sum_{u,v \notin E} x_{u,p} x_{v,p+1}
 \]</div>
 <p>Правда, в этом случае мы должны минимизировать, а не максимизировать эту величину.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Задача коммивояжера<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Задачу коммивояжера мы (а точнее наш смартфон) решаем каждый раз, когда строим в <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Maps</span></code> маршрут, включающий несколько точек. Зная, как формулируется задача о гамильтоновых циклах, сформулировать задачу коммивояжера очень легко.</p>
-<div class="figure align-default" id="id18">
+<figure class="align-default" id="id18">
 <img alt="../../../_images/Salesman.png" src="../../../_images/Salesman.png" />
-<p class="caption"><span class="caption-number">Fig. 122 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 122 </span><span class="caption-text">Иллюстрация задачи коммивояжера</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>По сути нам требуется взять все Гамильтоновы циклы и выбрать из них тот, для которого сумма весов по содержащимся в нем ребрам будет минимальной. Но надо помнить, что цикл обязательно должен быть в первую очередь Гамильтоновым, поэтому мы добавим веса слагаемых в выражение для стоимости, причем веса, отвечающие за сам цикл, будут больше:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1178,15 +1193,17 @@ C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} 
 <p class="admonition-title">Note</p>
 <p>Функции стоимости для задач и Гамильтоновых циклах и задачи коммивояжера являются все же приближением исходной формулировки, так как формально мы переходим от задачи с ограничениями к задаче без ограничений. В общем случае нет гарантии, что решение задачи без ограничений будет эквивалентно решению задачи с ограничениям. Но для целей нашей лекции и курса в целом мы опустим сложный момент исследования эквивалентности этих задач, потому что обычно оно работает вполне корректно.</p>
 </div>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h2>Задача о рюкзаке<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Довольно простая для понимания задача, к которой, однако, сводится огромное число куда более сложных задач. Например, именно задачей о рюкзаке является проблема оптимизации портфеля биржевых акций, или, например, оптимизации графиков работы сотрудников McDonald’s, учитывая ожидаемое число посетителей и т.д.</p>
 <p>Суть задачи заключается в том, что у нас есть рюкзак ограниченного объема. А еще есть набор разных предметов – каждый из них имеет свой объем и стоимость. Наша цель в данном случае заключается в том, чтобы найти оптимальный набор предметов так, чтобы они влезали в наш рюкзак, при этом их стоимость была бы максимально возможной.</p>
-<div class="figure align-default" id="knapsack">
+<figure class="align-default" id="knapsack">
 <a class="reference internal image-reference" href="../../../_images/Knapsack.png"><img alt="../../../_images/Knapsack.png" src="../../../_images/Knapsack.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 123 </span><span class="caption-text">Иллюстрация задачи о рюкзаке.</span><a class="headerlink" href="#knapsack" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 123 </span><span class="caption-text">Иллюстрация задачи о рюкзаке.</span><a class="headerlink" href="#knapsack" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Формально это можно записать следующим образом. Пускай у нас есть рюкзак объема <span class="math notranslate nohighlight">\(V\)</span>. Давайте обозначим количество экземпляров <span class="math notranslate nohighlight">\(i\)</span>-й вещи в рюкзаке переменной <span class="math notranslate nohighlight">\(x_i\)</span>, а ее объем <span class="math notranslate nohighlight">\(v_i\)</span>. Ценность <span class="math notranslate nohighlight">\(i\)</span>-го предмета обозначим как <span class="math notranslate nohighlight">\(s_i\)</span>. Решением задачи будет вектор <span class="math notranslate nohighlight">\(X\)</span> из целых чисел <span class="math notranslate nohighlight">\(x_i\)</span>, которые при этом могут быть равны нулю – это будет значить, что <span class="math notranslate nohighlight">\(i\)</span>-я вещь не входит в оптимальный набор. Тогда нам необходимо решить следующую задачу:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1195,15 +1212,15 @@ X = \text{argmax} \{ \sum_i x_i \cdot s_i \} \\
 \sum_i x_i \cdot w_i \leq W
 \end{cases}
 \end{split}\]</div>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h2>Классические алгоритмы<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>Самый простой и очевидный вариант решения таких проблем – это просто перебор всех возможных комбинаций. Но так как сложность задач растет экспоненциально (<span class="math notranslate nohighlight">\(O(N) \sim e^{N}\)</span>), то очень быстро прямое решение (еще иногда говорят <em>brute force</em> решение, или <em>brute force</em> алгоритм) становится невозможным. Понятно, что можно воспользоваться какими-то эвристиками для конкретной задачи. Это приводит нас к алгоритмам типа <em>ветвей и границ</em> (<em>branch and bound</em>) <span id="id10">[<a class="reference internal" href="../../bibliography.html#id47" title="Ailsa H Land and Alison G Doig. An automatic method for solving discrete programming problems. In 50 Years of Integer Programming 1958-2008, pages 105–132. Springer, 2010.">LD10</a>]</span>, в которых мы обычно строим дерево возможных решений и пытаемся перебирать не все подряд, а лишь “перспективные” ветви этого дерева, отсекая те ветки, где хороших решений точно не будет. Но сложность таких алгоритмов все равно остается экспоненциальной. Другой вариант – это искать не обязательно самое лучше решение, а хотя бы какое-то подходящее решение (<em>feasible solution</em>, решение, которое удовлетворяет ограничениям). Это приводит нас к аппроксимационным алгоритмам, которые каким-то образом пытаются свести экспоненциальную задачу к полиномиальной, пусть и теряя в гарантированном качестве итогового решения.</p>
 <div class="admonition- admonition">
 <p class="admonition-title">Важное замечание</p>
 <p>Задачи комбинаторной оптимизации нельзя точно решить на квантовом компьютере! Квантовые компьютеры лишь дают нам потенциально очень эффективные <em>аппроксимационные</em> алгоритмы. Причем в основе этих алгоритмов лежит обычно как раз квантовое машинное обучение!</p>
 </div>
-<div class="section" id="id11">
+<section id="id11">
 <h3>Общий вид алгоритма ветвей и границ<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>Давайте запишем как в общем виде выглядит алгоритм ветвей и границ (<a class="reference external" href="https://en.wikipedia.org/wiki/Branch_and_bound#Generic_version">источник</a>).</p>
 <ol class="simple">
@@ -1228,8 +1245,8 @@ X = \text{argmax} \{ \sum_i x_i \cdot s_i \} \\
 <li><p>оценки верхней границы для ветви</p></li>
 </ul>
 <p>В целом, данный алгоритм сегодня это, пожалуй, лучшее, что можем использовать, если нам необходимо точное решение. Также всегда есть опция остановить поиск до того, как мы достигнем оптимума – в этом варианте алгоритм становится аппроксимационным.</p>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h3>Жадные алгоритмы<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Теперь давайте вернемся к аппроксимационным алгоритмам, которые работают относительно быстро, но, к сожалению, часто дают довольное плохие результаты. Ну и самым простым вариантом таких алгоритмов будет жадный алгоритм. Рассматривать его будем на примере задачи о рюкзаке. Пусть у нас есть рюкзак объема <span class="math notranslate nohighlight">\(30\)</span> и набор предметов с их стоимостью и объемом:</p>
 <div class="math notranslate nohighlight">
@@ -1238,7 +1255,7 @@ items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">capacity</span> <span class="o">=</span> <span class="mi">30</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">370</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1950</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3500</span><span class="p">),</span> <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">6700</span><span class="p">),</span> <span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">6100</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="p">(</span><span class="mi">27</span><span class="p">,</span> <span class="mi">8300</span><span class="p">),]</span>
 </pre></div>
 </div>
@@ -1252,7 +1269,7 @@ items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">items_and_score</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">items_and_score</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
     <span class="p">[(</span><span class="n">it</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">it</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">it</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">it</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">items</span><span class="p">],</span>
     <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
     <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span>
@@ -1264,11 +1281,23 @@ items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Items, sorted by relative cost:
+Weight: 17	Cost: 6100	Relative Cost: 358.8235294117647
+Weight: 10	Cost: 3500	Relative Cost: 350.0
+Weight: 21	Cost: 6700	Relative Cost: 319.04761904761904
+Weight: 27	Cost: 8300	Relative Cost: 307.4074074074074
+Weight: 3	Cost: 800	Relative Cost: 266.6666666666667
+Weight: 9	Cost: 1950	Relative Cost: 216.66666666666666
+Weight: 4	Cost: 370	Relative Cost: 92.5
+</pre></div>
+</div>
+</div>
 </div>
 <p>“Заполняем” рюкзак:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">capacity</span>
 <span class="n">min_weight</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">it</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">items_and_score</span><span class="p">])</span>
 
@@ -1288,15 +1317,21 @@ items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Final score: 10400
+Total weight of items: 30
+</pre></div>
+</div>
+</div>
 </div>
 <p>В данном случае это сработало неплохо – мы нашли действительно хорошее решение. Однако можно заметить, что решение из трех элементов <code class="docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">3500)</span></code> было бы более выгодным, так как итоговая ценность была бы <span class="math notranslate nohighlight">\(10500\)</span>, что на <span class="math notranslate nohighlight">\(100\)</span> единиц больше жадного решения. Но в силу своей <em>жадности</em> наш алгоритм не смог найти это решение, хотя найденное им и лежит довольно близко к лучшему. Так что очень часто жадные алгоритмы находят очень плохие решения, причем качество решений сильно падает с ростом размерности проблемы.</p>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h3>Метод имитации отжига<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Это итеративный алгоритм, который очень часто способен найти действительно неплохое решение. Причем, в отличие от жадных алгоритмов, отжиг специально сделан так, чтобы не “застревать” в каких-то локально-хороших точках пространства решений, а наоборот, искать самое лучшее. Мы разберем работу отжига на примере задачи о максимальном разрезе в графе, а именно, реализуем подобие алгоритма Метрополиса-Гастингса <span id="id14">[<a class="reference internal" href="../../bibliography.html#id34" title="W. K. Hastings. Monte Carlo sampling methods using Markov chains and their applications. Biometrika, 57(1):97-109, 04 1970. URL: https://doi.org/10.1093/biomet/57.1.97, arXiv:https://academic.oup.com/biomet/article-pdf/57/1/97/23940249/57-1-97.pdf, doi:10.1093/biomet/57.1.97.">Has70</a>]</span>. Но для начала давайте сгенерируем случайный граф:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
 
@@ -1314,11 +1349,14 @@ items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/copt_9_0.png" src="../../../_images/copt_9_0.png" />
+</div>
 </div>
 <p>Напомню, что цель состоит в том, чтобы разбить множество вершин на два подмножества так, чтобы сумма весов ребер между двумя подмножествами была максимальной. Для этого понадобится функция, которая считает целевое значение для любого разбиения на два подмножества.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="n">g</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">classes</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Graph</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">float</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">score</span><span class="p">(</span><span class="n">g</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">classes</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Graph</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nb">float</span><span class="p">):</span>
     <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">[</span><span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]]:</span>
@@ -1331,7 +1369,7 @@ items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27
 <p>Разобьем вершины на две группы случайным образом несколько раз и проверим, что функция работает корректно:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">split_random_node</span><span class="p">(</span><span class="n">random_seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">split_random_node</span><span class="p">(</span><span class="n">random_seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
 
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
     <span class="n">random_x</span> <span class="o">=</span> <span class="p">[</span>
@@ -1344,6 +1382,13 @@ items = \{(4, 370), (9, 1950), (10, 3500), (21, 6700), (17, 6100), (3, 800), (27
 
 <span class="k">for</span> <span class="n">random_seed</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">]:</span>
     <span class="n">random_x</span> <span class="o">=</span> <span class="n">split_random_node</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random seed 2019	Score: 7.78
+Random seed 2020	Score: 7.23
+Random seed 2021	Score: 9.38
 </pre></div>
 </div>
 </div>
@@ -1368,7 +1413,7 @@ P_{acceptance} = e^{\frac{E_{new} - E_{old}}{T}}
 <p>Видно, что эта величина может быть больше единицы в случае, когда новое решение лучше старого, но для нас это не проблема – это просто будет значить, что мы точно принимаем новое решение!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
 
 <span class="n">e_history</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">random_x</span>
@@ -1406,23 +1451,31 @@ P_{acceptance} = e^{\frac{E_{new} - E_{old}}{T}}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Final energy: 12.62
+</pre></div>
+</div>
+</div>
 </div>
 <p>И посмотрим, как оно сходилось:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e_history</span><span class="p">)),</span> <span class="n">e_history</span><span class="p">,</span> <span class="s2">&quot;.-&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">e_history</span><span class="p">)),</span> <span class="n">e_history</span><span class="p">,</span> <span class="s2">&quot;.-&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Step&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cost&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/copt_17_0.png" src="../../../_images/copt_17_0.png" />
+</div>
 </div>
 <p>Видим, что в начале у нас был активный поиск решения, а ближе к концу переходы становились возможны, лишь если новое решение лучше. Этот процесс чем-то похож на кристаллизацию расплавов, когда изначально все частицы плавают в жидкости, но с уменьшением температуры они все более точно становится в те позиции, которые обеспечивают минимум свободной энергии кристалла. Именно поэтому данный алгоритм называется <em>имитацией отжига</em> (<em>simulated annealing</em>).</p>
 <p>Этот алгоритм неплохо находит оптимальные решение, но с ростом размерности задачи, а также пространства решений процесс “отжига” должен длиться все дольше и дольше, а температура уменьшаться все медленней.</p>
-</div>
-</div>
-<div class="section" id="id15">
+</section>
+</section>
+<section id="id15">
 <h2>Заключение<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы узнали, что же это за такие <em>NP</em>-задачи, а также познакомились с примерами некоторых из них. Посмотрели, как эти задачи можно решать на классическом компьютере, и какие при этом есть ограничения. В следующих лекциях мы узнаем:</p>
 <ul class="simple">
@@ -1436,8 +1489,8 @@ P_{acceptance} = e^{\frac{E_{new} - E_{old}}{T}}
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

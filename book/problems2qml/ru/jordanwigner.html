@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Преобразование Жордана-Вигнера &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1010,30 +1014,32 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="jordanwigner">
+  <section class="tex2jax_ignore mathjax_ignore" id="jordanwigner">
 <span id="id1"></span><h1>Преобразование Жордана-Вигнера<a class="headerlink" href="#jordanwigner" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/Randl">Желтоножский Евгений</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы узнаем как реально существующей системе (например, электронам на решетке) сопоставить систему состоящую из спинов (кубитов), для того чтобы просимулировать ее на квантовом компьютере. Для этого мы сначала изучим альтернативный, зачастую более удобный подход к описанию многочастичных квантовых систем, который называется “вторичное квантование”.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Для того чтобы просимулировать квантовую систему на квантовом же компьютере (например, посчитать энергию основного состояния какого-нибудь атома), нам необходимо закодировать состояние системы и действующие на нее операторы: найти соответствие между состояниями системы и состояниями нашего компьютера (т.е., кубитов).</p>
-<div class="figure align-default" id="a-simulation-scheme">
+<figure class="align-default" id="a-simulation-scheme">
 <a class="reference internal image-reference" href="../../../_images/encoding.png"><img alt="../../../_images/encoding.png" src="../../../_images/encoding.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 128 </span><span class="caption-text">Общая схема симуляции квантовой системы на квантовом компьютере (взято из <span id="id4">[<a class="reference internal" href="../../bibliography.html#id61" title="Jacob T. Seeley, Martin J. Richard, and Peter J. Love. The bravyi-kitaev transformation for quantum computation of electronic structure. The Journal of chemical physics, 137(22):224109, 2012. URL: https://arxiv.org/abs/1208.5986.">SRL12</a>]</span>).</span><a class="headerlink" href="#a-simulation-scheme" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id5">
+<figcaption>
+<p><span class="caption-number">Fig. 128 </span><span class="caption-text">Общая схема симуляции квантовой системы на квантовом компьютере (взято из <span id="id4">[<a class="reference internal" href="../../bibliography.html#id61" title="Jacob T. Seeley, Martin J. Richard, and Peter J. Love. The bravyi-kitaev transformation for quantum computation of electronic structure. The Journal of chemical physics, 137(22):224109, 2012. URL: https://arxiv.org/abs/1208.5986.">SRL12</a>]</span>).</span><a class="headerlink" href="#a-simulation-scheme" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
 <h2>Спины, фермионы и бозоны<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Как мы помним из <a class="reference internal" href="../../problems/ru/quantchemadvancedscf.html"><span class="doc std std-doc">лекции по квантовой химии</span></a>, квантовые частицы могут быть либо бозонами, либо фермионами. Одно из различий между ними состоит в том, что при перестановки двух бозонов волновая функция не меняется, а при перестановке двух фермионов – меняет знак. Эта классификация следует из того, что квантовые частицы неотличимы.</p>
 <p>Несмотря на то, что наши кубиты состоят из каких-то частиц (бозонов или фермионов), обычно они отличимы (например, зафиксированы на своих позициях) и, следовательно, не являются ни бозонами, ни фермионами. Так как мы используем два состояния кубита (<span class="math notranslate nohighlight">\(| 0 \rangle\)</span> и <span class="math notranslate nohighlight">\(| 1 \rangle\)</span>), каждый кубит может быть описан как система со спином 1/2.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Вторичное квантование<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>В квантовой механике мы <a class="reference external" href="../../qc/ru/gates.html#id11">можем описать</a> состояние нескольких частиц как тензорное произведение состояний каждой из частиц. Например, если у нас есть две частицы, и их квантовое состояние описывается положением частицы в пространстве, <span class="math notranslate nohighlight">\(r_i\)</span>, мы можем записать состояние частиц как</p>
 <div class="math notranslate nohighlight">
@@ -1090,8 +1096,8 @@ b_\alpha | \Psi \rangle=0.
 \{c^\dagger_j, c^\dagger_j \} = 2\left(c^\dagger_j\right)^2 = 0,
 \]</div>
 <p>и, следовательно, в системе не может быть больше одного фермиона в одном состоянии (в соответствии с принципом запрета Паули). Из этого так же следует что <span class="math notranslate nohighlight">\(c_j^2=0\)</span>, так как независимо от состояния системы, после первого оператора в ней не останется фермиона который можно было бы уничтожить.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Переход от спинов к фермионам<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Пронумеруем возможные состояния частиц индексом <span class="math notranslate nohighlight">\(i\)</span>: например, это могут быть электроны в состояниях, отвечающих гауссианам из <code class="docutils literal notranslate"><span class="pre">STO-3g</span></code> или находящиеся в разных узлах цепочки атомов. Мы можем попробовать сопоставить спину фермион: если спин с индексом <span class="math notranslate nohighlight">\(i\)</span> направлен вниз то фермион c индексом <span class="math notranslate nohighlight">\(i\)</span> существует, а если спин направлен вверх – то фермион не существует (количество фермионов с определенным индексом может быть только <span class="math notranslate nohighlight">\(1\)</span> или <span class="math notranslate nohighlight">\(0\)</span>). Другими словами, используя оператор количества частиц <span class="math notranslate nohighlight">\(\hat{n}_i = c^\dagger_i c_i\)</span>, где <span class="math notranslate nohighlight">\(c^\dagger_i\)</span> и <span class="math notranslate nohighlight">\(c_i\)</span> это операторы создания и уничтожения соответственно, мы хотели бы сопоставить</p>
 <div class="math notranslate nohighlight">
@@ -1147,7 +1153,7 @@ c^\dagger_i = \prod_{j&lt; i} \sigma^z_j \sigma^-_i.
 <p class="admonition-title">Note</p>
 <p>Существуют и другие способы сопоставления фермионной и спиновой систем, например, Bravyi–Kitaev transform <span id="id8">[<a class="reference internal" href="../../bibliography.html#id21" title="Sergey Bravyi and Alexei Kitaev. Fermionic quantum computation. Annals of Physics, 298(1):210–226, 2002.">BK02</a>]</span>. Также существует способ сопоставить бозоны и фермионы – бозонизация <span id="id9">[<a class="reference internal" href="../../bibliography.html#id72" title="Jan Von Delft and Herbert Schoeller. Bosonization for beginners—refermionization for experts. Annalen der Physik, 7(4):225–305, 1998.">VDS98</a>]</span>.</p>
 </div>
-<div class="section" id="id10">
+<section id="id10">
 <h3>Пример. Модель Хаббарда<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Одной из важных моделей в физике твёрдого тела является модель Хаббарда, описывающая взаимодействие электронов на решетке. В соответствии с принципом Паули, на каждом узле может быть максимум два электрона (один со спином вверх и один со спином вниз).</p>
 <p>Гамильтониан модели Хаббарда состоит из двух членов. Первый, кинетический, описывает движение электрона по решетке:</p>
@@ -1202,9 +1208,9 @@ H_U =\frac{U}{4} \sum_{j} (1 - \sigma^z_{2j})(1 - \sigma^z_{2j+1})
 H_k -t\sum_{j}(\sigma^x_{2j}\sigma^x_{2j+2}+ \sigma^y_{2j}\sigma^y_{2j+2}) \sigma^z_{2j} \sigma^z_
 {2j+1} + \frac{U}{4} \sum_{j} (1 - \sigma^z_{2j} )(1 - \sigma^z_{2j+1})
 \]</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

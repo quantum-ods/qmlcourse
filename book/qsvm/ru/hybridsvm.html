@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Квантово-классический SVM &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1068,13 +1072,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="svm">
+  <section class="tex2jax_ignore mathjax_ignore" id="svm">
 <span id="hybridsvm"></span><h1>Квантово-классический SVM<a class="headerlink" href="#svm" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Лекция будет построена следующим образом:</p>
 <ul class="simple">
@@ -1082,8 +1086,8 @@ title="Print to PDF"
 <li><p>напишем и применим код обучения смешанного SVM.</p></li>
 </ul>
 <p>Перед тем как приступить, рекомендуется освежить <a class="reference internal" href="classic_svm.html"><span class="doc std std-doc">материал</span></a> по классическому методу опорных векторов, в частности, нужно понимать, как работает ядерный трюк.</p>
-</div>
-<div class="section" id="vqc">
+</section>
+<section id="vqc">
 <h2>VQC как ядерная функция<a class="headerlink" href="#vqc" title="Permalink to this headline">#</a></h2>
 <p>Как мы много говорили в более ранних лекциях, квантовые схемы позволяют нам оперировать в гильбертовых пространствах волновых функций. Эти пространства имеют экспоненциально большую размерность, при этом они параметризуются линейным количеством параметров. А еще в этих пространствах определены скалярные произведения волновых функций, более того, именно результат выборки из скалярного произведения мы чаще всего и получаем как результат измерений!</p>
 <p>Давайте попробуем посмотреть, что общего у <strong>VQC</strong> и ядер.</p>
@@ -1097,12 +1101,12 @@ title="Print to PDF"
 <p>Это интересно, что многие специалисты в области <strong>QML</strong> сегодня даже предлагают вместо термина “квантовая нейросеть” использовать термин “квантовое ядро”, так как математически <strong>VQC</strong> гораздо ближе именно к ядрам, чем к слоям современных глубоких сетей.</p>
 </div>
 <p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id2">[<a class="reference internal" href="../../bibliography.html#id58" title="Vojtěch Havlíček, Antonio D Córcoles, Kristan Temme, Aram W Harrow, Abhinav Kandala, Jerry M Chow, and Jay M Gambetta. Supervised learning with quantum-enhanced feature spaces. Nature, 567(7747):209–212, Mar 2019. URL: https://arxiv.org/abs/1804.11326, doi:10.1038/s41586-019-0980-2.">HavlivcekCorcolesT+19</a>]</span>.</p>
-<div class="section" id="id3">
+<section id="id3">
 <h3>Преобразование состояния<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>На самом деле, если просто использовать какие-то простые квантовые операции, мы не получим какого-то преимущества над классическим ядерным SVM – ведь все то же самое можно будет сделать и на классическом компьютере.</p>
 <p>Чтобы получить реальное преимущество, нам необходимо использовать запутывание и прочие “фишки” квантовых вычислений.</p>
 <p>Дальше мы не станем изобретать велосипеды, а вместо этого воспользуемся примерами хороших преобразований из работы <span id="id4">[<a class="reference internal" href="../../bibliography.html#id59" title="Yudai Suzuki, Hiroshi Yano, Qi Gao, Shumpei Uno, Tomoki Tanaka, Manato Akiyama, and Naoki Yamamoto. Analysis and synthesis of feature map for kernel-based quantum classifier. Quantum Machine Intelligence, 2(1):1–9, Jul 2020. URL: https://arxiv.org/abs/1906.10467, doi:10.1007/s42484-020-00020-y.">SYG+20</a>]</span>. Рассмотрим, что именно там описано.</p>
-<div class="section" id="id5">
+<section id="id5">
 <h4>Общая схема<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <p>Для простоты формул мы не будем выписывать обобщенные формулы, а все будем писать для нашего двумерного пространства. Тогда наша схема может быть разделена на несколько частей:</p>
 <ul class="simple">
@@ -1111,12 +1115,12 @@ title="Print to PDF"
 <li><p>попарные операции над парами элементов вектора.</p></li>
 </ul>
 <p>Мы начинаем с того, что переводим кубиты в состояние суперпозиции, применяя операторы Адамара. Далее мы применяем однокубитные параметризованные операции и снова гейты Адамара. После этого мы применяем связку <span class="math notranslate nohighlight">\(CNOT \to\)</span> параметризованная парой операция <span class="math notranslate nohighlight">\(\to CNOT\)</span>.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h4>Выбор операции<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p>Следуя идее упомянутой статьи, в качестве что одно-элементной, что двух-элементной операции мы будем использовать гейт <span class="math notranslate nohighlight">\(U_1\)</span>. Разница будет лишь в том, что мы передаем на вход в качестве параметра.</p>
-</div>
-<div class="section" id="feature-function">
+</section>
+<section id="feature-function">
 <h4>Feature function<a class="headerlink" href="#feature-function" title="Permalink to this headline">#</a></h4>
 <p>В качестве параметров на входе гейта <span class="math notranslate nohighlight">\(U_1\)</span>, как мы уже говорили, выступают один или два элемента вектора <span class="math notranslate nohighlight">\(x\)</span>. Строго это можно записать как функцию такого вида:</p>
 <div class="math notranslate nohighlight">
@@ -1134,17 +1138,17 @@ title="Print to PDF"
 \phi(x_1, x_2) = \pi \cos{x_1} \cos{x_2}
 \end{gathered}
 \end{split}\]</div>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h4>Скалярное произведение<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h4>
 <p>Все что мы описали выше, обозначим как квантовую схему <span class="math notranslate nohighlight">\(U(x)\)</span>. Она преобразует нам вектор классических данных <span class="math notranslate nohighlight">\(x\)</span> в квантовое состояние <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>. Но нам то нужно получить скалярное произведение <span class="math notranslate nohighlight">\(\braket{U(x_1)|U(x_2)}\)</span>! Выглядит сложно, но на самом деле существует эффективный способ получить эту величину без необходимости восстанавливать весь вектор состояния. Можно показать, что величина <span class="math notranslate nohighlight">\(\braket{U(x_1)|U(x_2)}\)</span> равна вероятности нулевой битовой строки (<span class="math notranslate nohighlight">\(\ket{0, 0, ...., 0}\)</span>) при измерении другой схемы: <span class="math notranslate nohighlight">\(U(x_1)U(x_2)^\dagger\)</span>.</p>
 <p>Все это может казаться сложным и запутанным, но должно стать гораздо понятнее, когда мы посмотрим на пример реализации от начала и до конца.</p>
-</div>
-</div>
-</div>
-<div class="section" id="id9">
+</section>
+</section>
+</section>
+<section id="id9">
 <h2>Пример реализации<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id10">
+<section id="id10">
 <h3>Схема<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Для начала необходимые импорты.</p>
 <div class="cell docutils container">
@@ -1281,20 +1285,20 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──U1(M0)──H──╭C──────────╭C──╭C──────────────╭C──H──U1(-1)──H──╭┤ Probs 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──U1(M0)──H──╭C──────────╭C──╭C──────────────╭C──H──U1(1)───H──╭┤ Probs 
  1: ──H──U1(M1)──H──╰X──U1(M2)──╰X──╰X──U1(-0.917)──╰X──H──U1(-1)──H──╰┤ Probs 
 M0 =
-[-0.32762991  0.15929841]
+[0.19556889 0.47834857]
 M1 =
-[-0.19556889 -0.47834857]
+[ 0.42035079 -0.98859315]
 M2 =
-[2.91778234 2.75365705]
+[2.81343009 1.53355761]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h3>Гибридный SVM<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>Мы не будем сами с нуля писать решение задачи квадратичного программирования, просто воспользуемся готовой рутиной из <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>. Используемая там реализация позволяет вместо ядерной функции передать сразу матрицу Грама (<a class="reference external" href="https://en.wikipedia.org/wiki/Gram_matrix">Gram matrix</a>). На самом деле это просто матрица всех попарных скалярных произведений наших векторов. Вычислим ее, сразу воспользовавшись тем, что</p>
 <div class="math notranslate nohighlight">
@@ -1345,14 +1349,14 @@ M2 =
 </div>
 </div>
 <p>Результат выглядит неплохо!</p>
-</div>
-</div>
-<div class="section" id="id12">
+</section>
+</section>
+<section id="id12">
 <h2>Заключение<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
 <p>Расчет полной матрицы скалярных произведений дает нам сложность <span class="math notranslate nohighlight">\(O(N^2)\)</span> вызовов. Но основной потенциал гибридного SVM в том, что задачу квадратичной оптимизации на самом деле можно тоже решать на квантовом компьютере, используя алгоритм Гровера (про него рассказано в ранних лекциях), причем за сложность всего <span class="math notranslate nohighlight">\(O(N)\)</span> и без расчета полной матрицы Грама!</p>
 <p>Многие считают, что NISQ квантовые компьютеры могут стать для SVM чем-то типа видеокарт для нейронных сетей и вернуть этот алгоритм на пьедестал лучших алгоритмов машинного обучения!</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

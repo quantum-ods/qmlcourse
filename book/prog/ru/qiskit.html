@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Qiskit &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1034,7 +1038,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="qiskit">
+  <section class="tex2jax_ignore mathjax_ignore" id="qiskit">
 <span id="id1"></span><h1>Qiskit<a class="headerlink" href="#qiskit" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1045,9 +1049,9 @@ title="Print to PDF"
 <p class="admonition-title">Warning</p>
 <p>Во всех дальнейших лекциях мы будем, за редким исключением, использовать в основном библиотеку <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>, так что данная лекция исключительно обзорная и факультативная. В ней мы поверхностно познакомимся с концептами <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> и напишем пару примеров по работе с кубитами. Обзор экосистемы <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code>, включая <code class="docutils literal notranslate"><span class="pre">qiskit-machine-learning</span></code> выходит за рамки этой лекции, но в конце мы дадим несколько ссылок для самостоятельного изучения.</p>
 </div>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Кубиты<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id3">
+<section id="id3">
 <h3>Импорты<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1065,8 +1069,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h3>Симулятор<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Для запуска мы будем использовать симулятор квантового компьютера <code class="docutils literal notranslate"><span class="pre">QasmSimulator</span></code>:</p>
 <div class="cell docutils container">
@@ -1083,8 +1087,8 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://qiskit.org/documentation/stubs/qiskit.providers.aer.QasmSimulator.html#qiskit.providers.aer.QasmSimulator">QasmSimulator</a> – симулятор, который моделирует шумы;</p></li>
 </ul>
 <p>Мы использовали лишь один из них. В целом, модуль <code class="docutils literal notranslate"><span class="pre">qiskit.providers</span></code> предоставляет базовые абстракции, которые позволяют запускать наш код на разных backend, включая реальные квантовые компьютеры, просто поменяв одну строчку в коде.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>Квантовая схема<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Ключевым элементом в <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> является квантовая схема – экземпляр класса <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. Создадим такую схему:</p>
 <div class="cell docutils container">
@@ -1095,9 +1099,9 @@ title="Print to PDF"
 </div>
 </div>
 <p>В <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> необходимо явно указывать не только количество кубитов, которые нам необходимы, но также и количество классических битов, которые необходимы будут нам для измерений. В данном случае мы создали квантовую схему с двумя кубитами и двумя битами.</p>
-</div>
-</div>
-<div class="section" id="id6">
+</section>
+</section>
+<section id="id6">
 <h2>Квантовые гейты<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Давайте попробуем воспроизвести функцию <code class="docutils literal notranslate"><span class="pre">make_entanglement</span></code> из <a class="reference external" href="../../prog/ru/pennylane.html#qnode">лекции про <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code></a>. Применим <a class="reference external" href="../../qc/ru/qubit.html#id20">гейт Адамара</a> к первому кубиту, а потом применим <a class="reference external" href="../../qc/ru/gates.html#cnot-cx">гейт CNOT (CX)</a>:</p>
 <div class="cell docutils container">
@@ -1108,7 +1112,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f930bff2520&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f78a8159640&gt;
 </pre></div>
 </div>
 </div>
@@ -1121,12 +1125,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f930bff2d30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f78a8159a90&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="id7">
+<section id="id7">
 <h3>Компиляция и запуск схемы<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Квантовые схемы <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> должны быть скомпилированы в инструкции <a class="reference external" href="../../prog/ru/progreview.html#openqasm">квантового ассемблера</a>. Для этого используется функция <code class="docutils literal notranslate"><span class="pre">transpile</span></code>:</p>
 <div class="cell docutils container">
@@ -1144,16 +1148,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of &#39;00&#39;: 512
-Number of &#39;11&#39;: 488
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of &#39;00&#39;: 475
+Number of &#39;11&#39;: 525
 </pre></div>
 </div>
 </div>
 </div>
 <p>Мы получили результат, аналогичный <a class="reference external" href="../../prog/ru/pennylane.html#qnode">полученному в лекции про <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code></a>: вероятности получения результата <span class="math notranslate nohighlight">\(\ket{00}\)</span> и <span class="math notranslate nohighlight">\(\ket{11}\)</span> равны <span class="math notranslate nohighlight">\(\sim 0.5\)</span>, а другие результаты мы получить не можем.</p>
-</div>
-</div>
-<div class="section" id="id8">
+</section>
+</section>
+<section id="id8">
 <h2>Визуализация<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>В <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> есть очень мощные средства визуализации как результатов измерений, так и самих квантовых схем. Например, мы можем посмотреть результаты измерения <code class="docutils literal notranslate"><span class="pre">counts</span></code> в виде графика:</p>
 <div class="cell docutils container">
@@ -1184,12 +1188,12 @@ Number of &#39;11&#39;: 488
 </div>
 </div>
 <p>В данном случае мы использовали <code class="docutils literal notranslate"><span class="pre">MatplotlibDrawe</span></code>, который позволяет делать очень красивые и легко читаемые визуализации квантовых схем – это одна из причин почему <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> часто используют в курсах по основам квантовых вычислений.</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h2>Экосистема Qiskit<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>Для более подробного изучения всей экосистемы <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> мы рекомендуем <a class="reference external" href="https://qiskit.org/textbook/what-is-quantum.html">онлайн книгу</a>, которая также является прекрасным источником для изучения базовых и продвинутых квантовых алгоритмов. Для знакомства со средствами для квантового машинного обучения можно также изучить <a class="reference external" href="https://qiskit.org/documentation/machine-learning/getting_started.html#installation">документацию библиотеки <code class="docutils literal notranslate"><span class="pre">qiskit-machine-learning</span></code></a>, в которой представлены высокоуровневые API для таких вещей, как, например, <a class="reference external" href="https://qiskit.org/documentation/machine-learning/stubs/qiskit_machine_learning.algorithms.QSVC.html#qiskit_machine_learning.algorithms.QSVC">квантовый  SVM</a>, или <a class="reference external" href="https://qiskit.org/documentation/machine-learning/stubs/qiskit_machine_learning.algorithms.QGAN.html#qiskit_machine_learning.algorithms.QGAN">квантовая Generative Adversarial Network</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

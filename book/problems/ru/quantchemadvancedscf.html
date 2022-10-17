@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Квантовая химия. Теория самосогласованного поля. &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1104,13 +1108,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="quantchemadvancedscf">
+  <section class="tex2jax_ignore mathjax_ignore" id="quantchemadvancedscf">
 <span id="id1"></span><h1>Квантовая химия. Теория самосогласованного поля.<a class="headerlink" href="#quantchemadvancedscf" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/zimka">Зимка Борис</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Из этой лекции узнаем:</p>
 <ul class="simple">
@@ -1119,17 +1123,17 @@ title="Print to PDF"
 <li><p>какие бывают волновые функции электронов и как их вычислять методом Self-Consistent Field;</p></li>
 <li><p>как посчитать энергию спирта.</p></li>
 </ul>
-<div class="section" id="id3">
+<section id="id3">
 <h3>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>Боровская теория оказалось недостаточной для описания таких сложных систем, как молекулы или не-водородоподобные атомы. В этой лекции разберемся с теорией самосогласованного поля – это один из первых вычислительных методов квантовой химии, пригодный на практике для моделирования разных систем (атомов, молекул, кристаллов).</p>
 <p>Несмотря на то, что основа метода была разработана чуть ли не сто лет назад, он активно используется и сегодня, особенно с различными модификациями и дополнениями.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h3>Что мы ищем?<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>С точки зрения квантовой химии, чаще всего хотим для произвольного набора частиц (атомов для молекулы или кристалла, протонов и электронов для атома) с известным потенциалом взаимодействия предсказывать стационарное состояние, т.е. находить стационарные волновые функции всех частиц системы. Квантовая механика постулирует, что для любой наблюдаемой физической величины существует оператор, которым можем подействовать на волновую функцию и получить измеренное значение этой величины.</p>
 <p>Например, если волновые функции электронов и ядер в кристалле известны, то можно предсказать теплопроводность кристалла. Или электрическую проводимость, или еще что-нибудь – поэтому основной задачей квантовой химии является поиск волновых функций-решений уравнения Шредингера для системы частиц.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>Долгое и правильное решение, часть 1<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Начнем с атома водорода и определения его уровней энергии – их можно сравнить с экспериментальными данными, а также результатами Боровской теории. Квантовая механика позволяет решить эту задачу, исходя только из “первых принципов”, то есть аксиоматики квантовой механики. При этом после некоторых усилий решения успешно обобщаются с атома водорода на любой другой.</p>
 <p>Давайте опишем атом водорода – систему из электрона и протона – на языке квантовой механики, то есть в виде уравнения Шредингера, и посмотрим, что получится.</p>
@@ -1165,8 +1169,8 @@ title="Print to PDF"
 (-\frac{\hbar^2}{2m}\nabla^2  - \frac{e^2}{r} ){\ket{\Psi(\vec{r})}} = E {\ket{\Psi(\vec{r})}}
 \]</div>
 <p>Прежде чем погружаться глубже в решение этого уравнения, нам надо разобраться с квантовыми числами.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>Про квантовые числа<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>Теория Бора базируется на идее квантования импульса, и ее следствием является возникшее в формуле энергии <a class="reference internal" href="quantchembasic.html#equation-eqn-hydroenergylevels">(19)</a> число <span class="math notranslate nohighlight">\(n\)</span>. Каждое число <span class="math notranslate nohighlight">\(n\)</span> соответствует определенному состоянию, в котором может находиться электрон, и эти состояния отличаются энергией.</p>
 <p>Идея, что электрон может находиться в одном состоянии из некоторого конечного набора вариантов, характеризуемого дискретными (квантовыми) числами, оказалась правильной. В дальнейшем она получила развитие в квантовой механике.</p>
@@ -1185,8 +1189,8 @@ title="Print to PDF"
 <p>Итого: <span class="math notranslate nohighlight">\(\ket{\Psi_{n \ell m}(\vec{r})}\)</span> – это функция, соответствующая какой-то стабильной “траектории” (распределению плотности вероятности) электрона вокруг ядра, она является решением уравнения Шредингера, то есть собственной функцией гамильтониана. Соответствующее ей собственное число – энергия электрона на этой орбитали. Для всех волновых функций с одним <span class="math notranslate nohighlight">\(n\)</span> энергия одинакова, но одной энергии может соответствовать несколько волновых функций, каждая - со своим уникальным набором волновых чисел.</p>
 <p>Если электрон описывается такой волновой функцией, то он часть атома, и если какой-либо электрон – часть атома, то он описывается такой волновой функцией. Электрон может переходить между этими волновыми функциями, получая и отдавая энергию, оставаясь при этом частью атома.</p>
 <p>Волновая функция <span class="math notranslate nohighlight">\(\ket{\Psi_{100}}\)</span> (т.е. с числами <span class="math notranslate nohighlight">\(n=1, \ell=0, m=0\)</span>) соответствует минимальной энергии для единственного электрона в атоме водорода. Т.к. в атоме водорода есть лишь один электрон, и других вкладов в энергию нет – весь атом водорода в такой конфигурации имеет минимальную энергию.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>Долгое и правильное решение, часть 2<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <div class="admonition- admonition">
 <p class="admonition-title">А зачем нам вообще сдался спектр и энергии?</p>
@@ -1220,8 +1224,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 \]</div>
 <p>То есть получим ту же формулу, что и в теории Бора, и тот же численный результат – 13.6 eV.</p>
 <p>Здесь начинает проступать основная проблема квантовой химии – математическая и вычислительная сложность. Пока что проблема только концептуальная (сложно разобраться в формулах и уравнениях), но при росте числа частиц в системе даже отличное владение матаппаратом окажется недостаточным.</p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>От теории к практике<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Вернемся из начала двадцатого века обратно в день сегодняшний. Сто лет назад невычислимые аналитически интегралы и замороченные дифференциальные уравнения были почти непреодолимыми препятствиями, поэтому поначалу теория квантовой химии развивалась в сторону более хитрых приближений и упрощений, позволяющих решить эти уравнения аналитически.</p>
 <p>Сегодня реальные научные задачи решаются численно – и для этого написано множество высокопроизводительных пакетов, позволяющих на основе входных данных и ограничений вычислить определенным методом желаемые характеристики.</p>
@@ -1268,11 +1272,11 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 <p>Здесь посчитали энергию в единицах Хартри – специальной физической системе единиц, где истинная энергия атома водорода равна 1/2, и перевели ее в электрон-вольты. Результат не очень точный (правильный, как помним, равен 13.6 eV), и мы его улучшим после того как разберемся, что и как только что посчитали. Это будет удобнее сделать на примере атома гелия, потому что в атоме водорода есть только один электрон, а в любой реальной системе – больше одного.</p>
-</div>
-</div>
-<div class="section" id="id11">
+</section>
+</section>
+<section id="id11">
 <h2>Теория самосогласованного поля<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id12">
+<section id="id12">
 <h3>Атом гелия<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Следующим “по простоте” после атома водорода идет атом гелия – как говорит нам школьная химия, это атом из двух протонов, двух нейтронов и двух электронов. Протоны и нейтроны находятся близко друг к другу в ядре и имеют почти одинаковую массу, так что можно просто считать, что есть ядро с зарядом +2 и массой 4. А вот с электронами все сложнее: с одной стороны, это независимые частицы, а с другой – они взаимодействуют друг с другом по закону Кулона, так как оба имеют отрицательный заряд.</p>
 <div class="admonition note">
@@ -1292,8 +1296,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <p>Оно состоит из кинетической и потенциальной энергии двух электронов в поле ядра и (последнее слагаемое) потенциала взаимодействия двух электронов. Учитывая, что уравнение примерно такое же, как у водорода, только еще более сложное, решение стоит искать численно и с использованием приближений, а не аналитически.</p>
 <p>Если бы не последний член гамильтониана, то можно было бы разбить все выражение на две независимых части – с переменными электрона <span class="math notranslate nohighlight">\(А\)</span> и с переменными электрона <span class="math notranslate nohighlight">\(B\)</span>. Так как это дифференциальное уравнение, можно было бы воспользоваться разделением переменных и найти отдельные решения для двух электронов – задача аналогична атому водорода, а ее мы уже решили.</p>
 <p>Но из-за потенциала взаимодействия решение существенно усложняется, поскольку электроны влияют друг на друга. Придется прибегнуть к упрощениям – и одним из наиболее популярных подходов является <em>теория самосогласованного поля</em> (Self-Consistent Field).</p>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h3>Теория самосогласованного поля<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Теория самосогласованного поля (self-consistent field theory) – это подход итеративного решения уравнения Шредингера для многочастичной системы, на основе которого построено много квантово-химических методов, наиболее известный из которых – метод Хартри-Фока. В сниппете выше строчка <code class="docutils literal notranslate"><span class="pre">psi4.energy('scf')</span></code> означает, что энергия посчитана этим методом.</p>
 <p>Основная идея теории заключается в следующем.</p>
@@ -1352,8 +1356,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <li><p>усредненное действие электронов друг на друга, учет обменного взаимодействия;</p></li>
 <li><p>детерминант Слетера.</p></li>
 </ul>
-</div>
-<div class="section" id="scf-psi4">
+</section>
+<section id="scf-psi4">
 <h3>SCF в psi4<a class="headerlink" href="#scf-psi4" title="Permalink to this headline">#</a></h3>
 <p>Теперь можно вернуться к коду и взглянуть на него чуть более осмысленно. При вычислении энергии явно передаем, что хотим посчитать ее методом Self-Consistent Field:</p>
 <div class="cell docutils container">
@@ -1400,8 +1404,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 <p>Та-дам! Используя более прокачанные базисы, получили правильный ответ.</p>
 <p>Давайте посмотрим, что еще можно сделать с помощью self-consistent field.</p>
-</div>
-<div class="section" id="id15">
+</section>
+<section id="id15">
 <h3>Атом Гелия (численно)<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>Раз мы разобрали SCF на примере атома гелия, то наверняка можно посчитать его энергию в <code class="docutils literal notranslate"><span class="pre">psi4</span></code>.</p>
 <div class="cell docutils container">
@@ -1423,8 +1427,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 <p>Экспериментальное значение энергии атома гелия <a class="reference external" href="https://en.wikipedia.org/wiki/Helium_atom#Experimental_value_of_ionization_energy">равно</a> -79.0 eV.</p>
-</div>
-<div class="section" id="id16">
+</section>
+<section id="id16">
 <h3>Молекула водорода<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>Пока рассматривали только атомы, но SCF можно использовать и для молекул – потенциалы становятся сложнее, электронов больше, но общая логика не меняется.</p>
 <div class="cell docutils container">
@@ -1481,8 +1485,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 <p>Для некорректной геометрии получилась завышенная энергия, а после оптимизации – почти что такая же энергия, как при вычислении с фиксированным расстоянием 0.74. В оптимальном состоянии энергия системы должна быть минимальна, так что результаты вполне разумны.</p>
 <p>Подобный метод можно использовать и для поиска геометрии куда более сложных молекул.</p>
-</div>
-<div class="section" id="id17">
+</section>
+<section id="id17">
 <h3>Молекула этилового спирта<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>Молекула водорода – это все еще почти игрушечный пример. Давайте попробуем обсчитать молекулу этанола.</p>
 <p>Задавать руками геометрию молекулы <span class="math notranslate nohighlight">\(C_2H_5OH\)</span> можно, но будет явно сложнее, чем для молекулы водорода. К счастью, это необязательно: <code class="docutils literal notranslate"><span class="pre">psi4</span></code> умеет скачивать геометрию из базы данных <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a> по номенклатурному имени либо уникальному ChemId.</p>
@@ -1504,9 +1508,9 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id18">
+</section>
+</section>
+<section id="id18">
 <h2>Что мы узнали?<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
 <p>Разобрались с базовой теорией квантовой химии:</p>
 <ul class="simple">
@@ -1517,8 +1521,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </ul>
 <p>В примерах везде вычисляли ground state энергию, но, конечно, зная волновые функции, можно посчитать много чего еще. Например, можно вычислить спектр поглощения и энергию ионизации (энергии возбужденных состояний), моделировать взаимодействие молекул (найти равновесное состояние для двух систем), с помощью плагинов можно смоделировать рассеяние рентгена на молекуле… Квантовая механика постулирует, что любая измеримая величина является усреднением определенного оператора по волновой функции, поэтому в теории любую физическую величину можно посчитать, зная волновую функцию. Возможности ограничены в основном вычислительной сложностью, а не теорией.</p>
 <p>Для более глубокого погружения в практику квантовой химии можно пройти лабораторные работы <code class="docutils literal notranslate"><span class="pre">psi4</span></code>: <a class="reference external" href="https://psicode.netlify.app/posts/psi4education/">раз</a>, <a class="reference external" href="http://education.molssi.org/qm-tools/">два</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

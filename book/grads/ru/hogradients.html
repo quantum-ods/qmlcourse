@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Градиенты высших порядков &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1016,18 +1020,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="hogradients">
+  <section class="tex2jax_ignore mathjax_ignore" id="hogradients">
 <span id="id1"></span><h1>Градиенты высших порядков<a class="headerlink" href="#hogradients" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>План лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы посмотрим на ту математику, которая лежит “под капотом” у <em>parameter-shift rule</em>. Мы познакомимся с обобщением <em>parameter shift</em>, а также увидим, как можно оптимизировать этот метод. В конце мы узнаем, как можно посчитать производную второго порядка за минимальное количество обращений к квантовому компьютеру.</p>
 <p>Для более детального погружения в вопрос можно сразу рекомендовать статью <span id="id3">[<a class="reference internal" href="../../bibliography.html#id38" title="Andrea Mari, Thomas R. Bromley, and Nathan Killoran. Estimating the gradient and higher-order derivatives on quantum hardware. Physical Review A, 103(1):012405, Jan 2021. URL: https://arxiv.org/abs/2008.06517, doi:10.1103/physreva.103.012405.">MBK21</a>]</span>.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Важность гейтов вращений<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Если задуматься, то одним из основных (если не единственных) способов сделать параметризованную квантовую схему является использование гейтов вращений, таких как <span class="math notranslate nohighlight">\(\hat{RX}, \hat{RY}, \hat{RZ}\)</span>. Более формально это можно выразить так, что нас больше всего интересуют операторы вида:</p>
 <div class="math notranslate nohighlight">
@@ -1040,22 +1044,24 @@ U(\theta) = e^{-\frac{i}{2}H\theta}
 \[
 U_{j...k} = U_j, ..., U_k \ket{\Psi}
 \]</div>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Производная от измерения<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Давайте вспомним, как выглядит квантово-классическая схема обучения с <strong>VQC</strong>.</p>
-<div class="figure align-default" id="quantclassical">
+<figure class="align-default" id="quantclassical">
 <a class="reference internal image-reference" href="../../../_images/diagram.png"><img alt="../../../_images/diagram.png" src="../../../_images/diagram.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 101 </span><span class="caption-text">Квантово-классическая схема</span><a class="headerlink" href="#quantclassical" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 101 </span><span class="caption-text">Квантово-классическая схема</span><a class="headerlink" href="#quantclassical" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Видно, что мы хотим считать производную не от самой параметризованной схемы <span class="math notranslate nohighlight">\(U_{j...k}\)</span>, а от наблюдаемой. Для тех, кто забыл, что такое <em>наблюдаемая</em>, рекомендуем вернуться к <a class="reference internal" href="../../qc/ru/qubit.html"><span class="doc std std-doc">лекции про кубит</span></a>. Если кратко, то это тот оператор, который мы “измеряем” на нашем квантовом компьютере. Математически производная, которая нам интересна, может быть записана для выбранного параметра <span class="math notranslate nohighlight">\(i\)</span> таким образом:</p>
 <div class="math notranslate nohighlight">
 \[
 G_i = \frac{\partial \bra{U_{j...k}\Psi}\hat{M}\ket{U_{j...k}\Psi}}{\partial \theta_i}
 \]</div>
 <p>То есть нам важно посчитать производную от результата измерения, так как именно результат измерения у нас будет определять “предсказание” нашей квантовой нейронной сети. Причем нам нужно уметь считать производную от любого параметра <span class="math notranslate nohighlight">\(\theta_i\)</span> в цепочке <span class="math notranslate nohighlight">\(\theta_j, ...\theta_i, ...\theta_k\)</span>.</p>
-</div>
-<div class="section" id="parameter-shift">
+</section>
+<section id="parameter-shift">
 <h2>Parameter-shift для гейтов Паули<a class="headerlink" href="#parameter-shift" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1092,8 +1098,8 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
 \end{gathered}
 \end{split}\]</div>
 <p>По аналогии с классическими нейронными сетями и <em>backpropagation</em> (для тех, кто забыл это понятие, рекомендуем вернуться к вводным лекциями про классическое машинное обучение) тут явно можно выделить <em>forward</em> проход со смещением <span class="math notranslate nohighlight">\(\theta_i\)</span> на значения <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> и <em>backward</em> со смещением на <span class="math notranslate nohighlight">\(-\frac{\pi}{2}\)</span>.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Обобщенный parameter-shift<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Предложенное в <span id="id8">[<a class="reference internal" href="../../bibliography.html#id55" title="Kosuke Mitarai, Makoto Negoro, Masahiro Kitagawa, and Keisuke Fujii. Quantum circuit learning. Physical Review A, 98(3):032309, Sep 2018. URL: https://arxiv.org/abs/1803.00745, doi:10.1103/PhysRevA.98.032309.">MNKF18</a>]</span> выражение может быть на самом деле получено в более общем виде из других соображений. Так, выражение для нашей наблюдаемой <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> может всегда быть представлено <span id="id9">[<a class="reference internal" href="../../bibliography.html#id38" title="Andrea Mari, Thomas R. Bromley, and Nathan Killoran. Estimating the gradient and higher-order derivatives on quantum hardware. Physical Review A, 103(1):012405, Jan 2021. URL: https://arxiv.org/abs/2008.06517, doi:10.1103/physreva.103.012405.">MBK21</a>]</span> как сумма вида:</p>
 <div class="math notranslate nohighlight">
@@ -1133,8 +1139,8 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
 \[
 \boxed{\frac{\partial f(\mathbf{\theta})}{\partial \theta_i} = \frac{f(\mathbf{\theta} + s\mathbf{e_i}) - f(\mathbf{\theta} - s\mathbf{e_i})}{2\sin{s}}}
 \]</div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h2>Вторая производная и гессиан<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>В классической теории оптимизации, также как и в машинном обучении, очень часто на первый план выходят так называемые методы 2-го порядка. Эти методы похожи на обычный градиентный спуск, но для ускорения сходимости они также используют информацию из матрицы вторых производных, которая называется гессианом. Более подробно про методы 2-го порядка и гессиан можно посмотреть в вводных лекциях курса.</p>
 <p>Методы второго порядка требуют больше вызовов, чтобы вычислить гессиан, но взамен они обеспечивают гораздо лучшую сходимость, а также менее склонны “застревать” в локальных минимумах. Это обеспечивает, в итоге, более быстрое обучение. В классических нейронных сетях вычисление гессиана это часто проблема, так как это матрица размерности <span class="math notranslate nohighlight">\(\sim O(N^2)\)</span>, где <span class="math notranslate nohighlight">\(N\)</span> – число весов нейронной сети, и эта матрица получается слишком большой. Но, как мы помним, основная “фича” <strong>VQC</strong> это их экспоненциальная экспрессивность – возможность линейным числом параметров (и гейтов) обеспечить преобразование, эквивалентное экспоненциальному числу весов классической нейронной сети. А значит, для них проблема размерности гессиана не стоит так остро. При этом использование гессиана теоретически позволит в итоге обучить <strong>VQC</strong> за меньшее число вызовов. Именно поэтому методы второго порядка потенциально очень интересны в квантово-классическом обучении. Но для начала нам необходимо разобраться, как именно можно посчитать матрицу вторых производных.</p>
@@ -1165,12 +1171,12 @@ U_i = e^{-\frac{i}{2}P_i\theta_i}
 <p class="admonition-title">Note</p>
 <p>На самом деле, диагональные элементы гессиана можно использовать и сами по себе, например для квазиньютоновских методов оптимизации, где матрица Гессе аппроксимируется какой-то другой матрицей, чтобы не считать все вторые производные. Например, она может быть аппроксимирована диагональной матрицой, как в работе <span id="id13">[<a class="reference internal" href="../../bibliography.html#id28" title="Neculai Andrei. A diagonal quasi-newton updating method for unconstrained optimization. Numerical Algorithms, 81(2):575–590, 2019. doi:https://doi.org/10.1007/s11075-018-0562-7.">And19</a>]</span>.</p>
 </div>
-</div>
-<div class="section" id="id14">
+</section>
+<section id="id14">
 <h2>Заключение<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы познакомились с классическим <em>parameter shift rule</em>, а также его обобщением. Также мы узнали, как можно посчитать гессиан <strong>VQC</strong>, и даже узнали маленькие хитрости, которые можно применять для уменьшения общего количества вызовов квантовой схемы.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

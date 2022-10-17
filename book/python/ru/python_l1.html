@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Вводная лекция про Python &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1026,7 +1030,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python">
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
 <span id="python-l1"></span><h1>Вводная лекция про Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1035,7 +1039,7 @@ title="Print to PDF"
 <p>Добро пожаловать во вводный блок курса!
 Если у вас есть опыт программирования на <code class="docutils literal notranslate"><span class="pre">Python</span></code>, рекомендуем ознакомиться <a class="reference internal" href="../../intro/ru/prerequisite.html"><span class="doc std std-doc">с пререквизитами курса</span></a> – так вы сможете понять, какие разделы стоит изучить или освежить в памяти перед прохождением курса. Тест можно игнорировать, если вы только начинаете свое знакомство с <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
 <p>Итак, <code class="docutils literal notranslate"><span class="pre">Python</span></code> – это такой язык программирования, который позволяет сообщить компьютеру о том, что нужно сделать, чтобы достичь некоего результата. За последнее десятилетие он получил быстрое распространение и сейчас является одним из самых популярных языков программирования в мире. Входной порог для его использования достаточно низок: вы можете использовать <code class="docutils literal notranslate"><span class="pre">Python</span></code> для решения своих задач даже если никогда не имели дела с программированием.</p>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Что такое <code class="docutils literal notranslate"><span class="pre">Python</span></code>?<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> – это язык программирования <em>общего назначения</em>, используемый во многих приложениях. Например:</p>
 <ul class="simple">
@@ -1049,32 +1053,36 @@ title="Print to PDF"
 <li><p>теория графов.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> используют практически все крупные компании, о которых вы слышите каждый день: Google, Yandex, YouTube, Dropbox, Amazon, Facebook … список можно продолжать часами.</p>
-<div class="figure align-default" id="blackhole">
+<figure class="align-default" id="blackhole">
 <a class="reference internal image-reference" href="../../../_images/blackhole.png"><img alt="../../../_images/blackhole.png" src="../../../_images/blackhole.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text"><a class="reference external" href="https://github.com/Python-simulation/Black-hole-simulation-using-python">Рассчитанная в Python симуляция преломлений света черной дырой</a></span><a class="headerlink" href="#blackhole" title="Permalink to this image">#</a></p>
-</div>
-<div class="section" id="id2">
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text"><a class="reference external" href="https://github.com/Python-simulation/Black-hole-simulation-using-python">Рассчитанная в Python симуляция преломлений света черной дырой</a></span><a class="headerlink" href="#blackhole" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id2">
 <h3>Чем примечателен <code class="docutils literal notranslate"><span class="pre">Python</span></code>?<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>В основе разностороннего применения и популярности лежит <strong>простота изучения</strong>: все чаще люди начинают свой путь в программировании с <code class="docutils literal notranslate"><span class="pre">Python</span></code>, поскольку он очень <strong>дружелюбен к новичкам</strong> и позволяет максимально быстро перейти к решению целевой задачи.</p>
 <p>Сюда же можно отнести <strong>многообразие библиотек</strong> (или <em>расширений функциональности</em>, то есть кода, написанного другими людьми, который вы можете переиспользовать). Хотите изучить физику небесных тел и симулировать их взаимодействия? Можно найти и скачать библиотеку, позволяющую за один вечер провести вычисления, о которых в прошлом веке можно было лишь мечтать. Хотите создать прототип мобильного приложения? И на этот случай есть библиотека. Вам нравится квантовая физика и вы хотите использовать ее вместе с умными компьютерными алгоритмами? Что ж, тогда вы снова по адресу.</p>
-<div class="figure align-default" id="aero-python">
+<figure class="align-default" id="aero-python">
 <a class="reference internal image-reference" href="../../../_images/aero_python.png"><img alt="../../../_images/aero_python.png" src="../../../_images/aero_python.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text"><a class="reference external" href="https://lorenabarba.com/blog/announcing-aeropython/">Пример моделирования аэродинамики в Python с помощью библиотеки AeroPython</a></span><a class="headerlink" href="#aero-python" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text"><a class="reference external" href="https://lorenabarba.com/blog/announcing-aeropython/">Пример моделирования аэродинамики в Python с помощью библиотеки AeroPython</a></span><a class="headerlink" href="#aero-python" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> – это <strong>высокоуровневый язык для быстрой разработки и/или прототипирования</strong>, на нем очень удобно проверять гипотезы и идеи. “<em>Высокоуровневый</em>” означает, что вам не нужно вникать в устройство компьютера и тонкости взаимодействия с ним, чтобы перейти к задаче. Многое “сделано за вас”: вы работаете с простыми <em>абстракциями</em> (или удобными представлениями), а не боретесь с компьютером из-за непонимания сложностей его устройства.</p>
 <p>Еще один плюс в копилку популярности языка – это <strong>элегантность и краткость синтаксиса</strong> (принципов написания кода, как будто это абзацы в тексте или колонки в газете). Вместе с вышеупомянутым обилием библиотек вы можете буквально за 5 минут и 10 строк кода – а это меньше половины листа А4 – воспроизвести научную статью, в которую вложено несколько человеко-лет. А еще такой синтаксис делает <strong>код легким для чтения, запоминания и понимания</strong>.</p>
 <p>Стоит отметить, что <code class="docutils literal notranslate"><span class="pre">Python</span></code> – это <strong>интерпретируемый</strong> язык, а значит, компьютер каждый раз перед выполнением программы читает код строчку за строчкой и определяет (интерпретирует), что нужно сделать дальше, не проводя никаких оптимизаций и предварительных расчетов. Это негативно влияет на общую скорость работы: <code class="docutils literal notranslate"><span class="pre">Python</span></code> является одним из самых медленных языков. Тем не менее он отлично подходит для академических целей, например, исследовательской работы или других задач, где скорость работы не является критически важной. Настоящая сила <code class="docutils literal notranslate"><span class="pre">Python</span></code> заключается в том, что это <strong>“язык-клей”</strong>: он обеспечивает удобный доступ к различным библиотекам, написанным на высокоэффективных языках, например, на C/C++, Fortran, CUDA C и других.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h3>И в чем подвох?<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>В простоте языка и его доступности для быстрого старта таится одна из проблем: вы <em>можете не понимать, что происходит внутри</em>, поэтому иногда бывает сложно разобраться в причинах ошибок и неточностей, возникающих по ходу работы над задачей. В целом к <code class="docutils literal notranslate"><span class="pre">Python</span></code> применим следующий принцип: “<strong>Easy to learn, hard to master</strong>”. Возвращаясь к примеру элегантности кода, когда 10 строк кода выполняют всю работу: важно понимать, что за ними стоят еще <em>сотни</em> или даже <em>тысячи строк кода</em>, а это может приводить к ситуациям, когда поиск ошибки в минимальном наборе команд растягивается на несколько дней.</p>
-</div>
-</div>
-<div class="section" id="id4">
+</section>
+</section>
+<section id="id4">
 <h2>Но не пугайтесь!<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В данном блоке мы постараемся дать вам всю необходимую интуицию и теорию для успешного прохождения настоящего курса, ответим на основные вопросы, покажем типовые примеры использования <code class="docutils literal notranslate"><span class="pre">Python</span></code> и разберем классические ошибки.</p>
 <p>Дополнительно отметим, что <code class="docutils literal notranslate"><span class="pre">Python</span></code> хорош и для квантового машинного обучения (<code class="docutils literal notranslate"><span class="pre">QML</span></code>), ради которого весь курс и затеян, в особенности – для классического машинного обучения (<code class="docutils literal notranslate"><span class="pre">ML</span></code>). В области <code class="docutils literal notranslate"><span class="pre">ML</span></code> этот язык программирования стал де-факто стандартом, который используют практически все специалисты.</p>
-<div class="section" id="id5">
+<section id="id5">
 <h3>Интересные факты<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Еще немного дополнительной информации про <code class="docutils literal notranslate"><span class="pre">Python</span></code>:</p>
 <ul class="simple">
@@ -1088,13 +1096,15 @@ title="Print to PDF"
 <li><p>Сборник всех существующих в открытом доступе библиотек <a class="reference external" href="https://pypi.org/">находится тут</a>.</p></li>
 <li><p>Если вы столкнетесь с багом (системной ошибкой, вызванной внутренним механизмом языка), то сообщить об этом можно <a class="reference external" href="https://bugs.python.org/">на специальном сайте</a>.</p></li>
 </ul>
-<div class="figure align-default" id="cat-at-the-end">
+<figure class="align-default" id="cat-at-the-end">
 <a class="reference internal image-reference" href="../../../_images/cat_at_the_end.png"><img alt="../../../_images/cat_at_the_end.png" src="../../../_images/cat_at_the_end.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Кот для привлечения внимания и в благодарность за то, что вы начали проходить курс и сделали самый сложный шаг – прошли первую лекцию!</span><a class="headerlink" href="#cat-at-the-end" title="Permalink to this image">#</a></p>
-</div>
-</div>
-</div>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Кот для привлечения внимания и в благодарность за то, что вы начали проходить курс и сделали самый сложный шаг – прошли первую лекцию!</span><a class="headerlink" href="#cat-at-the-end" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

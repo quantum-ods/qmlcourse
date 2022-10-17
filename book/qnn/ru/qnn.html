@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Квантовые нейронные сети &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1024,65 +1028,75 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Квантовые нейронные сети<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/magnus-the-collectioner">Щуцкий Никита</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы пройдёмся по расширению идеи нейронных сетей на квантовые компьютеры – мы уже прошли и <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc">вариационные квантовые схемы (VQC)</span></a>, и комбинацию <a class="reference internal" href="../../grads/ru/grads_intro.html"><span class="doc std std-doc">квантовых и классических градиентов в них</span></a> в соответствующих блоках. Всё что осталось – это объединить всё изученное в общую картину и заняться обучением этих самых квантовых нейронных сетей. Для того чтобы лучше разобраться в том, какие ограничения и возможности предоставляет этот подход, мы приведём несколько публикаций о квантовых и гибридных генеративных состязательных сетях.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Как уже было упомянуто в <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc">лекции по <strong>VQC</strong></span></a>, на данный момент квантовые вычислители ещё недостаточно развиты для того, чтобы в одиночку решать большие задачи, имеющие практическое значение для индустрии – это в особенной степени актуально для нейронных сетей, которые и в классическом сценарии требуют значительных вычислительных ресурсов. Именно поэтому на данный момент наиболее популярна категория гибридных вариационных алгоритмов, которые обучают квантовую параметрическую схему (<strong>QNN</strong>) при помощи классической оптимизации, например, <strong>VQ Eigensolvers</strong> и <strong>Quantum Approximate Optimization Algorithms</strong>. В общем и целом идея гибридных алгоритмов заключается в оптимизации над некоторым классом параметрических вычислений для минимизации энергии волновой функции (<strong>VQE</strong>/<strong>QAOA</strong>), экстракции нелокальной информации (<strong>QNN Classifiers</strong>) или генерации данных, соответствующих квантовому распределению (<strong>Quantum Generative Models</strong>).</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Применение<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Лучше всего понять адекватность и применимость какой-то технологии, особенно основанной на комплексном научном базисе, позволяет как раз таки ее применение - чего удалось добиться кому-то на практике и насколько результаты пригодны для того, чтобы хвататься за технологию. Вместе с тем, практические результаты дадут нам глубже понять и в последствии объяснить, как гибридные сети работают под капотом. Приведём два примера, которые хорошо показывают разницу в ограничениях при использовании полностью квантовых и гибридных квантово-классических сетей.</p>
 <p>В первом примере была построена полностью квантовая генеративная состязательная сеть, задачей которой являлось воспроизвести <a class="reference external" href="https://en.wikipedia.org/wiki/MNIST_database">MNIST</a>, однако у всего эксперимента был один нюанс. Из-за текущего размера квантовых вычислителей было предложено уменьшить размерность MNIST с 784 до 4 при помощи метода главных компонент (<a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a>), чтобы его хоть как-то можно было отправить в квантовую схему. Очевидно, сеть такого размера не в состоянии тягаться с классическими сетями на десятки тысяч весов, поэтому конечным результатом стало сравнение по количеству весов при идентичных результатах. Полностью квантовая сеть смогла получить такие же результаты, как и классическая, при это имея на 95% меньше параметров. Эти результаты всё ещё поднимают вопрос того, будут ли они справедливыми для моделей, адекватно справляющихся с задачей.</p>
-<div class="figure align-default" id="qugan">
+<figure class="align-default" id="qugan">
 <a class="reference internal image-reference" href="../../../_images/qugan.png"><img alt="../../../_images/qugan.png" src="../../../_images/qugan.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 108 </span><span class="caption-text">Схема квантовой генеративной состязательной сети из публикации <span id="id5">[<a class="reference internal" href="../../bibliography.html#id65" title="Samuel A. Stein, Betis Baheri, Daniel Chen, Ying Mao, Qiang Guan, Ang Li, Bo Fang, and Shuai Xu. Qugan: a generative adversarial network through quantum states. 2021. arXiv:2010.09036.">SBC+21</a>]</span>.</span><a class="headerlink" href="#qugan" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 108 </span><span class="caption-text">Схема квантовой генеративной состязательной сети из публикации <span id="id5">[<a class="reference internal" href="../../bibliography.html#id65" title="Samuel A. Stein, Betis Baheri, Daniel Chen, Ying Mao, Qiang Guan, Ang Li, Bo Fang, and Shuai Xu. Qugan: a generative adversarial network through quantum states. 2021. arXiv:2010.09036.">SBC+21</a>]</span>.</span><a class="headerlink" href="#qugan" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Во втором примере была построена гибридная квантово-классическая генеративная состязательная сеть, задачей которой являлось воспроизвести QM-9 – популярный датасет молекул до 9 атомов, представленный молекулярным графом в виде матрицы 9 на 9 и атомарным вектором из 9 элементов. Генеративная часть модели состояла из нескольких квантовых схем и, по большей части, классической сети, предсказывающей узлы и связи между ними. Дискриминативная часть была полностью классической во всех вариациях модели. В конечном итоге им удалось добиться снижения числа параметров по сравнению с полностью классической сетью на 85% и, при увеличении числа кубитов, на 98%. Таким образом они показали, что комбинация классических и квантовых схем должна соответствовать той же самой закономерности, что и полностью квантовые сети.</p>
-<div class="figure align-default" id="molgan">
+<figure class="align-default" id="molgan">
 <a class="reference internal image-reference" href="../../../_images/molgan.png"><img alt="../../../_images/molgan.png" src="../../../_images/molgan.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 109 </span><span class="caption-text">Схема гибридной генеративной состязательной сети из публикации <span id="id6">[<a class="reference internal" href="../../bibliography.html#id49" title="Junde Li, Rasit Topaloglu, and Swaroop Ghosh. Quantum generative models for small molecule drug discovery. 2021. arXiv:2101.03438.">LTG21</a>]</span>.</span><a class="headerlink" href="#molgan" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 109 </span><span class="caption-text">Схема гибридной генеративной состязательной сети из публикации <span id="id6">[<a class="reference internal" href="../../bibliography.html#id49" title="Junde Li, Rasit Topaloglu, and Swaroop Ghosh. Quantum generative models for small molecule drug discovery. 2021. arXiv:2101.03438.">LTG21</a>]</span>.</span><a class="headerlink" href="#molgan" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>За счёт большей актуальности на текущих практических задачах именно последнего, гибридного подхода, дальнейшая часть лекции будет рассматривать именно его.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Архитектура<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>В идеале этот подход подразумевал бы, что при помощи классического оптимизатора мы обучаем некоторую параметрическую схему на квантовом вычислителе, однако в текущих реалиях <em>NISQ</em> этот подход невозможен, поэтому большая часть параметрической схемы остаётся на классических вычислителях. В данном блоке мы поговорим о подходе, связанном с <strong>QNN Classifiers</strong>, которые следуют вышеупомянутому принципу и обучаются градиентным спуском практически так же, как и обычные классические сети, позволяя градиенту протекать между квантовой и классической частью сети.</p>
-<div class="figure align-default" id="qnn">
+<figure class="align-default" id="qnn">
 <a class="reference internal image-reference" href="../../../_images/qnntfq2.png"><img alt="../../../_images/qnntfq2.png" src="../../../_images/qnntfq2.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 110 </span><span class="caption-text">Схема обучения гибридной нейронной сети из <span id="id8">[<a class="reference internal" href="../../bibliography.html#id22" title="Michael Broughton, Guillaume Verdon, Trevor McCourt, Antonio J. Martinez, Jae Hyeon Yoo, Sergei V. Isakov, Philip Massey, Ramin Halavati, Murphy Yuezhen Niu, Alexander Zlokapa, Evan Peters, Owen Lockwood, Andrea Skolik, Sofiene Jerbi, Vedran Dunjko, Martin Leib, Michael Streif, David Von Dollen, Hongxiang Chen, Shuxiang Cao, Roeland Wiersema, Hsin-Yuan Huang, Jarrod R. McClean, Ryan Babbush, Sergio Boixo, Dave Bacon, Alan K. Ho, Hartmut Neven, and Masoud Mohseni. Tensorflow quantum: a software framework for quantum machine learning. 2021. URL: https://arxiv.org/abs/2003.02989, arXiv:2003.02989.">BVM+21</a>]</span>.</span><a class="headerlink" href="#qnn" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 110 </span><span class="caption-text">Схема обучения гибридной нейронной сети из <span id="id8">[<a class="reference internal" href="../../bibliography.html#id22" title="Michael Broughton, Guillaume Verdon, Trevor McCourt, Antonio J. Martinez, Jae Hyeon Yoo, Sergei V. Isakov, Philip Massey, Ramin Halavati, Murphy Yuezhen Niu, Alexander Zlokapa, Evan Peters, Owen Lockwood, Andrea Skolik, Sofiene Jerbi, Vedran Dunjko, Martin Leib, Michael Streif, David Von Dollen, Hongxiang Chen, Shuxiang Cao, Roeland Wiersema, Hsin-Yuan Huang, Jarrod R. McClean, Ryan Babbush, Sergio Boixo, Dave Bacon, Alan K. Ho, Hartmut Neven, and Masoud Mohseni. Tensorflow quantum: a software framework for quantum machine learning. 2021. URL: https://arxiv.org/abs/2003.02989, arXiv:2003.02989.">BVM+21</a>]</span>.</span><a class="headerlink" href="#qnn" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>На изображении гибридной сети процедура практически идентична классическому обучению сетей, в котором добавляется процесс кодирования классических данных в квантовые операторы и процесс измерения квантового состояния для того, чтобы передать уже классическую информацию для дальнейших вычислений на классическом устройстве, как это было описано в <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc">лекции по <strong>VQC</strong></span></a>.</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h2>Анзац<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>Зачастую в литературе по <strong>VQC</strong>, особенно когда речь идёт о нейронных сетях, упоминается такая вещь как <strong>ansatz</strong> – по своей сути это заранее подготовленные участки параметрической схемы, которые могут быть использованы как составные блоки сети. Если проводить параллели с классическим машинным обучением, то в рамках библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> эти схемы называются <strong>templates</strong> (шаблоны) и могут представлять собой, например, свёрточный слой или эмбеддинг, а также более общие элементы квантовой схемы вроде подготовки состояний или перестановок между кубитами. Более подробно мы остановимся на них слегка позже в курсе, в одной из следующих глав, а пока что в общих чертах пройдёмся по обучению квантовых нейронных сетей без сложностей внутренней кухни.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Интересно, но термин <em>anzatz</em> пришел в квантовые вычисления и QML из теоретической физики. Этот термин имеет немецкое происхождение, так как в первой половине XX века именно немецкие научные журналы были самыми передовыми. Частое употребление этого термина в отношении квантового машинного обучения объясняется тем, что большая часть специалистов в этой области это именно люди, занимающиеся теоретической физикой.</p>
 </div>
-<div class="figure align-default" id="ansatz">
+<figure class="align-default" id="ansatz">
 <a class="reference internal image-reference" href="../../../_images/layer_cvqnn.png"><img alt="../../../_images/layer_cvqnn.png" src="../../../_images/layer_cvqnn.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 111 </span><span class="caption-text">Ansatz, соответствующий свёрточному слою нейронной сети в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>. <a class="reference external" href="https://pennylane.readthedocs.io/en/ising/code/templates/layers.html">Источник</a></span><a class="headerlink" href="#ansatz" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id10">
+<figcaption>
+<p><span class="caption-number">Fig. 111 </span><span class="caption-text">Ansatz, соответствующий свёрточному слою нейронной сети в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>. <a class="reference external" href="https://pennylane.readthedocs.io/en/ising/code/templates/layers.html">Источник</a></span><a class="headerlink" href="#ansatz" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id10">
 <h2>Функция потерь<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Функция потерь работает таким же образом, как и в полностью классических сетях, так как оптимизация происходит на классическом железе. Единственное, что отличается, – это объединение квантовых и классических градиентов. Градиент по нашей квантовой схеме получается при помощи замера состояния, которое может варьироваться из-за вероятностной природы кубита, поэтому несколько замеров позволяют аппроксимировать ожидаемый градиент при помощи методов вроде <a class="reference internal" href="../../grads/ru/gradients.html"><span class="doc std std-doc">finite differences</span></a> или <a class="reference internal" href="../../grads/ru/hogradients.html"><span class="doc std std-doc">parameter-shift</span></a>, после чего остаётся только совместить его с классическим градиентом.</p>
-<div class="figure align-default" id="grads">
+<figure class="align-default" id="grads">
 <a class="reference internal image-reference" href="../../../_images/qnngrads.png"><img alt="../../../_images/qnngrads.png" src="../../../_images/qnngrads.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 112 </span><span class="caption-text">Распространение градиентов от функции потерь в гибридной схеме.</span><a class="headerlink" href="#grads" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id11">
+<figcaption>
+<p><span class="caption-number">Fig. 112 </span><span class="caption-text">Распространение градиентов от функции потерь в гибридной схеме.</span><a class="headerlink" href="#grads" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id11">
 <h2>Сеть от начала до конца<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>В конечном итоге мы имеем следующую последовательность действий для того, чтобы собрать гибридную нейронную сеть:</p>
 <ul class="simple">
@@ -1092,16 +1106,16 @@ title="Print to PDF"
 <li><p>отправить результаты для вычисления на классической схеме;</p></li>
 <li><p>оценить ошибку, рассчитать градиенты и обновить параметры.</p></li>
 </ul>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>В ближайшие годы полностью квантовые нейронные сети не смогут решать задачи целиком, поэтому будут использоваться в качестве составляющей гибридного квантово-классического решения.</p></li>
 <li><p>Так же как и для полностью квантовых сетей, гибридные сети позволяют уменьшить количество необходимых параметров по сравнению с полностью классическими сетями.</p></li>
 <li><p>Обучение подобных сетей практически идентично обучению классических сетей за исключением нескольких трюков, необходимых для работы с параметрами квантовых схем.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

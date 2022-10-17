@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Cirq &amp; TFQ &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1104,23 +1108,23 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="cirq-tfq">
+  <section class="tex2jax_ignore mathjax_ignore" id="cirq-tfq">
 <span id="id1"></span><h1>Cirq &amp; TFQ<a class="headerlink" href="#cirq-tfq" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://quantumai.google/cirq">Cirq</a> – это библиотека для работы с квантовыми компьютерами и симуляторами компании <em>Google</em>. В рамках темы квантового машинного обучения нам также интересен фреймворк <a class="reference external" href="https://www.tensorflow.org/quantum/overview">Tensorflow Quantum</a> или сокращенно <code class="docutils literal notranslate"><span class="pre">TFQ</span></code>. Это высокоуровневая библиотека, которая содержит готовые функции для квантового и гибридного машинного обучения. В качестве системы автоматического дифференцирования, а также для построения гибридных квантово-классических нейронных сетей там используется библиотека <a class="reference external" href="https://www.tensorflow.org/overview/">Tensorflow</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Во всех дальнейших лекциях мы будем использовать в основном библиотеку <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>, так что данная лекция исключительно обзорная и факультативная. В ней мы посмотрим несколько примеров <em>end2end</em> обучения квантовых схем на <code class="docutils literal notranslate"><span class="pre">TFQ</span></code> без детального объяснения теории и вообще того, что происходит. Основная цель данной лекции – исключительно обзор еще одного инструмента, а не изучение QML! Заинтересованный читатель может вернуться к этому обзору после изучения глав про <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc">VQC</span></a>, <a class="reference internal" href="../../grads/ru/gradients.html"><span class="doc std std-doc">Градиенты</span></a> и <strong>Квантовые нейросети</strong>.</p>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Работа с кубитами<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id4">
+<section id="id4">
 <h3>Импорты и схема<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1140,10 +1144,12 @@ title="Print to PDF"
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Cirq</span></code> рассчитан на работу с квантовым компьютером от компании <em>Google</em>, который представляет собой решетку кубитов. Например, вот так выглядит решетка кубитов квантового компьютера <code class="docutils literal notranslate"><span class="pre">Sycamore</span></code>:</p>
-<div class="figure align-default" id="sycamore-lattice">
+<figure class="align-default" id="sycamore-lattice">
 <a class="reference internal image-reference" href="../../../_images/sycamore.png"><img alt="../../../_images/sycamore.png" src="../../../_images/sycamore.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">Изображение из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Изображение из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Поэтому в нем все строится вокруг работы с решеткой кубитов – объектом <code class="docutils literal notranslate"><span class="pre">cirq.GridQubit</span></code>. Давайте создадим кубит на решетке, который имеет координаты <span class="math notranslate nohighlight">\((0, 0)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1168,8 +1174,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>Запуск и симуляция<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>Теперь создадим квантовый симулятор, который посчитает нам результат этой простой схемы на классическом компьютере:</p>
 <div class="cell docutils container">
@@ -1189,13 +1195,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.6
 dtype: float64
 
-100 сэмплов: (0, 0)    0.41
+100 сэмплов: (0, 0)    0.39
 dtype: float64
 
-1000 сэмплов: (0, 0)    0.496
+1000 сэмплов: (0, 0)    0.487
 dtype: float64
 </pre></div>
 </div>
@@ -1213,17 +1219,17 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=0100001100001110001111000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=0000100000111111011101111
 </pre></div>
 </div>
 </div>
 </div>
 <p>Тут мы просто видим последовательность наших измерений.</p>
-</div>
-</div>
-<div class="section" id="id7">
+</section>
+</section>
+<section id="id7">
 <h2>Квантовое машинное обучение<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id8">
+<section id="id8">
 <h3>Импорты<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Мы будем использовать <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code> и <code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code>.</p>
 <div class="cell docutils container">
@@ -1236,8 +1242,8 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Задача<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Давайте попробуем решить игрушечную задачку классификации простой гибридной квантово-классической нейронной сетью. У нас будет один квантовый слой и один классический слой. В качестве задачи сгенерируем простенький набор данных, используя рутины <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>. Сразу переведем входящие признаки в диапазон от нуля до <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <div class="cell docutils container">
@@ -1275,8 +1281,8 @@ dtype: float64
 <img alt="../../../_images/cirq_tfq_17_0.png" src="../../../_images/cirq_tfq_17_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>Кубиты<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code> позволяет “превращать” параметризированные схемы <code class="docutils literal notranslate"><span class="pre">Cirq</span></code> в слои нейронных сетей <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code>. Но для начала нам все равно потребуется схема. Давайте объявим пару кубитов.</p>
 <div class="cell docutils container">
@@ -1292,8 +1298,8 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h3>Входной слой нейронной сети<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>Определим входной слой, который будет кодировать наши классические данные в квантовые. Сразу закодируем данные. Так как <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code> работает с тензорами, то нам необходимо будет преобразовать схемы в тензор. Для этого есть специальная функция <code class="docutils literal notranslate"><span class="pre">convert_to_tensor</span></code>.</p>
 <div class="cell docutils container">
@@ -1311,8 +1317,8 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h3>Слой из параметризованной схемы<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Для создания параметризованных схем в <code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code> используются символы из библиотеки символьных вычислений <a class="reference external" href="https://www.sympy.org/en/index.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code></a>. Давайте объявим несколько параметров и создадим схему:</p>
 <div class="cell docutils container">
@@ -1349,8 +1355,8 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h3>Наблюдаемые<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>В качестве операторов, которые мы будем измерять, воспользуемся парой <span class="math notranslate nohighlight">\(\hat{XY}\)</span> и <span class="math notranslate nohighlight">\(\hat{YX}\)</span> для наших кубитов:</p>
 <div class="cell docutils container">
@@ -1360,8 +1366,8 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id14">
+</section>
+<section id="id14">
 <h3>Гибридная нейронная сеть<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>Теперь воспользуемся классическим <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code>, чтобы объявить и скомпилировать нашу нейронную сеть, предварительно добавив в нее один классический слой.</p>
 <ul class="simple">
@@ -1445,8 +1451,8 @@ _________________________________________________________________
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id15">
+</section>
+<section id="id15">
 <h3>Предсказания со случайной инициализацией<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>Наша нейросеть имеет случайные начальные параметры. Давайте посмотрим, что она предсказывает до обучения:</p>
 <div class="cell docutils container">
@@ -1464,8 +1470,8 @@ _________________________________________________________________
 <img alt="../../../_images/cirq_tfq_37_0.png" src="../../../_images/cirq_tfq_37_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id16">
+</section>
+<section id="id16">
 <h3>Обучение сети<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>запустим обучение</p></li>
@@ -1478,11 +1484,11 @@ _________________________________________________________________
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.27 s, sys: 83.4 ms, total: 4.35 s
-Wall time: 3.93 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 5.82 s, sys: 117 ms, total: 5.94 s
+Wall time: 5.29 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f7907ca4eb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f5dc461c9d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1521,13 +1527,13 @@ Wall time: 3.93 s
 <img alt="../../../_images/cirq_tfq_43_0.png" src="../../../_images/cirq_tfq_43_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id17">
+</section>
+</section>
+<section id="id17">
 <h2>Заключение<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
 <p>В данной лекции мы познакомились с фреймворком <code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code>. Это достаточно мощный инструмент, особенно в связке с <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code>, так как позволяет использовать большое число готовых методов <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code> и различных расширений. Тем не менее, для целей обучения <code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code> кажется не лучшим выбором, так как имеет много неочевидного синтаксиса и предполагает, как минимум, среднего знания <code class="docutils literal notranslate"><span class="pre">Tensorflow</span></code>. Во всех дальнейших лекциях мы будем использовать в основном библиотеку <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

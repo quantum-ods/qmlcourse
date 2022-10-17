@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Классический SVM &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1054,13 +1058,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="svm">
+  <section class="tex2jax_ignore mathjax_ignore" id="svm">
 <span id="classicsvm"></span><h1>Классический SVM<a class="headerlink" href="#svm" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/yorko">Кашницкий Юрий</a></p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы рассмотрим классический метод опорных векторов (SVM) и разберем стоящую за ним математику. С согласия Евгения Соколова, мы во многом переиспользуем конспекты лекций <a class="reference external" href="https://github.com/esokolov/ml-course-hse">курса</a> “Машинное обучение”, читаемого на ФКН ВШЭ.</p>
 <p>План лекции такой:</p>
@@ -1073,14 +1077,16 @@ title="Print to PDF"
 <li><p>ядерный переход;</p></li>
 <li><p>плюсы и минусы SVM.</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>Линейная классификация<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Основная идея линейного классификатора заключается в том, что признаковое пространство может быть разделено гиперплоскостью на два полупространства, в каждом из которых прогнозируется одно из двух значений целевого класса. Если это можно сделать без ошибок, то обучающая выборка называется <em>линейно разделимой</em>.</p>
-<div class="figure align-default" id="lin-classifier">
+<figure class="align-default" id="lin-classifier">
 <a class="reference internal image-reference" href="../../../_images/lin_classifier.png"><img alt="../../../_images/lin_classifier.png" src="../../../_images/lin_classifier.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 102 </span><span class="caption-text">Линейная классификация</span><a class="headerlink" href="#lin-classifier" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 102 </span><span class="caption-text">Линейная классификация</span><a class="headerlink" href="#lin-classifier" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Рассмотрим задачу бинарной классификации, в которой <span class="math notranslate nohighlight">\(\mathbb{X} = \mathbb{R}^d\)</span> – пространство объектов,
 <span class="math notranslate nohighlight">\(Y = \{-1, +1\}\)</span> – множество допустимых ответов (целевой признак),
 <span class="math notranslate nohighlight">\(X = \{(x_i, y_i)\}_{i = 1}^\ell\)</span> – обучающая выборка. Будем класс <span class="math notranslate nohighlight">\(+1\)</span> называть положительным, а класс <span class="math notranslate nohighlight">\(-1\)</span> – отрицательным. Здесь <span class="math notranslate nohighlight">\(d\)</span> – размерность признакового пространства, <span class="math notranslate nohighlight">\(\ell\)</span> – количество примеров в обучающей выборке.</p>
@@ -1109,10 +1115,12 @@ title="Print to PDF"
 \[
     a(x) = \text{sign} \langle w, x \rangle.
 \]</div>
-<div class="figure align-default" id="distance-to-the-plane">
+<figure class="align-default" id="distance-to-the-plane">
 <a class="reference internal image-reference" href="../../../_images/distance_to_the_plane.png"><img alt="../../../_images/distance_to_the_plane.png" src="../../../_images/distance_to_the_plane.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 103 </span><span class="caption-text">Расстояние от точки до плоскости</span><a class="headerlink" href="#distance-to-the-plane" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 103 </span><span class="caption-text">Расстояние от точки до плоскости</span><a class="headerlink" href="#distance-to-the-plane" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Геометрически линейный классификатор соответствует гиперплоскости с вектором нормали <span class="math notranslate nohighlight">\(w\)</span>, которая задается уравнением <span class="math notranslate nohighlight">\(\langle w, x \rangle = 0\)</span>. Величина скалярного произведения <span class="math notranslate nohighlight">\(\langle w, x \rangle\)</span> пропорциональна расстоянию от гиперплоскости до точки <span class="math notranslate nohighlight">\(x\)</span>, а его знак показывает, с какой стороны от гиперплоскости находится данная точка. Если быть точным, расстояние от точки с радиус-вектором <span class="math notranslate nohighlight">\(x_A\)</span> до плоскости <span class="math notranslate nohighlight">\(\langle w, x \rangle = 0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1162,14 +1170,16 @@ title="Print to PDF"
 </div>
 <p>Таким образом, линейный классификатор разделяет пространство на две части с помощью гиперплоскости, и при этом одно полупространство относит к положительному классу, а другое – к отрицательному.</p>
 <p>Пожалуй, самый известный и популярный на практике представитель семейства линейных классификаторов – логистическая регрессия. На русском языке про нее можно почитать в <a class="reference external" href="https://habr.com/ru/company/ods/blog/323890/">статье</a> открытого курса по машинному обучению или в упомянутых <a class="reference external" href="https://github.com/esokolov/ml-course-hse/tree/master/2021-fall/lecture-notes">лекциях</a> Евгения Соколова. В этих лекциях также объясняется, как происходит обучение модели (подбор весов <span class="math notranslate nohighlight">\(w\)</span>) за счет минимизации функции потерь.</p>
-<div class="section" id="id3">
+<section id="id3">
 <h3>Отступ классификации<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>Оказывается полезным рассмотреть выражение <span class="math notranslate nohighlight">\(M(x_i, y_i, w) = y_i \cdot \langle w, x \rangle.\)</span></p>
 <p>Это <strong>отступ классификации</strong> (margin) для объекта обучающей выборки <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>. К сожалению, его очень легко перепутать с зазором классификации, который появится чуть ниже в изложении интуиции метода опорных векторов. Чтобы не путать: отступ определен на конкретном объекте обучающей выборки.</p>
-<div class="figure align-default" id="margin-toy-example">
+<figure class="align-default" id="margin-toy-example">
 <a class="reference internal image-reference" href="../../../_images/margin_toy_example.png"><img alt="../../../_images/margin_toy_example.png" src="../../../_images/margin_toy_example.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 104 </span><span class="caption-text">Иллюстрация к понятию отступа классификации</span><a class="headerlink" href="#margin-toy-example" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 104 </span><span class="caption-text">Иллюстрация к понятию отступа классификации</span><a class="headerlink" href="#margin-toy-example" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Отступ – это своего рода “уверенность” модели в классификации объекта <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>:</p>
 <ul class="simple">
 <li><p>если отступ большой (по модулю) и положительный, это значит, что метка класса поставлена правильно, а объект находится далеко от разделяющей гиперплоскости (такой объект классифицируется уверенно). На рисунке – <span class="math notranslate nohighlight">\(x_3\)</span>.</p></li>
@@ -1177,21 +1187,23 @@ title="Print to PDF"
 <li><p>если отступ малый (по модулю), то объект находится близко к разделяющей гиперплоскости, а знак отступа определяет, правильно ли объект классифицирован. На рисунке – <span class="math notranslate nohighlight">\(x_2\)</span> и <span class="math notranslate nohighlight">\(x_4\)</span>.</p></li>
 </ul>
 <p>Далее увидим, что понятие отступа классификации – часть функции потерь, которая оптимизируется в методе опорных векторов.</p>
-</div>
-</div>
-<div class="section" id="id4">
+</section>
+</section>
+<section id="id4">
 <h2>Интуиция метода опорных векторов<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Метод опорных векторов (Support Vector Machine, SVM) основан на идее максимизации зазора между классами. Пока не вводим этот термин формально, но передадим интуицию метода. На Рис. <a class="reference internal" href="#linclass-margins"><span class="std std-numref">Fig. 105</span></a> показана линейно-разделимая выборка, кружки соответствуют положительным примерам, а квадраты – отрицательным (или наоборот), а оси – некоторым признакам этих примеров. На рисунке слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Кажется, что синяя прямая лучше тем, что она дальше отстоит от примеров обучающей выборки, чем красная прямая (зазор – больше), и потому лучше будет разделять другие примеры из того же распределения, что и примеры обучающей выборки. То есть такой линейный классификатор будет лучше обобщаться на новые данные. Теория подтверждает описанную интуицию <span id="id5">[<a class="reference internal" href="../../bibliography.html#id9" title="Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar. Foundations of Machine Learning. Adaptive Computation and Machine Learning. MIT Press, Cambridge, MA, 2 edition, 2018. ISBN 978-0-262-03940-6.">MRT18</a>]</span>.</p>
-<div class="figure align-default" id="linclass-margins">
+<figure class="align-default" id="linclass-margins">
 <a class="reference internal image-reference" href="../../../_images/linclass_margins.png"><img alt="../../../_images/linclass_margins.png" src="../../../_images/linclass_margins.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 105 </span><span class="caption-text">Слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Справа показана прямая, максимизирующая зазор между классами. Источник: <a class="reference external" href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html">лекция</a> Cornell</span><a class="headerlink" href="#linclass-margins" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 105 </span><span class="caption-text">Слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Справа показана прямая, максимизирующая зазор между классами. Источник: <a class="reference external" href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html">лекция</a> Cornell</span><a class="headerlink" href="#linclass-margins" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Одним из ключевых авторов алгоритма SVM является Владимир Вапник – советский и американский (с 1991-го года) ученый, который также сделал огромный вклад в теорию классического машинного обучения. Его имя носит одно из ключевых теоретических понятий машинного обучения – размерность Вапника-Червоненкиса.</p>
 </div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Метод опорных векторов для линейно-разделимой выборки<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Будем рассматривать линейные классификаторы вида</p>
 <div class="math notranslate nohighlight">
@@ -1249,8 +1261,8 @@ title="Print to PDF"
 \end{split}\]</div>
 <p>Здесь мы воспользовались тем, что линейный классификатор дает правильный ответ на примере <span class="math notranslate nohighlight">\(x_i\)</span> тогда и только тогда, когда <span class="math notranslate nohighlight">\(y_i (\langle w, x_i \rangle + b) \geq 0\)</span> (вспомним, что <span class="math notranslate nohighlight">\(M_i = y_i (\langle w, x_i \rangle + b)\)</span> – отступ классификации для примера <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> обучающей выборки). Более того, из условия нормировки <span class="math notranslate nohighlight">\(\min_{x \in X} | \langle w, x \rangle + b| = 1\)</span> следует, что <span class="math notranslate nohighlight">\(y_i (\langle w, x_i \rangle + b) \geq 1\)</span>.</p>
 <p>В данной задаче функционал является строго выпуклым, а ограничения линейными, поэтому сама задача является выпуклой и имеет единственное решение. Более того, задача является квадратичной и может быть решена крайне эффективно.</p>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h2>Метод опорных векторов для линейно-неразделимой выборки<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Рассмотрим теперь общий случай, когда выборку
 невозможно идеально разделить гиперплоскостью.
@@ -1291,7 +1303,7 @@ title="Print to PDF"
 \right.
 \end{split}\]</div>
 <p>Чем больше здесь параметр <span class="math notranslate nohighlight">\(C\)</span>, тем сильнее мы будем настраиваться на обучающую выборку. Данная задача также является выпуклой и имеет единственное решение.</p>
-<div class="section" id="id9">
+<section id="id9">
 <h3>Сведение к безусловной задаче оптимизации<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Покажем, что задачу метода опорных векторов можно свести к задаче безусловной оптимизации функционала, который имеет вид верхней оценки на долю неправильных ответов.</p>
 <p>Перепишем условия задачи:</p>
@@ -1326,19 +1338,21 @@ title="Print to PDF"
     \min_{w, b}
 \]</div>
 <p>Эта задача является негладкой, поэтому решать её может быть достаточно тяжело. Тем не менее, она показывает, что метод опорных векторов, по сути, как и логистическая регрессия, строит верхнюю оценку на долю ошибок и добавляет к ней стандартную квадратичную регуляризацию. Только если в случае логистической регрессии этой верхней оценкой была логистическая функция потерь (опять сделаем отсылку к <a class="reference external" href="https://habr.com/ru/company/ods/blog/323890/">статье</a> из открытого курса машинного обучения), то в случае метода опорных векторов это функция вида  <span class="math notranslate nohighlight">\(L(y, z) = \max(0, 1 - yz)\)</span>, которая называется <strong>кусочно-линейной функцией потерь (hinge loss)</strong>.</p>
-<div class="figure align-default" id="loss-functions-logistic-and-hinge">
+<figure class="align-default" id="loss-functions-logistic-and-hinge">
 <a class="reference internal image-reference" href="../../../_images/loss_functions_logistic_and_hinge.png"><img alt="../../../_images/loss_functions_logistic_and_hinge.png" src="../../../_images/loss_functions_logistic_and_hinge.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 106 </span><span class="caption-text">Пороговая, кусочно-линейная и логистическая функции потерь</span><a class="headerlink" href="#loss-functions-logistic-and-hinge" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 106 </span><span class="caption-text">Пороговая, кусочно-линейная и логистическая функции потерь</span><a class="headerlink" href="#loss-functions-logistic-and-hinge" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Это становится понятнее в терминах упомянутого выше отступа <span class="math notranslate nohighlight">\(M_i = y_i (\langle w, x_i \rangle + b)\)</span> на примере обучающей выборки. В идеале мы хотели бы штрафовать классификатор за ошибку на примере: <span class="math notranslate nohighlight">\(L_{1/0} (M_i) = [M_i &lt; 0]\)</span>. Это пороговая функция потерь (zero-one loss), ее график изображен черным на <a class="reference internal" href="#loss-functions-logistic-and-hinge"><span class="std std-numref">Fig. 106</span></a> как функция от отступа. К сожалению, напрямую мы не можем эффективно оптимизировать такую функцию градиентными методами из-за разрыва в нуле, поэтому оптимизируется верхняя оценка zero-one loss. В случае логистической регрессии – логистическая функция потерь <span class="math notranslate nohighlight">\(L(M_i) = \log(1+ e^{-M_i})\)</span> (красная на рисунке выше), а в случае метода опорных векторов – кусочно-линейная функция <span class="math notranslate nohighlight">\(L(M_i) = \max(0, 1 - M_i)\)</span> (зеленая на рисунке выше).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Бытует мнение, что метод опорных векторов сегодня нигде не используется из-за его сложности (как минимум квадратичной по числу примеров). Однако, это не так. Линейный SVM вполне неплохо можно применять в задачах с высокой размерностью объектов обучающей выборки, например, для классификации текстов с <a class="reference external" href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">Tf-Idf</a> или любым другим разреженным представлением. В частности, <a class="reference external" href="https://vowpalwabbit.org/">Vowpal Wabbit</a> – очень эффективная утилита для решения многих задачах машинного обучения – по умолчанию использует hinge-loss для задач классификации, то есть по сути в этом сценарии применения является линейным SVM. Кусочно-линейная функция потерь хороша тем, что у нее очень простая производная – положительная константа либо ноль. Это удобно использовать с SGD и большими выборками, когда приходится делать миллиарды обновлений весов.</p>
 <p>Про прелести Vowpal Wabbit и обучение на гигабайтах данных за считанные минуты можно почитать в <a class="reference external" href="https://habr.com/ru/company/ods/blog/326418/">статье</a> открытого курса машинного обучения.</p>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
+</section>
+</section>
+<section id="id10">
 <h2>Решение задачи метода опорных векторов<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Итак, метод опорных векторов сводится к решению задачи оптимизации</p>
 <div class="math notranslate nohighlight">
@@ -1464,8 +1478,8 @@ title="Print to PDF"
         \end{aligned}
     \right.\end{split}\]</div>
 <p>Она также является вогнутой, квадратичной и имеет единственный максимум.</p>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h2>Ядерный переход<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
 <p>Двойственная задача SVM <a class="reference internal" href="#equation-svmdual">(18)</a> зависит только от скалярных произведений объектов – отдельные признаковые описания никак не входят в неё.</p>
 <div class="admonition note">
@@ -1516,18 +1530,20 @@ a(x) = \text{sign} \left(
 \]</div>
 </div>
 <p><a class="reference internal" href="#kerneltrick"><span class="std std-numref">Fig. 107</span></a> – пожалуй, самый известный рисунок в контексте SVM, он иллюстрирует ядерный трюк, в свою очередь, одну из самых красивых идей в истории машинного обучения. За счет ядерного перехода можно достигнуть линейной разделимости выборки даже в том случае, когда исходная обучающая выборка не является линейно разделимой.</p>
-<div class="figure align-default" id="kerneltrick">
+<figure class="align-default" id="kerneltrick">
 <a class="reference internal image-reference" href="../../../_images/kernel_trick_idea.png"><img alt="../../../_images/kernel_trick_idea.png" src="../../../_images/kernel_trick_idea.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 107 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 107 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Наиболее часто используемые ядра:</p>
 <ul class="simple">
 <li><p><em>Линейное</em> <span class="math notranslate nohighlight">\(K(x, y) = \langle x , y \rangle\)</span> – по сути, линейный SVM, рассмотренный выше;</p></li>
 <li><p><em>Полиномиальное ядро</em> <span class="math notranslate nohighlight">\(K(x, y) = (\langle x , y \rangle + c)^d\)</span>, определенное для степени ядра <span class="math notranslate nohighlight">\(d\)</span> и параметра нормализации <span class="math notranslate nohighlight">\(c\)</span>;</p></li>
 <li><p><em>Гауссово ядро</em>, также известное как RBF (radial-basis functions) <span class="math notranslate nohighlight">\(K(x, y) = e^{-\frac{||x - y||^2}{\sigma}}\)</span> c параметром ядра <span class="math notranslate nohighlight">\(\sigma\)</span>.</p></li>
 </ul>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h2>Плюсы и минусы SVM<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
 <p>Плюсы:</p>
 <ul class="simple">
@@ -1545,8 +1561,8 @@ a(x) = \text{sign} \left(
 <li><p>в задачах классификации часто хочется выдать вероятность отнесения к классу, SVM это не умеет делать, а эвристики, как правило, приводят к плохо откалиброванным вероятностям;</p></li>
 <li><p>ядерный SVM уступает специфичным нейронным сетям уже во многих задачах, например, в в приложениях к графам</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

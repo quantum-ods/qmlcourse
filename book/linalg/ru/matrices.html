@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Матрицы &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -990,13 +994,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="matrices">
+  <section class="tex2jax_ignore mathjax_ignore" id="matrices">
 <span id="id1"></span><h1>Матрицы<a class="headerlink" href="#matrices" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://github.com/dayyass">Эль-Айясс Дани</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Определение<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Матрица – это математический объект, представляющий собой прямоугольную таблицу чисел.</p>
 <p>У каждой матрицы есть размер, который характеризуется двумя числами – количеством строк и количеством столбцов. Матрицу, состоящую из <span class="math notranslate nohighlight">\(n\)</span> строк <span class="math notranslate nohighlight">\(m\)</span> столбцов будем называть матрицей размера <span class="math notranslate nohighlight">\(n \times m\)</span>. Пространство вещественных матриц <span class="math notranslate nohighlight">\(n \times m\)</span> обозначается <span class="math notranslate nohighlight">\(\mathbf{R}^{n \times m}\)</span>. Мы будем рассматривать матрицу либо как набор <span class="math notranslate nohighlight">\(n\)</span> вектор-строк, либо как набор <span class="math notranslate nohighlight">\(m\)</span> вектор-столбцов.</p>
@@ -1008,8 +1012,8 @@ title="Print to PDF"
 \end{split}\]</div>
 <p>Элемент матрицы <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, стоящий на пересечение строки <span class="math notranslate nohighlight">\(i\)</span> и столбца <span class="math notranslate nohighlight">\(j\)</span> будем обозначать <span class="math notranslate nohighlight">\(a_{ij}\)</span>.</p>
 <p>В машинном обучении часто приходится иметь дело с матрицей объекты-признаки. Объекты, как и признаки – это набор числовых характеристик (точки в многомерном пространстве), которые обычно рассматриваются как векторы.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Операции с матрицами<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Аналогично векторным операциям, для матриц определены операции <strong>сложения</strong> и <strong>умножения на число</strong>:</p>
 <ul class="simple">
@@ -1063,8 +1067,8 @@ c_{ij} = \mathbf{a_{i:}} \cdot \mathbf{b_{:j}} = a_{i1}  b_{1j} + a_{i2}  b_{2j}
 \[\begin{split}
 \mathbf{A} \mathbf{x} = \mathbf{b} \rightarrow \begin{pmatrix} a_{11} &amp; a_{12} &amp; ... &amp; a_{1m} \\ a_{21} &amp; a_{22} &amp; ... &amp; a_{2m} \\ ... &amp; ... &amp; ... &amp; ... \\ a_{n1} &amp; a_{n2} &amp; ... &amp; a_{nm} \end{pmatrix} \begin{pmatrix} x_{1} \\ x_{2} \\ ... \\ x_{m} \end{pmatrix} = \begin{pmatrix} b_{1} \\ b_{2} \\ ... \\ b_{n} \end{pmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Норма матрицы<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Понятие матричной нормы несколько сложнее, чем векторной. Обычно принято рассматривать так называемые <strong>операторные нормы</strong>. Такая норма показывает насколько максимально растягивается произвольный вектор <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> при отображении <span class="math notranslate nohighlight">\(y = \mathbf{Ax}\)</span>. Формально операторная норма определяется следующим образом:</p>
 <div class="math notranslate nohighlight">
@@ -1081,8 +1085,8 @@ c_{ij} = \mathbf{a_{i:}} \cdot \mathbf{b_{:j}} = a_{i1}  b_{1j} + a_{i2}  b_{2j}
 \[
 \lVert \mathbf{A} \rVert_{F} = \sqrt{\sum_{i}\sum_{j}a_{ij}^2}
 \]</div>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Ранг матрицы<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Вспомним, что матрицу можно рассматривать либо как набор вектор-строк, либо как набор вектор-столбцов, а для набор векторов определенно понятие линейной независимости.</p>
 <p>Таким образом мы приходим двум следующим понятиям:</p>
@@ -1091,8 +1095,8 @@ c_{ij} = \mathbf{a_{i:}} \cdot \mathbf{b_{:j}} = a_{i1}  b_{1j} + a_{i2}  b_{2j}
 <li><p><strong>столбцовый ранг</strong> матрицы – это максимальное число линейно независимых столбцов (вектор-столбцов)</p></li>
 </ul>
 <p>Тут мы можем задаться вопрос о том, равны ли эти ранги между собой, и если равны, то при каких условиях, и на помощь нам приходит <strong>фундаментальная теорема “о ранге матрицы”</strong>, которая говорит, что ранг, посчитанный по строкам всегда равен рангу, посчитанному по столбцам. Поэтому обычно говорят просто о ранге матрицы.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Линейные преобразования<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>В рамках школьной программы все знакомы с понятием функции. Функция – это соответствием между элементами двух множеств.</p>
 <p>Например, линейная функция вида <span class="math notranslate nohighlight">\(y = f(x) = kx + b\)</span> отображает элементы множества вещественных чисел <span class="math notranslate nohighlight">\(x \in \mathbf{R}\)</span> в себя <span class="math notranslate nohighlight">\(y \in \mathbf{R}\)</span> :</p>
@@ -1146,8 +1150,8 @@ f: V \rightarrow W ,
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Обратная матрица<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Рассмотрим особую матрицу линейного преобразования, которая переводит каждый вектор сам в себя, т.е. никак его не изменяет. Данное преобразование задается так называемой <strong>единичной матрицей</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -1178,8 +1182,8 @@ f: V \rightarrow W ,
 \mathbf{A} \mathbf{x} = 0, \mathbf{x} \not ={\begin{pmatrix} 0 \\ 0 \\ ... \\ 0 \end{pmatrix}}
 \end{split}\]</div>
 <p>В связи с этим одному выходному вектору (нулевому) соответствует несколько входных векторов, поэтому не существует обратного преобразования.</p>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h2>Определитель<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Введем еще одно из ключевых понятий линейной алгебры – <strong>определитель</strong>.</p>
 <p>Определитель – это скалярный показатель (число) <strong>квадратной матрицы</strong> <span class="math notranslate nohighlight">\(f: \mathbf{R}^{n \times n} \rightarrow \mathbf{R}\)</span>, который позволяет охарактеризовать некоторые свойства этой матрицы и линейного преобразования, заданного этой матрицей.</p>
@@ -1199,8 +1203,8 @@ f: V \rightarrow W ,
 <li><p>если определитель матрицы равен 0, то для данной матрицы не существует обратной</p></li>
 </ul>
 <p>Существуют эффективные алгоритмы вычисления определителя квадратной матрицы, которые позволяют проверять, является матрица вырожденной.</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h2>Собственные числа и векторы<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>Для некоторых линейных преобразований существуют такие векторы, которые после данного преобразования либо растягиваются, либо сжимаются (тот же вектор, умноженный на некоторое число). Такие векторы называются <strong>собственными векторами</strong> линейного преобразования, а числа, на которые данные векторы умножаются – <strong>собственными значениями</strong>.</p>
 <p>Рассмотрим произвольную матрицу линейного преобразования <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>. Формально понятия собственных векторов и собственных значений вводятся через следующее равенство: <span class="math notranslate nohighlight">\(
@@ -1210,8 +1214,8 @@ f: V \rightarrow W ,
 <p>Собственные числа и собственные значения играют большую роль в линейной алгебре, так как многие соотношения, связанные с линейными преобразованиями, существенно упрощаются в системе координат, построенной на базисе из собственных векторов линейного преобразованиями.</p>
 <p>Множество собственных значений линейного преобразованиями (<strong>спектр оператора</strong>) характеризует важные свойства оператора без привязки к какой-либо конкретной системе координат.</p>
 <p>Также собственные векторы используются в Методе Главных Компонент, который предназначен для уменьшения размерности данных с потерей наименьшего количества информации.</p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h2>Что мы узнали?<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Определение матрицы</p></li>
@@ -1223,8 +1227,8 @@ f: V \rightarrow W ,
 <li><p>Определитель матрицы</p></li>
 <li><p>Собственные числа и векторы матрицы</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

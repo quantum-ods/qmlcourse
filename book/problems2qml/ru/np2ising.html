@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Формулировка задач оптимизации в терминах модели Изинга &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1052,14 +1056,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="np2ising">
+  <section class="tex2jax_ignore mathjax_ignore" id="np2ising">
 <span id="id1"></span><h1>Формулировка задач оптимизации в терминах модели Изинга<a class="headerlink" href="#np2ising" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
 <p>Не зря мы так глубоко изучали <a class="reference internal" href="../../problems/ru/ising.html"><span class="doc std std-doc">модель Изинга</span></a> и <a class="reference internal" href="../../problems/ru/advising.html"><span class="doc std std-doc">анализировали</span></a> ее решения – сегодня увидим, как в терминах этой модели можно сформулировать большинство важных задач <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">комбинаторной оптимизации</span></a>.</p>
-<div class="section" id="qubo">
+<section id="qubo">
 <h2>QUBO матрица<a class="headerlink" href="#qubo" title="Permalink to this headline">#</a></h2>
 <p>Но сначала кратко обсудим так называемую <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрицу <span id="id2">[<a class="reference internal" href="../../bibliography.html#id32" title="Fred Glover, Gary Kochenberger, and Yu Du. A tutorial on formulating and using qubo models. 2019. arXiv:1811.11538.">GKD19</a>]</span> – это еще один способ записать задачу модели Изинга, и дальше по курсу иногда будем этим пользоваться.</p>
 <p><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> – это сокращение от <strong>Quadratic Unconstrained Binary Optimization</strong>, или, если переводить, то это <em>задача квадратичной оптимизации без ограничений</em>. То есть это такие задачи, для которых нет отдельных ограничений, например, равенств или неравенств, а функция стоимости представима в виде многочлена второй степени от входных переменных. Решением такой задачи является бинарный вектор <span class="math notranslate nohighlight">\(X = \{x_1, x_2, ..., x_n\}\)</span> такой, что <span class="math notranslate nohighlight">\(x_1, ..., x_n \in \{0, 1\}\)</span>. В этом случае функцию стоимости <span class="math notranslate nohighlight">\(C\)</span> можно записать в виде:</p>
@@ -1085,8 +1089,8 @@ Q = \begin{pmatrix}
 <p class="admonition-title">Note</p>
 <p>Тут рассматриваем именно минимизацию функции стоимости. Но если исходная задача формулировалась в терминах максимизации чего-то, например, как задача о рюкзаке или максимальном разрезе в графе, то очевидно, что просто домножив стоимость на -1, перейдем от максимизации к минимизации. Далее это будет важно, так как будем рассматривать задачу поиска <em>основного состояния</em> квантомеханической системы, а такое состояние – это по определению состояние именно с <em>минимальной</em> энергией.</p>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>QUBO как квантовый гамильтониан<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Если вспомнить, как <a class="reference external" href="../../problems/ru/advising.html#id2">выглядит</a> модель Изинга, то легко заметить, что там, как и в <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-проблемах, есть лишь члены первой и второй степени. Вот только <a class="reference external" href="../../qc/ru/qubit.html#hat-sigma-z">спиновые операторы (матрицы Паули) имеют собственные значения</a> <span class="math notranslate nohighlight">\(\pm 1\)</span>, а не <span class="math notranslate nohighlight">\(\{0, 1\}\)</span>, которые фигурируют в <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>. Это проблема, так как квадраты этих значений не равны им самим. Но это легко можно исправить введя “бинарный” оператор <span class="math notranslate nohighlight">\(\hat{x}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1107,8 +1111,8 @@ C = \sum_{i, j \in \{1, ..., |X|\}} J_{i, j} sz_i sz_j + \sum_{i \in {\{1, ..., 
 \end{align*}
 \end{split}\]</div>
 <p>Причем в силу того, что у в выражении для <span class="math notranslate nohighlight">\(\hat{H}\)</span> фигурируют лишь <span class="math notranslate nohighlight">\(\sigma^z\)</span>, основное состояние гамильтониана является “классическим”, то есть все спины “ориентированы” либо вверх, либо вниз, но не находятся в суперпозиции. Другими словами, гамильтониан диагонализируется в <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>-базисе.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Поиск основного состояния<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Как увидели, задачи, сформулированные в терминах <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>, можно свести к задаче нахождения основного состояния квантовой системы, которая описывается некоторым оператором. Но что это вообще значит? И что это за гамильтониан такой, о котором все время говорим? Вообще говоря, гамильтониан – это оператор энергии:</p>
 <div class="math notranslate nohighlight">
@@ -1128,24 +1132,26 @@ C = \sum_{i, j \in \{1, ..., |X|\}} J_{i, j} sz_i sz_j + \sum_{i \in {\{1, ..., 
 <p>Кстати, справедлив и обратный переход, то есть решив проблему <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> каким-нибудь из <a class="reference external" href="../../problems/ru/copt.html#id9">классических алгоритмов</a> для решения комбинаторных задач, автоматически получим конфигурацию основного состояния соответствуеющей физической системы! Этот подход впервые был предложен аж в 1988-м году в работе <span id="id5">[<a class="reference internal" href="../../bibliography.html#id19" title="Francisco Barahona, Martin Grötschel, Michael Jünger, and Gerhard Reinelt. An application of combinatorial optimization to statistical physics and circuit layout design. Operations Research, 36(3):493–513, 1988.">BGrotschelJungerR88</a>]</span>. Таким образом, приходим к пониманию <strong>тесной связи задач квантовой физики и комбинаторной оптимизации</strong>. Именно на этом и строится огромное число перспективных квантовых алгоритмов для решения задач реального мира. Особенно в <em>NISQ</em> эпоху!</p>
 </div>
 <p>Важное преимущество квантового представления <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-задач – в том, что наш мир устроен таким образом, что любая квантовая система всегда стремится в состояние с минимальной энергией, то есть основное. На этом построен даже целый класс квантовых аннилеров. Но и для вариационных квантовых алгоритмов это также дает свои преимущества.</p>
-</div>
-<div class="section" id="ising-formulations-of-many-np-problems">
+</section>
+<section id="ising-formulations-of-many-np-problems">
 <h2>Статья “Ising formulations of many NP problems”<a class="headerlink" href="#ising-formulations-of-many-np-problems" title="Permalink to this headline">#</a></h2>
 <p>Основным источником информации для нас будет статья <em>“Ising formulations of many NP problems”</em> <span id="id6">[<a class="reference internal" href="../../bibliography.html#id25" title="Andrew Lucas. Ising formulations of many np problems. Frontiers in physics, 2:5, 2014. URL: https://arxiv.org/abs/1302.5843, doi:https://doi.org/10.3389/fphy.2014.00005.">Luc14</a>]</span>, вышедшая в 2014-м году (версия 3). В данной лекции рассмотрим лишь часть примеров из этой работы, хотя наше рассмотрение будет чуть более подробным. В целом эта статья может быть использована как прекрасный справочник.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Задача о максимальном разрезе в графе (повторение)<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Уже рассматривали эту задачу в <a class="reference internal" href="../../problems/ru/ising.html"><span class="doc std std-doc">лекции о модели Изинга</span></a> и в <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">лекции про задачи комбинаторной оптимизации</span></a>, но теперь повторим еще раз. Итак, есть граф на множестве вершин <span class="math notranslate nohighlight">\(V\)</span>, связанных множеством ребер <span class="math notranslate nohighlight">\(E\)</span>. Каждое ребро соединяет вершины <span class="math notranslate nohighlight">\(u,v\)</span>. Для простоты будем рассматривать случай ненаправленного графа. Каждое ребро имеет вес <span class="math notranslate nohighlight">\(w\)</span>. Цель – разбить множество вершин <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся сообщества <span class="math notranslate nohighlight">\(V_1, V_2\)</span> таким образом, чтобы суммарный вес ребер, соединяющих вершины из разных сообществ, был максимален:</p>
 <div class="math notranslate nohighlight">
 \[
 \arg\max{V_1, V_2} {\sum_{u,v,w \in E} w (\mathbf{1}(u \in V_1, v \in V_2) + \mathbf{1}(u \in V_2, v \in V_1))}
 \]</div>
-<div class="figure align-default" id="maxcut3">
+<figure class="align-default" id="maxcut3">
 <a class="reference internal image-reference" href="../../../_images/Max-cut.png"><img alt="../../../_images/Max-cut.png" src="../../../_images/Max-cut.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 124 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut3" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 124 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Эта задача уже является задачей без ограничений и может быть сразу сформулирована в терминах <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> и модели Изинга.</p>
-<div class="section" id="id8">
+<section id="id8">
 <h3><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрица<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрица для этой задачи имеет размер <span class="math notranslate nohighlight">\(|V| \times |V|\)</span>, а вектор решения <span class="math notranslate nohighlight">\(X\)</span> это, соответственно, будет бинарный вектор длины <span class="math notranslate nohighlight">\(|V|\)</span>. Для простоты обозначим сообщество <span class="math notranslate nohighlight">\(V_1\)</span> как вершины, для которых <span class="math notranslate nohighlight">\(x_i = 0\)</span>, а <span class="math notranslate nohighlight">\(V_2\)</span> это будут вершины с <span class="math notranslate nohighlight">\(x_i = 1\)</span>. Еще хотим решать задачу минимизации вместо задачи максимизации. Запишем новую целевую функцию:</p>
 <div class="math notranslate nohighlight">
@@ -1161,8 +1167,8 @@ QUBO = \begin{pmatrix}
     -2 A_{|V|, 0} &amp; ... &amp; ... &amp; \sum_{j = 0}^{|V| - 1} A{|V|, j}
 \end{pmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Гамильтониан Изинга<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>В случае этой задачи можно сказать, что она изначально имеет вид модели Изинга. И действительно, наиболее вероятная конфигурация спинов для основного состояния системы с гамильтонианом такого вида:</p>
 <div class="math notranslate nohighlight">
@@ -1170,9 +1176,9 @@ QUBO = \begin{pmatrix}
 \hat{H} = \sum_{i,j \in \{1, ..., |V|\}} (1 - \sigma^z_i \sigma^z_j)
 \]</div>
 <p>будет в точности соответствовать решению задачи о максимальном разрезе. При этом численное значение энергии будет отличаться ровно на величину <span class="math notranslate nohighlight">\(|E|\)</span>, то есть на число ребер, так как величина <span class="math notranslate nohighlight">\((1 - \sigma^z_i \sigma^z_j)\)</span> будет равна нулю, если вершины находятся в разных сообществах, или единице, если они находятся в одном.</p>
-</div>
-</div>
-<div class="section" id="id10">
+</section>
+</section>
+<section id="id10">
 <h2>Задача коммивояжера<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Задача коммивояжера обсуждалась в <a class="reference external" href="../../problems/ru/copt.html#id7">лекции по комбинаторной оптимизации</a>, где были получены выражения для представления данной задачи в виде “без ограничений”. Напомним, что удалось добиться этого, “внеся” ограничения в выражения для целевой функции в виде штрафа за отклонение от ограничений. А также добавили соответствующие коэффициенты. Полученное в той лекции выражение имеет вид:</p>
 <div class="math notranslate nohighlight">
@@ -1184,11 +1190,11 @@ C = A (1 - \sum_i x_{i,p})^2 + A (1 - \sum_p x_{i,p})^2 + A \sum_{u,v \notin E} 
 <p class="admonition-title">Note</p>
 <p>Это довольно важное замечание, так как часто можно найти относительно простое представлениие задачи в виде <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>, а вот учет всех констант может сильно усложнить ее вид. Более того, как увидим далее, не все представления <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> одинаково эффективны, особенно когда переходят к решению на квантовом компьютере: для каких-то видов <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> будет одна величина энергетической щели между основным и возбужденным состоянием в процессе решения, а для других <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-представлений той же задачи оно уже может стать больше!</p>
 </div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h2>Задача о выделении сообществ в графе<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Уже <a class="reference external" href="../../problems/ru/copt.html#id3">говорили об этой задаче</a> в лекции про комбинаторную оптимизацию. Для этой задачи было разработано немало эвристических алгоритмов поиска <span id="id12">[<a class="reference internal" href="../../bibliography.html#id64" title="Stanislav Sobolevsky, Riccardo Campari, Alexander Belyi, and Carlo Ratti. General optimization technique for high-quality community detection in complex networks. Phys. Rev. E, 90:012811, Jul 2014. URL: https://link.aps.org/doi/10.1103/PhysRevE.90.012811, doi:10.1103/PhysRevE.90.012811.">SCBR14</a>]</span>, а в этой части сосредоточимся на формулировке как задачи <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>.</p>
-<div class="section" id="k-2">
+<section id="k-2">
 <h3><span class="math notranslate nohighlight">\(k = 2\)</span> сообществ<a class="headerlink" href="#k-2" title="Permalink to this headline">#</a></h3>
 <p>В случае всего двух сообществ будем использовать двоичные спиновые переменные <span class="math notranslate nohighlight">\(s_i \in \{-1,1\}\)</span> для кодирования того, к какому именно сообществу принадлежит вершина <span class="math notranslate nohighlight">\(i\)</span>. <span class="math notranslate nohighlight">\(\frac{1 + s_is_j}{2}\)</span> будет равняться <span class="math notranslate nohighlight">\(1\)</span>, если <span class="math notranslate nohighlight">\(i\)</span> и <span class="math notranslate nohighlight">\(j\)</span> принадлежат одному сообществу, и <span class="math notranslate nohighlight">\(0\)</span> – в противном случае. Модулярность при этом будет следующей</p>
 <div class="math notranslate nohighlight" id="equation-eqn-comdet-2">
@@ -1200,8 +1206,8 @@ M = \frac{1}{4m} s^T B s \\
 B_{ij} = (A_{ij} - \frac{g_i g_j}{2m})
 \]</div>
 <p>При <span class="math notranslate nohighlight">\(s_i = 2 x_i - 1\)</span> между спиновыми <span class="math notranslate nohighlight">\(s_i \in \{-1,1\}\)</span> и битовыми <span class="math notranslate nohighlight">\(x_i \in \{0, 1\}\)</span> переменными соответственно, а также <span class="math notranslate nohighlight">\(\sum_{i,j} B_{i,j} = 0\)</span>, максимизация модулярности <a class="reference internal" href="#equation-eqn-comdet-3">(42)</a> может быть эквивалентна выражению задачи минимизации в форме <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> с гамильтонианом <span class="math notranslate nohighlight">\(H = - \frac{1}{m} x^T B x\)</span> и с <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрицей <span class="math notranslate nohighlight">\(Q = - \frac{B}{m}\)</span>.</p>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h3>Множественные сообщества (<span class="math notranslate nohighlight">\(k &gt; 2\)</span>)<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Чтобы сформулировать задачу выделения <span class="math notranslate nohighlight">\(k\)</span> сообществ в канонической форме <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>, сначала одновременно кодируем двоичные переменные <span class="math notranslate nohighlight">\(x_i\)</span>, а затем строим <code class="docutils literal notranslate"><span class="pre">QUBO</span></code>-гамильтониан.</p>
 <p>Используем схему однократного кодирования (one-hot encoding), в которой задаем <span class="math notranslate nohighlight">\(x_{i,c} = 1\)</span>, если вершина <span class="math notranslate nohighlight">\(i \in c\)</span>, и <span class="math notranslate nohighlight">\(x_{i,c} = 0\)</span> в противном случае, то есть,</p>
@@ -1244,9 +1250,9 @@ H_P = P (V x - b)^T (V x - b)
 \[
 H = H_M + H_p
 \]</div>
-</div>
-</div>
-<div class="section" id="id14">
+</section>
+</section>
+<section id="id14">
 <h2>Заключение<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <p>Из этой лекции узнали, что такое <code class="docutils literal notranslate"><span class="pre">QUBO</span></code> матрица, а также как от такой формулировки оптимизационных задач можно перейти к задаче поиска основного состояния квантомеханической системы. В будущих лекциях познакомимся уже непосредственно с тремя основными методами решения этой задачи:</p>
 <ol class="simple">
@@ -1258,8 +1264,8 @@ H = H_M + H_p
 В этом случае также делаем квантовый отжиг, но для этого не строим целевую систему в железе, а производим симуляцию квантовой динамики на кубитах при помощи специальных приближений из области квантовой механики. А параметры “отжига”, как и в <strong>VQE</strong>, подбираем при помощи градиентных методов. Такой подход носит название <a class="reference internal" href="../../qaoa/ru/qaoa.html"><span class="doc std std-doc"><strong>Q</strong>uantum <strong>A</strong>pproximate <strong>O</strong>ptimization <strong>A</strong>lgorithm</span></a>.</p></li>
 </ol>
 <p>Именно этим темам будет посвящена бОльшая часть оставшихся лекций.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

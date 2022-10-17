@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Машинное обучение как пазл &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1038,13 +1042,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="mll1">
+  <section class="tex2jax_ignore mathjax_ignore" id="mll1">
 <span id="id1"></span><h1>Машинное обучение как пазл<a class="headerlink" href="#mll1" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/alexey-pronkin">Кашницкий Юрий</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Мы продолжаем вводную часть нашего курса и переходим к машинному обучению. Если тема для вас хорошо знакома, можете пропустить этот блок, при желании можно пройти  <a class="reference external" href="https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a">этот тест</a>, для определения достаточности уровня знаний (там 5 вопросов по Python, 5 – по машинному обучению и столько же – по линейной алгебре). Тест можно проигнорировать, если вы не знакомы с машинным обучением и для вас выглядят магией такие вещи как автоматическая детекция лиц на фото или определение тональности отзыва на товар.</p>
 <p>Про машинное обучение, конечно, уже много всего написано, есть и немало неплохих курсов, сочетающих как теорию, так и практику. Но все же теория в этой области еще не догоняет практику, мы пока не понимаем, “почему оно работает”, а гарантии обобщающей способности алгоритмов (т.е. гарантии того, что модель машинного обучения будет работать на новых данных) в теории даются только для очень простых моделей. Таким образом, работа со сложными моделями остается своего рода искусством с примесью математики, инженерии и просто следования хорошим практикам, выработанным, как правило, в корпорациях или академическом сообществе.</p>
@@ -1059,8 +1063,8 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>Здесь мы почти не будем говорить о математике. Изложенный взгляд на машинное обучение как ремесло, вполне вероятно, вызовет критику со стороны специалистов в области статистики, эконометрики и теории машинного/статического обучения. Мы осознаем эти риски и тем не менее рассказываем о машинном обучении именно как о ремесле. Акцент в курсе делается на квантовые вычисления и квантовое машинное обучение, и в этой лекции мы опишем задачи “классического” машинного обучения на том уровне, чтоб просто было понятно, как это переносится на квантово-классические вариационные схемы и прочие алгоритмы, о которых пойдет речь далее в курсе. При этом строгость изложения материала тоже может немного пострадать.</p>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Составляющие части задачи машинного обучения<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Выделим следующие компоненты (“пазлы”), которые просматриваются во многих разных задачах машинного обучения:</p>
 <ul class="simple">
@@ -1072,7 +1076,7 @@ title="Print to PDF"
 <li><p>Схема валидации и метрика качества</p></li>
 </ul>
 <p>По ходу изложения будем обсуждать упомянутые примеры задач машинного обучения.</p>
-<div class="section" id="id4">
+<section id="id4">
 <h3>Целевой признак<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Есть задачи, в которых машинное обучение не нужно, а достаточно экспертных знаний. По закону Ома, известно что напряжение пропорционально силе тока и электрическому сопротивлению, и вряд ли захочется предсказывать напряжение в сети каким-то другим образом, кроме как применением закона Ома. То же самое можно сказать про многие другие физические явления.</p>
 <p>Однако, для очень многих явлений вокруг нет хорошего теоретического объяснения или достаточных экспертных знаний. У нас нет “формулы”, которая описала бы, как поставленный лайк к посту в соцсети, возврат кредита, клик по рекомендации товара или локализация заразы в конкретной части легких зависят от прочих факторов. В таких случаях мы можем приблизить такую неизвестную нам формулу с помощью машинного обучения.</p>
@@ -1083,10 +1087,12 @@ title="Print to PDF"
 </div>
 <p><strong>Пример 1. Рекомендация новостного контента</strong></p>
 <p>Новостному порталу хочется понять, какой контент нравится пользователям и по каким ссылкам они будут кликать. Здесь <em>событием</em> будет то, что пользователю нравится рекомендуемый контент.</p>
-<div class="figure align-default" id="see-also">
+<figure class="align-default" id="see-also">
 <a class="reference internal image-reference" href="../../../_images/see_also.png"><img alt="../../../_images/see_also.png" src="../../../_images/see_also.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Блок “Читайте также” на новостном портале</span><a class="headerlink" href="#see-also" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Блок “Читайте также” на новостном портале</span><a class="headerlink" href="#see-also" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Понятно, что нет возможности установить строгую зависимость такого события от прочих факторов. Поэтому мы определяем целевой признак: факт клика пользователя по показанной рекомендованной ссылке. Мы верим, что клик по ссылке связан с <em>событием</em>: если пользователю  нравится рекомендуемый контент, он/она перейдет по ссылке.</p>
 <p><strong>Пример 2. Автоматическая оценка читаемости научной статьи</strong></p>
 <p>Допустим, научному журналу хочется автоматически оценивать читаемость текста, чтобы знать, какие статьи можно сразу подавать на ревью, а какие лучше предварительно направить в сервис proofreading, где статья будет вычитана и поправлена носителем языка.</p>
@@ -1096,17 +1102,21 @@ title="Print to PDF"
 <p><strong>Пример 3. Детекция симптомов COVID-19 на рентгенограммах</strong></p>
 <p>Последние пару лет мы видели бурное развитие методов глубокого обучение в приложениях к анализу медицинских данных, а в особенности это стало актуальным в симптомов COVID-эпоху.</p>
 <p>Допустим, стоит задача определения аномалий на рентгенограммах грудной клетки. В идеале мы хотели мы сразу по таким изображениям обнаруживать симптомы симптомов COVID-19 у пациента. Но заголовок этого примера выдает желаемое за действительное, и, конечно, сразу по снимкам диагностировать не получится.</p>
-<div class="figure align-default" id="covid-detection-ct">
+<figure class="align-default" id="covid-detection-ct">
 <a class="reference internal image-reference" href="../../../_images/covid_detection_ct.png"><img alt="../../../_images/covid_detection_ct.png" src="../../../_images/covid_detection_ct.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Пример данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/andradaolteanu/siim-COVID-19-box-detect-dcm-metadata">Источник</a></span><a class="headerlink" href="#covid-detection-ct" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Пример данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/andradaolteanu/siim-COVID-19-box-detect-dcm-metadata">Источник</a></span><a class="headerlink" href="#covid-detection-ct" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Поэтому в такой задаче надо аккуратно определить <em>Целевой признак</em>. В данном случае их несколько. Согласно <a class="reference external" href="https://www.kaggle.com/c/siim-covid19-detection/data">описанию источника данных</a> соревнования, комитет врачей-радиологов проанализировал 6334 рентгенограмм и пометил их метками: ‘Negative for Pneumonia’ (нет пневмонии), ‘Typical Appearance’ (нормально), ‘Indeterminate Appearance’ (неразборчиво) и ‘Atypical Appearance’ (ненормально). Надо четко понимать, что возможности обученной модели будут ограничены имеющейся разметкой и поэтому заголовок “детекция симптомов COVID-19” слегка “желтоват”, в реальности модель детекции сможет выделять участок изображения (bounding box) и помечать это вектором из 4-х значений, соответствующих описанным целевым признакам в обучающей выборке.</p>
-<div class="figure align-default" id="covid-detection-prediction">
+<figure class="align-default" id="covid-detection-prediction">
 <a class="reference internal image-reference" href="../../../_images/covid_detection_prediction.png"><img alt="../../../_images/covid_detection_prediction.png" src="../../../_images/covid_detection_prediction.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Прогноз модели детекции, обученной на данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/yujiariyasu/catch-up-on-positive-samples-plot-submission-csv">Источник</a></span><a class="headerlink" href="#covid-detection-prediction" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id5">
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Прогноз модели детекции, обученной на данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/yujiariyasu/catch-up-on-positive-samples-plot-submission-csv">Источник</a></span><a class="headerlink" href="#covid-detection-prediction" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
 <h3>Данные<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Определение <em>Целевого признака</em> неразрывно связано с имеющимися данными. Нет смысла определять целевой признак, который мы не можем измерить или по которому мы не можем собрать данные. Например, если новостной портал не логирует клики пользователей, нет смысла задавать вопрос о том, нравятся ли пользователям показанные рекомендации – для начала надо настроить сервисы для хранения кликов. Другой пример: вряд ли стоит пытаться предсказывать движения денежных активов в микросекундном диапазоне, если нет дорогостоящей инфраструктуры для сбора и обработки таких данных.</p>
 <p>Но <em>Данные</em> – это, конечно, не только <em>Целевой признак</em>. Но и просто <em>признаки</em>, также в эконометрике называемые предикторами или независимыми переменными. С помощью <em>признаков</em> как раз и получится предсказать <em>Целевой признак</em>, а хорошо или плохо – об этом чуть далее.</p>
@@ -1124,8 +1134,8 @@ title="Print to PDF"
 <p><strong>Пример 3. Детекция симптомов COVID-19 на рентгенограммах</strong></p>
 <p>В этой задаче ключевые данные для обучения модели – это собственно изображение, рентгенограмма области грудной клетки и разметка, которая состоит из координат интересующей области изображения и типа области, в данном случае это одна из 4-х меток: ‘Negative for Pneumonia’ (нет пневмонии), ‘Typical Appearance’ (нормально), ‘Indeterminate Appearance’ (неразборчиво) и ‘Atypical Appearance’ (ненормально).</p>
 <p>Конечно, у снимков есть разные метаданные, да и форматы медицинских данных обычно специфические, но нам для примера подойдет такое упрощение.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>Модель<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p>С моделированием знаком любой исследователь. Чтоб рассчитать минимальную толщину стекла вагона метро для защиты от птиц во время движения по открытым участкам, достаточно представить птицу цилиндром той же массы, и для данной задачи цилиндр будет подходящей моделью птицы.</p>
 <p>Подобным же образом, в задачах машинного обучения с учителем <em>Модель</em> приближает <em>Целевой признак</em> и делает это с помощью <em>Данных</em> и <em>Параметров</em>. (Параметры – это неотъемлемая часть модели, и поэтому мы их не выносим как отдельный компонент задач машинного обучения).</p>
@@ -1137,12 +1147,14 @@ title="Print to PDF"
 <p>Описанную задачу, опять же с оговорками про возможность альтернативного подхода без всякого машинного обучения, скорее всего хочется решать с помощью языковых моделей, основанных на трансформерах. В частности, в этой задаче имеет смысл использовать <a class="reference external" href="https://github.com/allenai/scibert">SciBERT</a>, предобученный как раз на научных текстах. Это модель типа BERT (Bidirectional Encoder Representations from Transformers, <a class="reference external" href="https://arxiv.org/abs/1810.04805">arXiv</a>), которая основана на архитектуре трансформеров, ставшей настоящей революцией в NLP (оригинальная статья – <a class="reference external" href="https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Attention is all you need</a>, NIPS 2017). BERT используется для представления текста на основе трансформеров и дообучения параметров под многие стандартные задачи NLP – классификация текстов, пар текстов, вопросно-ответные системы, распознавание именованных сущностей и т.д. Подробнее про BERT можно почитать в <a class="reference external" href="https://jalammar.github.io/">постах Jay Alammar</a> (англ.) или в их переводах на русский: <a class="reference external" href="https://habr.com/ru/post/486358/">“Transformer в картинках”</a> и <a class="reference external" href="https://habr.com/ru/post/498144/">“Ваш первый BERT: иллюстрированное руководство”</a>.</p>
 <p><strong>Пример 3. Детекция симптомов COVID-19 на рентгенограммах</strong></p>
 <p>Подходов к детекции объектов на изображениях немало, но по соотношению скорости и качества работы особенно хорошо себя зарекомендовала модель <a class="reference external" href="https://github.com/ultralytics/yolov5">YOLOv5</a>. Про принцип работы этой модели можно узнать из лекции <a class="reference external" href="https://www.youtube.com/watch?v=nDPWywWRIRo">“Detection and segmentation”</a> курса cs231n, также на Хабре можно найти <a class="reference external" href="https://habr.com/ru/post/503200/">статью</a> про YOLOv4.</p>
-<div class="figure align-default" id="detection-yolo">
+<figure class="align-default" id="detection-yolo">
 <a class="reference internal image-reference" href="../../../_images/detection_yolo.jpeg"><img alt="../../../_images/detection_yolo.jpeg" src="../../../_images/detection_yolo.jpeg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Пример обнаружения объектов на изображении. <a class="reference external" href="https://habr.com/ru/post/503200/">Источник</a></span><a class="headerlink" href="#detection-yolo" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id7">
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Пример обнаружения объектов на изображении. <a class="reference external" href="https://habr.com/ru/post/503200/">Источник</a></span><a class="headerlink" href="#detection-yolo" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id7">
 <h3>Функция потерь<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Выбор функции потерь (loss function) зависит от конкретной задачи, и это вопрос, изучаемый в курсах машинного обучения. Функция потерь определена для объектов обучающей выборки и по сути говорит, насколько прогноз хорошо соответствует значению целевого признака.</p>
 <p>Тут тонкий момент: примерно для того же нужны метрики качества, о которых речь пойдет ниже. Но функция потерь на практике чаще всего используется именно для того, чтоб задать цель обучения модели (для чего именно ей менять свои параметры) и также оценить, насколько хорошо модель обучилась, попросту, насколько хорошо она “сошлась”.</p>
@@ -1158,10 +1170,12 @@ title="Print to PDF"
 <li><p>одна – content loss – передает, насколько отличаются карты признаков (feature maps) генерируемого и “контентного” изображений</p></li>
 <li><p>вторая – style loss – соответственно передает, насколько похожи стили генерируемого и “стилевого” изображений. Делается это хитро, и за деталями лучше обратиться, например, к <a class="reference external" href="https://www.youtube.com/watch?v=6wcs6szJWMY">лекции “Visualizing and Understanding”</a> стэнфордского курса cs231n.</p></li>
 </ul>
-<div class="figure align-default" id="example-styletransfer-png">
+<figure class="align-default" id="example-styletransfer-png">
 <a class="reference internal image-reference" href="../../../_images/example_styletransfer.png"><img alt="../../../_images/example_styletransfer.png" src="../../../_images/example_styletransfer.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text">Пример решения задачи Neural Style Transfer из <a class="reference external" href="https://cs231n.github.io/assignments2020/assignment3/">задания 3</a> стэнфордского курса cs231n.</span><a class="headerlink" href="#example-styletransfer-png" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Пример решения задачи Neural Style Transfer из <a class="reference external" href="https://cs231n.github.io/assignments2020/assignment3/">задания 3</a> стэнфордского курса cs231n.</span><a class="headerlink" href="#example-styletransfer-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Функция потерь может включать и много составляющих, больше двух, если мы хотим чтоб модель выучила разные аспекты задачи. К примеру, в <a class="reference external" href="https://habr.com/ru/post/562064/">этой статье на Хабре</a> (уровень - продвинутый NLP) Давид Дале описывает дистилляцию нескольких больших NLP моделей для получения маленькой версии русскоязычной модели BERT. Маленький BERT по сути “учится” у больших моделей RuBERT, LaBSE, USE и T5, а описание того, что маленькая модель должна уметь (предсказывать замаскированные токены по контексту, строить представления токенов подобно тому, как это делают большие модели, предсказывать правильный порядок токенов в предложении) – это и есть составление сложной функции потерь.</p>
 <p><strong>Пример 1. Рекомендация новостного контента</strong></p>
 <p>Задача свелась к задаче ранжирования на табличных данных, и тут можно использовать функцию потерь, которую можно оптимизировать с помощью градиентного бустинга (т.е. дифференцируемую, это важно), для задачи ранжирования. Например, <a class="reference external" href="https://www.microsoft.com/en-us/research/publication/from-ranknet-to-lambdarank-to-lambdamart-an-overview/">LambdaMART</a>.</p>
@@ -1173,12 +1187,14 @@ title="Print to PDF"
 <li><p>Для сравнения предсказанного региона с реальным (согласно разметке в обучающей выборке) используется среднеквадратичная ошибка (Mean Squared Error).</p></li>
 <li><p>Для сравнения вектора оценок принадлежности региона к каждому из классов с реальным (согласно разметке в обучающей выборке) используется стандартная для задачи классификации функция потерь – логистическая, (также известная под термином “кросс-энтропия”), которую мы упоминали выше.</p></li>
 </ul>
-<div class="figure align-default" id="object-detection-loss">
+<figure class="align-default" id="object-detection-loss">
 <a class="reference internal image-reference" href="../../../_images/object_detection_loss.png"><img alt="../../../_images/object_detection_loss.png" src="../../../_images/object_detection_loss.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">Слайд стэнфордского курса cs231n про функцию потерь в задаче детекции объектов. <a class="reference external" href="http://cs231n.stanford.edu/slides/2020/lecture_12.pdf">Источник</a>.</span><a class="headerlink" href="#object-detection-loss" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id8">
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Слайд стэнфордского курса cs231n про функцию потерь в задаче детекции объектов. <a class="reference external" href="http://cs231n.stanford.edu/slides/2020/lecture_12.pdf">Источник</a>.</span><a class="headerlink" href="#object-detection-loss" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id8">
 <h3>Решатель<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Когда мы определились с целевым признаком, обучающими данными, моделью и функцией потерь, мы наконец можем собственно обучать модель – то есть менять ее параметры так, чтобы все лучше и лучше предсказывать целевой признак, что меряется с помощью функции потерь.</p>
 <p>Наиболее часто используемых вариантов два:</p>
@@ -1191,8 +1207,8 @@ title="Print to PDF"
 <p>Во всех трех примерах задач, которые мы попутно рассматриваем и которые сводятся к обучению градиентного бустинга, SciBERT и YOLO соответственно, нет явного решения, которое простой формулой выдало бы оптимальные параметры модели, поэтому параметры подбираются с помощью методов оптимизации. В примере с градиентным бустингом “под капотом” – алгоритм обучения деревьев решений, с ним можно познакомиться в <a class="reference external" href="https://habr.com/ru/company/ods/blog/322534/">этой статье</a>. А в двух других примерах обучаются искусственные нейронные сети, и сегодня это делается как правило с помощью оптимизаторов, реализованных во фреймворках (PyTorch/TensorFlow/etc), причем аппаратная реализация, в которой работает <em>Решатель</em>, – это скорее видеокарта или TPU.</p>
 <p>Ко второму из рассмотренных вариантов <em>Решателя</em> можно также отнести и автоматическое дифференцирование. Чтобы оптимизировать параметры модели градиентными методами, нужно знать собственно градиенты функции потерь – вектора частных производных функции потерь по параметрам. Попросту говоря, это ответ на вопрос, какие параметры модели стоит изменять и как это скажется на функции потерь, которую мы хотим минимизировать.</p>
 <p>Иногда такие градиенты функции потерь можно найти аналитически, например, в случае линейной или логистической регрессии. Но как правило, в случае более сложных моделей с большим числом параметров аналитическое выражение для градиента функции потерь выглядит слишком громоздко, лучше вычислять его численно. Это задача методов автоматического дифференцирования. В частности, возможно, величайший алгоритм машинного обучения всех времен - алгоритм обратного распространения ошибки (backpropagation) – не что иное как численный метод нахождения производных функции потерь по параметрам модели.</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Схема валидации и метрика качества<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Наконец, когда мы определились с целевым признаком, обучающими данными, моделью, функцией потерь, а также научились подбирать параметры модели так, чтоб функция потерь уменьшалась, остался последний шаг – решить, как мы действительно поймем, что решаем задачу хорошо.</p>
 <p>Выбор метрики качества напрямую связан с тем, чего мы хотим от модели машинного обучения в более широком контексте. Например, в бизнес-процессе могут быть ключевые показатели, которые мы <em>опосредованно</em> можем улучшать с помощью машинного обучения. Ключевыми показателями могут быть такие вещи как дневная аудитория приложения, Life-Time Value, показатели, связанные с удержанием (retention) клиентов/сотрудников, удовлетворенность клиентов и т.д. Многие из этих показателей нельзя замерять напрямую и оптимизировать, и тогда искусство Data Scientist-а заключается в том, чтобы выбрать простую метрику качества, которая бы задавалась понятной формулой (например, доля верных ответов или полнота) и при этом неплохо “коррелировала” с тем показателем бизнес-процесса, который хочется оптимизировать и таким образом приносить деньги компании или уменьшать операционные расходы.</p>
@@ -1203,10 +1219,12 @@ title="Print to PDF"
 <li><p>как понять, что одна модель лучше другой модели, один набор признаков лучше другого при фиксированной модели и т.д.</p></li>
 </ul>
 <p>Во многом это связано с переобучением. Недостаточно просто замерить метрику качества на обучающей выборке. Надо хотя бы разбить выборку на 2 части: на одной обучать модель, на второй – проверить метрику качества. И чаще всего при больших объемах данных и больших моделях ровно так и делают. Но в мире “малых данных” и легковесных моделей более предпочтительна кросс-валидация. В этой схеме выборка делится на несколько частей, а модель обучается столько же раз. При этом каждая из подвыборок один раз является тестовой частью, на которой измеряется качество прогнозов, а все остальные разы она участвует в обучении модели. Таким образом, кросс-валидация дает более надежную оценку того, как модель сработает на новых данных, в сравнении с простым разбиением обучающей выборки на две части.</p>
-<div class="figure align-default" id="k-fold-cross-validation-png">
+<figure class="align-default" id="k-fold-cross-validation-png">
 <a class="reference internal image-reference" href="../../../_images/k_fold_cross_validation.png"><img alt="../../../_images/k_fold_cross_validation.png" src="../../../_images/k_fold_cross_validation.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">Схема K-fold кросс-валидации.</span><a class="headerlink" href="#k-fold-cross-validation-png" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Схема K-fold кросс-валидации.</span><a class="headerlink" href="#k-fold-cross-validation-png" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Вы вряд ли ошибетесь, если на практике будете применять 5-кратную стратифицированную (такую что распределение целевого признака примерно одинаковое в каждой подвыборке) кросс-валидацию, но надо понимать, что кросс-валидация – не панацея. И схема валидации, которую мы тут описываем, – это больше, чем просто кросс-валидация.</p>
 <p>Часто выделяют “офлайн” и “онлайн” режимы валидации. И метрики, полученные на кросс-валидации относятся к первому режиму, “офлайн”. То есть мы один раз собрали обучающие данные, они больше не меняются, и вот с таким статическим срезом данных мы работаем, создаем признаки, обучаем модели, измеряем значения метрик на кросс-валидации. Но это не отвечает на вопрос, что получится, когда мы “выкатим модель в прод”, какие значения метрик ожидать на новых данных. И тут, как правило, устраиваются A/B-тесты, которые позволяют понять, а действительно ли мы видим эффект от модели, лучше ли вообще с моделью, чем без нее, а если лучше с моделью, то какую модель выбрать. A/B-тестирование – это очень обширная тема, выходящая за рамки данной статьи, и развивать ее тут мы не будем. Только отметим, что определение схемы валидации – зачастую нетривиальный процесс и в зависимости от проекта может быть методологически сложным, в том числе и приводить к ошибкам.</p>
 <p>Также заметим, что AutoML, о котором столь многие мечтают, решает некоторые вопросы, но далеко не все. В частности, алгоритмы AutoML не подберут вам правильную схему валидации. Они работают с уже имеющейся схемой валидации, и если валидация неверна, приводит к ошибкам, то тут и AutoML не поможет. Так что Data-Scientist-ов AutoML пока не вытеснит.</p>
@@ -1218,14 +1236,14 @@ title="Print to PDF"
 <p>Но даже при оговоренных тонкостях кросс-валидации самая большая сложность данной задачи – убедиться, что метрика качества соответствует тому, что мы реально хотим получить в задаче. Это связано со сложностью определения “хорошо” и “плохо” написанного научного текста, о которой мы говорили выше. Поэтому в данной задаче, как и во многих других практических задачах машинного обучения, не обойтись без проверки результатов модели вручную. Такая проверка модели будет делаться уже после кросс-валидации, и в этом смысле она похожа на онлайн-оценку модели.</p>
 <p><strong>Пример 3. Детекция симптомов COVID-19 на рентгенограммах</strong></p>
 <p>Здесь схема проверки модели очень похожа на предыдущую. Сначала кросс-валидация или проверка модели на отложенной части, а потом – проверка предсказаний модели экспертами. Конечно, никто не будет по одной только кросс-валидации или результатам участников в соревновании Kaggle заключать, что модель прекрасно работает и ее можно нести врачам. В данном случае надо проверить модель на данных, приближенных к тем, которые будут использоваться врачами на практике. Чтобы не было <a class="reference external" href="https://www.technologyreview.com/2020/04/27/1000658/google-medical-ai-accurate-lab-real-life-clinic-covid-diabetes-retina-disease/">таких историй</a>, как у Google Health, когда Deep Learning модель достигала 90% верных ответов при определении диабетической ретинопатии по фото зрачка, но при обучении на качественных снимках высокого разрешения. А при работе с менее качественными снимками система просто слишком часто отказывалась выносить вердикт из-за того, что была недостаточно уверена в прогнозе.</p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>Заключение<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>В этой лекции мы описали, из чего складывается постановка задачи машинного обучения и рассмотрели, как общие компоненты проглядываются в разных по своей природе задачах. При этом мы поговорили о моделях-рабочих лошадках в трех разных областях: градиентном бустинге для табличных данных, BERT для текстов и YOLO для детекции изображений.</p>
 <p>Немного пожертвовав, возможно, строгостью определения таких понятий как целевой признак или решатель, мы, надеюсь, описали все “пазлы” достаточно абстрактно, чтоб сложилось общее представление о том, как машинное обучение применяется в разных задачах, а также какие подводные камни стоит ожидать при боевом применении машинного обучения. Надеемся, это позволит лучше осознать взаимосвязь разных компонентов в квантово-классических схемах обучения, о которых речь пойдет далее в курсе.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Модель Изинга &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -986,7 +990,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ising">
+  <section class="tex2jax_ignore mathjax_ignore" id="ising">
 <span id="id1"></span><h1>Модель Изинга<a class="headerlink" href="#ising" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -998,7 +1002,7 @@ title="Print to PDF"
 <p>Специальные квантовые компьютеры компании D-Wave сконструированы так, что они могут решать вообще только одну задачу – нахождения основного состояния гамильтонианов типа Изинга. Но эта задача настолько распространена и важна, что эти компьютеры стали первыми в мире коммерческими квантовыми компьютерами! Кстати, далее этим компьютерам у нас посвящена <a class="reference internal" href="../../dwave/ru/dwave.html"><span class="doc std std-doc">отдельная лекция</span></a>.</p>
 </div>
 <p>Ближайшее время посвятим довольно много времени объяснению этой модели. Это может показаться скучным и занудным, но это важно для понимания того, как это все работает и как решать с помощью вариационных квантовых алгоритмов реальные задачи!</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Задача Изинга в одномерном случае<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1006,10 +1010,12 @@ title="Print to PDF"
 </div>
 <p>Пусть у нас есть, например, цепочка атомов, которые обладают магнитным моментом. Например, цепочка атомов антиферромагнетика. И мы прикладываем к этой цепочке внешнее магнитное поле.</p>
 <p>Тогда, если поле маленькое, наши атомы будут стараться выстроиться в антиферромагнитный порядок, когда соседние из них имеют моменты, направленные в разные стороны. Но если поле уже большое, то оно будет стремиться “повернуть” моменты по своему направлению. А если еще вспомнить, что магнитный момент атома является квантовой величиной и может быть в суперпозиции состояний в одну сторону и в противоположную, то не очень маленькое, но и не слишком большое поле будет переводить часть атомов именно в такие суперпозиции.</p>
-<div class="figure align-default" id="id5">
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="../../../_images/af_ordering.png"><img alt="../../../_images/af_ordering.png" src="../../../_images/af_ordering.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 116 </span><span class="caption-text">Иллюстрация антиферромагнитного порядка</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 116 </span><span class="caption-text">Иллюстрация антиферромагнитного порядка</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition-reminder admonition">
 <p class="admonition-title">Reminder о квантовой физике</p>
 <p>В квантовой механике есть фундаментальное уравнение, которое описывает динамику квантовых систем. Оно называется уравнением Шредингера: <span class="math notranslate nohighlight">\(\imath \hbar \frac{\partial \Psi}{\partial t} = \hat{H} \Psi\)</span>, где <span class="math notranslate nohighlight">\(\hat{H}\)</span> – это оператор Гамильтона, или гамильтониан. Также его называют оператором полной энергии системы, так как в общем случае он равен сумме операторов кинетической и потенциальной энергии. Начиная с этой лекции будем очень часто обращаться к этому оператору, но в целом в нем нет ничего принципиально сложного. Это такой же эрмитов оператор, как и другие. А наблюдаемая величина, которую получаем при <a class="reference external" href="../qc/qubit.html#id23">измерении</a> этого оператора – это энергия системы.</p>
@@ -1025,15 +1031,17 @@ title="Print to PDF"
 \[
 \hat{H}_{h\neq 0} = J \sum_{i=0}^{N-1} \hat{\sigma}^{z}_i\hat{\sigma}^{z}_{i+1} - h\sum_{i=0}^N \hat{\sigma}^{z}_i
 \]</div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Задача Изинга как задача о максимальном разрезе в графе<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Задача о максимальном разрезе в графе – это очень известная задача комбинаторики. Она относится к классу <span class="math notranslate nohighlight">\(NP\)</span>-трудных, и к ней можно свести все другие <span class="math notranslate nohighlight">\(NP\)</span> задачи. При этом ее формулировка одна из самых простых среди всего класса задач. Формулируется она следующим образом.</p>
 <p>Нам дан граф – набор вершин <span class="math notranslate nohighlight">\(V\)</span> и связывающих их ребер <span class="math notranslate nohighlight">\(E\)</span>. Нам надо найти такое разделение вершин <span class="math notranslate nohighlight">\(V\)</span> на два непересекающихся набора <span class="math notranslate nohighlight">\(V_1, V_2\)</span>, что число ребер между вершинами из разных наборов будет максимально.</p>
-<div class="figure align-default" id="maxcut">
+<figure class="align-default" id="maxcut">
 <a class="reference internal image-reference" href="../../../_images/Max-cut.png"><img alt="../../../_images/Max-cut.png" src="../../../_images/Max-cut.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 117 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 117 </span><span class="caption-text">Иллюстрация задачи о максимальном разрезе в графе</span><a class="headerlink" href="#maxcut" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Теперь давайте представим, что каждой вершине нашего графа сопоставили кубит. Для этих кубитов можем <a class="reference external" href="../../qc/ru/qubit.html#id23">производить измерения</a> по оси <span class="math notranslate nohighlight">\(Z\)</span>, чтобы понять, как направлен тот или иной спин. И давайте запишем вот такой гамильтониан и внимательно на него посмотрим:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1058,8 +1066,8 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>Одномерная цепочка атомов, или поиск максимального разреза в графе-цепочке, является простым случаем и не является <span class="math notranslate nohighlight">\(NP\)</span>-задачей. Однако уже в двумерном случае эта задача становится сильно сложнее, как и, например, если в цепочке атомов ферромагнетика добавим взаимодействие не только соседних спинов, но и взаимодействие с соседями соседа. Аналогично, модель вида Изинга сильно усложняется при добавлении недиагональных (off-diagonal elements) элементов гамильтониана, например, когда внешнее поле направлено в другом направлении и второй член гамильтониана принимает вид <span class="math notranslate nohighlight">\(h\sum_{i=N} \sigma^{x}_i\)</span>. Более подробное исследование данной модели приводится в <a class="reference internal" href="advising.html"><span class="doc std std-doc">этой продвинутой лекции</span></a>.</p>
 </div>
-</div>
-<div class="section" id="numpy">
+</section>
+<section id="numpy">
 <h2>Модель Изинга на чистом NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h2>
 <p>Давайте попробуем реализовать одномерный гамильтониан Изинга на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>/<code class="docutils literal notranslate"><span class="pre">SciPy</span></code> в виде разреженной матрицы. Для этого вспомним, что действуя оператором <span class="math notranslate nohighlight">\(\sigma^z\)</span> на <span class="math notranslate nohighlight">\(i\)</span>-й кубит, одновременно действуем единичным оператором на все остальные, а потом перемножаем все операторы произведением Кронекера. Из <a class="reference internal" href="../../linalg/ru/linalg_intro.html"><span class="doc std std-doc">лекций по линейной алгебре</span></a> помним также об ассоциативности произведения Кронекера, чем и воспользуемся:</p>
 <div class="cell docutils container">
@@ -1158,7 +1166,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy: (-11.000000000000007-1.05712250567288e-16j)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy: (-10.99999999999999-1.0571225056728771e-16j)
 0101010010
 </pre></div>
 </div>
@@ -1172,14 +1180,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy: (-991.0000000000039-3.488261257113687e-14j)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy: (-991.0000000000039-3.4882612571137096e-14j)
 0000000000
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Заключение<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции на базовом уровне познакомились с моделью Изинга – очень важным концептом в квантовом машинном обучении. Узнали, что:</p>
 <ul class="simple">
@@ -1189,8 +1197,8 @@ title="Print to PDF"
 <li><p>в классической модели Изинга существуют интересные фазовые переходы;</p></li>
 <li><p>модель Изинга легко реализовать в коде, используя <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, но размерность задачи растет очень быстро.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

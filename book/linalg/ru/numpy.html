@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Numpy &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1048,7 +1052,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="numpy">
+  <section class="tex2jax_ignore mathjax_ignore" id="numpy">
 <span id="id1"></span><h1>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1056,7 +1060,7 @@ title="Print to PDF"
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> – это широко используемая библиотека для вычислений с многомерными массивами. API большей частью вдохновлен <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> (великая и ужасная среда, язык и IDE для матричных вычислений), а теперь сам является примером для подражания API различных вычислительных пакетов.
 Более последовательный гайд стоит посмотреть на <a class="reference external" href="https://numpy.org/devdocs/user">сайте библиотеки</a>.</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Массивы<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1083,16 +1087,16 @@ b = array([[0., 0.],
 c = array([[1., 0., 0.],
        [0., 1., 0.],
        [0., 0., 1.]])
-q = array([[0.72048235, 0.23395504, 0.28783686, 0.80934204, 0.23976629,
-        0.11893031, 0.08497718, 0.77882529, 0.2671998 , 0.37873501,
-        0.55655982, 0.30278974, 0.95847445, 0.23262722, 0.11187213,
-        0.38314441, 0.86596277, 0.67519337, 0.37495213, 0.85819224]])
+q = array([[0.65892998, 0.13467071, 0.00491663, 0.87178449, 0.22114929,
+        0.46232148, 0.81509036, 0.130481  , 0.65961413, 0.24986329,
+        0.26485211, 0.21494051, 0.52852189, 0.98819032, 0.22937486,
+        0.45025821, 0.78260788, 0.26288857, 0.78868183, 0.16069134]])
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Арифметические операции<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Для удобства использования <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code> арифметические операторы определены так, чтобы соответствовать ожиданиям:</p>
 <div class="cell docutils container">
@@ -1119,8 +1123,8 @@ scalar_mult = 17
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indexing-slicing-and-sugar">
+</section>
+<section id="indexing-slicing-and-sugar">
 <h2>Indexing, slicing and sugar<a class="headerlink" href="#indexing-slicing-and-sugar" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> поддерживает, кажется, все разумные варианты индексации:</p>
 <div class="cell docutils container">
@@ -1269,8 +1273,8 @@ b_mult = array([[1, 1, 2, 1],
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="broadcasting">
+</section>
+<section id="broadcasting">
 <h2>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">#</a></h2>
 <p>Что происходит, если мы хотим производить арифметические операции с массивами разных размеров?</p>
 <div class="cell docutils container">
@@ -1310,16 +1314,16 @@ b_mult = array([[1, 1, 2, 1],
 <li><p>два массива совместимы в размерности, если она одинаковая, либо у одного из массивов единичная;</p></li>
 <li><p>вдоль отсутствующих размерностей происходит расширение повторением (<code class="docutils literal notranslate"><span class="pre">np.repeat</span></code>).</p></li>
 </ol>
-<div class="figure align-default" id="numpy-work-with-arrays">
+<figure class="align-default" id="numpy-work-with-arrays">
 <img alt="../../../_images/numpy_work_with_arrays.png" src="../../../_images/numpy_work_with_arrays.png" />
-</div>
+</figure>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Be aware
 Автоматический броадкастинг легко приводит к ошибкам, так что лучше делать его самостоятельно в явной форме.</p>
 </div>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Операции с плавающей точкой<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Отдельно стоит поговорить про числа с плавающей точкой.
 Число с плавающей точкой (или число с плавающей запятой) – экспоненциальная форма представления вещественных (действительных) чисел, в которой число хранится в виде мантиссы и порядка (показателя степени). При этом число с плавающей точкой имеет фиксированную относительную точность и изменяющуюся абсолютную.
@@ -1364,8 +1368,8 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>NumPy и линейная алгебра<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>В <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> много удобных функций, которые позволяют упростить код. Приведем несколько примеров:</p>
 <div class="cell docutils container">
@@ -1397,21 +1401,21 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 np.eye(3, k=-1, dtype=int) = array([[0, 0, 0],
        [1, 0, 0],
        [0, 1, 0]])
-np.random.beta(1, 2) = 0.23097793665660915
-np.random.randint(1, 5, (2, 3)) = array([[4, 3, 4],
-       [4, 2, 4]])
-a = array([[4, 3, 4],
-       [3, 2, 1],
-       [2, 1, 3]])
-a = array([[4, 3, 4],
-       [3, 4, 1],
-       [2, 1, 4]])
+np.random.beta(1, 2) = 0.112560487235946
+np.random.randint(1, 5, (2, 3)) = array([[2, 4, 1],
+       [3, 1, 4]])
+a = array([[4, 1, 2],
+       [1, 2, 2],
+       [4, 4, 1]])
+a = array([[4, 1, 2],
+       [1, 4, 2],
+       [4, 4, 4]])
 np.diag(a) = array([4, 4, 4])
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="id6">
+<section id="id6">
 <h3>Решение систем линейных уравнений<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> позволяет решить систему линейных уравнений.</p>
 <div class="cell docutils container">
@@ -1429,8 +1433,8 @@ np.diag(a) = array([4, 4, 4])
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>Обращение матриц<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code> дает возможность выполнить операцию обращения матриц.</p>
 <div class="cell docutils container">
@@ -1448,8 +1452,8 @@ np.diag(a) = array([4, 4, 4])
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>Собственные вектора и числа<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Вычисление собственных векторов и чисел.</p>
 <div class="cell docutils container">
@@ -1466,9 +1470,9 @@ np.diag(a) = array([4, 4, 4])
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id9">
+</section>
+</section>
+<section id="id9">
 <h2>Мы вкратце рассмотрели<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>основы работы с <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>;</p></li>
@@ -1477,8 +1481,8 @@ np.diag(a) = array([4, 4, 4])
 <li><p>операции с плавающей точкой;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> и примитивы линейной алгебры.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

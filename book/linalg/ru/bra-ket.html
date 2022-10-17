@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Скобки &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1070,7 +1074,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="bra-ket">
+  <section class="tex2jax_ignore mathjax_ignore" id="bra-ket">
 <span id="id1"></span><h1>Скобки<a class="headerlink" href="#bra-ket" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1079,7 +1083,7 @@ title="Print to PDF"
 </ul>
 <p>Дисклеймер: нам нужен инструментарий для работы с более абстрактными пространствами!</p>
 <p>Символ Кронекера и остальные специальные тензора – это удобные примитивы для низкоуровневой работы с матрицами и векторами. Физики смогли придумать поверх примитивов линейной алгебры отличный синтаксический сахар, т.н. нотацию Дирака. Но давайте начнем с определения гильбертова пространства.</p>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Гильбертово пространство<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Гильбертово пространство – это полное линейное векторное пространство, определяемое:</p>
 <ol class="simple">
@@ -1087,12 +1091,12 @@ title="Print to PDF"
 <li><p>зафиксированной нормой вида <span class="math notranslate nohighlight">\(||v|| = \sqrt{(v,v)}\)</span>;</p></li>
 <li><p>метрикой <span class="math notranslate nohighlight">\(d(u,v) = ||u-v|| = \sqrt{(u-v,u-v)}\)</span>.</p></li>
 </ol>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Полное пространство<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>При нахождении предела некоторой последовательности полное метрическое пространство дает возможность не думать о принадлежности этого предела данному пространству, то есть по своей сути разрешает предельный переход и позволяет доказать множество красивых теорем. Подробнее строгое определение можно посмотреть <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE">тут</a>.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Нотация Дирака, или Bra-Ket нотация<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Напомним, что в гильбертовом пространстве для пространства <span class="math notranslate nohighlight">\(H\)</span> определено сопряженное пространство <span class="math notranslate nohighlight">\(H^{\dagger}\)</span>.
 Тогда можно рассмотреть обозначение Ket для элемента <span class="math notranslate nohighlight">\(v\)</span> из <span class="math notranslate nohighlight">\(H\)</span> как вектор-столбец:</p>
@@ -1113,8 +1117,8 @@ title="Print to PDF"
 \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_N \end{bmatrix}
 \end{split}\]</div>
 <p>Часто, например, требуется показать два граничных  состояния кубита <span class="math notranslate nohighlight">\(\ket{0}\)</span>, <span class="math notranslate nohighlight">\(\ket{1}\)</span>, тогда мы можем записать их просто как вектор-столбцы: <span class="math notranslate nohighlight">\(\ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}\)</span> и <span class="math notranslate nohighlight">\(\ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>. В следующей лекции этот вопрос будет рассмотрен детальнее.</p>
-</div>
-<div class="section" id="outer-product">
+</section>
+<section id="outer-product">
 <h2>Внешнее произведение (outer-product)<a class="headerlink" href="#outer-product" title="Permalink to this headline">#</a></h2>
 <p>Также имеет смысл и переставленная запись Ket-Bra, которая называется <a class="reference external" href="https://en.wikipedia.org/wiki/Outer_product"><em>внешним произведением</em></a>:</p>
 <div class="math notranslate nohighlight">
@@ -1128,16 +1132,16 @@ title="Print to PDF"
 \end{split}\]</div>
 <p>По сути это матрица <span class="math notranslate nohighlight">\(N \times N\)</span>, то есть новый оператор в гильбертовом пространстве. Не все перестановки имеют смысл, например, нельзя записать <span class="math notranslate nohighlight">\(\bra{v} \bra{v}\)</span> или <span class="math notranslate nohighlight">\(\ket{u} \ket{v}\)</span>.</p>
 <p>Мы вернемся к Ket-Bra чуть ниже, когда будем говорить про операторы проекции.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Эрмитов оператор<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Оператор <span class="math notranslate nohighlight">\(U\)</span> называется <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B8%D1%82%D0%BE%D0%B2_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"><em>эрмитовым</em></a>, если он удовлетворяет равенству <span class="math notranslate nohighlight">\((Uv,u) = (v,Uu)\)</span> для всех <span class="math notranslate nohighlight">\(u\)</span>, <span class="math notranslate nohighlight">\(v\)</span> из <span class="math notranslate nohighlight">\(H\)</span> или в матричном виде:</p>
 <div class="math notranslate nohighlight">
 \[
 U=U^{\dagger}
 \]</div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Унитарный оператор<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Unitary_operator"><em>Унитарный оператор</em></a> <span class="math notranslate nohighlight">\(\hat{U}:H \rightarrow H\)</span> на гильбертовом пространстве <span class="math notranslate nohighlight">\(H\)</span> – это линейный оператор, который удовлетворяет следующему равенству <span class="math notranslate nohighlight">\((Uv, Uu) = (u,v)\)</span> для любых <span class="math notranslate nohighlight">\(v \in H\)</span>, <span class="math notranslate nohighlight">\(u \in H\)</span>. Или в матричной форме:</p>
 <div class="math notranslate nohighlight">
@@ -1228,10 +1232,10 @@ S \exp(-i \Lambda  + i \Lambda) S^\dagger = S \exp(O) S^\dagger = S I S^\dagger 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U = array([[ 3.00000000e+00+0.00000000e+00j,  1.00000000e+00+1.73205081e+00j,
         -1.11022302e-16+7.77156117e-16j],
-       [ 1.00000000e+00-1.73205081e+00j,  3.00000000e+00-3.98552134e-18j,
+       [ 1.00000000e+00-1.73205081e+00j,  3.00000000e+00+0.00000000e+00j,
          1.00000000e+00+1.73205081e+00j],
        [-1.11022302e-16-7.77156117e-16j,  1.00000000e+00-1.73205081e+00j,
-         3.00000000e+00-1.88596895e-17j]])
+         3.00000000e+00+0.00000000e+00j]])
 D = array([[ 1. +0.j       ,  1. +0.j       ,  1. +0.j       ],
        [ 1. +0.j       ,  0.5-0.8660254j, -0.5-0.8660254j],
        [ 1. +0.j       , -0.5-0.8660254j, -0.5+0.8660254j]])
@@ -1244,7 +1248,7 @@ np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = True
 </div>
 </div>
 </div>
-<div class="section" id="id7">
+<section id="id7">
 <h3>Пример: оператор-проектор<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Оператором проекции является оператор <span class="math notranslate nohighlight">\(P\)</span> со свойством <span class="math notranslate nohighlight">\(P^2=P\)</span>.</p>
 <p>Покажем, что Ket-Bra вида <span class="math notranslate nohighlight">\(\ket{\Psi} \bra{\Psi}\)</span> обладает этим свойством.</p>
@@ -1252,8 +1256,8 @@ np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = True
 \[(\ket{\Psi} \bra{\Psi})^2 = \ket{\Psi} \bra{\Psi} \ket{\Psi} \bra{\Psi} = \ket{\Psi} (\bra{\Psi} \ket{\Psi}) \bra{\Psi} = \ket{\Psi} \bra{\Psi},\]</div>
 <p>поскольку вектор состояния – нормированный: <span class="math notranslate nohighlight">\(\bra{\Psi} \ket{\Psi} = 1\)</span>.</p>
 <p>Оператор Ket-Bra с вектором состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, то есть <span class="math notranslate nohighlight">\(\ket{\Psi} \bra{\Psi}\)</span>рассматривается во <a class="reference internal" href="../../qc/ru/qubit.html"><span class="doc std std-doc">вводной лекции про кубиты</span></a>, а также пригодится позже, когда речь зайдет о <a class="reference internal" href="../../qc/ru/mixedstates.html"><span class="doc std std-doc">смешанных состояниях</span></a>.</p>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>Пример: оператор поворота<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Оператором поворота по оси вращения <span class="math notranslate nohighlight">\(v=(x,y,z)\)</span> на угол <span class="math notranslate nohighlight">\(\theta\)</span> является</p>
 <div class="math notranslate nohighlight">
@@ -1282,8 +1286,8 @@ M = \begin{bmatrix}
 \end{split}\]</div>
 <p>Если у нас больше измерений, то по тем измерениям, которые не затрагиваются этим поворотом, у нас в строке и столбце стоят нули, кроме пересечения строки и столбца, отвечающих за это измерение - там стоит единица.</p>
 <p>Операторы поворота очень важны в квантовых вычислениях. Они рассматриваются отдельно в <a class="reference internal" href="../../qc/ru/gates.html"><span class="doc std std-doc">лекции про квантовые гейты</span></a> и далее используются в <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc">вариационных квантовых схемах</span></a> для кодирования классических данных в квантовые операторы.</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Пример: оператор дифференцирования<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>В пространстве многочленов <span class="math notranslate nohighlight">\(P\)</span> с базисом <span class="math notranslate nohighlight">\(\{1,t,t^2,...,t^n\}\)</span> можно задать оператор дифференцирования <span class="math notranslate nohighlight">\(\mathcal{D} \colon P_n \to P_{n-1}\)</span> в виде матрицы:</p>
 <div class="math notranslate nohighlight">
@@ -1305,9 +1309,9 @@ D=\begin{bmatrix}
 <p class="admonition-title">Про разницу между оператором и матрицей преобразования</p>
 <p>Мы с вами рассматривали операторы через конечные матрицы, но на самом деле гильбертово пространство было придумано как раз, чтобы можно было работать с бесконечномерными векторами и применять непрерывные операторы. Можно считать, что есть некоторый дуализм между непрерывным оператором и пределом бесконечной матрицы. Иногда удобнее работать с матрицей, а иногда – с абстрактным оператором.</p>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
+</section>
+</section>
+<section id="id10">
 <h2>Произведение Кронекера<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Давайте рассмотрим еще одну интересную операцию, которая называется матричным тензорным произведением (является тензорным произведением для линейных операторов) или произведением Кронекера.</p>
 <p>Проще всего его необходимость можно продемонстрировать на примере двух игр: Орел/Решка и бросок кубика.
@@ -1346,17 +1350,17 @@ A \otimes B = \begin{bmatrix} a_{11} B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp
 \end{bmatrix}\end{split}\]</div>
 <p>Основные его свойства вы можете прочитать в статье: <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0"><em>Произведение Кронекера</em></a></p>
 <p>Есть и другие нужные тензорные операции, например, чуть больший список вы можете найти в <a class="reference external" href="https://habr.com/ru/post/369925/">этой статье</a> или в рекомендованной литературе по квантовой механике.</p>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h2>Рекомендованная литература<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Quantum Mechanics: The Theoretical Minimum Illustrated Edition by Leonard Susskind, Art Friedman <span id="id12">[<a class="reference internal" href="../../bibliography.html#id66" title="Leonard Susskind and Art Friedman. Quantum mechanics: the theoretical minimum. Basic Books, 2014.">SF14</a>]</span> или его русский перевод <span id="id13">[<a class="reference internal" href="../../bibliography.html#id67" title="Леонард Сасскинд and Арт Фридман. Квантовая механика. Теоретический минимум. СПб.: Питер, 2015.">15b</a>]</span>. Книга сочетает в себе довольно строгий формализм вместе с интуицией квантовой механики. Главы построены в виде конкретных примеров или задач, которые понимают, зачем та или иная теория необходима.</p></li>
-<li><p>Mathematics for machine learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong <span id="id14">[<a class="reference internal" href="../../bibliography.html#id26" title="Marc Peter Deisenroth, A Aldo Faisal, and Cheng Soon Ong. Mathematics for machine learning. Cambridge University Press, 2020. \url https://mml-book.github.io/book/mml-book.pdf.">DFO20</a>]</span> - отличная книжка чтобы освежить воспоминания о базовых алгоритмах в машинном обучении и о математике, которая применяется в них. <a class="reference external" href="https://mml-book.github.io/book/mml-book.pdf"><em>Доступна бесплатная электронная версия</em></a>.</p></li>
-<li><p>Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville <span id="id15">[<a class="reference internal" href="../../bibliography.html#id4" title="Ian Goodfellow, Yoshua Bengio, and Aaron Courville. Deep Learning. MIT Press, 2016. \url http://www.deeplearningbook.org.">GBC16</a>]</span> - отличная книжка, чтобы разобраться в основах глубокого обучения, чем-то может заменить предыдущую книгу, отличный старт, если вы хотите разобраться в автоэнкодерах или в других нейросетевых моделях.
+<li><p>Mathematics for machine learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong <span id="id14">[<a class="reference internal" href="../../bibliography.html#id26" title="Marc Peter Deisenroth, A Aldo Faisal, and Cheng Soon Ong. Mathematics for machine learning. Cambridge University Press, 2020. https://mml-book.github.io/book/mml-book.pdf.">DFO20</a>]</span> - отличная книжка чтобы освежить воспоминания о базовых алгоритмах в машинном обучении и о математике, которая применяется в них. <a class="reference external" href="https://mml-book.github.io/book/mml-book.pdf"><em>Доступна бесплатная электронная версия</em></a>.</p></li>
+<li><p>Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville <span id="id15">[<a class="reference internal" href="../../bibliography.html#id4" title="Ian Goodfellow, Yoshua Bengio, and Aaron Courville. Deep Learning. MIT Press, 2016. http://www.deeplearningbook.org.">GBC16</a>]</span> - отличная книжка, чтобы разобраться в основах глубокого обучения, чем-то может заменить предыдущую книгу, отличный старт, если вы хотите разобраться в автоэнкодерах или в других нейросетевых моделях.
 <a class="reference external" href="https://www.deeplearningbook.org/"><em>Доступна бесплатная электронная версия</em></a>.</p></li>
 </ul>
-</div>
-<div class="section" id="id16">
+</section>
+<section id="id16">
 <h2>Что мы узнали<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>произвол со скобками</p></li>
@@ -1365,8 +1369,8 @@ A \otimes B = \begin{bmatrix} a_{11} B &amp; \cdots &amp; a_{1n}B \\ \vdots &amp
 <li><p>Унитарный оператор</p></li>
 <li><p>Примеры различных операторов</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

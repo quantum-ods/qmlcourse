@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Объекты, классы и методы &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -994,13 +998,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-l9">
+  <section class="tex2jax_ignore mathjax_ignore" id="python-l9">
 <span id="id1"></span><h1>Объекты, классы и методы<a class="headerlink" href="#python-l9" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/stalkermustang">Котенков Игорь</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы расскажем про:</p>
 <ul class="simple">
@@ -1010,8 +1014,8 @@ title="Print to PDF"
 <li><p>методы классов в уже знакомых примерах</p></li>
 <li><p>атрибуты классов</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>ООП: Объектно-Ориентированное Программирование<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Что же такое объектно-ориентированное программирование? Судя по названию, ключевую роль здесь играют объекты, на которые ориентируется дальнейший процесс программирования. Если мы взглянем на реальный мир, то для нас он предстанет в виде множества объектов, обладающих определенными свойствами, взаимодействующих между собой и вследствие этого изменяющимися. Эта привычная для взгляда человека картина мира была перенесена в программирование. Python - это объектно-ориентированный язык программирования, и <strong>все в нем является объектами</strong>.</p>
 <p><strong>Объект</strong> - это набор данных и инструкций в памяти компьютера, в том числе:</p>
@@ -1020,10 +1024,12 @@ title="Print to PDF"
 <li><p>Данные, формирующие объект (контент внутри него);</p></li>
 <li><p>Методы.</p></li>
 </ol>
-<div class="figure align-default" id="class-and-obj1">
+<figure class="align-default" id="class-and-obj1">
 <a class="reference internal image-reference" href="../../../_images/class_and_obj1.png"><img alt="../../../_images/class_and_obj1.png" src="../../../_images/class_and_obj1.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Так можно проиллюстрировать соотношение “класс - объекты”. Сверху указаны общие прототипы (прямоугольник, звезда, треугольник), снизу - уникальные экземпляры, со своим цветом и деталями.</span><a class="headerlink" href="#class-and-obj1" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Так можно проиллюстрировать соотношение “класс - объекты”. Сверху указаны общие прототипы (прямоугольник, звезда, треугольник), снизу - уникальные экземпляры, со своим цветом и деталями.</span><a class="headerlink" href="#class-and-obj1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Как определить тип мы уже знаем. И с объектами на самом деле мы знакомы с самого начала - ведь даже целочисленная переменная <code class="docutils literal notranslate"><span class="pre">5</span></code>, имеющая <code class="docutils literal notranslate"><span class="pre">type(5)</span> <span class="pre">=</span> <span class="pre">int</span></code>, представляет собой объект. Напомним, что говорилось в курсе ранее: <strong>методы - это те же функции, только существующие не сами по себе, а являющиеся частью класса</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1040,7 +1046,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Метод append имеет тип &lt;built-in method append of list object at 0x7f05188b4a80&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Метод append имеет тип &lt;built-in method append of list object at 0x7f2400120900&gt;
 Значение атрибута: Built-in mutable sequence.
 
 If no argument is given, the constructor creates a new empty list.
@@ -1070,12 +1076,14 @@ The argument must be an iterable if specified.
 </div>
 </div>
 <p>Конкретно в данном случае логика работы обусловлена свойствами <code class="docutils literal notranslate"><span class="pre">mutable</span></code>/<code class="docutils literal notranslate"><span class="pre">immutable</span></code> объектов, о чем также упоминалось в одной из предшествующих лекций. <code class="docutils literal notranslate"><span class="pre">int</span></code> неизменяем, и потому при вызове метода сложения возвращает новый объект - ведь самого себя изменить не получится. <code class="docutils literal notranslate"><span class="pre">list</span></code> же может меняться, и <code class="docutils literal notranslate"><span class="pre">append</span></code> меняет содержимое <code class="docutils literal notranslate"><span class="pre">inplace</span></code>.</p>
-<div class="figure align-default" id="class-and-obj-house">
+<figure class="align-default" id="class-and-obj-house">
 <a class="reference internal image-reference" href="../../../_images/class_and_obj_house.png"><img alt="../../../_images/class_and_obj_house.png" src="../../../_images/class_and_obj_house.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Другой житейский пример - по одному чертежу (классу) можно построить разные (но похожие!) дома, в которых разные семьи, убранство, разные обои.</span><a class="headerlink" href="#class-and-obj-house" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id4">
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Другой житейский пример - по одному чертежу (классу) можно построить разные (но похожие!) дома, в которых разные семьи, убранство, разные обои.</span><a class="headerlink" href="#class-and-obj-house" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
 <h2>Определение классов<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Давайте попробуем создать свой первый класс:</p>
 <div class="cell docutils container">
@@ -1165,12 +1173,14 @@ type(example_list) = &lt;class &#39;__main__.List&#39;&gt;
 <li><p>Методы как могут возвращать что-либо (в том числе новый объект того же класса), так и ничего не возвращать.</p></li>
 </ol>
 <p>В заключение еще одна картинка, иллюстрирующая суть класса, экземпляра, атрибутов и методов:</p>
-<div class="figure align-default" id="class-and-obj-pika">
+<figure class="align-default" id="class-and-obj-pika">
 <a class="reference internal image-reference" href="../../../_images/class_and_obj_pika.png"><img alt="../../../_images/class_and_obj_pika.png" src="../../../_images/class_and_obj_pika.png" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Who’s that pokemon?</span><a class="headerlink" href="#class-and-obj-pika" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id5">
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Who’s that pokemon?</span><a class="headerlink" href="#class-and-obj-pika" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
 <h2>Пример использования для хранения состояние<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>В курсе будет встречаться подобный паттерн, поэтому хочется остановиться поподробнее. Допустим, есть некоторая среда, заданная состоянием, и есть объекты, существующие в этой среде, как-то взаимодействующие между собой (и со средой). Есть набор функций, который осуществляет эти взаимодействия. Тогда удобно ввести некоторый объект <code class="docutils literal notranslate"><span class="pre">system</span></code>  класса <code class="docutils literal notranslate"><span class="pre">System</span></code>, который хранит эту информацию, и передавать его как параметр в методы расчета чего-либо (никакой конкретной логики тут не заложено, не пытайтесь понять, за что отвечает <code class="docutils literal notranslate"><span class="pre">alpha</span></code> и прочие переменные - пример абстрактный):</p>
 <div class="cell docutils container">
@@ -1246,8 +1256,8 @@ type(example_list) = &lt;class &#39;__main__.List&#39;&gt;
 </div>
 </div>
 <p>Обратите внимание на то, что функция <code class="docutils literal notranslate"><span class="pre">one_system_cycle</span></code> не возвращает <code class="docutils literal notranslate"><span class="pre">system</span></code> - ведь мы прямо во время итераций меняем ее состояние, и в последующие моменты времени эти изменения сохраняются, то есть состояние остается. Таким образом, эту систему (среду) - а именно объект, экземпляр класса <code class="docutils literal notranslate"><span class="pre">System</span></code> - как параметр <strong>можно передавать в десятки функций, и каждая из них будет видеть актуальное состояние</strong>.</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Объекты одного класса отличаются между собой атрибутами, которые придают уникальности;</p></li>
@@ -1256,8 +1266,8 @@ type(example_list) = &lt;class &#39;__main__.List&#39;&gt;
 <li><p>Классы без методов можно использовать как <strong>удобное хранилище разнородной информации</strong> о схожих объектах (описать разных студентов и их оценки).</p></li>
 </ul>
 <p>Это далеко не все, что можно написать по теме классов и объектов, однако это тот необходимый минимум, что потребуется для прохождения курса. Больше примеров и деталей можно найти, например, по ссылкам: <a class="reference external" href="https://younglinux.info/oopython/ooprogramm">пример с несколькими взаимодействующими объектами</a>, <a class="reference external" href="https://younglinux.info/oopython/inheritance">что такое наследование и зачем оно нужно</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

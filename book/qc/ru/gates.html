@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Квантовые гейты &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1284,14 +1288,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="gates">
+  <section class="tex2jax_ignore mathjax_ignore" id="gates">
 <span id="id1"></span><h1>Квантовые гейты<a class="headerlink" href="#gates" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ooovector">Беседин Илья</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Из этой лекции мы узнаем:</p>
 <ul class="simple">
@@ -1300,21 +1304,23 @@ title="Print to PDF"
 <li><p>как конструировать многокубитные операторы;</p></li>
 <li><p>как работать с библиотекой <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Квантовые гейты являются основными <em>строительными</em> блоками для любых квантовых схем, в том числе и тех, что применяются для машинного обучения. Можно сказать, что это своеобразный алфавит квантовых вычислений. Он необходим, чтобы сходу понимать, например, что изображено на подобных схемах:</p>
-<div class="figure align-default" id="lvqe">
+<figure class="align-default" id="lvqe">
 <a class="reference internal image-reference" href="../../../_images/Layer-VQE.png"><img alt="../../../_images/Layer-VQE.png" src="../../../_images/Layer-VQE.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text"><a class="reference external" href="https://arxiv.org/abs/2102.05566">Схема Layered-VQE</a></span><a class="headerlink" href="#lvqe" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id4">
+<figcaption>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text"><a class="reference external" href="https://arxiv.org/abs/2102.05566">Схема Layered-VQE</a></span><a class="headerlink" href="#lvqe" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
 <h2>Основные однокубитные гейты<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В прошлый раз мы познакомились с <a class="reference external" href="../../qc/ru/qubit.html#id24">операторами Паули</a>, а также <a class="reference external" href="../../qc/ru/qubit.html#id20">гейтом Адамара</a>. Как для обычных квантовых алгоритмов, так и
 для QML-алгоритмов нужны и другие гейты, потому что одни только эти гейты не позволяют перейти во все возможные квантовые состояния.
 Теперь давайте посмотрим, какие еще однокубитные гейты часто применяются в квантовых вычислениях и квантовом машинном обучении.</p>
-<div class="section" id="t">
+<section id="t">
 <h3>T-гейт<a class="headerlink" href="#t" title="Permalink to this headline">#</a></h3>
 <p>T-гейт очень популярен в универсальных квантовых вычислениях. Его матрица имеет вид:</p>
 <div class="math notranslate nohighlight">
@@ -1326,18 +1332,20 @@ title="Print to PDF"
 \end{split}\]</div>
 <p>Любой однокубитный гейт можно аппроксимировать последовательностью гейтов Адамара и T-гейтов. Чем точнее требуется аппроксимация, тем длиннее будет аппроксимирующая последовательность.</p>
 <p>Помимо важной роли в математике квантовых вычислений, гейт Адамара и T-гейт интересны тем, что именно на них построено большинство предложений по реализации квантовых вычислений с топологической защитой или с коррекцией ошибок. На сегодняшний день эти схемы реально пока не очень работают: никаких топологически защищенных кубитов продемонстрировано не было, а коррекция ошибок не выходит за пределы двух логических кубитов.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>Гейты поворота вокруг оси<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Поворотные гейты играют центральную роль в квантовом машинном обучении. Вспомним на секунду, как выглядят наши однокубитные состояния на сфере Блоха:</p>
-<div class="figure align-default" id="blochsphere">
+<figure class="align-default" id="blochsphere">
 <a class="reference internal image-reference" href="../../../_images/Blochsphere.png"><img alt="../../../_images/Blochsphere.png" src="../../../_images/Blochsphere.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochsphere" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">Сфера Блоха</span><a class="headerlink" href="#blochsphere" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Любой однокубитный гейт можно представить как вращение вектора состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> на некоторый угол вокруг некоторой оси, проходящей через центр сферы Блоха.</p>
 <p>Гейты <span class="math notranslate nohighlight">\(\hat{RX}(\phi), \hat{RY}(\phi), \hat{RZ}(\phi)\)</span> осуществляют поворот на определенный угол <span class="math notranslate nohighlight">\(\phi\)</span> вокруг соответствующей оси на сфере Блоха.</p>
 <p>Давайте внимательно рассмотрим это на примере гейта <span class="math notranslate nohighlight">\(\hat{RY}\)</span>.</p>
-<div class="section" id="hat-ry">
+<section id="hat-ry">
 <h4>Гейт <span class="math notranslate nohighlight">\(\hat{RY}\)</span><a class="headerlink" href="#hat-ry" title="Permalink to this headline">#</a></h4>
 <p>Сам гейт определяется следующим образом:</p>
 <div class="math notranslate nohighlight">
@@ -1432,8 +1440,8 @@ X after RY:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h4>Другие гейты вращений<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <p>Аналогичным образом определяются гейты <span class="math notranslate nohighlight">\(\hat{RX}\)</span> и <span class="math notranslate nohighlight">\(\hat{RZ}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1446,8 +1454,8 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 0 &amp; e^{\frac{i\phi}{2}}
 \end{bmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h4>Общая форма записи однокубитных гейтов<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
 <p>В общем случае однокубитные гейты могут быть также записаны следующим образом:</p>
 <div class="math notranslate nohighlight">
@@ -1460,9 +1468,9 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 \large \hat{R}^\vec{n}(\alpha) = e^{-i\frac{\alpha}{2}\left(\hat{\sigma}^xn_x+\hat{\sigma}^yn_y+\hat{\sigma}^zn_z\right)}.
 \]</div>
 <p>Забегая вперед, можно сказать, что именно гейты вращений – это основа <a class="reference internal" href="../../vqc/ru/vqc_intro.html"><span class="doc std std-doc">квантовых вариационных схем</span></a>, главного инструмента этого курса.</p>
-</div>
-</div>
-<div class="section" id="phase-shift">
+</section>
+</section>
+<section id="phase-shift">
 <h3>Phase-shift гейт<a class="headerlink" href="#phase-shift" title="Permalink to this headline">#</a></h3>
 <p>Другой важный гейт – это так называемый phase-shift гейт, или <span class="math notranslate nohighlight">\(\hat{U}_1\)</span> гейт. Его матричная форма имеет следующий вид:</p>
 <div class="math notranslate nohighlight">
@@ -1482,8 +1490,8 @@ e^{-\frac{i\phi}{2}} &amp; 0 \\
 </div>
 <p>Легко видеть, что с точностью до глобального фазового множителя, который ни на что не влияет, Phase-shift-гейт – это тот же <span class="math notranslate nohighlight">\(\hat{RZ}(\phi)\)</span>.
 Он играет важную роль в квантовых ядерных методах.</p>
-</div>
-<div class="section" id="hat-u-2-hat-u-3">
+</section>
+<section id="hat-u-2-hat-u-3">
 <h3>Гейты <span class="math notranslate nohighlight">\(\hat{U}_2\)</span> и <span class="math notranslate nohighlight">\(\hat{U}_3\)</span><a class="headerlink" href="#hat-u-2-hat-u-3" title="Permalink to this headline">#</a></h3>
 <p>Более редкие в QML гейты, которые однако все равно встречаются в статьях.</p>
 <div class="math notranslate nohighlight">
@@ -1535,8 +1543,8 @@ e^{1j\phi}\sin(\frac{\theta}{2}) &amp; e^{1j(\phi + \lambda)}\cos(\frac{\theta}{
 \end{bmatrix} = \hat{U}_1(\phi + \lambda)\hat{RZ}(-\lambda)\hat{RY}(\theta)\hat{RZ}(\lambda)
 \end{split}\]</div>
 <p>Читатель может сам легко убедиться, что эти формы записи эквивалентны. Для этого надо написать примерно такой же код, что мы писали раньше для <span class="math notranslate nohighlight">\(\hat{U}_2\)</span>.</p>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>Еще пара слов об однокубитных гейтах<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>На этом мы завершаем обзор основных однокубитных гейтов. Маленькое замечание: гейты, связанные со сдвигом фазы, никак не меняют состояние кубита, если оно сейчас <span class="math notranslate nohighlight">\(\ket{0}\)</span>. Так как мы всегда предполагаем, что начальное состояние кубитов – это именно <span class="math notranslate nohighlight">\(\ket{0}\)</span>, то перед применением, например, <span class="math notranslate nohighlight">\(\hat{U}_1\)</span>, рекомендуется применить гейт Адамара:</p>
 <div class="cell docutils container">
@@ -1555,7 +1563,7 @@ False
 </div>
 </div>
 </div>
-<div class="section" id="id9">
+<section id="id9">
 <h4>Единичный гейт<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h4>
 <p>Самое последнее об однокубитных гейтах – это единичный гейт <span class="math notranslate nohighlight">\(\hat{I}\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1580,13 +1588,13 @@ False
 </div>
 </div>
 <p>Он не делает с кубитом ровным счетом ничего. Но единичный гейт понадобится нам позже, когда мы будем конструировать многокубитные операторы.</p>
-</div>
-</div>
-</div>
-<div class="section" id="id10">
+</section>
+</section>
+</section>
+<section id="id10">
 <h2>Многокубитные состояния и гейты<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Очевидно, что с одним кубитом ничего интересного, кроме разве что генератора истинно-случайных чисел, мы не сделаем. Для начала разберемся, как выглядят состояния для многокубитных систем.</p>
-<div class="section" id="id11">
+<section id="id11">
 <h3>Многокубитные состояния<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>В классическом компьютере один бит имеет два значения – 0 и 1. Два бита имеют четыре значения – 00, 01, 10, 11. Три бита имеют восемь значений и так далее. Аналогично состояние двух кубитов – это вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^4\)</span>, состояние трех кубитов – вектор в пространстве <span class="math notranslate nohighlight">\(\mathbf{C}^8\)</span>, то есть состояние <span class="math notranslate nohighlight">\(N\)</span> кубитов описывается вектором размерности <span class="math notranslate nohighlight">\(2^N\)</span> в комплексном пространстве. Вероятности каждой из возможных битовых строк (<span class="math notranslate nohighlight">\(0000...00\)</span>, <span class="math notranslate nohighlight">\(0000...01\)</span>, <span class="math notranslate nohighlight">\(0000...10\)</span>, и так далее) получаются по методу Шредингера, который мы обсуждали <a class="reference external" href="../../qc/ru/qubit.html#id29">в конце прошлой лекции</a>:</p>
 <div class="math notranslate nohighlight">
@@ -1595,12 +1603,12 @@ False
 \]</div>
 <p>Нужно отсортировать наши битовые строки в лексикографическом порядке – и вероятность <em>i</em>-й битовой строки будет равна квадрату <em>i</em>-го элемента вектора <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>.</p>
 <p>Формально, многокубитные состояния описываются с помощью математического концепта так называемого <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%B7%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"><em>тензорного произведения</em></a>, которое в случае линейных операторов идентично <em>произведению Кронекера</em>, обозначаемого значком <span class="math notranslate nohighlight">\(\otimes\)</span>. Так, если <span class="math notranslate nohighlight">\(\ket{\Psi}_A \in \mathrm{H}_A\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_B \in \mathrm{H}_B\)</span>, то <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB} = \ket{\Psi}_A \otimes \ket{\Psi}_B \in \mathrm{H}_{AB} = \mathrm{H}_{A} \otimes \mathrm{H}_{B}\)</span>. О том, как элементы вектора <span class="math notranslate nohighlight">\(\ket{\Psi}_{AB}\)</span> выражаются через элементы векторов <span class="math notranslate nohighlight">\(\ket{\Psi}_{A}\)</span> и <span class="math notranslate nohighlight">\(\ket{\Psi}_{B}\)</span>, можно прочитать на Википедии в статье <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5_%D0%9A%D1%80%D0%BE%D0%BD%D0%B5%D0%BA%D0%B5%D1%80%D0%B0">“Произведение Кронекера”</a>.</p>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h3>Многокубитные операторы<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Как мы уже обсуждали ранее, квантовые операторы должны переводить текущее состояние в новое в том же пространстве и сохранять нормировку, а еще должны быть обратимыми. Значит, оператор для состояния из <span class="math notranslate nohighlight">\(N\)</span> кубитов – это унитарная комплексная матрица размерности <span class="math notranslate nohighlight">\(2^N \times 2^N\)</span>.</p>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h3>Конструирование многокубитных операторов<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Прежде чем мы начнем обсуждать двухкубитные операторы, рассмотрим ситуацию. Представим, что у нас есть состояние из двух кубитов и мы хотим подействовать на первый кубит оператором Адамара. Как же тогда нам написать такой двухкубитный оператор? Мы знаем, что действуем на первый кубит оператором, а что происходит со вторым кубитом? Ничего не происходит – и это эквивалентно тому, что мы действуем на второй кубит единичным оператором. А финальный оператор <span class="math notranslate nohighlight">\(2^2 \times 2^2\)</span> записывается через произведение Кронекера:</p>
 <div class="math notranslate nohighlight">
@@ -1634,8 +1642,8 @@ False
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id14">
+</section>
+<section id="id14">
 <h3>Наблюдаемые для многокубитных гейтов<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <p>Аналогичным образом можно сконструировать и наблюдаемые. Например, если мы хотим измерять одновременно два спина по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>, то наблюдаемая будет выглядеть так:</p>
 <div class="math notranslate nohighlight">
@@ -1659,18 +1667,20 @@ False
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id15">
+</section>
+</section>
+<section id="id15">
 <h2>Основные двухкубитные гейты<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <p>Основные многокубитные гейты, которые предоставляют современные квантовые компьютеры, – это двухкубитные гейты.</p>
-<div class="section" id="cnot-cx">
+<section id="cnot-cx">
 <h3>CNOT (CX)<a class="headerlink" href="#cnot-cx" title="Permalink to this headline">#</a></h3>
 <p>Квантовый гейт контролируемого инвертирования – это гейт, который действует на два кубита: <em>рабочий</em> и <em>контрольный</em>. В зависимости от того, имеет ли контрольный кубит значение 1 или 0, этот гейт инвертирует или не инвертирует рабочий кубит.</p>
-<div class="figure align-default" id="cnot">
+<figure class="align-default" id="cnot">
 <a class="reference internal image-reference" href="../../../_images/CNOT_gate.png"><img alt="../../../_images/CNOT_gate.png" src="../../../_images/CNOT_gate.png" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">Гейт CNOT</span><a class="headerlink" href="#cnot" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">Гейт CNOT</span><a class="headerlink" href="#cnot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Иногда этот гейт также называют гейтом CX. В матричном виде этот оператор можно записать так:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1707,8 +1717,8 @@ True
 </div>
 </div>
 <p>Заметьте, тут мы воспользовались тем, что <span class="math notranslate nohighlight">\(\hat{\sigma^x}\)</span> работает так же, как инвертор кубитов: он превращает <span class="math notranslate nohighlight">\(\ket{0}\)</span> в <span class="math notranslate nohighlight">\(\ket{1}\)</span> и наоборот.</p>
-</div>
-<div class="section" id="cy-cz">
+</section>
+<section id="cy-cz">
 <h3>Гейты CY и CZ<a class="headerlink" href="#cy-cz" title="Permalink to this headline">#</a></h3>
 <p>Схожие по принципу гейты – это гейты <span class="math notranslate nohighlight">\(\hat{CY}\)</span> и <span class="math notranslate nohighlight">\(\hat{CZ}\)</span>. В зависимости от значения управляющего кубита к рабочему кубиту применяют соответствующий оператор Паули:</p>
 <div class="math notranslate nohighlight">
@@ -1725,8 +1735,8 @@ True
 0 &amp; 0 &amp; 0 &amp; -1
 \end{bmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="iswap">
+</section>
+<section id="iswap">
 <h3>Гейт iSWAP<a class="headerlink" href="#iswap" title="Permalink to this headline">#</a></h3>
 <p>Гейты <span class="math notranslate nohighlight">\(\hat{CX}\)</span>, <span class="math notranslate nohighlight">\(\hat{CY}\)</span> и <span class="math notranslate nohighlight">\(\hat{CZ}\)</span> эквивалентны с точностью до однокубитных гейтов. Это означает, что любой из них можно получить, добавив необходимые однокубитные гейты до и после другого гейта. Например:</p>
 <div class="math notranslate nohighlight">
@@ -1743,8 +1753,8 @@ True
 0 &amp; 0 &amp; 0 &amp; 1
 \end{bmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="fsim">
+</section>
+<section id="fsim">
 <h3>Гейт fSim<a class="headerlink" href="#fsim" title="Permalink to this headline">#</a></h3>
 <p>Для разных архитектур квантовых процессоров “естественный” гейт может выглядеть по-разному. Например, в квантовом процессоре Google Sycamore естественным является так называемый fermionic simulation gate или fSim. Это двухпараметрическое семейство гейтов вида:</p>
 <div class="math notranslate nohighlight">
@@ -1758,9 +1768,9 @@ True
 \end{split}\]</div>
 <p>Впрочем, и fSim-гейт не является эквивалентным всему множеству двухкубитных гейтов. В общем случае, чем больше кубитов,
 тем сложнее будет выглядеть декомпозиция произвольного гейта на физически реализуемые в “железе”.</p>
-</div>
-</div>
-<div class="section" id="pennylane">
+</section>
+</section>
+<section id="pennylane">
 <h2>Первое знакомство с PennyLane<a class="headerlink" href="#pennylane" title="Permalink to this headline">#</a></h2>
 <p>На сегодняшний день существует достаточно много фреймворков для программирования квантовых компьютеров. Для целей этого курса мы будем использовать <a class="reference external" href="https://pennylane.ai/">PennyLane</a>. Эта библиотека предоставляет высокоуровневый <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">API</span></code> и создана специально для решения задач квантового машинного обучения.</p>
 <div class="cell docutils container">
@@ -1770,7 +1780,7 @@ True
 </div>
 </div>
 </div>
-<div class="section" id="device">
+<section id="device">
 <h3>Device<a class="headerlink" href="#device" title="Permalink to this headline">#</a></h3>
 <p>Для объявления квантового устройства используется класс <code class="docutils literal notranslate"><span class="pre">Device</span></code>. <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> поддерживает работу с большинством существующих квантовых компьютеров, но для целей курса мы будем запускать все наши программы лишь на самом простом симуляторе идеального квантового компьютера:</p>
 <div class="admonition note">
@@ -1785,11 +1795,11 @@ True
 </div>
 </div>
 <p>Первый аргумент тут – указание устройства, а второй – число кубитов.</p>
-</div>
-<div class="section" id="qnode">
+</section>
+<section id="qnode">
 <h3>QNode<a class="headerlink" href="#qnode" title="Permalink to this headline">#</a></h3>
 <p>Основной <em>строительный блок</em> в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> – это <code class="docutils literal notranslate"><span class="pre">qnode</span></code>. Это функция, которая отмечена специальным декоратором и включает в себя несколько операций с кубитами. Результатом такой функции всегда является измерение. Напишем функцию, которая поворачивает первый кубит на <span class="math notranslate nohighlight">\(45^o\)</span>, после чего измеряет оба кубита по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span>.</p>
-<div class="section" id="numpy">
+<section id="numpy">
 <h4>Сначала на NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1807,8 +1817,8 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id16">
+</section>
+<section id="id16">
 <h4>Теперь через QNode<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1823,15 +1833,15 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865472
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865475
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="id17">
+</section>
+</section>
+</section>
+<section id="id17">
 <h2>Заключение<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
 <p>Это последняя вводная лекция, где мы сами писали операторы и операции на чистом <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>: это должно помочь лучше понять ту математику, которая лежит “под капотом” у квантовых вычислений. Дальше мы будем пользоваться только <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> и в отдельной лекции расскажем, как работать с этим фреймворком.</p>
 <p>Итого:</p>
@@ -1842,8 +1852,8 @@ True
 <li><p>знаем, что такое измерение и наблюдаемые.</p></li>
 </ul>
 <p>Теперь мы готовы к тому, чтобы знакомиться с квантовыми вариационными схемами и переходить непосредственно к построению моделей квантового машинного обучения.</p>
-</div>
-<div class="section" id="id18">
+</section>
+<section id="id18">
 <h2>Задачи<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Как связаны ось и угол вращения на сфере Блоха с собственными значениями и собственными векторами матрицы однокубитного гейта? Для этого найдите собственные векторы и собственные значения гейта <span class="math notranslate nohighlight">\(R^\vec{n}\left(\alpha\right)\)</span>.</p></li>
@@ -1861,8 +1871,8 @@ True
 \end{bmatrix}.
 \end{split}\]</div>
 <p>Попробуйте составить последовательность гейтов, реализующую <span class="math notranslate nohighlight">\(\mathrm{SWAP}\)</span>, из гейтов <span class="math notranslate nohighlight">\(\mathrm{iSWAP}\)</span>, <span class="math notranslate nohighlight">\(\hat{CZ}\)</span> и <span class="math notranslate nohighlight">\(\hat{RZ}(\phi)\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

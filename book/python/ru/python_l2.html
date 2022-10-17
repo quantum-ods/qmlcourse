@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Установка необходимых инструментов и настройка среды &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1028,7 +1032,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-l2">
+  <section class="tex2jax_ignore mathjax_ignore" id="python-l2">
 <span id="id1"></span><h1>Установка необходимых инструментов и настройка среды<a class="headerlink" href="#python-l2" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1036,7 +1040,7 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://github.com/dkorzhov">Дмитрий Коржов</a></p></li>
 <li><p><a class="reference external" href="https://github.com/vtrokhymenko">Трохименко Виктор</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Эта лекция расскажет:</p>
 <ul class="simple">
@@ -1045,8 +1049,8 @@ title="Print to PDF"
 <li><p>как скачать сотню библиотек за раз;</p></li>
 <li><p>как проверить, корректно ли прошла установка.</p></li>
 </ul>
-</div>
-<div class="section" id="git">
+</section>
+<section id="git">
 <h2>Git и получение файлов курса<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://github.com/git-guides"><code class="docutils literal notranslate"><span class="pre">Git</span></code></a> – это система контроля версий. Этот инструмент часто используется для совместной разработки программ (и не только!) группой людей, каждый из которых работает над своей отдельной проблемой. Так, например, этот курс был создан с помощью <code class="docutils literal notranslate"><span class="pre">Git</span></code>, и каждый автор работал с отдельной копией, создавая набор лекций. А затем все копии собрались в одну книгу, которую вы и читаете. Для вашего удобства, а также возможности получить (“собрать” на сленге) свой экземпляр книги (если он вам зачем-то нужен – ведь все доступно онлайн в полном объеме). К сожалению, знакомство с этим инструментов не входит в программу настоящего курса, и единственное, что вам потребуется – это скачать файлы себе для дальнейшей работы. Хороший туториал на английском можно найти по <a class="reference external" href="https://git-scm.com/docs/gittutorial">этой ссылке</a>.</p>
 <p>Однако сейчас ограничимся лишь простой операцией: для этого надо зайти на страницу с репозиторием (папкой) <a class="reference external" href="https://github.com/quantum-ods/qmlcourse">по ссылке на github</a> (одну из разновидностей <code class="docutils literal notranslate"><span class="pre">Git</span></code>). Затем найдите зеленую кнопку с текстом <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span> <span class="pre">Code</span></code> и кликните по ней. В открывшемся окне убедитесь, что выбрана вкладка <code class="docutils literal notranslate"><span class="pre">HTTPS</span></code>, а не <code class="docutils literal notranslate"><span class="pre">SSH</span></code> или <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">CLI</span></code>. В самом низу окошка будет кнопка <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">ZIP</span></code> – она нам и нужна, жмите!</p>
@@ -1058,14 +1062,16 @@ title="Print to PDF"
 </div>
 <p>Вообще <code class="docutils literal notranslate"><span class="pre">Git</span></code> – очень полезный инструмент, и рекомендуется уделить время прочтению инструкций по его установке и настройке, это пригодится в будущем.</p>
 </div>
-<div class="figure align-default" id="id6">
+<figure class="align-default" id="id6">
 <img alt="../../../_images/git_download.png" src="../../../_images/git_download.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">:name: git_download
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">:name: git_download
 :width: 400px</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 <div class="legend">
 <p>Не пугайтесь темного цвета – это просто цветовая схема в браузере. На светлой странице все, что написано выше, применимо в полном объеме.</p>
 </div>
-</div>
+</figcaption>
+</figure>
 <p>Затем скачанный файл необходимо разархивировать любым удобным способом. В некоторых версиях ОС можно выбрать соответствующий пункт в выпадающем меню при клике на скачанный архив правой кнопкой мыши, на <code class="docutils literal notranslate"><span class="pre">MacOS</span></code> достаточно просто кликнуть дважды, а на <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code> нужно поставить программу, если ее еще нет, а затем разархивировать по любому удобному пути:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">unzip</span>
 </pre></div>
@@ -1074,11 +1080,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Теперь в папке qmlcourse-master вы увидите содержимое курса, над которым трудилась наша команда: это и картинки, и текст, и задания.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Что делать дальше<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>В этом блоке мы сделаем две вещи: соберем книгу и установим все необходимое для прохождения курса, от <code class="docutils literal notranslate"><span class="pre">Python</span></code> и его библиотек до специальных программ, которые занимаются отслеживанием этих самых библиотек. Буквально после пары строк появится сотня библиотек, которыми мы хвастались в первой лекции – они позволят как проводить математические расчеты, так и писать программы для квантовых компьютеров. Итак, дальнейшие шаги зависят от операционной системы.</p>
-<div class="section" id="macos">
+<section id="macos">
 <h3>Инструкция для MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">#</a></h3>
 <p>Для дальнейшей работы необходимо установить менеджер пакетов для MacOS - <code class="docutils literal notranslate"><span class="pre">brew</span></code>. <a class="reference external" href="https://brew.sh/index_ru">По ссылке</a> вы найдете инструкцию и более детальное описание, чем является <code class="docutils literal notranslate"><span class="pre">brew</span></code>. Необходимо выполнить в терминале (который доступен как приложение на экране со всеми приложениями – просто начните вводить <code class="docutils literal notranslate"><span class="pre">term</span></code> и поиск подскажет верный вариант) команду:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
@@ -1097,8 +1103,8 @@ title="Print to PDF"
 make build-linux-macos
 </pre></div>
 </div>
-</div>
-<div class="section" id="ubuntu">
+</section>
+<section id="ubuntu">
 <h3>Инструкция для Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">#</a></h3>
 <p>Эта часть подойдет также для всех “родственных” систем: Debian, Linux Mint, Deepin Linux (который можно встретить на ноутбуках компании Huawei, к примеру) и многие другие системы, использующие менеджер пакетов <code class="docutils literal notranslate"><span class="pre">apt</span></code>.
 Для начала необходимо установить дополнительные программы. Выполните код ниже в терминале:</p>
@@ -1124,14 +1130,14 @@ make build-linux-macos
 <p class="admonition-title">Hint</p>
 <p>Первая команда установит <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <a class="reference external" href="https://python-poetry.org"><code class="docutils literal notranslate"><span class="pre">poetry</span></code></a> - это еще один менеджер, который отвечает за управление библиотеками <code class="docutils literal notranslate"><span class="pre">Python</span></code> и их версиями, а также сами библиотеки, необходимые для прохождения курса; вторая – соберет <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter book</a>, то что по ссылке <a class="reference external" href="https://quantum-ods.github.io/qmlcourse/">https://quantum-ods.github.io/qmlcourse/</a> (так что можете не выполнять если не хотите, трава и так будет расти)</p>
 </div>
-</div>
-<div class="section" id="colab">
+</section>
+<section id="colab">
 <h3>Colab<a class="headerlink" href="#colab" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://colab.research.google.com">Collaboratory</a> или Colab от Google Research – размещенный Jupyter – который используется для написания и запуска преимущественно Python из браузера, то есть вычисления происходят целиком и полностью в облаке, требуется лишь наличие стабильного интернета. Также имеются бесплатные GPU и TPU, но c ограничениями как и сами аппаратные ресурсы: не сможете создавать проекты, требующие большого объема вычислений. Также можно делиться созданными блокнотами (Jupyter Notebooks) по необходимости.</p>
 <p>Более детально советуем ознакомиться с <a class="reference external" href="https://isolution.pro/ru/t/google-colab/google-colab-quick-guide/google-colab-kratkoe-rukovodstvo">Google Colab – Краткое руководство</a>.</p>
-</div>
-</div>
-<div class="section" id="id4">
+</section>
+</section>
+<section id="id4">
 <h2>Проверка корректности установки<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Чтобы убедиться в том, что все отработало штатно, запустим очень мощный инструмент для работы в машинном обучении – <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code>. С ним вы познакомитесь ближе в следующей лекции, а пока введите в терминале команду</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry run jupyter notebook
@@ -1149,16 +1155,20 @@ make build-linux-macos
 <p>Для того, чтобы запустить что-либо в текущем окружении, вам нужно начинать писать команду с <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span></code> (как в примере выше), ибо все установленные библиотеки (которые в свою очередь устанавливаются как <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">&lt;name_lib&gt;</span></code>) не будут подгружаться.</p>
 </div>
 <p>В терминале должна появиться надпись о том, что запущен сервер, а также будет предоставлено две или три ссылки.</p>
-<div class="figure align-default" id="jupyter-console">
+<figure class="align-default" id="jupyter-console">
 <a class="reference internal image-reference" href="../../../_images/jupyter_console.png"><img alt="../../../_images/jupyter_console.png" src="../../../_images/jupyter_console.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Примерно так будет выглядеть терминал со ссылками.</span><a class="headerlink" href="#jupyter-console" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Примерно так будет выглядеть терминал со ссылками.</span><a class="headerlink" href="#jupyter-console" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Перейдите по одной из ссылок, в которых есть слово <code class="docutils literal notranslate"><span class="pre">token</span></code> – они начинаются с <code class="docutils literal notranslate"><span class="pre">http://localhost</span></code> или <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1</span></code>. В вашем браузере откроется страница с обзором папки, из которой был запущен <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>. Если в дальнейшем хотите хранить все свои результаты в другой директории, то перед запуском команды с помощью уже указанной инструкции в терминале <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;путь/до/директории&gt;</span></code> перейдите к ней.</p>
 <p>Для создания нового файла – блокнота, как его еще называют (почему? узнаете в следующей лекции) – кликните по кнопке <code class="docutils literal notranslate"><span class="pre">new</span></code> в правом верхнем углу, а затем – по <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> (возможно будет какая-нить приставка, это штатно).</p>
-<div class="figure align-default" id="jupyter-create">
+<figure class="align-default" id="jupyter-create">
 <a class="reference internal image-reference" href="../../../_images/jupyter_create.png"><img alt="../../../_images/jupyter_create.png" src="../../../_images/jupyter_create.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Таким образом можно создать новый файл с кодом.</span><a class="headerlink" href="#jupyter-create" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Таким образом можно создать новый файл с кодом.</span><a class="headerlink" href="#jupyter-create" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Для завершения проверки скопируйте код ниже в тетрадку в браузере, а затем нажмите <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">Enter</span></code> или <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">+</span> <span class="pre">Enter</span></code> (это заставит код выполниться, подробнее дальше в курсе). Если увидите график - то все в полном порядке!</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1181,16 +1191,16 @@ make build-linux-macos
 </pre></div>
 </div>
 <p>Не переживайте, этот код не нужно разбирать сейчас – мы просто убеждаемся, что все работает согласно задумке. Если что-то не так, пересмотрите все ли сделали согласно инструкции; если да и не воспроизводится, то задавайте вопрос в <a class="reference external" href="https://opendatascience.slack.com/archives/CEH3VJCRJ">канале курса</a></p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Что мы узнали в лекции<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>что такое <code class="docutils literal notranslate"><span class="pre">Git</span></code> и как скачать проект на локальный компьютер;</p></li>
 <li><p>как становить необходимые библиотеки, <code class="docutils literal notranslate"><span class="pre">Python</span></code> и прочие прелести;</p></li>
 <li><p>как запустить <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> для набора кода;</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

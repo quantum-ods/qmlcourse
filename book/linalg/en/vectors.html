@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Vectors &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -969,7 +973,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vectors">
+  <section class="tex2jax_ignore mathjax_ignore" id="vectors">
 <span id="vectors-en"></span><h1>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">#</a></h1>
 <p>Author(s):</p>
 <ul class="simple">
@@ -981,7 +985,7 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://github.com/Randl">Zheltonozhskii Evgenii</a></p></li>
 <li><p><a class="reference external" href="https://github.com/vtrokhymenko">Trohimenko Viktor</a></p></li>
 </ul>
-<div class="section" id="definition">
+<section id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h2>
 <p>The term <code class="docutils literal notranslate"><span class="pre">vector</span></code> has several interpretations: mathematical, geometric, physical, etc. The exact meaning of the term depends on the context.</p>
 <p>Formally, a vector is defined as an element of vector space – a set with <strong>addition</strong> and <strong>multiplication of a vector by a number (scalar)</strong> operations, which satisfy <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_space">8 axioms</a>.</p>
@@ -994,8 +998,8 @@ title="Print to PDF"
 \[\begin{split}
     \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + ... + a_n \mathbf{e}_n = \begin{pmatrix} a_1 \ a_2 \\ ... \ a_n \end{pmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="vector-operations">
+</section>
+<section id="vector-operations">
 <h2>Vector operations<a class="headerlink" href="#vector-operations" title="Permalink to this headline">#</a></h2>
 <p>As stated earlier, there are two basic operations on vectors in the formal definition:</p>
 <ul class="simple">
@@ -1014,16 +1018,16 @@ title="Print to PDF"
 \end{split}\]</div>
 <p>The operation of multiplying a vector by a number can be interpreted geometrically as a contraction/extension of a vector.</p>
 <p>Using these two operations, we can define <strong>linear combinations of vectors</strong>: <span class="math notranslate nohighlight">\(\alpha_1 \mathbf{a}_1 + \alpha_2 \mathbf{a}_2 + ... + \alpha_n \mathbf{a}_n ,\)</span> where <span class="math notranslate nohighlight">\(\mathbf{a}_1, \mathbf{a}_2, ..., \mathbf{a}_n\)</span> are vectors and <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2, ..., \alpha_n\)</span> are numbers.</p>
-</div>
-<div class="section" id="the-norm-length-of-a-vector">
+</section>
+<section id="the-norm-length-of-a-vector">
 <h2>The norm (length) of a vector<a class="headerlink" href="#the-norm-length-of-a-vector" title="Permalink to this headline">#</a></h2>
 <p>In linear algebra, the term <strong>norm</strong> is used to generalize the notion of vector length. It can be said that the notions of length and norm are equivalent.</p>
 <p>Formally the norm is defined as a functional in the vector space satisfying <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_(mathematics)">3 axioms</a>. Norm is mapping elements of this space (vectors) to the set of non-negative real numbers.</p>
 <p>There are many functionals satisfying this definition of norm, but we will consider the most commonly used one – <strong>Euclidean norm</strong>.</p>
 <p>For simplicity, let us consider a vector in the plane. Geometrically, it is a directional segment. The directionality of a vector has no effect on its length, so we can work with it as a segment in the plane and calculate its length using school formulas.
 Note that the vector coordinates correspond to the numbers multiplying coordinate axis orthogonal vectors, so the vector length formula is: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}\)</span>. Accordingly, in general, the formula is  <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}\)</span>.</p>
-</div>
-<div class="section" id="scalar-product">
+</section>
+<section id="scalar-product">
 <h2>Scalar product<a class="headerlink" href="#scalar-product" title="Permalink to this headline">#</a></h2>
 <p>One of the most common operations on two vectors is the so-called <strong>scalar product</strong>, the result of which is a number (scalar) – hence the name of the operation.</p>
 <p><strong>Note</strong>: In addition to scalar product there is also <a class="reference external" href="https://en.wikipedia.org/wiki/Cross_product">vector product or cross product</a> over a pair of vectors, the result of which is a vector. There is also <a class="reference external" href="https://en.wikipedia.org/wiki/Triple_product">triple product</a> over a triplet of vectors, the result of which is a number. These operations will not be covered in this course.</p>
@@ -1039,8 +1043,8 @@ Note that the vector coordinates correspond to the numbers multiplying coordinat
 \]</div>
 <p>Using this formula we can arrive at one of the main properties of scalar product, which is that <strong>two vectors are perpendicular if and only if their scalar product is 0</strong>: <span class="math notranslate nohighlight">\(\mathbf{a} \perp \mathbf{b} \leftrightarrow \cos{\theta} = 0 \leftrightarrow \mathbf{a} \cdot \mathbf{b} = 0\)</span></p>
 <p>The scalar product can be used to calculate the vector norm as follows: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{\mathbf{a} \cdot \mathbf{a}}\)</span></p>
-</div>
-<div class="section" id="linear-independence">
+</section>
+<section id="linear-independence">
 <h2>Linear independence<a class="headerlink" href="#linear-independence" title="Permalink to this headline">#</a></h2>
 <p>One of the fundamental concepts of linear algebra is <strong>linear dependence/independence</strong>.</p>
 <p>To define this concept, consider a set of several vectors. A set of vectors is <strong>linearly dependent</strong> if there exists nontrivial linear combination of vectors of this set (at least one element of this combination is not 0) equal to a zero vector (a vector consisting only of 0):</p>
@@ -1068,8 +1072,8 @@ Note that the vector coordinates correspond to the numbers multiplying coordinat
 A set of vectors is linearly dependent if and only if one of the elements of that set can be expressed through the remaining elements.</p>
 <p><strong>Note</strong>: If vectors represent some characteristics of objects, then linear dependence can be interpreted as data redundancy.</p>
 <p>The notion of linear independence introduces the concept of <strong>dimensionality</strong> of a vector space – the maximum number of linearly independent vectors in it.</p>
-</div>
-<div class="section" id="basis">
+</section>
+<section id="basis">
 <h2>Basis<a class="headerlink" href="#basis" title="Permalink to this headline">#</a></h2>
 <p>In the formal definition of a vector there are no quantitative interpretations of it, just two operations on vectors and 8 axioms.</p>
 <p>So where do quantitative measurements come from? To make this clear, we need to introduce the concept of <strong>basis</strong>.</p>
@@ -1101,8 +1105,8 @@ In this example, we decompose the arbitrary vector <span class="math notranslate
 <p>Linear algebra has an answer to this:</p>
 <p><strong>Any <span class="math notranslate nohighlight">\(n\)</span> linearly independent vectors of <span class="math notranslate nohighlight">\(n\)</span>-dimensional vector space form the basis of that space.</strong></p>
 <p>Exactly due to the linear dependence, the vectors <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix}\)</span>, <span class="math notranslate nohighlight">\(\begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span> can’t be the basis of a two-dimensional space.</p>
-</div>
-<div class="section" id="what-did-we-learn">
+</section>
+<section id="what-did-we-learn">
 <h2>What did we learn?<a class="headerlink" href="#what-did-we-learn" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The definition of a vector;</p></li>
@@ -1112,8 +1116,8 @@ In this example, we decompose the arbitrary vector <span class="math notranslate
 <li><p>The linear independence;</p></li>
 <li><p>The basis.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

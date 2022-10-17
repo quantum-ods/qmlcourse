@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Quantum Approximate Optimization Algorithm &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -974,7 +978,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="quantum-approximate-optimization-algorithm">
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-approximate-optimization-algorithm">
 <span id="qaoa"></span><h1>Quantum Approximate Optimization Algorithm<a class="headerlink" href="#quantum-approximate-optimization-algorithm" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -982,10 +986,10 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 <li><p><a class="reference external" href="https://github.com/meandmytram">Березутский Александр</a></p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Введение<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>В лекции рассматривается еще один алгоритм для приближенного решения <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc"><span class="math notranslate nohighlight">\(NP\)</span>-задач комбинаторный оптимизации</span></a>, который называется <strong>Q</strong>auntum <strong>A</strong>pproximate <strong>O</strong>ptimization <strong>A</strong>lgorithm (далее <strong>QAOA</strong>) <span id="id2">[<a class="reference internal" href="../../bibliography.html#id31" title="Edward Farhi, Jeffrey Goldstone, and Sam Gutmann. A quantum approximate optimization algorithm. 2014. arXiv:1411.4028.">FGG14</a>]</span>.</p>
-<div class="section" id="id3">
+<section id="id3">
 <h3>Квантовый отжиг (повторение)<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>В прошлых лекция активно <a class="reference internal" href="../../dwave/ru/dwave.html"><span class="doc std std-doc">рассказывалось</span></a> о квантовых <em>аннилерах</em> (<em>отжигателях</em>, англ. <em>annealers</em>) – аналоговых устройствах, реализующих поиск основного состояния системы. Выпишем еще раз <a class="reference external" href="../../dwave/ru/dwave.html#id4">гамильтониан</a>, который там используется:</p>
 <div class="math notranslate nohighlight">
@@ -993,22 +997,26 @@ title="Print to PDF"
 \mathcal{H}_{Ising}=\underbrace{{-A(t)}\left(\sum_{i} \hat{\sigma}_{x}^{(i)}\right)}_{\text {Initial Hamiltonian }}+\underbrace{{B(t)}\left(\sum_{i} h_{i} \hat{\sigma}_{z}^{(i)}+\sum_{i,j} J_{i, j} \hat{\sigma}_{z}^{(i)} \hat{\sigma}_{z}^{(j)}\right)}_{\text {Final Hamiltonian }},
 \]</div>
 <p>В процессе квантового отжига плавно меняются параметры <span class="math notranslate nohighlight">\(A\)</span> и <span class="math notranslate nohighlight">\(B\)</span>:</p>
-<div class="figure align-default" id="fig-1">
+<figure class="align-default" id="fig-1">
 <a class="reference internal image-reference" href="../../../_images/fig_31.png"><img alt="../../../_images/fig_31.png" src="../../../_images/fig_31.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 146 </span><span class="caption-text">Пример расписания отжига: функций <span class="math notranslate nohighlight">\(A(t)\)</span>, <span class="math notranslate nohighlight">\(B(t)\)</span>.</span><a class="headerlink" href="#fig-1" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 146 </span><span class="caption-text">Пример расписания отжига: функций <span class="math notranslate nohighlight">\(A(t)\)</span>, <span class="math notranslate nohighlight">\(B(t)\)</span>.</span><a class="headerlink" href="#fig-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>В той же <a class="reference internal" href="../../dwave/ru/dwave.html"><span class="doc std std-doc">лекции</span></a> о <code class="docutils literal notranslate"><span class="pre">D-Wave</span></code> указывалась главная проблема – риск перехода системы из основного состояния в возбужденное при недостаточно медленном изменении параметров <span class="math notranslate nohighlight">\(A\)</span> и <span class="math notranslate nohighlight">\(B\)</span>:</p>
-<div class="figure align-default" id="fig-2">
+<figure class="align-default" id="fig-2">
 <a class="reference internal image-reference" href="../../../_images/fig_11.png"><img alt="../../../_images/fig_11.png" src="../../../_images/fig_11.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 147 </span><span class="caption-text">Типичная зависимость от времени энергетических уровней гамильтонианов, используемых в квантовом отжиге</span><a class="headerlink" href="#fig-2" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 147 </span><span class="caption-text">Типичная зависимость от времени энергетических уровней гамильтонианов, используемых в квантовом отжиге</span><a class="headerlink" href="#fig-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Таким образом, большой проблемой для нас является выбор правильного “расписания” отжига, то есть зависимостей <span class="math notranslate nohighlight">\(A(t)\)</span> и <span class="math notranslate nohighlight">\(B(t)\)</span>.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h3>От железа к симуляции<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>У отжига “в железе” есть существенная проблема – трудно правильным образом подбирать расписание отжига. Но есть и другая идея! Изначально квантовые компьютеры создавались для симуляции квантовой динамики. Воспользуемся техникой симуляции, которая называется <em>trotterization</em>.</p>
-</div>
-<div class="section" id="trotterization">
+</section>
+<section id="trotterization">
 <h3>Trotterization и симуляция аннилера<a class="headerlink" href="#trotterization" title="Permalink to this headline">#</a></h3>
 <p>В данном случае наша цель – получить выражение для финального состояния <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>, которое будет отвечать решению квантового отжигателя. Финальное состояние есть решение уравнения Шредингера:</p>
 <div class="math notranslate nohighlight">
@@ -1031,8 +1039,8 @@ title="Print to PDF"
 \[
 \ket{\Psi(t)} = e^{-i\gamma_1 \mathcal{H}_{initial}}e^{-i\beta_1\mathcal{H}_{cost}} ... e^{-i\gamma_N \mathcal{H}_{initial}}e^{-i\beta_N\mathcal{H}_{cost}} \ket{\Psi(0)}
 \]</div>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>Оптимизация расписания<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Теперь задача оптимизации расписания по своей сути сведена к следующей:</p>
 <div class="math notranslate nohighlight">
@@ -1041,9 +1049,9 @@ title="Print to PDF"
 &amp; \ket{\Psi_{final}} = e^{-i\gamma_1 \mathcal{H}_{initial}}e^{-i\beta_1\mathcal{H}_{cost}} ... e^{-i\gamma_N \mathcal{H}_{initial}}e^{-i\beta_N\mathcal{H}_{cost}}\ket{\Psi(0)}
 \end{split}\]</div>
 <p>А это уже хорошо знакомая задача оптимизации результата измерения состояния, заданного при помощи некоторой <a class="reference internal" href="../../vqc/ru/vqc.html"><span class="doc std std-doc"><strong>VQC</strong></span></a>, которая параметризирована набором действительных чисел <span class="math notranslate nohighlight">\(\gamma_1, ..., \gamma_N, \beta_1, ..., \beta_N\)</span>. И эта задача решается хорошо уже знакомыми <a class="reference internal" href="../../grads/ru/gradients.html"><span class="doc std std-doc">градиентными методами</span></a>.</p>
-</div>
-</div>
-<div class="section" id="id6">
+</section>
+</section>
+<section id="id6">
 <h2>Пример задачи оптимизации<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Рассмотрим задачу оптимизации <span class="math notranslate nohighlight">\(n\)</span>-разрядного набора данных, для которого нужно найти некоторый минимум (или максимум). Алгоритм задается двумя гамильтонианами <span class="math notranslate nohighlight">\(H_{p}\)</span> и <span class="math notranslate nohighlight">\(H_{M}\)</span>, а также <span class="math notranslate nohighlight">\(2p\)</span> параметрами: <span class="math notranslate nohighlight">\(\gamma_{1}, ..., \gamma_{p}\)</span> и <span class="math notranslate nohighlight">\(\beta_{1}, ..., \beta_{p}\)</span>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">QAOA</span></code> использует унитарный оператор <span class="math notranslate nohighlight">\(U(\beta,\gamma)\)</span>, принимающий на вход вещественные параметры <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, и описывается уже знакомым квантовым состоянием <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>. Цель поиска – найти те самые оптимальные <span class="math notranslate nohighlight">\(\beta_{\text{opt}}\)</span> и <span class="math notranslate nohighlight">\(\gamma_{\text{opt}}\)</span>.</p>
@@ -1067,10 +1075,12 @@ title="Print to PDF"
 \[
 H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 \]</div>
-<div class="figure align-default" id="hamiltonian-u-phase">
+<figure class="align-default" id="hamiltonian-u-phase">
 <a class="reference internal image-reference" href="../../../_images/hamiltonian_u_phase.png"><img alt="../../../_images/hamiltonian_u_phase.png" src="../../../_images/hamiltonian_u_phase.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 148 </span><span class="caption-text">Оператор <span class="math notranslate nohighlight">\(U_{\text{phase}}\)</span></span><a class="headerlink" href="#hamiltonian-u-phase" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 148 </span><span class="caption-text">Оператор <span class="math notranslate nohighlight">\(U_{\text{phase}}\)</span></span><a class="headerlink" href="#hamiltonian-u-phase" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p><span class="math notranslate nohighlight">\(U_{\text{mixed}}\)</span> в классическом случае использует матрицу <span class="math notranslate nohighlight">\(XNOT\)</span>.</p>
 <p>Операторы применяются к начальному состоянию <span class="math notranslate nohighlight">\(\ket{\Psi_{0}}\)</span> (путем поочередного применения гамильтонианов <span class="math notranslate nohighlight">\(H_{p}\)</span> и <span class="math notranslate nohighlight">\(H_{M}\)</span>) последовательно <span class="math notranslate nohighlight">\(р\)</span> раз (или, иначе говоря, используются <span class="math notranslate nohighlight">\(p\)</span> слоев), где продолжительность <span class="math notranslate nohighlight">\(j\)</span>-й итерации определяется параметрами <span class="math notranslate nohighlight">\(\gamma_{j}\)</span> и <span class="math notranslate nohighlight">\(\beta_{j}\)</span> соответственно</p>
 <div class="math notranslate nohighlight">
@@ -1078,10 +1088,12 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 \ket{\phi(\beta,\gamma)} = \underbrace{U_{\text{mixer}}(\beta) U_{\text{phase}}(\gamma) \ ... \ U_{\text{mixer}}(\beta) U_{\text{phase}}(\gamma)}_{\text {p times}}{\ket{\Psi_0}}
 \]</div>
 <p>Общая схема для <span class="math notranslate nohighlight">\(n\)</span> кубитов выглядит следующим образом</p>
-<div class="figure align-default" id="general-scheme-for-n-qubits">
+<figure class="align-default" id="general-scheme-for-n-qubits">
 <a class="reference internal image-reference" href="../../../_images/general_scheme_for_n_qubits.png"><img alt="../../../_images/general_scheme_for_n_qubits.png" src="../../../_images/general_scheme_for_n_qubits.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 149 </span><span class="caption-text">Общая схема для <span class="math notranslate nohighlight">\(n\)</span> кубитов</span><a class="headerlink" href="#general-scheme-for-n-qubits" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 149 </span><span class="caption-text">Общая схема для <span class="math notranslate nohighlight">\(n\)</span> кубитов</span><a class="headerlink" href="#general-scheme-for-n-qubits" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Итак, алгоритм состоит из следующих основных этапов:</p>
 <ol>
 <li><p>приготовление начального состояния <span class="math notranslate nohighlight">\(\ket{\Psi_{0}}\)</span> из <span class="math notranslate nohighlight">\(n\)</span> кубитов. Начальное состояние выбирается как равное состояние суперпозиции всех возможных решений</p>
@@ -1091,9 +1103,9 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
     \]</div>
 </li>
 <li><p>последующее применение к каждому кубиту матриц Адамара для осуществления суперпозиции всевозможных состояний</p>
-<div class="figure align-default" id="the-1t-step-alg">
+<figure class="align-default" id="the-1t-step-alg">
 <a class="reference internal image-reference" href="../../../_images/the_1t_step_alg.png"><img alt="../../../_images/the_1t_step_alg.png" src="../../../_images/the_1t_step_alg.png" style="width: 222px;" /></a>
-</div>
+</figure>
 </li>
 <li><p>применяем оператор вращения фазы</p>
 <div class="math notranslate nohighlight">
@@ -1105,9 +1117,9 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 \[
     H_p = (I_0 \otimes Z_1 \otimes I_2 \otimes Z_3)
     \]</div>
-<div class="figure align-default" id="the-2d-step-alg">
+<figure class="align-default" id="the-2d-step-alg">
 <a class="reference internal image-reference" href="../../../_images/the_2d_step_alg.png"><img alt="../../../_images/the_2d_step_alg.png" src="../../../_images/the_2d_step_alg.png" style="width: 222px;" /></a>
-</div>
+</figure>
 <p>Напоминаем, как выглядит данный оператор в матричном виде: <span class="math notranslate nohighlight">\(Z = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1\end{bmatrix}\)</span>.</p>
 </li>
 <li><p>применяем смешивающий оператор</p>
@@ -1120,9 +1132,9 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 \[
     U_{\text{mixer}} = (I \otimes I \otimes X \otimes Z)
     \]</div>
-<div class="figure align-default" id="the-3d-step-alg">
+<figure class="align-default" id="the-3d-step-alg">
 <a class="reference internal image-reference" href="../../../_images/the_3d_step_alg.png"><img alt="../../../_images/the_3d_step_alg.png" src="../../../_images/the_3d_step_alg.png" style="width: 222px;" /></a>
-</div>
+</figure>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     X = \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0\end{bmatrix}
@@ -1133,20 +1145,24 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 <p>Далее производится измерение финального состояния в <span class="math notranslate nohighlight">\(Z\)</span>-базисе и вычисление <span class="math notranslate nohighlight">\(\bra{\Psi(\beta,\gamma)}H_{phase}\ket{\Psi(\beta,\gamma)}\)</span>. Найденный минимум будет соответствовать оптимальным <span class="math notranslate nohighlight">\(\beta\)</span> и <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
 <p>Описанные выше шаги могут быть полностью повторены с обновлёнными наборами временных параметров в рамках классического цикла оптимизации (такого как градиентный спуск или другие подходы), используемого для оптимизации параметров алгоритма.</p>
 <p>Возвращается лучшее решение, найденное за всё время поиска.</p>
-</div>
-<div class="section" id="quantum-alternating-operator-ansatz">
+</section>
+<section id="quantum-alternating-operator-ansatz">
 <h2>Quantum Alternating Operator Ansatz<a class="headerlink" href="#quantum-alternating-operator-ansatz" title="Permalink to this headline">#</a></h2>
 <p>Применение “анзаца” в алгоритме квантовой приближенной оптимизации заключается в модернизации оператора смешивания <span class="math notranslate nohighlight">\(U_{mixer}\)</span> и предполагает использование <span class="math notranslate nohighlight">\(CNOT\)</span>, а не <span class="math notranslate nohighlight">\(X\)</span>.</p>
 <p>Анзац рассматривает более общие параметризированные унитарные трансформации, а не только соответствующие эволюции фиксированного локального гамильтониана во времени. Он позволяет более эффективно реализовывать операции смешивания, особенно в задачах оптимизации с жесткими ограничениями.</p>
 <p>На рисунках ниже представлена абстрактная визуализация “смешивания” и обозначение оператора:</p>
-<div class="figure align-default" id="ansatz-mixing">
+<figure class="align-default" id="ansatz-mixing">
 <a class="reference internal image-reference" href="../../../_images/ansatz_mixing.png"><img alt="../../../_images/ansatz_mixing.png" src="../../../_images/ansatz_mixing.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 150 </span><span class="caption-text">“Смешивание”</span><a class="headerlink" href="#ansatz-mixing" title="Permalink to this image">#</a></p>
-</div>
-<div class="figure align-default" id="ansatz-operator-designation">
+<figcaption>
+<p><span class="caption-number">Fig. 150 </span><span class="caption-text">“Смешивание”</span><a class="headerlink" href="#ansatz-mixing" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="ansatz-operator-designation">
 <a class="reference internal image-reference" href="../../../_images/ansatz_operator_designation.png"><img alt="../../../_images/ansatz_operator_designation.png" src="../../../_images/ansatz_operator_designation.png" style="width: 444px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 151 </span><span class="caption-text">Обозначение оператора</span><a class="headerlink" href="#ansatz-operator-designation" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 151 </span><span class="caption-text">Обозначение оператора</span><a class="headerlink" href="#ansatz-operator-designation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Классически семейство анзацев можно поделить на три основных типа:</p>
 <ul class="simple">
 <li><p>Hardware Efficient Ansatz (HEA) – запутывающий все кубиты;</p></li>
@@ -1154,15 +1170,15 @@ H_{\text{phase}} = Z \ or \ Y \ \text{axis rotation}
 <li><p>Tensor Product Ansatz (TEN) <span id="id9">[<a class="reference internal" href="../../bibliography.html#id41" title="William Huggins, Piyush Patil, Bradley Mitchell, K Birgitta Whaley, and E Miles Stoudenmire. Towards quantum machine learning with tensor networks. Quantum Science and Technology, 4(2):024001, Jan 2019. URL: https://arxiv.org/abs/1803.11537, doi:10.1088/2058-9565/aaea94.">HPM+19</a>]</span>.</p></li>
 </ul>
 <p>На рисунке ниже изображены упрощённые (без учета анзаца и фазовых гейтов) для понимания схемы описанных компоновок – по одному слою каждого типа:</p>
-<div class="figure align-default" id="ansatz-types">
+<figure class="align-default" id="ansatz-types">
 <a class="reference internal image-reference" href="../../../_images/ansats_types.png"><img alt="../../../_images/ansats_types.png" src="../../../_images/ansats_types.png" style="width: 444px;" /></a>
-</div>
+</figure>
 <p>Конечно, к компоновке смешанных гейтов можно подходить сколь угодно творчески, и пример общей схемы, реализующей QAOAz, представлен ниже:</p>
-<div class="figure align-default" id="ansatz-sample">
+<figure class="align-default" id="ansatz-sample">
 <a class="reference internal image-reference" href="../../../_images/ansatz_sample.png"><img alt="../../../_images/ansatz_sample.png" src="../../../_images/ansatz_sample.png" style="width: 444px;" /></a>
-</div>
-</div>
-</div>
+</figure>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

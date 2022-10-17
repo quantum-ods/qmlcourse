@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Сверточные вариационные квантовые схемы &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1066,13 +1070,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="qconv">
+  <section class="tex2jax_ignore mathjax_ignore" id="qconv">
 <span id="id1"></span><h1>Сверточные вариационные квантовые схемы<a class="headerlink" href="#qconv" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/belgraviton">Петров Вадим</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>На этой лекции мы рассмотрим аналог сверточных слоев нейронной сети и приведем пример их использования. Лекция расскажет:</p>
 <ul class="simple">
@@ -1080,18 +1084,20 @@ title="Print to PDF"
 <li><p>что такое сверточные вариационные квантовые схемы;</p></li>
 <li><p>как их можно использовать для задач машинного обучения на примере датасета MNIST.</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Сверточные нейронные сети<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Данный тип нейронных сетей нацелен на обработку изображений и представляет из себя последовательный набор <code class="docutils literal notranslate"><span class="pre">сверточных</span> <span class="pre">слоев</span></code>, чередующиеся с другими вспомогательными слоями, например, с функциями нелинейного преобразования (активациями). Пример работы <code class="docutils literal notranslate"><span class="pre">сверточного</span> <span class="pre">слоя</span></code> представлен на рисунке ниже.</p>
-<div class="figure align-default" id="d-convolution-animation">
+<figure class="align-default" id="d-convolution-animation">
 <img alt="../../../_images/2D_Convolution_Animation.gif" src="../../../_images/2D_Convolution_Animation.gif" />
-<p class="caption"><span class="caption-number">Fig. 113 </span><span class="caption-text">Классическая свертка</span><a class="headerlink" href="#d-convolution-animation" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 113 </span><span class="caption-text">Классическая свертка</span><a class="headerlink" href="#d-convolution-animation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Свое название <code class="docutils literal notranslate"><span class="pre">сверточный</span> <span class="pre">слой</span></code> получил из-за наличия операции свертки (конволюции), суть которой в том, что каждый фрагмент входного изображения (input) умножается на матрицу (ядро размера 3х3, kernel) свертки поэлементно, а результат суммируется и записывается в аналогичную позицию выходного изображения (output).</p>
 <p><code class="docutils literal notranslate"><span class="pre">Сверточные</span> <span class="pre">слои</span></code> являются ключевыми элементами алгоритмов по распознаванию и классификации изображений. Большинство успехов в области компьютерного зрения за последнее десятилетие связано именно с ними.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Квантовая свертка<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Активное развитие квантовых вычислений создает запрос на построение квантового аналога светки. Работа <a class="reference external" href="https://arxiv.org/abs/1904.04767">(Henderson M. et.al., 2019)</a>, описывающая подобный подход, предлагает следующую схему реализации на основе вариационных квантовых схем:</p>
 <ul class="simple">
@@ -1101,14 +1107,16 @@ title="Print to PDF"
 <li><p>проводится измерение квантовой системы для получения классических величин;</p></li>
 <li><p>выполняя данную процедуру для всех 2х2 областей на выходе получается многоканальное изображение (четырехканальное на примере ниже), которое будет использоваться в следующих слоях классической или квантовой нейронной сети.</p></li>
 </ul>
-<div class="figure align-default" id="qconv-net4">
+<figure class="align-default" id="qconv-net4">
 <a class="reference internal image-reference" href="../../../_images/qconv_net4.png"><img alt="../../../_images/qconv_net4.png" src="../../../_images/qconv_net4.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 114 </span><span class="caption-text">Квантовая свертка</span><a class="headerlink" href="#qconv-net4" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 114 </span><span class="caption-text">Квантовая свертка</span><a class="headerlink" href="#qconv-net4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Основное отличие по отношению к классической свертке состоит в том, что квантовая схема может генерировать очень сложные ядра, вычисления которых могут быть классически невоспроизводимыми. Указанные сложные ядра, а именно ядра в высокоразмерном пространстве Гильберта, могут дать преимущества квантовым сверткам по отношению к классическим.</p>
 <p>Пример реализации и работы такого блока квантовой свертки будет продемонстрирован ниже.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Подготовка модели и данных<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Пример кода реализации гибридной квантово-классической сети с квантовым сверточным слоем взят из <a class="reference external" href="https://pennylane.ai/qml/demos/tutorial_quanvolution.html">документации</a> библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> с небольшими изменениями.</p>
 <p>Сначала загружаем библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> для квантовых вычислений, <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> для обучения классификатора и <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> для отрисовки результатов.</p>
@@ -1174,7 +1182,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
- 3653632/11490434 [========&gt;.....................] - ETA: 0s
+ 2859008/11490434 [======&gt;.......................] - ETA: 0s
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+ 7766016/11490434 [===================&gt;..........] - ETA: 0s
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1187,14 +1199,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Случайная квантовая цепь<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>В качестве блока квантовой свертки используется <strong>случайная квантовая цепь</strong> (RandomLayers в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>). Блок реализуется путем случайного выбора для части кубитов операций вращения, а для части пар кубитов парных квантовых гейтов. На последнем этапе генерации блока осуществляется случайное перемешивание очередности применения операций.</p>
 <p>В нашем примере случайная квантовая цепь обрабатывает 4 кубита. Таким образом часть из 4 кубитов получит какие-либо операции вращения, а часть из 6 пар кубитов - гейты. Финальная очередность операций будет случайной.</p>
 <p>Следует заметить, что в нашем примере используется фиксированный (необучаемый) блок случайной квантовой цепи. Он будет использован как блок препроцессинга. В будущем, когда в библиотеке будет реализована возможность расчета градиентов и изменения параметров блока на их основании, указанный блок тоже можно будет обучать.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Реализация квантовой свертки<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Далее создаем устройство, симулирующее работу 4 кубитов. Оно состоит из трех частей:</p>
 <ul class="simple">
@@ -1258,8 +1270,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h2>Подготовка датасета<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Так как квантовый сверточный слой в нашем случае не обучается, то лучше провести предварительную обработку им всех используемых изображений из датасета. Подготовленные данные будут использоваться классической нейронной сетью для обучения модели классификатора.</p>
 <div class="cell docutils container">
@@ -1317,8 +1329,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>По обработанным данным (последние 4 ряда) видно уменьшение разрешения в 2 раза, а также то, что пространственная структура цифр сохраняется, что и должно наблюдаться для сверточных слоев</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h2>Гибридная квантово-классическая модель<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
 <p>Ниже опишем классическую часть нейронной сети, которая будет обучена для классификации 10 цифр. Будет использована очень простая модель, основанная на одном полносвязном слое и финальном применении функции softmax, которая выдает вероятности представленных 10 классов.</p>
 <p>Обучение будет осуществлено с помощью оптимизатора <code class="docutils literal notranslate"><span class="pre">Adam</span></code> по функции потерь, в качестве которой используется кросс-энтропия.</p>
@@ -1342,8 +1354,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h2>Тренировка моделей<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>Сначала обучим модель на данных, подготовленных с помощью квантовой цепи.</p>
 <div class="cell docutils container">
@@ -1379,8 +1391,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h2>Сравнение результатов<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Сравнение проведем на основе тестовой точности и значению функции потерь в зависимости от номера эпохи</p>
 <div class="cell docutils container">
@@ -1407,7 +1419,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4474/1050205299.py:1: MatplotlibDeprecationWarning: The seaborn styles shipped by Matplotlib are deprecated since 3.6, as they no longer correspond to the styles shipped by seaborn. However, they will remain available as &#39;seaborn-v0_8-&lt;style&gt;&#39;. Alternatively, directly use the seaborn API instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4094/1050205299.py:1: MatplotlibDeprecationWarning: The seaborn styles shipped by Matplotlib are deprecated since 3.6, as they no longer correspond to the styles shipped by seaborn. However, they will remain available as &#39;seaborn-v0_8-&lt;style&gt;&#39;. Alternatively, directly use the seaborn API instead.
   plt.style.use(&quot;seaborn&quot;)
 </pre></div>
 </div>
@@ -1415,15 +1427,15 @@ title="Print to PDF"
 </div>
 </div>
 <p>Из рисунков видно наличие сильного сходства результатов для двух моделей: гибридной и чисто классической. В наших малых экспериментах достигнута довольно низкая точность в 50% (классический аналог - 40%). Однако при увеличении числа используемых примеров точность должна быть существенно выше.</p>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h2>Замечания<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>в статье авторов подхода <a class="reference external" href="https://arxiv.org/abs/1904.04767">(Henderson M. et.al., 2019)</a> для гибридной и чисто классической сети с большим количеством слоев (см. схему сети) и большим объемом данных, достигнута ожидаемая высокая точность выше 95%;</p></li>
 <li><p>блоки квантовой свертки сейчас особо интересны, так как они ориентированы на использование малого количества кубитов, которое доступно в текущий период времени для устройств с промежуточным количеством кубитов (NISQ).</p></li>
 </ul>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>существует аналог сверточных нейронных сетей для квантовых вычислений;</p></li>
@@ -1431,8 +1443,8 @@ title="Print to PDF"
 <li><p>использование квантовой свертки позволяет достичь результатов схожих с классическими сетями;</p></li>
 <li><p>основное преимущество квантовой свертки по отношению к классической в том, что первая является более широкой операцией, которая не может быть описана классическим случаем.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

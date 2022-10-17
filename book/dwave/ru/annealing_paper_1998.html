@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Сравнение квантовой и классической имитации отжига &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1040,17 +1044,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="annealing-paper-1998">
+  <section class="tex2jax_ignore mathjax_ignore" id="annealing-paper-1998">
 <span id="id1"></span><h1>Сравнение квантовой и классической имитации отжига<a class="headerlink" href="#annealing-paper-1998" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/dmburd">Бурдейный Дмитрий</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции рассмотрим каноническую работу <strong>Quantum annealing in the transverse Ising model</strong>, опубликованную в 1998 году <span id="id3">[<a class="reference internal" href="../../bibliography.html#id45" title="Tadashi Kadowaki and Hidetoshi Nishimori. Quantum annealing in the transverse ising model. Phys. Rev. E, 58:5355–5363, Nov 1998. URL: https://link.aps.org/doi/10.1103/PhysRevE.58.5355, doi:10.1103/PhysRevE.58.5355.">KN98</a>]</span>. В ней двумя способами численно решается задача о нахождении основного состояния системы взаимодействующих спинов. Первый способ – обычная классическая имитация отжига, второй – имитация квантового отжига. Результаты применения этих подходов анализируются и сравниваются между собой.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Постановка задачи<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Итак, рассматривается одномерная система взаимодействующих спинов, которая описывается гамильтонианом Изинга (полностью аналогичным тому, который был представлен в <a class="reference internal" href="../../problems/ru/ising.html"><span class="doc std std-doc">базовой лекции</span></a> о модели Изинга):</p>
 <div class="math notranslate nohighlight">
@@ -1061,8 +1065,8 @@ title="Print to PDF"
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(J_{ij}\)</span> – величины обменного взаимодействия для пар спинов, <span class="math notranslate nohighlight">\(h\)</span> – внешнее поле (оно направлено вдоль оси <span class="math notranslate nohighlight">\(z\)</span> и потому называется продольным – <em>longitudinal</em>). Требуется найти основное состояние гамильтониана <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span>, т.е. его собственное состояние, соответствующее его минимальному собственному значению.</p>
 <p>Далее разберем численное решение этой задачи с помощью обычной классической имитации отжига (<em>simulated annealing</em>, SA для краткости) и с помощью квантовой имитации отжига (<em>quantum annealing</em> – QA).</p>
-</div>
-<div class="section" id="qa">
+</section>
+<section id="qa">
 <h2>Имитация квантового отжига (QA)<a class="headerlink" href="#qa" title="Permalink to this headline">#</a></h2>
 <p>Как в <a class="reference internal" href="dwave.html"><span class="doc std std-doc">предыдущей лекции</span></a> об аннилере D-Wave, добавляем к “целевому”  гамильтониану <span class="math notranslate nohighlight">\(\hat{H}_{0}\)</span> (<em>problem Hamiltonian</em>) слагаемое, которое называется <em>tunneling Hamiltonian</em>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-qa-hamilt">
@@ -1105,8 +1109,8 @@ P_{QA}(t) = {\left| \braket{g | \psi(t)} \right|}^2
 P_{QA}^{st}(\Gamma) = {\left| \braket{g | \psi_{\Gamma}} \right|}^2
 \]</div>
 <p>будет близка к <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span> (имеется в виду, что значение <span class="math notranslate nohighlight">\(\Gamma\)</span> соответствует значению <span class="math notranslate nohighlight">\(\Gamma(t)\)</span>). Отличие <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span> от <span class="math notranslate nohighlight">\(P_{QA}^{st}(\Gamma)\)</span> говорит о том, насколько близко состояния системы при динамическом процессе отжига следуют за соответствующими “квазистатическими” состояниями.</p>
-</div>
-<div class="section" id="sa">
+</section>
+<section id="sa">
 <h2>Классическая имитация отжига (SA)<a class="headerlink" href="#sa" title="Permalink to this headline">#</a></h2>
 <p>В <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">лекции</span></a>, посвященной комбинаторной оптимизации, процесс имитации отжига описывался таким образом: выбиралось случайное начальное состояние, затем оно в цикле подвергалось случайной модификации, и новое состояние принималось или отклонялось в соответствии с некоторым критерием. В статье <span id="id5">[<a class="reference internal" href="../../bibliography.html#id45" title="Tadashi Kadowaki and Hidetoshi Nishimori. Quantum annealing in the transverse ising model. Phys. Rev. E, 58:5355–5363, Nov 1998. URL: https://link.aps.org/doi/10.1103/PhysRevE.58.5355, doi:10.1103/PhysRevE.58.5355.">KN98</a>]</span> принят другой подход к SA. Рассматривается так называемое <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5_%D0%BA%D0%B8%D0%BD%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5"><em>основное кинетическое уравнение</em></a> (англ. <em>master equation</em>). Оно описывает классический SA процесс, соответствующий нестационарному уравнению Шредингера <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(63)</a>. В нашем случае это система обыкновенных дифференциальных уравнений для вероятностей нахождения системы в различных состояниях <span class="math notranslate nohighlight">\(i\)</span> в момент времени <span class="math notranslate nohighlight">\(t\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-sa-master-eqn">
@@ -1144,11 +1148,11 @@ T(t) = \Gamma(t)
 P_{SA}(t) = P_g(t)
 \]</div>
 <p>Аналогично квантовому случаю, введем величину <span class="math notranslate nohighlight">\(P_{SA}^{st}(T)\)</span>, которая в квазистатическом приближении близка к <span class="math notranslate nohighlight">\(P_{SA}(t)\)</span> (если величина температуры <span class="math notranslate nohighlight">\(T = T(t)\)</span>).</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Анализ и сравнение результатов<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>В статье обсуждаются численные результаты для <span class="math notranslate nohighlight">\(P_{SA}\)</span> и <span class="math notranslate nohighlight">\(P_{QA}\)</span> для различных конфигураций обменного взаимодействия и различных вариантов зависимости поперечного поля от времени. В всех случаях продольное внешнее поле выбрано постоянным: <span class="math notranslate nohighlight">\(h = 0.1\)</span>.</p>
-<div class="section" id="id7">
+<section id="id7">
 <h3>Ферромагнитная модель<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Здесь проводится численный эксперимент для ферромагнитной модели Изинга с <span class="math notranslate nohighlight">\(J_{i j} = \textrm{const}\)</span> для всех пар спинов. Зависимости <span class="math notranslate nohighlight">\(T\)</span> и <span class="math notranslate nohighlight">\(\Gamma\)</span> от времени выбираются такими:</p>
 <div class="math notranslate nohighlight">
@@ -1156,10 +1160,12 @@ P_{SA}(t) = P_g(t)
 \Gamma(t) = T(t) = \frac{3}{\ln(t + 1)}
 \]</div>
 <p>Результаты представлены на <a class="reference internal" href="#qa-sa-fig-1"><span class="std std-numref">Fig. 138</span></a>.</p>
-<div class="figure align-default" id="qa-sa-fig-1">
+<figure class="align-default" id="qa-sa-fig-1">
 <a class="reference internal image-reference" href="../../../_images/fig_1.png"><img alt="../../../_images/fig_1.png" src="../../../_images/fig_1.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 138 </span><span class="caption-text">Зависимости <span class="math notranslate nohighlight">\(P_{SA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{SA}^{st}(T(t))\)</span> и <span class="math notranslate nohighlight">\(P_{QA}^{st}(\Gamma(t))\)</span> для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \ln(t+1)\)</span>.</span><a class="headerlink" href="#qa-sa-fig-1" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 138 </span><span class="caption-text">Зависимости <span class="math notranslate nohighlight">\(P_{SA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{QA}(t)\)</span>, <span class="math notranslate nohighlight">\(P_{SA}^{st}(T(t))\)</span> и <span class="math notranslate nohighlight">\(P_{QA}^{st}(\Gamma(t))\)</span> для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \ln(t+1)\)</span>.</span><a class="headerlink" href="#qa-sa-fig-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Видно, что квазистатическое приближение работает очень хорошо, интересующие нас величины в динамическом процессе очень близки к вычисленным в равновесных условиях. Когда расписание отжига имеет вид <span class="math notranslate nohighlight">\(T(t) = c / \ln(t+1)\)</span>, гарантируется сходимость <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при подходящем выборе константы <span class="math notranslate nohighlight">\(c\)</span> (в статье <span id="id8">[<a class="reference internal" href="../../bibliography.html#id45" title="Tadashi Kadowaki and Hidetoshi Nishimori. Quantum annealing in the transverse ising model. Phys. Rev. E, 58:5355–5363, Nov 1998. URL: https://link.aps.org/doi/10.1103/PhysRevE.58.5355, doi:10.1103/PhysRevE.58.5355.">KN98</a>]</span> есть ссылка на соответствующую теорему). Выбор константы <span class="math notranslate nohighlight">\(c = 3\)</span> достаточно произволен, но высокая точность приближенного равенства <span class="math notranslate nohighlight">\(P_{SA}(t) \approx P_{SA}^{st}(T(t))\)</span> свидетельствует о том, что в рассматриваемом случае действительно <span class="math notranslate nohighlight">\(P_{SA} \to 1\)</span> при <span class="math notranslate nohighlight">\(t \to +\infty\)</span>.</p>
 <p>Для QA нет аналогичного точного утверждения о сходимости <span class="math notranslate nohighlight">\(P_{QA} \to 1\)</span>, но численные результаты для данного ферромагнитного случая при <span class="math notranslate nohighlight">\(\Gamma(t) = 3 / \ln(t+1)\)</span> позволяют предположить такую сходимость.</p>
 <p>Тот факт, что QA-кривая на <a class="reference internal" href="#qa-sa-fig-1"><span class="std std-numref">Fig. 138</span></a> всегда ниже SA-кривой, никакого значения не имеет, потому что в обеих задачах у нас все величины обезразмерены (<span class="math notranslate nohighlight">\(\hbar = 1\)</span> в <a class="reference internal" href="#equation-eqn-schrodinger-timedep">(63)</a> и единица времени <span class="math notranslate nohighlight">\(\tau = 1\)</span> в <a class="reference internal" href="#equation-eqn-sa-master-eqn">(64)</a>) и никакого согласования при обезразмеривании в двух задачах нет.</p>
@@ -1169,38 +1175,48 @@ P_{SA}(t) = P_g(t)
 \Gamma(t) = T(t) = \frac{3}{\sqrt{t}},
 \]</div>
 <p>то возникает качественное отличие QA и SA решений, см. <a class="reference internal" href="#qa-sa-fig-2"><span class="std std-numref">Fig. 139</span></a>.</p>
-<div class="figure align-default" id="qa-sa-fig-2">
+<figure class="align-default" id="qa-sa-fig-2">
 <a class="reference internal image-reference" href="../../../_images/fig_2.png"><img alt="../../../_images/fig_2.png" src="../../../_images/fig_2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 139 </span><span class="caption-text">Вид коэффициентов перекрытия для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-2" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 139 </span><span class="caption-text">Вид коэффициентов перекрытия для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Видно, что решение квантовомеханической задачи лучше сходится к основному состоянию, чем решение классической задачи. Более того, SA-решение “застревает” в каком-то локальном минимуме с не очень малой вероятностью. На <a class="reference internal" href="#qa-sa-fig-3"><span class="std std-numref">Fig. 140</span></a> виден темп приближения <span class="math notranslate nohighlight">\(P_{QA}\)</span> к 1 (на графике двойная логарифмическая шкала). Можно сделать вывод, что <span class="math notranslate nohighlight">\((1 - P_{QA}) \propto 1/t\)</span> в широком диапазоне <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<div class="figure align-default" id="qa-sa-fig-3">
+<figure class="align-default" id="qa-sa-fig-3">
 <a class="reference internal image-reference" href="../../../_images/fig_3.png"><img alt="../../../_images/fig_3.png" src="../../../_images/fig_3.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 140 </span><span class="caption-text"><span class="math notranslate nohighlight">\((1 - P_{QA}(t))\)</span> для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-3" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 140 </span><span class="caption-text"><span class="math notranslate nohighlight">\((1 - P_{QA}(t))\)</span> для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Если еще быстрее уменьшать поперечное поле и температуру,</p>
 <div class="math notranslate nohighlight">
 \[
 \Gamma(t) = T(t) = \frac{3}{t},
 \]</div>
 <p>то оба решения “застревают” в неосновных состояниях, как видно из <a class="reference internal" href="#qa-sa-fig-4"><span class="std std-numref">Fig. 141</span></a>.</p>
-<div class="figure align-default" id="qa-sa-fig-4">
+<figure class="align-default" id="qa-sa-fig-4">
 <a class="reference internal image-reference" href="../../../_images/fig_4.png"><img alt="../../../_images/fig_4.png" src="../../../_images/fig_4.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 141 </span><span class="caption-text">Вид коэффициентов перекрытия для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / t\)</span>.</span><a class="headerlink" href="#qa-sa-fig-4" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id9">
+<figcaption>
+<p><span class="caption-number">Fig. 141 </span><span class="caption-text">Вид коэффициентов перекрытия для ферромагнитной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / t\)</span>.</span><a class="headerlink" href="#qa-sa-fig-4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id9">
 <h3>Фрустрированная модель<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Здесь анализируется так называемая фрустрированная (<em>frustrated</em>) система, она изображена на <a class="reference internal" href="#qa-sa-fig-5"><span class="std std-numref">Fig. 142</span></a>.</p>
-<div class="figure align-default" id="qa-sa-fig-5">
+<figure class="align-default" id="qa-sa-fig-5">
 <a class="reference internal image-reference" href="../../../_images/fig_5.png"><img alt="../../../_images/fig_5.png" src="../../../_images/fig_5.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 142 </span><span class="caption-text">Фрустрированная система спинов.</span><a class="headerlink" href="#qa-sa-fig-5" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 142 </span><span class="caption-text">Фрустрированная система спинов.</span><a class="headerlink" href="#qa-sa-fig-5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Сплошные линии обозначают ферромагнитное взаимодействие между спинами, пунктирная линия – антиферромагнитное взаимодействие (сила которого по абсолютной величине равна силе ферромагнитного взаимодействия). Если в SA-задаче температура очень велика, то спины 4 и 5 меняют свою ориентацию с очень высокой частотой, так что взаимодействие спинов 3 и 6 посредством спинов 4 и 5 пренебрежимо мало. В этом случае прямое антиферромагнитное взаимодействие между спинами 3 и 6 оказывается доминирующим, поэтому наблюдается отрицательная корреляция между ориентациями спинов 3 и 6 (см. <a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 143</span></a>).</p>
-<div class="figure align-default" id="qa-sa-fig-6">
+<figure class="align-default" id="qa-sa-fig-6">
 <a class="reference internal image-reference" href="../../../_images/fig_6.png"><img alt="../../../_images/fig_6.png" src="../../../_images/fig_6.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 143 </span><span class="caption-text">Величина корреляции спинов 3 и 6. Индекс <code class="docutils literal notranslate"><span class="pre">c</span></code> означает классическое решение (SA), индекс <code class="docutils literal notranslate"><span class="pre">q</span></code> означает квантовомеханическое решение (QA).</span><a class="headerlink" href="#qa-sa-fig-6" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 143 </span><span class="caption-text">Величина корреляции спинов 3 и 6. Индекс <code class="docutils literal notranslate"><span class="pre">c</span></code> означает классическое решение (SA), индекс <code class="docutils literal notranslate"><span class="pre">q</span></code> означает квантовомеханическое решение (QA).</span><a class="headerlink" href="#qa-sa-fig-6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>С другой стороны, при низкой температуре спины 4 и 5 стремятся принять определенную устойчивую ориентацию. В этом случае эффективное (непрямое) ферромагнитное взаимодействие между спинами 3 и 6 посредством спинов 4 и 5 примерно вдвое сильнее, чем прямое антиферромагнитное взаимодействие. Эти рассуждения подтверждаются положительной величиной корреляции <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_c\)</span> при низких температурах (<a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 143</span></a>). Значит, спины 3 и 6 должны поменять взаимную ориентацию при некоторой промежуточной температуре.</p>
 <p>Если поперечное поле в QA-задаче играет роль, аналогичную роли температуры в SA-задаче, то следует ожидать схожего поведения величины корреляции <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_q\)</span> при изменении <span class="math notranslate nohighlight">\(\Gamma\)</span>. Здесь наблюдаемая <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_q\)</span> вычисляется с использованием основного состояния гамильтониана <a class="reference internal" href="#equation-eqn-qa-hamilt">(62)</a> при заданной <span class="math notranslate nohighlight">\(\Gamma\)</span>. Так и есть (см. пунктирную кривую на <a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 143</span></a>).</p>
 <p>Если использовать расписание отжига</p>
@@ -1209,23 +1225,27 @@ P_{SA}(t) = P_g(t)
 \Gamma(t) = T(t) = \frac{3}{\sqrt{t}},
 \]</div>
 <p>то получаются результаты, изображенные на <a class="reference internal" href="#qa-sa-fig-7"><span class="std std-numref">Fig. 144</span></a>.</p>
-<div class="figure align-default" id="qa-sa-fig-7">
+<figure class="align-default" id="qa-sa-fig-7">
 <a class="reference internal image-reference" href="../../../_images/fig_7.png"><img alt="../../../_images/fig_7.png" src="../../../_images/fig_7.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 144 </span><span class="caption-text">Вид коэффициентов перекрытия для фрустрированной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-7" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 144 </span><span class="caption-text">Вид коэффициентов перекрытия для фрустрированной модели при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Обезразмеренное время <span class="math notranslate nohighlight">\(\tau = t T_c^2\)</span> для SA-задачи и <span class="math notranslate nohighlight">\(\tau = t \Gamma_c^2\)</span> для QA-задачи. Здесь <span class="math notranslate nohighlight">\(T_c\)</span> и <span class="math notranslate nohighlight">\(\Gamma_c\)</span> – критические величины, при которых <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_c\)</span> и <span class="math notranslate nohighlight">\(\braket{\sigma_3^z \sigma_6^z}_q\)</span> переходят через ноль на графике <a class="reference internal" href="#qa-sa-fig-6"><span class="std std-numref">Fig. 143</span></a>. Видно, что квантовый отжиг лучше подходит для поиска основного состояния в такой системе.</p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>Модель со случайными взаимодействиями<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Последний рассмотренный пример – это модель спинового стекла, предложенная Шеррингтоном и Киркпатриком <span id="id11">[<a class="reference internal" href="../../bibliography.html#id62" title="David Sherrington and Scott Kirkpatrick. Solvable model of a spin-glass. Phys. Rev. Lett., 35:1792–1796, Dec 1975. URL: https://link.aps.org/doi/10.1103/PhysRevLett.35.1792, doi:10.1103/PhysRevLett.35.1792.">SK75</a>]</span>. Для всех пар спинов есть взаимодействие, сила которого является случайной величиной и семплируется из гауссова распределения с нулевым средним и с дисперсией <span class="math notranslate nohighlight">\(1/N\)</span> (в нашем случае <span class="math notranslate nohighlight">\(N=8\)</span>). На <a class="reference internal" href="#qa-sa-fig-8"><span class="std std-numref">Fig. 145</span></a> показан типичный результат для эволюции коэффициентов перекрытия во времени при расписании отжига <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</p>
-<div class="figure align-default" id="qa-sa-fig-8">
+<figure class="align-default" id="qa-sa-fig-8">
 <a class="reference internal image-reference" href="../../../_images/fig_8.png"><img alt="../../../_images/fig_8.png" src="../../../_images/fig_8.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 145 </span><span class="caption-text">Вид коэффициентов перекрытия для модели Шеррингтона-Киркпатрика при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-8" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 145 </span><span class="caption-text">Вид коэффициентов перекрытия для модели Шеррингтона-Киркпатрика при <span class="math notranslate nohighlight">\(\Gamma(t) = T(t) = 3 / \sqrt{t}\)</span>.</span><a class="headerlink" href="#qa-sa-fig-8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Было проверено несколько реализаций для коэффициентов обменного взаимодействия (семплирование выполнялось из одной и той же функции распределения), результаты оказались качественно близкими. Графики на <a class="reference internal" href="#qa-sa-fig-8"><span class="std std-numref">Fig. 145</span></a> подтверждают, что для данной оптимизационной задачи квантовый отжиг подходит лучше, чем классический.</p>
-</div>
-</div>
-<div class="section" id="id12">
+</section>
+</section>
+<section id="id12">
 <h2>Заключение<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции рассказали о канонической работе, в которой для модели Изинга рассмотрены классическая имитация отжига и квантовая имитация отжига, выполнен анализ и сравнение свойств решений в рамках этих двух подходов на нескольких примерах. Выяснилось, что:</p>
 <ul class="simple">
@@ -1233,8 +1253,8 @@ P_{SA}(t) = P_g(t)
 <li><p>для квантового случая система сходится к основному состоянию при расписании отжига <span class="math notranslate nohighlight">\(\Gamma = c / \sqrt{t}\)</span>, но не при более быстром уменьшении поперечного поля;</p></li>
 <li><p>для ферромагнитной модели при квантовом отжиге вероятность получения основного состояния ведет себя приближенно как <span class="math notranslate nohighlight">\((1 - \frac{\text{const}}{t})\)</span> на больших временах <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

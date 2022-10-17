@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Словари &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1184,13 +1188,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python-l7">
+  <section class="tex2jax_ignore mathjax_ignore" id="python-l7">
 <span id="id1"></span><h1>Словари<a class="headerlink" href="#python-l7" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/alexmorphine">Овсянникова Александра</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы расскажем про:</p>
 <ul class="simple">
@@ -1199,12 +1203,12 @@ title="Print to PDF"
 <li><p>хранение изменяемых и неизменяемых типов;</p></li>
 <li><p>хэширование.</p></li>
 </ul>
-</div>
-<div class="section" id="dict">
+</section>
+<section id="dict">
 <h2>Что такое <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#dict" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">dict</span></code> (от английского <em>“dictionary”</em>, словарь) – еще один тип данных в Python. Словари хранят пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>. То есть в списках можно достать элемент, если указать его позицию в виде целого числа, а в словарях – тот самый <code class="docutils literal notranslate"><span class="pre">ключ</span></code>. Обратите внимание, <code class="docutils literal notranslate"><span class="pre">dict</span></code> – <strong>неупорядоченный</strong> тип данных, поэтому достать элемент по номеру не получится, но отображение содержимого будет <strong>в порядке добавления</strong> элементов. <strong>Уникальность</strong> ключей должна поддерживаться, чтобы всегда можно было быстро найти одно единственно верное <code class="docutils literal notranslate"><span class="pre">значение</span></code>.</p>
 <p>В некоторых языках программирования можно встретить ассоциативные массивы – полную аналогию <code class="docutils literal notranslate"><span class="pre">dict</span></code>. Также вспомним базы данных, широко использующиеся во всем мире для хранения информации: в таблице можно установить первичный ключ, который уникально идентифицирует запись, как и <code class="docutils literal notranslate"><span class="pre">ключ</span></code> соответствует <code class="docutils literal notranslate"><span class="pre">значению</span></code> в словаре. Самый простой пример ключа - порядковый номер объекта!</p>
-<div class="section" id="id3">
+<section id="id3">
 <h3>Создание словаря<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <p>Использовать словарь стоит, когда нужно сохранять объекты с какими-то ключами и обращаться к объектам по известным ключам. Один из способов определения словаря: указание пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> через <strong>запятую</strong> внутри фигурных скобок <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Напоминает <code class="docutils literal notranslate"><span class="pre">set</span></code>, правда? <code class="docutils literal notranslate"><span class="pre">{}</span></code> позволяет создать <strong>пустой</strong> словарь, но не пустое множество.</p>
 <p>Например, вы решили упростить себе жизнь и больше не запоминать дни рождения коллег. Вместо этого, лучше хранить их в одном месте:</p>
@@ -1223,8 +1227,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>В примере <code class="docutils literal notranslate"><span class="pre">dates</span></code> имеет две пары значений. В первой паре строка <code class="docutils literal notranslate"><span class="pre">&quot;Кунг</span> <span class="pre">Фьюри&quot;</span></code> является <em>ключом</em>, а <code class="docutils literal notranslate"><span class="pre">&quot;1968-09-09&quot;</span></code> – его <em>значением</em>.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h3>Получение значения по ключу<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>Чтобы получить значение по ключу, необходимо обратиться к переменной, содержащей словарь, и указать ключ в квадратных скобках <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
 <div class="cell docutils container">
@@ -1258,8 +1262,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>Изменение и добавление значений<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Синтаксис изменения значения по ключу и добавления нового ключа со значением одинаковый: в <code class="docutils literal notranslate"><span class="pre">[]</span></code> нужно указать ключ, поставить <code class="docutils literal notranslate"><span class="pre">=</span></code> и указать значение, которое теперь будет соответствовать ключу.</p>
 <div class="cell docutils container">
@@ -1281,11 +1285,11 @@ title="Print to PDF"
 </div>
 </div>
 <p>Если ключ уже был в словаре, значение по нему изменится на новое, а <strong>старое будет удалено</strong>. Указание нового ключа со значением добавляет пару в словарь.</p>
-</div>
-</div>
-<div class="section" id="id6">
+</section>
+</section>
+<section id="id6">
 <h2>Основные методы словаря<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
-<div class="section" id="get">
+<section id="get">
 <h3>Проверка вхождения и <code class="docutils literal notranslate"><span class="pre">get()</span></code><a class="headerlink" href="#get" title="Permalink to this headline">#</a></h3>
 <p>Помните, ранее говорили, что обращение к несуществующему ключу приводит к ошибке? Пришло время посмотреть пару способов борьбы!</p>
 <p>Можно проверить, есть ли интересующий ключ среди множества ключей словаря. Это делается при помощи бинарного оператора <code class="docutils literal notranslate"><span class="pre">in</span></code>. Слева должен быть указан ключ, справа – переменная со словарем:</p>
@@ -1356,8 +1360,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>Что такое “длина словаря”?<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>Функция <code class="docutils literal notranslate"><span class="pre">len()</span></code> для словаря будет возвращать количество пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> (их столько же, сколько ключей), которое в нем содержится:</p>
 <div class="cell docutils container">
@@ -1377,8 +1381,8 @@ len(marks) = 2
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>Удаление из словаря<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Есть несколько способов очистки в словаре: можно убирать по ключу, а можно сразу удалить все!</p>
 <ul class="simple">
@@ -1465,8 +1469,8 @@ len(marks) = 2
 </div>
 </div>
 <p>Обратите внимание на то, как работают методы <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">popitem()</span></code> и <code class="docutils literal notranslate"><span class="pre">clear()</span></code>: как только вызываются, словарь меняет свой состав (<em>изменения происходят in place</em>, то изменить по месту без копирования).</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Обновление и добавление ключей<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Мы уже видели, что значения в словарь можно добавлять или менять, обращаясь по ключу. Python предоставляет возможность не писать кучу присваиваний, а использовать лаконичный метод <code class="docutils literal notranslate"><span class="pre">update()</span></code>, который на вход может принимать либо</p>
 <ul class="simple">
@@ -1519,12 +1523,12 @@ len(marks) = 2
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
+</section>
+</section>
+<section id="id10">
 <h2>Доступ к ключам и значениям<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
 <p>В Python можно без проблем извлекать отдельно по ключам или значениям, а также итерироваться по элементам словарей в цикле <code class="docutils literal notranslate"><span class="pre">for</span></code>. Осталось разобраться, как это работает.</p>
-<div class="section" id="id11">
+<section id="id11">
 <h3>Ключи<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>По умолчанию, в конструкциях вида</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># после in указано название переменной, хранящей словарь</span>
@@ -1551,8 +1555,8 @@ Harry Potter 1st year
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h3>Значения<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>При помощи метода <code class="docutils literal notranslate"><span class="pre">values()</span></code> можно получить все значения, хранящиеся по всем ключам словаря:</p>
 <div class="cell docutils container">
@@ -1583,8 +1587,8 @@ Harry Potter 1st year
 </div>
 </div>
 <p><strong>Напрямую по значению получить ключ нельзя</strong></p>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h3>Все и сразу<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>Существует метод <code class="docutils literal notranslate"><span class="pre">items()</span></code>, который достает пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> в виде последовательности кортежей. Его же часто удобно использовать в циклах, чтобы не тащить длинную запись в виде названия словаря и квадратных скобок с ключом при обращении к значению:</p>
 <div class="cell docutils container">
@@ -1607,9 +1611,9 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id14">
+</section>
+</section>
+<section id="id14">
 <h2>Сортировка<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <p>Функция <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> доступна и для словарей. По умолчанию ключи словаря поддерживают порядок, в котором были добавлены, но можно отсортировать их в нужном направлении (<em>в зависимости от типа</em>):</p>
 <div class="cell docutils container">
@@ -1631,12 +1635,12 @@ Player Harry Potter is in 1st year
 </div>
 <p>Не забудьте, когда в функции передается просто название переменной со словарем, работа идет только над множеством ключей.</p>
 <p>Можно ли отсортировать словарь по значениям? Да, можно попробовать самостоятельно разобраться с аргументами функции <a class="reference external" href="https://docs.python.org/3/howto/sorting.html"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a>.</p>
-</div>
-<div class="section" id="id15">
+</section>
+<section id="id15">
 <h2>Что можно хранить<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
 <p>Теперь добавим немного технических подробностей: возможно, вы уже заметили самостоятельно, что <code class="docutils literal notranslate"><span class="pre">dict</span></code> может принимать в качестве ключа не всякое значение. На самом деле только <a class="reference external" href="https://docs-python.ru/tutorial/vstroennye-funktsii-interpretatora-python/funktsija-hash/"><strong>хэшируемые</strong></a> объекты <em>(можно вызвать функцию <code class="docutils literal notranslate"><span class="pre">hash()</span></code> и получить значение)</em> могут быть ключами словаря, на значения это ограничение не распространяется. В <code class="docutils literal notranslate"><span class="pre">dict</span></code> и <code class="docutils literal notranslate"><span class="pre">set</span></code> значение хэша от объекта используется для поиска внутри структуры.</p>
 <p>Ключом словаря нельзя сделать объект <strong>изменяемого</strong> типа, например, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code> или <strong>сам <code class="docutils literal notranslate"><span class="pre">dict</span></code></strong>, так как значение их хэша может измениться со временем. Неизменяемый кортеж может быть ключом только если не содержит внутри изменяемые объекты.</p>
-<div class="section" id="id16">
+<section id="id16">
 <h3>Изменяемость и неизменяемость<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p><em>В англоязычной литературе изменяемые типы называют <strong>mutable</strong>, а неизменяемые – <strong>immutable</strong>, <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types">почитать документацию</a></em></p>
 <p>В Python все – объект. Когда пользователь присваивает значение переменной, она начинает ассоциироваться с ячейкой памяти, где лежит это значение. Переменная знает адрес, откуда можно получить значение. <code class="docutils literal notranslate"><span class="pre">id()</span></code> и <code class="docutils literal notranslate"><span class="pre">hex()</span></code> показывают адрес в памяти компьютера. _<code class="docutils literal notranslate"><span class="pre">id()</span></code> - адрес в десятичном виде, а <code class="docutils literal notranslate"><span class="pre">hex()</span></code> поможет перевести в <em>шестнадцатеричный</em>.</p>
@@ -1645,7 +1649,7 @@ Player Harry Potter is in 1st year
 <li><p><strong>неизменяемые</strong> типы не позволяют менять внутреннее состояние, значение переменной может поменяться только вместе с адресом</p></li>
 <li><p><strong>изменяемые</strong> типы позволяют менять внутреннее состояние переменной при сохранении адреса (возвращаемое <code class="docutils literal notranslate"><span class="pre">id()</span></code> значение не меняется, но <em>значение</em> переменной каким-то образом преобразовывается). Изменение по ссылке называется изменением <em>in place</em></p></li>
 </ul>
-<div class="section" id="id17">
+<section id="id17">
 <h4>Неизменяемые типы<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h4>
 <p>Из стандартных неизменяемыми являются:</p>
 <ul class="simple">
@@ -1666,15 +1670,17 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f806a3ede40
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f1aa179ce40
 </pre></div>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="mutable-example-0">
+<figure class="align-default" id="mutable-example-0">
 <a class="reference internal image-reference" href="../../../_images/Python-Immutable-Example-1.png"><img alt="../../../_images/Python-Immutable-Example-1.png" src="../../../_images/Python-Immutable-Example-1.png" style="width: 411px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100 (цифры в нижней правой части как раз и показывают тот самый адрес)</span><a class="headerlink" href="#mutable-example-0" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100 (цифры в нижней правой части как раз и показывают тот самый адрес)</span><a class="headerlink" href="#mutable-example-0" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>А теперь поменяем значение <code class="docutils literal notranslate"><span class="pre">counter</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1684,16 +1690,18 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f806a3eeac0&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>counter = 200, hex(id(counter)) = &#39;0x7f1aa179dac0&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <p>Кажется, что раз значение переменной <code class="docutils literal notranslate"><span class="pre">counter</span></code> поменялось, то и содержимое по предыдущему адресу изменилось? Нет, на самом деле <code class="docutils literal notranslate"><span class="pre">counter</span></code> теперь указывает в другое место:</p>
-<div class="figure align-default" id="mutable-example-1">
+<figure class="align-default" id="mutable-example-1">
 <a class="reference internal image-reference" href="../../../_images/Python-Immutable-Example-2.png"><img alt="../../../_images/Python-Immutable-Example-2.png" src="../../../_images/Python-Immutable-Example-2.png" style="width: 411px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#mutable-example-1" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#mutable-example-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Из интересного: Python <a class="reference external" href="https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong">заранее создает объекты</a> для чисел от -5 до 256, поэтому для переменных со значением из этого диапазона берутся заранее готовые ссылки.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1713,8 +1721,8 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id18">
+</section>
+<section id="id18">
 <h4>Изменяемые типы<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h4>
 <p>Стандартные изменяемые типы это:</p>
 <ul class="simple">
@@ -1735,25 +1743,29 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f8050fa1f40
-Стало: 0x7f8050fa1f40 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f1a982fb500
+Стало: 0x7f1a982fb500 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="mutable-example-2">
+<figure class="align-default" id="mutable-example-2">
 <a class="reference internal image-reference" href="../../../_images/Python-Mutable-Example.png"><img alt="../../../_images/Python-Mutable-Example.png" src="../../../_images/Python-Mutable-Example.png" style="width: 402px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#mutable-example-2" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#mutable-example-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>После добавления еще одного, адрес <code class="docutils literal notranslate"><span class="pre">ratings</span></code> не изменился.</p>
-<div class="figure align-default" id="mutable-example2">
+<figure class="align-default" id="mutable-example2">
 <a class="reference internal image-reference" href="../../../_images/Python-Mutable-Example-2.png"><img alt="../../../_images/Python-Mutable-Example-2.png" src="../../../_images/Python-Mutable-Example-2.png" style="width: 402px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">#</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id19">
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="id19">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Новый тип данных – <strong>словарь</strong>! Позволяет хранить соответствие <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>;</p></li>
@@ -1837,8 +1849,8 @@ flowers.get(&quot;magnolias&quot;) = None
 <li><p>Требование к ключу: возможность хэширования, свойство ключа внутри словаря: уникальность;</p></li>
 <li><p>Разобрали, что есть изменяемые (<code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>) и неизменяемые (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>) стандартные типы данных.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

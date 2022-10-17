@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>PennyLane &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -976,7 +980,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pennylane">
+  <section class="tex2jax_ignore mathjax_ignore" id="pennylane">
 <span id="id1"></span><h1>PennyLane<a class="headerlink" href="#pennylane" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -986,7 +990,7 @@ title="Print to PDF"
 <p>Кубиты в PennyLane называются по-особому – <code class="docutils literal notranslate"><span class="pre">wires</span></code> (от англ. wires – провода). Такое название, скорее всего, связано с тем, что на квантовых схемах кубиты изображаются в виде продольных линий.</p>
 <p>Последовательность квантовых операций называется <em>квантовой функцией</em>. Такая функция может принимать в качестве аргументов только хэшируемые объекты. В качестве возвращаемого значения выступают величины, связанные с результатами измерения: ожидаемое значение, вероятности состояний или результаты сэмплирования.</p>
 <p>Квантовая функция существует не сама по себе, она запускается на определенном устройстве – симуляторе либо настоящем квантовом компьютере. Такое устройство в PennyLane называется <code class="docutils literal notranslate"><span class="pre">device</span></code>.</p>
-<div class="section" id="qnode">
+<section id="qnode">
 <h2>QNode<a class="headerlink" href="#qnode" title="Permalink to this headline">#</a></h2>
 <p>Квантовые вычисления при использовании PennyLane раскладываются на отдельные узлы, которые называются <code class="docutils literal notranslate"><span class="pre">QNode</span></code>. Для их создания используются квантовые функции совместно с <code class="docutils literal notranslate"><span class="pre">device</span></code>.</p>
 <p>Создавать объекты квантовых узлов можно двумя способами: явно либо с помощью декоратора <code class="docutils literal notranslate"><span class="pre">QNode</span></code>.</p>
@@ -1009,7 +1013,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([0.502, 0.   , 0.   , 0.498], requires_grad=True)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([0.499, 0.   , 0.   , 0.501], requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -1041,14 +1045,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.507 0.    0.    0.493]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.475 0.    0.    0.525]
 </pre></div>
 </div>
 </div>
 </div>
 <p>В данном примере мы взяли двухкубитную систему и создали запутанное состояние, а затем с помощью метода <code class="docutils literal notranslate"><span class="pre">probs</span></code> вычислили вероятности получения состояний <span class="math notranslate nohighlight">\(|00\rangle\)</span>, <span class="math notranslate nohighlight">\(|01\rangle\)</span>, <span class="math notranslate nohighlight">\(|10\rangle\)</span>, <span class="math notranslate nohighlight">\(|11\rangle\)</span>.</p>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>Операторы<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В квантовой функции можно применять операторы X, Y, Z, S, T (<code class="docutils literal notranslate"><span class="pre">qml.PauliX</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.PauliY</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.S</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.T</span></code> соответственно), а также операторы, в которых можно задавать угол вращения вокруг одной из осей в радианах: <code class="docutils literal notranslate"><span class="pre">qml.RX</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.RY</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.RZ</span></code>. Здесь и далее будем использовать <code class="docutils literal notranslate"><span class="pre">qml</span></code> как псевдоним библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>.</p>
 <p>В этой функции мы вращаем кубит под индексом 0 вокруг оси X на 90 градусов из начального состояния <span class="math notranslate nohighlight">\(|0\rangle\)</span> и возвращаем <strong>ожидаемое значение</strong> <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code> для этого кубита с помощью <code class="docutils literal notranslate"><span class="pre">qml.expval</span></code>. Вероятности получения состояний <span class="math notranslate nohighlight">\(|0\rangle\)</span> и <span class="math notranslate nohighlight">\(|1\rangle\)</span> равны, так что мы получаем ожидаемое значение, близкое к нулю, что легко проверить:</p>
@@ -1066,7 +1070,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(-0.008, requires_grad=True)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor(0.028, requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -1112,7 +1116,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([ 1, -1,  1,  1,  1], requires_grad=True)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([ 1, -1, -1,  1, -1], requires_grad=True)
 </pre></div>
 </div>
 </div>
@@ -1136,8 +1140,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="qubitunitary">
+</section>
+<section id="qubitunitary">
 <h2>QubitUnitary<a class="headerlink" href="#qubitunitary" title="Permalink to this headline">#</a></h2>
 <p>В PennyLane можно использовать готовые операторы, либо задавать операторы явно с помощью матриц.</p>
 <p>Для этого можно использовать класс <code class="docutils literal notranslate"><span class="pre">qml.QubitUnitary</span></code>, который принимает два параметра: U – квадратную унитарную матрицу и <code class="docutils literal notranslate"><span class="pre">wires</span></code> – кубиты, на которые действует оператор U.</p>
@@ -1213,8 +1217,8 @@ title="Print to PDF"
 <img alt="../../../_images/pennylane_26_0.png" src="../../../_images/pennylane_26_0.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

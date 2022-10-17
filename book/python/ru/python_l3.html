@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Знакомство с инструментарием: Jupyter &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1034,13 +1038,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter">
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyter">
 <span id="python-l3"></span><h1>Знакомство с инструментарием: Jupyter<a class="headerlink" href="#jupyter" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/stalkermustang">Котенков Игорь</a></p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Эта лекция расскажет:</p>
 <ul class="simple">
@@ -1049,24 +1053,28 @@ title="Print to PDF"
 <li><p>о самых необходимых горячих клавишах;</p></li>
 <li><p>что такое ядро и почему вас это должно волновать.</p></li>
 </ul>
-</div>
-<div class="section" id="id2">
+</section>
+<section id="id2">
 <h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Как любой мастер должен знать свой инструмент, так и любой человек, решивший пройти курс QML, должен понимать тонкости рабочей среды. Как вы уже могли понять по прошлому занятию, всю (или большую часть) работы мы будем делать в <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>. Но бояться нечего: по сути, <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> – это <em>продвинутый текстовый редактор</em> с функцией запуска кода и получения результатов вычислений. Настолько продвинутый, что позволяет вам не только рисовать картинки и писать формулы, но даже строить целые интерактивные карты:</p>
-<div class="figure align-default" id="interactive-map">
+<figure class="align-default" id="interactive-map">
 <a class="reference internal image-reference" href="../../../_images/interactive_map.gif"><img alt="../../../_images/interactive_map.gif" src="../../../_images/interactive_map.gif" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text"><a class="reference external" href="https://medium.com/&#64;bartomolina/geospatial-data-visualization-in-jupyter-notebooks-ffa79e4ba7f8">Пример интерактивной визуализации прямо внутри рабочего файла с кодом</a></span><a class="headerlink" href="#interactive-map" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><a class="reference external" href="https://medium.com/&#64;bartomolina/geospatial-data-visualization-in-jupyter-notebooks-ffa79e4ba7f8">Пример интерактивной визуализации прямо внутри рабочего файла с кодом</a></span><a class="headerlink" href="#interactive-map" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>На курсе, конечно, работы с гео-данными не будет, однако очень пригодятся вывод информации в виде <em>таблиц</em>, <em>создание и отрисовка простых графиков</em>, а главное, все это происходит в <strong>браузере</strong>. Редактирование кода в браузере не вызывает лишних проблем со средами разработки и в то же время оно доступно максимально широкому кругу людей. В этом редакторе можно запускать <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код, что очень похоже на интерактивный редактор MATLAB, если вы с ним знакомы.</p>
 <p>Благодаря удобству использования и доступности <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> в настоящее время стал крупным игроком в нише научных вычислений и быстрого прототипирования. Вдобавок он безумно удобен для обучения и передачи знаний. Почему? Давайте разбираться.</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Типы ячеек<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>В <code class="docutils literal notranslate"><span class="pre">Jupyter</span> </code> существует несколько типов <strong>ячеек</strong>, мы поговорим о двух основных: <strong>Code</strong> и <strong>Markdown</strong>. В прошлом уроке мы создали пустой <strong>ноутбук</strong>, чтобы проверить установку <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>. <strong>Ноутбуком</strong> это называется потому, что в переводе с английского <strong>notebook</strong> – это тетрадка (альтернативное название на русском языке). В тетрадке можно писать что-то осмысленное, черкаться, оставлять пометки. Сейчас вы должны видеть вот такой экран:</p>
-<div class="figure align-default" id="jupyter-ui-1">
+<figure class="align-default" id="jupyter-ui-1">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_1.png"><img alt="../../../_images/jupyter_ui_1.png" src="../../../_images/jupyter_ui_1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Пример пустой только что созданной тетрадки.</span><a class="headerlink" href="#jupyter-ui-1" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Пример пустой только что созданной тетрадки.</span><a class="headerlink" href="#jupyter-ui-1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Здесь верхней красной чертой выделено поле с <strong>названием</strong> ноутбука. Можете кликнуть по нему, переименовать во что-то осмысленное и нажать <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, чтобы применить изменения. Нижней же чертой обозначен выпадающий список переключений <strong>типов ячеек</strong>. По умолчанию создана одна <strong>code</strong> ячейка – в ней в будущем мы будем писать <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код. Попробуйте кликнуть по списку и выбрать <strong>Markdown</strong> – визуально ячейка немного изменится.</p>
 <div class="admonition-markdown-https-ru-wikipedia-org-wiki-markdown admonition">
 <p class="admonition-title">Что такое <a class="reference external" href="https://ru.wikipedia.org/wiki/Markdown">Markdown</a>?</p>
@@ -1074,24 +1082,30 @@ title="Print to PDF"
 </div>
 <p>Пример: <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">attributes</span> <span class="pre">_italic_,**bold**,</span> <span class="pre">`monospace`.</span></code></p>
 <p>С помощью Markdown можно разнообразить код, вставить формулы (в том числе в <a class="reference external" href="https://ru.wikipedia.org/wiki/LaTeX">LaTeX</a> формате, если он вам знаком), ссылки на статьи и многое другое. Попробуйте скопировать код из примера выше в Markdown-ячейку и нажать кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code>:</p>
-<div class="figure align-default" id="jupyter-ui-2">
+<figure class="align-default" id="jupyter-ui-2">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_2.png"><img alt="../../../_images/jupyter_ui_2.png" src="../../../_images/jupyter_ui_2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Пример выполненной ячейки. Красным квадратом выделена кнопка  <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</span><a class="headerlink" href="#jupyter-ui-2" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Пример выполненной ячейки. Красным квадратом выделена кнопка  <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</span><a class="headerlink" href="#jupyter-ui-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Произошло следующее: ваша ячейка выполнилась и <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> отобразил ее содержимое. С помощью такого форматирования можно писать целые статьи с выкладками, формулами, графиками, то есть сопроводительной информацией. Поэтому, как уже было сказано, тетрадки очень удобны, особенно если соблюдать структуру, то есть писать сверху вниз с разделением на логические блоки. Также стоит отметить, что создалась новая Code-ячейка прямо под первой.</p>
-<div class="figure align-default" id="jupyter-ui-3">
+<figure class="align-default" id="jupyter-ui-3">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_3.png"><img alt="../../../_images/jupyter_ui_3.png" src="../../../_images/jupyter_ui_3.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Пример грамотно <a class="reference external" href="https://nbviewer.jupyter.org/github/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/05-Multivariate-Gaussians.ipynb">оформленной Jupter-тетрадки</a>. Такую можно скинуть коллегам – и всем все будет понятно!</span><a class="headerlink" href="#jupyter-ui-3" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Пример грамотно <a class="reference external" href="https://nbviewer.jupyter.org/github/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/05-Multivariate-Gaussians.ipynb">оформленной Jupter-тетрадки</a>. Такую можно скинуть коллегам – и всем все будет понятно!</span><a class="headerlink" href="#jupyter-ui-3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Самая прекрасная часть тетрадок: <strong>ячейки разных типов можно смешивать по порядку</strong>, таким образом сначала описывая какую-то логику, а затем непосредственно реализовывая ее в коде и выполняя.</p>
 </div>
 <p>Вам не так часто придется писать Markdown-заметки самостоятельно, основная причина их создания – ваше желание и дальнейшее удобство использования ноутбука. Есть также другая причина, по которой мы акцентируем на них внимание. Может так произойти, что вы <em>случайно</em> изменили тип ячейки и не заметили этого. Теперь, если в Markdown-ячейку вставить <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код, то ничего не произойдет или возникнет ошибка. Если вы заметили что-то странное при выполнении кода в тетрадке – <strong>проверьте, корректен ли тип ячейки</strong>. Для выполнения кода нужно выставить тип <strong>Code</strong>.</p>
-<div class="figure align-default" id="jupyter-ui-4">
+<figure class="align-default" id="jupyter-ui-4">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_4.png"><img alt="../../../_images/jupyter_ui_4.png" src="../../../_images/jupyter_ui_4.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Верхняя ячейка с <code class="docutils literal notranslate"><span class="pre">print</span></code> написана в Code-режиме и корректно выполняется, печатая строчку с приветствием. Нижняя ячейка же содержит <strong>текст, а не код</strong>, поэтому ничего работать не будет (точнее, код отобразится как текст, но не будет выполнен).</span><a class="headerlink" href="#jupyter-ui-4" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Верхняя ячейка с <code class="docutils literal notranslate"><span class="pre">print</span></code> написана в Code-режиме и корректно выполняется, печатая строчку с приветствием. Нижняя ячейка же содержит <strong>текст, а не код</strong>, поэтому ничего работать не будет (точнее, код отобразится как текст, но не будет выполнен).</span><a class="headerlink" href="#jupyter-ui-4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Обратите внимание, как визуально отличаются эти две ячейки. Одна из них имеет прозрачный фон, другая – серый. У <strong>Code</strong> ячейки также есть странная надпись слева (про нее еще поговорим).</p>
@@ -1100,26 +1114,30 @@ title="Print to PDF"
 <p>Первая комбинация (<code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code>) будет полезна в том случае, если вы что-то написали и знаете, что будете вносить изменения (например, менять цвет линии на графике в попытках добиться визуальной красоты), а значит, придется менять код в этой же ячейке.</p>
 <p>Вторая (<code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>) пригодится тогда, когда вы хотите запустить много-много идущих подряд ячеек (можете представить, что коллега скинул вам свою тетрадку с 30 клетками и вы хотите ее запустить, чтобы получить данные).</p>
 <p>Не беспокойтесь, буквально к концу первого блока лекций у вас выработается мышечная память и вы будете использовать сочетания клавиш на автомате.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Режимы работы<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Пришло время разобраться с цветом курсора, выделяющего ячейки. Он может быть <strong>синим</strong> или <strong>зеленым</strong>.</p>
-<div class="figure align-default" id="jupyter-ui-5">
+<figure class="align-default" id="jupyter-ui-5">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_5.png"><img alt="../../../_images/jupyter_ui_5.png" src="../../../_images/jupyter_ui_5.png" style="width: 600px;" /></a>
-</div>
-<div class="figure align-default" id="jupyter-ui-6">
+</figure>
+<figure class="align-default" id="jupyter-ui-6">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_6.png"><img alt="../../../_images/jupyter_ui_6.png" src="../../../_images/jupyter_ui_6.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Пример разного цвета указателя клетки.</span><a class="headerlink" href="#jupyter-ui-6" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Пример разного цвета указателя клетки.</span><a class="headerlink" href="#jupyter-ui-6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Никакой тайны за этим нет, это два режима: <strong>режим редактирования и командный режим</strong>. Зеленый цвет сигнализирует о том, что вы работаете <strong>с текстовым содержимым ячейки</strong>, то есть редактируете его! Можете писать код, вставлять формулы, что угодно. Но как только вы нажмете <code class="docutils literal notranslate"><span class="pre">ESC</span></code> на клавиатуре, цвет сменится на синий, что означает <strong>возможность редактирования всего ноутбука, а не отдельных ячеек в нем</strong>. Можно передвигать ячейки, удалять их (полностью, а не только текст в них), добавлять новые. Стрелочками на клавиатуре можно выбирать ячейки (скакать вверх и вниз). Как только доберетесь до нужной (а вместо этого можно просто кликнуть по ней мышкой, что полезно в ситуации, когда клетка <em>очень</em> далеко, в самом низу страницы) – жмите <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, чтобы вернуться к редактированию.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Можно осуществлять переходы между режимами кликом мышки (внутри блока кода либо где-нибудь в стороне, слева или справа от ячейки, где ничего нет).</p>
 </div>
-<div class="figure align-default" id="jupyter-ui-7">
+<figure class="align-default" id="jupyter-ui-7">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_7.png"><img alt="../../../_images/jupyter_ui_7.png" src="../../../_images/jupyter_ui_7.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Кнопки управления ноутбуком.</span><a class="headerlink" href="#jupyter-ui-7" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Кнопки управления ноутбуком.</span><a class="headerlink" href="#jupyter-ui-7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Выполнять описанные выше операции можно с помощью горячих клавиш (или хоткеев), либо через интерфейс. Описание выделенного блока кнопок для картинки выше (в порядке слева направо, с указанием сочетаний клавиш):</p>
 <ol class="simple">
 <li><p><em>Сохранение ноутбука</em> (<code class="docutils literal notranslate"><span class="pre">CTRL+S</span></code>) – делайте его <strong>почаще</strong>, чтобы не потерять результаты работы!</p></li>
@@ -1136,14 +1154,16 @@ title="Print to PDF"
 <p>Попробуйте потратить 5-7 минут на практику использования этих кнопок и сочетаний клавиш.</p>
 </div>
 <p>Первое время можете пользоваться только элементами UI-интерфейса – это нормально, главное, сопоставить кнопки и стоящую за ними функциональность.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Оставшиеся кнопки на панели<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Про кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code> (и хоткей <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>) мы уже поговорили, а что с остальными?</p>
-<div class="figure align-default" id="jupyter-ui-8">
+<figure class="align-default" id="jupyter-ui-8">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_8.png"><img alt="../../../_images/jupyter_ui_8.png" src="../../../_images/jupyter_ui_8.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Кнопки управления <strong>ЯДРОМ</strong> ноутбука.</span><a class="headerlink" href="#jupyter-ui-8" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Кнопки управления <strong>ЯДРОМ</strong> ноутбука.</span><a class="headerlink" href="#jupyter-ui-8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Для того, чтобы вы могли запускать код <code class="docutils literal notranslate"><span class="pre">Python</span></code>, запускается так называемое <strong>“ядро” (или kernel)</strong>, то есть приложение, которое непосредственно выполняет (запускает) ваш код и передает результаты обратно в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбук. За это отвечает как раз <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p>
 <p>Справа от нее расположен <code class="docutils literal notranslate"><span class="pre">Stop</span></code>, который <strong>прерывает выполнение программы</strong>. Он может быть полезен в случаях, когда вы запустили расчеты на час, но заметили ошибку – и поэтому нужно и код переписать, и ячейку с кодом снова запустить. И в этой ситуации вы сначала <strong>останавливаете</strong> выполнение, редактируете код, затем жмете <code class="docutils literal notranslate"><span class="pre">Run</span></code> – и все готово!</p>
 <p>Но случается беда и код не останавливается, потому что ядро <code class="docutils literal notranslate"><span class="pre">Python</span></code> зависает. В таких случаях нужно <strong>перезапустить ядро</strong> – и кнопка с закругленной стрелочкой <code class="docutils literal notranslate"><span class="pre">Restart</span></code> поможет осуществить задуманное. Будьте аккуратны – <strong>вы потеряете ВСЕ несохраненные данные</strong> (значения переменных, результаты расчетов, данные для построения графиков). Сама тетрадка останется без изменений, то есть <strong>написанное сохранится</strong>. Концепция “ядра” и запуска кода станет более понятна, когда мы перейдем к практике.</p>
@@ -1153,19 +1173,21 @@ title="Print to PDF"
 </div>
 <p>Нужно понимать, что ядро “помнит” все предыдущие выполненные ячейки (пока не будет перезагружено или выключено), а значит, вы можете позже в коде переиспользовать те части, которые были описаны ранее (например, переменные или физические константы). Иными словами, состояние ядра сохраняется во времени и между ячейками – <strong>оно относится к документу в целом</strong>, а не к отдельным ячейкам.</p>
 <p>Последняя кнопка из выделенного блока имеет говорящее название: <code class="docutils literal notranslate"><span class="pre">Re-start</span> <span class="pre">and</span> <span class="pre">run</span> <span class="pre">all</span></code>. Ядро будет <strong>перезапущено</strong> (все переменные и данные удалятся), а затем <strong>каждая ячейка будет выполнена в порядке сверху вниз</strong>. Поэтому рекомендуется соблюдать структуру, чтобы запускать код с нуля (после возвращения к ноутбуку на следующий день, но с новым ядром, так как компьютер был выключен) – и он отрабатывал.</p>
-</div>
-<div class="section" id="in">
+</section>
+<section id="in">
 <h2>Что это за In [*]?<a class="headerlink" href="#in" title="Permalink to this headline">#</a></h2>
 <p>Та самая надпись слева от запущенной Code-ячейки. Это вспомогательная информация о том, что происходит с <strong>кодовой</strong> ячейкой (<code class="docutils literal notranslate"><span class="pre">In</span></code> означает <strong>Input</strong>, то есть ввод кода). Возможно несколько вариантов заполнения.</p>
-<div class="figure align-default" id="jupyter-ui-9">
+<figure class="align-default" id="jupyter-ui-9">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_9.png"><img alt="../../../_images/jupyter_ui_9.png" src="../../../_images/jupyter_ui_9.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Пример трех видов информации о статусе ячейки.</span><a class="headerlink" href="#jupyter-ui-9" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Пример трех видов информации о статусе ячейки.</span><a class="headerlink" href="#jupyter-ui-9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>В первом случае в квадратных скобках <strong>ничего нет</strong> – это значит, что <strong>ячейка еще не была запущена</strong>. Возможно, вы забыли, а быть может, она просто ждет своего часа.</p>
 <p>Во втором случае <strong>ячейка была запущена</strong> шестой по счету (да-да, <strong>ячейки выполняются по порядку, который задаете вы сами</strong>!) и она <strong>успешно отработала и завершилась</strong>.</p>
 <p>В последней строчке умышленно был сделан бесконечный цикл. Это означает, что <em>код никогда не сможет выполниться</em> и будет висеть до тех пор, пока вы не остановите (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>нете) ядро. Поэтому там выведен <strong>индикатор выполнения ячейки</strong> – в скобках указана звездочка <code class="docutils literal notranslate"><span class="pre">*</span></code>. Обратите внимание: <strong>это не всегда плохой сигнал</strong>. Если ваш код должен выполняться 2-3 минуты, то все это время будет выводиться <code class="docutils literal notranslate"><span class="pre">[*]</span></code>. Когда код отработает и результат будет получен, отрисуется цифра (например, <code class="docutils literal notranslate"><span class="pre">[7]</span></code> ).</p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Самая полезная клавиша<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Пришло время программировать! Скопируйте себе в ноутбук кусок кода ниже и попробуйте его запустить. Не переживайте, он может показаться сложным и непонятным, но сейчас не требуется понимание всех деталей.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1189,13 +1211,15 @@ title="Print to PDF"
 </div>
 <p>Вы увидите ошибку. По сообщению видно (стрелочка в левой части указывает на проблемное место), что во второй строчке используется слово <code class="docutils literal notranslate"><span class="pre">mat</span></code>, при этом <code class="docutils literal notranslate"><span class="pre">Python</span></code> жалуется на отсутствие такого модуля. Все дело в том, что в коде выше производится попытка рисования графика и для этого используется библиотека <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Но в одной из строк написано только <code class="docutils literal notranslate"><span class="pre">mat</span></code>. Это не дело, давайте исправлять. Однако всех библиотек не запомнишь – и это не нужно. Попробуйте поставить курсор после буквы <code class="docutils literal notranslate"><span class="pre">t</span></code> (и перед точкой) и нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>. Вы должны увидеть <strong>список подсказок</strong> и из него выбрать нужный вариант. Этот список не только сокращает время написания кода (за счет автоматического дополнения), но и позволяет избежать ошибок в написании. Обязательно пользуйтесь этим инструментом.</p>
 <p>Если вы все сделали правильно, воспользовавшись подсказкой, то после очередного запуска (<code class="docutils literal notranslate"><span class="pre">Run</span></code>) кода появится рисунок.</p>
-<div class="figure align-default" id="jupyter-ui-10">
+<figure class="align-default" id="jupyter-ui-10">
 <a class="reference internal image-reference" href="../../../_images/jupyter_ui_10.png"><img alt="../../../_images/jupyter_ui_10.png" src="../../../_images/jupyter_ui_10.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Другой пример удачного использования: есть несколько переменных со сложным, но очень похожим названием. Не стоит их перепечатывать – достаточно нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>!</span><a class="headerlink" href="#jupyter-ui-10" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Другой пример удачного использования: есть несколько переменных со сложным, но очень похожим названием. Не стоит их перепечатывать – достаточно нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>!</span><a class="headerlink" href="#jupyter-ui-10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Что ж, большое количество новой информации позади, давайте подведем итоги!</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Существует два основных типа ячеек, один предназначен для программирования (написания кода), другой – для описания (формул, определений).</p></li>
@@ -1210,13 +1234,13 @@ title="Print to PDF"
 <li><p>Ядро – это процесс, выполняющий код, и после перезагрузки оно не сохраняет переменные.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TAB</span></code> – ваш друг, позволяющий избегать опечаток, а также реже пользоваться документацией.</p></li>
 </ul>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h2>Бонус-материал<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <p>Полная официальная документация по Jupyter находится по <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">ссылке тут</a>.</p>
 <p>Если вам захочется узнать больше о трюках в ноутбуках, о недостатках и преимуществах по сравнению с альтернативами, предлагаем посмотреть выступление Joel Grus:</p>
-<p align="center"><iframe width="560" height="315" style='' src="https://www.youtube.com/embed/7jiPeIFXb6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></div>
-</div>
+<p align="center"><iframe width="560" height="315" style='' src="https://www.youtube.com/embed/7jiPeIFXb6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
