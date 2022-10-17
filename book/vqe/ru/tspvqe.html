@@ -1049,8 +1049,8 @@ title="Print to PDF"
 <p>Для графов будем использовать структуры данных из уже знакомой нам библиотеки <code class="docutils literal notranslate"><span class="pre">NetwrokX</span></code>, а для работы с разреженными операторами <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &quot;retina&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s2">&quot;retina&quot;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -1070,7 +1070,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">rand_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1079,7 +1079,7 @@ title="Print to PDF"
 <p>Только эта матрица не является симметричной и имеет ненулевые элементы на диагонали. Элементы на диагонали означают петли (loop или self-loop), что не очень разумно в терминах задачи коммивояжера: не ясно, что значит, например, путь из Москвы в Москву. Аналогично и про то, что матрица не симметричная: если путь из Москвы в Санкт-Петербург займет 6 часов, то и путь обратно тоже займет столько же. Так что хотим симметричную матрицу. Давайте это исправим:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rand_adj</span> <span class="o">=</span> <span class="p">(</span><span class="n">rand_mat</span> <span class="o">+</span> <span class="n">rand_mat</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rand_adj</span> <span class="o">=</span> <span class="p">(</span><span class="n">rand_mat</span> <span class="o">+</span> <span class="n">rand_mat</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">rand_adj</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1088,7 +1088,7 @@ title="Print to PDF"
 <p>Наконец, сделаем из этого граф и визуализируем его:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">rand_adj</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">rand_adj</span><span class="p">)</span>
 
 <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">drawing</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">random_layout</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">)</span>
@@ -1100,9 +1100,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/tspvqe_7_0.png" src="../../../_images/tspvqe_7_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="tsp-networkx">
@@ -1110,7 +1107,7 @@ title="Print to PDF"
 <p>Для того, чтобы потом понять, что все правильно сделали, давайте найдем приближенное решение задачи средствами <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx_solution</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">approximation</span><span class="o">.</span><span class="n">traveling_salesman_problem</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nx_solution</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">algorithms</span><span class="o">.</span><span class="n">approximation</span><span class="o">.</span><span class="n">traveling_salesman_problem</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NetworkX solution (nodes order): </span><span class="si">{</span><span class="n">nx_solution</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">nx_solution_cost</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1118,12 +1115,6 @@ title="Print to PDF"
     <span class="n">nx_solution_cost</span> <span class="o">+=</span> <span class="n">g</span><span class="o">.</span><span class="n">get_edge_data</span><span class="p">(</span><span class="n">nx_solution</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nx_solution</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NetworkX solution (total cost): </span><span class="si">{</span><span class="n">nx_solution_cost</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NetworkX solution (nodes order): [0, 3, 1, 2, 0]
-NetworkX solution (total cost): 213.0
 </pre></div>
 </div>
 </div>
@@ -1139,7 +1130,7 @@ NetworkX solution (total cost): 213.0
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigma_z_mod</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigma_z_mod</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
     <span class="n">sz_mod</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">(</span>
         <span class="p">[</span>
             <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,],</span>
@@ -1181,13 +1172,8 @@ NetworkX solution (total cost): 213.0
 <p>Поскольку <span class="math notranslate nohighlight">\(\lambda \in \{-1, +1\}\)</span>, получаем <span class="math notranslate nohighlight">\(\lambda_{mod} \in \{0, 1\}\)</span>. На всякий случай проверим это, создав оператор маленькой размерности и вычислив его собственные значения:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sigma_z_mod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eigs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sigma_z_mod</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">eigs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 1.]
 </pre></div>
 </div>
 </div>
@@ -1200,7 +1186,7 @@ NetworkX solution (total cost): 213.0
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmaz_k</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sigmaz_k</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">:</span>
     <span class="n">left_part</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">k</span><span class="p">)</span>
     <span class="n">right_part</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">))</span>
 
@@ -1227,18 +1213,6 @@ NetworkX solution (total cost): 213.0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalue: 1.0	Bit string: 000
-Eigenvalue: 1.0	Bit string: 001
-Eigenvalue: 0.0	Bit string: 010
-Eigenvalue: 0.0	Bit string: 011
-Eigenvalue: 1.0	Bit string: 100
-Eigenvalue: 1.0	Bit string: 101
-Eigenvalue: 0.0	Bit string: 110
-Eigenvalue: 0.0	Bit string: 111
-</pre></div>
-</div>
-</div>
 </div>
 <p>Убедимся также в совпадении собственных векторов с матрицей <span class="math notranslate nohighlight">\(\sigma^z\)</span>:</p>
 <div class="admonition note">
@@ -1247,31 +1221,8 @@ Eigenvalue: 0.0	Bit string: 111
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sigma z_mod:</span><span class="se">\n</span><span class="si">{</span><span class="n">eigs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sigma z_mod:</span><span class="se">\n</span><span class="si">{</span><span class="n">eigs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Sigma z:</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sigmaz_k</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sigma z_mod:
-[[1. 0. 0. 0. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0. 0. 0. 0.]
- [0. 0. 1. 0. 0. 0. 0. 0.]
- [0. 0. 0. 1. 0. 0. 0. 0.]
- [0. 0. 0. 0. 1. 0. 0. 0.]
- [0. 0. 0. 0. 0. 1. 0. 0.]
- [0. 0. 0. 0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 0. 0. 0. 1.]]
-
-Sigma z:
-[[1. 0. 0. 0. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0. 0. 0. 0.]
- [0. 0. 1. 0. 0. 0. 0. 0.]
- [0. 0. 0. 1. 0. 0. 0. 0.]
- [0. 0. 0. 0. 1. 0. 0. 0.]
- [0. 0. 0. 0. 0. 1. 0. 0.]
- [0. 0. 0. 0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 0. 0. 0. 1.]]
 </pre></div>
 </div>
 </div>
@@ -1295,7 +1246,7 @@ Sigma z:
 <p>Сделаем финт ушами: будем всегда считать, что путь коммивояжера начинается в вершине с индексом 0. Так как путь коммивояжера это гамильтонов цикл, то делаем это упрощение без какой-либо потери общности, так как вершина с индексом 0 все равно должна будет войти в путь. При этом такой хитрый трюк позволит снизить число необходимых кубит с <span class="math notranslate nohighlight">\(N^2\)</span> до <span class="math notranslate nohighlight">\((N - 1)^2\)</span>, что довольно существенно (хотя асимптотическая сложность остается такой же). Работать с графом будем при помощи уже знакомой библиотеки <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_tsp_to_ising</span><span class="p">(</span><span class="n">g</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_tsp_to_ising</span><span class="p">(</span><span class="n">g</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">:</span>
     <span class="c1"># Имеется два элемента гамильтониана:</span>
     <span class="c1">#  - часть, дающая нам Гамилтонов цикл</span>
     <span class="c1">#  - часть, считающая стоимость пути</span>
@@ -1373,7 +1324,7 @@ Sigma z:
 <p>Убедимся, что точное решение даст тот же путь (с той же стоимостью), что и решение из <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span> <span class="o">=</span> <span class="n">convert_tsp_to_ising</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">op</span> <span class="o">=</span> <span class="n">convert_tsp_to_ising</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 <span class="n">scipy_solution</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;SR&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ground state energy: </span><span class="si">{</span><span class="n">scipy_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -1400,13 +1351,6 @@ Sigma z:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ground state energy: 273.0000-0.0000j
-SciPy solution (nodes order): [0, 2, 1, 3, 0]
-SciPy solution (total cost): 213.0
-</pre></div>
-</div>
-</div>
 </div>
 <p>Видим, что решение через матрицу совпадает с тем, что выдал <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> (с точностью до инверсии: <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">3,</span> <span class="pre">0]</span></code> и <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">3,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">0]</span></code>), как и общая стоимость пути. Энергия основного состояния отличается по причине того, что использовали оптимизацию и магию с коэффициентами. Но это не так важно: по энергиям важно лишь отношение порядка, потому что зная битовую строку всегда можем проверить стоимость пути за линейное время!</p>
 <p>Теперь можно наконец-то, приступать к симуляции квантовых вычислений!</p>
@@ -1421,7 +1365,7 @@ SciPy solution (total cost): 213.0
 <p>Веса графа имеют разброс значений от 0 до 100. Из-за этого, при некоторых конфигурациях можем получать очень большое собственное значение гамильтониана, вплоть до нескольких тысяч. Это не очень хорошо для градиентного спуска методом <code class="docutils literal notranslate"><span class="pre">paramter-shift</span></code>, поэтому для численной устойчивости давайте умножим все значения весов на <span class="math notranslate nohighlight">\(0.1\)</span>. Это сделает градиенты не слишком большими и улучшит численную устойчивость. Делать это можно совершенно спокойно, так как не критична численная величина минимального собственного, а важно лишь отношение порядка собственных значений.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 
 <span class="n">numer_stability_const</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">ham</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">SparseHamiltonian</span><span class="p">(</span><span class="n">op</span> <span class="o">*</span> <span class="n">numer_stability_const</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)))</span>
@@ -1442,7 +1386,7 @@ SciPy solution (total cost): 213.0
 <p>Давайте реализуем такой слой:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ham</span><span class="o">.</span><span class="n">wires</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ham</span><span class="o">.</span><span class="n">wires</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">layer</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
@@ -1459,7 +1403,7 @@ SciPy solution (total cost): 213.0
 <p>Теперь создадим устройство, которое будет квантовым симулятором, а также напишем код, который будет на этом устройстве запускаться. Такой код должен последовательно применить несколько <em>HWEA</em> слоев, после чего измерить ожидаемое значение гамильтониана в полученном состоянии.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
 <span class="n">num_layers</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">diff_method</span><span class="o">=</span><span class="s2">&quot;parameter-shift&quot;</span><span class="p">)</span>
@@ -1479,7 +1423,7 @@ SciPy solution (total cost): 213.0
 <p>Теперь надо сгенерировать параметры и выбрать метод их оптимизации. В этот раз давайте воспользуемся алгоритмом <code class="docutils literal notranslate"><span class="pre">Momentum</span></code>, так называемым “ускоренным” градиентным спуском:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">MomentumOptimizer</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">MomentumOptimizer</span><span class="p">()</span>
 <span class="n">params</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
     <span class="nb">tuple</span><span class="p">(</span>
         <span class="p">(</span>
@@ -1504,7 +1448,7 @@ SciPy solution (total cost): 213.0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">feed_forward</span><span class="p">(</span><span class="n">params</span><span class="p">),</span>
 <span class="p">]</span>
 
@@ -1517,67 +1461,10 @@ SciPy solution (total cost): 213.0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/pennylane/_grad.py:95: UserWarning: Starting with PennyLane v0.21.0, when using Autograd, inputs have to explicitly specify requires_grad=True (or the argnum argument must be passed) in order for trainable parameters to be identified.
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 0	energy: 360.638506
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 5	energy: 163.172963
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 10	energy: 96.375950
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 15	energy: 56.524352
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 20	energy: 43.497589
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 25	energy: 35.938162
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 30	energy: 31.882151
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 35	energy: 29.457526
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 40	energy: 29.232270
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 45	energy: 28.058306
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 50	energy: 27.814023
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 55	energy: 27.495886
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 60	energy: 27.479515
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 65	energy: 27.411348
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 70	energy: 27.348231
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 75	energy: 27.329692
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>epoch: 80	energy: 27.324815
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">energy</span><span class="p">)),</span> <span class="n">energy</span><span class="p">,</span> <span class="s2">&quot;.-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Energy by epochs&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">scipy_solution</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">numer_stability_const</span><span class="p">,</span>
@@ -1593,14 +1480,11 @@ SciPy solution (total cost): 213.0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/tspvqe_32_0.png" src="../../../_images/tspvqe_32_0.png" />
-</div>
 </div>
 <p>Видим, что <strong>VQE</strong> отлично сходится к основному состоянию, которое знаем из <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> и <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code>. Теперь давайте убедимся, что квантовый путь совпадет с тем, что получили из <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>. Для этого нужно получить распределение вероятностей битовых строк. На реальном компьютере это можно сделать просто измеряя много раз, но на симуляторе есть возможность получить его сразу одной командой.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">diff_method</span><span class="o">=</span><span class="s2">&quot;parameter-shift&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">diff_method</span><span class="o">=</span><span class="s2">&quot;parameter-shift&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">answer</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="n">size</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">):</span>
         <span class="n">layer</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
@@ -1631,12 +1515,6 @@ SciPy solution (total cost): 213.0
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quantum solution (nodes order): </span><span class="si">{</span><span class="n">q_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quantum solution (total cost): </span><span class="si">{</span><span class="n">q_solution_cost</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantum solution (nodes order): [0, 2, 1, 3, 0]
-Quantum solution (total cost): 213.0
 </pre></div>
 </div>
 </div>

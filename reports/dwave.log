@@ -1,0 +1,73 @@
+Traceback (most recent call last):
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.8.14/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from typing import List
+from typing import Tuple
+from typing import Dict
+
+
+def plot_map(sample: Dict[str, bool], provinces: List[str], neighbors: List[Tuple[str]]) -> None:
+    G = nx.Graph()
+    G.add_nodes_from(provinces)
+    G.add_edges_from(neighbors)
+    color_map = {}
+    for province in provinces:
+          for i in range(colors):
+            if sample[province+str(i)]:
+                color_map[province] = i
+    node_colors = [color_map.get(node) for node in G.nodes()]
+    nx.draw_circular(G, with_labels=True, node_color=node_colors, node_size=3000, cmap=plt.cm.rainbow)
+    plt.show()
+
+plot_map(sample, provinces, neighbors)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [10][0m, in [0;36m<cell line: 19>[0;34m()[0m
+[1;32m     16[0m     nx[38;5;241m.[39mdraw_circular(G, with_labels[38;5;241m=[39m[38;5;28;01mTrue[39;00m, node_color[38;5;241m=[39mnode_colors, node_size[38;5;241m=[39m[38;5;241m3000[39m, cmap[38;5;241m=[39mplt[38;5;241m.[39mcm[38;5;241m.[39mrainbow)
+[1;32m     17[0m     plt[38;5;241m.[39mshow()
+[0;32m---> 19[0m [43mplot_map[49m[43m([49m[43msample[49m[43m,[49m[43m [49m[43mprovinces[49m[43m,[49m[43m [49m[43mneighbors[49m[43m)[49m
+
+Input [0;32mIn [10][0m, in [0;36mplot_map[0;34m(sample, provinces, neighbors)[0m
+[1;32m     14[0m             color_map[province] [38;5;241m=[39m i
+[1;32m     15[0m node_colors [38;5;241m=[39m [color_map[38;5;241m.[39mget(node) [38;5;28;01mfor[39;00m node [38;5;129;01min[39;00m G[38;5;241m.[39mnodes()]
+[0;32m---> 16[0m [43mnx[49m[38;5;241;43m.[39;49m[43mdraw_circular[49m[43m([49m[43mG[49m[43m,[49m[43m [49m[43mwith_labels[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m[43m [49m[43mnode_color[49m[38;5;241;43m=[39;49m[43mnode_colors[49m[43m,[49m[43m [49m[43mnode_size[49m[38;5;241;43m=[39;49m[38;5;241;43m3000[39;49m[43m,[49m[43m [49m[43mcmap[49m[38;5;241;43m=[39;49m[43mplt[49m[38;5;241;43m.[39;49m[43mcm[49m[38;5;241;43m.[39;49m[43mrainbow[49m[43m)[49m
+[1;32m     17[0m plt[38;5;241m.[39mshow()
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/networkx/drawing/nx_pylab.py:1218[0m, in [0;36mdraw_circular[0;34m(G, **kwargs)[0m
+[1;32m   1187[0m [38;5;28;01mdef[39;00m [38;5;21mdraw_circular[39m(G, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m   1188[0m     [38;5;124;03m"""Draw the graph `G` with a circular layout.[39;00m
+[1;32m   1189[0m 
+[1;32m   1190[0m [38;5;124;03m    This is a convenience function equivalent to::[39;00m
+[0;32m   (...)[0m
+[1;32m   1216[0m [38;5;124;03m    :func:`~networkx.drawing.layout.circular_layout`[39;00m
+[1;32m   1217[0m [38;5;124;03m    """[39;00m
+[0;32m-> 1218[0m     [43mdraw[49m[43m([49m[43mG[49m[43m,[49m[43m [49m[43mcircular_layout[49m[43m([49m[43mG[49m[43m)[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/networkx/drawing/nx_pylab.py:113[0m, in [0;36mdraw[0;34m(G, pos, ax, **kwds)[0m
+[1;32m    111[0m cf[38;5;241m.[39mset_facecolor([38;5;124m"[39m[38;5;124mw[39m[38;5;124m"[39m)
+[1;32m    112[0m [38;5;28;01mif[39;00m ax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m--> 113[0m     [38;5;28;01mif[39;00m [43mcf[49m[38;5;241;43m.[39;49m[43m_axstack[49m[43m([49m[43m)[49m [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    114[0m         ax [38;5;241m=[39m cf[38;5;241m.[39madd_axes(([38;5;241m0[39m, [38;5;241m0[39m, [38;5;241m1[39m, [38;5;241m1[39m))
+[1;32m    115[0m     [38;5;28;01melse[39;00m:
+
+[0;31mTypeError[0m: '_AxesStack' object is not callable
+TypeError: '_AxesStack' object is not callable
+
