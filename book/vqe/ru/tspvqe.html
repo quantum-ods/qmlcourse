@@ -153,56 +153,6 @@ const thebe_selector_output = ".output, .cell_output"
    ⬜ О блоке
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l1.html">
-   🟦 Вводная лекция про Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l2.html">
-   🟦 Установка инструментов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l3.html">
-   🟦 Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l4.html">
-   🟦 Переменные, типы и вывод
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l5.html">
-   🟦 Условия и сравнения
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l6.html">
-   🟦 Списки и циклы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l7.html">
-   🟦 Словари
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l8.html">
-   🟦 Функции
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l9.html">
-   🟦 Объекты и классы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l10.html">
-   🟦 Финальная лекция
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -1437,14 +1387,14 @@ SciPy solution (total cost): 213.0
 <figure class="align-default" id="sycamore-lattice2">
 <a class="reference internal image-reference" href="../../../_images/sycamore.png"><img alt="../../../_images/sycamore.png" src="../../../_images/sycamore.png" style="width: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 131 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 100 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../../bibliography.html#id33" title="Abhinav Kandala, Antonio Mezzacapo, Kristan Temme, Maika Takita, Markus Brink, Jerry M Chow, and Jay M Gambetta. Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets. Nature, 549(7671):242–246, 2017. URL: https://www.nature.com/articles/nature23879, doi:10.1038/nature23879.">KMT+17</a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../../qc/ru/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../../qc/ru/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="../../../_images/HWA.png"><img alt="../../../_images/HWA.png" src="../../../_images/HWA.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 132 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id33" title="Abhinav Kandala, Antonio Mezzacapo, Kristan Temme, Maika Takita, Markus Brink, Jerry M Chow, and Jay M Gambetta. Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets. Nature, 549(7671):242–246, 2017. URL: https://www.nature.com/articles/nature23879, doi:10.1038/nature23879.">KMT+17</a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 101 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id33" title="Abhinav Kandala, Antonio Mezzacapo, Kristan Temme, Maika Takita, Markus Brink, Jerry M Chow, and Jay M Gambetta. Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets. Nature, 549(7671):242–246, 2017. URL: https://www.nature.com/articles/nature23879, doi:10.1038/nature23879.">KMT+17</a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Давайте реализуем такой слой:</p>
