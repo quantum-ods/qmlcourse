@@ -9,7 +9,7 @@ Author(s):
 Translation:
 
 - [Sinchenko Semyon](https://github.com/SemyonSinchenko)
-- [Trohimenko Viktor](https://github.com/vtrokhymenko)
+- [vvssttkk](https://github.com/vvssttkk)
 
 
 ## About the lecture

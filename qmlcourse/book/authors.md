@@ -6,7 +6,7 @@
 
 - [Синченко Семён / Sinchenko Semyon](https://github.com/SemyonSinchenko)
 - [Кашницкий Юрий / Kashnitsky Yury](https://github.com/Yorko)
-- [Трохименко Виктор / Trohimenko Viktor](https://github.com/vtrokhymenko)
+- [vvssttkk](https://github.com/vvssttkk)
 
 ## Основные авторы / The main authors
 
@@ -18,9 +18,7 @@
 - [Желтоножский Евгений / Zheltonozhskiy Evgeniy](https://github.com/Randl)
 - [Карелин Николай / Karelin Nikolay](https://github.com/karelin)
 - [Кашницкий Юрий / Kashnitsky Yury](https://github.com/Yorko)
-- [Котенков Игорь / Kotenkov Igor](https://github.com/stalkermustang)
 - [Лукьяненко Андрей / Lukyanenko Andrey](https://github.com/Erlemar)
-- [Овсянникова Александра / Ovsyannikova Alexandra](https://github.com/alexmorphine)
 - [Озерин Алексей / Ozerin Alex](https://github.com/m12sl)
 - [Петров Вадим / Piatrou Vadzim](https://github.com/belgraviton)
 - [Пронькин Алексей / Pronkin Alexey](https://github.com/alexey-pronkin)
@@ -40,13 +38,13 @@
 - [Карелин Николай / Karelin Nikolay](https://github.com/karelin)
 - [Кашницкий Юрий / Kashnitsky Yury](https://github.com/Yorko)
 - [Тезиков Роман / Tezikov Roman](https://github.com/TezRomacH)
-- [Трохименко Виктор / Trohimenko Viktor](https://github.com/vtrokhymenko)
+- [vvssttkk](https://github.com/vvssttkk)
 
 ## Техническая поддержка / Technical support
 
 - [Коржов Дмитрий / Korzhov Dmitry](https://github.com/dkorzhov)
 - [Пронькин Алексей / Pronkin Alexey](https://github.com/alexey-pronkin)
-- [Трохименко Виктор / Trohimenko Viktor](https://github.com/vtrokhymenko)
+- [vvssttkk](https://github.com/vvssttkk)
 
 ## Редакторы / Editors
 
