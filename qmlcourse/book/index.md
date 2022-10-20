@@ -60,7 +60,7 @@ Our course is divided into logical blocks, each containing lectures of different
 ```{grid-item-card} Как проходить этот курс?
 Рекомендуется проходить курс в том порядке, который обозначен на схеме. У курса есть [пререквизиты](./intro/ru/prerequisite.md) –- программирование на Python, основы линейной алгебры и машинного обучения, советуем с ними ознакомиться и (опционально) проверить себя с помощью [входного теста](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
 
-Курс обсуждается в [Slack ODS.ai](https://ods.ai/join-community) в канале `#quantum_computing`.
+Курс обсуждается в [matrix.ods.ai](https://ods.ai/tracks/odsmatrix101) в канале `[course] quantum ml`.
 
 **Желаем успехов!**
 ```
@@ -68,7 +68,7 @@ Our course is divided into logical blocks, each containing lectures of different
 ```{grid-item-card} How to take this course?
 It is recommended to take the course in the order indicated in the diagram. The course has [prerequisites](./intro/en/prerequisite.md) -- programming in Python, basics of linear algebra and machine learning, we advise to read them and (optionally) check yourself with [input test](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
 
-The course is discussed in [Slack ODS.ai](https://ods.ai/join-community) in the `#quantum_computing` channel.
+The course is discussed in [matrix.ods.ai](https://ods.ai/tracks/odsmatrix101) in the `[course] quantum ml` channel.
 
 All English version course you can found below start from [here](./intro/en/intro.md).
 
