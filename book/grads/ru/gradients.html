@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Градиенты квантовых схем &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,56 +151,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../python/ru/python_intro.html">
    ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l1.html">
-   🟦 Вводная лекция про Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l2.html">
-   🟦 Установка инструментов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l3.html">
-   🟦 Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l4.html">
-   🟦 Переменные, типы и вывод
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l5.html">
-   🟦 Условия и сравнения
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l6.html">
-   🟦 Списки и циклы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l7.html">
-   🟦 Словари
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l8.html">
-   🟦 Функции
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l9.html">
-   🟦 Объекты и классы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l10.html">
-   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -1138,13 +1092,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="gradients">
+  <section class="tex2jax_ignore mathjax_ignore" id="gradients">
 <span id="id1"></span><h1>Градиенты квантовых схем<a class="headerlink" href="#gradients" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции мы детально разберем, как можно оптимизировать параметры VQC:</p>
 <ul class="simple">
@@ -1156,12 +1110,12 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Введение<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Как мы уже говорили ранее, VQC выступают в роли “черных ящиков”, которые имеют параметры и как-то преобразуют поступающие в них данные. В этом случае сам процесс оптимизации параметров выполняется на классическом компьютере. Одними из самых эффективных на сегодня методов решения задач непрерывной оптимизации являются градиентные методы. Для этих методов разработан широкий арсенал эвристик и приемов, который применяется в обучении классических глубоких нейронных сетей. Очень хочется применить весь этот арсенал и для квантового машинного обучения. Но как же посчитать градиент вариационной квантовой схемы?</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Задача лекции<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>На этой лекции мы рассмотрим простую задачку по оптимизации параметров квантовой схемы и на ее примере увидим, как работают квантовые градиенты. В качестве задачи возьмем известный набор данных “Two Moon” из библиотеки <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>:</p>
 <div class="cell docutils container">
@@ -1203,11 +1157,11 @@ title="Print to PDF"
 <img alt="../../../_images/gradients_3_0.png" src="../../../_images/gradients_3_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Вариационная схема<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Перед тем как мы начнем обучение и будем считать градиенты, нам необходимо определиться с тем, как будет выглядеть наша вариационная схема. Мы посвятим кодированию данных, выбору архитектуры схемы, а также измеряемого оператора еще много занятий. Так что пока просто воспользуемся кодированием признаков <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> вращениями, а сверху применим несколько параметризованных слоев вращений.</p>
-<div class="section" id="id6">
+<section id="id6">
 <h3>Кодирование признаков<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1223,8 +1177,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>Параметризованные слои<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
 <p>В качестве одного слоя обучения мы будем использовать параметризованные вращения в связке с двухкубитным гейтом для создания запутанных состояний.</p>
 <div class="admonition note">
@@ -1249,8 +1203,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>Здесь у нас вращения каждого из кубитов по сфере Блоха и двухкубитное взаимодействие <span class="math notranslate nohighlight">\(\hat{CZ}\)</span>.</p>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h3>Все вместе<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Теперь давайте объединим все это вместе, добавим пару наблюдаемых и оформим как <code class="docutils literal notranslate"><span class="pre">qml.qnode</span></code>:</p>
 <div class="cell docutils container">
@@ -1266,8 +1220,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Функция “скоринга”<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Наша квантовая схема принимает на вход лишь одну точку данных, а у нас их 50. Поэтому удобно сразу написать функцию, которая может работать с массивами <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>:</p>
 <div class="cell docutils container">
@@ -1292,8 +1246,8 @@ title="Print to PDF"
 <li><p>результат добавлять в итоговый массив</p></li>
 </ul>
 <p>Именно это и реализовано в коде.</p>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>Визуализация<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Давайте инициализируем нашу схему случайными параметрами и посмотрим, как она “сходу” классифицирует данные. Возьмем 4 параметризованных слоя.</p>
 <div class="cell docutils container">
@@ -1313,16 +1267,16 @@ title="Print to PDF"
 </div>
 </div>
 <p>Как видно, результат “не очень” и наша цель – попытаться его улучшить.</p>
-</div>
-</div>
-<div class="section" id="id11">
+</section>
+</section>
+<section id="id11">
 <h2>Функция потерь<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Прежде чем варьировать параметры схемы, нам для начала необходимо понять, а что именно мы хотим оптимизировать. Для этого нам необходимо выбрать функцию потерь.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Если у Вас трудности с функциями потерь в таком контексте, то рекомендуем вернуться к вводной лекции про классическое машинное обучение, где эта тема раскрыта достаточно подробно.</p>
 </div>
-<div class="section" id="id12">
+<section id="id12">
 <h3>Квадратичное отклонение<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>В качестве функции потерь, которая является дифференцируемой, мы будем использовать наиболее простой вариант – среднеквадратичное отклонения. Это не самый лучший выбор для задач классификации, но зато самый простой. Простой вариант – это именно то, что нам нужно в этой лекции:</p>
 <div class="cell docutils container">
@@ -1334,8 +1288,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id13">
+</section>
+<section id="id13">
 <h3>Точность классификации<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <p>В качестве метрики качества среднеквадратичное отклонение вообще не подходит – понять по этой цифре, хорошо или плохо работает модель почти невозможно! Поэтому для оценки модели в целом мы будем использовать точность:</p>
 <div class="cell docutils container">
@@ -1352,9 +1306,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="pennylane">
+</section>
+</section>
+<section id="pennylane">
 <h2>Решение средствами <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code><a class="headerlink" href="#pennylane" title="Permalink to this headline">#</a></h2>
 <p>Библиотека <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> может использовать один из нескольких движков для автоматического дифференцирования:</p>
 <ul class="simple">
@@ -1424,11 +1378,11 @@ title="Print to PDF"
 <img alt="../../../_images/gradients_23_0.png" src="../../../_images/gradients_23_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id14">
+</section>
+<section id="id14">
 <h2>А как оно работает?<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
 <p>Теперь, когда мы увидели процесс оптимизации квантовой схемы, давайте попробуем подумать, а как оно на самом деле работает?</p>
-<div class="section" id="id15">
+<section id="id15">
 <h3>Метод конечных отрезков<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>Для начала вспомним то, что является геометрическом (или визуальной) интерпретацией градиента функции. Правильно, градиент в каждой точке – это касательная. А приближенное значение угла наклона любой прямой можно найти, взяв конечные отрезки:</p>
 <div class="math notranslate nohighlight">
@@ -1496,8 +1450,8 @@ Naive grad: 0.009	Autograd result: 0.004
 </div>
 </div>
 <p>Можно заметить, что даже с таким большим значением <span class="math notranslate nohighlight">\(\Delta\)</span> наши оценки получились достаточно близкими к тем, которые получены в <code class="docutils literal notranslate"><span class="pre">Autograd</span></code>. Хотя, конечно, для некоторых значений расхождения заметны и иногда они даже в знаке частной производной.</p>
-</div>
-<div class="section" id="parameter-shift-rule">
+</section>
+<section id="parameter-shift-rule">
 <h3>Parameter-shift rule<a class="headerlink" href="#parameter-shift-rule" title="Permalink to this headline">#</a></h3>
 <p>Более точная оценка может быть получена методом, который называется <strong>Parameter-shift</strong>. Он основан на том, что для квантового “черного ящика” <span class="math notranslate nohighlight">\(\hat{U}(\theta)\)</span>, которым является наша схема, частная производная по параметру <span class="math notranslate nohighlight">\(\theta_i\)</span> выражается так:</p>
 <div class="math notranslate nohighlight">
@@ -1563,9 +1517,9 @@ Naive grad: 0.004	Autograd result: 0.004
 </div>
 </div>
 <p>Как видно, этот результат уже совпадает с тем, что делает “под капотом” <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code> и <code class="docutils literal notranslate"><span class="pre">Autograd</span></code>. На самом деле, правило <strong>parameter-shift</strong> позволяет использовать много интересных хитростей и оптимизаций, но их не получится легко показать без погружения в математические детали метода.</p>
-</div>
-</div>
-<div class="section" id="id16">
+</section>
+</section>
+<section id="id16">
 <h2>Что мы узнали?<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Мы попробовали провести полный цикл оптимизации параметров <strong>VQC</strong></p></li>
@@ -1577,8 +1531,8 @@ Naive grad: 0.004	Autograd result: 0.004
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

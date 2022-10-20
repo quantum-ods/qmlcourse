@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Смешанные состояния и матрицы плотности &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,56 +151,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../python/ru/python_intro.html">
    ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l1.html">
-   🟦 Вводная лекция про Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l2.html">
-   🟦 Установка инструментов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l3.html">
-   🟦 Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l4.html">
-   🟦 Переменные, типы и вывод
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l5.html">
-   🟦 Условия и сравнения
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l6.html">
-   🟦 Списки и циклы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l7.html">
-   🟦 Словари
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l8.html">
-   🟦 Функции
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l9.html">
-   🟦 Объекты и классы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l10.html">
-   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -1108,7 +1062,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="mixedstates">
+  <section class="tex2jax_ignore mathjax_ignore" id="mixedstates">
 <span id="id1"></span><h1>Смешанные состояния и матрицы плотности<a class="headerlink" href="#mixedstates" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1116,7 +1070,7 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://github.com/SemyonSinchenko">Синченко Семен</a></p></li>
 <li><p><a class="reference external" href="https://github.com/ooovector">Беседин Илья</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Из этой лекции мы узнаем:</p>
 <ul class="simple">
@@ -1125,15 +1079,15 @@ title="Print to PDF"
 <li><p>Как связаны смешанные (mixed) и запутанные (entangled) состояния</p></li>
 <li><p>Как можно описать насколько “сильно” квантовое состояние является смешанным</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Смешанные состояния<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Эта глава кратко рассматривает довольно сложный, но крайне важный аспект квантового описания мира: как описать квантовую систему, в которой случайным является не только результат измерения, но и само состояние квантовой системы, иными словами, когда мы не можем описать квантовую систему определенным вектором состояния.</p>
 <p>Как могут появиться такие ситуации?</p>
 <p>Прежде всего, в любой реалистичной ситуации квантовая система будет испытывать влияние окружающей среды. Это воздействие окружающей среды на квантовый компьютер, как правило, может быть охарактеризовано некоторой температурой этой самой среды и скоростью термализации системы с ней. В отличие от классических компьютеров, где шумы редко приводят к ошибкам в вычислениях, квантовые компьютеры очень плохо защищены от шумов. Любое масштабное квантовое вычисление является гонкой с процессами декогеренции и релаксации: за время выполнения алгоритма шумы не должны испортить результат вычислений настолько, чтобы его нельзя было использовать.</p>
 <p>Вторая, более важная причина использования смешанных состояний состоит в их тесной связи с запутанными состояниями, как показано ниже.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Почему нельзя обойтись волновой функцией<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Рассмотрим реальный физический кубит в состоянии равновесия, например, спин ядра атома в магнитном поле.
 Статистическая физика говорит нам, что вероятность обнаружить этот спин ориентированным вдоль внешнего поля выше, чем в
@@ -1155,8 +1109,8 @@ title="Print to PDF"
 <span class="math notranslate nohighlight">\(p_\uparrow\)</span> и <span class="math notranslate nohighlight">\(p_\downarrow\)</span>. <span class="math notranslate nohighlight">\(\phi\)</span> может равновероятно принимать любые значения. Таким образом, уже даже состояние
 теплового равновесия нельзя описать одной волновой функцией – это будет распределением вероятности по волновым
 функциям с разным <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Матрица плотности<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Оказывается, что вместо распределения вероятностей по волновым функциям можно использовать более простую
 конструкцию – матрицу плотности. Если система находится в состояниях <span class="math notranslate nohighlight">\(\Phi_n\)</span> с вероятностями <span class="math notranslate nohighlight">\(p_n\)</span>, то матрицу
@@ -1181,12 +1135,14 @@ title="Print to PDF"
 <p>Любую наблюдаемую физическую величину можно выразить в виде ожидаемой величины некоторого эрмитова оператора –
 а значит, описание с помощью матрицы плотности является универсальным для любых случайных квантовых систем.</p>
 <p>Стоит заметить, что матрица плотности для подсистем была впервые введена в научный оборот знаменитым советским физиком, лауреатом Нобелевской премии Львом Ландау. <span id="id6">[<a class="reference internal" href="../../bibliography.html#id39" title="Иванов М.Г. Как понимать квантовую механику. Регулярная и хаотическая динамика, 2015. URL: https://mipt.ru/upload/medialibrary/533/quant-2.pdf.">15a</a>]</span></p>
-<div class="figure align-default" id="landau">
+<figure class="align-default" id="landau">
 <img alt="../../../_images/Landau.jpg" src="../../../_images/Landau.jpg" />
-<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">Лев Ландау, 1908-1968</span><a class="headerlink" href="#landau" title="Permalink to this image">#</a></p>
-</div>
-</div>
-<div class="section" id="id7">
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Лев Ландау, 1908-1968</span><a class="headerlink" href="#landau" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id7">
 <h2>Чистые и смешанные состояния<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>Состояния, которые описываются одной единственной волновой функцией <span class="math notranslate nohighlight">\(\Psi\)</span>, называются <em>чистыми</em> (англ. <em>pure states</em>).
 Для таких состояний выражение для матрицы плотности получается тривиальным:</p>
@@ -1198,7 +1154,7 @@ title="Print to PDF"
 дает проекцию <span class="math notranslate nohighlight">\(\Phi\)</span> на <span class="math notranslate nohighlight">\(\Psi\)</span>.
 Состояния, которые нельзя описать одним вектором состояния, а можно лишь матрицей плотности, называются <em>смешанными</em>
 (англ. <em>mixed states</em>).</p>
-<div class="section" id="id8">
+<section id="id8">
 <h3>Чистота состояния<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Можно легко показать, для оператора-проектора <a class="reference internal" href="#equation-eqn-rho-pure">(2)</a> выполняется тождество</p>
 <div class="math notranslate nohighlight">
@@ -1225,8 +1181,8 @@ title="Print to PDF"
 \gamma = \operatorname{Tr} (\rho^2)
 \]</div>
 <p>называется <em>чистотой состояния</em> (<em>quantum state purity</em>).</p>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Энтропия<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Энтропия фон Неймана – это другая численная характеристика того, насколько сильно наша система смешанная. Ее
 выражение очень похоже на выражение для классической <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%8D%D0%BD%D1%82%D1%80%D0%BE%D0%BF%D0%B8%D1%8F">энтропии Шеннона</a>.
@@ -1236,8 +1192,8 @@ title="Print to PDF"
 <span class="eqno">(4)<a class="headerlink" href="#equation-eqn-entropy" title="Permalink to this equation">#</a></span>\[
 S = -Tr(\rho\cdot \ln(\rho))
 \]</div>
-</div>
-<div class="section" id="id10">
+</section>
+<section id="id10">
 <h3>Спектральная декомпозиция матрицы плотности<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Определение матрицы плотности <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> представляет собой сумму матриц плотностей чистых состояний, взятых с
 некоторыми вероятностями. Интересно, что совершенно разным комбинациям чистых состояний могут соответствовать одинаковые
@@ -1253,9 +1209,9 @@ S = -Tr(\rho\cdot \ln(\rho))
 <p>Соотношение <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> также можно рассматривать как спектральную декомпозицию матрицы плотности. В этом случае
 состояния <span class="math notranslate nohighlight">\(\Psi_n\)</span> образуют ортонормированный базис, а вероятности <span class="math notranslate nohighlight">\(p_n\)</span> – это собственные значения <span class="math notranslate nohighlight">\(\rho\)</span>.
 Как чистота <a class="reference internal" href="#equation-eqn-purity">(3)</a>, так и энтропия <a class="reference internal" href="#equation-eqn-entropy">(4)</a> зависят лишь от этих собственных значений.</p>
-</div>
-</div>
-<div class="section" id="id11">
+</section>
+</section>
+<section id="id11">
 <h2>Смешанные состояния и запутанность<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
 <p>Рассмотрим ситуацию, когда описываемую квантовую систему <span class="math notranslate nohighlight">\(\Phi\)</span> можно разделить на две подсистемы,
 <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>, и состояние этой системы <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> является суперпозицией состояний двух подсистем:</p>
@@ -1297,7 +1253,7 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 макроскопический объект (“резервуар”, например лаборатория или даже вся Вселенная).
 В этом случае определение матрицы плотности <a class="reference internal" href="#equation-eqn-rho-mixed">(1)</a> можно рассматривать как редуцированную матрицу плотности
 <a class="reference internal" href="#equation-eqn-partial-dm">(5)</a>, из которой убрали нерелевантные и неконтролируемые степени свободы.</p>
-<div class="section" id="id12">
+<section id="id12">
 <h3>Запутанные и сепарабельные состояния<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <p>Давайте вернемся к представлению состояния составной системы и зададимся вопросом: что можно сказать о связи между частями системы с точки зрения квантового описания? Для системы из двух кубитов такая составная система в общем случае может быть записана в явном виде (в этом разделе мы в основном следуем изложению из книги <span id="id13">[<a class="reference internal" href="../../bibliography.html#id71" title="Кокин А. А. Валиев К. А. Квантовые компьютеры: надежды и реальность. НИЦ &quot;Регулярная и хаотическая динамика&quot;, 2001.">01</a>]</span>):</p>
 <div class="math notranslate nohighlight" id="equation-eqn-two-qubit">
@@ -1371,8 +1327,8 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 </div>
 </div>
 <p>(код взят из официальной <a class="reference external" href="https://pennylane.ai/qml/demos/tutorial_advanced_usage.html">демонстрации</a> для библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>)</p>
-</div>
-<div class="section" id="id16">
+</section>
+<section id="id16">
 <h3>Разложение Шмидта<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>В этом разделе мы познакомимся с важной процедурой – разложением Шмидта, которое тесно связано со спектром редуцированных матриц плотности состояния составной квантовой системы и благодаря которому легко увидеть, является ли состояние системы <em>запутанным</em> или нет.</p>
 <p>Снова запишем чистое двухчастичное состояние <span class="math notranslate nohighlight">\(\ket{\Phi}\)</span> квантовой системы, в пространстве <span class="math notranslate nohighlight">\(H_{\phi} \otimes H_{\psi}\)</span> двух подсистем <span class="math notranslate nohighlight">\(\phi\)</span> и <span class="math notranslate nohighlight">\(\psi\)</span>. Покажем тогда, что <em>существуют</em> ортонормированные состояния <span class="math notranslate nohighlight">\(\ket{i_{\phi}}\)</span> системы <span class="math notranslate nohighlight">\(\phi\)</span> и ортонормированные состояния <span class="math notranslate nohighlight">\(\ket{i_{\psi}}\)</span> системы <span class="math notranslate nohighlight">\(\psi\)</span>, которые дадут нам разложение:</p>
@@ -1408,11 +1364,11 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 \[
 \ket{\Phi} = \sum_{i} \sqrt{a_{i}} \ket{i_{\phi}} \ket{i_{\psi}}.
 \]</div>
-</div>
-</div>
-<div class="section" id="id17">
+</section>
+</section>
+<section id="id17">
 <h2>Описания эволюции смешанного состояния<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id18">
+<section id="id18">
 <h3>Квантовая динамика<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <p>Напомним, что квантовая динамика в терминах волновых функций <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span> описывается при помощи уравнения Шредингера:</p>
 <div class="math notranslate nohighlight">
@@ -1430,18 +1386,20 @@ i\hbar \frac{\partial \rho}{\partial t} = [\hat{H}, \rho].
 \sum\limits_{n} p_n \hat{U} \ket{\Psi_n} \bra{\Psi_n} \hat{U}^\dagger = \hat{U}\rho\hat{U}^\dagger.
 \]</div>
 <p>Важное свойство унитарных матриц – их собственные значения по модулю равны единице. Действие унитарного оператора не изменяет собственных значений матрицы плотности, но вращает собственный ее базис. Исходя из этого можно сделать вывод о том, что ни чистота, ни энтропия не могут изменяться в результате унитарных операций.</p>
-</div>
-<div class="section" id="id19">
+</section>
+<section id="id19">
 <h3>Измерения и томография<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h3>
 <p>Квантовая механика работает так, что любое <a class="reference external" href="../../qc/ru/qubit.html#id23">измерение</a> приводит к коллапсу волновой функции и является необратимым. А еще измерения, например, состояния <span class="math notranslate nohighlight">\(\ket{+}\)</span> и <span class="math notranslate nohighlight">\(\ket{-}\)</span> не различимы при измерениях по оси <span class="math notranslate nohighlight">\(\mathbf{Z}\)</span> – для обоих состояний мы будем получать <span class="math notranslate nohighlight">\(\ket{1}\)</span> и <span class="math notranslate nohighlight">\(\ket{0}\)</span> с вероятностью <span class="math notranslate nohighlight">\(0.5\)</span>, то есть нам нужно измерять по <em>всем</em> базисам. В общем, получается, что восстановить амплитуду и фазу волновой функции <span class="math notranslate nohighlight">\(\Psi\)</span> это большая проблема, если добавить сюда вероятностный характер измерения.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Строго говоря это не просто “большая” проблема, а настоящая NP-полная задача оптимизации!</p>
 </div>
-<div class="figure align-default" id="id21">
+<figure class="align-default" id="id21">
 <a class="reference internal image-reference" href="../../../_images/MarginalDistribution.png"><img alt="../../../_images/MarginalDistribution.png" src="../../../_images/MarginalDistribution.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">Иллюстрация фазовой проблемы.</span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Иллюстрация фазовой проблемы.</span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Эта задача обычно решается при помощи квантовой томографии, и восстанавливают как раз не волновую функцию <span class="math notranslate nohighlight">\(\Psi\)</span>, а матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span>  (потому что в реальных экспериментах и задачах почти не бывает чистых состояний).
 Представим, что наша квантовая система описывается базисом <span class="math notranslate nohighlight">\(y_i\)</span> – набором из <span class="math notranslate nohighlight">\(2^N\)</span> векторов, причем каждому из этих базисных векторов соответствует свое собственное значение – результат измерения (подробнее об этом было в <a class="reference external" href="../../qc/ru/qubit.html#id31">лекции про кубит</a>). Тогда если у нас будет достаточно много результатов измерений, то мы сможем восстановить нашу матрицу плотности <span class="math notranslate nohighlight">\(\rho\)</span> методом максимизации правдоподобия. Выражение для правдоподобия в этом случае можно записать как:</p>
 <div class="math notranslate nohighlight">
@@ -1450,9 +1408,9 @@ L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(q_i\)</span> – это частота получения собственного значения, соответствующего волновой функции <span class="math notranslate nohighlight">\(\ket{y_i}\)</span> (потому что измерение переводит наше состояние в базисный вектор, соответствующий результату измерения). В итоге увеличивая число измерений мы приближаем частоты <span class="math notranslate nohighlight">\(q_i\)</span> к вероятностям <span class="math notranslate nohighlight">\(\bra{\Psi}(\ket{y_i}\bra{y_i})\ket{\Psi}\)</span>, а нашу матрицу <span class="math notranslate nohighlight">\(\rho\)</span> к ее истинному виду.</p>
 <p>Методы квантовой томографии являются критической частью, в том числе, квантовой связи, так как системы там обычно небольшие, но восстанавливать надо всю матрицу плотности.</p>
-</div>
-</div>
-<div class="section" id="id20">
+</section>
+</section>
+<section id="id20">
 <h2>Что мы узнали?<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Формализм матрицы плотности позволяет описывать составные системы (например, один кубит в многокубитной системе)</p></li>
@@ -1461,8 +1419,8 @@ L(\rho) = \prod_i \bra{y_i} \rho \ket{y_i} ^{q_i},
 <li><p>Состояние части запутанного состояния – смешанное</p></li>
 <li><p>Отличие смешанного состояния от чистого можно охарактеризовать параметром типа энтропии</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

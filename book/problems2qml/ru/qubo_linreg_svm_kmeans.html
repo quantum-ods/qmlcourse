@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>QUBO-формулировки для линейной регрессии, SVM и метода k-средних &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,56 +151,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../python/ru/python_intro.html">
    ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l1.html">
-   🟦 Вводная лекция про Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l2.html">
-   🟦 Установка инструментов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l3.html">
-   🟦 Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l4.html">
-   🟦 Переменные, типы и вывод
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l5.html">
-   🟦 Условия и сравнения
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l6.html">
-   🟦 Списки и циклы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l7.html">
-   🟦 Словари
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l8.html">
-   🟦 Функции
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l9.html">
-   🟦 Объекты и классы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l10.html">
-   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -1022,13 +976,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="qubo-svm-k">
+  <section class="tex2jax_ignore mathjax_ignore" id="qubo-svm-k">
 <span id="qubo-linreg-svm-kmeans"></span><h1>QUBO-формулировки для линейной регрессии, SVM и метода k-средних<a class="headerlink" href="#qubo-svm-k" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/dmburd">Бурдейный Дмитрий</a></p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Здесь рассмотрим QUBO-формулировки трех задач ML (линейная регрессия, SVM, сбалансированная кластеризация методом k-средних) аналогично тому, как в <a class="reference internal" href="np2ising.html"><span class="doc std std-doc">предыдущей лекции</span></a> было продемонстрировано сведение к QUBO задач о максимальном разрезе в графе, о коммивояжере и о выделении сообществ в графе. Изложение полностью основывается на статье <span id="id2">[<a class="reference internal" href="../../bibliography.html#id60" title="Prasanna Date, Davis Arthur, and Lauren Pusey-Nazzaro. Qubo formulations for training machine learning models. Scientific Reports, 11:10029, May 2021. URL: https://doi.org/10.1038/s41598-021-89461-4, doi:10.1038/s41598-021-89461-4.">DAPN21</a>]</span>.</p>
 <p>Некоторые обозначения, которые будут использоваться в дальнейшем:</p>
@@ -1048,8 +1002,8 @@ z^T A z + z^T b
     \to \min_{z \in \{0,1\}^M}
 \]</div>
 <p>где <span class="math notranslate nohighlight">\(M\)</span> – натуральное число, <span class="math notranslate nohighlight">\(z\)</span> – бинарный вектор решения, <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{M \times M}\)</span> – QUBO-матрица с действительными элементами, <span class="math notranslate nohighlight">\(b \in \mathbb{R}^{M}\)</span> – QUBO-вектор. Как отмечалось в предыдущей лекции, при <span class="math notranslate nohighlight">\(z_i \in \{0,1\}\)</span> выполняется равенство <span class="math notranslate nohighlight">\(z_i^2 = z_i\)</span>, так что линейные члены в <a class="reference internal" href="#equation-eqn-general-qubo-in-paper">(47)</a> можно включить в квадратичные, но этого делать не будем, т.к. для целей этой лекции и для лучшего понимания удобнее сохранить минимизируемую квадратичную форму именно в виде <a class="reference internal" href="#equation-eqn-general-qubo-in-paper">(47)</a>.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Линейная регрессия<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В задаче линейной регрессии предполагается, что зависимость истинных ответов от признаков тренировочных объектов приближенно линейная:</p>
 <div class="math notranslate nohighlight">
@@ -1062,17 +1016,19 @@ y_i^{(pred)} = \braket{w, x_i} + b, \quad y_i^{(pred)} \approx y_i,
 E(w) = || Xw - Y ||^2
     \to \min_{w \in \mathbb{R}^{d+1}}
 \]</div>
-<div class="figure align-default" id="lin-reg-example">
+<figure class="align-default" id="lin-reg-example">
 <a class="reference internal image-reference" href="../../../_images/fig_12.png"><img alt="../../../_images/fig_12.png" src="../../../_images/fig_12.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 125 </span><span class="caption-text">Иллюстрация к задаче линейной регрессии.</span><a class="headerlink" href="#lin-reg-example" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 94 </span><span class="caption-text">Иллюстрация к задаче линейной регрессии.</span><a class="headerlink" href="#lin-reg-example" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Известно аналитическое решение задачи <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a>:</p>
 <div class="math notranslate nohighlight">
 \[
 w = \left( X^T X \right)^{-1} X^T Y
 \]</div>
 <p>Если <span class="math notranslate nohighlight">\(\left( X^T X \right)^{-1}\)</span> не существует, нужно вычислить <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%B0%D1%8F_%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D0%B0">псевдообратную</a> матрицу. ВременнАя сложность решения задачи линейной регрессии равна <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span>, т.к. нужно <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span> для вычисления матрицы <span class="math notranslate nohighlight">\(X^T X\)</span> и <span class="math notranslate nohighlight">\(\mathcal{O}(d^3)\)</span> для вычисления обратной к ней (предполагаем, что <span class="math notranslate nohighlight">\(N \gg d\)</span>).</p>
-<div class="section" id="qubo">
+<section id="qubo">
 <h3>QUBO-формулировка<a class="headerlink" href="#qubo" title="Permalink to this headline">#</a></h3>
 <p>Перепишем выражение <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-lin-reg-qubo-1">
@@ -1140,8 +1096,8 @@ E(\tilde{w}) =
 \to \min_{\tilde{w} \in \{0,1\}^{(d+1)K}}
 \]</div>
 <p>слагаемое <span class="math notranslate nohighlight">\(Y^T Y\)</span> отброшено, т.к. это константа, никак не влияющая на решение задачи оптимизации без ограничений.</p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>Оценка вычислительной сложности<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Для исходной задачи регрессии <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a> количество значений в датасете <span class="math notranslate nohighlight">\(X\)</span> равно <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span>. Мы ввели <span class="math notranslate nohighlight">\(K\)</span> бинарных переменных для каждого из <span class="math notranslate nohighlight">\((d+1)\)</span> весов. Значит, получилось <span class="math notranslate nohighlight">\(\mathcal{O}(K d)\)</span> переменных в QUBO-формулировке <a class="reference internal" href="#equation-eqn-lin-reg-qubo-2">(51)</a>. Для решения задачи требуется <span class="math notranslate nohighlight">\(\mathcal{O}(K^2 d^2)\)</span> кубитов (см. <span id="id6">[<a class="reference internal" href="../../bibliography.html#id29" title="Prasanna Date, Robert Patton, and Thomas Potok. Efficiently embedding qubo problems on adiabatic quantum computers. Quantum Information Processing, 18:117, Mar 2019. URL: https://doi.org/10.1007/s11128-019-2236-3, doi:10.1007/s11128-019-2236-3.">DPP19</a>]</span>), это пространственная сложность в рассматриваемом подходе.</p>
 <p>ВременнАя сложность в классической задаче <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span>. В случае QUBO-задачи для временнОй оценки нужно рассмотреть три части:</p>
@@ -1151,15 +1107,17 @@ E(\tilde{w}) =
 <li><p>Время для выполнения квантового отжига. Существуют теоретические оценки времени для получения точного решения, но более практично рассматривать случай, когда можно просто довольствоваться достаточно высокой вероятностью (скажем, 99%) получения оптимального решения. Для современных квантовых компьютеров D-Wave с ограниченным числом кубитов на практике получается, что время отжига и число повторений можно считать константами.</p></li>
 </ol>
 <p>В итоге полная временнАя сложность решения QUBO-задачи на адиабатическом квантовом компьютере <span class="math notranslate nohighlight">\(\mathcal{O}(N K^2 d^2)\)</span>. Может показаться, что это хуже, чем временнАя сложность классического решения, если считать <span class="math notranslate nohighlight">\(K\)</span> переменной. Но величина <span class="math notranslate nohighlight">\(K\)</span> определяется только шириной диапазона числовых значений и желаемой точностью представления, <span class="math notranslate nohighlight">\(K\)</span> не зависит от основных параметров задачи типа <span class="math notranslate nohighlight">\(N\)</span> и <span class="math notranslate nohighlight">\(d\)</span>. Поэтому можно считать <span class="math notranslate nohighlight">\(K\)</span> константой. Тогда число требуемых кубитов <span class="math notranslate nohighlight">\(\mathcal{O}(d^2)\)</span>, временнАя сложность <span class="math notranslate nohighlight">\(\mathcal{O}(N d^2)\)</span>, это эквивалентно классическому случаю.</p>
-</div>
-</div>
-<div class="section" id="svm">
+</section>
+</section>
+<section id="svm">
 <h2>SVM<a class="headerlink" href="#svm" title="Permalink to this headline">#</a></h2>
 <p>Классический SVM подробно описан в соответствующей <a class="reference internal" href="../../qsvm/ru/classic_svm.html"><span class="doc std std-doc">лекции</span></a>. Рассматривается тренировочный набор <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{N \times d}\)</span> и набор истинных меток <span class="math notranslate nohighlight">\(Y \in \{-1, +1\}^{N}\)</span>. Нужно решить задачу бинарной классификации, найдя веса <span class="math notranslate nohighlight">\(w \in \mathbb{R}^{d}\)</span> и константу <span class="math notranslate nohighlight">\(b \in \mathbb{R}\)</span>, при которых классификатор <span class="math notranslate nohighlight">\(a(x_i) = \text{sign} \left( w^T x_i + b \right)\)</span> допускает как можно меньше ошибок на обучающей выборке.</p>
-<div class="figure align-default" id="svm-example">
+<figure class="align-default" id="svm-example">
 <a class="reference internal image-reference" href="../../../_images/fig_22.png"><img alt="../../../_images/fig_22.png" src="../../../_images/fig_22.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 126 </span><span class="caption-text">Иллюстрация к задаче бинарной классификации с помощью SVM.</span><a class="headerlink" href="#svm-example" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 95 </span><span class="caption-text">Иллюстрация к задаче бинарной классификации с помощью SVM.</span><a class="headerlink" href="#svm-example" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Двойственная задача <a class="reference internal" href="../../qsvm/ru/classic_svm.html#equation-svmdual">(18)</a> в текущих обозначениях принимает вид</p>
 <div class="math notranslate nohighlight" id="equation-eqn-svm-dual-1">
 <span class="eqno">(52)<a class="headerlink" href="#equation-eqn-svm-dual-1" title="Permalink to this equation">#</a></span>\[\begin{split}
@@ -1176,7 +1134,7 @@ E(\tilde{w}) =
     \end{aligned}
 \right.
 \end{split}\]</div>
-<div class="section" id="id8">
+<section id="id8">
 <h3>QUBO-формулировка<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <p>Перепишем <a class="reference internal" href="#equation-eqn-svm-dual-1">(52)</a> как задачу минимизации:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-svm-dual-2">
@@ -1285,8 +1243,8 @@ Penalty^{(hp)} = \frac{\gamma}{2}
         -\tilde{\lambda}^T \mathcal{P}^T 1_{N}
     \to \min_{\tilde{\lambda} \in \{0,1\}^{N K}}
 \]</div>
-</div>
-<div class="section" id="id9">
+</section>
+<section id="id9">
 <h3>Оценка вычислительной сложности<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <p>Задача <a class="reference internal" href="#equation-eqn-svm-dual-3">(54)</a> содержит <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span> значений в данных и <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> параметров (<span class="math notranslate nohighlight">\(\lambda\)</span>). QUBO-формулировка <a class="reference internal" href="#equation-eqn-svm-qubo-2">(57)</a> содержит то же количество данных, а число параметров в <span class="math notranslate nohighlight">\(K\)</span> раз больше, т.е. <span class="math notranslate nohighlight">\(\mathcal{O}(K N)\)</span>. Значит, потребуется <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 K^2)\)</span> кубитов.</p>
 <p>ВременнАя сложность классического SVM в типичных реализациях (например, <a class="reference external" href="https://en.wikipedia.org/wiki/LIBSVM">LIBSVM</a>) равна <span class="math notranslate nohighlight">\(\mathcal{O}(N^3)\)</span>. Для оценки временнОй сложности QUBO рассматриваем три составляющие (как в задаче линейной регрессии):</p>
@@ -1296,15 +1254,17 @@ Penalty^{(hp)} = \frac{\gamma}{2}
 <li><p>Время для выполнения квантового отжига и число повторений можно считать константами (см. комментарии к тому же пункту в обсуждении линейной регрессии).</p></li>
 </ol>
 <p>В итоге временнАя сложность <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 K^2)\)</span>. <span class="math notranslate nohighlight">\(K\)</span> можно считать константой, т.к. она зависит только от диапазона и желаемой точности представления <span class="math notranslate nohighlight">\(\lambda\)</span> и не зависит от параметров самой задачи классификации. Тогда получается временная сложность <span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>, что гораздо лучше оценки <span class="math notranslate nohighlight">\(\mathcal{O}(N^3)\)</span> в классическом случае.</p>
-</div>
-</div>
-<div class="section" id="k">
+</section>
+</section>
+<section id="k">
 <h2>Сбалансированная кластеризация методом k-средних<a class="headerlink" href="#k" title="Permalink to this headline">#</a></h2>
-<p>Кластеризация методом k-средних – ML-задача обучения без учителя (<em>unsupervised</em>). Требуется распределить тренировочные объекты по <span class="math notranslate nohighlight">\(k\)</span> кластерам так, чтобы суммарное отклонение тренировочных объектов, принадлежащих кластерам, от центроидов (центров масс) соответствующих кластеров было минимальным. Сбалансированная кластеризация методом k-средних – частный случай, в котором каждый кластер содержит примерно одно и то же количество объектов <span class="math notranslate nohighlight">\(N/k\)</span>, как показано на <a class="reference internal" href="#kmeans-clustering-example"><span class="std std-numref">Fig. 127</span></a>.</p>
-<div class="figure align-default" id="kmeans-clustering-example">
+<p>Кластеризация методом k-средних – ML-задача обучения без учителя (<em>unsupervised</em>). Требуется распределить тренировочные объекты по <span class="math notranslate nohighlight">\(k\)</span> кластерам так, чтобы суммарное отклонение тренировочных объектов, принадлежащих кластерам, от центроидов (центров масс) соответствующих кластеров было минимальным. Сбалансированная кластеризация методом k-средних – частный случай, в котором каждый кластер содержит примерно одно и то же количество объектов <span class="math notranslate nohighlight">\(N/k\)</span>, как показано на <a class="reference internal" href="#kmeans-clustering-example"><span class="std std-numref">Fig. 96</span></a>.</p>
+<figure class="align-default" id="kmeans-clustering-example">
 <a class="reference internal image-reference" href="../../../_images/fig_32.png"><img alt="../../../_images/fig_32.png" src="../../../_images/fig_32.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 127 </span><span class="caption-text">Иллюстрация к задаче сбалансированной кластеризации методом k-средних.</span><a class="headerlink" href="#kmeans-clustering-example" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 96 </span><span class="caption-text">Иллюстрация к задаче сбалансированной кластеризации методом k-средних.</span><a class="headerlink" href="#kmeans-clustering-example" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Нужно распределить <span class="math notranslate nohighlight">\(N\)</span> объектов из тренировочного набора <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{N \times d}\)</span> по <span class="math notranslate nohighlight">\(k\)</span> кластерам <span class="math notranslate nohighlight">\(\Phi = \{\phi_1, \dotsc, \phi_k\}\)</span>. Пусть <span class="math notranslate nohighlight">\(\mu_i\)</span> – центроид кластера <span class="math notranslate nohighlight">\(\phi_i\)</span>. В общем случае задача кластеризации методом k-средних формулируется так:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-general-kmeans">
 <span class="eqno">(58)<a class="headerlink" href="#equation-eqn-general-kmeans" title="Permalink to this equation">#</a></span>\[
@@ -1319,7 +1279,7 @@ Penalty^{(hp)} = \frac{\gamma}{2}
     \to \min_{\Phi}
 \]</div>
 <p>В прикладных задачах кластеризации размеры кластеров только приближенно равны друг другу, поэтому решение задачи <a class="reference internal" href="#equation-eqn-kmeans-equal-clusters">(59)</a> не является точным решением задачи <a class="reference internal" href="#equation-eqn-general-kmeans">(58)</a>. Для решения задачи кластеризации методом k-средних можно использовать, например, <a class="reference external" href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">алгоритм Ллойда</a>. Существует модификация алгоритма Ллойда для случая сбалансированной кластеризации.</p>
-<div class="section" id="id10">
+<section id="id10">
 <h3>QUBO-формулировка<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <p>Вводим матрицу <span class="math notranslate nohighlight">\(D \in \mathbb{R}^{N \times N}\)</span>, элементы которой равны квадратам попарных расстояний между тренировочными объектами:</p>
 <div class="math notranslate nohighlight">
@@ -1446,8 +1406,8 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
 \tilde{w}
     \to \min_{\tilde{w}}
 \]</div>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h3>Оценка вычислительной сложности<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
 <p>Задача <a class="reference internal" href="#equation-eqn-kmeans-equal-clusters">(59)</a> содержит <span class="math notranslate nohighlight">\(\mathcal{O}(N d)\)</span> значений в данных и <span class="math notranslate nohighlight">\(\mathcal{O}(N)\)</span> переменных. В QUBO-формулировке вводим по <span class="math notranslate nohighlight">\(k\)</span> бинарных переменных для каждой исходной. Получается <span class="math notranslate nohighlight">\(\mathcal{O}(N k)\)</span> переменных, а значит, требуется <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 k^2)\)</span> кубитов.</p>
 <p>Известно, что классический алгоритм сбалансированной кластеризации методом k-средних сходится за время <span class="math notranslate nohighlight">\(\mathcal{O}(N^{3.5} k^{3.5})\)</span> в худшем случае (см. ссылки в статье <span id="id12">[<a class="reference internal" href="../../bibliography.html#id60" title="Prasanna Date, Davis Arthur, and Lauren Pusey-Nazzaro. Qubo formulations for training machine learning models. Scientific Reports, 11:10029, May 2021. URL: https://doi.org/10.1038/s41598-021-89461-4, doi:10.1038/s41598-021-89461-4.">DAPN21</a>]</span>). Для оценки временнОй сложности QUBO рассматриваем три составляющие:</p>
@@ -1457,13 +1417,13 @@ Penalty^{(row)} = \sum_i Penalty_{i}^{(row)} =
 <li><p>Время для выполнения квантового отжига и число повторений можно считать константами (см. комментарии к тому же пункту в обсуждении линейной регрессии).</p></li>
 </ol>
 <p>В итоге получаем полную вычислительную сложность <span class="math notranslate nohighlight">\(\mathcal{O}(N^2 k (d+k))\)</span>. Это лучше, чем результат классического алгоритма в худшем случае. Но количество итераций в классическом алгоритме сильно зависит от “удачности” начального приближения для центроидов кластеров. Классический алгоритм может оказаться и быстрее квантового.</p>
-</div>
-</div>
-<div class="section" id="id13">
+</section>
+</section>
+<section id="id13">
 <h2>Заключение<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции были рассмотрены три важные задачи машинного обучения, которые можно переформулировать в виде QUBO (<em>Quadratic Unconstrained Binary Optimization</em>) для решения на квантовом аннилере путем сведения к задаче нахождения основного состояния квантовой системы. Общий подход заключается в том, что минимизируемый в классической формулировке функционал переписывается в виде квадратичной формы относительно бинарных переменных, а вместо условий-ограничений в финальную квадратичную форму QUBO-задачи вводятся штрафы за нарушение этих ограничений. Есть надежда на то, что при некотором количестве кубитов квантовые алгоритмы будут иметь преимущество перед классическими по времени выполнения.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

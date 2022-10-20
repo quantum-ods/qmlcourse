@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Quantum K-nearest neighbor &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,56 +151,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../python/ru/python_intro.html">
    ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l1.html">
-   🟦 Вводная лекция про Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l2.html">
-   🟦 Установка инструментов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l3.html">
-   🟦 Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l4.html">
-   🟦 Переменные, типы и вывод
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l5.html">
-   🟦 Условия и сравнения
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l6.html">
-   🟦 Списки и циклы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l7.html">
-   🟦 Словари
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l8.html">
-   🟦 Функции
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l9.html">
-   🟦 Объекты и классы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l10.html">
-   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -966,13 +920,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="quantum-k-nearest-neighbor">
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-k-nearest-neighbor">
 <h1>Quantum K-nearest neighbor<a class="headerlink" href="#quantum-k-nearest-neighbor" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/polyzer">Токарев Игорь</a></p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h2>Введение<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Если вы занимались машинным обучением, то, скорее всего, знакомы с классическим алгоритмом <span class="math notranslate nohighlight">\(k\)</span> ближайших соседей. Он относительно прост, применяется как в задачах классификации, так и в регрессии.
 Кстати, классический knn можно вспомнить обратившись к <a class="reference external" href="https://habr.com/ru/company/ods/blog/322534/">лекции</a> от ODS по классическому машинному обучению.</p>
@@ -1014,14 +968,16 @@ title="Print to PDF"
         0 : \text{ otherwise },
         \end{cases}
 \end{split}\]</div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Алгоритм<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Далее мы алгоритм представленный в работе <span id="id4">[<a class="reference internal" href="../../bibliography.html#id20" title="Afrad Basheer, A. Afham, and Sandeep K. Goyal. Quantum $k$-nearest neighbors algorithm. 2021. arXiv:2003.09187.">BAG21</a>]</span>.</p>
-<div class="figure align-default" id="qknn">
+<figure class="align-default" id="qknn">
 <a class="reference internal image-reference" href="../../../_images/qknn.png"><img alt="../../../_images/qknn.png" src="../../../_images/qknn.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 98 </span><span class="caption-text">Принципиальная схема QkNN алгоритма. Взято из работы <span id="id5">[<a class="reference internal" href="../../bibliography.html#id20" title="Afrad Basheer, A. Afham, and Sandeep K. Goyal. Quantum $k$-nearest neighbors algorithm. 2021. arXiv:2003.09187.">BAG21</a>]</span>.</span><a class="headerlink" href="#qknn" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">Принципиальная схема QkNN алгоритма. Взято из работы <span id="id5">[<a class="reference internal" href="../../bibliography.html#id20" title="Afrad Basheer, A. Afham, and Sandeep K. Goyal. Quantum $k$-nearest neighbors algorithm. 2021. arXiv:2003.09187.">BAG21</a>]</span>.</span><a class="headerlink" href="#qknn" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Квантовый алгоритм поиска <span class="math notranslate nohighlight">\(k\)</span> ближайших соседей будет состоять из двух основных шагов:</p>
 <ol class="simple">
 <li><p>Используй оракул <span class="math notranslate nohighlight">\(O_{y,A}\)</span> (для алгоритма Гровера) мы находим <span class="math notranslate nohighlight">\(k\)</span> состояний <span class="math notranslate nohighlight">\(\{|\phi_{j1}\rangle, ..., |\phi_{jk}\rangle\}\)</span> для которых значение fidelity с тестовым состоянием максимально.</p></li>
@@ -1043,10 +999,12 @@ title="Print to PDF"
         CSWAP(|0\rangle|\psi\rangle|\phi\rangle) = |0\rangle|\psi\rangle|\phi\rangle\\
         CSWAP(|1\rangle|\psi\rangle|\phi\rangle) = |1\rangle|\psi\rangle|\phi\rangle
       \end{split}\]</div>
-<div class="figure align-default" id="qknn-swap-test">
+<figure class="align-default" id="qknn-swap-test">
 <a class="reference internal image-reference" href="../../../_images/swap_test.png"><img alt="../../../_images/swap_test.png" src="../../../_images/swap_test.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 99 </span><span class="caption-text">Схема Swap test</span><a class="headerlink" href="#qknn-swap-test" title="Permalink to this image">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 68 </span><span class="caption-text">Схема Swap test</span><a class="headerlink" href="#qknn-swap-test" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Выполняется преобразование <span class="math notranslate nohighlight">\(\xi^{dig}|j\rangle|\psi_j\rangle = |j\rangle|F_j\rangle\)</span></p>
 <p>И тогда <span class="math notranslate nohighlight">\(\mathcal{F} = \xi^{dig}\xi^{amp}\)</span>.</p>
@@ -1200,8 +1158,8 @@ title="Print to PDF"
     \]</div>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

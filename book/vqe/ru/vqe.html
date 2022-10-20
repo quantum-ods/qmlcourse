@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Variational Quantum Eigensolver &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,56 +151,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../python/ru/python_intro.html">
    ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l1.html">
-   🟦 Вводная лекция про Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l2.html">
-   🟦 Установка инструментов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l3.html">
-   🟦 Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l4.html">
-   🟦 Переменные, типы и вывод
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l5.html">
-   🟦 Условия и сравнения
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l6.html">
-   🟦 Списки и циклы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l7.html">
-   🟦 Словари
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l8.html">
-   🟦 Функции
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l9.html">
-   🟦 Объекты и классы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l10.html">
-   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -1024,7 +978,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="variational-quantum-eigensolver">
+  <section class="tex2jax_ignore mathjax_ignore" id="variational-quantum-eigensolver">
 <span id="vqe"></span><h1>Variational Quantum Eigensolver<a class="headerlink" href="#variational-quantum-eigensolver" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
@@ -1032,10 +986,10 @@ title="Print to PDF"
 </ul>
 <p>В этой лекции рассмотрим такой классный и очень перспективный алгоритм как <code class="docutils literal notranslate"><span class="pre">Variational</span> <span class="pre">Quantum</span> <span class="pre">Eigensolver</span></code>. Это алгоритм создан для аппроксимационного решения задачи о собственных значениях матриц. Но, как помним, к этой задаче <a class="reference internal" href="../../problems2qml/ru/np2ising.html"><span class="doc std std-doc">можно свести</span></a> большое число реально интересных задач, например, <em>NP</em>-трудные <a class="reference internal" href="../../problems/ru/copt.html"><span class="doc std std-doc">задачи комбинаторной оптимизации</span></a>. Также к решению проблемы о собственных значениях спиновых систем <a class="reference internal" href="../../problems2qml/ru/jordanwigner.html"><span class="doc std std-doc">сводятся</span></a> задачи квантовой химии, которые <a class="reference internal" href="../../problems/ru/quantchembasic.html"><span class="doc std std-doc">обсуждались</span></a> в отдельной лекции.</p>
 <p>Задача о собственных значениях, на решение которой направлен рассматриваемый алгоритм <a class="reference internal" href="../../problems2qml/ru/eigenvals.html"><span class="doc std std-doc">обсуждалась</span></a> ранее, поэтому не будем на ней останавливаться подробно.</p>
-<div class="section" id="id1">
+<section id="id1">
 <h2>VQE<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Теперь давайте посмотрим, как эта задача связана с квантовым компьютером, а также как ее можно свести к градиентному спуску в пространстве параметров <code class="docutils literal notranslate"><span class="pre">VQE</span></code>, содержащей лишь гейты вращения. Напомню, что наличие лишь гейтов вращения <a class="reference internal" href="../../grads/ru/gradients.html"><span class="doc std std-doc">позволяет эффективно считать градиенты</span></a>.</p>
-<div class="section" id="id2">
+<section id="id2">
 <h3>Собственные значения как результат измерения<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <p>Итак, есть эрмитова матрица, для которой хотим найти минимальное собственное значение. То есть сделать примерно то, что делает <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> или <strong>VMC</strong>, но на квантовом компьютере.</p>
 <div class="admonition note">
@@ -1067,13 +1021,13 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 </ul>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="id3">
+</section>
+</section>
+<section id="id3">
 <h2>Интуиция алгоритма<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Если вспомнить подход <a class="reference external" href="../../problems2qml/ru/eigenvals.html#id11"><strong>VMC</strong></a> для решения задачи о собственных значениях, то там использовался <em>trial wave function</em> – некоторое, параметризированное кодирование состояния в его вероятность. С некоторой долей условности можно рассматривать <em>ansatz</em> в <strong>VQE</strong> как квантовый аналог классических <em>trial wave functions</em>. Только вместо семплирования при помощи методов Монте-Карло, условно говоря, сэмплируем из реальной волновой функции, когда считаем математическое ожидание результата измерения. Как <a class="reference external" href="../../qc/ru/qubit.html#id31">помним из первой лекции</a> измерение есть проекция на один из собственных векторов, то есть можно рассматривать это как выбор сэмпла из пространства всех собственных векторов. Причем для определения вероятности используется состояние после применения параметризированного <em>ansatz</em>.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Пример<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>Решим простую задачку с тривиальной моделью Изинга, который <a class="reference external" href="../../problems/ru/ising.html#numpy">рассматривали</a> в посвященной этому лекции. Будем использовать тот же код:</p>
 <div class="cell docutils container">
@@ -1116,7 +1070,7 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 </div>
 </div>
 </div>
-<div class="section" id="ansatz">
+<section id="ansatz">
 <h3>Ansatz<a class="headerlink" href="#ansatz" title="Permalink to this headline">#</a></h3>
 <p>Воспользуемся относительно простым вариантом кодирования с использование <span class="math notranslate nohighlight">\(CNOT\)</span> и нескольких слоев.</p>
 <div class="admonition note">
@@ -1168,13 +1122,13 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result for random weights: 3.3356
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result for random weights: 1.0748
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h3>Обучение<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <p>Возьмем точное решение из <a class="reference external" href="../../problems/ru/ising.html#numpy">лекции по модели Изинга</a>:</p>
 <div class="cell docutils container">
@@ -1224,13 +1178,13 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 <img alt="../../../_images/vqe_9_1.png" src="../../../_images/vqe_9_1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id6">
+</section>
+</section>
+<section id="id6">
 <h2>Заключение<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>В этой лекции познакомились в <strong>VQE</strong> – очень перспективным, красивым и мощным алгоритмом для решения задач о собственных значениях на квантовых компьютерах. В следующей лекции более детально посмотрим на реализацию этого алгоритма в коде, а также обсудим выбранный <em>ansatz</em>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

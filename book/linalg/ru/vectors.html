@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Векторы &#8212; QMLCourse</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -20,7 +21,7 @@
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -34,10 +35,13 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -147,56 +151,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../python/ru/python_intro.html">
    ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l1.html">
-   🟦 Вводная лекция про Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l2.html">
-   🟦 Установка инструментов
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l3.html">
-   🟦 Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l4.html">
-   🟦 Переменные, типы и вывод
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l5.html">
-   🟦 Условия и сравнения
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l6.html">
-   🟦 Списки и циклы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l7.html">
-   🟦 Словари
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l8.html">
-   🟦 Функции
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l9.html">
-   🟦 Объекты и классы
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../python/ru/python_l10.html">
-   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -970,13 +924,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vectors-ru">
+  <section class="tex2jax_ignore mathjax_ignore" id="vectors-ru">
 <span id="id1"></span><h1>Векторы<a class="headerlink" href="#vectors-ru" title="Permalink to this headline">#</a></h1>
 <p>Автор(ы):</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://github.com/dayyass">Эль-Айясс Дани</a></p></li>
 </ul>
-<div class="section" id="id2">
+<section id="id2">
 <h2>Определение<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>Вектор – это термин, который имеет несколько различных интерпретаций: математическую, геометрическую, физическую и др. Точный смысл данного термина зависит от контекста.</p>
 <p>Формально вектор определяется как элемент векторного пространства – множества, на котором определены операции <strong>сложения</strong> и <strong>умножения вектора на число (скаляр)</strong>, которые должны удовлетворять <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE">8 аксиомам</a>.</p>
@@ -989,8 +943,8 @@ title="Print to PDF"
 \[\begin{split}
     \mathbf{a} = a_1 \mathbf{e}_1 + a_2 \mathbf{e}_2 + ... + a_n \mathbf{e}_n = \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_n \end{pmatrix}
 \end{split}\]</div>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h2>Операции с векторами<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Как было сказано ранее, в формальном определении существуют две основные операции над векторами:</p>
 <ul class="simple">
@@ -1009,16 +963,16 @@ title="Print to PDF"
 \end{split}\]</div>
 <p>Операцию умножения вектора на число можно интерпретировать геометрически, как сжатие / растяжение вектора.</p>
 <p>Используя эти две операции, мы можем считать <strong>линейные комбинации векторов</strong>: <span class="math notranslate nohighlight">\(\alpha_1 \mathbf{a}_1 + \alpha_2 \mathbf{a}_2 + ... + \alpha_n \mathbf{a}_n ,\)</span> где <span class="math notranslate nohighlight">\(\mathbf{a}_1, \mathbf{a}_2, ..., \mathbf{a}_n\)</span> – векторы, а <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2, ..., \alpha_n\)</span> – числа.</p>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h2>Норма (длина) вектора<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
 <p>В линейной алгебре для обобщения понятия длины вектора используется термин <strong>норма</strong>. Можно сказать, что понятия длины и нормы эквивалентны.</p>
 <p>Формально норма определяется как функционал в векторном пространстве, удовлетворяющий <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)">3 аксиомам</a> и отображающий элементы этого пространства (векторы) в множество неотрицательных вещественных чисел.</p>
 <p>Данному определению нормы удовлетворяет множество функционалов, но мы будем рассматривать наиболее часто используемый – <strong>Евклидову норму</strong>.</p>
 <p>Для простоты понимания рассмотрим вектор на плоскости. С геометрической точки зрения он представляет собой направленный отрезок. Направленность вектора никак не влияет на его длину, поэтому, при расчете длины, мы можем работать с ним как с отрезком на плоскости и посчитать длину по школьным формулам.
 Заметим тот факт, что координаты вектора соответствуют числам, умноженным на орты координатных осей, поэтому формула длины вектора выглядит следующим образом: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2}\)</span>. Соответственно, в общем случае формула выглядит следующим образом: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{a_1^2 + a_2^2 + ... + a_n^2}\)</span></p>
-</div>
-<div class="section" id="id5">
+</section>
+<section id="id5">
 <h2>Скалярное произведение<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <p>Одной из самых распространенных операций над двумя векторами является так называемое <strong>скалярное произведение</strong>, результатом которого является число (скаляр) – отсюда и название операции.</p>
 <p><strong>Замечание</strong>: Кроме скалярного произведения существует также <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">векторное произведение</a> над парой векторов, результатом которого являются вектор. Также существует <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B5%D1%88%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">смешанное произведение</a> над тройкой векторов, результатом которого является число. Данные операции в рамках курса рассматриваться не будут.</p>
@@ -1034,8 +988,8 @@ title="Print to PDF"
 \]</div>
 <p>С помощью данной формулы можно прийти к одному из главных свойств скалярного произведения, которое заключается в том, что <strong>два вектора перпендикулярны тогда и только тогда, как их скалярное произведение равно 0</strong>: <span class="math notranslate nohighlight">\(\mathbf{a} \perp \mathbf{b} \leftrightarrow \cos{\theta} = 0 \leftrightarrow \mathbf{a} \cdot \mathbf{b} = 0\)</span></p>
 <p>Скалярное произведение можно использовать для расчета нормы вектора следующим образом: <span class="math notranslate nohighlight">\(\lVert \mathbf{a} \rVert = \sqrt{\mathbf{a} \cdot \mathbf{a}}\)</span></p>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h2>Линейная независимость<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
 <p>Одним из основополагающих понятий линейной алгебры является <strong>линейная зависимость/независимость</strong>.</p>
 <p>Для определения данного понятия рассмотрим набор из нескольких векторов. Набор векторов является <strong>линейно зависимым</strong>, если существует такая ненулевая линейная комбинация векторов данного набора (как минимум один элемент данной комбинации не равен 0) равная нулевому вектору (вектор, состоящий только из 0):</p>
@@ -1063,8 +1017,8 @@ title="Print to PDF"
 Набор векторов линейно зависим тогда и только тогда, когда один из элементов этого набора может быть выражен через оставшиеся.</p>
 <p><strong>Замечание</strong>: Если векторы рассматривать как какие-то характеристики объектов, то линейную зависимость можно интерпретировать как избыточность данных.</p>
 <p>С помощью понятия линейной независимости вводится понятие <strong>размерности</strong> векторного пространства – это максимальное число линейно независимых векторов в нем.</p>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h2>Базис<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
 <p>В формальном определении вектора не присутствуют никакие его количественные интерпретации, а лишь две операции над векторами и 8 аксиом.</p>
 <p>Откуда же появляются количественные измерения? Для того, чтобы это стало понятно, нужно ввести понятия <strong>базиса</strong>.</p>
@@ -1096,8 +1050,8 @@ title="Print to PDF"
 <p>У линейной алгебры есть на это ответ:
 <strong>Любые <span class="math notranslate nohighlight">\(n\)</span> линейно независимых векторов <span class="math notranslate nohighlight">\(n\)</span>-мерного векторного пространства образуют базис этого пространства.</strong></p>
 <p>Именно из-за линейной зависимости векторов <span class="math notranslate nohighlight">\(\begin{pmatrix} -2 \\ 0 \end{pmatrix} \begin{pmatrix} -3 \\ 0 \end{pmatrix}\)</span> они не могут являться базисом двумерного пространства.</p>
-</div>
-<div class="section" id="id8">
+</section>
+<section id="id8">
 <h2>Что мы узнали?<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Определение вектора</p></li>
@@ -1107,8 +1061,8 @@ title="Print to PDF"
 <li><p>Линейная независимость</p></li>
 <li><p>Базис</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
