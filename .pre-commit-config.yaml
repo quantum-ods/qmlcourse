@@ -1,12 +1,12 @@
 repos:
 
   - repo: https://github.com/asottile/reorder_python_imports
-    rev: v3.8.2
+    rev: v3.8.5
     hooks:
       - id: reorder-python-imports
 
   - repo: https://github.com/psf/black
-    rev: 22.6.0
+    rev: 22.10.0
     hooks:
       - id: black
         args:
@@ -49,12 +49,12 @@ repos:
           - --markdown-linebreak-ext=md
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.971
+    rev: v0.982
     hooks:
       - id: mypy
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.267
+    rev: v1.1.275
     hooks:
       - id: pyright
 

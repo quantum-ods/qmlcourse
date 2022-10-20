@@ -9,7 +9,7 @@ Translation:
 
 - [Pronkin Alexey](http://github.com/alexey-pronkin)
 - [Zheltonozhskii Evgenii](https://github.com/Randl)
-- [Trohimenko Viktor](https://github.com/vtrokhymenko)
+- [vvssttkk](https://github.com/vvssttkk)
 
 
 ## Definition
