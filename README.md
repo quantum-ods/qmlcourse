@@ -63,7 +63,7 @@ Also, all authors for some updates are participants special channel into communi
 
 ## Join ODS
 
-To join the ODS-community slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that, we add you to the closed channel in the ODS Slack.
+To join the matrix ODS-community you need to fill the form into the [ods.ai page](https://ods.ai/tracks/odsmatrix101). If long time your request unaccepted contact us via [email](mailto:qmlcourse.ods@gmail.com).
 
 ## Similar Projects
 
