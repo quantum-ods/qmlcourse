@@ -1291,7 +1291,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "keras"
-version = "2.7.0"
+version = "2.10.0"
 description = "Deep learning for humans."
 category = "main"
 optional = false
@@ -3262,42 +3262,43 @@ python-versions = "*"
 
 [[package]]
 name = "tensorflow"
-version = "2.7.2"
+version = "2.10.0"
 description = "TensorFlow is an open source machine learning framework for everyone."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 
 [package.dependencies]
-absl-py = ">=0.4.0"
+absl-py = ">=1.0.0"
 astunparse = ">=1.6.0"
-flatbuffers = ">=1.12,<3.0"
-gast = ">=0.2.1,<0.5.0"
+flatbuffers = ">=2.0"
+gast = ">=0.2.1,<=0.4.0"
 google-pasta = ">=0.1.1"
 grpcio = ">=1.24.3,<2.0"
 h5py = ">=2.9.0"
-keras = ">=2.7.0rc0,<2.8"
+keras = ">=2.10.0,<2.11"
 keras-preprocessing = ">=1.1.1"
-libclang = ">=9.0.1"
-numpy = ">=1.14.5"
+libclang = ">=13.0.0"
+numpy = ">=1.20"
 opt-einsum = ">=2.3.2"
-protobuf = ">=3.9.2"
+packaging = "*"
+protobuf = ">=3.9.2,<3.20"
+setuptools = "*"
 six = ">=1.12.0"
-tensorboard = ">=2.6,<3.0"
-tensorflow-estimator = ">=2.7.0rc0,<2.8"
-tensorflow-io-gcs-filesystem = ">=0.21.0"
+tensorboard = ">=2.10,<2.11"
+tensorflow-estimator = ">=2.10.0,<2.11"
+tensorflow-io-gcs-filesystem = ">=0.23.1"
 termcolor = ">=1.1.0"
 typing-extensions = ">=3.6.6"
-wheel = ">=0.32.0,<1.0"
 wrapt = ">=1.11.0"
 
 [[package]]
 name = "tensorflow-estimator"
-version = "2.7.0"
+version = "2.10.0"
 description = "TensorFlow Estimator."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 
 [[package]]
 name = "tensorflow-io-gcs-filesystem"
@@ -3603,7 +3604,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "e83a0c631b35c46724fea63bd08a637fc051579f6ce880c9c357dee18ce2e1db"
+content-hash = "8ebd2239247a100cb62c42eb9620e9ce83dcfec45442d27bef1dc6febef8db76"
 
 [metadata.files]
 absl-py = [
@@ -4462,7 +4463,7 @@ jupyterlab-widgets = [
     {file = "jupyterlab_widgets-1.1.1.tar.gz", hash = "sha256:67d0ef1e407e0c42c8ab60b9d901cd7a4c68923650763f75bf17fb06c1943b79"},
 ]
 keras = [
-    {file = "keras-2.7.0-py2.py3-none-any.whl", hash = "sha256:0c33ae1f728064ca0d35dfba999e9c316f03623bf5688c82fb83cc74a80ea248"},
+    {file = "keras-2.10.0-py2.py3-none-any.whl", hash = "sha256:26a6e2c2522e7468ddea22710a99b3290493768fc08a39e75d1173a0e3452fdf"},
 ]
 keras-preprocessing = [
     {file = "Keras_Preprocessing-1.1.2-py2.py3-none-any.whl", hash = "sha256:7b82029b130ff61cc99b55f3bd27427df4838576838c5b2f65940e4fcec99a7b"},
@@ -5985,18 +5986,25 @@ tensorboard-plugin-wit = [
     {file = "tensorboard_plugin_wit-1.8.1-py3-none-any.whl", hash = "sha256:ff26bdd583d155aa951ee3b152b3d0cffae8005dc697f72b44a8e8c2a77a8cbe"},
 ]
 tensorflow = [
-    {file = "tensorflow-2.7.2-cp37-cp37m-macosx_10_11_x86_64.whl", hash = "sha256:050c2ef8d432eb60f2cb6fc75d751fcb3008af6a86ad1147faea30cb59c275b1"},
-    {file = "tensorflow-2.7.2-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:3c72b8653a539789ef36f8c1ad8266b9e676dff2293f0f7a68d9b26fc77a37f3"},
-    {file = "tensorflow-2.7.2-cp37-cp37m-win_amd64.whl", hash = "sha256:1db663f9f59ba54a294b1f6530f131e90c7a0e6ea49fda5b2c6900e57b0c306a"},
-    {file = "tensorflow-2.7.2-cp38-cp38-macosx_10_11_x86_64.whl", hash = "sha256:cb66d4a998af1ca979d6da33e925281596f52e5a9ba67b2295c53677f8379eee"},
-    {file = "tensorflow-2.7.2-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:d4dbfab1568564b30bab876424fafd74c8a8715238b76284b5dd1cfe86c7881b"},
-    {file = "tensorflow-2.7.2-cp38-cp38-win_amd64.whl", hash = "sha256:b9a7f344b93b953cab4c3f6ec3b6c1799eb538b6a1978d3a4b579d7a81ee7439"},
-    {file = "tensorflow-2.7.2-cp39-cp39-macosx_10_11_x86_64.whl", hash = "sha256:99a85258505130b1f3ce203f11b3bb3c95442edefec96c0b221ce0d6541a92c8"},
-    {file = "tensorflow-2.7.2-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:bb2115796e2e7738de1844aead493bc1f1122ff1fae65fc691bb1ce5a0fdd2aa"},
-    {file = "tensorflow-2.7.2-cp39-cp39-win_amd64.whl", hash = "sha256:3e35d046d0be677239b5e832854bcb291ca79388fa406d9d7547bc3377a7efbb"},
+    {file = "tensorflow-2.10.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:60d5b4fbbb7a1304d96352372fa032e861e98bb3f23aced7ce53bc475a2df97d"},
+    {file = "tensorflow-2.10.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:25e1e898bc1df521af9a8bfe0e511124379a6414083234ec67c6ab212ad12b2f"},
+    {file = "tensorflow-2.10.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e129114dc529e63af9c419b5917b3407d0d26a4c8b73e114f601a175a7eb0477"},
+    {file = "tensorflow-2.10.0-cp310-cp310-win_amd64.whl", hash = "sha256:0a3b58d90fadb5bdf81a964bea73bb89019a9d1e9ac12de75375c8f65e0d7570"},
+    {file = "tensorflow-2.10.0-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:0701da16a3d6d34763cd9ced6467cee24c02c9abf0d1a48ba59ea5a8d0421cec"},
+    {file = "tensorflow-2.10.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:64cc999ae83ddd891083141d3e5d718e3d799501a1b56c544f2ca648a8396c3e"},
+    {file = "tensorflow-2.10.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d9f711c5ff04333355c83eb96ca2e1db57c9663c6fa01d68b5953a040a602a3c"},
+    {file = "tensorflow-2.10.0-cp37-cp37m-win_amd64.whl", hash = "sha256:9f4677e9ab7104e73710a94ff5d2ed4b335378dcd2ac7402a68c31802a680911"},
+    {file = "tensorflow-2.10.0-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:8773858cbf37aaad444b07605d29f5b2d8f7cd1ecbf1cce2777931b96884589c"},
+    {file = "tensorflow-2.10.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5806d4645bce5eb415863d757b5f056364b9d1cfa2c34f711f69d46cac605eee"},
+    {file = "tensorflow-2.10.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e85f89bc23c62d4243fad70bac902f00a234b33da8b91e2967eeef0f4b75b1e3"},
+    {file = "tensorflow-2.10.0-cp38-cp38-win_amd64.whl", hash = "sha256:d9b19b5120c0b393d9e2fc72561cfa3a454ef7f1ac649d8ad0dcc98817a086a4"},
+    {file = "tensorflow-2.10.0-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:4b542af76d93c43e9d24dcb69888793831e434dc781c9533ee07f928fce84a15"},
+    {file = "tensorflow-2.10.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c588a1f34d9db51ea856aff07da9aa877c1d1d109336eee2c3bbb16dabd3f605"},
+    {file = "tensorflow-2.10.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:487918f4074685e213ba247387faab34933df76939134008441cb9d3e2c95cab"},
+    {file = "tensorflow-2.10.0-cp39-cp39-win_amd64.whl", hash = "sha256:741a74278f471dc21991a6c7dc802d454d42fd39515900c6363b8c38a898fb0f"},
 ]
 tensorflow-estimator = [
-    {file = "tensorflow_estimator-2.7.0-py2.py3-none-any.whl", hash = "sha256:325b5a224864379242b7b76c6987ca544239be82579d33e68ec7c2bda57abc9d"},
+    {file = "tensorflow_estimator-2.10.0-py2.py3-none-any.whl", hash = "sha256:f324ea17cd57f16e33bf188711d5077e6b2e5f5a12c328d6e01a07b23888edcd"},
 ]
 tensorflow-io-gcs-filesystem = [
     {file = "tensorflow_io_gcs_filesystem-0.27.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:babca2a12755badd1517043f9d633823533fbd7b463d7d36e9e6179b246731dc"},
