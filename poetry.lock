@@ -2037,7 +2037,7 @@ pysmt = ">=0.8.0,<0.10.0"
 
 [[package]]
 name = "pennylane"
-version = "0.20.0"
+version = "0.26.0"
 description = "PennyLane is a Python quantum machine learning library by Xanadu Inc."
 category = "main"
 optional = false
@@ -2046,13 +2046,14 @@ python-versions = "*"
 [package.dependencies]
 appdirs = "*"
 autograd = "*"
-autoray = "*"
+autoray = ">=0.3.1"
 cachetools = "*"
 networkx = "*"
 numpy = "*"
-pennylane-lightning = ">=0.18"
+pennylane-lightning = ">=0.26"
+retworkx = "*"
 scipy = "*"
-semantic-version = "2.6"
+semantic-version = ">=2.7"
 toml = "*"
 
 [package.extras]
@@ -2772,11 +2773,15 @@ paramiko = "*"
 
 [[package]]
 name = "semantic-version"
-version = "2.6.0"
+version = "2.10.0"
 description = "A library implementing the 'SemVer' scheme."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=2.7"
+
+[package.extras]
+dev = ["Django (>=1.11)", "check-manifest", "colorama (<=0.4.1)", "coverage", "flake8", "nose2", "readme-renderer (<25.0)", "tox", "wheel", "zest.releaser[recommended]"]
+doc = ["Sphinx", "sphinx-rtd-theme"]
 
 [[package]]
 name = "send2trash"
@@ -3603,7 +3608,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "e83a0c631b35c46724fea63bd08a637fc051579f6ce880c9c357dee18ce2e1db"
+content-hash = "1b5ad4752384f6b2a77c14e6954b39645bfaf03d6dcbb6c6f6d81ca0f4ef28fe"
 
 [metadata.files]
 absl-py = [
@@ -5102,8 +5107,7 @@ penaltymodel-maxgap = [
     {file = "penaltymodel-maxgap-0.5.6.tar.gz", hash = "sha256:83aa7625ca8c606f5759d55101ede1d7cb8451cbb191ecf27ccaa6f7e40ede9b"},
 ]
 pennylane = [
-    {file = "PennyLane-0.20.0-py3-none-any.whl", hash = "sha256:6228f06809d426397a47253de335012c830c3a469ec7525bb3b2aa1cf2174e86"},
-    {file = "PennyLane-0.20.0.tar.gz", hash = "sha256:bae6473c86b6a52c12c040d062c4620274a9fe67ee4ffc4b0452df93b52b6d14"},
+    {file = "PennyLane-0.26.0-py3-none-any.whl", hash = "sha256:f8679e3814e0ae1ad67dc1481f26a57317eff95dacc5dbccc7d199593b969f8d"},
 ]
 pennylane-lightning = [
     {file = "PennyLane-Lightning-0.26.1.tar.gz", hash = "sha256:c6193e2fa7508adb9c50a3dcfe924347950d830f3e73731321df28165620bea8"},
@@ -5784,8 +5788,8 @@ scp = [
     {file = "scp-0.14.4.tar.gz", hash = "sha256:54699b92cb68ae34b5928c48a888eab9722a212502cba89aa795bd56597505bd"},
 ]
 semantic-version = [
-    {file = "semantic_version-2.6.0-py3-none-any.whl", hash = "sha256:2d06ab7372034bcb8b54f2205370f4aa0643c133b7e6dbd129c5200b83ab394b"},
-    {file = "semantic_version-2.6.0.tar.gz", hash = "sha256:2a4328680073e9b243667b201119772aefc5fc63ae32398d6afafff07c4f54c0"},
+    {file = "semantic_version-2.10.0-py2.py3-none-any.whl", hash = "sha256:de78a3b8e0feda74cabc54aab2da702113e33ac9d9eb9d2389bcf1f58b7d9177"},
+    {file = "semantic_version-2.10.0.tar.gz", hash = "sha256:bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"},
 ]
 send2trash = [
     {file = "Send2Trash-1.8.0-py3-none-any.whl", hash = "sha256:f20eaadfdb517eaca5ce077640cb261c7d2698385a6a0f072a4a5447fd49fa08"},
