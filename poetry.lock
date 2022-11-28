@@ -859,10 +859,7 @@ optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-numpy = [
-    {version = ">=1.17.5", markers = "python_version == \"3.8\""},
-    {version = ">=1.19.3", markers = "python_version >= \"3.9\""},
-]
+numpy = {version = ">=1.19.3", markers = "python_version >= \"3.9\""}
 
 [[package]]
 name = "homebase"
@@ -1829,7 +1826,6 @@ optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-importlib-metadata = {version = "*", markers = "python_version < \"3.9\""}
 llvmlite = ">=0.39.0dev0,<0.40"
 numpy = ">=1.18,<1.24"
 setuptools = "*"
@@ -2037,7 +2033,7 @@ pysmt = ">=0.8.0,<0.10.0"
 
 [[package]]
 name = "pennylane"
-version = "0.20.0"
+version = "0.27.0"
 description = "PennyLane is a Python quantum machine learning library by Xanadu Inc."
 category = "main"
 optional = false
@@ -2046,13 +2042,15 @@ python-versions = "*"
 [package.dependencies]
 appdirs = "*"
 autograd = "*"
-autoray = "*"
+autoray = ">=0.3.1"
 cachetools = "*"
 networkx = "*"
 numpy = "*"
-pennylane-lightning = ">=0.18"
+pennylane-lightning = ">=0.27"
+requests = "*"
+retworkx = "*"
 scipy = "*"
-semantic-version = "2.6"
+semantic-version = ">=2.7"
 toml = "*"
 
 [package.extras]
@@ -2060,7 +2058,7 @@ kernels = ["cvxopt", "cvxpy"]
 
 [[package]]
 name = "pennylane-lightning"
-version = "0.26.1"
+version = "0.27.0"
 description = "PennyLane-Lightning plugin"
 category = "main"
 optional = false
@@ -2691,7 +2689,6 @@ python-versions = ">=3.6.3,<4.0.0"
 [package.dependencies]
 commonmark = ">=0.9.0,<0.10.0"
 pygments = ">=2.6.0,<3.0.0"
-typing-extensions = {version = ">=4.0.0,<5.0", markers = "python_version < \"3.9\""}
 
 [package.extras]
 jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
@@ -2772,11 +2769,15 @@ paramiko = "*"
 
 [[package]]
 name = "semantic-version"
-version = "2.6.0"
+version = "2.10.0"
 description = "A library implementing the 'SemVer' scheme."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=2.7"
+
+[package.extras]
+dev = ["Django (>=1.11)", "check-manifest", "colorama (<=0.4.1)", "coverage", "flake8", "nose2", "readme-renderer (<25.0)", "tox", "wheel", "zest.releaser[recommended]"]
+doc = ["Sphinx", "sphinx-rtd-theme"]
 
 [[package]]
 name = "send2trash"
@@ -2999,7 +3000,6 @@ optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-importlib-resources = {version = "*", markers = "python_version < \"3.9\""}
 sphinx = ">=3,<5"
 
 [package.extras]
@@ -3602,8 +3602,8 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">=3.8,<=3.9"
-content-hash = "e83a0c631b35c46724fea63bd08a637fc051579f6ce880c9c357dee18ce2e1db"
+python-versions = "~3.9"
+content-hash = "edd97a1b2339a04d1f97d9673e25bfba2d672c94a3725440a7f16639bc0dd5d7"
 
 [metadata.files]
 absl-py = [
@@ -3889,6 +3889,7 @@ contourpy = [
 cryptography = [
     {file = "cryptography-38.0.3-cp36-abi3-macosx_10_10_universal2.whl", hash = "sha256:984fe150f350a3c91e84de405fe49e688aa6092b3525f407a18b9646f6612320"},
     {file = "cryptography-38.0.3-cp36-abi3-macosx_10_10_x86_64.whl", hash = "sha256:ed7b00096790213e09eb11c97cc6e2b757f15f3d2f85833cd2d3ec3fe37c1722"},
+    {file = "cryptography-38.0.3-cp36-abi3-macosx_10_12_universal2.whl", hash = "sha256:726e3a1bfee0e919b278c8f766fdcf1fe30f8e6feea590e3f248d3636b58ffb3"},
     {file = "cryptography-38.0.3-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_24_aarch64.whl", hash = "sha256:bbf203f1a814007ce24bd4d51362991d5cb90ba0c177a9c08825f2cc304d871f"},
     {file = "cryptography-38.0.3-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:554bec92ee7d1e9d10ded2f7e92a5d70c1f74ba9524947c0ba0c850c7b011828"},
     {file = "cryptography-38.0.3-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b1b52c9e5f8aa2b802d48bd693190341fae201ea51c7a167d69fc48b60e8a959"},
@@ -5105,35 +5106,41 @@ penaltymodel-maxgap = [
     {file = "penaltymodel-maxgap-0.5.6.tar.gz", hash = "sha256:83aa7625ca8c606f5759d55101ede1d7cb8451cbb191ecf27ccaa6f7e40ede9b"},
 ]
 pennylane = [
-    {file = "PennyLane-0.20.0-py3-none-any.whl", hash = "sha256:6228f06809d426397a47253de335012c830c3a469ec7525bb3b2aa1cf2174e86"},
-    {file = "PennyLane-0.20.0.tar.gz", hash = "sha256:bae6473c86b6a52c12c040d062c4620274a9fe67ee4ffc4b0452df93b52b6d14"},
+    {file = "PennyLane-0.27.0-py3-none-any.whl", hash = "sha256:821e4367ef5aaf5d9577abdc5769df7594e6b2729b3f4ffe4adce1423ae76b0d"},
+    {file = "PennyLane-0.27.0.tar.gz", hash = "sha256:b5d84488e6ce29fec84674f5cb5c1f3eedb8a4895a4e5aa2cf2497c1fcae530b"},
 ]
 pennylane-lightning = [
-    {file = "PennyLane-Lightning-0.26.1.tar.gz", hash = "sha256:c6193e2fa7508adb9c50a3dcfe924347950d830f3e73731321df28165620bea8"},
-    {file = "PennyLane_Lightning-0.26.1-cp310-cp310-macosx_10_15_x86_64.whl", hash = "sha256:b872452b9676f73968c3969b6415b44eb0934458b5d6a9aaeeec95aff8491946"},
-    {file = "PennyLane_Lightning-0.26.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:c7e00f8f49fede349e867df3c620de8fe52e661a63ed6e52a6dd02f84f0530e0"},
-    {file = "PennyLane_Lightning-0.26.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a11202244efcaeb6abd6a63cc1350d284b7c88bab2f682ae692486f9336e2e78"},
-    {file = "PennyLane_Lightning-0.26.1-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:e1726a8203b51692055200380016668500dea5cc41fa5fd4853a20f791577fef"},
-    {file = "PennyLane_Lightning-0.26.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:31df27d6b09eb12bfbdd30f31f62c2ea0efae50193fb04cfe99379e2a5ae6dbb"},
-    {file = "PennyLane_Lightning-0.26.1-cp310-cp310-win_amd64.whl", hash = "sha256:8cee342bc0afe6d7ec66078433392569b4d04d0457531ec74ea1185aaa12f94e"},
-    {file = "PennyLane_Lightning-0.26.1-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:e7f84ccb8a8fc518a17ea5358a08198a1e7d0b147a3e4aea9af28e78fea14887"},
-    {file = "PennyLane_Lightning-0.26.1-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:877eb56ab933fd448ab2cb8d9725c13e3fd69cc95dc19b2de2b00ca7f0894a0a"},
-    {file = "PennyLane_Lightning-0.26.1-cp37-cp37m-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:c6fa5e6b39094b82a5cc8172b7c1de6d40c8d29deaf23939c76afd465b1f6786"},
-    {file = "PennyLane_Lightning-0.26.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:404a03ca2abb76726513d8e75cf50f96e84b3d798e754686958d7f82556d85a9"},
-    {file = "PennyLane_Lightning-0.26.1-cp37-cp37m-win_amd64.whl", hash = "sha256:23e9710fd08e827dff31cc37bc152a03ec9f72acd878f3c552c2aa906121a326"},
-    {file = "PennyLane_Lightning-0.26.1-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:037588351942aed18c4511d54dd7f72ef45d026034ef80179987861fc1b3e6f2"},
-    {file = "PennyLane_Lightning-0.26.1-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:26048142d437743e8e7faa7de0f8941fed6f98febdb0830777da20296cb74da3"},
-    {file = "PennyLane_Lightning-0.26.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:34794cbaf97c872b8fc3667fe8068718582f79b8bf359b7631ab3b354542bfb5"},
-    {file = "PennyLane_Lightning-0.26.1-cp38-cp38-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:28e1629ee823ef9e28418b89bec8eaf9d2ad3332a3a14bff231def07a55c9941"},
-    {file = "PennyLane_Lightning-0.26.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:697797e0a4c29bd6bfe430d44b92a03bb9c6fa2bd25c87f2f4f9b52aa6a37a2c"},
-    {file = "PennyLane_Lightning-0.26.1-cp38-cp38-win_amd64.whl", hash = "sha256:25baf2d51aaa06435bb1d14824760936a97a14848c0289ac9787eff4383167bb"},
-    {file = "PennyLane_Lightning-0.26.1-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:6e6719f187263ba2242fd04b9b3935aab4cf248be3703deab16c6f03dc217662"},
-    {file = "PennyLane_Lightning-0.26.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:c03506da51c4bb9080cbf8cb9417ab9b9cc7f8f3f2fc0ebdfad3708381823293"},
-    {file = "PennyLane_Lightning-0.26.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fc1cbc450ce2905855a4cecc77347be1c73f7b063ced76ca96dd546c1ff43433"},
-    {file = "PennyLane_Lightning-0.26.1-cp39-cp39-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:617f188f40c3c16f77089d24e6f2ab1b5521ef2d794ed4a9b6fab5e3b5e19cdf"},
-    {file = "PennyLane_Lightning-0.26.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3ec54ce03cb90d341266564096452c4161289a938689ca391f300a20e267852f"},
-    {file = "PennyLane_Lightning-0.26.1-cp39-cp39-win_amd64.whl", hash = "sha256:a9b4e8b6d8d2163f9733acaa61e7c90e43efc6b3afb662cc9d4b14915998b2ea"},
-    {file = "PennyLane_Lightning-0.26.1-py3-none-any.whl", hash = "sha256:c968df92b7818fd353cf9f0f624e5f2b220a42714356849d801b377deb5026cd"},
+    {file = "PennyLane-Lightning-0.27.0.tar.gz", hash = "sha256:f11e7501ea955b8b38e728083955f144e90ed75a43418b3b31fde31252466d0d"},
+    {file = "PennyLane_Lightning-0.27.0-cp310-cp310-macosx_10_15_x86_64.whl", hash = "sha256:0398c056eb8fa46664a74378b164f506fe755f710f3255794e164498f1c78b90"},
+    {file = "PennyLane_Lightning-0.27.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:20669cfed642d677f427394419282af842d7821ccc04f9e0e078f4886dd88426"},
+    {file = "PennyLane_Lightning-0.27.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:576967a8e3ce7b2cf31d92f890022e9aa9aa902e6e864c129db04a0a6922098e"},
+    {file = "PennyLane_Lightning-0.27.0-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:1b6febc8f3c416ac3c158d30ce5ae72a8c470780c1b0d434606f878e826ce44e"},
+    {file = "PennyLane_Lightning-0.27.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:81218f125d8cef225a60365ef958b3764d0ba52da3c9c9ba587caf7f98fedc07"},
+    {file = "PennyLane_Lightning-0.27.0-cp310-cp310-win_amd64.whl", hash = "sha256:ca3a09d36e0a593a2f81f57bf8193e0875ca601c2a9ace2d36ea8a0152478b03"},
+    {file = "PennyLane_Lightning-0.27.0-cp311-cp311-macosx_10_15_x86_64.whl", hash = "sha256:a44633542cebab57897412c90ff9d3a979b33877a56b38802b6871c0b86d3d0f"},
+    {file = "PennyLane_Lightning-0.27.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:726a8efa632c315cf75fb1242fa019b198cf5f9083b04083a9aed94be98f61a6"},
+    {file = "PennyLane_Lightning-0.27.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:94b8184fde10a91a6b082c58a6663fc607150facefb607b6bb89ca6def8981de"},
+    {file = "PennyLane_Lightning-0.27.0-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:6eab14aecbb5ee6e0835c96ea233e12430bd7d7001bc66e35864c7a7825e54c8"},
+    {file = "PennyLane_Lightning-0.27.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1009a35b7a1300e2ca9d7a4089e7055784439e4786fdc98e05874aa192c62f10"},
+    {file = "PennyLane_Lightning-0.27.0-cp311-cp311-win_amd64.whl", hash = "sha256:d5e7ad410ab5b4f4ba48ae576d611840a5253eb6e366062f4688ea3a209e7892"},
+    {file = "PennyLane_Lightning-0.27.0-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:25d9c30ed89eb6aed40f4dd7110d69945314dde142e2f47d5a11a4988fd9afc2"},
+    {file = "PennyLane_Lightning-0.27.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3a369792cabe882a5b8459f94cdb302e05b3b8c894386ab573d5d5731f8e3638"},
+    {file = "PennyLane_Lightning-0.27.0-cp37-cp37m-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:35f9c3845cd1202ff3328831359b6fd425922676d0ffb781c5f3a2d20482f29c"},
+    {file = "PennyLane_Lightning-0.27.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:384418d6efaa177dc667c4be2b66ef59fffed62af967ebf415f4ddb0bbaef1c5"},
+    {file = "PennyLane_Lightning-0.27.0-cp37-cp37m-win_amd64.whl", hash = "sha256:43295db22d79652f5917b697a131bd524bf1f2b2da0d2da75882f8040204965c"},
+    {file = "PennyLane_Lightning-0.27.0-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:6e14266770243c4c9d14c031c75283a2a9e120e87cbed74f76d89e8976ae45ef"},
+    {file = "PennyLane_Lightning-0.27.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:a34e71b380f077fde1f00e1d0661a980ebc57fdc5403e075ab4289a56f48f5b7"},
+    {file = "PennyLane_Lightning-0.27.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a28d434463cfbc16e56d3a5db242e231290e2293935d5892ff15ad057cd98e6d"},
+    {file = "PennyLane_Lightning-0.27.0-cp38-cp38-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:dd22005c01c8097bd6da7f0afd39d99f5fa9c572fdde1afcd4696b7641440b7d"},
+    {file = "PennyLane_Lightning-0.27.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e1c712dd6a11d2ca7f21433a47c78c6d5ede1d7cce0207f63d34e848cc066ab9"},
+    {file = "PennyLane_Lightning-0.27.0-cp38-cp38-win_amd64.whl", hash = "sha256:17f1b17de114695cd36bb50dc66ce9f3c1d38ca83a3ccb99bfeb4f1f798e5298"},
+    {file = "PennyLane_Lightning-0.27.0-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:31f2b6fce572c1dec89ac1ee6ae85b4d65242e247ac306fc71b148ca65a1f089"},
+    {file = "PennyLane_Lightning-0.27.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:2d7ac592295ec330478b9761723a1eb36c194cb2b8d4313515fe570bdb74253e"},
+    {file = "PennyLane_Lightning-0.27.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4ad378fd3d3baa3194cd29492957fe290367e3092322225eba1e7c277d1f1caa"},
+    {file = "PennyLane_Lightning-0.27.0-cp39-cp39-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:9a624068f5c485b1bda5915c9f9d322f149b7807ecfef6e457fda84d48e6569a"},
+    {file = "PennyLane_Lightning-0.27.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:062719e295d27871287c9f16208c0140edbc917c042ca91b7c36b6c68ca5d1b6"},
+    {file = "PennyLane_Lightning-0.27.0-cp39-cp39-win_amd64.whl", hash = "sha256:e44ab0c4ed2743ab50a307a85d9060b4510ccfe66141c1031e0c08c167d77595"},
+    {file = "PennyLane_Lightning-0.27.0-py3-none-any.whl", hash = "sha256:64d07c1d3cc0e9f0667fdd629d2c368df1d506b2d90d9795317586723e279aea"},
 ]
 pexpect = [
     {file = "pexpect-4.8.0-py2.py3-none-any.whl", hash = "sha256:0b48a55dcb3c05f3329815901ea4fc1537514d6ba867a152b581d69ae3710937"},
@@ -5796,8 +5803,8 @@ scp = [
     {file = "scp-0.14.4.tar.gz", hash = "sha256:54699b92cb68ae34b5928c48a888eab9722a212502cba89aa795bd56597505bd"},
 ]
 semantic-version = [
-    {file = "semantic_version-2.6.0-py3-none-any.whl", hash = "sha256:2d06ab7372034bcb8b54f2205370f4aa0643c133b7e6dbd129c5200b83ab394b"},
-    {file = "semantic_version-2.6.0.tar.gz", hash = "sha256:2a4328680073e9b243667b201119772aefc5fc63ae32398d6afafff07c4f54c0"},
+    {file = "semantic_version-2.10.0-py2.py3-none-any.whl", hash = "sha256:de78a3b8e0feda74cabc54aab2da702113e33ac9d9eb9d2389bcf1f58b7d9177"},
+    {file = "semantic_version-2.10.0.tar.gz", hash = "sha256:bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"},
 ]
 send2trash = [
     {file = "Send2Trash-1.8.0-py3-none-any.whl", hash = "sha256:f20eaadfdb517eaca5ce077640cb261c7d2698385a6a0f072a4a5447fd49fa08"},
