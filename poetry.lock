@@ -504,6 +504,18 @@ mocks = ["dwave-networkx (>=0.8.9)"]
 test = ["coverage", "mock", "numpy", "requests-mock"]
 
 [[package]]
+name = "dwave-greedy"
+version = "0.2.5"
+description = "Ocean-compatible collection of greedy/brute-force solvers/samplers"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+dimod = ">=0.9.2,<0.13.0"
+numpy = ">=1.17.3,<2.0.0"
+
+[[package]]
 name = "dwave-networkx"
 version = "0.8.12"
 description = "A NetworkX extension providing graphs and algorithms relevent to working with the D-Wave System"
@@ -529,7 +541,7 @@ numpy = ">=1.17.3,<2.0.0"
 
 [[package]]
 name = "dwave-system"
-version = "1.15.1"
+version = "1.17.0"
 description = "All things D-Wave System."
 category = "main"
 optional = false
@@ -538,28 +550,17 @@ python-versions = ">=3.7"
 [package.dependencies]
 dimod = ">=0.10.0,<0.13.0"
 dwave-cloud-client = ">=0.9.1,<0.11.0"
+dwave-greedy = ">=0.2.0"
 dwave-networkx = ">=0.8.10"
 dwave-preprocessing = ">=0.3"
-dwave-tabu = ">=0.4.2"
 homebase = ">=1.0.0,<2.0.0"
 minorminer = ">=0.2.8,<0.3.0"
 networkx = ">=2.0,<3.0"
 numpy = ">=1.17.3,<2.0.0"
+scipy = ">=1.5.2,<2.0.0"
 
 [package.extras]
 drivers = ["dwave-drivers (>=0.4.0,<0.5.0)"]
-
-[[package]]
-name = "dwave-tabu"
-version = "0.4.5"
-description = "Optimized Tabu solver for QUBOs"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-dimod = ">=0.9.0,<0.13.0"
-numpy = ">=1.17.3,<2.0.0"
 
 [[package]]
 name = "dwavebinarycsp"
@@ -859,10 +860,7 @@ optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-numpy = [
-    {version = ">=1.17.5", markers = "python_version == \"3.8\""},
-    {version = ">=1.19.3", markers = "python_version >= \"3.9\""},
-]
+numpy = {version = ">=1.19.3", markers = "python_version >= \"3.9\""}
 
 [[package]]
 name = "homebase"
@@ -1829,7 +1827,6 @@ optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-importlib-metadata = {version = "*", markers = "python_version < \"3.9\""}
 llvmlite = ">=0.39.0dev0,<0.40"
 numpy = ">=1.18,<1.24"
 setuptools = "*"
@@ -2691,7 +2688,6 @@ python-versions = ">=3.6.3,<4.0.0"
 [package.dependencies]
 commonmark = ">=0.9.0,<0.10.0"
 pygments = ">=2.6.0,<3.0.0"
-typing-extensions = {version = ">=4.0.0,<5.0", markers = "python_version < \"3.9\""}
 
 [package.extras]
 jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
@@ -2999,7 +2995,6 @@ optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-importlib-resources = {version = "*", markers = "python_version < \"3.9\""}
 sphinx = ">=3,<5"
 
 [package.extras]
@@ -3602,8 +3597,8 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">=3.8,<=3.9"
-content-hash = "e83a0c631b35c46724fea63bd08a637fc051579f6ce880c9c357dee18ce2e1db"
+python-versions = "~3.9"
+content-hash = "e276bc9e5b5db8de2097c7b939735b48134d33aeb6584d50c346b5f7a65ccde8"
 
 [metadata.files]
 absl-py = [
@@ -3889,6 +3884,7 @@ contourpy = [
 cryptography = [
     {file = "cryptography-38.0.3-cp36-abi3-macosx_10_10_universal2.whl", hash = "sha256:984fe150f350a3c91e84de405fe49e688aa6092b3525f407a18b9646f6612320"},
     {file = "cryptography-38.0.3-cp36-abi3-macosx_10_10_x86_64.whl", hash = "sha256:ed7b00096790213e09eb11c97cc6e2b757f15f3d2f85833cd2d3ec3fe37c1722"},
+    {file = "cryptography-38.0.3-cp36-abi3-macosx_10_12_universal2.whl", hash = "sha256:726e3a1bfee0e919b278c8f766fdcf1fe30f8e6feea590e3f248d3636b58ffb3"},
     {file = "cryptography-38.0.3-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.manylinux_2_24_aarch64.whl", hash = "sha256:bbf203f1a814007ce24bd4d51362991d5cb90ba0c177a9c08825f2cc304d871f"},
     {file = "cryptography-38.0.3-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:554bec92ee7d1e9d10ded2f7e92a5d70c1f74ba9524947c0ba0c850c7b011828"},
     {file = "cryptography-38.0.3-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b1b52c9e5f8aa2b802d48bd693190341fae201ea51c7a167d69fc48b60e8a959"},
@@ -4014,6 +4010,31 @@ dwave-cloud-client = [
     {file = "dwave-cloud-client-0.10.2.tar.gz", hash = "sha256:956e26ea932c05f392f19b974abba74aba9e0d2d8f93c921dbeefde5ca569808"},
     {file = "dwave_cloud_client-0.10.2-py3-none-any.whl", hash = "sha256:6f8b27d47f14442665919dffc6996370eb09a98df5ba898e6645369cc212a77b"},
 ]
+dwave-greedy = [
+    {file = "dwave-greedy-0.2.5.tar.gz", hash = "sha256:b04c67fbd151d53f61748f285cea602001a5b55d06402b248406200ca0597e40"},
+    {file = "dwave_greedy-0.2.5-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:bce7e7e00dcb8af5b7de35fcbefdad55b432865439e4dfe5aaa38b5309bdcbe0"},
+    {file = "dwave_greedy-0.2.5-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:073b002ef03c917252a5c3725f93d22bf5501bc217bb3696a7febc3c55ad3c46"},
+    {file = "dwave_greedy-0.2.5-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b56394b2cc82a9cfaa61257418acc0d06fd0ca38e867bd410c02d8919389e503"},
+    {file = "dwave_greedy-0.2.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:61080b6ac8408b91138b486085ddc1f1d13f1582d5fb7545282e196624c2d9ca"},
+    {file = "dwave_greedy-0.2.5-cp310-cp310-win_amd64.whl", hash = "sha256:33481c4aa27cd84830edd5ccc4f8d3f62498ecbde5efd300d20e9bdc727e163a"},
+    {file = "dwave_greedy-0.2.5-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:11ceaabc5915a5cd568fe2d7eabfea0d0e564034b6ae0a4b66d0ae310c821584"},
+    {file = "dwave_greedy-0.2.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fda14666cd5fec797c21270f0e2bc93bf18bc04add2f3469cb9dd2ff603d9132"},
+    {file = "dwave_greedy-0.2.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3ed8dea8697a516b47d8807ad944764eb5da613cc386492da56027ad24a53460"},
+    {file = "dwave_greedy-0.2.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:61bc3bd14eed1f9d4ce1fb0995a7c55c882d9f8a7ceaa72e83562f7c723cf1da"},
+    {file = "dwave_greedy-0.2.5-cp37-cp37m-win_amd64.whl", hash = "sha256:56d5ce05eb5f3996a6e4b6fee929f52c2d85394994ca0758cc0ed609e1ea4d8b"},
+    {file = "dwave_greedy-0.2.5-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:941baee791ca8f704746a1412bef86986c8ef0db06a29024ebcec2ed3f76b374"},
+    {file = "dwave_greedy-0.2.5-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:0017495a140bbf361b2a253ae851d101fa27a545a8a316a8024ee5163528e066"},
+    {file = "dwave_greedy-0.2.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:442e98166eb48ca6971686ddb78a72f0348c3da17f1d73e2afe03b3ec69c25c4"},
+    {file = "dwave_greedy-0.2.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:79df68693df9620bb2d7173bf9dd16b920c285f7f3ee087d5c5541c99d846f81"},
+    {file = "dwave_greedy-0.2.5-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:77812e6a76cabebabc22f806c2db2d81780ec097617011a943d7bb1f957307b7"},
+    {file = "dwave_greedy-0.2.5-cp38-cp38-win_amd64.whl", hash = "sha256:48804fae038640ad132e2acddb4bdb824cb28aa16db5ae5f69ebe364508a80e6"},
+    {file = "dwave_greedy-0.2.5-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:20c28687b8f3f70d2f97ce741545f9aa717652e016bbaa83a331d0a0c73ca00a"},
+    {file = "dwave_greedy-0.2.5-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:881da5a0a8c7db8c8be235b3651ebf7548d08a9bc7396f816a090f67de1bd49c"},
+    {file = "dwave_greedy-0.2.5-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8b84b18b23cf0963cf68e7c981358d9d66536a320e7699962c8827b5634ad422"},
+    {file = "dwave_greedy-0.2.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0101bc605a38684b1d473e33da9227289cd3656fd15fe48e0460e99263c45d11"},
+    {file = "dwave_greedy-0.2.5-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:5c8b3cb764c953e1d25b86323ceb47f7be44e0676fd7c43982da1c75787c70c8"},
+    {file = "dwave_greedy-0.2.5-cp39-cp39-win_amd64.whl", hash = "sha256:024c74ad6f7c21192a6e8845bc97aba3e8211d805f6f1879e88beff84c2aa6af"},
+]
 dwave-networkx = [
     {file = "dwave_networkx-0.8.12-py3-none-any.whl", hash = "sha256:291523bf3ac4f6a4481fbf079b2429239e261bed411ff97455f95a2cfeb58290"},
     {file = "dwave_networkx-0.8.12.tar.gz", hash = "sha256:74c44fdd24d41e73a4cad11034cf0de785efd508d21809f57794a08eb8f40658"},
@@ -4045,33 +4066,8 @@ dwave-preprocessing = [
     {file = "dwave_preprocessing-0.3.2-cp39-cp39-win_amd64.whl", hash = "sha256:0fe8bad4f6b05980a6f0c58e45020a05da14569bf6ff9f860825464de1198cee"},
 ]
 dwave-system = [
-    {file = "dwave-system-1.15.1.tar.gz", hash = "sha256:ff021e4d130612fe13914dc71b9168260f2cb5ab61485ca099a5f32bb6a30cdf"},
-    {file = "dwave_system-1.15.1-py3-none-any.whl", hash = "sha256:411fdccfd67e2b84458443011fba6626f3be0b5002bc59eb9c2c75f20bf0c2b5"},
-]
-dwave-tabu = [
-    {file = "dwave-tabu-0.4.5.tar.gz", hash = "sha256:110884dd5e68bb7c9a8e6813d5d1f220819ea6b49f3654e5e07e5f4b697c0ee0"},
-    {file = "dwave_tabu-0.4.5-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:fbd20267e3162b7398a6d8eb5c677250978cea5cb8e928ae50f0aecb4e0d2b74"},
-    {file = "dwave_tabu-0.4.5-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:57122ed151b108cd87c55e2caa09027a8ff4a4b8651d4837a078d4064205ddcf"},
-    {file = "dwave_tabu-0.4.5-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1b8db6306156f77d9824ec1e74dbd491c3d2d32cf7fc994488baac356e6d38ab"},
-    {file = "dwave_tabu-0.4.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cb0a044a8f5b2396bd6014e0580039304127c9107c1b5288b2ae04a10170a998"},
-    {file = "dwave_tabu-0.4.5-cp310-cp310-win_amd64.whl", hash = "sha256:a8efd04de5f68828dbba053ae99024979a8bae4f4d244845de3269144fbf15d4"},
-    {file = "dwave_tabu-0.4.5-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:841d7132fb493fa01f4cb15d8e40306e3201f07669916739269281afed4e913e"},
-    {file = "dwave_tabu-0.4.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a2712e7f5de2a434effbbd8fd8268f1fbea58ae57bff1e7e7b8e1b355571e56f"},
-    {file = "dwave_tabu-0.4.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a691677f0ac1390ffe226965769e29d0b08f1bfb8539f5b9fce5b99a851afec3"},
-    {file = "dwave_tabu-0.4.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:c8e156baa3cbc0498da3c4c54228943b14fa90664cad424ee18378f9aa5d4593"},
-    {file = "dwave_tabu-0.4.5-cp37-cp37m-win_amd64.whl", hash = "sha256:efc7faa84cb4af69b8c02a51adb15764f920ebede3c3a2913d92d1881574f5d1"},
-    {file = "dwave_tabu-0.4.5-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:26bb0c1b8dc952e6be39158906ecb24b2ee1436cb51c611ac5261bd29741a657"},
-    {file = "dwave_tabu-0.4.5-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:9ecae8bfe28e8bf9a37e846655cf3db06fe2be304ac4a72289a723892eb5dbcd"},
-    {file = "dwave_tabu-0.4.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cf9a2b4ce2c62debbb122302dd2a50a5c2d7b89381be190416b241c97dc2d636"},
-    {file = "dwave_tabu-0.4.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c253a4cffdd2b6e0834895db106682642045d3eea0d747fd6aed6845299bde07"},
-    {file = "dwave_tabu-0.4.5-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:2fcb9b3810c7c3fc2940c1b713c62f40d6f9f054b0e4616d514a21a92640e397"},
-    {file = "dwave_tabu-0.4.5-cp38-cp38-win_amd64.whl", hash = "sha256:eaf12cd6d199436b95889cfc0a6fd82457da760625264fe9069a8a5ef159c1c0"},
-    {file = "dwave_tabu-0.4.5-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:5261850c0baabbf08d5a8683bfc120135902da5e7049366247462693f2c95118"},
-    {file = "dwave_tabu-0.4.5-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:4416da7ea5afd0358644ae540d38ec47d8bad4beef6d8dc27874ab09564a7ecf"},
-    {file = "dwave_tabu-0.4.5-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:288b37c95da149646ef88b9ad83fcc95353ce4caebaebc1a47dd7d4fc8eb54dd"},
-    {file = "dwave_tabu-0.4.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:88c5d3b2e0a0b46e057b2d2bc8fa28fdbd00429b6cef33d634b750b0a3a53eaf"},
-    {file = "dwave_tabu-0.4.5-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:b7ea10e90ec3c6d14a6567af6b51b8fbc430f2f74445718259d2c0ea7006ed93"},
-    {file = "dwave_tabu-0.4.5-cp39-cp39-win_amd64.whl", hash = "sha256:635f4b6a9bf98dcd00bc5c85a3433f19e0dc503ceedb0e19509809ece38909e2"},
+    {file = "dwave-system-1.17.0.tar.gz", hash = "sha256:6040ad948f35c842e99896a5a4d4a901d067c4879a0bd65a0abd5a0702995a9f"},
+    {file = "dwave_system-1.17.0-py3-none-any.whl", hash = "sha256:b64edfd6576c057ed7ae08b9706b7da8bcc48653f068491ecd232400df07be0a"},
 ]
 dwavebinarycsp = [
     {file = "dwavebinarycsp-0.1.4-py3-none-any.whl", hash = "sha256:3a88399a154a64cffec5932f3e8ad3a88c0b14ee8bb54085dfe0c8a5c676ccdb"},
