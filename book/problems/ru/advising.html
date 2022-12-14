@@ -919,12 +919,15 @@ title="Print to PDF"
 <span class="eqno">(21)<a class="headerlink" href="#equation-eqn-1" title="Permalink to this equation">#</a></span>\[
 E(\{\sigma\}) = -J\sum_{i=1}^N \sigma_i \sigma_{i+1} - H\sum_{i=1}^N \sigma_i.
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Обратите внимание, что в этой лекции используется терминология из физики (а не области квантовых вычислений, которая используется в большинстве других лекций): <span class="math notranslate nohighlight">\(H\)</span> – это внешнее поле, не гамильтониан, или энергия. А энергия обозначается классическим для физики <span class="math notranslate nohighlight">\(E\)</span>.</p>
 <p>Это выражение соответствует периодическим граничным условиям, при которых первый и <span class="math notranslate nohighlight">\(N+1\)</span>-й спины отождествляются, то есть</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma_{N+1} \equiv \sigma_1.
 \]</div>
-<p>В этом случае можно считать, что система спинов находится на окружности, то есть первый и <span class="math notranslate nohighlight">\(N\)</span>-й спины являются ближайшими соседями и взаимодействуют между собой. Для описания такой системы необходимо найти статистическую сумму <span class="math notranslate nohighlight">\(Z\)</span>, в которой содержится полная информация о всех состояниях системы. Тогда другие характеристики системы, такие как удельная энергия, свободная энергия, энтропия, намагниченность, магнитная восприимчивость и др.  вычисляются через статистическую сумму или ее производные.</p>
+<p>В этом случае можно считать, что система спинов находится на окружности, то есть первый и <span class="math notranslate nohighlight">\(N\)</span>-й спины являются ближайшими соседями и взаимодействуют между собой. Для описания такой системы необходимо найти статистическую сумму <span class="math notranslate nohighlight">\(Z\)</span>, в которой содержится полная информация о всех состояниях системы. Тогда другие характеристики системы, такие как удельная энергия, свободная энергия, энтропия, намагниченность, магнитная восприимчивость и др. вычисляются через статистическую сумму или ее производные.</p>
 <p>Статистическая сумма рассматриваемой модели при температуре <span class="math notranslate nohighlight">\(\theta\)</span> есть сумма по всем спиновым конфигурациям <span class="math notranslate nohighlight">\(\{\sigma\}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-2">
 <span class="eqno">(22)<a class="headerlink" href="#equation-eqn-2" title="Permalink to this equation">#</a></span>\[
@@ -936,6 +939,7 @@ Z(\theta,H,N) = \sum_{\{\sigma\}} e^{-\frac{E(\{\sigma\})}{\theta}}.
 \sum_{\{\sigma\}} \equiv \sum_{\sigma_1 = \pm 1} \sum_{\sigma_2 = \pm 1} \ldots \sum_{\sigma_N = \pm 1}.
 \]</div>
 <p>Следует заметить, что количество членов статистической суммы экспоненциально растет с увеличением числа вершин, соответственно увеличивается и время расчета термодинамических параметров для большого количества частиц.</p>
+</div>
 </section>
 <section id="id4">
 <h2>Матричный подход<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
@@ -957,14 +961,14 @@ t = \frac{J}{\theta}, \quad h = \frac{H}{\theta}.
 <p>Числа <span class="math notranslate nohighlight">\(T_{\sigma \sigma'}\)</span> <a class="reference internal" href="#equation-eqn-4">(24)</a> будем дальше рассматривать как матричные элементы матрицы <span class="math notranslate nohighlight">\(T\)</span>, строки и столбцы которой вместо натуральных чисел нумеруются изинговскими переменными <span class="math notranslate nohighlight">\(\sigma\)</span> и <span class="math notranslate nohighlight">\(\sigma'\)</span>. Так как изинговские переменные принимают два значения: <span class="math notranslate nohighlight">\(\sigma, \sigma' = \pm 1\)</span>, то матрица <span class="math notranslate nohighlight">\(T\)</span> является квадратной матрицей размера <span class="math notranslate nohighlight">\(2 \times 2\)</span>. Договоримся дальше считать, что значение <span class="math notranslate nohighlight">\(\sigma = 1\)</span> (<span class="math notranslate nohighlight">\(\sigma' = 1\)</span>) соответствует первой строке (первому столбцу), а значение <span class="math notranslate nohighlight">\(\sigma = -1\)</span> (<span class="math notranslate nohighlight">\(\sigma' = -1\)</span>) соответствует второй строке (второму столбцу). Матрица <span class="math notranslate nohighlight">\(T\)</span> с элементами <a class="reference internal" href="#equation-eqn-4">(24)</a> в таком случае имеет следующий явный вид:</p>
 <div class="math notranslate nohighlight" id="equation-eqn-5">
 <span class="eqno">(25)<a class="headerlink" href="#equation-eqn-5" title="Permalink to this equation">#</a></span>\[\begin{split}
-T = \begin{vmatrix}
+T = \begin{pmatrix}
     T_{1,1} &amp; T_{1,-1} \\
     T_{-1, 1} &amp; T_{-1, -1}
-    \end{vmatrix}
-= \begin{vmatrix}
+    \end{pmatrix}
+= \begin{pmatrix}
     e^{t+h} &amp; e^{-t} \\
     e^{-t} &amp; e^{t-h}
-    \end{vmatrix}
+    \end{pmatrix}
 \end{split}\]</div>
 <p>Матрица <span class="math notranslate nohighlight">\(T\)</span> называется <em>трансфер-матрицей</em> Крамерса–Ваннье.</p>
 <p>Равенство <a class="reference internal" href="#equation-eqn-3">(23)</a> позволяет записать статистическую сумму <a class="reference internal" href="#equation-eqn-2">(22)</a> в следующем виде</p>
@@ -1080,10 +1084,10 @@ Z(\theta, H, N) = \mbox{Tr}\, T^N.
 <p>Теперь вернемся к аналитическому решению рассматриваемой нами классической одномерной модели Изинга (<span class="math notranslate nohighlight">\(s=2\)</span> и <span class="math notranslate nohighlight">\(n=1\)</span>). Как показали выше, задача сводится к сведению трансфер-матрицы <a class="reference internal" href="#equation-eqn-5">(25)</a> диагональному виду. Для этого воспользуемся правилами линейной алгебры и решим характеристическое уравнение для трансфер-матрицы и найдем её собственные значения:</p>
 <div class="math notranslate nohighlight" id="equation-eq-determ">
 <span class="eqno">(38)<a class="headerlink" href="#equation-eq-determ" title="Permalink to this equation">#</a></span>\[\begin{split}
-det \left( T - \lambda I \right) = det \left( T - \lambda \left(\begin{vmatrix}
+det \left( T - \lambda I \right) = det \left( T - \lambda \left(\begin{pmatrix}
     1 &amp; 0 \\
     0 &amp; 1
-\end{vmatrix} \right) \right) = 0,
+\end{pmatrix} \right) \right) = 0,
 \end{split}\]</div>
 <p>где <span class="math notranslate nohighlight">\(I\)</span> – единичная матрица, <span class="math notranslate nohighlight">\(\lambda\)</span> – действительная переменная. Раскрывая определитель <a class="reference internal" href="#equation-eq-determ">(38)</a>, находим искомое характеристическое уравнение:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cheq">
@@ -1093,9 +1097,9 @@ det \left( T - \lambda I \right) = det \left( T - \lambda \left(\begin{vmatrix}
 <p>решением которого являются два собственных значения:</p>
 <div class="math notranslate nohighlight" id="equation-eq-eigen">
 <span class="eqno">(40)<a class="headerlink" href="#equation-eq-eigen" title="Permalink to this equation">#</a></span>\[
-\lambda_{\pm} = \frac{1}{2} e^{t} \left( e^{h} + e^{-h} \right) \pm  \frac{1}{2} \sqrt{ e^{2t} \left( e^{h} + e^{-h} \right)^{2} - 4e^{2t} + 4e^{-2t} } = e^{t} ch(h) \pm \sqrt{e^{2t} sh^{2}(h) + e^{-2t}},
+\lambda_{\pm} = \frac{1}{2} e^{t} \left( e^{h} + e^{-h} \right) \pm  \frac{1}{2} \sqrt{ e^{2t} \left( e^{h} + e^{-h} \right)^{2} - 4e^{2t} + 4e^{-2t} } = e^{t} \cosh(h) \pm \sqrt{e^{2t} \sinh^{2}(h) + e^{-2t}},
 \]</div>
-<p>где <span class="math notranslate nohighlight">\(ch (h) = \frac{e^{h} + e^{-h}}{2}\)</span> – гиперболический косинус и <span class="math notranslate nohighlight">\(sh (h) = \frac{e^{h} - e^{-h}}{2}\)</span> – гиперболический синус. Следовательно статистическая сумма рассматриваемой модели записывается в следующем виде:</p>
+<p>где <span class="math notranslate nohighlight">\(\cosh(h) = \frac{e^{h} + e^{-h}}{2}\)</span> – гиперболический косинус и <span class="math notranslate nohighlight">\(\sinh(h) = \frac{e^{h} - e^{-h}}{2}\)</span> – гиперболический синус. Следовательно статистическая сумма рассматриваемой модели записывается в следующем виде:</p>
 <div class="math notranslate nohighlight">
 \[
 Z = Tr T^{N} = \lambda_{+}^{N} + \lambda_{-}^{N}.
@@ -1103,14 +1107,14 @@ Z = Tr T^{N} = \lambda_{+}^{N} + \lambda_{-}^{N}.
 <p>Здесь следует отметить, что для всех физических значений параметров <span class="math notranslate nohighlight">\(t\)</span> и <span class="math notranslate nohighlight">\(h\)</span> (<span class="math notranslate nohighlight">\(\in \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(&lt; \infty\)</span>) выполняется условие: <span class="math notranslate nohighlight">\(|\lambda_{+}| &gt; |\lambda_{-}|\)</span>. Тогда в термодинамическом пределе (<span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>) значение <span class="math notranslate nohighlight">\(\lambda_{+}\)</span> преобладает над <span class="math notranslate nohighlight">\(\lambda_{-}\)</span> и удовлетворяет <a class="reference internal" href="#equation-eq-lim">(32)</a>, а статистическая сумма преобразуется к виду: <span class="math notranslate nohighlight">\(Z =\lambda_{+}^{N} + \lambda_{-}^{N} \sim \lambda_{+}^{N}\)</span>. Отсюда можно получить выражение  для удельной свободной энергии системы, приходящейся на один спин <a class="reference internal" href="#equation-eq-fren">(33)</a> (с точностью до множителя (<span class="math notranslate nohighlight">\(- \theta\)</span>)):</p>
 <div class="math notranslate nohighlight">
 \[
-f (t,h)= \lim_{N \rightarrow \infty} \frac{\mbox{ln}Z}{N}= \mbox{ln} \lambda_{+} = t + \mbox{ln} \left( ch(h) + \sqrt{sh^{2}(h) + e^{-4t}} \right)
+f (t,h)= \lim_{N \rightarrow \infty} \frac{\mbox{ln}Z}{N}= \mbox{ln} \lambda_{+} = t + \mbox{ln} \left( \cosh(h) + \sqrt{\sinh^{2}(h) + e^{-4t}} \right)
 \]</div>
 <p>и для намагниченности <a class="reference internal" href="#equation-eq-mag">(36)</a>:</p>
 <div class="math notranslate nohighlight">
 \[
-m = -\frac{\partial f(t,h)}{\partial h} = \frac{sh(h) + \frac{sh(h)ch(h)} {\sqrt{sh^{2}(h) + e^{-4t}}}} {ch(h) + \sqrt{sh^{2}(h) + e^{-4t}}}= \frac{sh(h)}{\sqrt{sh^{2}(h) + e^{-4t}}},
+m = -\frac{\partial f(t,h)}{\partial h} = \frac{\cosh(h) + \frac{\sinh(h)\cosh(h)} {\sqrt{\sinh^{2}(h) + e^{-4t}}}} {\cosh(h) + \sqrt{\sinh^{2}(h) + e^{-4t}}}= \frac{\sinh(h)}{\sqrt{\sinh^{2}(h) + e^{-4t}}},
 \]</div>
-<p>которая является аналитической функцией <span class="math notranslate nohighlight">\(h\)</span> и исчезает при <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span> (так как <span class="math notranslate nohighlight">\(sh(h) \rightarrow 0\)</span>). Таким образом рассматриваемая модель не допускает фазового перехода при любой положительной температуре (<span class="math notranslate nohighlight">\(\theta &gt; 0\)</span>). Она претерпевает <em>парамагнитный-ферромагнитный</em> фазовый переход только при <span class="math notranslate nohighlight">\(\theta = 0\)</span>, в этом случае спонтанная намагниченность равна <span class="math notranslate nohighlight">\(|m| = 1\)</span>.</p>
+<p>которая является аналитической функцией <span class="math notranslate nohighlight">\(h\)</span> и исчезает при <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span> (так как <span class="math notranslate nohighlight">\(\sinh(h) \rightarrow 0\)</span>). Таким образом рассматриваемая модель не допускает фазового перехода при любой положительной температуре (<span class="math notranslate nohighlight">\(\theta &gt; 0\)</span>). Она претерпевает <em>парамагнитный-ферромагнитный</em> фазовый переход только при <span class="math notranslate nohighlight">\(\theta = 0\)</span>, в этом случае спонтанная намагниченность равна <span class="math notranslate nohighlight">\(|m| = 1\)</span>.</p>
 </section>
 <section id="id6">
 <h2>Заключение<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
