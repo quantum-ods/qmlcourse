@@ -42,6 +42,8 @@ repos:
       - id: check-json
       - id: check-xml
       - id: check-yaml
+        args:
+          - --unsafe
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: trailing-whitespace
