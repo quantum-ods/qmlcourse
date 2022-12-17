@@ -20,7 +20,7 @@ html:
   binderhub_url: ""
   thebe: false
   baseurl: https://quantum-ods.github.io/qmlcourse/book/
-  google_analytics_id: G-3B94SZ0WNF
+  google_analytics_id: !ENV GOOGLE_ANALYTICS_KEY
 
 notebook_interface: "notebook"
 
