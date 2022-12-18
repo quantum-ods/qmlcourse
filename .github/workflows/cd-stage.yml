@@ -48,18 +48,18 @@ jobs:
         run: |
           sudo apt install -y imagemagick
 
+      - name: set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+          cache: 'poetry'
+
       - name: set up poetry
         uses: snok/install-poetry@v1.3.3
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
           installer-parallel: true
-
-      - name: set up python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8
-          cache: 'poetry'
 
       - name: install dependencies
         run: |
