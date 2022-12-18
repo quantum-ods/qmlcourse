@@ -27,7 +27,7 @@ jobs:
   build-and-deploy-book:
     needs: [create-folder-for-latex]
     runs-on: ubuntu-latest
-    timeout-minutes: 22
+    timeout-minutes: 24
 
     steps:
 
