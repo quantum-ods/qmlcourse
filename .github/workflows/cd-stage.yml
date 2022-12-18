@@ -55,7 +55,7 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
 
-      - name: set up py3.8
+      - name: set up python
         uses: actions/setup-python@v4
         with:
           python-version: 3.8
