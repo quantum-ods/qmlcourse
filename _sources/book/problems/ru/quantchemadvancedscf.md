@@ -171,23 +171,6 @@ $$
 Давайте посчитаем c помощью `psi4` энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, "поверив на слово". Их смысл будет объяснен в дальнейшем.
 
 ```{code-cell} ipython3
-# set conda
-!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-!chmod +x Miniconda3-latest-Linux-x86_64.sh
-!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-
-# install psi4
-!conda install -y psi4 python=3.8 -c psi4
-
-# set path
-import sys
-sys.path.append("/usr/local/lib/python3.8/site-packages/")
-
-# this command is needed to avoid "Loader" error.
-!pip install distributed
-```
-
-```{code-cell} ipython3
 import psi4
 psi4.core.be_quiet() # отключаем логирование в stdout
 

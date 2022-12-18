@@ -1184,26 +1184,6 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <p>Давайте посчитаем c помощью <code class="docutils literal notranslate"><span class="pre">psi4</span></code> энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, “поверив на слово”. Их смысл будет объяснен в дальнейшем.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># set conda
-!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-!chmod +x Miniconda3-latest-Linux-x86_64.sh
-!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-
-# install psi4
-!conda install -y psi4 python=3.8 -c psi4
-
-# set path
-import sys
-sys.path.append(&quot;/usr/local/lib/python3.8/site-packages/&quot;)
-
-# this command is needed to avoid &quot;Loader&quot; error.
-!pip install distributed
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">be_quiet</span><span class="p">()</span> <span class="c1"># отключаем логирование в stdout</span>
 
