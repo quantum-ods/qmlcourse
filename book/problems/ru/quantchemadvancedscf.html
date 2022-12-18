@@ -1182,31 +1182,21 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <p>Как и в задачах машинного обучения, в первом приближении достаточно подготовить данные, скормить их волшебному программному пакету-вычислителю и забрать ответ, но без понимания происходящего под капотом есть шансы получить что-то неправильное.</p>
 <p>В этой лекции воспользуемся Python-пакетом <a class="reference external" href="https://psicode.org/posts/psi4education_setup/"><code class="docutils literal notranslate"><span class="pre">psi4</span></code></a>. Он реализует многие алгоритмы квантовой химии и имеет неплохое Python API.</p>
 <p>Давайте посчитаем c помощью <code class="docutils literal notranslate"><span class="pre">psi4</span></code> энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, “поверив на слово”. Их смысл будет объяснен в дальнейшем.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">be_quiet</span><span class="p">()</span> <span class="c1"># отключаем логирование в stdout</span>
 
 <span class="n">h_atom</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>Задали атом водорода, по умолчанию атом помещается в начало координат.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
   <span class="s2">&quot;basis&quot;</span><span class="p">:</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">,</span>
   <span class="s2">&quot;reference&quot;</span><span class="p">:</span> <span class="s2">&quot;rohf&quot;</span><span class="p">,</span>
 <span class="p">})</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>Тут уже поинтереснее – объяснение этих параметров пока отложим и вернемся после объяснения теории. В целом они определяют, каким именно методом и в каком базисе нужно численно решить уравнение Шредингера.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">physical_constants</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">physical_constants</span>
 
 <span class="n">h2ev</span> <span class="o">=</span> <span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;hartree-electron volt relationship&quot;</span><span class="p">]</span>
 
@@ -1218,8 +1208,6 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrogen ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Hydrogen ground state energy: -12.696338923670487 eV
 </pre></div>
@@ -1313,17 +1301,11 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <section id="scf-psi4">
 <h3>SCF в psi4<a class="headerlink" href="#scf-psi4" title="Permalink to this headline">#</a></h3>
 <p>Теперь можно вернуться к коду и взглянуть на него чуть более осмысленно. При вычислении энергии явно передаем, что хотим посчитать ее методом Self-Consistent Field:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e_in_ht</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s2">&quot;scf&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e_in_ht</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s2">&quot;scf&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>Но что происходит в настройках, пока по-прежнему неясно:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span>
   <span class="p">{</span>
     <span class="s2">&quot;basis&quot;</span><span class="p">:</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">,</span>
     <span class="s2">&quot;reference&quot;</span><span class="p">:</span> <span class="s2">&quot;rohf&quot;</span><span class="p">,</span>
@@ -1331,14 +1313,10 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>Начнем с параметра <code class="docutils literal notranslate"><span class="pre">basis</span></code>. <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets"><code class="docutils literal notranslate"><span class="pre">STO-3G</span></code></a> – не стандарт связи, а <strong>S</strong>later <strong>T</strong>ype <strong>O</strong>rbital с <strong>3</strong> <strong>Г</strong>ауссианами в базисном наборе, то есть базис на основе детерминанта Слетера. В описании метода SCF мы собирались начинать итерации с водородоподобных волновых функций, но так как весь метод является аппроксимирующим, нам никто не мешает выбрать другие волновые функции, если результаты лучше согласуются с экспериментом. Выбор базиса может существенно влиять на результат вычислений и современные базисы сложнее, чем Слетеровский детерминант – он просто один из первых и наиболее популярных.</p>
 <p>Параметр <code class="docutils literal notranslate"><span class="pre">reference</span></code> означает, какие предположения о волновой функции делаем, в данном случае используется <a class="reference external" href="https://en.wikipedia.org/wiki/Restricted_open-shell_Hartree%E2%80%93Fock">Restricted Open Shell Hartree-Fock</a>, так как у атома водорода только один электрон и его оболочка не заполнена (на уровне энергии <span class="math notranslate nohighlight">\(n = 1\)</span> для этого нужно 2 электрона).</p>
 <p>Повторим вычисления с более “современными” опциями.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
 
 <span class="n">h_atom</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
 
@@ -1353,8 +1331,6 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Better hydrogen ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Better hydrogen ground state energy: -13.605551648965216 eV
 </pre></div>
 </div>
@@ -1364,9 +1340,7 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <section id="id15">
 <h3>Атом Гелия (численно)<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
 <p>Разобрали SCF на примере атома гелия, то наверняка можно посчитать его энергию в <code class="docutils literal notranslate"><span class="pre">psi4</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
 
 <span class="n">he_atom</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;He&quot;</span><span class="p">)</span>
 
@@ -1380,8 +1354,6 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Helium ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Helium ground state energy: -76.403693763909 eV
 </pre></div>
 </div>
@@ -1390,9 +1362,7 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <section id="id16">
 <h3>Молекула водорода<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <p>Пока рассматривали только атомы, но SCF можно использовать и для молекул – потенциалы становятся сложнее, электронов больше, но общая логика не меняется.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
 
 <span class="c1"># задаем 2 атома водорода с явными координатами</span>
 <span class="n">h_mol</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -1410,17 +1380,13 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrogen ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht_h</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Hydrogen ground state energy: -30.388568856869096 eV
 </pre></div>
 </div>
 <p>Здесь задали явно координаты обоих атомов водорода в молекуле и энергия электронов была высчитана в предположении, что ядра водородов неподвижны. Здесь расстояние в 0.74 Ангстрема взято из <a class="reference external" href="https://cccbdb.nist.gov/exp2x.asp?casno=1333740&amp;charge=0">экспериментальных данных</a>. Если бы задали неправильные координаты, то рассчитанная энергия окажется неверной. Точнее, она соответствовала бы нефизичной ситуации, когда неведомая сила “удерживает” ядра водорода на месте.</p>
 <p>В <code class="docutils literal notranslate"><span class="pre">psi4</span></code> есть метод для оптимизации геометрии молекулы <code class="docutils literal notranslate"><span class="pre">psi4.optimize</span></code>; он не фиксирует положение ядер и возвращает минимальную возможную энергию с учетом вариации положения атомов.</p>
 <p>Вычисления с оптимизацией геометрии занимают значительно больше времени.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
 
 <span class="n">h_mol_bad</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">  H 0 0 0</span>
@@ -1443,8 +1409,6 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hydrogen molecule, optimized ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht_h_optimized</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 Hydrogen molecule, incorrect ground state energy: -24.786132109551886 eV
 Hydrogen molecule, optimized ground state energy: -30.408884269506693 eV
@@ -1457,9 +1421,7 @@ Hydrogen molecule, optimized ground state energy: -30.408884269506693 eV
 <h3>Молекула этилового спирта<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
 <p>Молекула водорода – это все еще почти игрушечный пример. Давайте попробуем обсчитать молекулу этанола.</p>
 <p>Задавать руками геометрию молекулы <span class="math notranslate nohighlight">\(C_2H_5OH\)</span> можно, но будет явно сложнее, чем для молекулы водорода. К счастью, это необязательно: <code class="docutils literal notranslate"><span class="pre">psi4</span></code> умеет скачивать геометрию из базы данных <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a> по номенклатурному имени либо уникальному ChemId.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
 
 <span class="n">eth</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;pubchem:ethanol&quot;</span><span class="p">)</span>
 
@@ -1472,8 +1434,6 @@ Hydrogen molecule, optimized ground state energy: -30.408884269506693 eV
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ethanol ground state energy: </span><span class="si">{</span><span class="n">e_in_ev</span><span class="p">(</span><span class="n">e_in_ht_eth</span><span class="p">)</span><span class="si">}</span><span class="s2"> eV&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>	Searching PubChem database <span class="k">for</span> ethanol <span class="o">(</span>single best match returned<span class="o">)</span>
 	Found <span class="m">1</span> result<span class="o">(</span>s<span class="o">)</span>
