@@ -48,10 +48,18 @@ jobs:
         run: |
           sudo apt install -y imagemagick
 
+      - name: set up conda
+        uses: s-weigand/setup-conda@v1
+        with:
+          update-conda: true
+          python-version: 3.8
+          conda-channels: anaconda, conda-forge, psi4
+          activate-conda: true
+
       - name: set up poetry
         uses: snok/install-poetry@v1.3.3
         with:
-          virtualenvs-create: true
+          virtualenvs-create: false
           virtualenvs-in-project: true
           installer-parallel: true
 
@@ -63,6 +71,9 @@ jobs:
 
       - name: install dependencies
         run: |
+          conda create python=3.8 -p .venv -y
+          conda install psi4 -c psi4 -p .venv -y
+
           poetry install --no-interaction --no-root
 
       - name: build the book
