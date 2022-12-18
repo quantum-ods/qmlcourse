@@ -170,7 +170,7 @@ $$
 
 Давайте посчитаем c помощью `psi4` энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, "поверив на слово". Их смысл будет объяснен в дальнейшем.
 
-```{code-cell} ipython3
+```
 import psi4
 psi4.core.be_quiet() # отключаем логирование в stdout
 
@@ -179,7 +179,7 @@ h_atom = psi4.geometry("H")
 
 Задали атом водорода, по умолчанию атом помещается в начало координат.
 
-```{code-cell} ipython3
+```
 psi4.set_options({
   "basis": "STO-3G",
   "reference": "rohf",
@@ -188,7 +188,7 @@ psi4.set_options({
 
 Тут уже поинтереснее -- объяснение этих параметров пока отложим и вернемся после объяснения теории. В целом они определяют, каким именно методом и в каком базисе нужно численно решить уравнение Шредингера.
 
-```{code-cell} ipython3
+```
 from scipy.constants import physical_constants
 
 h2ev = physical_constants["hartree-electron volt relationship"]
@@ -319,13 +319,13 @@ $$
 
 Теперь можно вернуться к коду и взглянуть на него чуть более осмысленно. При вычислении энергии явно передаем, что хотим посчитать ее методом Self-Consistent Field:
 
-```{code-cell} ipython3
+```
 e_in_ht = psi4.energy("scf")
 ```
 
 Но что происходит в настройках, пока по-прежнему неясно:
 
-```{code-cell} ipython3
+```
 psi4.set_options(
   {
     "basis": "STO-3G",
@@ -340,7 +340,7 @@ psi4.set_options(
 
 Повторим вычисления с более "современными" опциями.
 
-```{code-cell} ipython3
+```
 psi4.core.clean()
 
 h_atom = psi4.geometry("H")
@@ -367,7 +367,7 @@ Better hydrogen ground state energy: -13.605551648965216 eV
 
 Разобрали SCF на примере атома гелия, то наверняка можно посчитать его энергию в `psi4`.
 
-```{code-cell} ipython3
+```
 psi4.core.clean()
 
 he_atom = psi4.geometry("He")
@@ -391,7 +391,7 @@ Helium ground state energy: -76.403693763909 eV
 
 Пока рассматривали только атомы, но SCF можно использовать и для молекул -- потенциалы становятся сложнее, электронов больше, но общая логика не меняется.
 
-```{code-cell} ipython3
+```
 psi4.core.clean()
 
 # задаем 2 атома водорода с явными координатами
@@ -419,7 +419,7 @@ Hydrogen ground state energy: -30.388568856869096 eV
 
 Вычисления с оптимизацией геометрии занимают значительно больше времени.
 
-```{code-cell} ipython3
+```
 psi4.core.clean()
 
 h_mol_bad = psi4.geometry("""
@@ -458,7 +458,7 @@ Hydrogen molecule, optimized ground state energy: -30.408884269506693 eV
 
 Задавать руками геометрию молекулы $C_2H_5OH$ можно, но будет явно сложнее, чем для молекулы водорода. К счастью, это необязательно: `psi4` умеет скачивать геометрию из базы данных [PubChem](https://pubchem.ncbi.nlm.nih.gov/) по номенклатурному имени либо уникальному ChemId.
 
-```{code-cell} ipython3
+```
 psi4.core.clean()
 
 eth = psi4.geometry("pubchem:ethanol")
