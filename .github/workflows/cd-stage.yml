@@ -34,7 +34,7 @@ jobs:
   build-and-deploy-book:
     needs: [create-folder-for-latex]
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 24
     environment:
       name: qmlc-web-page-stage
       url: https://qmlc-web-page-stage.netlify.app
