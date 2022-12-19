@@ -34,7 +34,7 @@ kernelspec:
 
 Несмотря на то, что основа метода была разработана чуть ли не сто лет назад, он активно используется и сегодня, особенно с различными модификациями и дополнениями.
 
-### Что мы ищем?
+### Что ищем?
 
 С точки зрения квантовой химии, чаще всего хотим для произвольного набора частиц (атомов для молекулы или кристалла, протонов и электронов для атома) с известным потенциалом взаимодействия предсказывать стационарное состояние, т.е. находить стационарные волновые функции всех частиц системы. Квантовая механика постулирует, что для любой наблюдаемой физической величины существует оператор, которым можем подействовать на волновую функцию и получить измеренное значение этой величины.
 
@@ -170,36 +170,39 @@ $$
 
 Давайте посчитаем c помощью `psi4` энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, "поверив на слово". Их смысл будет объяснен в дальнейшем.
 
-```{code-cell} ipython3
+```python
 import psi4
 psi4.core.be_quiet() # отключаем логирование в stdout
 
 h_atom = psi4.geometry("H")
 ```
 
-Мы задали атом водорода, по умолчанию атом помещается в начало координат.
+Задали атом водорода, по умолчанию атом помещается в начало координат.
 
-```{code-cell} ipython3
+```python
 psi4.set_options({
-  'basis': 'STO-3G',
-  'reference': 'rohf',
+  "basis": "STO-3G",
+  "reference": "rohf",
 })
 ```
 
 Тут уже поинтереснее -- объяснение этих параметров пока отложим и вернемся после объяснения теории. В целом они определяют, каким именно методом и в каком базисе нужно численно решить уравнение Шредингера.
 
-```{code-cell} ipython3
+```python
 from scipy.constants import physical_constants
 
-h2ev = physical_constants['hartree-electron volt relationship']
+h2ev = physical_constants["hartree-electron volt relationship"]
 
 def e_in_ev(energy_in_ht):
     return energy_in_ht * h2ev[0]
 
 # энергия в единицах Hartree
-e_in_ht = psi4.energy('scf')
+e_in_ht = psi4.energy("scf")
 
 print(f"Hydrogen ground state energy: {e_in_ev(e_in_ht)} eV")
+```
+```bash
+Hydrogen ground state energy: -12.696338923670487 eV
 ```
 
 Здесь посчитали энергию в единицах Хартри -- специальной физической системе единиц, где истинная энергия атома водорода равна 1/2, и перевели ее в электрон-вольты. Результат не очень точный (правильный, как помним, равен 13.6 eV), и мы его улучшим после того как разберемся, что и как только что посчитали. Это будет удобнее сделать на примере атома гелия, потому что в атоме водорода есть только один электрон, а в любой реальной системе -- больше одного.
@@ -216,7 +219,7 @@ print(f"Hydrogen ground state energy: {e_in_ev(e_in_ht)} eV")
 Для трех классических тел с кулоновским потенциалом все тоже сложно -- можно посмотреть [тут](https://www.wolframcloud.com/objects/demonstrations/ThreeBodyCoulombProblem-source.nb), как поведет себя система трех тел с различными зарядами.
 ```
 
-Попробуем записать уравнение Шредингера для системы из ядра и двух электронов:
+Запишем уравнение Шредингера для системы из ядра и двух электронов:
 
 $$
 \dot{\imath} \hbar \frac{d}{dt} {\ket{\Psi(t, \vec{r_A}, \vec{r_B})}} = (
@@ -238,7 +241,7 @@ $$
 
 Основная идея теории заключается в следующем.
 
-У нас есть несколько частиц, которые взаимодействуют между собой, и найти цельное решение уравнения Шредингера для всех сразу не получается. Тогда вместо этого будем рассматривать частицы по очереди и считать, что все остальные действуют "в среднем" на выбранную частицу. То есть будем считать усредненный по пространству потенциал вместо точного.
+Есть несколько частиц, которые взаимодействуют между собой, и найти цельное решение уравнения Шредингера для всех сразу не получается. Тогда вместо этого будем рассматривать частицы по очереди и считать, что все остальные действуют "в среднем" на выбранную частицу. То есть будем считать усредненный по пространству потенциал вместо точного.
 
 Для электрона $А$ в атоме гелия нам нужно учесть усредненное влияние электрона $B$. Можем для электрона $B$ взять волновую функцию от атома водорода, посчитать на ее основе усредненное влияние на электрон $А$:
 
@@ -316,17 +319,17 @@ $$
 
 Теперь можно вернуться к коду и взглянуть на него чуть более осмысленно. При вычислении энергии явно передаем, что хотим посчитать ее методом Self-Consistent Field:
 
-```{code-cell} ipython3
-e_in_ht = psi4.energy('scf')
+```python
+e_in_ht = psi4.energy("scf")
 ```
 
 Но что происходит в настройках, пока по-прежнему неясно:
 
-```{code-cell} ipython3
+```python
 psi4.set_options(
   {
-    'basis': 'STO-3G',
-    'reference': 'rohf',
+    "basis": "STO-3G",
+    "reference": "rohf",
   }
 )
 ```
@@ -335,22 +338,25 @@ psi4.set_options(
 
 Параметр `reference` означает, какие предположения о волновой функции делаем, в данном случае используется [Restricted Open Shell Hartree-Fock](https://en.wikipedia.org/wiki/Restricted_open-shell_Hartree%E2%80%93Fock), так как у атома водорода только один электрон и его оболочка не заполнена (на уровне энергии $n = 1$ для этого нужно 2 электрона).
 
-Давайте повторим вычисления с более "современными" опциями.
+Повторим вычисления с более "современными" опциями.
 
-```{code-cell} ipython3
+```python
 psi4.core.clean()
 
 h_atom = psi4.geometry("H")
 
 psi4.set_options({
-  'basis': 'd-aug-cc-pv5z', # разбор этого базиса выходит за рамки этого интро
-  'scf_type': 'pk',
-  'reference': 'rohf',
+  "basis": "d-aug-cc-pv5z", # разбор этого базиса выходит за рамки этого интро
+  "scf_type": "pk",
+  "reference": "rohf",
 })
 
-e_in_ht = psi4.energy('scf')
+e_in_ht = psi4.energy("scf")
 
 print(f"Better hydrogen ground state energy: {e_in_ev(e_in_ht)} eV")
+```
+```bash
+Better hydrogen ground state energy: -13.605551648965216 eV
 ```
 
 Та-дам! Используя более прокачанные базисы, получили правильный ответ.
@@ -359,21 +365,24 @@ print(f"Better hydrogen ground state energy: {e_in_ev(e_in_ht)} eV")
 
 ### Атом Гелия (численно)
 
-Раз мы разобрали SCF на примере атома гелия, то наверняка можно посчитать его энергию в `psi4`.
+Разобрали SCF на примере атома гелия, то наверняка можно посчитать его энергию в `psi4`.
 
-```{code-cell} ipython3
+```python
 psi4.core.clean()
 
 he_atom = psi4.geometry("He")
 
 psi4.set_options({
-  'basis': 'STO-3G',
-  'reference': 'rohf',
+  "basis": "STO-3G",
+  "reference": "rohf",
 })
 
-e_in_ht = psi4.energy('scf')
+e_in_ht = psi4.energy("scf")
 
 print(f"Helium ground state energy: {e_in_ev(e_in_ht)} eV")
+```
+```bash
+Helium ground state energy: -76.403693763909 eV
 ```
 
 Экспериментальное значение энергии атома гелия [равно](https://en.wikipedia.org/wiki/Helium_atom#Experimental_value_of_ionization_energy) -79.0 eV.
@@ -382,23 +391,26 @@ print(f"Helium ground state energy: {e_in_ev(e_in_ht)} eV")
 
 Пока рассматривали только атомы, но SCF можно использовать и для молекул -- потенциалы становятся сложнее, электронов больше, но общая логика не меняется.
 
-```{code-cell} ipython3
+```python
 psi4.core.clean()
 
 # задаем 2 атома водорода с явными координатами
 h_mol = psi4.geometry("""
-H 0 0 0
-H 0 0 0.74
+  H 0 0 0
+  H 0 0 0.74
 """)
 
 psi4.set_options({
-  'basis': 'STO-3G',
-  'reference': 'rohf',
+  "basis": "STO-3G",
+  "reference": "rohf",
 })
 
-e_in_ht_h = psi4.energy('scf', molecule=h_mol)
+e_in_ht_h = psi4.energy("scf", molecule=h_mol)
 
 print(f"Hydrogen ground state energy: {e_in_ev(e_in_ht_h)} eV")
+```
+```bash
+Hydrogen ground state energy: -30.388568856869096 eV
 ```
 
 Здесь задали явно координаты обоих атомов водорода в молекуле и энергия электронов была высчитана в предположении, что ядра водородов неподвижны. Здесь расстояние в 0.74 Ангстрема взято из [экспериментальных данных](https://cccbdb.nist.gov/exp2x.asp?casno=1333740&charge=0). Если бы задали неправильные координаты, то рассчитанная энергия окажется неверной. Точнее, она соответствовала бы нефизичной ситуации, когда неведомая сила "удерживает" ядра водорода на месте.
@@ -407,28 +419,33 @@ print(f"Hydrogen ground state energy: {e_in_ev(e_in_ht_h)} eV")
 
 Вычисления с оптимизацией геометрии занимают значительно больше времени.
 
-```{code-cell} ipython3
+```python
 psi4.core.clean()
 
 h_mol_bad = psi4.geometry("""
-H 0 0 0
-H 0 0 1.5
+  H 0 0 0
+  H 0 0 1.5
 """)
 # 1.5 - неверное расстояние в ангстремах, верное - 0.74
 
 psi4.set_options({
-  'basis': 'STO-3G',
-  'reference': 'rohf',
+  "basis": "STO-3G",
+  "reference": "rohf",
 })
 
 # рассчитываем энергию "в точке" с неправильной геометрией
-e_in_ht_h_bad = psi4.energy('scf', molecule=h_mol_bad)
+e_in_ht_h_bad = psi4.energy("scf", molecule=h_mol_bad)
 
 # рассчитываем энергию, оптимизируя по ходу геометрию
-e_in_ht_h_optimized = psi4.optimize('scf', molecule=h_mol_bad)
+e_in_ht_h_optimized = psi4.optimize("scf", molecule=h_mol_bad)
 
 print(f"Hydrogen molecule, incorrect ground state energy: {e_in_ev(e_in_ht_h_bad)} eV")
 print(f"Hydrogen molecule, optimized ground state energy: {e_in_ev(e_in_ht_h_optimized)} eV")
+```
+```bash
+Optimizer: Optimization complete!
+Hydrogen molecule, incorrect ground state energy: -24.786132109551886 eV
+Hydrogen molecule, optimized ground state energy: -30.408884269506693 eV
 ```
 
 Для некорректной геометрии получилась завышенная энергия, а после оптимизации -- почти что такая же энергия, как при вычислении с фиксированным расстоянием 0.74. В оптимальном состоянии энергия системы должна быть минимальна, так что результаты вполне разумны.
@@ -441,22 +458,27 @@ print(f"Hydrogen molecule, optimized ground state energy: {e_in_ev(e_in_ht_h_opt
 
 Задавать руками геометрию молекулы $C_2H_5OH$ можно, но будет явно сложнее, чем для молекулы водорода. К счастью, это необязательно: `psi4` умеет скачивать геометрию из базы данных [PubChem](https://pubchem.ncbi.nlm.nih.gov/) по номенклатурному имени либо уникальному ChemId.
 
-```{code-cell} ipython3
+```python
 psi4.core.clean()
 
 eth = psi4.geometry("pubchem:ethanol")
 
 psi4.set_options({
-  'basis': 'STO-3G',
-  'reference': 'rohf',
+  "basis": "STO-3G",
+  "reference": "rohf",
 })
 
-e_in_ht_eth = psi4.energy('scf', molecule=eth)
+e_in_ht_eth = psi4.energy("scf", molecule=eth)
 
 print(f"Ethanol ground state energy: {e_in_ev(e_in_ht_eth)} eV")
 ```
+```bash
+	Searching PubChem database for ethanol (single best match returned)
+	Found 1 result(s)
+Ethanol ground state energy: -4139.64590826589 eV
+```
 
-## Что мы узнали?
+## Что узнали?
 
 Разобрались с базовой теорией квантовой химии:
 
