@@ -13,26 +13,6 @@
   chapters:
     - file: book/python/ru/python_intro.md
       title: ⬜ О блоке
-    - file: book/python/ru/python_l1.md
-      title: 🟦 Вводная лекция про Python
-    - file: book/python/ru/python_l2.md
-      title: 🟦 Установка инструментов
-    - file: book/python/ru/python_l3.md
-      title: 🟦 Ориентация в Jupyter
-    - file: book/python/ru/python_l4.md
-      title: 🟦 Переменные, типы и вывод
-    - file: book/python/ru/python_l5.md
-      title: 🟦 Условия и сравнения
-    - file: book/python/ru/python_l6.md
-      title: 🟦 Списки и циклы
-    - file: book/python/ru/python_l7.md
-      title: 🟦 Словари
-    - file: book/python/ru/python_l8.md
-      title: 🟦 Функции
-    - file: book/python/ru/python_l9.md
-      title: 🟦 Объекты и классы
-    - file: book/python/ru/python_l10.md
-      title: 🟦 Финальная лекция
 
 - part: Линейная алгебра и numpy
   chapters:
@@ -214,7 +194,7 @@
     - file: book/glossary.md
     - file: book/acknowledgments.md
     - file: book/leaderboard.md
-    - url: https://github.com/quantum-ods/qmlcourse/raw/web-page-master/latex/qmlcourse.pdf
+    - url: https://github.com/quantum-ods/qmlcourse/raw/web-page-prod/latex/qmlcourse.pdf
       title: Скачать pdf книгу / Download pdf book
 
 # :en:

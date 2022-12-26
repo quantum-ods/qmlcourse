@@ -1,36 +1,29 @@
-<img src="./qmlcourse/logo.svg" align="left" width="207" height="207"></img>
+<img src="./qmlcourse/logo.svg" align="left" width="178" height="178"></img>
 
 # QMLCourse
 
 <a href="https://quantum-ods.github.io/qmlcourse/">
-    <img alt="shield_website_jb" src="https://img.shields.io/badge/jb-nightly--buil-blueviolet?style=for-the-badge">
+    <img alt="badge_website_jb" src="https://img.shields.io/badge/jb-nightly--build-blueviolet?style=for-the-badge">
 </a>
 <a href="https://ods.ai/tracks/qmlcourse">
-    <img alt="shield_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
+    <img alt="badge_ods_page" src="https://img.shields.io/badge/ods.ai-course%20page-critical?style=for-the-badge">
 </a>
-<a href="https://github.com/quantum-ods/qmlcourse/raw/web-page-master/latex/qmlcourse.pdf">
-    <img alt="shield_download_pdf_book" src="https://img.shields.io/badge/pdf%20book-download-information?style=for-the-badge">
+<a href="https://github.com/quantum-ods/qmlcourse/raw/web-page-prod/latex/qmlcourse.pdf">
+    <img alt="badge_download_pdf_book" src="https://img.shields.io/badge/pdf%20book-download-information?style=for-the-badge">
 </a>
 
 <p align="left">
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment">
-<img alt="shield_pages_build_deployment" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pages/pages-build-deployment/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/ci.yml">
+    <img alt="badge_ci" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/ci.yml/badge.svg">
   </a>
-    <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml">
-    <img alt="shield_deploy_book" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/deploy-book.yml/badge.svg">
-  </a>
-  <a href="https://qmlc-web-page-stage.netlify.app/">
-    <img alt="shield_netlify_status" src="https://img.shields.io/netlify/ff3a4d3f-49a9-47db-9335-364525652b89">
-  </a>
-  </br>
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml">
-    <img alt="shield_pre_commit" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/pre-commit.yml/badge.svg">
+  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/cd-prod.yml">
+    <img alt="badge_cd_prod" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/cd-prod.yml/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml">
-    <img alt="shield_dependency_review" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml/badge.svg">
+    <img alt="badge_dependency_review" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml/badge.svg">
   </a>
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml">
-    <img alt="shield_codeql" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml/badge.svg">
+    <img alt="badge_codeql" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml/badge.svg">
   </a>  
 </p>
 
@@ -70,7 +63,7 @@ Also, all authors for some updates are participants special channel into communi
 
 ## Join ODS
 
-To join the ODS-community slack you need to fill the form [here](https://ods.ai/join-community). After filling the form contact us via [email](mailto:qmlcourse.ods@gmail.com) and send the ODS registration email and date of the registration. After that, we add you to the closed channel in the ODS Slack.
+To join the matrix ODS-community you need to fill the form into the [ods.ai page](https://ods.ai/tracks/odsmatrix101). If long time your request unaccepted contact us via [email](mailto:qmlcourse.ods@gmail.com).
 
 ## Similar Projects
 

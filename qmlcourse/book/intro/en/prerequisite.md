@@ -4,7 +4,7 @@
 
  Translation:
 
- - [Trohimenko Viktor](https://github.com/vtrokhymenko)
+- [vvssttkk](https://github.com/vvssttkk)
 
 
 This course combines both theory for in-depth understanding of the material and plenty of practice to reinforce skills and work through non-obvious situations/problems. Therefore, it is assumed that you already have some basic knowledge. You can check yourself with the optional [Entrance Test](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a), which will help you understand if you need to take the introductory "blue" lectures -- on Python, math and machine learning (15 questions total, 5 per block). The test is pretty simple, so if you pass it without mistakes or almost without mistakes - that doesn't say much, anyway it can be difficult. But if you have a lot of mistakes, then you should turn to the introductory "blue" blocks.
