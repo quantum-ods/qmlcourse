@@ -955,6 +955,15 @@ How does the course work?</div>
 
 Программа курса / Course program
 ``` -->
+<div class="highlight-plantuml notranslate"><div class="highlight"><pre><span></span>@startuml
+Alice -&gt; Bob: Authentication Request
+Bob --&gt; Alice: Authentication Response
+
+Alice -&gt; Bob: Another authentication Request
+Alice &lt;-- Bob: Another authentication Response
+@enduml
+</pre></div>
+</div>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
 <div class="sd-col sd-d-flex-row docutils">
