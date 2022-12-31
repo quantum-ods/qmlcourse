@@ -42,7 +42,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1041,7 +1040,7 @@ title="Print to PDF"
 <figure class="align-default" id="see-also">
 <a class="reference internal image-reference" href="../../../_images/see_also.png"><img alt="../../../_images/see_also.png" src="../../../_images/see_also.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Блок “Читайте также” на новостном портале</span><a class="headerlink" href="#see-also" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Блок “Читайте также” на новостном портале</span><a class="headerlink" href="#see-also" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Понятно, что нет возможности установить строгую зависимость такого события от прочих факторов. Поэтому мы определяем целевой признак: факт клика пользователя по показанной рекомендованной ссылке. Мы верим, что клик по ссылке связан с <em>событием</em>: если пользователю  нравится рекомендуемый контент, он/она перейдет по ссылке.</p>
@@ -1056,14 +1055,14 @@ title="Print to PDF"
 <figure class="align-default" id="covid-detection-ct">
 <a class="reference internal image-reference" href="../../../_images/covid_detection_ct.png"><img alt="../../../_images/covid_detection_ct.png" src="../../../_images/covid_detection_ct.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Пример данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/andradaolteanu/siim-COVID-19-box-detect-dcm-metadata">Источник</a></span><a class="headerlink" href="#covid-detection-ct" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Пример данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/andradaolteanu/siim-COVID-19-box-detect-dcm-metadata">Источник</a></span><a class="headerlink" href="#covid-detection-ct" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Поэтому в такой задаче надо аккуратно определить <em>Целевой признак</em>. В данном случае их несколько. Согласно <a class="reference external" href="https://www.kaggle.com/c/siim-covid19-detection/data">описанию источника данных</a> соревнования, комитет врачей-радиологов проанализировал 6334 рентгенограмм и пометил их метками: ‘Negative for Pneumonia’ (нет пневмонии), ‘Typical Appearance’ (нормально), ‘Indeterminate Appearance’ (неразборчиво) и ‘Atypical Appearance’ (ненормально). Надо четко понимать, что возможности обученной модели будут ограничены имеющейся разметкой и поэтому заголовок “детекция симптомов COVID-19” слегка “желтоват”, в реальности модель детекции сможет выделять участок изображения (bounding box) и помечать это вектором из 4-х значений, соответствующих описанным целевым признакам в обучающей выборке.</p>
 <figure class="align-default" id="covid-detection-prediction">
 <a class="reference internal image-reference" href="../../../_images/covid_detection_prediction.png"><img alt="../../../_images/covid_detection_prediction.png" src="../../../_images/covid_detection_prediction.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Прогноз модели детекции, обученной на данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/yujiariyasu/catch-up-on-positive-samples-plot-submission-csv">Источник</a></span><a class="headerlink" href="#covid-detection-prediction" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Прогноз модели детекции, обученной на данных <a class="reference external" href="https://www.kaggle.com/c/siim-COVID19-detection">соревнования</a> по определению аномалий на рентгенограммах грудной клетки. <a class="reference external" href="https://www.kaggle.com/yujiariyasu/catch-up-on-positive-samples-plot-submission-csv">Источник</a></span><a class="headerlink" href="#covid-detection-prediction" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1101,7 +1100,7 @@ title="Print to PDF"
 <figure class="align-default" id="detection-yolo">
 <a class="reference internal image-reference" href="../../../_images/detection_yolo.jpeg"><img alt="../../../_images/detection_yolo.jpeg" src="../../../_images/detection_yolo.jpeg" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Пример обнаружения объектов на изображении. <a class="reference external" href="https://habr.com/ru/post/503200/">Источник</a></span><a class="headerlink" href="#detection-yolo" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Пример обнаружения объектов на изображении. <a class="reference external" href="https://habr.com/ru/post/503200/">Источник</a></span><a class="headerlink" href="#detection-yolo" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1124,7 +1123,7 @@ title="Print to PDF"
 <figure class="align-default" id="example-styletransfer-png">
 <a class="reference internal image-reference" href="../../../_images/example_styletransfer.png"><img alt="../../../_images/example_styletransfer.png" src="../../../_images/example_styletransfer.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Пример решения задачи Neural Style Transfer из <a class="reference external" href="https://cs231n.github.io/assignments2020/assignment3/">задания 3</a> стэнфордского курса cs231n.</span><a class="headerlink" href="#example-styletransfer-png" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Пример решения задачи Neural Style Transfer из <a class="reference external" href="https://cs231n.github.io/assignments2020/assignment3/">задания 3</a> стэнфордского курса cs231n.</span><a class="headerlink" href="#example-styletransfer-png" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Функция потерь может включать и много составляющих, больше двух, если мы хотим чтоб модель выучила разные аспекты задачи. К примеру, в <a class="reference external" href="https://habr.com/ru/post/562064/">этой статье на Хабре</a> (уровень - продвинутый NLP) Давид Дале описывает дистилляцию нескольких больших NLP моделей для получения маленькой версии русскоязычной модели BERT. Маленький BERT по сути “учится” у больших моделей RuBERT, LaBSE, USE и T5, а описание того, что маленькая модель должна уметь (предсказывать замаскированные токены по контексту, строить представления токенов подобно тому, как это делают большие модели, предсказывать правильный порядок токенов в предложении) – это и есть составление сложной функции потерь.</p>
@@ -1141,7 +1140,7 @@ title="Print to PDF"
 <figure class="align-default" id="object-detection-loss">
 <a class="reference internal image-reference" href="../../../_images/object_detection_loss.png"><img alt="../../../_images/object_detection_loss.png" src="../../../_images/object_detection_loss.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Слайд стэнфордского курса cs231n про функцию потерь в задаче детекции объектов. <a class="reference external" href="http://cs231n.stanford.edu/slides/2020/lecture_12.pdf">Источник</a>.</span><a class="headerlink" href="#object-detection-loss" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Слайд стэнфордского курса cs231n про функцию потерь в задаче детекции объектов. <a class="reference external" href="http://cs231n.stanford.edu/slides/2020/lecture_12.pdf">Источник</a>.</span><a class="headerlink" href="#object-detection-loss" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1173,7 +1172,7 @@ title="Print to PDF"
 <figure class="align-default" id="k-fold-cross-validation-png">
 <a class="reference internal image-reference" href="../../../_images/k_fold_cross_validation.png"><img alt="../../../_images/k_fold_cross_validation.png" src="../../../_images/k_fold_cross_validation.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Схема K-fold кросс-валидации.</span><a class="headerlink" href="#k-fold-cross-validation-png" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Схема K-fold кросс-валидации.</span><a class="headerlink" href="#k-fold-cross-validation-png" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Вы вряд ли ошибетесь, если на практике будете применять 5-кратную стратифицированную (такую что распределение целевого признака примерно одинаковое в каждой подвыборке) кросс-валидацию, но надо понимать, что кросс-валидация – не панацея. И схема валидации, которую мы тут описываем, – это больше, чем просто кросс-валидация.</p>

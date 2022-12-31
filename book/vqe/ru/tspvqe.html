@@ -42,7 +42,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1388,14 +1387,14 @@ SciPy solution (total cost): 213.0
 <figure class="align-default" id="sycamore-lattice2">
 <a class="reference internal image-reference" href="../../../_images/sycamore.png"><img alt="../../../_images/sycamore.png" src="../../../_images/sycamore.png" style="width: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 99 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 100 </span><span class="caption-text">Схематичное изображение квантового компьютера <em>Sycamore</em> от компании <em>Google</em> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Поэтому, в идеале, хотелось бы делать либо однокубитные операции, либо двухкубитные операции, но над “соседними” кубитами. Так появилась идея <em>hardware efficient ansatz</em> <span id="id4">[<a class="reference internal" href="../../bibliography.html#id33" title="Abhinav Kandala, Antonio Mezzacapo, Kristan Temme, Maika Takita, Markus Brink, Jerry M Chow, and Jay M Gambetta. Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets. Nature, 549(7671):242–246, 2017. URL: https://www.nature.com/articles/nature23879, doi:10.1038/nature23879.">KMT+17</a>]</span>. Он заключается в том, что формируется несколько “слоев” <strong>VQC</strong>, где каждый такой слой содержит несколько операций вращений, а также попарные “запутывающие” операции (например, <a class="reference external" href="../../qc/ru/gates.html#cy-cz"><em>CZ</em></a>, или гейт <a class="reference external" href="../../qc/ru/gates.html#cnot-cx"><em>CNOT</em></a>). Выглядит это примерно так:</p>
 <figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="../../../_images/HWA.png"><img alt="../../../_images/HWA.png" src="../../../_images/HWA.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 100 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id33" title="Abhinav Kandala, Antonio Mezzacapo, Kristan Temme, Maika Takita, Markus Brink, Jerry M Chow, and Jay M Gambetta. Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets. Nature, 549(7671):242–246, 2017. URL: https://www.nature.com/articles/nature23879, doi:10.1038/nature23879.">KMT+17</a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 101 </span><span class="caption-text">Иллюстрация <em>hardware efficient ansatz</em> (<em>HWEA</em>) из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id33" title="Abhinav Kandala, Antonio Mezzacapo, Kristan Temme, Maika Takita, Markus Brink, Jerry M Chow, and Jay M Gambetta. Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets. Nature, 549(7671):242–246, 2017. URL: https://www.nature.com/articles/nature23879, doi:10.1038/nature23879.">KMT+17</a>]</span></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Давайте реализуем такой слой:</p>

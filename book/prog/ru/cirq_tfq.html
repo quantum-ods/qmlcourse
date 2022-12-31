@@ -42,7 +42,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1098,7 +1097,7 @@ title="Print to PDF"
 <figure class="align-default" id="sycamore-lattice">
 <a class="reference internal image-reference" href="../../../_images/sycamore.png"><img alt="../../../_images/sycamore.png" src="../../../_images/sycamore.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Изображение из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Изображение из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Поэтому в нем все строится вокруг работы с решеткой кубитов – объектом <code class="docutils literal notranslate"><span class="pre">cirq.GridQubit</span></code>. Давайте создадим кубит на решетке, который имеет координаты <span class="math notranslate nohighlight">\((0, 0)\)</span>:</p>
@@ -1146,13 +1145,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.4
 dtype: float64
 
-100 сэмплов: (0, 0)    0.42
+100 сэмплов: (0, 0)    0.47
 dtype: float64
 
-1000 сэмплов: (0, 0)    0.502
+1000 сэмплов: (0, 0)    0.508
 dtype: float64
 </pre></div>
 </div>
@@ -1170,7 +1169,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=1011001101011101111010011
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=1101001010000000110101100
 </pre></div>
 </div>
 </div>
@@ -1435,11 +1434,11 @@ _________________________________________________________________
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 5.48 s, sys: 107 ms, total: 5.59 s
-Wall time: 5.03 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.06 s, sys: 54.8 ms, total: 4.12 s
+Wall time: 3.76 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f59289f5640&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f04fec68c10&gt;
 </pre></div>
 </div>
 </div>

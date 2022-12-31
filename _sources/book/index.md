@@ -1,16 +1,3 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
-(intro)=
 # Приветствие / Welcome
 
 <!-- Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения! -->
@@ -63,29 +50,10 @@ Our course is divided into logical blocks, each containing lectures of different
 ```
 ````
 
-<!-- ```{figure} /_static/index/program.png
+```{figure} /_static/index/program.png
 :name: course_program
 
 Программа курса / Course program
-``` -->
-
-```{uml}
-@startuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: Another authentication Response
-@enduml
-```
-```plantuml
-@startuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: Another authentication Response
-@enduml
 ```
 
 ````{grid}
