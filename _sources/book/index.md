@@ -59,14 +59,14 @@ Our course is divided into logical blocks, each containing lectures of different
 
 ## Embed a Diagram
 
-<!-- ![Diagram Image Link](/_static/index/program.plantuml) -->
+<!-- ![Diagram Image Link](./_static/index/program.plantuml) -->
 
-<!-- ![Diagram Image Link](/_static/index/program.puml) -->
+<!-- ![Diagram Image Link](./_static/index/program.puml) -->
 
 ## Link Only
 
-<!-- [Diagram Image Link](/_static/index/program.plantuml) -->
-<!-- [Diagram Image Link](/_static/index/program.puml) -->
+<!-- [Diagram Image Link](./_static/index/program.plantuml) -->
+<!-- [Diagram Image Link](./_static/index/program.puml) -->
 
 
 ````{grid}
