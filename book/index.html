@@ -697,6 +697,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/quantum-ods/qmlcourse/master?urlpath=tree/qmlcourse/book/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -764,6 +793,23 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
+        <a href="../_sources/book/index.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
         <a href="../_sources/book/index.md"
    class="headerbtn"
    data-toggle="tooltip"
@@ -826,7 +872,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Приветствие / Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
+<span id="intro"></span><h1>Приветствие / Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
 <!-- Этот курс позволит вам погрузиться в удивительный мир квантового машинного обучения! -->
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row docutils">
@@ -958,8 +1004,7 @@ How can you help?</div>
 </div>
 </div>
 </div>
-<p style="page-break-after:always;"></p>
-<div class="toctree-wrapper compound">
+<p style="page-break-after:always;"></p><div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
