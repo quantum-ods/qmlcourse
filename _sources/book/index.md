@@ -56,6 +56,15 @@ Our course is divided into logical blocks, each containing lectures of different
 Программа курса / Course program
 ```
 
+
+## Embed a Diagram
+
+<!-- ![Diagram Image Link](/_static/index/program.puml) -->
+
+## Link Only
+
+<!-- [Diagram Image Link](/_static/index/program.puml) -->
+
 ````{grid}
 ```{grid-item-card} Как проходить этот курс?
 Рекомендуется проходить курс в том порядке, который обозначен на схеме. У курса есть [пререквизиты](./intro/ru/prerequisite.md) –- программирование на Python, основы линейной алгебры и машинного обучения, советуем с ними ознакомиться и (опционально) проверить себя с помощью [входного теста](https://ods.ai/tracks/qmlcourse/blocks/ee9f2a26-6234-4a72-84a6-a05de035bb1a).
