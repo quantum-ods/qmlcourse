@@ -59,11 +59,11 @@ Our course is divided into logical blocks, each containing lectures of different
 
 ## Embed a Diagram
 
-<!-- ![Diagram Image Link](/_static/index/program.puml) -->
+<!-- ![Diagram Image Link](/_static/index/program.plantuml) -->
 
 ## Link Only
 
-<!-- [Diagram Image Link](/_static/index/program.puml) -->
+<!-- [Diagram Image Link](/_static/index/program.plantuml) -->
 
 ````{grid}
 ```{grid-item-card} Как проходить этот курс?
