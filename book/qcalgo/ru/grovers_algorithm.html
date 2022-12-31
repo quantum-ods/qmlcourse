@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -932,7 +933,7 @@ title="Print to PDF"
 <figure class="align-default" id="grover-photo">
 <img alt="../../../_images/Grover_photo.jpg" src="../../../_images/Grover_photo.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Лов Гровер</span><a class="headerlink" href="#grover-photo" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Лов Гровер</span><a class="headerlink" href="#grover-photo" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition- admonition">
@@ -950,7 +951,7 @@ title="Print to PDF"
 <figure class="align-default" id="grover-2-qubits">
 <a class="reference internal image-reference" href="../../../_images/grover_2_qubits.png"><img alt="../../../_images/grover_2_qubits.png" src="../../../_images/grover_2_qubits.png" style="width: 666px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Алгоритм Гровера для n=2 (искомый индекс 11).</span><a class="headerlink" href="#grover-2-qubits" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Алгоритм Гровера для n=2 (искомый индекс 11).</span><a class="headerlink" href="#grover-2-qubits" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>В самом начале, еще до всех итераций, все кубиты (включая вспомогательный) должны быть приведены в состояние суперпозиции с помощью оператора Адамара. Причем начальное состояние всех кубитов должно быть равно <span class="math notranslate nohighlight">\(0\)</span>, кроме вспомогательного кубита – до действия оператора Адамара он должен быть приведен в состояние <span class="math notranslate nohighlight">\(1\)</span>.</p>
@@ -962,7 +963,7 @@ title="Print to PDF"
 <figure class="align-default" id="toffoli-gate">
 <a class="reference internal image-reference" href="../../../_images/Toffoli_gate.png"><img alt="../../../_images/Toffoli_gate.png" src="../../../_images/Toffoli_gate.png" style="width: 200px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Гейт Тоффоли.</span><a class="headerlink" href="#toffoli-gate" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Гейт Тоффоли.</span><a class="headerlink" href="#toffoli-gate" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>На состояния верхних кубитов, кодирующих индексы <span class="math notranslate nohighlight">\(00\)</span>, <span class="math notranslate nohighlight">\(01\)</span> и <span class="math notranslate nohighlight">\(10\)</span> гейт Тоффоли не будет реагировать, и вспомогательный кубит будет находиться в состоянии <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)\)</span>.</p>
@@ -979,7 +980,7 @@ title="Print to PDF"
 <figure class="align-default" id="grover-1a">
 <a class="reference internal image-reference" href="../../../_images/grover_1a.png"><img alt="../../../_images/grover_1a.png" src="../../../_images/grover_1a.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Состояние системы перед первой итерацией.</span><a class="headerlink" href="#grover-1a" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Состояние системы перед первой итерацией.</span><a class="headerlink" href="#grover-1a" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Можно выразить вектор <span class="math notranslate nohighlight">\(c\)</span> для нашего случая (системы из двух кубитов с искомым индексом <span class="math notranslate nohighlight">\(11\)</span>), обозначив его координаты за <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span>:</p>
@@ -1004,7 +1005,7 @@ y = \sin{\theta}
 <figure class="align-default" id="grover-1b">
 <a class="reference internal image-reference" href="../../../_images/grover_1b.png"><img alt="../../../_images/grover_1b.png" src="../../../_images/grover_1b.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Состояние системы после первой части первой итерации.</span><a class="headerlink" href="#grover-1b" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Состояние системы после первой части первой итерации.</span><a class="headerlink" href="#grover-1b" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Такое отражение в нашем примере производится с помощью операции <span class="math notranslate nohighlight">\(CCNOT\)</span>, но в общем случае операция выглядит так:</p>
@@ -1020,7 +1021,7 @@ U_{1b} = I - 2|b\rangle \langle b|
 <figure class="align-default" id="grover-1c">
 <a class="reference internal image-reference" href="../../../_images/grover_1c.png"><img alt="../../../_images/grover_1c.png" src="../../../_images/grover_1c.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Состояние системы после второй части первой итерации.</span><a class="headerlink" href="#grover-1c" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Состояние системы после второй части первой итерации.</span><a class="headerlink" href="#grover-1c" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Операция для получения вектора <span class="math notranslate nohighlight">\(c_{1c}\)</span> будет выглядеть так:</p>
@@ -1037,7 +1038,7 @@ U_{1c} = 2|c\rangle \langle c| - I
 <figure class="align-default" id="iteration-part2">
 <a class="reference internal image-reference" href="../../../_images/iteration_part2.png"><img alt="../../../_images/iteration_part2.png" src="../../../_images/iteration_part2.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Вторая часть итерации.</span><a class="headerlink" href="#iteration-part2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Вторая часть итерации.</span><a class="headerlink" href="#iteration-part2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Вначале применяется оператор Адамара для первого и второго кубитов. Это упрощает нашу задачу, так как теперь отразить вектор состояния нужно не относительно состояния суперпозиции <span class="math notranslate nohighlight">\(\frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle)\)</span>, а относительно состояния <span class="math notranslate nohighlight">\(|00\rangle\)</span>.</p>

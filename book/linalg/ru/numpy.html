@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1037,10 +1038,10 @@ b = array([[0., 0.],
 c = array([[1., 0., 0.],
        [0., 1., 0.],
        [0., 0., 1.]])
-q = array([[0.85733578, 0.63627362, 0.35629103, 0.84248173, 0.57460742,
-        0.59848466, 0.35863706, 0.68074945, 0.79548829, 0.16113957,
-        0.91581561, 0.36148176, 0.40675694, 0.4098088 , 0.46622875,
-        0.16916   , 0.87137275, 0.77193633, 0.27030661, 0.46970278]])
+q = array([[0.80463472, 0.56443176, 0.61774286, 0.32663275, 0.89922062,
+        0.79392348, 0.41893644, 0.80240593, 0.81807648, 0.43641428,
+        0.47675657, 0.39185505, 0.42226095, 0.09678518, 0.29900158,
+        0.42297662, 0.86909003, 0.49625677, 0.09100798, 0.23789005]])
 </pre></div>
 </div>
 </div>
@@ -1351,15 +1352,15 @@ np.allclose([1e10,1e-8], [1.00001e10,1e-9]) = True
 np.eye(3, k=-1, dtype=int) = array([[0, 0, 0],
        [1, 0, 0],
        [0, 1, 0]])
-np.random.beta(1, 2) = 0.30716194731645735
-np.random.randint(1, 5, (2, 3)) = array([[3, 4, 2],
-       [1, 1, 3]])
-a = array([[4, 2, 1],
-       [3, 1, 3],
-       [1, 1, 4]])
-a = array([[4, 2, 1],
-       [3, 4, 3],
-       [1, 1, 4]])
+np.random.beta(1, 2) = 0.7819011779754197
+np.random.randint(1, 5, (2, 3)) = array([[2, 2, 2],
+       [4, 2, 2]])
+a = array([[3, 1, 3],
+       [4, 4, 3],
+       [4, 3, 4]])
+a = array([[4, 1, 3],
+       [4, 4, 3],
+       [4, 3, 4]])
 np.diag(a) = array([4, 4, 4])
 </pre></div>
 </div>

@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1097,7 +1098,7 @@ title="Print to PDF"
 <figure class="align-default" id="sycamore-lattice">
 <a class="reference internal image-reference" href="../../../_images/sycamore.png"><img alt="../../../_images/sycamore.png" src="../../../_images/sycamore.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Изображение из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Изображение из <span id="id5">[<a class="reference internal" href="../../bibliography.html#id68" title="Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C Bardin, Rami Barends, Rupak Biswas, Sergio Boixo, Fernando GSL Brandao, David A Buell, and others. Quantum supremacy using a programmable superconducting processor. Nature, 574(7779):505–510, 2019. doi:https://doi.org/10.1038/s41586-019-1666-5.">AAB+19</a>]</span></span><a class="headerlink" href="#sycamore-lattice" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Поэтому в нем все строится вокруг работы с решеткой кубитов – объектом <code class="docutils literal notranslate"><span class="pre">cirq.GridQubit</span></code>. Давайте создадим кубит на решетке, который имеет координаты <span class="math notranslate nohighlight">\((0, 0)\)</span>:</p>
@@ -1148,10 +1149,10 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.4
 dtype: float64
 
-100 сэмплов: (0, 0)    0.51
+100 сэмплов: (0, 0)    0.59
 dtype: float64
 
-1000 сэмплов: (0, 0)    0.509
+1000 сэмплов: (0, 0)    0.511
 dtype: float64
 </pre></div>
 </div>
@@ -1169,7 +1170,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=1110011010111001011000100
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=1111011011110110000110111
 </pre></div>
 </div>
 </div>
@@ -1434,11 +1435,11 @@ _________________________________________________________________
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.17 s, sys: 37 ms, total: 4.21 s
-Wall time: 3.85 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.07 s, sys: 62.3 ms, total: 4.13 s
+Wall time: 3.75 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7fb53c363970&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f882dea4220&gt;
 </pre></div>
 </div>
 </div>

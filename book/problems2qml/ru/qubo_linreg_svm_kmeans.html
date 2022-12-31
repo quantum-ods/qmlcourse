@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -1019,7 +1020,7 @@ E(w) = || Xw - Y ||^2
 <figure class="align-default" id="lin-reg-example">
 <a class="reference internal image-reference" href="../../../_images/fig_12.png"><img alt="../../../_images/fig_12.png" src="../../../_images/fig_12.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 94 </span><span class="caption-text">Иллюстрация к задаче линейной регрессии.</span><a class="headerlink" href="#lin-reg-example" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 93 </span><span class="caption-text">Иллюстрация к задаче линейной регрессии.</span><a class="headerlink" href="#lin-reg-example" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Известно аналитическое решение задачи <a class="reference internal" href="#equation-eqn-lin-reg-orig">(48)</a>:</p>
@@ -1115,7 +1116,7 @@ E(\tilde{w}) =
 <figure class="align-default" id="svm-example">
 <a class="reference internal image-reference" href="../../../_images/fig_22.png"><img alt="../../../_images/fig_22.png" src="../../../_images/fig_22.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 95 </span><span class="caption-text">Иллюстрация к задаче бинарной классификации с помощью SVM.</span><a class="headerlink" href="#svm-example" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 94 </span><span class="caption-text">Иллюстрация к задаче бинарной классификации с помощью SVM.</span><a class="headerlink" href="#svm-example" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Двойственная задача <a class="reference internal" href="../../qsvm/ru/classic_svm.html#equation-svmdual">(18)</a> в текущих обозначениях принимает вид</p>
@@ -1258,11 +1259,11 @@ Penalty^{(hp)} = \frac{\gamma}{2}
 </section>
 <section id="k">
 <h2>Сбалансированная кластеризация методом k-средних<a class="headerlink" href="#k" title="Permalink to this headline">#</a></h2>
-<p>Кластеризация методом k-средних – ML-задача обучения без учителя (<em>unsupervised</em>). Требуется распределить тренировочные объекты по <span class="math notranslate nohighlight">\(k\)</span> кластерам так, чтобы суммарное отклонение тренировочных объектов, принадлежащих кластерам, от центроидов (центров масс) соответствующих кластеров было минимальным. Сбалансированная кластеризация методом k-средних – частный случай, в котором каждый кластер содержит примерно одно и то же количество объектов <span class="math notranslate nohighlight">\(N/k\)</span>, как показано на <a class="reference internal" href="#kmeans-clustering-example"><span class="std std-numref">Fig. 96</span></a>.</p>
+<p>Кластеризация методом k-средних – ML-задача обучения без учителя (<em>unsupervised</em>). Требуется распределить тренировочные объекты по <span class="math notranslate nohighlight">\(k\)</span> кластерам так, чтобы суммарное отклонение тренировочных объектов, принадлежащих кластерам, от центроидов (центров масс) соответствующих кластеров было минимальным. Сбалансированная кластеризация методом k-средних – частный случай, в котором каждый кластер содержит примерно одно и то же количество объектов <span class="math notranslate nohighlight">\(N/k\)</span>, как показано на <a class="reference internal" href="#kmeans-clustering-example"><span class="std std-numref">Fig. 95</span></a>.</p>
 <figure class="align-default" id="kmeans-clustering-example">
 <a class="reference internal image-reference" href="../../../_images/fig_32.png"><img alt="../../../_images/fig_32.png" src="../../../_images/fig_32.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 96 </span><span class="caption-text">Иллюстрация к задаче сбалансированной кластеризации методом k-средних.</span><a class="headerlink" href="#kmeans-clustering-example" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 95 </span><span class="caption-text">Иллюстрация к задаче сбалансированной кластеризации методом k-средних.</span><a class="headerlink" href="#kmeans-clustering-example" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Нужно распределить <span class="math notranslate nohighlight">\(N\)</span> объектов из тренировочного набора <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{N \times d}\)</span> по <span class="math notranslate nohighlight">\(k\)</span> кластерам <span class="math notranslate nohighlight">\(\Phi = \{\phi_1, \dotsc, \phi_k\}\)</span>. Пусть <span class="math notranslate nohighlight">\(\mu_i\)</span> – центроид кластера <span class="math notranslate nohighlight">\(\phi_i\)</span>. В общем случае задача кластеризации методом k-средних формулируется так:</p>
