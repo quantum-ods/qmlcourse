@@ -21,6 +21,17 @@ kernelspec:
 `Numpy` -- это широко используемая библиотека для вычислений с многомерными массивами. API большей частью вдохновлен `MATLAB` (великая и ужасная среда, язык и IDE для матричных вычислений), а теперь сам является примером для подражания API различных вычислительных пакетов.
 Более последовательный гайд стоит посмотреть на [сайте библиотеки](https://numpy.org/devdocs/user).
 
+```{code-cell} ipython3
+import iplantuml
+
+%%plantuml 
+
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+@enduml 
+```
+
 ## Массивы
 
 ```{code-cell} ipython3
