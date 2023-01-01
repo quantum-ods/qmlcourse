@@ -50,24 +50,11 @@ Our course is divided into logical blocks, each containing lectures of different
 ```
 ````
 
-```{figure} /_static/index/program.png
+```{figure} /_static/index/program.svg
 :name: course_program
 
 Программа курса / Course program
 ```
-
-
-## Embed a Diagram
-
-<!-- ![Diagram Image Link](./_static/index/program.plantuml) -->
-
-<!-- ![Diagram Image Link](./_static/index/program.puml) -->
-
-## Link Only
-
-<!-- [Diagram Image Link](./_static/index/program.plantuml) -->
-<!-- [Diagram Image Link](./_static/index/program.puml) -->
-
 
 ````{grid}
 ```{grid-item-card} Как проходить этот курс?
