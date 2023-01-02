@@ -22,6 +22,13 @@ kernelspec:
 Более последовательный гайд стоит посмотреть на [сайте библиотеки](https://numpy.org/devdocs/user).
 
 ```{code-cell} ipython3
+%%javascript
+IPython.load_ipython_extensions([
+  "nb-mermaid/nb-mermaid"
+]);
+```
+
+```{code-cell} ipython3
 sequenceDiagram
   participant Alice
   participant Bob
