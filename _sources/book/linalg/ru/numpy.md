@@ -29,6 +29,8 @@ IPython.load_ipython_extensions([
 ```
 
 ```{code-cell} ipython3
+%reload_ext mermaid
+
 sequenceDiagram
   participant Alice
   participant Bob
