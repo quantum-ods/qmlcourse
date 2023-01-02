@@ -22,14 +22,10 @@ kernelspec:
 Более последовательный гайд стоит посмотреть на [сайте библиотеки](https://numpy.org/devdocs/user).
 
 ```{code-cell} ipython3
-import iplantuml
-
-%%plantuml 
-
-@startuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-@enduml 
+sequenceDiagram
+  participant Alice
+  participant Bob
+  Alice->John: Hello John, how are you?
 ```
 
 ## Массивы

@@ -1106,7 +1106,7 @@ f_4(1) = 0
 <p>Импортируем все необходимые библиотеки и модули, а также создадим квантовое устройство-симулятор, рассчитанное на схему из двух кубитов:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 <span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
 <span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -1117,7 +1117,7 @@ f_4(1) = 0
 <p>Теперь создадим функции для черного ящика. Обратите внимание, что здесь уже учтено сложение по модулю <span class="math notranslate nohighlight">\(2\)</span> результата функции с состоянием второго кубита:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
     <span class="k">pass</span>
 
 <span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
@@ -1137,7 +1137,7 @@ f_4(1) = 0
 <p>Создадим словарь с функциями и их названиями:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">black_boxes_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;f1&quot;</span><span class="p">:</span> <span class="n">f1</span><span class="p">,</span> <span class="s2">&quot;f2&quot;</span><span class="p">:</span> <span class="n">f2</span><span class="p">,</span> <span class="s2">&quot;f3&quot;</span><span class="p">:</span> <span class="n">f3</span><span class="p">,</span> <span class="s2">&quot;f4&quot;</span><span class="p">:</span> <span class="n">f4</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">black_boxes_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;f1&quot;</span><span class="p">:</span> <span class="n">f1</span><span class="p">,</span> <span class="s2">&quot;f2&quot;</span><span class="p">:</span> <span class="n">f2</span><span class="p">,</span> <span class="s2">&quot;f3&quot;</span><span class="p">:</span> <span class="n">f3</span><span class="p">,</span> <span class="s2">&quot;f4&quot;</span><span class="p">:</span> <span class="n">f4</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1145,7 +1145,7 @@ f_4(1) = 0
 <p>А вот таким образом мы будем случайно выбирать название функции для черного ящика:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_black_box</span><span class="p">(</span><span class="n">black_boxes_dict</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_black_box</span><span class="p">(</span><span class="n">black_boxes_dict</span><span class="p">):</span>
     <span class="n">black_boxes_dict_list_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">black_boxes_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">black_boxes_dict_list_keys</span><span class="p">))</span>
 
@@ -1157,7 +1157,7 @@ f_4(1) = 0
 <p>А теперь самое важное – сам алгоритм Дойча:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">interface</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">interface</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">circuit</span><span class="p">(</span><span class="n">black_box_name</span><span class="p">):</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">PauliX</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1175,7 +1175,7 @@ f_4(1) = 0
 <p>Выберем случайным образом функцию:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">black_box_name</span> <span class="o">=</span> <span class="n">random_black_box</span><span class="p">(</span><span class="n">black_boxes_dict</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">black_box_name</span> <span class="o">=</span> <span class="n">random_black_box</span><span class="p">(</span><span class="n">black_boxes_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1183,13 +1183,8 @@ f_4(1) = 0
 <p>А затем запустим алгоритм Дойча и выведем результат его работы. Собственное значение <span class="math notranslate nohighlight">\(1\)</span> оператора <span class="math notranslate nohighlight">\(Z\)</span> будет соответствовать состоянию <span class="math notranslate nohighlight">\(|0\rangle\)</span> (функция несбалансированная), а собственное значение <span class="math notranslate nohighlight">\(-1\)</span> – состоянию <span class="math notranslate nohighlight">\(|1\rangle\)</span> (функция сбалансирована):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">circuit</span><span class="p">(</span><span class="n">black_box_name</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">circuit</span><span class="p">(</span><span class="n">black_box_name</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1197,12 +1192,7 @@ f_4(1) = 0
 <p>Проверим, насколько правильно сработал алгоритм. Для этого посмотрим на функцию из черного ящика:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">black_box_name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f1
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">black_box_name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1210,14 +1200,11 @@ f_4(1) = 0
 <p>Также посмотрим, как выглядит квантовая схема:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qml</span><span class="o">.</span><span class="n">drawer</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qml</span><span class="o">.</span><span class="n">drawer</span><span class="o">.</span><span class="n">use_style</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">draw_mpl</span><span class="p">(</span><span class="n">circuit</span><span class="p">)(</span><span class="n">black_box_name</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/deutschs_algorithm_17_0.png" src="../../../_images/deutschs_algorithm_17_0.png" />
 </div>
 </div>
 <p>На примере алгоритма Дойча мы видим, что уже двухкубитная схема дает прирост скорости в два раза. Если же увеличивать количество входных параметров (как в аналогичном алгоритме <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%94%D0%BE%D0%B9%D1%87%D0%B0_%E2%80%94_%D0%99%D0%BE%D0%B6%D0%B8">Дойча-Йожи</a>), то ускорение будет экспоненциальным.</p>

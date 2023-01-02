@@ -1293,7 +1293,7 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 <p>В качестве примера давайте посмотрим, как можно создать запутанное состояние в <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>. Начнем с импортов и создания двухкубитной схемы:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 <span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
 <span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;default.qubit&quot;</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -1304,7 +1304,7 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 <p>Далее применим к первому кубиту операцию поворота <span class="math notranslate nohighlight">\(\hat{RX}\)</span>, запутаем кубиты с помощью <span class="math notranslate nohighlight">\(\hat{CNOT}\)</span> и далее оценим запутанность с помощью измерения оператора Паули <span class="math notranslate nohighlight">\(\hat{\sigma^z}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">circuit</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">RX</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">CNOT</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -1316,12 +1316,7 @@ d_{i, j} = \sum_k c_{j, k} c^{*}_{i, k},
 <p>В этом примере значение переменной <code class="docutils literal notranslate"><span class="pre">param</span></code> определяет степень запутанности, и для <span class="math notranslate nohighlight">\(\pi/2\)</span> запутанности будет максимальна. В результате оба кубита будут максимально смешанными и средний результат измерения будет нулевым:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.22044605e-16 2.22044605e-16]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
