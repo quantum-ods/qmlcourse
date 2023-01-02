@@ -3026,7 +3026,7 @@ testing = ["coverage (<5.0)", "jupyter-book", "pytest (>=5.4,<6.0)", "pytest-cov
 
 [[package]]
 name = "sphinx-sitemap"
-version = "2.3.0"
+version = "2.4.0"
 description = "Sitemap generator for Sphinx"
 category = "main"
 optional = false
@@ -3602,7 +3602,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<=3.9"
-content-hash = "d538fdfd8b7a36c5773ad537a1ae1bb611088ce3e6235c3a2d5b96c3b30f2e53"
+content-hash = "a961fcd708771a834c47ee8c56a6ca4ab45157a9e53c27bb9446fa19f78400dd"
 
 [metadata.files]
 absl-py = [
@@ -5938,8 +5938,8 @@ sphinx-multitoc-numbering = [
     {file = "sphinx_multitoc_numbering-0.1.3-py3-none-any.whl", hash = "sha256:33d2e707a9b2b8ad636b3d4302e658a008025106fe0474046c651144c26d8514"},
 ]
 sphinx-sitemap = [
-    {file = "sphinx-sitemap-2.3.0.tar.gz", hash = "sha256:7b27b5d9f6ebf75597da7d48c64dcb9271fa269925673d900ee27d6b2c484915"},
-    {file = "sphinx_sitemap-2.3.0-py3-none-any.whl", hash = "sha256:8211ae28413ee529814bd56762873a5e1878fff0f254a7488da762984bdf658c"},
+    {file = "sphinx-sitemap-2.4.0.tar.gz", hash = "sha256:3e19cff281974c00dfdc72d2d6ac71b737805dbd5666019997a4ac062a6406c0"},
+    {file = "sphinx_sitemap-2.4.0-py3-none-any.whl", hash = "sha256:94a1dab73789558e28e5ccfbc2a758194765707f9eeb06b59725a3bb244f323b"},
 ]
 sphinx-thebe = [
     {file = "sphinx-thebe-0.1.2.tar.gz", hash = "sha256:756f1dd6643f5abb491f8a27b22825b04f47e05c5d214bbb2e6b5d42b621b85e"},
