@@ -1101,7 +1101,7 @@ U=U^{\dagger}
 <p>Напомним, что операция <span class="math notranslate nohighlight">\(\hat{U}^\dagger\)</span> (другое частое обозначение в работах – звездочка или <span class="math notranslate nohighlight">\(H\hat{U}^{*}=\hat{U}^{H}\)</span>) в матричных терминах является последовательным применением операции транспонирования и последующего комплексного сопряжения элементов этой матрицы <span class="math notranslate nohighlight">\(\hat{U}^\dagger = \overline{\hat{U}}^T\)</span> (порядок этих операций, естественно, не влияет на результат).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
 
@@ -1114,6 +1114,11 @@ U=U^{\dagger}
 <span class="n">U_hat_star_long</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">U_hat</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">U_hat_star_long</span><span class="p">,</span> <span class="n">U_hat_star_byhands</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -1153,7 +1158,7 @@ S \exp(-i \Lambda  + i \Lambda) S^\dagger = S \exp(O) S^\dagger = S I S^\dagger 
 <p>Давайте продемонстрируем доказанный факт на примере матрицы дискретного преобразования Фурье без нормировочного коэффициента <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span>, <span class="math notranslate nohighlight">\(N=3\)</span>, преобразованной к <span class="math notranslate nohighlight">\(DD^{\dagger}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">N</span><span class="p">))</span>
 
 <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
@@ -1171,6 +1176,24 @@ S \exp(-i \Lambda  + i \Lambda) S^\dagger = S \exp(O) S^\dagger = S I S^\dagger 
 <span class="n">U_hat</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">U</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">U_hat</span> <span class="o">@</span> <span class="n">U_hat</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">U_hat</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">U_hat</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">))</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U = array([[ 3.00000000e+00+0.00000000e+00j,  1.00000000e+00+1.73205081e+00j,
+        -1.11022302e-16+7.77156117e-16j],
+       [ 1.00000000e+00-1.73205081e+00j,  3.00000000e+00-3.98552134e-18j,
+         1.00000000e+00+1.73205081e+00j],
+       [-1.11022302e-16-7.77156117e-16j,  1.00000000e+00-1.73205081e+00j,
+         3.00000000e+00-1.88596895e-17j]])
+D = array([[ 1. +0.j       ,  1. +0.j       ,  1. +0.j       ],
+       [ 1. +0.j       ,  0.5-0.8660254j, -0.5-0.8660254j],
+       [ 1. +0.j       , -0.5-0.8660254j, -0.5+0.8660254j]])
+np.allclose(U @ U.T.conj(), np.eye(N)) = False
+
+np.allclose(U_hat @ U_hat.conj().T, np.eye(N)) = True
+
+np.allclose(U_hat.conj().T @ U_hat, np.eye(N)) = True
 </pre></div>
 </div>
 </div>

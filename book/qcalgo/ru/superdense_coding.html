@@ -927,7 +927,7 @@ title="Print to PDF"
 <p>Приведем код на qiskit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span>
 
 <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
@@ -962,11 +962,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">        ┌───┐      ░ ┌───┐ ░      ┌───┐ ░ ┌─┐   
+   q_0: ┤ H ├──■───░─┤ Z ├─░───■──┤ H ├─░─┤M├───
+        └───┘┌─┴─┐ ░ └───┘ ░ ┌─┴─┐└───┘ ░ └╥┘┌─┐
+   q_1: ─────┤ X ├─░───────░─┤ X ├──────░──╫─┤M├
+             └───┘ ░       ░ └───┘      ░  ║ └╥┘
+meas: 2/═══════════════════════════════════╩══╩═
+                                           0  1 </pre></div></div>
 </div>
 <p>Запускаем схему на симуляторе:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">Aer</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">Aer</span>
 
 <span class="n">aer_sim</span> <span class="o">=</span> <span class="n">Aer</span><span class="o">.</span><span class="n">get_backend</span><span class="p">(</span><span class="s1">&#39;aer_simulator&#39;</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">aer_sim</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
@@ -976,6 +984,11 @@ title="Print to PDF"
     <span class="sa">f</span><span class="s2">&quot;message was &#39;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&#39; -&gt; the measurement result is </span><span class="si">{</span><span class="n">counts</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="s2">&quot; (&lt;- NOTE: the keys are little-endian!)&quot;</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>message was &#39;10&#39; -&gt; the measurement result is {&#39;01&#39;: 1024} (&lt;- NOTE: the keys are little-endian!)
 </pre></div>
 </div>
 </div>

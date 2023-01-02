@@ -21,22 +21,6 @@ kernelspec:
 `Numpy` -- это широко используемая библиотека для вычислений с многомерными массивами. API большей частью вдохновлен `MATLAB` (великая и ужасная среда, язык и IDE для матричных вычислений), а теперь сам является примером для подражания API различных вычислительных пакетов.
 Более последовательный гайд стоит посмотреть на [сайте библиотеки](https://numpy.org/devdocs/user).
 
-```{code-cell} ipython3
-%%javascript
-IPython.load_ipython_extensions([
-  "nb-mermaid/nb-mermaid"
-]);
-```
-
-```{code-cell} ipython3
-%reload_ext mermaid
-
-sequenceDiagram
-  participant Alice
-  participant Bob
-  Alice->John: Hello John, how are you?
-```
-
 ## Массивы
 
 ```{code-cell} ipython3

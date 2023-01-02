@@ -1104,7 +1104,7 @@ title="Print to PDF"
 <p>Нарисуем схему на Qiskit, которая будет показывать одну итерацию алгоритма:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumRegister</span>
 
 
 <span class="c1"># Работаем в пространстве размерности n = 3</span>
@@ -1138,11 +1138,27 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">      ┌───┐     ┌───┐      ┌─┐
+q1_0: ┤ H ├──■──┤ H ├──────┤M├
+      ├───┤  │  ├───┤┌─┐   └╥┘
+q1_1: ┤ H ├──┼──┤ H ├┤M├────╫─
+      ├───┤  │  ├───┤└╥┘┌─┐ ║ 
+q1_2: ┤ H ├──┼──┤ H ├─╫─┤M├─╫─
+      └───┘┌─┴─┐└┬─┬┘ ║ └╥┘ ║ 
+q2_0: ─────┤ X ├─┤M├──╫──╫──╫─
+       ┌─┐ └───┘ └╥┘  ║  ║  ║ 
+q2_1: ─┤M├────────╫───╫──╫──╫─
+       └╥┘  ┌─┐   ║   ║  ║  ║ 
+q2_2: ──╫───┤M├───╫───╫──╫──╫─
+        ║   └╥┘   ║   ║  ║  ║ 
+c1: 3/══╩════╩════╩═══╩══╩══╩═
+        1    2    0   1  2  0 </pre></div></div>
 </div>
 <p>При использовании Pennylane схема выглядит следующим образом:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span>
 
@@ -1183,6 +1199,9 @@ title="Print to PDF"
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/simon_algorithm_3_0.png" src="../../../_images/simon_algorithm_3_0.png" />
 </div>
 </div>
 <div class="admonition note">

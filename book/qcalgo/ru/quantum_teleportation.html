@@ -966,7 +966,7 @@ title="Print to PDF"
 <p>Приведем данную схему:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumRegister</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span><span class="p">,</span> <span class="n">ClassicalRegister</span><span class="p">,</span> <span class="n">QuantumRegister</span>
 
 <span class="c1"># создаем необходимые регистры</span>
 <span class="n">qr</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;q&quot;</span><span class="p">)</span>
@@ -998,6 +998,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="word-wrap: normal;white-space: pre;background: #fff0;line-height: 1.1;font-family: &quot;Courier New&quot;,Courier,monospace">                      ┌───┐┌─┐              
+  q_0: ────────────■──┤ H ├┤M├──────────────
+       ┌───┐     ┌─┴─┐└┬─┬┘└╥┘              
+  q_1: ┤ H ├──■──┤ X ├─┤M├──╫───────────────
+       └───┘┌─┴─┐└───┘ └╥┘  ║  ┌───┐  ┌───┐ 
+  q_2: ─────┤ X ├───────╫───╫──┤ X ├──┤ Z ├─
+            └───┘       ║   ║  └─╥─┘  └─╥─┘ 
+                        ║   ║    ║   ┌──╨──┐
+crz: 1/═════════════════╬═══╩════╬═══╡ = 1 ╞
+                        ║   0 ┌──╨──┐└─────┘
+crx: 1/═════════════════╩═════╡ = 1 ╞═══════
+                        0     └─────┘       </pre></div></div>
 </div>
 <p><a class="reference external" href="https://qiskit.org/textbook/ch-algorithms/teleportation.html">Лекция и реализация квантовой телепортации в Qiskit</a></p>
 </section>
