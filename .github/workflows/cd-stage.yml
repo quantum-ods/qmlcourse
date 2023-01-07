@@ -37,6 +37,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           commit_message: create `./latex/` & `./diagrams/`
+          branch: ${{ env.PUBLISH_BRANCH }}
 
   generate-plantuml-diagrams:
     needs: [create-folder-for-latex]
