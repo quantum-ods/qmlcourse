@@ -50,7 +50,7 @@ Our course is divided into logical blocks, each containing lectures of different
 ```
 ````
 
-```{figure} https://github.com/quantum-ods/qmlcourse/blob/web-page-stage/_static/index/program.svg
+```{figure} https://github.com/quantum-ods/qmlcourse/blob/web-page-stage/qmlcourse/_static/index/program.svg
 :name: course_program
 
 Программа курса / Course program
