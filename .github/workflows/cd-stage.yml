@@ -46,7 +46,7 @@ jobs:
       - name: generate svg diagrams
         uses: holowinski/plantuml-github-action@main
         with:
-          args: -v -tsvg **.plantuml -o ./diagrams/**.plantuml
+          args: -v -tsvg **.plantuml -o './diagrams/'
 
       - name: push diagrams
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
