@@ -54,75 +54,75 @@ jobs:
           repository: .
           file_pattern: '**.svg'
 
-  # build-and-deploy-book:
-  #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 24
-  #   environment:
-  #     name: qmlc-web-page-stage
-  #     url: https://qmlc-web-page-stage.netlify.app
+  build-and-deploy-book:
+    needs: [create-folder-for-latex, generate-plantuml-diagrams]
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    environment:
+      name: qmlc-web-page-stage
+      url: https://qmlc-web-page-stage.netlify.app
 
-  #   steps:
+    steps:
 
-  #     - name: checkout branch for build
-  #       uses: actions/checkout@v3
+      - name: checkout branch for build
+        uses: actions/checkout@v3
 
-  #     - name: install imagemagick
-  #       run: |
-  #         sudo apt install -y imagemagick
+      - name: install imagemagick
+        run: |
+          sudo apt install -y imagemagick
 
-  #     - name: set up poetry
-  #       uses: snok/install-poetry@v1.3.3
-  #       with:
-  #         virtualenvs-create: true
-  #         virtualenvs-in-project: true
-  #         installer-parallel: true
+      - name: set up poetry
+        uses: snok/install-poetry@v1.3.3
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
 
-  #     - name: set up python
-  #       uses: actions/setup-python@v4
-  #       with:
-  #         python-version: 3.8
-  #         cache: 'poetry'
+      - name: set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+          cache: 'poetry'
 
-  #     - name: install dependencies
-  #       run: |
-  #         poetry install --no-interaction --no-root
+      - name: install dependencies
+        run: |
+          poetry install --no-interaction --no-root
 
-  #     - name: build the book
-  #       id: build_book
-  #       env:
-  #         DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-  #       run: |
-  #         poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
-  #         poetry run jupyter-book build ./qmlcourse
+      - name: build the book
+        id: build_book
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
+          poetry run jupyter-book build ./qmlcourse
 
-  #     - name: update publish dir to build branch
-  #       uses: peaceiris/actions-gh-pages@v3.9.0
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         publish_dir: ./qmlcourse/_build/html/
-  #         publish_branch: ${{ env.PUBLISH_BRANCH }}
+      - name: update publish dir to build branch
+        uses: peaceiris/actions-gh-pages@v3.9.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/html/
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
 
-  #     - name: build latex files
-  #       if: github.event.inputs.build_pdf == 'yes'
-  #       env:
-  #         DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-  #       run: |
-  #         sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
-  #         poetry run jupyter-book build ./qmlcourse --builder latex
+      - name: build latex files
+        if: github.event.inputs.build_pdf == 'yes'
+        env:
+          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+        run: |
+          sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
+          poetry run jupyter-book build ./qmlcourse --builder latex
 
-  #     - name: create pdf book
-  #       if: github.event.inputs.build_pdf == 'yes'
-  #       continue-on-error: true
-  #       run: |
-  #         cd ./qmlcourse/_build/latex/
-  #         xelatex -interaction=nonstopmode qmlcourse.tex
+      - name: create pdf book
+        if: github.event.inputs.build_pdf == 'yes'
+        continue-on-error: true
+        run: |
+          cd ./qmlcourse/_build/latex/
+          xelatex -interaction=nonstopmode qmlcourse.tex
 
-  #     - name: send pdf book to build branch
-  #       if: github.event.inputs.build_pdf == 'yes'
-  #       uses: peaceiris/actions-gh-pages@v3.9.0
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         publish_dir: ./qmlcourse/_build/latex/
-  #         destination_dir: ./latex/
-  #         publish_branch: ${{ env.PUBLISH_BRANCH }}
+      - name: send pdf book to build branch
+        if: github.event.inputs.build_pdf == 'yes'
+        uses: peaceiris/actions-gh-pages@v3.9.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./qmlcourse/_build/latex/
+          destination_dir: ./latex/
+          publish_branch: ${{ env.PUBLISH_BRANCH }}
