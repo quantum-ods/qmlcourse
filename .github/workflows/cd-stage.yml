@@ -41,6 +41,8 @@ jobs:
 
       - name: checkout branch for build
         uses: actions/checkout@v3
+        with:
+          ref: ${{ env.PUBLISH_BRANCH }}
 
       - name: create `./diagrams/`
         run: |
