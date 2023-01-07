@@ -28,10 +28,9 @@ jobs:
         with:
           ref: ${{ env.PUBLISH_BRANCH }}
 
-      - name: create `./latex/` & `./diagrams/`
+      - name: create `./latex/`
         run: |
           mkdir -p ./latex/
-          mkdir -p ./diagrams/
 
   generate-plantuml-diagrams:
   # todo: update path pictures to `web-page-prod`
@@ -47,14 +46,13 @@ jobs:
       - name: generate svg diagrams
         uses: holowinski/plantuml-github-action@main
         with:
-          args: -v -tsvg **.plantuml -o './diagrams/'
+          args: -v -tsvg **.plantuml
 
       - name: push diagrams
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           commit_message: generate svg files for `.plantuml` diagrams
           branch: ${{ env.PUBLISH_BRANCH }}
-          repository: ./diagrams/
           file_pattern: '**.svg'
 
   # build-and-deploy-book:
