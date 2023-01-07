@@ -31,7 +31,6 @@ jobs:
       - name: create `./latex/`
         run: |
           mkdir -p ./latex/
-          mkdir -p ./diagrams/
 
   generate-plantuml-diagrams:
     runs-on: ubuntu-latest
@@ -42,12 +41,15 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
+      - run: |
+          mkdir -p ./diagrams/
+
       - name: generate svg diagrams
         uses: holowinski/plantuml-github-action@main
         with:
           args: -v -tsvg **.plantuml -o ./diagrams/
 
-      - name: push diagrams to repo
+      - name: push diagrams
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           commit_message: generate svg files for `.plantuml` diagrams
