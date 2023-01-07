@@ -34,6 +34,7 @@ jobs:
           mkdir -p ./diagrams/
 
   generate-plantuml-diagrams:
+  #todo: update path pictures to `web-page-prod`
     runs-on: ubuntu-latest
     timeout-minutes: 2
 
