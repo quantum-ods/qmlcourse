@@ -53,6 +53,7 @@ jobs:
           commit_message: auto-generate `**.svg` for `**.plantuml`
           branch: ${{ env.PUBLISH_BRANCH }}
           file_pattern: '**.svg'
+          push_options: --force
 
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
