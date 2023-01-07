@@ -41,8 +41,6 @@ jobs:
 
       - name: checkout to build branch
         uses: actions/checkout@v3
-        with:
-          ref: ${{ env.PUBLISH_BRANCH }}
 
       - name: generate `**.svg` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
