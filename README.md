@@ -43,7 +43,7 @@ Some ideas, suggestions, remarks, etc. you can write on the [discussions](https:
 
 ## Course Program
 
-![](./qmlcourse/_static/index/program.svg)
+![](https://github.com/quantum-ods/qmlcourse/blob/web-page-stage/_static/index/program.svg)
 
 ### How to read the schema?
 
