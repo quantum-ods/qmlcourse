@@ -28,32 +28,32 @@ jobs:
         with:
           ref: ${{ env.PUBLISH_BRANCH }}
 
-      - run: |
+      - name: create `./latex/`
+        run: |
           mkdir -p ./latex/
-          mkdir -p ./diagrams/
 
-  # generate-plantuml-diagrams:
-  #   needs: [create-folder-for-latex]
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 2
+  generate-plantuml-diagrams:
+    needs: [create-folder-for-latex]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
 
-  #   steps:
+    steps:
 
-  #     - name: checkout branch for build
-  #       uses: actions/checkout@v3
+      - name: checkout branch for build
+        uses: actions/checkout@v3
 
-  #     - name: generate svg diagrams
-  #       uses: holowinski/plantuml-github-action@main
-  #       with:
-  #         args: -v -tsvg **.plantuml
+      - name: generate svg diagrams
+        uses: holowinski/plantuml-github-action@main
+        with:
+          args: -v -tsvg **.plantuml
 
-  #     - name: push diagrams to repo
-  #       uses: stefanzweifel/git-auto-commit-action@v4.16.0
-  #       with:
-  #         commit_message: generate svg files for .plantuml diagrams
-  #         branch: ${{ env.PUBLISH_BRANCH }}
-  #         repository: ./diagrams/
-  #         # file_pattern: '**.plantuml'
+      - name: push diagrams to repo
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          commit_message: generate svg files for .plantuml diagrams
+          branch: ${{ env.PUBLISH_BRANCH }}
+          repository: ./
+          file_pattern: '**.plantuml'
 
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
