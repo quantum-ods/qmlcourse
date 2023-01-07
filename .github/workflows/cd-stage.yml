@@ -54,6 +54,7 @@ jobs:
           branch: ${{ env.PUBLISH_BRANCH }}
           file_pattern: '**.svg'
           skip_dirty_check: true
+          skip_fetch: true
 
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
