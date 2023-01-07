@@ -57,6 +57,7 @@ jobs:
           # file_pattern: '**.svg'
           # push_options: '--force'
           add_options: '-f'
+          skip_dirty_check : true
 
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
