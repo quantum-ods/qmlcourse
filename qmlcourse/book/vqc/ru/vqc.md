@@ -31,7 +31,7 @@ kernelspec:
 
 В течение всего курса будем говорить преимущественно о комбинированном квантово-классическом машинном обучении, построенном на базе вариационных квантовых схем. Именно он является наиболее перспективным в эпоху {term}`NISQ<"Шумные" квантовые компьютеры промежуточного масштаба (Noisy intermediate-scale quantum, NISQ, NISQ Hardware)>`. Давайте забежим немного вперед и посмотрим, как выглядит типичный цикл такого обучения.
 
-```{figure} /_static/vqc/ru/diagram.png
+```{figure} https://github.com/quantum-ods/qmlcourse/blob/web-page-stage/qmlcourse/_static/vqc/ru/example_vqc_diagram.svg
 :name: vqcdiag
 :height: 400px
 

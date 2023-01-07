@@ -33,7 +33,7 @@ kernelspec:
 
 Это первая лекция основного блока нашего курса. Прежде чем мы начнем детально разбирать понятие кубита, давайте взглянем на общий пайплайн квантовых схем.
 
-```{figure} /_static/qc/ru/qubit/diagram.png
+```{figure} https://github.com/quantum-ods/qmlcourse/blob/web-page-stage/qmlcourse/_static/qc/ru/qubit/any_qubit_diagram.svg
 :name: qscheme
 
 Схема любого квантового алгоритма
