@@ -44,17 +44,15 @@ jobs:
         with:
           ref: ${{ env.PUBLISH_BRANCH }}
 
-      - name: generate `**.svg`` for `**.plantuml`
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+      - name: generate `**.svg` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
         with:
           args: -v -tsvg **.plantuml
 
       - name: push diagrams
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
-          commit_message: auto-generate `**.svg`` for `**.plantuml`
+          commit_message: auto-generate `**.svg` for `**.plantuml`
           branch: ${{ env.PUBLISH_BRANCH }}
           file_pattern: '**.svg'
 
