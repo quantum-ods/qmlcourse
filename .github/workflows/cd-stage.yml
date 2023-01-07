@@ -30,6 +30,7 @@ jobs:
 
       - run: |
           mkdir -p ./latex/
+          mkdir -p ./diagrams/
 
   generate-plantuml-diagrams:
     needs: [create-folder-for-latex]
