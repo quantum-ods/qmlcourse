@@ -58,7 +58,7 @@ jobs:
         with:
           commit_message: generate svg files for `.plantuml` diagrams
           branch: ${{ env.PUBLISH_BRANCH }}
-          repository: ./diagrams
+          repository: .
           # file_pattern: '**.plantuml'
 
   # build-and-deploy-book:
