@@ -31,8 +31,28 @@ jobs:
       - run: |
           mkdir -p ./latex/
 
+  generate-plantuml-diagrams:
+    runs-on: ubuntu-latest
+    # timeout-minutes: 1
+
+    steps:
+
+      - name: checkout branch for build
+        uses: actions/checkout@v3
+
+      - name: generate svg diagrams
+        uses: holowinski/plantuml-github-action@main
+        with:
+          args: -v -tsvg ./qmlcourse/_static/index/program.plantuml
+
+      - name: push diagrams to repo
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          commit_message: "generate svg files for .plantuml diagrams"
+          branch: ${{ github.head_ref }}
+
   build-and-deploy-book:
-    needs: [create-folder-for-latex]
+    needs: [create-folder-for-latex, generate-plantuml-diagrams]
     runs-on: ubuntu-latest
     timeout-minutes: 24
     environment:
