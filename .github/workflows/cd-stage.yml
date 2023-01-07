@@ -35,6 +35,7 @@ jobs:
 
   generate-plantuml-diagrams:
   # todo: update path pictures to `web-page-prod`
+    needs: [create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 2
 
