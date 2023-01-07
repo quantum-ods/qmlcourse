@@ -105,7 +105,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: ${{ env.PUBLISH_BRANCH }}
-          exclude_assets: './qmlcourse/_static/'
+          exclude_assets: './qmlcourse/_static/*'
 
       - name: build latex files
         if: github.event.inputs.build_pdf == 'yes'
