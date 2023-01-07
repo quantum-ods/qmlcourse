@@ -42,7 +42,7 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
-      - name: generate svg diagrams
+      - name: generate `**.svg`` for `**.plantuml`
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
         uses: holowinski/plantuml-github-action@main
         with:
@@ -52,7 +52,7 @@ jobs:
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
-          commit_message: generate svg files for `.plantuml` diagrams
+          commit_message: auto-generate `**.svg`` for `**.plantuml`
           branch: ${{ env.PUBLISH_BRANCH }}
           file_pattern: '**.svg'
 
@@ -76,6 +76,7 @@ jobs:
       - name: set up poetry
         uses: snok/install-poetry@v1.3.3
         with:
+          version: 1.3.3
           virtualenvs-create: true
           virtualenvs-in-project: true
           installer-parallel: true
