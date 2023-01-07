@@ -28,9 +28,15 @@ jobs:
         with:
           ref: ${{ env.PUBLISH_BRANCH }}
 
-      - name: create `./latex/`
+      - name: create `./latex/` & `./diagrams/`
         run: |
           mkdir -p ./latex/
+          mkdir -p ./diagrams/
+
+      - name: commit to created foldes
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          commit_message: create `./latex/` & `./diagrams/`
 
   generate-plantuml-diagrams:
     needs: [create-folder-for-latex]
@@ -52,7 +58,7 @@ jobs:
         with:
           commit_message: generate svg files for `.plantuml` diagrams
           branch: ${{ env.PUBLISH_BRANCH }}
-          # repository: ./
+          repository: ./diagrams/
           # file_pattern: '**.plantuml'
 
   # build-and-deploy-book:
