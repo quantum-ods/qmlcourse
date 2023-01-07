@@ -41,6 +41,8 @@ jobs:
 
       - name: checkout to build branch
         uses: actions/checkout@v3
+        # with:
+          # ref: ${{ env.PUBLISH_BRANCH }}
 
       - name: generate `**.svg` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
@@ -51,7 +53,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           commit_message: auto-generate `**.svg` for `**.plantuml`
-          # branch: ${{ env.PUBLISH_BRANCH }}
+          branch: ${{ env.PUBLISH_BRANCH }}
           file_pattern: '**.svg'
           push_options: '--force'
 
