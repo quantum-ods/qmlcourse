@@ -50,10 +50,10 @@ jobs:
       - name: push diagrams to repo
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
-          commit_message: generate svg files for .plantuml diagrams
+          commit_message: generate svg files for `.plantuml` diagrams
           branch: ${{ env.PUBLISH_BRANCH }}
-          repository: ./
-          file_pattern: '**.plantuml'
+          # repository: ./
+          # file_pattern: '**.plantuml'
 
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
