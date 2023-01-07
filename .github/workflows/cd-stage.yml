@@ -32,6 +32,7 @@ jobs:
           mkdir -p ./latex/
 
   generate-plantuml-diagrams:
+    needs: [create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 2
 
