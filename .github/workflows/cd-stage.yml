@@ -40,6 +40,8 @@ jobs:
 
       - name: checkout to build branch
         uses: actions/checkout@v3
+        with:
+          ref: ${{ env.PUBLISH_BRANCH }}
 
       - run: |
           mkdir -p ./diagrams/
