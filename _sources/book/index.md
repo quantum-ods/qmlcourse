@@ -50,11 +50,13 @@ Our course is divided into logical blocks, each containing lectures of different
 ```
 ````
 
-```{figure} /_static/index/program.svg
+<!-- ```{figure} /_static/index/program.svg
 :name: course_program
 
 Программа курса / Course program
-```
+``` -->
+
+<!--[Example With Only Link](./_static/index/program.plantuml)-->
 
 ````{grid}
 ```{grid-item-card} Как проходить этот курс?
