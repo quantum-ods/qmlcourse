@@ -1034,7 +1034,7 @@ title="Print to PDF"
 <figure class="align-default" id="lin-classifier">
 <a class="reference internal image-reference" href="../../../_images/lin_classifier.png"><img alt="../../../_images/lin_classifier.png" src="../../../_images/lin_classifier.png" style="width: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 70 </span><span class="caption-text">Линейная классификация</span><a class="headerlink" href="#lin-classifier" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 71 </span><span class="caption-text">Линейная классификация</span><a class="headerlink" href="#lin-classifier" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Рассмотрим задачу бинарной классификации, в которой <span class="math notranslate nohighlight">\(\mathbb{X} = \mathbb{R}^d\)</span> – пространство объектов,
@@ -1068,7 +1068,7 @@ title="Print to PDF"
 <figure class="align-default" id="distance-to-the-plane">
 <a class="reference internal image-reference" href="../../../_images/distance_to_the_plane.png"><img alt="../../../_images/distance_to_the_plane.png" src="../../../_images/distance_to_the_plane.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 71 </span><span class="caption-text">Расстояние от точки до плоскости</span><a class="headerlink" href="#distance-to-the-plane" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 72 </span><span class="caption-text">Расстояние от точки до плоскости</span><a class="headerlink" href="#distance-to-the-plane" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Геометрически линейный классификатор соответствует гиперплоскости с вектором нормали <span class="math notranslate nohighlight">\(w\)</span>, которая задается уравнением <span class="math notranslate nohighlight">\(\langle w, x \rangle = 0\)</span>. Величина скалярного произведения <span class="math notranslate nohighlight">\(\langle w, x \rangle\)</span> пропорциональна расстоянию от гиперплоскости до точки <span class="math notranslate nohighlight">\(x\)</span>, а его знак показывает, с какой стороны от гиперплоскости находится данная точка. Если быть точным, расстояние от точки с радиус-вектором <span class="math notranslate nohighlight">\(x_A\)</span> до плоскости <span class="math notranslate nohighlight">\(\langle w, x \rangle = 0\)</span>:</p>
@@ -1127,7 +1127,7 @@ title="Print to PDF"
 <figure class="align-default" id="margin-toy-example">
 <a class="reference internal image-reference" href="../../../_images/margin_toy_example.png"><img alt="../../../_images/margin_toy_example.png" src="../../../_images/margin_toy_example.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 72 </span><span class="caption-text">Иллюстрация к понятию отступа классификации</span><a class="headerlink" href="#margin-toy-example" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 73 </span><span class="caption-text">Иллюстрация к понятию отступа классификации</span><a class="headerlink" href="#margin-toy-example" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Отступ – это своего рода “уверенность” модели в классификации объекта <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>:</p>
@@ -1141,11 +1141,11 @@ title="Print to PDF"
 </section>
 <section id="id4">
 <h2>Интуиция метода опорных векторов<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
-<p>Метод опорных векторов (Support Vector Machine, SVM) основан на идее максимизации зазора между классами. Пока не вводим этот термин формально, но передадим интуицию метода. На Рис. <a class="reference internal" href="#linclass-margins"><span class="std std-numref">Fig. 73</span></a> показана линейно-разделимая выборка, кружки соответствуют положительным примерам, а квадраты – отрицательным (или наоборот), а оси – некоторым признакам этих примеров. На рисунке слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Кажется, что синяя прямая лучше тем, что она дальше отстоит от примеров обучающей выборки, чем красная прямая (зазор – больше), и потому лучше будет разделять другие примеры из того же распределения, что и примеры обучающей выборки. То есть такой линейный классификатор будет лучше обобщаться на новые данные. Теория подтверждает описанную интуицию <span id="id5">[<a class="reference internal" href="../../bibliography.html#id9" title="Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar. Foundations of Machine Learning. Adaptive Computation and Machine Learning. MIT Press, Cambridge, MA, 2 edition, 2018. ISBN 978-0-262-03940-6.">MRT18</a>]</span>.</p>
+<p>Метод опорных векторов (Support Vector Machine, SVM) основан на идее максимизации зазора между классами. Пока не вводим этот термин формально, но передадим интуицию метода. На Рис. <a class="reference internal" href="#linclass-margins"><span class="std std-numref">Fig. 74</span></a> показана линейно-разделимая выборка, кружки соответствуют положительным примерам, а квадраты – отрицательным (или наоборот), а оси – некоторым признакам этих примеров. На рисунке слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Кажется, что синяя прямая лучше тем, что она дальше отстоит от примеров обучающей выборки, чем красная прямая (зазор – больше), и потому лучше будет разделять другие примеры из того же распределения, что и примеры обучающей выборки. То есть такой линейный классификатор будет лучше обобщаться на новые данные. Теория подтверждает описанную интуицию <span id="id5">[<a class="reference internal" href="../../bibliography.html#id9" title="Mehryar Mohri, Afshin Rostamizadeh, and Ameet Talwalkar. Foundations of Machine Learning. Adaptive Computation and Machine Learning. MIT Press, Cambridge, MA, 2 edition, 2018. ISBN 978-0-262-03940-6.">MRT18</a>]</span>.</p>
 <figure class="align-default" id="linclass-margins">
 <a class="reference internal image-reference" href="../../../_images/linclass_margins.png"><img alt="../../../_images/linclass_margins.png" src="../../../_images/linclass_margins.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 73 </span><span class="caption-text">Слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Справа показана прямая, максимизирующая зазор между классами. Источник: <a class="reference external" href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html">лекция</a> Cornell</span><a class="headerlink" href="#linclass-margins" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 74 </span><span class="caption-text">Слева показаны две прямые (в общем случае – гиперплоскости), разделяющие выборку. Справа показана прямая, максимизирующая зазор между классами. Источник: <a class="reference external" href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/lecturenote09.html">лекция</a> Cornell</span><a class="headerlink" href="#linclass-margins" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -1291,10 +1291,10 @@ title="Print to PDF"
 <figure class="align-default" id="loss-functions-logistic-and-hinge">
 <a class="reference internal image-reference" href="../../../_images/loss_functions_logistic_and_hinge.png"><img alt="../../../_images/loss_functions_logistic_and_hinge.png" src="../../../_images/loss_functions_logistic_and_hinge.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 74 </span><span class="caption-text">Пороговая, кусочно-линейная и логистическая функции потерь</span><a class="headerlink" href="#loss-functions-logistic-and-hinge" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 75 </span><span class="caption-text">Пороговая, кусочно-линейная и логистическая функции потерь</span><a class="headerlink" href="#loss-functions-logistic-and-hinge" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Это становится понятнее в терминах упомянутого выше отступа <span class="math notranslate nohighlight">\(M_i = y_i (\langle w, x_i \rangle + b)\)</span> на примере обучающей выборки. В идеале мы хотели бы штрафовать классификатор за ошибку на примере: <span class="math notranslate nohighlight">\(L_{1/0} (M_i) = [M_i &lt; 0]\)</span>. Это пороговая функция потерь (zero-one loss), ее график изображен черным на <a class="reference internal" href="#loss-functions-logistic-and-hinge"><span class="std std-numref">Fig. 74</span></a> как функция от отступа. К сожалению, напрямую мы не можем эффективно оптимизировать такую функцию градиентными методами из-за разрыва в нуле, поэтому оптимизируется верхняя оценка zero-one loss. В случае логистической регрессии – логистическая функция потерь <span class="math notranslate nohighlight">\(L(M_i) = \log(1+ e^{-M_i})\)</span> (красная на рисунке выше), а в случае метода опорных векторов – кусочно-линейная функция <span class="math notranslate nohighlight">\(L(M_i) = \max(0, 1 - M_i)\)</span> (зеленая на рисунке выше).</p>
+<p>Это становится понятнее в терминах упомянутого выше отступа <span class="math notranslate nohighlight">\(M_i = y_i (\langle w, x_i \rangle + b)\)</span> на примере обучающей выборки. В идеале мы хотели бы штрафовать классификатор за ошибку на примере: <span class="math notranslate nohighlight">\(L_{1/0} (M_i) = [M_i &lt; 0]\)</span>. Это пороговая функция потерь (zero-one loss), ее график изображен черным на <a class="reference internal" href="#loss-functions-logistic-and-hinge"><span class="std std-numref">Fig. 75</span></a> как функция от отступа. К сожалению, напрямую мы не можем эффективно оптимизировать такую функцию градиентными методами из-за разрыва в нуле, поэтому оптимизируется верхняя оценка zero-one loss. В случае логистической регрессии – логистическая функция потерь <span class="math notranslate nohighlight">\(L(M_i) = \log(1+ e^{-M_i})\)</span> (красная на рисунке выше), а в случае метода опорных векторов – кусочно-линейная функция <span class="math notranslate nohighlight">\(L(M_i) = \max(0, 1 - M_i)\)</span> (зеленая на рисунке выше).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Бытует мнение, что метод опорных векторов сегодня нигде не используется из-за его сложности (как минимум квадратичной по числу примеров). Однако, это не так. Линейный SVM вполне неплохо можно применять в задачах с высокой размерностью объектов обучающей выборки, например, для классификации текстов с <a class="reference external" href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">Tf-Idf</a> или любым другим разреженным представлением. В частности, <a class="reference external" href="https://vowpalwabbit.org/">Vowpal Wabbit</a> – очень эффективная утилита для решения многих задачах машинного обучения – по умолчанию использует hinge-loss для задач классификации, то есть по сути в этом сценарии применения является линейным SVM. Кусочно-линейная функция потерь хороша тем, что у нее очень простая производная – положительная константа либо ноль. Это удобно использовать с SGD и большими выборками, когда приходится делать миллиарды обновлений весов.</p>
@@ -1479,11 +1479,11 @@ a(x) = \text{sign} \left(
     b = med \ y_i - \langle w, x_i \rangle, \xi_i = 0, 0 &lt; \lambda_i &lt; C.
 \]</div>
 </div>
-<p><a class="reference internal" href="#kerneltrick"><span class="std std-numref">Fig. 75</span></a> – пожалуй, самый известный рисунок в контексте SVM, он иллюстрирует ядерный трюк, в свою очередь, одну из самых красивых идей в истории машинного обучения. За счет ядерного перехода можно достигнуть линейной разделимости выборки даже в том случае, когда исходная обучающая выборка не является линейно разделимой.</p>
+<p><a class="reference internal" href="#kerneltrick"><span class="std std-numref">Fig. 76</span></a> – пожалуй, самый известный рисунок в контексте SVM, он иллюстрирует ядерный трюк, в свою очередь, одну из самых красивых идей в истории машинного обучения. За счет ядерного перехода можно достигнуть линейной разделимости выборки даже в том случае, когда исходная обучающая выборка не является линейно разделимой.</p>
 <figure class="align-default" id="kerneltrick">
 <a class="reference internal image-reference" href="../../../_images/kernel_trick_idea.png"><img alt="../../../_images/kernel_trick_idea.png" src="../../../_images/kernel_trick_idea.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 75 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 76 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Наиболее часто используемые ядра:</p>
