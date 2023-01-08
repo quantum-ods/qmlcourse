@@ -56,7 +56,7 @@ Our course is divided into logical blocks, each containing lectures of different
 Программа курса / Course program
 ``` -->
 
-<!--[Example With Only Link](./_static/index/program.plantuml)-->
+[Example With Only Link](./_static/index/program.plantuml)
 
 ````{grid}
 ```{grid-item-card} Как проходить этот курс?
