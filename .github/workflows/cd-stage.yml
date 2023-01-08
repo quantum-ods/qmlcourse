@@ -36,6 +36,7 @@ jobs:
         with:
           commit_message: auto-generate `**.svg` for `**.plantuml`
           file_pattern: '**.svg'
+          push_options: '--force'
 
   create-folder-for-latex:
     runs-on: ubuntu-latest
