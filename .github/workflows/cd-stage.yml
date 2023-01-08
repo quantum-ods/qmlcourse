@@ -29,7 +29,7 @@ jobs:
       - name: generate `**.svg` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
         with:
-          args: -v -tsvg **.plantuml
+          args: -v -tsvg **.plantuml -tlatex
 
       - name: push diagrams to runing branch
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
