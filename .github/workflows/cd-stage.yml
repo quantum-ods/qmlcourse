@@ -17,23 +17,7 @@ env:
 
 jobs:
 
-  create-folder-for-latex:
-    runs-on: ubuntu-latest
-    timeout-minutes: 1
-
-    steps:
-
-      - name: checkout to build branch
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ env.PUBLISH_BRANCH }}
-
-      - name: create `./latex/`
-        run: |
-          mkdir -p ./latex/
-
   generate-plantuml-diagrams:
-  # todo: update path pictures to `web-page-prod`
     runs-on: ubuntu-latest
     timeout-minutes: 2
 
@@ -53,8 +37,23 @@ jobs:
           commit_message: auto-generate `**.svg` for `**.plantuml`
           file_pattern: '**.svg'
 
+  create-folder-for-latex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+
+    steps:
+
+      - name: checkout to build branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ env.PUBLISH_BRANCH }}
+
+      - name: create `./latex/`
+        run: |
+          mkdir -p ./latex/
+
   build-and-deploy-book:
-    needs: [create-folder-for-latex, generate-plantuml-diagrams]
+    needs: [generate-plantuml-diagrams, create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 24
     environment:
@@ -73,7 +72,6 @@ jobs:
       - name: set up poetry
         uses: snok/install-poetry@v1
         with:
-          version: latest
           virtualenvs-create: true
           virtualenvs-in-project: true
           installer-parallel: true

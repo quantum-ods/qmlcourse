@@ -10,6 +10,26 @@ env:
 
 jobs:
 
+  generate-plantuml-diagrams:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+
+      - name: checkout to build branch
+        uses: actions/checkout@v3
+
+      - name: generate `**.svg` for `**.plantuml`
+        uses: holowinski/plantuml-github-action@main
+        with:
+          args: -v -tsvg **.plantuml
+
+      - name: push diagrams to runing branch
+        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        with:
+          commit_message: auto-generate `**.svg` for `**.plantuml`
+          file_pattern: '**.svg'
+
   create-folder-for-latex:
     runs-on: ubuntu-latest
     timeout-minutes: 1
@@ -21,11 +41,12 @@ jobs:
         with:
           ref: ${{ env.PUBLISH_BRANCH }}
 
-      - run: |
+      - name: create `./latex/`
+        run: |
           mkdir -p ./latex/
 
   build-and-deploy-book:
-    needs: [create-folder-for-latex]
+    needs: [generate-plantuml-diagrams, create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 24
 
