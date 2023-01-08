@@ -49,7 +49,7 @@ jobs:
         with:
           args: -v -tsvg **.plantuml
 
-      - run: git pull
+      # - run: git pull
 
       - name: push diagrams
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
