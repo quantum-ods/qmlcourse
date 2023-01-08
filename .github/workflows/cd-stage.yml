@@ -32,11 +32,9 @@ jobs:
           args: -v -tsvg **.plantuml -tlatex
 
       - name: push diagrams to runing branch
-        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        uses: EndBug/add-and-commit@v9.1.1
         with:
-          commit_message: auto-generate `**.svg` for `**.plantuml`
-          file_pattern: '**.svg'
-          push_options: '--force'
+          message: auto-generate `**.svg` for `**.plantuml`
 
   create-folder-for-latex:
     runs-on: ubuntu-latest
