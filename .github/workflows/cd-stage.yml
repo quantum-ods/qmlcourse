@@ -65,9 +65,18 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
-      - run: |
-          npm install
-          npm i -g puml-for-markdown
+      - name: set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: add plantuml for markdown
+        run: npm i -g puml-for-markdown
+        shell: bash
+
+      - name: embed plantuml in markdown
+        run: puml-for-markdown
+        shell: bash
 
       - name: install imagemagick
         run: |
