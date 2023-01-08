@@ -41,10 +41,10 @@ jobs:
 
       - name: checkout to build branch
         uses: actions/checkout@v3
-        # with:
-        #   ref: ${{ env.PUBLISH_BRANCH }}
+        with:
+          ref: ${{ env.PUBLISH_BRANCH }}
 
-      - run: git pull
+      # - run: git pull
 
       - name: generate `**.svg` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
@@ -56,6 +56,8 @@ jobs:
         with:
           message: auto-generate `**.svg` for `**.plantuml`
           add: .
+          # new_branch: ${{ env.PUBLISH_BRANCH }}
+          cwd: ./diagrams/
          
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
