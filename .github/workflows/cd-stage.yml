@@ -41,8 +41,8 @@ jobs:
 
       - name: checkout to build branch
         uses: actions/checkout@v3
-        # with:
-        #   ref: ${{ env.PUBLISH_BRANCH }}
+        with:
+          ref: ${{ env.PUBLISH_BRANCH }}
 
       - run: git pull
 
@@ -52,15 +52,11 @@ jobs:
           args: -v -tsvg **.plantuml
 
       - name: push diagrams
-        uses: stefanzweifel/git-auto-commit-action@v4.16.0
+        uses: EndBug/add-and-commit@v9.1.1
         with:
-          commit_message: auto-generate `**.svg` for `**.plantuml`
-          branch: ${{ env.PUBLISH_BRANCH }}
-          # file_pattern: '**.svg'
-          push_options: --force # --force --dry-run
-          # add_options: '-f'
-          skip_dirty_check : true
-
+          message: auto-generate `**.svg` for `**.plantuml`
+          add: .
+         
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
   #   runs-on: ubuntu-latest
