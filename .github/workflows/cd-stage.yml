@@ -65,7 +65,10 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
-      - run: npm i -g puml-for-markdown
+      - run: |
+          npm cache clear --force
+          npm install
+          npm i -g puml-for-markdown
 
       - name: install imagemagick
         run: |
