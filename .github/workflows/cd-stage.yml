@@ -57,7 +57,7 @@ jobs:
           message: auto-generate `**.svg` for `**.plantuml`
           add: .
           # new_branch: ${{ env.PUBLISH_BRANCH }}
-          cwd: ./diagrams/
+          cwd: .
          
   # build-and-deploy-book:
   #   needs: [create-folder-for-latex, generate-plantuml-diagrams]
