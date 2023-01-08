@@ -57,8 +57,8 @@ jobs:
           commit_message: auto-generate `**.svg` for `**.plantuml`
           branch: ${{ env.PUBLISH_BRANCH }}
           # file_pattern: '**.svg'
-          push_options: --dry-run  # '--force'
-          add_options: '-f'
+          push_options: --force # --force --dry-run
+          # add_options: '-f'
           # skip_dirty_check : true
 
   # build-and-deploy-book:
