@@ -44,12 +44,12 @@ jobs:
         # with:
         #   ref: ${{ env.PUBLISH_BRANCH }}
 
+      - run: git pull
+
       - name: generate `**.svg` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
         with:
           args: -v -tsvg **.plantuml
-
-      # - run: git pull
 
       - name: push diagrams
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
