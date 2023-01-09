@@ -29,7 +29,7 @@ jobs:
       - name: generate `**.png` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
         with:
-          args: -v -tpng **.plantuml
+          args: -v -tsvg **.plantuml
 
       - name: push diagrams to runing branch
         uses: EndBug/add-and-commit@v9.1.1
