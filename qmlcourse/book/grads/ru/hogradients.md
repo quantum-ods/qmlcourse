@@ -45,7 +45,7 @@ $$
 
 Давайте вспомним, как выглядит квантово-классическая схема обучения с **VQC**.
 
-```{figure} /_static/vqc/ru/diagram.png
+```{figure} /_static/vqc/ru/example_vqc_diagram.png
 :name: quantclassical
 :height: 400px
 

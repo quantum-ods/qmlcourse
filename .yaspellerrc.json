@@ -1,8 +1,7 @@
 {
     "lang": "ru",
     "fileExtensions": [
-      ".md",
-      ".svg"
+      ".md"
     ],
     "excludeFiles": [
       ".git",
