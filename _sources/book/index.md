@@ -50,7 +50,7 @@ Our course is divided into logical blocks, each containing lectures of different
 ```
 ````
 
-```{figure} /_static/index/program.png
+```{figure} /_static/index/program.svg
 :name: course_program
 
 Программа курса / Course program
