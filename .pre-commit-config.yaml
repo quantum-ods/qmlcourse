@@ -46,6 +46,7 @@ repos:
           - --unsafe
       - id: detect-private-key
       - id: end-of-file-fixer
+        exclude: .svg
       - id: trailing-whitespace
         args:
           - --markdown-linebreak-ext=md
@@ -56,7 +57,7 @@ repos:
       - id: mypy
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.284
+    rev: v1.1.287
     hooks:
       - id: pyright
 

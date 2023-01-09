@@ -17,6 +17,25 @@ env:
 
 jobs:
 
+  generate-plantuml-diagrams:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+
+    steps:
+
+      - name: checkout to build branch
+        uses: actions/checkout@v3
+
+      - name: generate `**.svg` for `**.plantuml`
+        uses: holowinski/plantuml-github-action@main
+        with:
+          args: -v -tsvg **.plantuml
+
+      - name: push diagrams to runing branch
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          message: auto-generate `**.svg` for `**.plantuml`
+
   create-folder-for-latex:
     runs-on: ubuntu-latest
     timeout-minutes: 1
@@ -28,11 +47,12 @@ jobs:
         with:
           ref: ${{ env.PUBLISH_BRANCH }}
 
-      - run: |
+      - name: create `./latex/`
+        run: |
           mkdir -p ./latex/
 
   build-and-deploy-book:
-    needs: [create-folder-for-latex]
+    needs: [generate-plantuml-diagrams, create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 24
     environment:
@@ -41,7 +61,7 @@ jobs:
 
     steps:
 
-      - name: checkout branch for build
+      - name: checkout to build branch
         uses: actions/checkout@v3
 
       - name: install imagemagick
@@ -49,7 +69,7 @@ jobs:
           sudo apt install -y imagemagick
 
       - name: set up poetry
-        uses: snok/install-poetry@v1.3.3
+        uses: snok/install-poetry@v1
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
@@ -74,11 +94,12 @@ jobs:
           poetry run jupyter-book build ./qmlcourse
 
       - name: update publish dir to build branch
-        uses: peaceiris/actions-gh-pages@v3.9.0
+        uses: peaceiris/actions-gh-pages@v3.9.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: ${{ env.PUBLISH_BRANCH }}
+          exclude_assets: './qmlcourse/_static/*'
 
       - name: build latex files
         if: github.event.inputs.build_pdf == 'yes'
@@ -97,7 +118,7 @@ jobs:
 
       - name: send pdf book to build branch
         if: github.event.inputs.build_pdf == 'yes'
-        uses: peaceiris/actions-gh-pages@v3.9.0
+        uses: peaceiris/actions-gh-pages@v3.9.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
