@@ -46,7 +46,6 @@ repos:
           - --unsafe
       - id: detect-private-key
       - id: end-of-file-fixer
-        exclude: .svg
       - id: trailing-whitespace
         args:
           - --markdown-linebreak-ext=md

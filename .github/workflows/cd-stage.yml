@@ -26,15 +26,15 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
-      - name: generate `**.svg` for `**.plantuml`
+      - name: generate `**.png` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
         with:
-          args: -v -tsvg **.plantuml
+          args: -v -tpng **.plantuml
 
       - name: push diagrams to runing branch
         uses: EndBug/add-and-commit@v9.1.1
         with:
-          message: auto-generate `**.svg` for `**.plantuml`
+          message: auto-generate `**.png` for `**.plantuml`
 
   create-folder-for-latex:
     runs-on: ubuntu-latest

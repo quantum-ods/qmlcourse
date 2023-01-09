@@ -19,7 +19,7 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
-      - name: generate `**.svg` for `**.plantuml`
+      - name: generate `**.png` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
         with:
           args: -v -tsvg **.plantuml

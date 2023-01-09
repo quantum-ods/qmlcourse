@@ -43,7 +43,7 @@ Some ideas, suggestions, remarks, etc. you can write on the [discussions](https:
 
 ## Course Program
 
-![](./qmlcourse/_static/index/program.svg)
+![](./qmlcourse/_static/index/program.png)
 
 ### How to read the schema?
 
