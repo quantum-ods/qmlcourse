@@ -12,14 +12,12 @@ repos:
         args:
           - --line-length=119
 
-  - repo: https://github.com/PyCQA/flake8
-    rev: 6.0.0
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.220
     hooks:
-      - id: flake8
+      - id: ruff
         args:
-          - --ignore=E501,W503
-          - --per-file-ignores=*/__init__.py:F401
-          - --max-line-length=119
+          - --line-length=119
         additional_dependencies:
           - flake8-bugbear==22.7.1
           - flake8-builtins==1.5.3
