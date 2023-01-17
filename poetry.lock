@@ -2529,7 +2529,7 @@ files = [
 
 [[package]]
 name = "matplotlib"
-version = "3.6.1"
+version = "3.6.3"
 description = "Python plotting package"
 category = "main"
 optional = false
