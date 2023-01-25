@@ -1,3 +1,10 @@
+[tool.poetry]
+name = "qmlcourse"
+version = "2.0.0"
+description = ""
+authors = ["Quantum Machine Learning Community Course <qmlcourse.ods@gmail.com>"]
+license = "CC-BY-4.0"
+
 [tool.poetry.dependencies]
 python = ">=3.8,<=3.9"
 cirq = "0.11.0"
