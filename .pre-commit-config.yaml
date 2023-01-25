@@ -13,7 +13,7 @@ repos:
           - --line-length=119
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.220
+    rev: v0.0.233
     hooks:
       - id: ruff
         args:
@@ -55,7 +55,7 @@ repos:
       - id: mypy
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.287
+    rev: v1.1.290
     hooks:
       - id: pyright
 
