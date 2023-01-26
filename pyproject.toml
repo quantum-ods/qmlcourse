@@ -30,6 +30,7 @@ sphinx-jupyterbook-latex = "^0.4.6"
 tensorflow = "2.8.4"
 tensorflow-quantum = "0.6.0"
 Jinja2 = "3.0.3"
+future = "0.18.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
