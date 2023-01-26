@@ -1,0 +1,129 @@
+Traceback (most recent call last):
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+import tensorflow as tf
+import tensorflow_quantum as tfq
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNotFoundError[0m                             Traceback (most recent call last)
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/load_module.py:42[0m, in [0;36mload_module[0;34m(name)[0m
+[1;32m     41[0m     path [38;5;241m=[39m resource_loader[38;5;241m.[39mget_path_to_datafile(name)
+[0;32m---> 42[0m     [38;5;28;01mreturn[39;00m [43mload_library[49m[38;5;241;43m.[39;49m[43mload_op_library[49m[43m([49m[43mpath[49m[43m)[49m
+[1;32m     43[0m [38;5;28;01mexcept[39;00m:
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow/python/framework/load_library.py:54[0m, in [0;36mload_op_library[0;34m(library_filename)[0m
+[1;32m     33[0m [38;5;124;03m"""Loads a TensorFlow plugin, containing custom ops and kernels.[39;00m
+[1;32m     34[0m 
+[1;32m     35[0m [38;5;124;03mPass "library_filename" to a platform-specific mechanism for dynamically[39;00m
+[0;32m   (...)[0m
+[1;32m     52[0m [38;5;124;03m  RuntimeError: when unable to load the library or get the python wrappers.[39;00m
+[1;32m     53[0m [38;5;124;03m"""[39;00m
+[0;32m---> 54[0m lib_handle [38;5;241m=[39m [43mpy_tf[49m[38;5;241;43m.[39;49m[43mTF_LoadLibrary[49m[43m([49m[43mlibrary_filename[49m[43m)[49m
+[1;32m     55[0m [38;5;28;01mtry[39;00m:
+
+[0;31mNotFoundError[0m: /home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/_tfq_simulate_ops.so: undefined symbol: _ZNK10tensorflow8OpKernel11TraceStringERKNS_15OpKernelContextEb
+
+During handling of the above exception, another exception occurred:
+
+[0;31mNotFoundError[0m                             Traceback (most recent call last)
+Cell [0;32mIn [7], line 4[0m
+[1;32m      2[0m os[38;5;241m.[39menviron[[38;5;124m"[39m[38;5;124mTF_CPP_MIN_LOG_LEVEL[39m[38;5;124m"[39m] [38;5;241m=[39m [38;5;124m"[39m[38;5;124m3[39m[38;5;124m"[39m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mtensorflow[39;00m [38;5;28;01mas[39;00m [38;5;21;01mtf[39;00m
+[0;32m----> 4[0m [38;5;28;01mimport[39;00m [38;5;21;01mtensorflow_quantum[39;00m [38;5;28;01mas[39;00m [38;5;21;01mtfq[39;00m
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/__init__.py:18[0m
+[1;32m     15[0m [38;5;124;03m"""Module functions for tensorflow_quantum.*"""[39;00m
+[1;32m     17[0m [38;5;66;03m# Import basic ops and op getters.[39;00m
+[0;32m---> 18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m [38;5;28;01mimport[39;00m (append_circuit, get_expectation_op,
+[1;32m     19[0m                                      get_sampled_expectation_op,
+[1;32m     20[0m                                      get_sampling_op, get_state_op,
+[1;32m     21[0m                                      get_unitary_op, padded_to_ragged,
+[1;32m     22[0m                                      padded_to_ragged2d, resolve_parameters)
+[1;32m     24[0m [38;5;66;03m# Import math ops.[39;00m
+[1;32m     25[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m [38;5;28;01mimport[39;00m math_ops [38;5;28;01mas[39;00m math
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/__init__.py:17[0m
+[1;32m     15[0m [38;5;124;03m"""Imports to tensorflow_quantum.core.* level."""[39;00m
+[1;32m     16[0m [38;5;66;03m# Import getters for constructing ops.[39;00m
+[0;32m---> 17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mops[39;00m [38;5;28;01mimport[39;00m (get_expectation_op,
+[1;32m     18[0m                                          get_sampled_expectation_op,
+[1;32m     19[0m                                          get_sampling_op, get_state_op,
+[1;32m     20[0m                                          get_unitary_op)
+[1;32m     21[0m [38;5;66;03m# Import regular ops.[39;00m
+[1;32m     22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mops[39;00m [38;5;28;01mimport[39;00m (append_circuit, padded_to_ragged,
+[1;32m     23[0m                                          padded_to_ragged2d, resolve_parameters)
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/__init__.py:18[0m
+[1;32m     15[0m [38;5;124;03m"""Module for tfq.core.ops.*"""[39;00m
+[1;32m     17[0m [38;5;66;03m# Import getters for constructing ops.[39;00m
+[0;32m---> 18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mops[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcircuit_execution_ops[39;00m [38;5;28;01mimport[39;00m (
+[1;32m     19[0m     get_expectation_op, get_sampled_expectation_op, get_sampling_op,
+[1;32m     20[0m     get_state_op)
+[1;32m     22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mops[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtfq_unitary_op[39;00m [38;5;28;01mimport[39;00m get_unitary_op
+[1;32m     23[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mops[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtfq_utility_ops[39;00m [38;5;28;01mimport[39;00m (append_circuit,
+[1;32m     24[0m                                                          padded_to_ragged,
+[1;32m     25[0m                                                          padded_to_ragged2d,
+[1;32m     26[0m                                                          resolve_parameters)
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/circuit_execution_ops.py:20[0m
+[1;32m     16[0m [38;5;28;01mimport[39;00m [38;5;21;01menum[39;00m
+[1;32m     18[0m [38;5;28;01mimport[39;00m [38;5;21;01mcirq[39;00m
+[0;32m---> 20[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mops[39;00m [38;5;28;01mimport[39;00m (cirq_ops, tfq_simulate_ops,
+[1;32m     21[0m                                          tfq_utility_ops)
+[1;32m     22[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpython[39;00m [38;5;28;01mimport[39;00m quantum_context
+[1;32m     25[0m [38;5;28;01mclass[39;00m [38;5;21;01mTFQStateVectorSimulator[39;00m(enum[38;5;241m.[39mEnum):
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/tfq_simulate_ops.py:19[0m
+[1;32m     16[0m [38;5;28;01mimport[39;00m [38;5;21;01mtensorflow[39;00m [38;5;28;01mas[39;00m [38;5;21;01mtf[39;00m
+[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtensorflow_quantum[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mops[39;00m[38;5;21;01m.[39;00m[38;5;21;01mload_module[39;00m [38;5;28;01mimport[39;00m load_module
+[0;32m---> 19[0m SIM_OP_MODULE [38;5;241m=[39m [43mload_module[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m_tfq_simulate_ops.so[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m     22[0m [38;5;28;01mdef[39;00m [38;5;21mtfq_simulate_expectation[39m(programs, symbol_names, symbol_values, pauli_sums):
+[1;32m     23[0m     [38;5;124;03m"""Calculate the expectation value of circuits wrt some operator(s)[39;00m
+[1;32m     24[0m 
+[1;32m     25[0m [38;5;124;03m    Args:[39;00m
+[0;32m   (...)[0m
+[1;32m     42[0m [38;5;124;03m            (after resolving the corresponding parameters in).[39;00m
+[1;32m     43[0m [38;5;124;03m    """[39;00m
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/load_module.py:46[0m, in [0;36mload_module[0;34m(name)[0m
+[1;32m     43[0m [38;5;28;01mexcept[39;00m:
+[1;32m     44[0m     path [38;5;241m=[39m os[38;5;241m.[39mpath[38;5;241m.[39mjoin(get_python_lib(), [38;5;124m"[39m[38;5;124mtensorflow_quantum/core/ops[39m[38;5;124m"[39m,
+[1;32m     45[0m                         name)
+[0;32m---> 46[0m     [38;5;28;01mreturn[39;00m [43mload_library[49m[38;5;241;43m.[39;49m[43mload_op_library[49m[43m([49m[43mpath[49m[43m)[49m
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow/python/framework/load_library.py:54[0m, in [0;36mload_op_library[0;34m(library_filename)[0m
+[1;32m     31[0m [38;5;129m@tf_export[39m([38;5;124m'[39m[38;5;124mload_op_library[39m[38;5;124m'[39m)
+[1;32m     32[0m [38;5;28;01mdef[39;00m [38;5;21mload_op_library[39m(library_filename):
+[1;32m     33[0m   [38;5;124;03m"""Loads a TensorFlow plugin, containing custom ops and kernels.[39;00m
+[1;32m     34[0m 
+[1;32m     35[0m [38;5;124;03m  Pass "library_filename" to a platform-specific mechanism for dynamically[39;00m
+[0;32m   (...)[0m
+[1;32m     52[0m [38;5;124;03m    RuntimeError: when unable to load the library or get the python wrappers.[39;00m
+[1;32m     53[0m [38;5;124;03m  """[39;00m
+[0;32m---> 54[0m   lib_handle [38;5;241m=[39m [43mpy_tf[49m[38;5;241;43m.[39;49m[43mTF_LoadLibrary[49m[43m([49m[43mlibrary_filename[49m[43m)[49m
+[1;32m     55[0m   [38;5;28;01mtry[39;00m:
+[1;32m     56[0m     wrappers [38;5;241m=[39m _pywrap_python_op_gen[38;5;241m.[39mGetPythonWrappers(
+[1;32m     57[0m         py_tf[38;5;241m.[39mTF_GetOpList(lib_handle))
+
+[0;31mNotFoundError[0m: /home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/_tfq_simulate_ops.so: undefined symbol: _ZNK10tensorflow8OpKernel11TraceStringERKNS_15OpKernelContextEb
+NotFoundError: /home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/tensorflow_quantum/core/ops/_tfq_simulate_ops.so: undefined symbol: _ZNK10tensorflow8OpKernel11TraceStringERKNS_15OpKernelContextEb
+

@@ -1,0 +1,583 @@
+\selectlanguage *{english}
+\contentsline {part}{I\hspace {1em}Введение}{5}{part.1}%
+\contentsline {chapter}{\numberline {1}О квантовых компьютерах, биткоине и превосходстве}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Описание лекции}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Что это вообще за компьютеры такие?}{7}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Количественная эволюция компьютеров}{7}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Качественная эволюция компьютеров}{9}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Идея о квантовом компьютере}{9}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Что это за компьютер такой?}{10}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}А зачем это вообще нужно?}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Факторизация больших чисел}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Комбинаторные и NP\sphinxhyphen {}трудные задачи}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Симуляция квантовой механики}{11}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Машинное обучение и искусственный интеллект}{14}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Ну и когда взломают биткоин?}{14}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Сколько нужно кубитов под разные задачи?}{15}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Логические vs Физические кубиты}{15}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Сколько кубит есть сегодня?}{15}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Какие планы имеют ведущие игроки на этом рынке?}{17}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5}О квантовом превосходстве}{17}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Понятие квантового превосходства}{17}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Хронология событий}{17}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}А как это вообще выглядит? И сколько стоит?}{19}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Заключение}{19}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Пререквизиты для прохождения курса QML}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Python, Poetry и среда разработки}{21}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Линейная алгебра и \sphinxstyleliteralintitle {\sphinxupquote {Numpy}}}{22}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Машинное обучение}{22}{section.2.3}%
+\contentsline {part}{II\hspace {1em}Основы Python}{23}{part.2}%
+\contentsline {chapter}{\numberline {3}О блоке “Python”}{25}{chapter.3}%
+\contentsline {part}{III\hspace {1em}Линейная алгебра и numpy}{27}{part.3}%
+\contentsline {chapter}{\numberline {4}О блоке “Линейная алгебра и NumPy”}{29}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Векторы}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Определение}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Операции с векторами}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Норма (длина) вектора}{32}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Скалярное произведение}{32}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Линейная независимость}{33}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Базис}{34}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Что мы узнали?}{35}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Скобки}{37}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Гильбертово пространство}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Полное пространство}{37}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Нотация Дирака, или Bra\sphinxhyphen {}Ket нотация}{37}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Внешнее произведение (outer\sphinxhyphen {}product)}{38}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Эрмитов оператор}{38}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Унитарный оператор}{38}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Пример: оператор\sphinxhyphen {}проектор}{40}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Пример: оператор поворота}{41}{subsection.6.6.2}%
+\contentsline {subsection}{\numberline {6.6.3}Пример: оператор дифференцирования}{41}{subsection.6.6.3}%
+\contentsline {section}{\numberline {6.7}Произведение Кронекера}{42}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Рекомендованная литература}{43}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Что мы узнали}{43}{section.6.9}%
+\contentsline {chapter}{\numberline {7}Матрицы}{45}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Определение}{45}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Операции с матрицами}{45}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Норма матрицы}{47}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Ранг матрицы}{47}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Линейные преобразования}{47}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Обратная матрица}{49}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Определитель}{50}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Собственные числа и векторы}{50}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Что мы узнали?}{51}{section.7.9}%
+\contentsline {chapter}{\numberline {8}Numpy}{53}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Массивы}{53}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Арифметические операции}{54}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Indexing, slicing and sugar}{54}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Broadcasting}{56}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Операции с плавающей точкой}{58}{section.8.5}%
+\contentsline {section}{\numberline {8.6}NumPy и линейная алгебра}{58}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Решение систем линейных уравнений}{59}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Обращение матриц}{59}{subsection.8.6.2}%
+\contentsline {subsection}{\numberline {8.6.3}Собственные вектора и числа}{60}{subsection.8.6.3}%
+\contentsline {section}{\numberline {8.7}Мы вкратце рассмотрели}{60}{section.8.7}%
+\contentsline {part}{IV\hspace {1em}Основы машинного обучения}{61}{part.4}%
+\contentsline {chapter}{\numberline {9}О блоке “Машинное обучение”}{63}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Машинное обучение как пазл}{65}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Введение}{65}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Составляющие части задачи машинного обучения}{66}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Целевой признак}{66}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Данные}{69}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}Модель}{70}{subsection.10.2.3}%
+\contentsline {subsection}{\numberline {10.2.4}Функция потерь}{71}{subsection.10.2.4}%
+\contentsline {subsection}{\numberline {10.2.5}Решатель}{73}{subsection.10.2.5}%
+\contentsline {subsection}{\numberline {10.2.6}Схема валидации и метрика качества}{74}{subsection.10.2.6}%
+\contentsline {subsection}{\numberline {10.2.7}Заключение}{76}{subsection.10.2.7}%
+\contentsline {part}{V\hspace {1em}Квантовые вычисления}{77}{part.5}%
+\contentsline {chapter}{\numberline {11}О блоке “Квантовые вычисления”}{79}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Квантовый бит}{81}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Описание лекции}{81}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Введение}{81}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Что такое кубит}{82}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Состояние vs значение}{82}{section.12.4}%
+\contentsline {subsection}{\numberline {12.4.1}Состояние классического бита}{82}{subsection.12.4.1}%
+\contentsline {subsection}{\numberline {12.4.2}Кот Шредингера}{83}{subsection.12.4.2}%
+\contentsline {subsection}{\numberline {12.4.3}Состояние кубита}{83}{subsection.12.4.3}%
+\contentsline {subsection}{\numberline {12.4.4}Связь состояния и значения кубита}{84}{subsection.12.4.4}%
+\contentsline {subsubsection}{Базисные состояния}{84}{subsubsection*.3}%
+\contentsline {subsubsection}{Амплитуды вероятностей}{85}{subsubsection*.4}%
+\contentsline {section}{\numberline {12.5}Сфера Блоха}{85}{section.12.5}%
+\contentsline {subsection}{\numberline {12.5.1}Возможные базисы}{85}{subsection.12.5.1}%
+\contentsline {subsubsection}{Z\sphinxhyphen {}базис}{85}{subsubsection*.5}%
+\contentsline {subsubsection}{X\sphinxhyphen {}базис}{86}{subsubsection*.6}%
+\contentsline {subsubsection}{Y\sphinxhyphen {}базис}{86}{subsubsection*.7}%
+\contentsline {subsection}{\numberline {12.5.2}Сфера Блоха}{87}{subsection.12.5.2}%
+\contentsline {subsubsection}{Состояние в полярных координатах}{87}{subsubsection*.8}%
+\contentsline {section}{\numberline {12.6}Что можно делать с таким кубитом?}{88}{section.12.6}%
+\contentsline {subsection}{\numberline {12.6.1}Линейные операторы}{88}{subsection.12.6.1}%
+\contentsline {subsection}{\numberline {12.6.2}Унитарность}{88}{subsection.12.6.2}%
+\contentsline {subsection}{\numberline {12.6.3}Обратимость}{88}{subsection.12.6.3}%
+\contentsline {subsection}{\numberline {12.6.4}Пример оператора}{88}{subsection.12.6.4}%
+\contentsline {subsubsection}{Гейт Адамара}{88}{subsubsection*.9}%
+\contentsline {paragraph}{Реализация в Python}{89}{paragraph*.10}%
+\contentsline {paragraph}{Унитарность}{89}{paragraph*.11}%
+\contentsline {paragraph}{Проверка}{89}{paragraph*.12}%
+\contentsline {section}{\numberline {12.7}Измерение}{89}{section.12.7}%
+\contentsline {subsection}{\numberline {12.7.1}Операторы Паули}{90}{subsection.12.7.1}%
+\contentsline {subsection}{\numberline {12.7.2}Собственные значения}{90}{subsection.12.7.2}%
+\contentsline {subsection}{\numberline {12.7.3}Собственные вектора \(\hat {\mitsigma }^z\)}{90}{subsection.12.7.3}%
+\contentsline {subsection}{\numberline {12.7.4}Формальная запись}{91}{subsection.12.7.4}%
+\contentsline {subsection}{\numberline {12.7.5}Другие операторы Паули}{91}{subsection.12.7.5}%
+\contentsline {subsection}{\numberline {12.7.6}Ожидаемое значение при измерении}{92}{subsection.12.7.6}%
+\contentsline {subsection}{\numberline {12.7.7}Вероятности битовых строк}{92}{subsection.12.7.7}%
+\contentsline {subsection}{\numberline {12.7.8}Еще пара слов об измерениях}{93}{subsection.12.7.8}%
+\contentsline {subsubsection}{Измерение как проекция на пространство собственных векторов}{93}{subsubsection*.13}%
+\contentsline {subsubsection}{Правило Борна}{93}{subsubsection*.14}%
+\contentsline {section}{\numberline {12.8}Что мы узнали?}{94}{section.12.8}%
+\contentsline {chapter}{\numberline {13}Квантовые гейты}{95}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Описание лекции}{95}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Введение}{95}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Основные однокубитные гейты}{95}{section.13.3}%
+\contentsline {subsection}{\numberline {13.3.1}T\sphinxhyphen {}гейт}{96}{subsection.13.3.1}%
+\contentsline {subsection}{\numberline {13.3.2}Гейты поворота вокруг оси}{96}{subsection.13.3.2}%
+\contentsline {subsubsection}{Гейт \(\hat {RY}\)}{97}{subsubsection*.15}%
+\contentsline {subsubsection}{Другие гейты вращений}{98}{subsubsection*.16}%
+\contentsline {subsubsection}{Общая форма записи однокубитных гейтов}{99}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {13.3.3}Phase\sphinxhyphen {}shift гейт}{99}{subsection.13.3.3}%
+\contentsline {subsection}{\numberline {13.3.4}Гейты \(\hat {U}_2\) и \(\hat {U}_3\)}{99}{subsection.13.3.4}%
+\contentsline {subsection}{\numberline {13.3.5}Еще пара слов об однокубитных гейтах}{100}{subsection.13.3.5}%
+\contentsline {subsubsection}{Единичный гейт}{100}{subsubsection*.18}%
+\contentsline {section}{\numberline {13.4}Многокубитные состояния и гейты}{101}{section.13.4}%
+\contentsline {subsection}{\numberline {13.4.1}Многокубитные состояния}{101}{subsection.13.4.1}%
+\contentsline {subsection}{\numberline {13.4.2}Многокубитные операторы}{101}{subsection.13.4.2}%
+\contentsline {subsection}{\numberline {13.4.3}Конструирование многокубитных операторов}{101}{subsection.13.4.3}%
+\contentsline {subsection}{\numberline {13.4.4}Наблюдаемые для многокубитных гейтов}{102}{subsection.13.4.4}%
+\contentsline {section}{\numberline {13.5}Основные двухкубитные гейты}{102}{section.13.5}%
+\contentsline {subsection}{\numberline {13.5.1}CNOT (CX)}{102}{subsection.13.5.1}%
+\contentsline {subsection}{\numberline {13.5.2}Гейты CY и CZ}{103}{subsection.13.5.2}%
+\contentsline {subsection}{\numberline {13.5.3}Гейт iSWAP}{103}{subsection.13.5.3}%
+\contentsline {subsection}{\numberline {13.5.4}Гейт fSim}{104}{subsection.13.5.4}%
+\contentsline {section}{\numberline {13.6}Первое знакомство с PennyLane}{104}{section.13.6}%
+\contentsline {subsection}{\numberline {13.6.1}Device}{104}{subsection.13.6.1}%
+\contentsline {subsection}{\numberline {13.6.2}QNode}{104}{subsection.13.6.2}%
+\contentsline {subsubsection}{Сначала на NumPy}{105}{subsubsection*.19}%
+\contentsline {subsubsection}{Теперь через QNode}{105}{subsubsection*.20}%
+\contentsline {section}{\numberline {13.7}Заключение}{105}{section.13.7}%
+\contentsline {section}{\numberline {13.8}Задачи}{105}{section.13.8}%
+\contentsline {chapter}{\numberline {14}Смешанные состояния и матрицы плотности}{107}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Описание лекции}{107}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Смешанные состояния}{107}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Почему нельзя обойтись волновой функцией}{108}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Матрица плотности}{108}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Чистые и смешанные состояния}{110}{section.14.5}%
+\contentsline {subsection}{\numberline {14.5.1}Чистота состояния}{110}{subsection.14.5.1}%
+\contentsline {subsection}{\numberline {14.5.2}Энтропия}{110}{subsection.14.5.2}%
+\contentsline {subsection}{\numberline {14.5.3}Спектральная декомпозиция матрицы плотности}{110}{subsection.14.5.3}%
+\contentsline {section}{\numberline {14.6}Смешанные состояния и запутанность}{111}{section.14.6}%
+\contentsline {subsection}{\numberline {14.6.1}Запутанные и сепарабельные состояния}{112}{subsection.14.6.1}%
+\contentsline {subsection}{\numberline {14.6.2}Разложение Шмидта}{113}{subsection.14.6.2}%
+\contentsline {section}{\numberline {14.7}Описания эволюции смешанного состояния}{114}{section.14.7}%
+\contentsline {subsection}{\numberline {14.7.1}Квантовая динамика}{114}{subsection.14.7.1}%
+\contentsline {subsection}{\numberline {14.7.2}Измерения и томография}{115}{subsection.14.7.2}%
+\contentsline {section}{\numberline {14.8}Что мы узнали?}{116}{section.14.8}%
+\contentsline {part}{VI\hspace {1em}Фреймворки}{117}{part.6}%
+\contentsline {chapter}{\numberline {15}О блоке “Фреймворки”}{119}{chapter.15}%
+\contentsline {chapter}{\numberline {16}Обзор фреймворков для квантовых вычислений}{121}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Квантовые ассемблеры}{121}{section.16.1}%
+\contentsline {subsection}{\numberline {16.1.1}OpenQASM}{121}{subsection.16.1.1}%
+\contentsline {subsection}{\numberline {16.1.2}PyQuil}{122}{subsection.16.1.2}%
+\contentsline {section}{\numberline {16.2}Высокоуровневое программирование}{123}{section.16.2}%
+\contentsline {subsection}{\numberline {16.2.1}Cirq}{123}{subsection.16.2.1}%
+\contentsline {subsection}{\numberline {16.2.2}Q\#}{123}{subsection.16.2.2}%
+\contentsline {subsection}{\numberline {16.2.3}Strawberry\sphinxhyphen {}Fields}{124}{subsection.16.2.3}%
+\contentsline {subsection}{\numberline {16.2.4}Qiskit}{125}{subsection.16.2.4}%
+\contentsline {subsection}{\numberline {16.2.5}Pennylane}{126}{subsection.16.2.5}%
+\contentsline {section}{\numberline {16.3}Заключение}{127}{section.16.3}%
+\contentsline {subsection}{\numberline {16.3.1}Что мы будем использовать в курсе?}{127}{subsection.16.3.1}%
+\contentsline {subsection}{\numberline {16.3.2}Почему Pennylane?}{127}{subsection.16.3.2}%
+\contentsline {chapter}{\numberline {17}PennyLane}{129}{chapter.17}%
+\contentsline {section}{\numberline {17.1}QNode}{129}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Операторы}{131}{section.17.2}%
+\contentsline {section}{\numberline {17.3}QubitUnitary}{132}{section.17.3}%
+\contentsline {chapter}{\numberline {18}Cirq \& TFQ}{135}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Введение}{135}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Работа с кубитами}{135}{section.18.2}%
+\contentsline {subsection}{\numberline {18.2.1}Импорты и схема}{135}{subsection.18.2.1}%
+\contentsline {subsection}{\numberline {18.2.2}Запуск и симуляция}{137}{subsection.18.2.2}%
+\contentsline {section}{\numberline {18.3}Квантовое машинное обучение}{137}{section.18.3}%
+\contentsline {subsection}{\numberline {18.3.1}Импорты}{137}{subsection.18.3.1}%
+\contentsline {subsection}{\numberline {18.3.2}Задача}{137}{subsection.18.3.2}%
+\contentsline {subsection}{\numberline {18.3.3}Кубиты}{138}{subsection.18.3.3}%
+\contentsline {subsection}{\numberline {18.3.4}Входной слой нейронной сети}{138}{subsection.18.3.4}%
+\contentsline {subsection}{\numberline {18.3.5}Слой из параметризованной схемы}{139}{subsection.18.3.5}%
+\contentsline {subsection}{\numberline {18.3.6}Наблюдаемые}{139}{subsection.18.3.6}%
+\contentsline {subsection}{\numberline {18.3.7}Гибридная нейронная сеть}{139}{subsection.18.3.7}%
+\contentsline {subsection}{\numberline {18.3.8}Предсказания со случайной инициализацией}{140}{subsection.18.3.8}%
+\contentsline {subsection}{\numberline {18.3.9}Обучение сети}{140}{subsection.18.3.9}%
+\contentsline {section}{\numberline {18.4}Заключение}{141}{section.18.4}%
+\contentsline {chapter}{\numberline {19}Qiskit}{143}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Кубиты}{143}{section.19.1}%
+\contentsline {subsection}{\numberline {19.1.1}Импорты}{143}{subsection.19.1.1}%
+\contentsline {subsection}{\numberline {19.1.2}Симулятор}{143}{subsection.19.1.2}%
+\contentsline {subsection}{\numberline {19.1.3}Квантовая схема}{144}{subsection.19.1.3}%
+\contentsline {section}{\numberline {19.2}Квантовые гейты}{144}{section.19.2}%
+\contentsline {subsection}{\numberline {19.2.1}Компиляция и запуск схемы}{144}{subsection.19.2.1}%
+\contentsline {section}{\numberline {19.3}Визуализация}{145}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Экосистема Qiskit}{146}{section.19.4}%
+\contentsline {part}{VII\hspace {1em}Базовые квантовые алгоритмы}{147}{part.7}%
+\contentsline {chapter}{\numberline {20}О блоке “Базовые квантовые алгоритмы”}{149}{chapter.20}%
+\contentsline {chapter}{\numberline {21}Обзор квантовых алгоритмов}{151}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Классификация задач по временной сложности}{151}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Наиболее известные квантовые алгоритмы}{152}{section.21.2}%
+\contentsline {subsection}{\numberline {21.2.1}Перспективы квантовых алгоритмов}{153}{subsection.21.2.1}%
+\contentsline {section}{\numberline {21.3}Алгоритмы в нашем курсе}{153}{section.21.3}%
+\contentsline {chapter}{\numberline {22}Алгоритм Дойча}{155}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Алгоритм Дойча в коде}{159}{section.22.1}%
+\contentsline {chapter}{\numberline {23}Квантовая телепортация}{163}{chapter.23}%
+\contentsline {chapter}{\numberline {24}Квантовое сверхплотное кодирование}{167}{chapter.24}%
+\contentsline {chapter}{\numberline {25}Алгоритм Гровера}{171}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Реализация алгоритма Гровера}{177}{section.25.1}%
+\contentsline {section}{\numberline {25.2}Задание}{179}{section.25.2}%
+\contentsline {chapter}{\numberline {26}Алгоритм Саймона}{181}{chapter.26}%
+\contentsline {section}{\numberline {26.1}Задача Саймона}{181}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Описание алгоритма}{181}{section.26.2}%
+\contentsline {section}{\numberline {26.3}Пример}{183}{section.26.3}%
+\contentsline {section}{\numberline {26.4}Приложение}{187}{section.26.4}%
+\contentsline {section}{\numberline {26.5}Ссылки}{189}{section.26.5}%
+\contentsline {part}{VIII\hspace {1em}Железо квантовых компьютеров}{191}{part.8}%
+\contentsline {chapter}{\numberline {27}О блоке “Железо квантовых компьютеров”}{193}{chapter.27}%
+\contentsline {chapter}{\numberline {28}Обзор и классификация физических платформ для квантовых вычислений}{195}{chapter.28}%
+\contentsline {section}{\numberline {28.1}Радиочастотные и оптические кубиты}{195}{section.28.1}%
+\contentsline {section}{\numberline {28.2}Природа степени свободы для кодирования информации}{197}{section.28.2}%
+\contentsline {section}{\numberline {28.3}Способ кодирования информации}{198}{section.28.3}%
+\contentsline {section}{\numberline {28.4}Способ выполнения операций}{199}{section.28.4}%
+\contentsline {section}{\numberline {28.5}Наборы инструкций и универсальность}{200}{section.28.5}%
+\contentsline {section}{\numberline {28.6}Успехи в практической реализации}{201}{section.28.6}%
+\contentsline {chapter}{\numberline {29}Сверхпроводниковые кубиты}{203}{chapter.29}%
+\contentsline {section}{\numberline {29.1}Квантование электрических цепей}{203}{section.29.1}%
+\contentsline {section}{\numberline {29.2}Джозефсоновский контакт}{206}{section.29.2}%
+\contentsline {section}{\numberline {29.3}Трансмон}{207}{section.29.3}%
+\contentsline {section}{\numberline {29.4}Считывание}{209}{section.29.4}%
+\contentsline {section}{\numberline {29.5}Микроволновые однокубитные операции}{210}{section.29.5}%
+\contentsline {section}{\numberline {29.6}Декогеренция в сверхпроводниковых кубитах}{213}{section.29.6}%
+\contentsline {section}{\numberline {29.7}Двухкубитные вентили}{214}{section.29.7}%
+\contentsline {section}{\numberline {29.8}Что почитать для дальнейшего изучения вопроса?}{216}{section.29.8}%
+\contentsline {part}{IX\hspace {1em}Квантовое машинное обучение}{219}{part.9}%
+\contentsline {chapter}{\numberline {30}О блоке “Квантовое машинное обучение”}{221}{chapter.30}%
+\contentsline {chapter}{\numberline {31}О квантовом машинном обучении}{223}{chapter.31}%
+\contentsline {section}{\numberline {31.1}Виды квантового машинного обучения}{223}{section.31.1}%
+\contentsline {section}{\numberline {31.2}Квантовые данные и классический алгоритм}{224}{section.31.2}%
+\contentsline {subsection}{\numberline {31.2.1}NQS}{224}{subsection.31.2.1}%
+\contentsline {subsection}{\numberline {31.2.2}CNN над потенциалами}{225}{subsection.31.2.2}%
+\contentsline {subsection}{\numberline {31.2.3}Решение уравнения Шредингера}{225}{subsection.31.2.3}%
+\contentsline {subsection}{\numberline {31.2.4}RNN для моделирования волновых функций}{226}{subsection.31.2.4}%
+\contentsline {subsection}{\numberline {31.2.5}Квантовая томография}{226}{subsection.31.2.5}%
+\contentsline {subsection}{\numberline {31.2.6}Заключение к подразделу}{226}{subsection.31.2.6}%
+\contentsline {section}{\numberline {31.3}Классические данные и квантовый алгоритм}{229}{section.31.3}%
+\contentsline {subsection}{\numberline {31.3.1}HHL}{229}{subsection.31.3.1}%
+\contentsline {subsection}{\numberline {31.3.2}Quantum k\sphinxhyphen {}NN}{229}{subsection.31.3.2}%
+\contentsline {subsection}{\numberline {31.3.3}Заключение к подразделу}{230}{subsection.31.3.3}%
+\contentsline {section}{\numberline {31.4}Гибридное обучение}{230}{section.31.4}%
+\contentsline {subsection}{\numberline {31.4.1}VQC}{230}{subsection.31.4.1}%
+\contentsline {subsection}{\numberline {31.4.2}Квантовые нейросети}{231}{subsection.31.4.2}%
+\contentsline {subsection}{\numberline {31.4.3}Квантовые ядра}{231}{subsection.31.4.3}%
+\contentsline {subsection}{\numberline {31.4.4}Оптимизация энергии}{232}{subsection.31.4.4}%
+\contentsline {section}{\numberline {31.5}Заключение}{232}{section.31.5}%
+\contentsline {chapter}{\numberline {32}Алгоритм HHL}{233}{chapter.32}%
+\contentsline {section}{\numberline {32.1}Задача}{233}{section.32.1}%
+\contentsline {section}{\numberline {32.2}Реализация HHL}{235}{section.32.2}%
+\contentsline {section}{\numberline {32.3}Пример}{238}{section.32.3}%
+\contentsline {chapter}{\numberline {33}Quantum K\sphinxhyphen {}nearest neighbor}{241}{chapter.33}%
+\contentsline {section}{\numberline {33.1}Введение}{241}{section.33.1}%
+\contentsline {section}{\numberline {33.2}Алгоритм}{242}{section.33.2}%
+\contentsline {part}{X\hspace {1em}Вариационные схемы}{247}{part.10}%
+\contentsline {chapter}{\numberline {34}О блоке “Вариационные схемы”}{249}{chapter.34}%
+\contentsline {chapter}{\numberline {35}Вариационные квантовые схемы}{251}{chapter.35}%
+\contentsline {section}{\numberline {35.1}Описание лекции}{251}{section.35.1}%
+\contentsline {section}{\numberline {35.2}Введение}{251}{section.35.2}%
+\contentsline {section}{\numberline {35.3}Квантово\sphinxhyphen {}классическое обучение}{251}{section.35.3}%
+\contentsline {section}{\numberline {35.4}Вариационные квантовые схемы}{253}{section.35.4}%
+\contentsline {subsection}{\numberline {35.4.1}Аппроксимация матрицы Паули \sphinxstylestrong {X} оператором поворота}{253}{subsection.35.4.1}%
+\contentsline {section}{\numberline {35.5}Кодирование данных в VQC}{254}{section.35.5}%
+\contentsline {subsection}{\numberline {35.5.1}Кодирование поворотами}{254}{subsection.35.5.1}%
+\contentsline {subsection}{\numberline {35.5.2}Важность многокубитных гейтов}{256}{subsection.35.5.2}%
+\contentsline {section}{\numberline {35.6}Что мы узнали из лекции}{257}{section.35.6}%
+\contentsline {part}{XI\hspace {1em}Квантовые градиенты}{259}{part.11}%
+\contentsline {chapter}{\numberline {36}О блоке “Квантовые градиенты”}{261}{chapter.36}%
+\contentsline {chapter}{\numberline {37}Градиенты квантовых схем}{263}{chapter.37}%
+\contentsline {section}{\numberline {37.1}Описание лекции}{263}{section.37.1}%
+\contentsline {section}{\numberline {37.2}Введение}{263}{section.37.2}%
+\contentsline {section}{\numberline {37.3}Задача лекции}{263}{section.37.3}%
+\contentsline {section}{\numberline {37.4}Вариационная схема}{265}{section.37.4}%
+\contentsline {subsection}{\numberline {37.4.1}Кодирование признаков}{265}{subsection.37.4.1}%
+\contentsline {subsection}{\numberline {37.4.2}Параметризованные слои}{265}{subsection.37.4.2}%
+\contentsline {subsection}{\numberline {37.4.3}Все вместе}{266}{subsection.37.4.3}%
+\contentsline {subsection}{\numberline {37.4.4}Функция “скоринга”}{266}{subsection.37.4.4}%
+\contentsline {subsection}{\numberline {37.4.5}Визуализация}{266}{subsection.37.4.5}%
+\contentsline {section}{\numberline {37.5}Функция потерь}{267}{section.37.5}%
+\contentsline {subsection}{\numberline {37.5.1}Квадратичное отклонение}{267}{subsection.37.5.1}%
+\contentsline {subsection}{\numberline {37.5.2}Точность классификации}{267}{subsection.37.5.2}%
+\contentsline {section}{\numberline {37.6}Решение средствами \sphinxstyleliteralintitle {\sphinxupquote {PennyLane}}}{268}{section.37.6}%
+\contentsline {section}{\numberline {37.7}А как оно работает?}{270}{section.37.7}%
+\contentsline {subsection}{\numberline {37.7.1}Метод конечных отрезков}{270}{subsection.37.7.1}%
+\contentsline {subsection}{\numberline {37.7.2}Parameter\sphinxhyphen {}shift rule}{271}{subsection.37.7.2}%
+\contentsline {section}{\numberline {37.8}Что мы узнали?}{272}{section.37.8}%
+\contentsline {chapter}{\numberline {38}Градиенты высших порядков}{273}{chapter.38}%
+\contentsline {section}{\numberline {38.1}План лекции}{273}{section.38.1}%
+\contentsline {section}{\numberline {38.2}Важность гейтов вращений}{273}{section.38.2}%
+\contentsline {section}{\numberline {38.3}Производная от измерения}{273}{section.38.3}%
+\contentsline {section}{\numberline {38.4}Parameter\sphinxhyphen {}shift для гейтов Паули}{275}{section.38.4}%
+\contentsline {section}{\numberline {38.5}Обобщенный parameter\sphinxhyphen {}shift}{275}{section.38.5}%
+\contentsline {section}{\numberline {38.6}Вторая производная и гессиан}{276}{section.38.6}%
+\contentsline {section}{\numberline {38.7}Заключение}{277}{section.38.7}%
+\contentsline {part}{XII\hspace {1em}Квантовый SVM}{279}{part.12}%
+\contentsline {chapter}{\numberline {39}О блоке “Квантовый SVM”}{281}{chapter.39}%
+\contentsline {chapter}{\numberline {40}Квантово\sphinxhyphen {}классический SVM}{283}{chapter.40}%
+\contentsline {section}{\numberline {40.1}Описание лекции}{283}{section.40.1}%
+\contentsline {section}{\numberline {40.2}VQC как ядерная функция}{283}{section.40.2}%
+\contentsline {subsection}{\numberline {40.2.1}Преобразование состояния}{284}{subsection.40.2.1}%
+\contentsline {subsubsection}{Общая схема}{284}{subsubsection*.21}%
+\contentsline {subsubsection}{Выбор операции}{284}{subsubsection*.22}%
+\contentsline {subsubsection}{Feature function}{284}{subsubsection*.23}%
+\contentsline {subsubsection}{Скалярное произведение}{285}{subsubsection*.24}%
+\contentsline {section}{\numberline {40.3}Пример реализации}{285}{section.40.3}%
+\contentsline {subsection}{\numberline {40.3.1}Схема}{285}{subsection.40.3.1}%
+\contentsline {subsection}{\numberline {40.3.2}Гибридный SVM}{287}{subsection.40.3.2}%
+\contentsline {section}{\numberline {40.4}Заключение}{288}{section.40.4}%
+\contentsline {chapter}{\numberline {41}Классический SVM}{289}{chapter.41}%
+\contentsline {section}{\numberline {41.1}Описание лекции}{289}{section.41.1}%
+\contentsline {section}{\numberline {41.2}Линейная классификация}{289}{section.41.2}%
+\contentsline {subsection}{\numberline {41.2.1}Отступ классификации}{292}{subsection.41.2.1}%
+\contentsline {section}{\numberline {41.3}Интуиция метода опорных векторов}{293}{section.41.3}%
+\contentsline {section}{\numberline {41.4}Метод опорных векторов для линейно\sphinxhyphen {}разделимой выборки}{294}{section.41.4}%
+\contentsline {section}{\numberline {41.5}Метод опорных векторов для линейно\sphinxhyphen {}неразделимой выборки}{295}{section.41.5}%
+\contentsline {subsection}{\numberline {41.5.1}Сведение к безусловной задаче оптимизации}{295}{subsection.41.5.1}%
+\contentsline {section}{\numberline {41.6}Решение задачи метода опорных векторов}{297}{section.41.6}%
+\contentsline {section}{\numberline {41.7}Ядерный переход}{298}{section.41.7}%
+\contentsline {section}{\numberline {41.8}Плюсы и минусы SVM}{300}{section.41.8}%
+\contentsline {part}{XIII\hspace {1em}Квантовые нейронные сети}{301}{part.13}%
+\contentsline {chapter}{\numberline {42}О блоке “Квантовые нейронные сети”}{303}{chapter.42}%
+\contentsline {chapter}{\numberline {43}Квантовые нейронные сети}{305}{chapter.43}%
+\contentsline {section}{\numberline {43.1}Описание лекции}{305}{section.43.1}%
+\contentsline {section}{\numberline {43.2}Введение}{305}{section.43.2}%
+\contentsline {section}{\numberline {43.3}Применение}{305}{section.43.3}%
+\contentsline {section}{\numberline {43.4}Архитектура}{307}{section.43.4}%
+\contentsline {section}{\numberline {43.5}Анзац}{307}{section.43.5}%
+\contentsline {section}{\numberline {43.6}Функция потерь}{308}{section.43.6}%
+\contentsline {section}{\numberline {43.7}Сеть от начала до конца}{308}{section.43.7}%
+\contentsline {section}{\numberline {43.8}Что мы узнали из лекции}{309}{section.43.8}%
+\contentsline {chapter}{\numberline {44}Сверточные вариационные квантовые схемы}{311}{chapter.44}%
+\contentsline {section}{\numberline {44.1}Описание лекции}{311}{section.44.1}%
+\contentsline {section}{\numberline {44.2}Сверточные нейронные сети}{311}{section.44.2}%
+\contentsline {section}{\numberline {44.3}Квантовая свертка}{313}{section.44.3}%
+\contentsline {section}{\numberline {44.4}Подготовка модели и данных}{314}{section.44.4}%
+\contentsline {section}{\numberline {44.5}Случайная квантовая цепь}{315}{section.44.5}%
+\contentsline {section}{\numberline {44.6}Реализация квантовой свертки}{315}{section.44.6}%
+\contentsline {section}{\numberline {44.7}Подготовка датасета}{317}{section.44.7}%
+\contentsline {section}{\numberline {44.8}Гибридная квантово\sphinxhyphen {}классическая модель}{319}{section.44.8}%
+\contentsline {section}{\numberline {44.9}Тренировка моделей}{319}{section.44.9}%
+\contentsline {section}{\numberline {44.10}Сравнение результатов}{320}{section.44.10}%
+\contentsline {section}{\numberline {44.11}Замечания}{321}{section.44.11}%
+\contentsline {section}{\numberline {44.12}Что мы узнали из лекции}{321}{section.44.12}%
+\contentsline {part}{XIV\hspace {1em}Проблемы квантового машинного обучения}{323}{part.14}%
+\contentsline {chapter}{\numberline {45}О блоке “Проблемы квантового машинного обучения”}{325}{chapter.45}%
+\contentsline {chapter}{\numberline {46}Квантовая химия. Введение.}{327}{chapter.46}%
+\contentsline {section}{\numberline {46.1}Описание лекции}{327}{section.46.1}%
+\contentsline {section}{\numberline {46.2}Введение}{327}{section.46.2}%
+\contentsline {section}{\numberline {46.3}Атом водорода}{328}{section.46.3}%
+\contentsline {subsection}{\numberline {46.3.1}В чем проблема?}{328}{subsection.46.3.1}%
+\contentsline {subsection}{\numberline {46.3.2}Быстрое и неправильное решение}{329}{subsection.46.3.2}%
+\contentsline {chapter}{\numberline {47}Квантовая химия. Теория самосогласованного поля.}{331}{chapter.47}%
+\contentsline {section}{\numberline {47.1}Описание лекции}{331}{section.47.1}%
+\contentsline {subsection}{\numberline {47.1.1}Введение}{331}{subsection.47.1.1}%
+\contentsline {subsection}{\numberline {47.1.2}Что ищем?}{331}{subsection.47.1.2}%
+\contentsline {subsection}{\numberline {47.1.3}Долгое и правильное решение, часть 1}{332}{subsection.47.1.3}%
+\contentsline {subsection}{\numberline {47.1.4}Про квантовые числа}{332}{subsection.47.1.4}%
+\contentsline {subsection}{\numberline {47.1.5}Долгое и правильное решение, часть 2}{333}{subsection.47.1.5}%
+\contentsline {subsection}{\numberline {47.1.6}От теории к практике}{334}{subsection.47.1.6}%
+\contentsline {section}{\numberline {47.2}Теория самосогласованного поля}{335}{section.47.2}%
+\contentsline {subsection}{\numberline {47.2.1}Атом гелия}{335}{subsection.47.2.1}%
+\contentsline {subsection}{\numberline {47.2.2}Теория самосогласованного поля}{336}{subsection.47.2.2}%
+\contentsline {subsection}{\numberline {47.2.3}SCF в psi4}{338}{subsection.47.2.3}%
+\contentsline {subsection}{\numberline {47.2.4}Атом Гелия (численно)}{339}{subsection.47.2.4}%
+\contentsline {subsection}{\numberline {47.2.5}Молекула водорода}{339}{subsection.47.2.5}%
+\contentsline {subsection}{\numberline {47.2.6}Молекула этилового спирта}{341}{subsection.47.2.6}%
+\contentsline {section}{\numberline {47.3}Что узнали?}{341}{section.47.3}%
+\contentsline {chapter}{\numberline {48}Модель Изинга}{343}{chapter.48}%
+\contentsline {section}{\numberline {48.1}Задача Изинга в одномерном случае}{343}{section.48.1}%
+\contentsline {section}{\numberline {48.2}Задача Изинга как задача о максимальном разрезе в графе}{345}{section.48.2}%
+\contentsline {section}{\numberline {48.3}Модель Изинга на чистом NumPy}{346}{section.48.3}%
+\contentsline {section}{\numberline {48.4}Заключение}{348}{section.48.4}%
+\contentsline {chapter}{\numberline {49}Точное аналитическое решение одномерной модели Изинга. Метод трансфер\sphinxhyphen {}матрицы.}{349}{chapter.49}%
+\contentsline {section}{\numberline {49.1}Модель Изинга}{349}{section.49.1}%
+\contentsline {section}{\numberline {49.2}Матричный подход}{350}{section.49.2}%
+\contentsline {section}{\numberline {49.3}Решение одномерной модели}{353}{section.49.3}%
+\contentsline {section}{\numberline {49.4}Заключение}{354}{section.49.4}%
+\contentsline {chapter}{\numberline {50}Задачи комбинаторной оптимизации}{355}{chapter.50}%
+\contentsline {section}{\numberline {50.1}Задача о максимальном разрезе в графе}{355}{section.50.1}%
+\contentsline {section}{\numberline {50.2}Задача о выделении сообществ в графах}{356}{section.50.2}%
+\contentsline {section}{\numberline {50.3}Задача о Гамильтоновых циклах}{358}{section.50.3}%
+\contentsline {section}{\numberline {50.4}Задача коммивояжера}{360}{section.50.4}%
+\contentsline {section}{\numberline {50.5}Задача о рюкзаке}{360}{section.50.5}%
+\contentsline {section}{\numberline {50.6}Классические алгоритмы}{362}{section.50.6}%
+\contentsline {subsection}{\numberline {50.6.1}Общий вид алгоритма ветвей и границ}{363}{subsection.50.6.1}%
+\contentsline {subsection}{\numberline {50.6.2}Жадные алгоритмы}{363}{subsection.50.6.2}%
+\contentsline {subsection}{\numberline {50.6.3}Метод имитации отжига}{365}{subsection.50.6.3}%
+\contentsline {section}{\numberline {50.7}Заключение}{368}{section.50.7}%
+\contentsline {part}{XV\hspace {1em}От проблем к обучению}{369}{part.15}%
+\contentsline {chapter}{\numberline {51}О блоке “От задач к квантовым алгоритмам”}{371}{chapter.51}%
+\contentsline {chapter}{\numberline {52}Формулировка задач оптимизации в терминах модели Изинга}{373}{chapter.52}%
+\contentsline {section}{\numberline {52.1}QUBO матрица}{373}{section.52.1}%
+\contentsline {section}{\numberline {52.2}QUBO как квантовый гамильтониан}{374}{section.52.2}%
+\contentsline {section}{\numberline {52.3}Поиск основного состояния}{374}{section.52.3}%
+\contentsline {section}{\numberline {52.4}Статья “Ising formulations of many NP problems”}{375}{section.52.4}%
+\contentsline {section}{\numberline {52.5}Задача о максимальном разрезе в графе (повторение)}{375}{section.52.5}%
+\contentsline {subsection}{\numberline {52.5.1}\sphinxstyleliteralintitle {\sphinxupquote {QUBO}} матрица}{375}{subsection.52.5.1}%
+\contentsline {subsection}{\numberline {52.5.2}Гамильтониан Изинга}{376}{subsection.52.5.2}%
+\contentsline {section}{\numberline {52.6}Задача коммивояжера}{376}{section.52.6}%
+\contentsline {section}{\numberline {52.7}Задача о выделении сообществ в графе}{377}{section.52.7}%
+\contentsline {subsection}{\numberline {52.7.1}\(k = 2\) сообществ}{377}{subsection.52.7.1}%
+\contentsline {subsection}{\numberline {52.7.2}Множественные сообщества (\(k > 2\))}{377}{subsection.52.7.2}%
+\contentsline {section}{\numberline {52.8}Заключение}{378}{section.52.8}%
+\contentsline {chapter}{\numberline {53}QUBO\sphinxhyphen {}формулировки для линейной регрессии, SVM и метода k\sphinxhyphen {}средних}{381}{chapter.53}%
+\contentsline {section}{\numberline {53.1}Описание лекции}{381}{section.53.1}%
+\contentsline {section}{\numberline {53.2}Линейная регрессия}{382}{section.53.2}%
+\contentsline {subsection}{\numberline {53.2.1}QUBO\sphinxhyphen {}формулировка}{383}{subsection.53.2.1}%
+\contentsline {subsection}{\numberline {53.2.2}Оценка вычислительной сложности}{384}{subsection.53.2.2}%
+\contentsline {section}{\numberline {53.3}SVM}{384}{section.53.3}%
+\contentsline {subsection}{\numberline {53.3.1}QUBO\sphinxhyphen {}формулировка}{384}{subsection.53.3.1}%
+\contentsline {subsection}{\numberline {53.3.2}Оценка вычислительной сложности}{386}{subsection.53.3.2}%
+\contentsline {section}{\numberline {53.4}Сбалансированная кластеризация методом k\sphinxhyphen {}средних}{387}{section.53.4}%
+\contentsline {subsection}{\numberline {53.4.1}QUBO\sphinxhyphen {}формулировка}{388}{subsection.53.4.1}%
+\contentsline {subsection}{\numberline {53.4.2}Оценка вычислительной сложности}{389}{subsection.53.4.2}%
+\contentsline {section}{\numberline {53.5}Заключение}{389}{section.53.5}%
+\contentsline {chapter}{\numberline {54}Преобразование Жордана\sphinxhyphen {}Вигнера}{391}{chapter.54}%
+\contentsline {section}{\numberline {54.1}Описание лекции}{391}{section.54.1}%
+\contentsline {section}{\numberline {54.2}Введение}{391}{section.54.2}%
+\contentsline {section}{\numberline {54.3}Спины, фермионы и бозоны}{392}{section.54.3}%
+\contentsline {section}{\numberline {54.4}Вторичное квантование}{392}{section.54.4}%
+\contentsline {section}{\numberline {54.5}Переход от спинов к фермионам}{393}{section.54.5}%
+\contentsline {subsection}{\numberline {54.5.1}Пример. Модель Хаббарда}{395}{subsection.54.5.1}%
+\contentsline {chapter}{\numberline {55}Проблема собственных значений}{397}{chapter.55}%
+\contentsline {section}{\numberline {55.1}Введение}{397}{section.55.1}%
+\contentsline {section}{\numberline {55.2}О проблеме (повторение)}{397}{section.55.2}%
+\contentsline {section}{\numberline {55.3}Итеративные алгоритмы}{398}{section.55.3}%
+\contentsline {subsection}{\numberline {55.3.1}Степенной метод}{398}{subsection.55.3.1}%
+\contentsline {subsection}{\numberline {55.3.2}Итерация Арнольди}{399}{subsection.55.3.2}%
+\contentsline {subsection}{\numberline {55.3.3}Алгоритм Ланкзоша}{400}{subsection.55.3.3}%
+\contentsline {section}{\numberline {55.4}Вариационные алгоритмы}{401}{section.55.4}%
+\contentsline {subsection}{\numberline {55.4.1}Вариационный Монте\sphinxhyphen {}Карло}{401}{subsection.55.4.1}%
+\contentsline {subsubsection}{Jastrow Function}{401}{subsubsection*.25}%
+\contentsline {subsubsection}{Hartree\sphinxhyphen {}Fock (SCF)}{402}{subsubsection*.26}%
+\contentsline {subsubsection}{Jastrow Function для спинов}{402}{subsubsection*.27}%
+\contentsline {subsubsection}{Neural Network Quantum States}{404}{subsubsection*.28}%
+\contentsline {subsection}{\numberline {55.4.2}Проблемы с VMC}{406}{subsection.55.4.2}%
+\contentsline {section}{\numberline {55.5}Заключение}{406}{section.55.5}%
+\contentsline {part}{XVI\hspace {1em}VQE}{407}{part.16}%
+\contentsline {chapter}{\numberline {56}О блоке “VQE”}{409}{chapter.56}%
+\contentsline {chapter}{\numberline {57}Variational Quantum Eigensolver}{411}{chapter.57}%
+\contentsline {section}{\numberline {57.1}VQE}{411}{section.57.1}%
+\contentsline {subsection}{\numberline {57.1.1}Собственные значения как результат измерения}{411}{subsection.57.1.1}%
+\contentsline {section}{\numberline {57.2}Интуиция алгоритма}{412}{section.57.2}%
+\contentsline {section}{\numberline {57.3}Пример}{412}{section.57.3}%
+\contentsline {subsection}{\numberline {57.3.1}Ansatz}{413}{subsection.57.3.1}%
+\contentsline {subsection}{\numberline {57.3.2}Обучение}{414}{subsection.57.3.2}%
+\contentsline {section}{\numberline {57.4}Заключение}{415}{section.57.4}%
+\contentsline {chapter}{\numberline {58}Практика VQE}{417}{chapter.58}%
+\contentsline {section}{\numberline {58.1}Импорт библиотек}{417}{section.58.1}%
+\contentsline {section}{\numberline {58.2}Случайный взвешенный граф}{417}{section.58.2}%
+\contentsline {section}{\numberline {58.3}Решение задачи TSP в NetworkX}{419}{section.58.3}%
+\contentsline {section}{\numberline {58.4}Матрица \(\mitsigma ^z_{mod}\)}{419}{section.58.4}%
+\contentsline {section}{\numberline {58.5}Гамильтониан задачи TSP}{421}{section.58.5}%
+\contentsline {section}{\numberline {58.6}VQE на Pennylane}{424}{section.58.6}%
+\contentsline {section}{\numberline {58.7}Симуляция}{426}{section.58.7}%
+\contentsline {section}{\numberline {58.8}Заключение}{429}{section.58.8}%
+\contentsline {part}{XVII\hspace {1em}D\sphinxhyphen {}Wave – квантовый отжиг и семплирование}{431}{part.17}%
+\contentsline {chapter}{\numberline {59}О блоке “D\sphinxhyphen {}Wave – квантовый отжиг и семплирование”}{433}{chapter.59}%
+\contentsline {chapter}{\numberline {60}D\sphinxhyphen {}Wave: квантовый отжиг, оптимизация и семплинг}{435}{chapter.60}%
+\contentsline {section}{\numberline {60.1}Описание лекции}{435}{section.60.1}%
+\contentsline {section}{\numberline {60.2}Введение в квантовый отжиг}{435}{section.60.2}%
+\contentsline {section}{\numberline {60.3}Задачи оптимизации и семплирования}{435}{section.60.3}%
+\contentsline {section}{\numberline {60.4}Квантовая физика под капотом}{436}{section.60.4}%
+\contentsline {section}{\numberline {60.5}Пример: задача раскраски графа}{438}{section.60.5}%
+\contentsline {section}{\numberline {60.6}Пример: задача электронной структуры молекулы}{442}{section.60.6}%
+\contentsline {chapter}{\numberline {61}Сравнение квантовой и классической имитации отжига}{445}{chapter.61}%
+\contentsline {section}{\numberline {61.1}Описание лекции}{445}{section.61.1}%
+\contentsline {section}{\numberline {61.2}Постановка задачи}{445}{section.61.2}%
+\contentsline {section}{\numberline {61.3}Имитация квантового отжига (QA)}{445}{section.61.3}%
+\contentsline {section}{\numberline {61.4}Классическая имитация отжига (SA)}{446}{section.61.4}%
+\contentsline {section}{\numberline {61.5}Анализ и сравнение результатов}{447}{section.61.5}%
+\contentsline {subsection}{\numberline {61.5.1}Ферромагнитная модель}{448}{subsection.61.5.1}%
+\contentsline {subsection}{\numberline {61.5.2}Фрустрированная модель}{449}{subsection.61.5.2}%
+\contentsline {subsection}{\numberline {61.5.3}Модель со случайными взаимодействиями}{452}{subsection.61.5.3}%
+\contentsline {section}{\numberline {61.6}Заключение}{453}{section.61.6}%
+\contentsline {part}{XVIII\hspace {1em}QAOA}{455}{part.18}%
+\contentsline {chapter}{\numberline {62}О блоке “Quantum Approximate Optimization Algorithm”}{457}{chapter.62}%
+\contentsline {chapter}{\numberline {63}Quantum Approximate Optimization Algorithm}{459}{chapter.63}%
+\contentsline {section}{\numberline {63.1}Введение}{459}{section.63.1}%
+\contentsline {subsection}{\numberline {63.1.1}Квантовый отжиг (повторение)}{459}{subsection.63.1.1}%
+\contentsline {subsection}{\numberline {63.1.2}От железа к симуляции}{461}{subsection.63.1.2}%
+\contentsline {subsection}{\numberline {63.1.3}Trotterization и симуляция аннилера}{461}{subsection.63.1.3}%
+\contentsline {subsection}{\numberline {63.1.4}Оптимизация расписания}{461}{subsection.63.1.4}%
+\contentsline {section}{\numberline {63.2}Пример задачи оптимизации}{462}{section.63.2}%
+\contentsline {section}{\numberline {63.3}Quantum Alternating Operator Ansatz}{465}{section.63.3}%
+\contentsline {part}{XIX\hspace {1em}Перспективы}{467}{part.19}%
+\contentsline {chapter}{\numberline {64}Академия и индустрия}{469}{chapter.64}%
+\contentsline {part}{XX\hspace {1em}О КУРСЕ / ABOUT THE COURSE}{471}{part.20}%
+\contentsline {chapter}{\numberline {65}Список литературы / Bibliography}{473}{chapter.65}%
+\contentsline {chapter}{\numberline {66}Список авторов курса / Course authors}{475}{chapter.66}%
+\contentsline {section}{\numberline {66.1}Создатели курса / Co\sphinxhyphen {}founders}{475}{section.66.1}%
+\contentsline {section}{\numberline {66.2}Основные авторы / The main authors}{475}{section.66.2}%
+\contentsline {section}{\numberline {66.3}Основные ревьюеры / The main reviewers}{476}{section.66.3}%
+\contentsline {section}{\numberline {66.4}Техническая поддержка / Technical support}{476}{section.66.4}%
+\contentsline {section}{\numberline {66.5}Редакторы / Editors}{476}{section.66.5}%
+\contentsline {chapter}{\numberline {67}Глоссарий / Glossary}{477}{chapter.67}%
+\contentsline {section}{\numberline {67.1}Russian}{477}{section.67.1}%
+\contentsline {subsection}{\numberline {67.1.1}А}{477}{subsection.67.1.1}%
+\contentsline {subsection}{\numberline {67.1.2}Б}{477}{subsection.67.1.2}%
+\contentsline {subsection}{\numberline {67.1.3}В}{477}{subsection.67.1.3}%
+\contentsline {subsection}{\numberline {67.1.4}Г}{478}{subsection.67.1.4}%
+\contentsline {subsection}{\numberline {67.1.5}И}{478}{subsection.67.1.5}%
+\contentsline {subsection}{\numberline {67.1.6}К}{478}{subsection.67.1.6}%
+\contentsline {subsection}{\numberline {67.1.7}М}{478}{subsection.67.1.7}%
+\contentsline {subsection}{\numberline {67.1.8}Н}{478}{subsection.67.1.8}%
+\contentsline {subsection}{\numberline {67.1.9}О}{479}{subsection.67.1.9}%
+\contentsline {subsection}{\numberline {67.1.10}П}{479}{subsection.67.1.10}%
+\contentsline {subsection}{\numberline {67.1.11}С}{479}{subsection.67.1.11}%
+\contentsline {subsection}{\numberline {67.1.12}У}{479}{subsection.67.1.12}%
+\contentsline {subsection}{\numberline {67.1.13}Ш}{479}{subsection.67.1.13}%
+\contentsline {subsection}{\numberline {67.1.14}Э}{479}{subsection.67.1.14}%
+\contentsline {section}{\numberline {67.2}English}{480}{section.67.2}%
+\contentsline {subsection}{\numberline {67.2.1}A}{480}{subsection.67.2.1}%
+\contentsline {chapter}{\numberline {68}Благодарности / Acknowledgements}{481}{chapter.68}%
+\contentsline {chapter}{\numberline {69}Рейтинг / Leaderboard}{483}{chapter.69}%
+\contentsline {section}{\numberline {69.1}25.10.2021 – 19.12.2021}{483}{section.69.1}%
+\contentsline {part}{XXI\hspace {1em}Intro}{485}{part.21}%
+\contentsline {chapter}{\numberline {70}About quantum computers, bitcoin, and superiority}{487}{chapter.70}%
+\contentsline {section}{\numberline {70.1}About the lecture}{487}{section.70.1}%
+\contentsline {section}{\numberline {70.2}What the computing is this?}{487}{section.70.2}%
+\contentsline {subsection}{\numberline {70.2.1}Quantity evolution of computers}{487}{subsection.70.2.1}%
+\contentsline {subsection}{\numberline {70.2.2}Quality evolution of computers}{489}{subsection.70.2.2}%
+\contentsline {subsection}{\numberline {70.2.3}The idea of quantum computers}{489}{subsection.70.2.3}%
+\contentsline {subsection}{\numberline {70.2.4}What computer is this?}{490}{subsection.70.2.4}%
+\contentsline {section}{\numberline {70.3}Why do we need it?}{490}{section.70.3}%
+\contentsline {subsection}{\numberline {70.3.1}Factorization problem}{490}{subsection.70.3.1}%
+\contentsline {subsection}{\numberline {70.3.2}Combinatorial and NP\sphinxhyphen {}hard problems}{491}{subsection.70.3.2}%
+\contentsline {subsection}{\numberline {70.3.3}Quantum mechanics simulation}{492}{subsection.70.3.3}%
+\contentsline {subsection}{\numberline {70.3.4}Machine Learning and Artificial Intelligence}{493}{subsection.70.3.4}%
+\contentsline {section}{\numberline {70.4}When will bitcoin be cracked?}{493}{section.70.4}%
+\contentsline {subsection}{\numberline {70.4.1}How many qubits are needed for different tasks?}{493}{subsection.70.4.1}%
+\contentsline {subsection}{\numberline {70.4.2}Logical vs Physical Qubits}{494}{subsection.70.4.2}%
+\contentsline {subsection}{\numberline {70.4.3}How many qubits are there today?}{494}{subsection.70.4.3}%
+\contentsline {subsection}{\numberline {70.4.4}What plans do the leading players in this market have?}{494}{subsection.70.4.4}%
+\contentsline {section}{\numberline {70.5}On Quantum Superiority}{496}{section.70.5}%
+\contentsline {subsection}{\numberline {70.5.1}The concept of quantum superiority}{496}{subsection.70.5.1}%
+\contentsline {subsection}{\numberline {70.5.2}Timeline of events}{497}{subsection.70.5.2}%
+\contentsline {section}{\numberline {70.6}What does it even look like? And how much does it cost?}{497}{section.70.6}%
+\contentsline {section}{\numberline {70.7}Conclusion}{497}{section.70.7}%
+\contentsline {chapter}{\numberline {71}Prerequisite}{499}{chapter.71}%
+\contentsline {section}{\numberline {71.1}Python, Poetry and development environment}{499}{section.71.1}%
+\contentsline {section}{\numberline {71.2}Linear algebra and \sphinxstyleliteralintitle {\sphinxupquote {Numpy}}}{500}{section.71.2}%
+\contentsline {section}{\numberline {71.3}Machime Learning}{500}{section.71.3}%
+\contentsline {part}{XXII\hspace {1em}Linear Algebra and Numpy}{501}{part.22}%
+\contentsline {chapter}{\numberline {72}About “Linear Algebra and Numpy”}{503}{chapter.72}%
+\contentsline {chapter}{\numberline {73}Vectors}{505}{chapter.73}%
+\contentsline {section}{\numberline {73.1}Definition}{505}{section.73.1}%
+\contentsline {section}{\numberline {73.2}Vector operations}{506}{section.73.2}%
+\contentsline {section}{\numberline {73.3}The norm (length) of a vector}{506}{section.73.3}%
+\contentsline {section}{\numberline {73.4}Scalar product}{506}{section.73.4}%
+\contentsline {section}{\numberline {73.5}Linear independence}{507}{section.73.5}%
+\contentsline {section}{\numberline {73.6}Basis}{507}{section.73.6}%
+\contentsline {section}{\numberline {73.7}What did we learn?}{508}{section.73.7}%
+\contentsline {chapter}{Bibliography}{509}{chapter*.65}%
