@@ -61,37 +61,32 @@ jobs:
 
     steps:
 
-      - name: checkout to build branch
+      - name: checkout code
         uses: actions/checkout@v3
 
-      - name: install imagemagick
-        run: |
-          sudo apt install -y imagemagick
-
-      - name: set up poetry
-        uses: snok/install-poetry@v1
-        with:
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-          installer-parallel: true
-
-      - name: set up python
+      - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.8
-          cache: 'poetry'
+          python-version: '3.10'
+          cache: 'pip'
 
-      - name: install dependencies
+      - name: caching
+        uses: actions/cache@v3
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+
+      - name: install deps
         run: |
-          poetry install --no-interaction --no-root
+          pip install -r requirements.txt
 
       - name: build the book
         id: build_book
         env:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
-          poetry run jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
-          poetry run jupyter-book build ./qmlcourse
+          jupyter-book toc migrate ./qmlcourse/_toc.yml -o ./qmlcourse/_toc.yml
+          jupyter-book build ./qmlcourse
 
       - name: update publish dir to build branch
         uses: peaceiris/actions-gh-pages@v3.9.2
@@ -107,7 +102,7 @@ jobs:
           DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
         run: |
           sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
-          poetry run jupyter-book build ./qmlcourse --builder latex
+          jupyter-book build ./qmlcourse --builder latex
 
       - name: create pdf book
         if: github.event.inputs.build_pdf == 'yes'
@@ -124,3 +119,4 @@ jobs:
           publish_dir: ./qmlcourse/_build/latex/
           destination_dir: ./latex/
           publish_branch: ${{ env.PUBLISH_BRANCH }}
+          
