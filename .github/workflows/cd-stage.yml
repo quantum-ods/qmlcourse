@@ -78,6 +78,7 @@ jobs:
 
       - name: install deps
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: build the book
@@ -119,4 +120,3 @@ jobs:
           publish_dir: ./qmlcourse/_build/latex/
           destination_dir: ./latex/
           publish_branch: ${{ env.PUBLISH_BRANCH }}
-          
