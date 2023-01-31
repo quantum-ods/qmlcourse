@@ -19,6 +19,7 @@ netket==3.5
 sphinx-sitemap==2.4.0
 sphinx-jupyterbook-latex==0.4.6
 tensorflow==2.9.3
-tensorflow-quantum
+tensorflow-quantum==0.7.2
+tfq-nightly==0.7.2.dev20230131
 Jinja2==3.0.3
 future==0.18.3
