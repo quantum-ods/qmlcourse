@@ -18,7 +18,7 @@ sympy==1.8
 netket==3.5
 sphinx-sitemap==2.4.0
 sphinx-jupyterbook-latex==0.4.6
-tensorflow==2.8.4
+tensorflow==2.9.3
 tensorflow-quantum==0.7.2
 Jinja2==3.0.3
 future==0.18.3

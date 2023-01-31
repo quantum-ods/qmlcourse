@@ -53,7 +53,7 @@ jobs:
 
   build-and-deploy-book:
     needs: [generate-plantuml-diagrams, create-folder-for-latex]
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     timeout-minutes: 24
     environment:
       name: qmlc-web-page-stage
