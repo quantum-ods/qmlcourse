@@ -70,12 +70,6 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
-      - name: caching
-        uses: actions/cache@v3
-        with:
-          key: ${{ github.ref }}
-          path: .cache
-
       - name: install deps
         run: |
           pip install --upgrade pip
