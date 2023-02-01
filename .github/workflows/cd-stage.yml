@@ -54,7 +54,7 @@ jobs:
   build-and-deploy-book:
     needs: [generate-plantuml-diagrams, create-folder-for-latex]
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 10000
     environment:
       name: qmlc-web-page-stage
       url: https://qmlc-web-page-stage.netlify.app
