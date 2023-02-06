@@ -4993,14 +4993,14 @@ test = ["asv", "gmpy2", "mpmath", "pytest", "pytest-cov", "pytest-xdist", "sciki
 
 [[package]]
 name = "scp"
-version = "0.14.4"
+version = "0.14.5"
 description = "scp module for paramiko"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "scp-0.14.4-py2.py3-none-any.whl", hash = "sha256:29ddaafbfba60793a8a779694c97d8c150d365668a4ef67616c515b80a69ef2f"},
-    {file = "scp-0.14.4.tar.gz", hash = "sha256:54699b92cb68ae34b5928c48a888eab9722a212502cba89aa795bd56597505bd"},
+    {file = "scp-0.14.5-py2.py3-none-any.whl", hash = "sha256:d224535dd8ed00294f52b0e0e18fde7a6fb7a3d06b97ede9e3f750fa7bf75c09"},
+    {file = "scp-0.14.5.tar.gz", hash = "sha256:64f0015899b3d212cb8088e7d40ebaf0686889ff0e243d5c1242efe8b50f053e"},
 ]
 
 [package.dependencies]
@@ -6305,4 +6305,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<=3.9"
-content-hash = "322a92b85a5f2dcaeb74169c28e0a8930f5696217924b15a7305731f213c6019"
+content-hash = "f72f3bf1e675d7c5f12ecb4d6732bd4e9feea89db4c14c54296ff0254e41e9f1"
