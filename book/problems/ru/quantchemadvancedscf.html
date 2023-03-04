@@ -1314,9 +1314,9 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <p>В этой лекции воспользуемся Python-пакетом <a class="reference external" href="https://pyscf.org/"><code class="docutils literal notranslate"><span class="pre">pyscf</span></code></a>, который реализует алгоритмы квантовой химии с верхнеуровневым API на Python.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Другим известным Python-пакетом с численными алгоритмами квантовой химии является <a class="reference external" href="https://psicode.org/posts/psi4education_setup/"><code class="docutils literal notranslate"><span class="pre">psi4</span></code></a>. Однако он имеет ряд сложностей с установкой, поэтому интерактивные ячейки в этой лекции будут приведены на <code class="docutils literal notranslate"><span class="pre">pyscf</span></code>, а код на <code class="docutils literal notranslate"><span class="pre">psi4</span></code> будет приведен как альтернатива. Библиотека <code class="docutils literal notranslate"><span class="pre">psi4</span></code> не устанавливается вместе с данной книгой и, если вы хотите попробовать ее, то рекомендуется создать новое виртуальное окружение (подробнее о виртуальных окружениях было в вводных главах про <code class="docutils literal notranslate"><span class="pre">Python</span></code>).</p>
+<p>Другим известным Python-пакетом с численными алгоритмами квантовой химии является <a class="reference external" href="https://psicode.org/posts/psi4education_setup/"><code class="docutils literal notranslate"><span class="pre">psi4</span></code></a>. Однако он имеет ряд сложностей с установкой, поэтому интерактивные ячейки в этой лекции будут приведены на <code class="docutils literal notranslate"><span class="pre">pyscf</span></code>, а код на <code class="docutils literal notranslate"><span class="pre">psi4</span></code> будет приведен как альтернатива. Библиотека <code class="docutils literal notranslate"><span class="pre">psi4</span></code> не устанавливается вместе с данной книгой и, если хотите попробовать ее, то рекомендуется создать новое виртуальное окружение (подробнее о виртуальных окружениях было в вводных главах про <code class="docutils literal notranslate"><span class="pre">Python</span></code>).</p>
 </div>
-<p>Давайте посчитаем c помощью <code class="docutils literal notranslate"><span class="pre">pyscf</span></code> энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, “поверив на слово”. Их смысл будет объяснен в дальнейшем.</p>
+<p>Посчитаем c помощью <code class="docutils literal notranslate"><span class="pre">pyscf</span></code> энергию основного состояния атома водорода. Некоторые параметры сейчас придется использовать, “поверив на слово”. Их смысл будет объяснен в дальнейшем.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
@@ -1331,7 +1331,7 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyscf.gto.mole.Mole at 0x7fb4fcd4d940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyscf.gto.mole.Mole at 0x7effc4059c10&gt;
 </pre></div>
 </div>
 </div>
@@ -1339,10 +1339,11 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 <p>Задали атом водорода, по умолчанию атом помещается в начало координат. Можно заметить параметр <code class="docutils literal notranslate"><span class="pre">basis=&quot;STO-3G&quot;</span></code> в задании атома. Тут уже поинтереснее – объяснение этих параметров пока отложим и вернемся после объяснения теории. В целом они определяют, каким именно методом и в каком базисе нужно численно решить уравнение Шредингера.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">ROHF</span><span class="p">(</span><span class="n">h_atom</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">physical_constants</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">ROHF</span><span class="p">(</span><span class="n">h_atom</span><span class="p">)</span>
 <span class="n">e_in_ht</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">physical_constants</span>
 <span class="n">h2ev</span> <span class="o">=</span> <span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;hartree-electron volt relationship&quot;</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">e_in_ev</span><span class="p">(</span><span class="n">energy_in_ht</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -1502,8 +1503,8 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 <p>Но что тут происходит, пока по-прежнему неясно.</p>
-<p>Начнем с параметра <code class="docutils literal notranslate"><span class="pre">basis</span></code>. <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets"><code class="docutils literal notranslate"><span class="pre">STO-3G</span></code></a> – не стандарт связи, а <strong>S</strong>later <strong>T</strong>ype <strong>O</strong>rbital с <strong>3</strong> <strong>Г</strong>ауссианами в базисном наборе, то есть базис на основе детерминанта Слетера. В описании метода SCF мы собирались начинать итерации с водородоподобных волновых функций, но так как весь метод является аппроксимирующим, нам никто не мешает выбрать другие волновые функции, если результаты лучше согласуются с экспериментом. Выбор базиса может существенно влиять на результат вычислений и современные базисы сложнее, чем Слетеровский детерминант – он просто один из первых и наиболее популярных.</p>
-<p>Параметр <code class="docutils literal notranslate"><span class="pre">spin=1</span></code> задает общий спиновый момент атома. Это очень важно, так как любые ограничения улучшают сходимость метода <strong>SCF</strong>. Ну а когда мы пишем <code class="docutils literal notranslate"><span class="pre">scf.ROHF</span></code>, то мы, в данном случае, используем <a class="reference external" href="https://en.wikipedia.org/wiki/Restricted_open-shell_Hartree%E2%80%93Fock">Restricted Open Shell Hartree-Fock</a>, так как у атома водорода только один электрон и его оболочка не заполнена (на уровне энергии <span class="math notranslate nohighlight">\(n = 1\)</span> для этого нужно 2 электрона).</p>
+<p>Начнем с параметра <code class="docutils literal notranslate"><span class="pre">basis</span></code>. <a class="reference external" href="https://en.wikipedia.org/wiki/STO-nG_basis_sets"><code class="docutils literal notranslate"><span class="pre">STO-3G</span></code></a> – не стандарт связи, а <strong>S</strong>later <strong>T</strong>ype <strong>O</strong>rbital с <strong>3</strong> <strong>Г</strong>ауссианами в базисном наборе, то есть базис на основе детерминанта Слетера. В описании метода SCF собирались начинать итерации с водородоподобных волновых функций, но так как весь метод является аппроксимирующим, никто не мешает выбрать другие волновые функции, если результаты лучше согласуются с экспериментом. Выбор базиса может существенно влиять на результат вычислений и современные базисы сложнее, чем Слетеровский детерминант – он просто один из первых и наиболее популярных.</p>
+<p>Параметр <code class="docutils literal notranslate"><span class="pre">spin=1</span></code> задает общий спиновый момент атома. Это очень важно, так как любые ограничения улучшают сходимость метода <strong>SCF</strong>. Ну а когда пишем <code class="docutils literal notranslate"><span class="pre">scf.ROHF</span></code>, то (в это случае) используем <a class="reference external" href="https://en.wikipedia.org/wiki/Restricted_open-shell_Hartree%E2%80%93Fock">Restricted Open Shell Hartree-Fock</a>, так как у атома водорода только один электрон и его оболочка не заполнена (на уровне энергии <span class="math notranslate nohighlight">\(n = 1\)</span> для этого нужно 2 электрона).</p>
 <p>Повторим вычисления, например, с более “современным” базисом.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1530,10 +1531,10 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 <p>Та-дам! Используя более прокачанные базисы, получили правильный ответ.</p>
-<p>Давайте посмотрим, что еще можно сделать с помощью self-consistent field.</p>
+<p>Посмотрим, что еще можно сделать с помощью self-consistent field.</p>
 <section id="scf-psi4">
 <h4>SCF с использованием <code class="docutils literal notranslate"><span class="pre">psi4</span></code><a class="headerlink" href="#scf-psi4" title="Permalink to this headline">#</a></h4>
-<p>Давайте используем более “модный” базис в <code class="docutils literal notranslate"><span class="pre">psi4</span></code> и также получим более точное решение для атома водорода:</p>
+<p>Используем более “модный” базис в <code class="docutils literal notranslate"><span class="pre">psi4</span></code> и также получим более точное решение для атома водорода:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
 
 <span class="n">h_atom</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>
@@ -1699,7 +1700,9 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
  Atom        New coordinates             dX        dY        dZ
    H   0.000000   0.000000   0.000000    0.000000  0.000000  0.000000
    H   0.000000   0.000000   1.500000    0.000000  0.000000  0.000000
-converged SCF energy = -0.910873554594387
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -0.910873554594387
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
@@ -1933,19 +1936,17 @@ Initial guess density matrix may have large error.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 10
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    H   0.000000   0.000000   0.393888    0.000000  0.000000  0.000199
    H   0.000000   0.000000   1.106112    0.000000  0.000000 -0.000199
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -1.11750588508088
+converged SCF energy = -1.11750588508088
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
@@ -1958,9 +1959,6 @@ Initial guess density matrix may have large error.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -1.11750588508088
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hydrogen molecule, incorrect ground state energy: -24.78613211532389 eV
