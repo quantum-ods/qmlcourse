@@ -189,10 +189,11 @@ h_atom.build(
 Задали атом водорода, по умолчанию атом помещается в начало координат. Можно заметить параметр `basis="STO-3G"` в задании атома. Тут уже поинтереснее -- объяснение этих параметров пока отложим и вернемся после объяснения теории. В целом они определяют, каким именно методом и в каком базисе нужно численно решить уравнение Шредингера.
 
 ```{code-cell} ipython3
+from scipy.constants import physical_constants
+
 mf = scf.ROHF(h_atom)
 e_in_ht = mf.kernel()
 
-from scipy.constants import physical_constants
 h2ev = physical_constants["hartree-electron volt relationship"]
 
 def e_in_ev(energy_in_ht: float) -> float:
