@@ -384,7 +384,7 @@ print(f"Better hydrogen ground state energy: {e_in_ev(e_in_ht)} eV")
 
 Та-дам! Используя более прокачанные базисы, получили правильный ответ.
 
-Давайте посмотрим, что еще можно сделать с помощью self-consistent field.
+Посмотрим, что еще можно сделать с помощью self-consistent field.
 
 #### SCF с использованием `psi4`
 
