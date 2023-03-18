@@ -67,21 +67,25 @@ To join the matrix ODS-community you need to fill the form into the [ods.ai page
 
 ## Similar Projects
 
-- [CERN Introductory Course (adopted version in russian)](https://russol.info/quantum) [RU]
+- [CERN Introductory Course](https://russol.info/quantum) [RU]
 
     The same as above but in russian and better adopted for entry-level poeple. Lectures are splitted to short parts and notes are commented and illustrated.
 
-- [QuantumAlgorithms.org](https://github.com/Scinawa/quantumalgorithms.org) [ENG]
+- [CERN Introductory Course](https://home.cern/news/announcement/computing/online-introductory-lectures-quantum-computing-6-november) [ENG]
 
-    Lecture notes for students about quantum algorithms and quantum machine learning. Compared to this project our lectures are more practice and programming-oriented. In our course, there are more entry-level and sci-pop lectures but in QuantumAlgorithms.org there are more hard math and strong proofs of theorems. Also, we pay less attention to fully-quantum algorithms and ML but pay more attention to the variational and hybrid quantum-classical things.
+    A series of weekly lectures on the basics of quantum computing. The talks focus on the practical aspects of quantum computing and are organised by CERN openlab and the CERN Quantum Technology Initiative. They are given by Elias Fernandez-Combarro Alvarez, an associate professor in the Computer Science Department at the University of Oviedo in Spain since 2009 and a cooperation associate at CERN since earlier this year. Compared to that lectures our course is more practice and programming oriented. Also our course is open source and maintained by community compared to the CERN course which is maintained by the author Dr. Alvarez.
 
 - [Qiskit-textbook](https://github.com/qiskit-community/qiskit-textbook) [ENG]
 
     A textbook about learning quantum computing with qiskit. Compared to this project our course is more about ML, not the quantum protocols and algorithms. Also, we use `PennyLane` as the main quantum framework because it could be used with different backends including `Qiskit` and `CirQ`.
 
-- [CERN Introductory Course](https://home.cern/news/announcement/computing/online-introductory-lectures-quantum-computing-6-november) [ENG]
+- [QuantumAlgorithms.org](https://github.com/Scinawa/quantumalgorithms.org) [ENG]
 
-    A series of weekly lectures on the basics of quantum computing. The talks focus on the practical aspects of quantum computing and are organised by CERN openlab and the CERN Quantum Technology Initiative. They are given by Elias Fernandez-Combarro Alvarez, an associate professor in the Computer Science Department at the University of Oviedo in Spain since 2009 and a cooperation associate at CERN since earlier this year. Compared to that lectures our course is more practice and programming oriented. Also our course is open source and maintained by community compared to the CERN course which is maintained by the author Dr. Alvarez.
+    Lecture notes for students about quantum algorithms and quantum machine learning. Compared to this project our lectures are more practice and programming-oriented. In our course, there are more entry-level and sci-pop lectures but in QuantumAlgorithms.org there are more hard math and strong proofs of theorems. Also, we pay less attention to fully-quantum algorithms and ML but pay more attention to the variational and hybrid quantum-classical things.
+
+- [Xanadu-codebook](https://github.com/XanaduAI/Xanadu-Quantum-Codebook) [ENG]
+
+    A codebook about learning quantum computing with pennylane. Compared to this project our course is deeper and more about ML, however, codebook is perfect for the fast start to programming with pennylane. So, without a doubt, you could check this codebook before taking this course.
 
 ## Legal Issues
 
