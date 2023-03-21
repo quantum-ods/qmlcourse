@@ -3,7 +3,8 @@ name: cd-prod
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 env:
   PUBLISH_BRANCH: web-page-prod
