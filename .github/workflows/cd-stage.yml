@@ -11,6 +11,9 @@ on:
         options:
           - 'yes'
           - 'no'
+  push:
+    branches:
+      - 'dependabot/**'
 
 env:
   PUBLISH_BRANCH: web-page-stage
