@@ -13,7 +13,7 @@ repos:
           - --line-length=119
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.241
+    rev: v0.0.257
     hooks:
       - id: ruff
         args:
@@ -50,12 +50,12 @@ repos:
           - --markdown-linebreak-ext=md
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.991
+    rev: v1.1.1
     hooks:
       - id: mypy
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.292
+    rev: v1.1.299
     hooks:
       - id: pyright
 
