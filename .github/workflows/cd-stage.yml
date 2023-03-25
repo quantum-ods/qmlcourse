@@ -67,10 +67,6 @@ jobs:
       - name: checkout to build branch
         uses: actions/checkout@v3
 
-      - name: install imagemagick
-        run: |
-          sudo apt install -y imagemagick
-
       - name: set up poetry
         uses: snok/install-poetry@v1
         with:
