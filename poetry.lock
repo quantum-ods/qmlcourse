@@ -4164,29 +4164,31 @@ files = [
 
 [[package]]
 name = "pyscf"
-version = "2.2.0"
+version = "2.2.1"
 description = "PySCF: Python-based Simulations of Chemistry Framework"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "pyscf-2.2.0-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:9fd26fc0db68227772a66d33a434e9ca0cc881794e9ae4faa613434c66d1f32e"},
-    {file = "pyscf-2.2.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:ac5cb784fd5469a24fd81a86646c90d0f03259887025c03099a375b1ecff2915"},
-    {file = "pyscf-2.2.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ca2e47f7fceb408839cba6c457c8f608443cc28d6d08871d5ce786d2146b6b2e"},
-    {file = "pyscf-2.2.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:34fe2c71ab494f2680490f03d42b52eff8b8c031b9460f1a883b863116344ba0"},
-    {file = "pyscf-2.2.0-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:aa481befe7f1025a643e84179b4a74691d73e641b310ddb77bc62da440a7c0fe"},
-    {file = "pyscf-2.2.0-cp36-cp36m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:a67d4ca458c17c0b373b081d645c88ed83a082289b9caf537b4942e41130a3fe"},
-    {file = "pyscf-2.2.0-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:797f8429b5169b53123074e257ecc9a70639259982b88e9c4f941f067994d792"},
-    {file = "pyscf-2.2.0-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:ac9ce9545dab79541d631abd9fbddd2f11637c459870083fd637cff325342291"},
-    {file = "pyscf-2.2.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:f79aa0d15e3d12dc7e68a1898d791f2eccba8e59de3039cb2a7cc82b78728f7a"},
-    {file = "pyscf-2.2.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a9d572582b96f2e97baf6f55eb8621044bfceaa9095f3a44bec287b0c2fd9bf2"},
-    {file = "pyscf-2.2.0-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:8c5b50b98866c5c82f4c2a2ec3d993620e62496de97c6c6cd8283997fff159ae"},
-    {file = "pyscf-2.2.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:ba0d19bd538e908717827be462410d845bcc101505070955cf655cf21f156edb"},
-    {file = "pyscf-2.2.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:bccf9ef810969558de85b2433914e198667daad537ec4db1f36e1dab95c4b58b"},
-    {file = "pyscf-2.2.0-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:7ba4eff03b8b292ff660cfd5a62d9b022cb8fcdca928e55b3d27d2962d0b7faf"},
-    {file = "pyscf-2.2.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:2bdc008a39d71cf8fa246a7635f768287327d3d5ea5c15485d90324801426587"},
-    {file = "pyscf-2.2.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a8f5d08523ba6c0c86c524c47c3daf19abe2c0065fa17ca95e9b3ff5828ef26a"},
-    {file = "pyscf-2.2.0.tar.gz", hash = "sha256:8f65042cf7e86aa5088756988eb90418befcd18f07a6b8c597229a5f2ba4f644"},
+    {file = "pyscf-2.2.1-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:c57c02b01caef2ecb7e173d3d244e8aef88c347baae50bd536e5e2ed344d1b06"},
+    {file = "pyscf-2.2.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:29889ffc3afef89961b6f192a70d5b366c4241534bbf3639419d535a090ba867"},
+    {file = "pyscf-2.2.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b107f618957d9012558a01ebd733a53df845c756e83a33a2140a6f93947d31b2"},
+    {file = "pyscf-2.2.1-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:d91cff5afa1ccc2b56c0ec6d4f5bff73790e4c895bfa614531cc2114d2a1151c"},
+    {file = "pyscf-2.2.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e69e586b06d377c1b37c6e009707cf878dba28d24b511ab04c0a63bdee17f4ab"},
+    {file = "pyscf-2.2.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:940e2e6faf02fa9242cba2be684bc344ba924d7143e17818fbeafc27b6043a0c"},
+    {file = "pyscf-2.2.1-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:580c9a706cb1431b5235319377cfa40a7a1bfb2d38c1c20223bf24a22acdba05"},
+    {file = "pyscf-2.2.1-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d6ffc6903e4ed7f0c88ce77175cd8407bf7bcaefa410d386d7318f3834d6bde3"},
+    {file = "pyscf-2.2.1-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2343d6788f711158f0a2dbfff47c06d85c961c5f8ad591ef7ea80d721ef05e91"},
+    {file = "pyscf-2.2.1-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:28016bbaedc969bac7f241f5eed11de088accf23343d4e349ba3129d15b83454"},
+    {file = "pyscf-2.2.1-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c4b41aae766c4d3136be67a6bbb252cba4c55bb490e6f390d36c94635cd5f89b"},
+    {file = "pyscf-2.2.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:92c632901bac59137e35dff79fc78280e6511ccf5f2b411554cfebe2c639190e"},
+    {file = "pyscf-2.2.1-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:ff96e85977d7bf5017b19c6de37f87129c888e1c64d895be613cc955f7e748ff"},
+    {file = "pyscf-2.2.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:985a94bd34e15ede01a90d5d44d2e0f3c4946603c2ad887559a434c0385a0633"},
+    {file = "pyscf-2.2.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:69f3dc501a71d2b4c0e98ca028b42684e8e16b548ec1e6fe4978fde8c0786f7d"},
+    {file = "pyscf-2.2.1-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:365123d0314257e720c038ec51bd09a87fcfdb76ab5a7612543cb851292a80db"},
+    {file = "pyscf-2.2.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6e7bcdda255b19cf5f95863d1537a98fb6c561927f582dad9aac0203f29f8d5d"},
+    {file = "pyscf-2.2.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ee89c5a9e7e10482da10d15f54801ef4312971f5c9e87361dd2e68eb036714f0"},
+    {file = "pyscf-2.2.1.tar.gz", hash = "sha256:4ff6851351caadc5dfa543b6b2c5fbd926ded87e3cc39faa0054e1e5090ed69a"},
 ]
 
 [package.dependencies]
@@ -4195,10 +4197,10 @@ numpy = ">=1.13,<1.16 || >1.16,<1.17 || >1.17"
 scipy = "<1.5.0 || >1.5.0,<1.5.1 || >1.5.1"
 
 [package.extras]
-all = ["cppe", "geometric (>=0.9.7.2)", "mcfun (>=0.2.1)", "pyberny (>=0.6.2)", "pyqmc", "pyscf-dftd3", "pyscf-doci", "pyscf-icmpspt", "pyscf-properties", "pyscf-qsdopt", "pyscf-semiempirical", "pyscf-shciscf"]
+all = ["basis-set-exchange", "cppe", "geometric (>=0.9.7.2)", "mcfun (>=0.2.1)", "pyberny (>=0.6.2)", "pyqmc", "pyscf-doci", "pyscf-icmpspt", "pyscf-properties", "pyscf-qsdopt", "pyscf-semiempirical", "pyscf-shciscf"]
+bse = ["basis-set-exchange"]
 cornell-shci = ["pyscf-cornell-shci"]
 cppe = ["cppe"]
-dftd3 = ["pyscf-dftd3"]
 doci = ["pyscf-doci"]
 fciqmcscf = ["pyscf-fciqmc"]
 geomopt = ["geometric (>=0.9.7.2)", "pyberny (>=0.6.2)", "pyscf-qsdopt"]
@@ -6373,4 +6375,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<=3.9"
-content-hash = "7957df733b0adbc34c83929094da63212b6526b1cbd1c7e9e6691a6914280a4e"
+content-hash = "afec10a480f439caac286c187cb77835854efff3100ebcc43a2ac23c5ca76811"
