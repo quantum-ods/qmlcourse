@@ -58,6 +58,8 @@ jobs:
     needs: [generate-plantuml-diagrams, create-folder-for-latex]
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: write
     environment:
       name: qmlc-web-page-stage
       url: https://qmlc-web-page-stage.netlify.app
@@ -94,7 +96,7 @@ jobs:
           poetry run jupyter-book build ./qmlcourse
 
       - name: update publish dir to build branch
-        uses: peaceiris/actions-gh-pages@v3.9.2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
@@ -118,7 +120,7 @@ jobs:
 
       - name: send pdf book to build branch
         if: github.event.inputs.build_pdf == 'yes'
-        uses: peaceiris/actions-gh-pages@v3.9.2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
