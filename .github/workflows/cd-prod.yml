@@ -82,7 +82,7 @@ jobs:
           poetry run jupyter-book build ./qmlcourse
 
       - name: update publish dir to build branch
-        uses: peaceiris/actions-gh-pages@v3.9.2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/html/
@@ -102,7 +102,7 @@ jobs:
           xelatex -interaction=nonstopmode qmlcourse.tex
 
       - name: send pdf book to build branch
-        uses: peaceiris/actions-gh-pages@v3.9.2
+        uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./qmlcourse/_build/latex/
