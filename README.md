@@ -22,9 +22,9 @@
   <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml">
     <img alt="badge_dependency_review" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/dependency-review.yml/badge.svg">
   </a>
-  <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml">
+  <!-- <a href="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml">
     <img alt="badge_codeql" src="https://github.com/quantum-ods/qmlcourse/actions/workflows/codeql.yml/badge.svg">
-  </a>  
+  </a>   -->
 </p>
 
 </br>
