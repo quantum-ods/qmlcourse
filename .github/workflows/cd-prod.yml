@@ -88,23 +88,23 @@ jobs:
           publish_dir: ./qmlcourse/_build/html/
           publish_branch: ${{ env.PUBLISH_BRANCH }}
 
-      - name: build latex files
-        env:
-          DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
-        run: |
-          sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
-          poetry run jupyter-book build ./qmlcourse --builder latex
+      # - name: build latex files
+      #   env:
+      #     DWAVE_TOKEN: ${{ secrets.DWAVE_TOKEN }}
+      #   run: |
+      #     sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
+      #     poetry run jupyter-book build ./qmlcourse --builder latex
 
-      - name: create pdf book
-        continue-on-error: true
-        run: |
-          cd ./qmlcourse/_build/latex/
-          xelatex -interaction=nonstopmode qmlcourse.tex
+      # - name: create pdf book
+      #   continue-on-error: true
+      #   run: |
+      #     cd ./qmlcourse/_build/latex/
+      #     xelatex -interaction=nonstopmode qmlcourse.tex
 
-      - name: send pdf book to build branch
-        uses: peaceiris/actions-gh-pages@v3.9.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./qmlcourse/_build/latex/
-          destination_dir: ./latex/
-          publish_branch: ${{ env.PUBLISH_BRANCH }}
+      # - name: send pdf book to build branch
+      #   uses: peaceiris/actions-gh-pages@v3.9.3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./qmlcourse/_build/latex/
+      #     destination_dir: ./latex/
+      #     publish_branch: ${{ env.PUBLISH_BRANCH }}
