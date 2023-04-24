@@ -610,11 +610,6 @@ const thebe_selector_output = ".output, .cell_output"
    Рейтинг / Leaderboard
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/quantum-ods/qmlcourse/raw/web-page-prod/latex/qmlcourse.pdf">
-   Скачать pdf книгу / Download pdf book
-  </a>
- </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -1107,7 +1102,7 @@ A \Psi_i = e_i \Psi_i
 <p>Сгенерируем большую разреженную матрицу.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1128,28 +1123,16 @@ A \Psi_i = e_i \Psi_i
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;10000x10000 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
-	with 7957 stored elements in COOrdinate format&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Матрица размера <span class="math notranslate nohighlight">\(10000 \times 10000\)</span> это большая матрица и работать с ней в “плотном” (dense) представлении было бы очень трудно. Но <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> позволяет найти минимальное собственное значение за доли секунд, используя разреженность матрицы:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">sl</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">sl</span>
 
 <span class="n">max_eigval</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">spmat</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;LR&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">min_eigval</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigs</span><span class="p">(</span><span class="n">spmat</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;SR&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Min E: </span><span class="si">{</span><span class="n">min_eigval</span><span class="si">}</span><span class="se">\n</span><span class="s2">Max E: </span><span class="si">{</span><span class="n">max_eigval</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min E: (-1.1102230246251565e-16+0j)
-Max E: (1.0000000000000007+0j)
 </pre></div>
 </div>
 </div>
@@ -1175,16 +1158,10 @@ Max E: (1.0000000000000007+0j)
 <p>Итерация Ланкзоша (<em>англ.</em> Lanzos) <span id="id9">[<a class="reference internal" href="../../bibliography.html#id46" title="Cornelius Lanczos. An iteration method for the solution of the eigenvalue problem of linear differential and integral operators. Journal of Research of the National Bureau of Standards, 1950.">Lan50</a>]</span> – это модификация итерации Арнольди, которая работает с эрмитовыми матрицами и находит максимально широкое применение в том числе для квантовых гамильтонианов. Этот алгоритм по умолчанию включен в большинство математических пакетов, включая <code class="docutils literal notranslate"><span class="pre">ARPACK</span></code> и, соответственно, <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_eigval</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigsh</span><span class="p">(</span><span class="n">spmat</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;LM&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">max_eigval</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigsh</span><span class="p">(</span><span class="n">spmat</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;LM&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">min_eigval</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">eigsh</span><span class="p">(</span><span class="n">spmat</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s2">&quot;SM&quot;</span><span class="p">,</span> <span class="n">return_eigenvectors</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Min E: </span><span class="si">{</span><span class="n">min_eigval</span><span class="si">}</span><span class="se">\n</span><span class="s2">Max E: </span><span class="si">{</span><span class="n">max_eigval</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Min E: -8.323011768995762e-25
-Max E: 1.0000000000000002
 </pre></div>
 </div>
 </div>
@@ -1265,7 +1242,7 @@ D = \begin{bmatrix}
 <p>где матрица <span class="math notranslate nohighlight">\(W\)</span> будет играть роль параметризации и отражать парные спиновые корреляции. Давайте посмотрим это на практике при помощи библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code> <span id="id14">[<a class="reference internal" href="../../bibliography.html#id24" title="Giuseppe Carleo, Kenny Choo, Damian Hofmann, James ET Smith, Tom Westerhout, Fabien Alet, Emily J Davis, Stavros Efthymiou, Ivan Glasser, Sheng-Hsuan Lin, and others. Netket: a machine learning toolkit for many-body quantum systems. SoftwareX, 10:100311, 2019.">CCH+19</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netket</span> <span class="k">as</span> <span class="nn">nk</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netket</span> <span class="k">as</span> <span class="nn">nk</span>
 </pre></div>
 </div>
 </div>
@@ -1282,7 +1259,7 @@ D = \begin{bmatrix}
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Hypercube</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pbc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Hypercube</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pbc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">hi</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">hilbert</span><span class="o">.</span><span class="n">Spin</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">g</span><span class="o">.</span><span class="n">n_nodes</span><span class="p">)</span>
 <span class="n">op</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">operator</span><span class="o">.</span><span class="n">Ising</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="mf">1.321</span><span class="p">,</span> <span class="n">hilbert</span><span class="o">=</span><span class="n">hi</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">graph</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
 </pre></div>
@@ -1292,7 +1269,7 @@ D = \begin{bmatrix}
 <p>Поскольку модель относительно небольшая по числу частиц, то сразу можем получить точное решение методом Ланкзоша.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exact</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">exact</span><span class="o">.</span><span class="n">lanczos_ed</span><span class="p">(</span><span class="n">op</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exact</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">exact</span><span class="o">.</span><span class="n">lanczos_ed</span><span class="p">(</span><span class="n">op</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1300,27 +1277,11 @@ D = \begin{bmatrix}
 <p>Создадим модель на основе Jastrow и <strong>VMC</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">MetropolisLocal</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">MetropolisLocal</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Jastrow</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">Sgd</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sr</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">SR</span><span class="p">(</span><span class="n">diag_shift</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="n">vmc</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">VMC</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">sampler</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1008</span><span class="p">,</span> <span class="n">preconditioner</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/netket/utils/deprecation.py:126: FutureWarning: 
-
-**DEPRECATION_WARNING:**
-    The `dtype` argument to neural-network layers and models is deprecated
-    throughout NetKet to maintain consistency with new releases of flax.
-    Please use `param_dtype` instead.
-
-    This warning will become an error in a future version of NetKet.
-
-
-  warn_deprecation(_dep_msg)
-WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
 </pre></div>
 </div>
 </div>
@@ -1332,14 +1293,8 @@ WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 
 <p>Запустим оптимизацию:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">RuntimeLog</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">RuntimeLog</span><span class="p">()</span>
 <span class="n">vmc</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span> <span class="n">show_progress</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(RuntimeLog():
-  keys = [&#39;Energy&#39;],)
 </pre></div>
 </div>
 </div>
@@ -1347,7 +1302,7 @@ WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 
 <p>Посмотрим на результат:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">logger</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Energy&quot;</span><span class="p">][</span><span class="s2">&quot;Mean&quot;</span><span class="p">]),</span> <span class="s2">&quot;.-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;VMC mean energy&quot;</span><span class="p">)</span>
@@ -1358,9 +1313,6 @@ WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/eigenvals_17_0.png" src="../../../_images/eigenvals_17_0.png" />
 </div>
 </div>
 </section>
@@ -1376,7 +1328,7 @@ WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 
 <p>Это также легко может быть реализовано с использованием библиотеки <code class="docutils literal notranslate"><span class="pre">NetKet</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">RBM</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">RBM</span><span class="p">()</span>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">Sgd</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">sr</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">SR</span><span class="p">(</span><span class="n">diag_shift</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="n">vmc</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">VMC</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">sampler</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">preconditioner</span><span class="o">=</span><span class="n">sr</span><span class="p">)</span>
@@ -1393,13 +1345,6 @@ WARNING:absl:No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/netket/vqs/mc/mc_state/state.py:59: UserWarning: n_samples=1000 (1000 per MPI rank) does not divide n_chains=16, increased to 1008 (1008 per MPI rank)
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="../../../_images/eigenvals_19_1.png" src="../../../_images/eigenvals_19_1.png" />
 </div>
 </div>
 <p>Преимущества использования нейронной сети трудно показать на таком небольшом примере с моделью Изинга и 10-ю спинами, но они полностью раскрываются, если нужно анализировать более сложные модели.</p>
