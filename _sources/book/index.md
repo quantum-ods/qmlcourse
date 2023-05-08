@@ -24,7 +24,7 @@ Our course is different from other courses on quantum computing because it is:
 - practical, and all explanations are backed up by code;
 - about real methods that will be relevant in the next 10-15 years.
 
-<details><summary>Direct Speech co-founder курса Sinchenko Semyon</summary>
+<details><summary>Direct speech by co-founder of the course Sinchenko Semyon</summary>
 <p>
     I love quantum technologies and am a great enthusiast of them. At the same time my main job is associated with machine learning, so the idea to make a course on QML I hatched a long time ago. In the ODS community I've managed to find like-minded people, and together we have prepared a set of lectures and homework assignments that will lead you through the wonderful world of qubits, gates and quantum neural networks. We really wanted to make the course both simple and clear, but also rigorous and deep from a technical point of view, and hopefully we succeeded. Basically, we will discuss topics that will be promising in the coming years, as well as focus on the practical side of the issue as much as possible. I personally believe that quantum technologies, as they develop, will produce no less of a revolution than, for example, the spread of video-card computing, as well as allow us to approach problems that we did not know how to solve before in a different way. I hope that after taking this course, you will too! In any case, I am convinced that the topic of QML and quantum computing at least worth getting acquainted with it. I hope that you will be interesting!
 </p>
