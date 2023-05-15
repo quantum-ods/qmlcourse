@@ -2985,35 +2985,35 @@ files = [
 
 [[package]]
 name = "netket"
-version = "3.5.1"
-description = "Netket : Machine Learning techniques for many-body quantum systems."
+version = "3.8"
+description = "Netket : Machine Learning toolbox for many-body quantum systems."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "netket-3.5.1-py3-none-any.whl", hash = "sha256:85dd9f9cbf730ad253e4ed2522a6d4357cc24de47d931a663beb712ef2980a38"},
-    {file = "netket-3.5.1.tar.gz", hash = "sha256:83ede828468a7299b59d56ea9b7284ac348430b2ad55f0f561dfaff3c18cfdcd"},
+    {file = "netket-3.8-py3-none-any.whl", hash = "sha256:dee23006f0c208f1ee207077f34049e1bf912b9f28700234796c55c82e0e38e3"},
+    {file = "netket-3.8.tar.gz", hash = "sha256:1de025b5193a1e09e92b3f84ef2400d54956b529aac6c52a1ea80cce27785188"},
 ]
 
 [package.dependencies]
-flax = ">=0.5,<0.7"
-igraph = ">=0.9.8,<0.10.0"
-jax = ">=0.3.2,<0.4"
-jaxlib = ">=0.3,<0.4"
-numba = ">=0.52,<0.57"
+flax = ">=0.6,<0.7"
+igraph = ">=0.9.8,<0.11.0"
+jax = ">=0.3.16,<0.5"
+jaxlib = ">=0.3.15,<0.5"
+numba = ">=0.52,<0.58"
 numba4jax = ">=0.0.10,<0.1"
-numpy = ">=1.19,<2.0"
-optax = ">=0.1.1,<0.2"
-orjson = ">=3.4,<4.0"
-plum-dispatch = ">=1.5.1,<2"
+numpy = ">=1.20,<2.0"
+optax = ">=0.1.3,<0.2"
+orjson = ">=3.4,<4"
+plum-dispatch = ">=1.5.1,<3"
 scipy = ">=1.5.3,<2"
-tqdm = ">=4.60,<5.0"
+tqdm = ">=4.60,<5"
 
 [package.extras]
-all = ["black (==22.3.0)", "coverage (>=5)", "flake8 (==5.0.4)", "h5py (>=3.7.0)", "mpi4jax (>=0.3.1,<0.4.0)", "mpi4py (>=3.0.1,<4)", "networkx (>=2.4,<3.0)", "openfermion (>=1.0.0)", "pre-commit (>=2.7)", "pytest (>=6)", "pytest-cov (>=2.10.1)", "pytest-json-report (>=1.3)", "pytest-xdist[psutil] (>=2)", "tensorboardx (>=2.0.0)"]
-dev = ["black (==22.3.0)", "coverage (>=5)", "flake8 (==5.0.4)", "networkx (>=2.4,<3.0)", "pre-commit (>=2.7)", "pytest (>=6)", "pytest-cov (>=2.10.1)", "pytest-json-report (>=1.3)", "pytest-xdist[psutil] (>=2)"]
+dev = ["black (==22.10.0)", "build", "coverage (>=5)", "flake8 (==5.0.4)", "flake8 (==6.0.0)", "matplotlib (>=3)", "networkx (>=2.4,<4)", "pre-commit (>=2.7)", "pytest (>=6)", "pytest-cov (>=2.10.1)", "pytest-json-report (>=1.3)", "pytest-xdist[psutil] (>=2)", "wheel"]
+docs = ["myst-nb (>=0.17.1,<0.18.0)", "myst-parser (>=0.18.1,<0.19.0)", "nbsphinx (>=0.9.1,<0.10.0)", "sphinx (>=5.3,<7.1)", "sphinx-autodoc-typehints (>=1.22,<2.0)", "sphinx-book-theme (>=1.0.1,<1.1.0)", "sphinxcontrib-fulltoc (>=1.2.0,<1.3.0)", "sphinxcontrib-jsmath (>=1.0.1,<1.1.0)", "sphinxcontrib-napoleon (==0.7)"]
 extra = ["h5py (>=3.7.0)", "openfermion (>=1.0.0)", "tensorboardx (>=2.0.0)"]
-mpi = ["mpi4jax (>=0.3.1,<0.4.0)", "mpi4py (>=3.0.1,<4)"]
+mpi = ["mpi4jax (>=0.3.9,<0.4)", "mpi4py (>=3.0.1,<4)"]
 
 [[package]]
 name = "networkx"
@@ -6375,4 +6375,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<=3.9"
-content-hash = "afec10a480f439caac286c187cb77835854efff3100ebcc43a2ac23c5ca76811"
+content-hash = "5555e1d9248de4f6e60e9bc3120679ae68779f247d70f6f97675b5840d1683f6"
