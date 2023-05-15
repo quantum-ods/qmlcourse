@@ -1028,7 +1028,7 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 <p>Решим простую задачку с тривиальной моделью Изинга, который <a class="reference external" href="../../problems/ru/ising.html#numpy">рассматривали</a> в посвященной этому лекции. Будем использовать тот же код:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
 <span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">sl</span>
 
@@ -1061,7 +1061,7 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 <p>Создадим оператор со значениями <span class="math notranslate nohighlight">\(j=1.0, h=2.0\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">op</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">(</span><span class="n">ising</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">op</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">(</span><span class="n">ising</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1075,7 +1075,7 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 
 <span class="n">N_SPINS</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">N_LAYERS</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1117,6 +1117,15 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/_distutils_hack/__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result for random weights: 1.4700
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id5">
@@ -1124,7 +1133,7 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 <p>Возьмем точное решение из <a class="reference external" href="../../problems/ru/ising.html#numpy">лекции по модели Изинга</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exact</span> <span class="o">=</span> <span class="o">-</span><span class="mf">11.0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exact</span> <span class="o">=</span> <span class="o">-</span><span class="mf">11.0</span>
 </pre></div>
 </div>
 </div>
@@ -1132,8 +1141,8 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 <p>Запустим обучение и посмотрим, как оно сходится:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="n">config</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">figure_format</span> <span class="o">=</span> <span class="s2">&quot;retina&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &quot;retina&quot;
 
 <span class="n">opt</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">MomentumOptimizer</span><span class="p">()</span>
 
@@ -1160,6 +1169,13 @@ e = \bra{\Psi}\hat{A}\ket{\Psi}
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/pennylane/_grad.py:95: UserWarning: Starting with PennyLane v0.21.0, when using Autograd, inputs have to explicitly specify requires_grad=True (or the argnum argument must be passed) in order for trainable parameters to be identified.
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="../../../_images/vqe_9_1.png" src="../../../_images/vqe_9_1.png" />
 </div>
 </div>
 </section>
