@@ -3404,14 +3404,14 @@ files = [
 
 [[package]]
 name = "paramiko"
-version = "3.0.0"
+version = "3.2.0"
 description = "SSH2 protocol library"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "paramiko-3.0.0-py3-none-any.whl", hash = "sha256:6bef55b882c9d130f8015b9a26f4bd93f710e90fe7478b9dcc810304e79b3cd8"},
-    {file = "paramiko-3.0.0.tar.gz", hash = "sha256:fedc9b1dd43bc1d45f67f1ceca10bc336605427a46dcdf8dec6bfea3edf57965"},
+    {file = "paramiko-3.2.0-py3-none-any.whl", hash = "sha256:df0f9dd8903bc50f2e10580af687f3015bf592a377cd438d2ec9546467a14eb8"},
+    {file = "paramiko-3.2.0.tar.gz", hash = "sha256:93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"},
 ]
 
 [package.dependencies]
@@ -6377,4 +6377,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<=3.9"
-content-hash = "5555e1d9248de4f6e60e9bc3120679ae68779f247d70f6f97675b5840d1683f6"
+content-hash = "b14194478da7b6bc4a7dca31e5287c318515f0be306905b989201340fca30d4d"
