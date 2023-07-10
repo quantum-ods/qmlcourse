@@ -3985,30 +3985,27 @@ files = [
 
 [[package]]
 name = "pyscf"
-version = "2.2.1"
+version = "2.3.0"
 description = "PySCF: Python-based Simulations of Chemistry Framework"
 optional = false
 python-versions = "*"
 files = [
-    {file = "pyscf-2.2.1-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:c57c02b01caef2ecb7e173d3d244e8aef88c347baae50bd536e5e2ed344d1b06"},
-    {file = "pyscf-2.2.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:29889ffc3afef89961b6f192a70d5b366c4241534bbf3639419d535a090ba867"},
-    {file = "pyscf-2.2.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b107f618957d9012558a01ebd733a53df845c756e83a33a2140a6f93947d31b2"},
-    {file = "pyscf-2.2.1-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:d91cff5afa1ccc2b56c0ec6d4f5bff73790e4c895bfa614531cc2114d2a1151c"},
-    {file = "pyscf-2.2.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e69e586b06d377c1b37c6e009707cf878dba28d24b511ab04c0a63bdee17f4ab"},
-    {file = "pyscf-2.2.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:940e2e6faf02fa9242cba2be684bc344ba924d7143e17818fbeafc27b6043a0c"},
-    {file = "pyscf-2.2.1-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:580c9a706cb1431b5235319377cfa40a7a1bfb2d38c1c20223bf24a22acdba05"},
-    {file = "pyscf-2.2.1-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d6ffc6903e4ed7f0c88ce77175cd8407bf7bcaefa410d386d7318f3834d6bde3"},
-    {file = "pyscf-2.2.1-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2343d6788f711158f0a2dbfff47c06d85c961c5f8ad591ef7ea80d721ef05e91"},
-    {file = "pyscf-2.2.1-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:28016bbaedc969bac7f241f5eed11de088accf23343d4e349ba3129d15b83454"},
-    {file = "pyscf-2.2.1-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c4b41aae766c4d3136be67a6bbb252cba4c55bb490e6f390d36c94635cd5f89b"},
-    {file = "pyscf-2.2.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:92c632901bac59137e35dff79fc78280e6511ccf5f2b411554cfebe2c639190e"},
-    {file = "pyscf-2.2.1-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:ff96e85977d7bf5017b19c6de37f87129c888e1c64d895be613cc955f7e748ff"},
-    {file = "pyscf-2.2.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:985a94bd34e15ede01a90d5d44d2e0f3c4946603c2ad887559a434c0385a0633"},
-    {file = "pyscf-2.2.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:69f3dc501a71d2b4c0e98ca028b42684e8e16b548ec1e6fe4978fde8c0786f7d"},
-    {file = "pyscf-2.2.1-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:365123d0314257e720c038ec51bd09a87fcfdb76ab5a7612543cb851292a80db"},
-    {file = "pyscf-2.2.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6e7bcdda255b19cf5f95863d1537a98fb6c561927f582dad9aac0203f29f8d5d"},
-    {file = "pyscf-2.2.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ee89c5a9e7e10482da10d15f54801ef4312971f5c9e87361dd2e68eb036714f0"},
-    {file = "pyscf-2.2.1.tar.gz", hash = "sha256:4ff6851351caadc5dfa543b6b2c5fbd926ded87e3cc39faa0054e1e5090ed69a"},
+    {file = "pyscf-2.3.0-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:01c89d2188468671f056cc08af63e41b3d88f2db9b9dfcb23800f2311c487fc2"},
+    {file = "pyscf-2.3.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7983ba4011bf38ae117dbb32ad8cd3a1737f43ee27b925efdc5d2366e7ef10d0"},
+    {file = "pyscf-2.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:85f41ecab75b65daad78a9e0b08c25a9b9f1810f1958a6ffe3c37c75f6d70b3f"},
+    {file = "pyscf-2.3.0-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:161e62dbd82963341d5639d2549fc5cde4eaa6d3e134e4717ffb16bbab1423ac"},
+    {file = "pyscf-2.3.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:910c558999b43ac54677459afe65ae5f2ea1e09d2f694565a759b23ae6757667"},
+    {file = "pyscf-2.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:302c85a942d084303f69b1e1400a30c72a3beba22aed4293bc4494d2f950250f"},
+    {file = "pyscf-2.3.0-cp37-cp37m-macosx_11_0_x86_64.whl", hash = "sha256:a42a1cdef94eafd479b914e8dfc7aa714330f181be61f812b68d81731ce78ba6"},
+    {file = "pyscf-2.3.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:53b3d5343f36ff5366f1e40a3a222976eda2f51bc0d0c33a2ecaafde40a3acb7"},
+    {file = "pyscf-2.3.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b032099e74d3a8a16146f1e2a85d9f959b123ff07187da9e16c2772895289cce"},
+    {file = "pyscf-2.3.0-cp38-cp38-macosx_11_0_x86_64.whl", hash = "sha256:1bf5c709392df24e9ffc80c16b8a7bf9f2d5d68d80121d2851850339fc486611"},
+    {file = "pyscf-2.3.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d94cceab9eb19bc31cd5ca9796e2cfb42547d6ad9b73c5c6f1dba521e438b9b3"},
+    {file = "pyscf-2.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c8d838004bda8cf627aebb80aee0d9d6a0001645565bc3e7be178c248d268b7f"},
+    {file = "pyscf-2.3.0-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:6965d8f639f68cde54a05b2e979ee5c0b4c1cb7759ceb40fdd7f5ce8e9ad6a0f"},
+    {file = "pyscf-2.3.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b5b80891631904bd27b0aeff2d4548bdf90300e4b23dbf49dc8cf7eddbdb4eb8"},
+    {file = "pyscf-2.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d69594345351d859d37cb32f796143c9a6060762d1f0bc987f25215c2225c7e7"},
+    {file = "pyscf-2.3.0.tar.gz", hash = "sha256:71781de62c25924fd4e93ffeb0451ec0d0b3646fe426c75023f4f519f0f35d85"},
 ]
 
 [package.dependencies]
@@ -6106,4 +6103,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<=3.9"
-content-hash = "b14194478da7b6bc4a7dca31e5287c318515f0be306905b989201340fca30d4d"
+content-hash = "75559f3ac8bc63698987483e1927ed92b7812021cb4993d6c088600384440984"
