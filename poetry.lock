@@ -5169,13 +5169,13 @@ testing = ["coverage (<5.0)", "jupyter-book", "pytest (>=5.4,<6.0)", "pytest-cov
 
 [[package]]
 name = "sphinx-sitemap"
-version = "2.4.0"
+version = "2.5.1"
 description = "Sitemap generator for Sphinx"
 optional = false
 python-versions = "*"
 files = [
-    {file = "sphinx-sitemap-2.4.0.tar.gz", hash = "sha256:3e19cff281974c00dfdc72d2d6ac71b737805dbd5666019997a4ac062a6406c0"},
-    {file = "sphinx_sitemap-2.4.0-py3-none-any.whl", hash = "sha256:94a1dab73789558e28e5ccfbc2a758194765707f9eeb06b59725a3bb244f323b"},
+    {file = "sphinx-sitemap-2.5.1.tar.gz", hash = "sha256:984bef068bbdbc26cfae209a8b61392e9681abc9191b477cd30da406e3a60ee5"},
+    {file = "sphinx_sitemap-2.5.1-py3-none-any.whl", hash = "sha256:0b7bce2835f287687f75584d7695e4eb8efaec028e5e7b36e9f791de3c344686"},
 ]
 
 [package.dependencies]
@@ -6117,4 +6117,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<=3.9"
-content-hash = "c7886caf91dfb38d2acf3346a9645894270abfb36e92adf9648d265058002c65"
+content-hash = "93293ff25f9dfba98d0a3b841944eeb2a6c42be6c873023cd053ce7b7d443172"
