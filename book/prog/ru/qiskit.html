@@ -1001,16 +1001,11 @@ title="Print to PDF"
 <h3>Импорты<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">QuantumCircuit</span>
 <span class="kn">from</span> <span class="nn">qiskit.providers.aer</span> <span class="kn">import</span> <span class="n">QasmSimulator</span>
 
 <span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">version</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Qiskit version: </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">get_version_info</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Qiskit version: 0.18.3
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1016,7 @@ title="Print to PDF"
 <p>Для запуска мы будем использовать симулятор квантового компьютера <code class="docutils literal notranslate"><span class="pre">QasmSimulator</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simulator</span> <span class="o">=</span> <span class="n">QasmSimulator</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">simulator</span> <span class="o">=</span> <span class="n">QasmSimulator</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1039,7 +1034,7 @@ title="Print to PDF"
 <p>Ключевым элементом в <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> является квантовая схема – экземпляр класса <code class="docutils literal notranslate"><span class="pre">QuantumCircuit</span></code>. Создадим такую схему:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1052,13 +1047,8 @@ title="Print to PDF"
 <p>Давайте попробуем воспроизвести функцию <code class="docutils literal notranslate"><span class="pre">make_entanglement</span></code> из <a class="reference external" href="../../prog/ru/pennylane.html#qnode">лекции про <code class="docutils literal notranslate"><span class="pre">Pennylane</span></code></a>. Применим <a class="reference external" href="../../qc/ru/qubit.html#id20">гейт Адамара</a> к первому кубиту, а потом применим <a class="reference external" href="../../qc/ru/gates.html#cnot-cx">гейт CNOT (CX)</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">h</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">circuit</span><span class="o">.</span><span class="n">cx</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f4252676e80&gt;
 </pre></div>
 </div>
 </div>
@@ -1066,12 +1056,7 @@ title="Print to PDF"
 <p>И добавим шаг измерений:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;qiskit.circuit.instructionset.InstructionSet at 0x7f42999cfca0&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">measure</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1066,7 @@ title="Print to PDF"
 <p>Квантовые схемы <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> должны быть скомпилированы в инструкции <a class="reference external" href="../../prog/ru/progreview.html#openqasm">квантового ассемблера</a>. Для этого используется функция <code class="docutils literal notranslate"><span class="pre">transpile</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">transpile</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit</span> <span class="kn">import</span> <span class="n">transpile</span>
 
 <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
 <span class="n">job</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
@@ -1090,12 +1075,6 @@ title="Print to PDF"
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of &#39;00&#39;: </span><span class="si">{</span><span class="n">counts</span><span class="p">[</span><span class="s1">&#39;00&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of &#39;11&#39;: </span><span class="si">{</span><span class="n">counts</span><span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of &#39;00&#39;: 512
-Number of &#39;11&#39;: 488
 </pre></div>
 </div>
 </div>
@@ -1108,29 +1087,19 @@ Number of &#39;11&#39;: 488
 <p>В <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> есть очень мощные средства визуализации как результатов измерений, так и самих квантовых схем. Например, мы можем посмотреть результаты измерения <code class="docutils literal notranslate"><span class="pre">counts</span></code> в виде графика:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.visualization</span> <span class="kn">import</span> <span class="n">plot_histogram</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">qiskit.visualization</span> <span class="kn">import</span> <span class="n">plot_histogram</span>
 
 <span class="n">plot_histogram</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/qiskit/visualization/counts_visualization.py:226: MatplotlibDeprecationWarning: The label function was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use Tick.label1 instead.
-  tick.label.set_fontsize(14)
-</pre></div>
-</div>
-<img alt="../../../_images/qiskit_13_1.png" src="../../../_images/qiskit_13_1.png" />
-</div>
 </div>
 <p>А также визуализировать саму квантовую схему:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s2">&quot;mpl&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/qiskit_15_0.png" src="../../../_images/qiskit_15_0.png" />
 </div>
 </div>
 <p>В данном случае мы использовали <code class="docutils literal notranslate"><span class="pre">MatplotlibDrawe</span></code>, который позволяет делать очень красивые и легко читаемые визуализации квантовых схем – это одна из причин почему <code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> часто используют в курсах по основам квантовых вычислений.</p>
