@@ -570,10 +570,10 @@ proj_1 = eigenvectors[1].reshape((-1, 1)).conj() @ eigenvectors[1].reshape((1, -
 ```
 
 Убедимся что это действительно проекция:
+
 ```{code-cell} ipython3
 
 print(np.allclose(proj_0 @ proj_0, proj_0), np.allclose(proj_1 @ proj_1,proj_1))
-```
 
 $$
 \hat{P}_{\ket{\Phi_0}}
