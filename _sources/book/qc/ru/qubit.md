@@ -565,9 +565,16 @@ $$
 super_position = h @ basis_0
 eigenvectors = np.linalg.eig(pauli_z)[1]
 
-proj_0 = eigenvectors[0].reshape((-1, 1)) @ eigenvectors[0].reshape((1, -1))
-proj_1 = eigenvectors[1].reshape((-1, 1)) @ eigenvectors[1].reshape((1, -1))
+proj_0 = eigenvectors[0].reshape((-1, 1)).conj() @ eigenvectors[0].reshape((1, -1))
+proj_1 = eigenvectors[1].reshape((-1, 1)).conj() @ eigenvectors[1].reshape((1, -1))
 ```
+
+Убедимся что это действительно проекция:
+
+```{code-cell} ipython3
+print(np.allclose(proj_0 @ proj_0, proj_0), np.allclose(proj_1 @ proj_1,proj_1))
+```
+
 $$
 \hat{P}_{\ket{\Phi_0}}
 =
@@ -603,6 +610,16 @@ $$
 0 & 1 \\
 \end{bmatrix}
 $$
+
+
+```{note}
+Измерения в квантовой механике не обязательно проективные. В более общем случае рассматриваем набор операторов $\{ E_i \} выполняющий следующие условия:
+
+1. Эрмитовость ($E^\dagger_i = E_i$)
+2. Неотрицательность ($\bra{\psi}  E_i \ket{ \psi }  \geq 0$ для любого $\ket{\Psi}$)
+3. Полнота ($\sum_i E_i = I$).
+Такой набор называется positive operator-valued measure (POVM). Так как оператор $E_i$ неотрицательный и эрмитов, мы можем найти его "квадратный корень": $M_i^\dagger M_i = E_i$, и вероятность определенного результата равна $\bra{\psi}  E_i \ket{ \psi }  $. В случае проективных измерений $M_i = \hat{P}_{\ket{\Phi}}$.
+```
 
 #### Правило Борна
 
