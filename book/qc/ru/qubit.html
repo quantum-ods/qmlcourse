@@ -1904,7 +1904,7 @@ i &amp; 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.+0.j]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.23711432e-17+0.j]]
 </pre></div>
 </div>
 </div>
@@ -1976,8 +1976,21 @@ i &amp; 0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">super_position</span> <span class="o">=</span> <span class="n">h</span> <span class="o">@</span> <span class="n">basis_0</span>
 <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">pauli_z</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="n">proj_0</span> <span class="o">=</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">@</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">proj_1</span> <span class="o">=</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">@</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">proj_0</span> <span class="o">=</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span> <span class="o">@</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">proj_1</span> <span class="o">=</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span> <span class="o">@</span> <span class="n">eigenvectors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Убедимся что это действительно проекция:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">proj_0</span> <span class="o">@</span> <span class="n">proj_0</span><span class="p">,</span> <span class="n">proj_0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">proj_1</span> <span class="o">@</span> <span class="n">proj_1</span><span class="p">,</span><span class="n">proj_1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True True
 </pre></div>
 </div>
 </div>
@@ -2018,6 +2031,16 @@ i &amp; 0
 0 &amp; 1 \\
 \end{bmatrix}
 \end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Измерения в квантовой механике не обязательно проективные. В более общем случае рассматриваем набор операторов <span class="math notranslate nohighlight">\(\{ E_i \}\)</span> выполняющий следующие условия:</p>
+<ol class="simple">
+<li><p>Эрмитовость (<span class="math notranslate nohighlight">\(E^\dagger_i = E_i\)</span>)</p></li>
+<li><p>Неотрицательность (<span class="math notranslate nohighlight">\(\bra{\psi}  E_i \ket{ \psi }  \geq 0\)</span> для любого <span class="math notranslate nohighlight">\(\ket{\Psi}\)</span>)</p></li>
+<li><p>Полнота (<span class="math notranslate nohighlight">\(\sum_i E_i = I\)</span>).</p></li>
+</ol>
+<p>Такой набор называется positive operator-valued measure (POVM). Так как оператор <span class="math notranslate nohighlight">\(E_i\)</span> неотрицательный и эрмитов, мы можем найти его “квадратный корень”: <span class="math notranslate nohighlight">\(M_i^\dagger M_i = E_i\)</span>, и вероятность определенного результата равна <span class="math notranslate nohighlight">\(\bra{\psi}  E_i \ket{ \psi }  \)</span>. В случае проективных измерений <span class="math notranslate nohighlight">\(M_i = \hat{P}_{\ket{\Phi}}\)</span>.</p>
+</div>
 </section>
 <section id="id32">
 <h4>Правило Борна<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h4>
