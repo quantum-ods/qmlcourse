@@ -1036,7 +1036,7 @@ title="Print to PDF"
 <p>Импортируем нужные библиотеки.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dwavebinarycsp</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dwavebinarycsp</span>
 <span class="kn">from</span> <span class="nn">dwave.system</span> <span class="kn">import</span> <span class="n">DWaveSampler</span><span class="p">,</span> <span class="n">EmbeddingComposite</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1095,7 +1095,7 @@ title="Print to PDF"
 </table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">provinces</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="s2">&quot;BC&quot;</span><span class="p">,</span> <span class="s2">&quot;MB&quot;</span><span class="p">,</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span> <span class="s2">&quot;NL&quot;</span><span class="p">,</span> <span class="s2">&quot;NS&quot;</span><span class="p">,</span> <span class="s2">&quot;NT&quot;</span><span class="p">,</span> <span class="s2">&quot;NU&quot;</span><span class="p">,</span> <span class="s2">&quot;ON&quot;</span><span class="p">,</span> <span class="s2">&quot;PE&quot;</span><span class="p">,</span> <span class="s2">&quot;QC&quot;</span><span class="p">,</span> <span class="s2">&quot;SK&quot;</span><span class="p">,</span> <span class="s2">&quot;YT&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">provinces</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="s2">&quot;BC&quot;</span><span class="p">,</span> <span class="s2">&quot;MB&quot;</span><span class="p">,</span> <span class="s2">&quot;NB&quot;</span><span class="p">,</span> <span class="s2">&quot;NL&quot;</span><span class="p">,</span> <span class="s2">&quot;NS&quot;</span><span class="p">,</span> <span class="s2">&quot;NT&quot;</span><span class="p">,</span> <span class="s2">&quot;NU&quot;</span><span class="p">,</span> <span class="s2">&quot;ON&quot;</span><span class="p">,</span> <span class="s2">&quot;PE&quot;</span><span class="p">,</span> <span class="s2">&quot;QC&quot;</span><span class="p">,</span> <span class="s2">&quot;SK&quot;</span><span class="p">,</span> <span class="s2">&quot;YT&quot;</span><span class="p">]</span>
 <span class="n">neighbors</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="s2">&quot;BC&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="s2">&quot;NT&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;AB&quot;</span><span class="p">,</span> <span class="s2">&quot;SK&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;BC&quot;</span><span class="p">,</span> <span class="s2">&quot;NT&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;BC&quot;</span><span class="p">,</span> <span class="s2">&quot;YT&quot;</span><span class="p">),</span>
              <span class="p">(</span><span class="s2">&quot;MB&quot;</span><span class="p">,</span> <span class="s2">&quot;NU&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;MB&quot;</span><span class="p">,</span> <span class="s2">&quot;ON&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;MB&quot;</span><span class="p">,</span> <span class="s2">&quot;SK&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;NB&quot;</span><span class="p">,</span> <span class="s2">&quot;NS&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;NB&quot;</span><span class="p">,</span> <span class="s2">&quot;QC&quot;</span><span class="p">),</span>
              <span class="p">(</span><span class="s2">&quot;NL&quot;</span><span class="p">,</span> <span class="s2">&quot;QC&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;NT&quot;</span><span class="p">,</span> <span class="s2">&quot;NU&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;NT&quot;</span><span class="p">,</span> <span class="s2">&quot;SK&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;NT&quot;</span><span class="p">,</span> <span class="s2">&quot;YT&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;ON&quot;</span><span class="p">,</span> <span class="s2">&quot;QC&quot;</span><span class="p">)]</span>
@@ -1107,7 +1107,7 @@ title="Print to PDF"
 <p>Теперь займемся ограничениями. Следующая функция выражает ограничение того, что соседние вершины в графе не могут быть одного и того же цвета. Область ее определения и значения – булевы переменные.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">not_both_1</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">u</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">not_both_1</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">u</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="n">v</span> <span class="ow">and</span> <span class="n">u</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1116,7 +1116,7 @@ title="Print to PDF"
 <p>Зададим конфигурации цветов.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one_color_configurations</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">one_color_configurations</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)}</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">one_color_configurations</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1129,7 +1129,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csp</span> <span class="o">=</span> <span class="n">dwavebinarycsp</span><span class="o">.</span><span class="n">ConstraintSatisfactionProblem</span><span class="p">(</span><span class="n">dwavebinarycsp</span><span class="o">.</span><span class="n">BINARY</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">csp</span> <span class="o">=</span> <span class="n">dwavebinarycsp</span><span class="o">.</span><span class="n">ConstraintSatisfactionProblem</span><span class="p">(</span><span class="n">dwavebinarycsp</span><span class="o">.</span><span class="n">BINARY</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">province</span> <span class="ow">in</span> <span class="n">provinces</span><span class="p">:</span>
     <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="n">province</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">colors</span><span class="p">)]</span>
@@ -1147,7 +1147,7 @@ title="Print to PDF"
 <p>Конвертируем модель из <code class="docutils literal notranslate"><span class="pre">CSP</span></code> в <code class="docutils literal notranslate"><span class="pre">BQM</span></code> (<code class="docutils literal notranslate"><span class="pre">Binary</span> <span class="pre">Quadratic</span> <span class="pre">Model</span></code>) – бинарную квадратичную модель. Это модель Изинга, в которой значения спинов <span class="math notranslate nohighlight">\(\sigma_i = 0.5 * (x_i + 1)\)</span>. Таким образом, каждая провинция Канады и ее цвет будет кодироваться четырьмя спинами, один из которых направлен вверх (вниз), пока остальные направлены вниз (вверх).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bqm</span> <span class="o">=</span> <span class="n">dwavebinarycsp</span><span class="o">.</span><span class="n">stitch</span><span class="p">(</span><span class="n">csp</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bqm</span> <span class="o">=</span> <span class="n">dwavebinarycsp</span><span class="o">.</span><span class="n">stitch</span><span class="p">(</span><span class="n">csp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1155,7 +1155,7 @@ title="Print to PDF"
 <p>Создадим семплер, передав в него <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">Token</span></code>, создав прежде переменное окружение <code class="docutils literal notranslate"><span class="pre">DWAVE_TOKEN</span></code>, к примеру, в терминале посредством <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">DWAVE_TOKEN=insert_api_token</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">base_sampler</span> <span class="o">=</span> <span class="n">DWaveSampler</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DWAVE_TOKEN&quot;</span><span class="p">])</span>
 </pre></div>
@@ -1165,7 +1165,7 @@ title="Print to PDF"
 <p>Дадим задание квантовому семплеру на <span class="math notranslate nohighlight">\(1000\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">EmbeddingComposite</span><span class="p">(</span><span class="n">base_sampler</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sampler</span> <span class="o">=</span> <span class="n">EmbeddingComposite</span><span class="p">(</span><span class="n">base_sampler</span><span class="p">)</span>
 <span class="n">sampleset</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">bqm</span><span class="p">,</span> <span class="n">num_reads</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Canada Map Coloring&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1174,7 +1174,7 @@ title="Print to PDF"
 <p>Проверим, что было найдено решение задачи,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">sampleset</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">sample</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">sampleset</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">sample</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">csp</span><span class="o">.</span><span class="n">check</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to color map. Try sampling again.&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -1182,16 +1182,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;AB0&#39;: 0, &#39;AB1&#39;: 0, &#39;AB2&#39;: 0, &#39;AB3&#39;: 1, &#39;BC0&#39;: 0, &#39;BC1&#39;: 0, &#39;BC2&#39;: 1, &#39;BC3&#39;: 0, &#39;MB0&#39;: 1, &#39;MB1&#39;: 0, &#39;MB2&#39;: 0, &#39;MB3&#39;: 0, &#39;NB0&#39;: 0, &#39;NB1&#39;: 0, &#39;NB2&#39;: 0, &#39;NB3&#39;: 1, &#39;NL0&#39;: 0, &#39;NL1&#39;: 0, &#39;NL2&#39;: 0, &#39;NL3&#39;: 1, &#39;NS0&#39;: 1, &#39;NS1&#39;: 0, &#39;NS2&#39;: 0, &#39;NS3&#39;: 0, &#39;NT0&#39;: 0, &#39;NT1&#39;: 1, &#39;NT2&#39;: 0, &#39;NT3&#39;: 0, &#39;NU0&#39;: 0, &#39;NU1&#39;: 0, &#39;NU2&#39;: 1, &#39;NU3&#39;: 0, &#39;ON0&#39;: 0, &#39;ON1&#39;: 1, &#39;ON2&#39;: 0, &#39;ON3&#39;: 0, &#39;PE0&#39;: 0, &#39;PE1&#39;: 0, &#39;PE2&#39;: 0, &#39;PE3&#39;: 1, &#39;QC0&#39;: 1, &#39;QC1&#39;: 0, &#39;QC2&#39;: 0, &#39;QC3&#39;: 0, &#39;SK0&#39;: 0, &#39;SK1&#39;: 0, &#39;SK2&#39;: 1, &#39;SK3&#39;: 0, &#39;YT0&#39;: 0, &#39;YT1&#39;: 0, &#39;YT2&#39;: 0, &#39;YT3&#39;: 1}
-</pre></div>
-</div>
-</div>
 </div>
 <p>Мы получили словарь <code class="docutils literal notranslate"><span class="pre">sample</span></code>, который будет выглядеть следующим образом: его ключи будут кодировать провинцию и цвет, а значения – бинарные переменные, означающие раскрашена ли провинция этим цветом. Этот словарь – семпл из состояния, полученного при решении данной задачи методом квантового отжига. Построим визуализацию решения в виде графа с раскрашенными вершинами.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
 
@@ -1212,9 +1207,6 @@ title="Print to PDF"
 <span class="n">plot_map</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">provinces</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/dwave_19_0.png" src="../../../_images/dwave_19_0.png" />
 </div>
 </div>
 <p>После запуска функции <code class="docutils literal notranslate"><span class="pre">plot_map</span></code>, получим изображение графа, в котором вершины будут соответствовать провинциям и цветам, а ребра – границам между провинциями. Вы можете сами убедиться, что ни одна провинция не будет иметь такой же цвет, как и ее сосед. Также отметим, что такая задача может иметь не одно решение, поэтому не нужно ожидать, что граф будет получаться всегда одним и тем же.</p>
