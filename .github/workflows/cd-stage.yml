@@ -27,7 +27,7 @@ jobs:
     steps:
 
       - name: checkout to build branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: generate `**.svg` for `**.plantuml`
         uses: holowinski/plantuml-github-action@main
@@ -46,7 +46,7 @@ jobs:
     steps:
 
       - name: checkout to build branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ env.PUBLISH_BRANCH }}
 
@@ -67,7 +67,7 @@ jobs:
     steps:
 
       - name: checkout to build branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: set up poetry
         uses: snok/install-poetry@v1
