@@ -30,8 +30,8 @@
 </br>
 
 > **Note**
-> * Russian-only
-> * English version translation help tube, visit [issue #399](https://github.com/quantum-ods/qmlcourse/issues/399) & [CONTRIBUTING.md](./CONTRIBUTING.md)
+> * full RUSSIAN lang version
+> * eng version in progress (if u want to help visit [issue #399](https://github.com/quantum-ods/qmlcourse/issues/399) & [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Contributing
 
