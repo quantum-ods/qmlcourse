@@ -31,7 +31,7 @@
 
 > **Note**
 > * full RUSSIAN lang version
-> * eng version in progress (if u want to help visit [issue #399](https://github.com/quantum-ods/qmlcourse/issues/399) & [CONTRIBUTING.md](./CONTRIBUTING.md)
+> * eng version in progress (if u want to help visit [issue #399](https://github.com/quantum-ods/qmlcourse/issues/399) & [contributing file](./CONTRIBUTING.md)
 
 ## Contributing
 
