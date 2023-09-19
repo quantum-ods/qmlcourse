@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: checkout branch for build
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: set up py3.8
         uses: actions/setup-python@v4
