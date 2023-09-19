@@ -1134,20 +1134,20 @@ title="Print to PDF"
 <p>Как мы знаем, результат измерения такой схемы равен 50% для состояния <span class="math notranslate nohighlight">\(\ket{0}\)</span>, то есть если мы будем сэмплировать, то должны получать <span class="math notranslate nohighlight">\(\sim 0.5\)</span>. Проверим это с разным числом сэмплов:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;5 сэмплов: </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">repetitions</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">100 сэмплов: </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">repetitions</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1000 сэмплов: </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span> <span class="n">repetitions</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;5 сэмплов: </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="w"> </span><span class="n">repetitions</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">100 сэмплов: </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="w"> </span><span class="n">repetitions</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1000 сэмплов: </span><span class="si">{</span><span class="n">sim</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">circuit</span><span class="p">,</span><span class="w"> </span><span class="n">repetitions</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 сэмплов: (0, 0)    0.4
 dtype: float64
 
-100 сэмплов: (0, 0)    0.5
+100 сэмплов: (0, 0)    0.44
 dtype: float64
 
-1000 сэмплов: (0, 0)    0.512
+1000 сэмплов: (0, 0)    0.509
 dtype: float64
 </pre></div>
 </div>
@@ -1165,7 +1165,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=0100111110010010110110011
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0, 0)=0110110111011010000110100
 </pre></div>
 </div>
 </div>
@@ -1462,11 +1462,11 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.22 s, sys: 44.6 ms, total: 4.26 s
-Wall time: 3.9 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.63 s, sys: 88.4 ms, total: 4.72 s
+Wall time: 4.33 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7f71d0be0be0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;keras.callbacks.History at 0x7fee5e9574f0&gt;
 </pre></div>
 </div>
 </div>
