@@ -998,59 +998,59 @@ title="Print to PDF"
 <p>В нашем курсе мы в основном будем пользоваться относительно высокоуровневые фреймворки. Однако это не значит, что квантовый программист не имеет возможности программировать на низком уровне. Например, компания <code class="docutils literal notranslate"><span class="pre">IBM</span></code> дает доступ к своему квантовому ассемблеру <a class="reference external" href="https://github.com/QISKit/openqasm">OpenQASM</a> <span id="id3">[<a class="reference internal" href="../../bibliography.html#id57" title="Andrew W. Cross, Lev S. Bishop, John A. Smolin, and Jay M. Gambetta. Open quantum assembly language. 2017. URL: https://arxiv.org/abs/1707.03429, arXiv:1707.03429.">CBSG17</a>]</span>, код на котором выглядит примерно так:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Measuring the relaxation time of a qubit</span>
 <span class="cm"> * This example demonstrates the repeated use of fixed delays.</span>
-<span class="cm">*/</span><span class="w"></span>
-<span class="n">OPENQASM</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span><span class="w"></span>
-<span class="n">include</span><span class="w"> </span><span class="s">&quot;stdgates.inc&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="cm">*/</span>
+<span class="n">OPENQASM</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
+<span class="n">include</span><span class="w"> </span><span class="s">&quot;stdgates.inc&quot;</span><span class="p">;</span>
 
 <span class="n">duration</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1u</span><span class="n">s</span><span class="p">;</span><span class="w">            </span><span class="c1">// time resolution of points taken</span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w">              </span><span class="c1">// number of points taken</span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">shots</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w">             </span><span class="c1">// how many shots per point</span>
 
-<span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">counts0</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">counts0</span><span class="p">;</span>
 <span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="n">counts1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// surviving |1&gt; populations of qubits</span>
 
-<span class="k">extern</span><span class="w"> </span><span class="n">tabulate</span><span class="p">(</span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]);</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="n">tabulate</span><span class="p">(</span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">32</span><span class="p">]);</span>
 
-<span class="n">bit</span><span class="w"> </span><span class="n">c0</span><span class="p">;</span><span class="w"></span>
-<span class="n">bit</span><span class="w"> </span><span class="n">c1</span><span class="p">;</span><span class="w"></span>
+<span class="n">bit</span><span class="w"> </span><span class="n">c0</span><span class="p">;</span>
+<span class="n">bit</span><span class="w"> </span><span class="n">c1</span><span class="p">;</span>
 
-<span class="n">defcalgrammar</span><span class="w"> </span><span class="s">&quot;openpulse&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">defcalgrammar</span><span class="w"> </span><span class="s">&quot;openpulse&quot;</span><span class="p">;</span>
 
 <span class="c1">// define a gate calibration for an X gate on any qubit</span>
-<span class="n">defcal</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">$q</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="n">play</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="n">$q</span><span class="p">),</span><span class="w"> </span><span class="n">gaussian</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">defcal</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">$q</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">play</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="n">$q</span><span class="p">),</span><span class="w"> </span><span class="n">gaussian</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="k">for</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">points</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">shots</span><span class="p">]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">points</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">shots</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">        </span><span class="c1">// start of a basic block</span>
-<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">reset</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span>
 
 <span class="w">        </span><span class="c1">// excite qubits</span>
-<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span>
 
 <span class="w">        </span><span class="c1">// wait for a fixed time indicated by loop counter</span>
-<span class="w">        </span><span class="n">delay</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">stride</span><span class="p">]</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">delay</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">stride</span><span class="p">]</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span>
 
 <span class="w">        </span><span class="c1">// wait for a fixed time indicated by loop counters</span>
-<span class="w">        </span><span class="n">delay</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">durationof</span><span class="p">({</span><span class="n">x</span><span class="w"> </span><span class="n">$1</span><span class="p">;})];</span><span class="w"></span>
+<span class="w">        </span><span class="n">delay</span><span class="p">[</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">durationof</span><span class="p">({</span><span class="n">x</span><span class="w"> </span><span class="n">$1</span><span class="p">;})];</span>
 
 <span class="w">        </span><span class="c1">// read out qubit states</span>
-<span class="w">        </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">c0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="n">$0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="n">$1</span><span class="p">;</span>
 
 <span class="w">        </span><span class="c1">// increment counts memories, if a 1 is seen</span>
-<span class="w">        </span><span class="n">counts0</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">c0</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">counts1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">c1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">counts0</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">c0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">counts1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">c1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// log survival probability curve</span>
-<span class="w">    </span><span class="n">tabulate</span><span class="p">(</span><span class="n">counts0</span><span class="p">,</span><span class="w"> </span><span class="n">shots</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">tabulate</span><span class="p">(</span><span class="n">counts1</span><span class="p">,</span><span class="w"> </span><span class="n">shots</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">tabulate</span><span class="p">(</span><span class="n">counts0</span><span class="p">,</span><span class="w"> </span><span class="n">shots</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tabulate</span><span class="p">(</span><span class="n">counts1</span><span class="p">,</span><span class="w"> </span><span class="n">shots</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Пример этого кода <a class="reference external" href="https://github.com/Qiskit/openqasm/blob/master/examples/t1.qasm">взят</a> из официального репозитория.</p>
@@ -1099,18 +1099,18 @@ title="Print to PDF"
 <h3>Q#<a class="headerlink" href="#q" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Q#</span></code> это полноценный язык квантового программирования от компании <code class="docutils literal notranslate"><span class="pre">Microsoft</span></code>. Этот техногигант также, как и другие, разрабатывает сейчас свои квантовые компьютеры и облачные симуляторы, а также предоставляет облачный доступ к квантовому железу других производителей. Так что программы, написанные на <code class="docutils literal notranslate"><span class="pre">Q#</span></code> можно запускать в облаке <a class="reference external" href="https://azure.microsoft.com/en-us/services/quantum/">Azure Quantum</a>.</p>
 <p>В отличии от большинства фреймворков, которые обычно написаны как библиотека для языка <code class="docutils literal notranslate"><span class="pre">Python</span></code>, <code class="docutils literal notranslate"><span class="pre">Q#</span></code> использует <code class="docutils literal notranslate"><span class="pre">C#</span></code> для запуска и в целом имеет синтаксис, больше похожий на <code class="docutils literal notranslate"><span class="pre">C#</span></code> или <code class="docutils literal notranslate"><span class="pre">Java</span></code>:</p>
-<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">QuantumRNG</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">open</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Intrinsic</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">open</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Measurement</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">open</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Canon</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">QuantumRNG</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">open</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Intrinsic</span><span class="p">;</span>
+<span class="w">    </span><span class="n">open</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Measurement</span><span class="p">;</span>
+<span class="w">    </span><span class="n">open</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Quantum</span><span class="p">.</span><span class="n">Canon</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">@EntryPoint</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="n">operation</span><span class="w"> </span><span class="nf">GenerateRandomBits</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">use</span><span class="w"> </span><span class="n">qubits</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Qubit</span><span class="p">[</span><span class="m">4</span><span class="p">];</span><span class="w"></span>
-<span class="w">        </span><span class="n">ApplyToEach</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">qubits</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">MultiM</span><span class="p">(</span><span class="n">qubits</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">@EntryPoint</span><span class="p">()</span>
+<span class="w">    </span><span class="n">operation</span><span class="w"> </span><span class="nf">GenerateRandomBits</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Result</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">use</span><span class="w"> </span><span class="n">qubits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qubit</span><span class="p">[</span><span class="m">4</span><span class="p">];</span>
+<span class="w">        </span><span class="n">ApplyToEach</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">qubits</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">MultiM</span><span class="p">(</span><span class="n">qubits</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Этот пример взят из <a class="reference external" href="https://docs.microsoft.com/en-us/azure/quantum/quickstart-microsoft-qc?view=qsharp-preview&amp;pivots=platform-ionq">официальной документации</a>.</p>

@@ -1127,7 +1127,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Переводит значения в интервал от -1 до 1&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Переводит значения в интервал от -1 до 1&quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
@@ -1237,14 +1237,14 @@ M_0 = \ket{0, ..., 0}\bra{0, ..., 0}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──U1(M0)──H──╭C──────────╭C──╭C──────────────╭C──H──U1(1)───H──╭┤ Probs 
- 1: ──H──U1(M1)──H──╰X──U1(M2)──╰X──╰X──U1(-0.917)──╰X──H──U1(-1)──H──╰┤ Probs 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──U1(M0)──H──╭C──────────╭C──╭C──────────────╭C──H──U1(-1)──H──╭┤ Probs 
+ 1: ──H──U1(M1)──H──╰X──U1(M2)──╰X──╰X──U1(-0.917)──╰X──H──U1(1)───H──╰┤ Probs 
 M0 =
-[ 0.33333333 -0.33333333]
+[-0.33333333  0.33333333]
 M1 =
-[0.99429657 0.15929841]
+[-0.94925302  0.17691124]
 M2 =
-[1.61820041 2.93108293]
+[1.72862831 2.92233474]
 </pre></div>
 </div>
 </div>
