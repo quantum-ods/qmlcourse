@@ -25,7 +25,7 @@
     - file: book/linalg/ru/matrices.md
       title: 🟦 Матрицы
     - file: book/linalg/ru/numpy.md
-      title: 🟦 Numpy fun
+      title: 🟦 Numpy
 
 - part: Основы машинного обучения
   chapters:
