@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os
+
+base_sampler = DWaveSampler(token=os.environ["DWAVE_TOKEN"])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[7], line 3[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mos[39;00m
+[0;32m----> 3[0m base_sampler [38;5;241m=[39m [43mDWaveSampler[49m[43m([49m[43mtoken[49m[38;5;241;43m=[39;49m[43mos[49m[38;5;241;43m.[39;49m[43menviron[49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43mDWAVE_TOKEN[39;49m[38;5;124;43m"[39;49m[43m][49m[43m)[49m
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/system/samplers/dwave_sampler.py:188[0m, in [0;36mDWaveSampler.__init__[0;34m(self, failover, retry_interval, **config)[0m
+[1;32m    185[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m([38;5;124m"[39m[38;5;124mmapping expected for [39m[38;5;124m'[39m[38;5;124mdefaults[39m[38;5;124m'[39m[38;5;124m"[39m)
+[1;32m    186[0m defaults[38;5;241m.[39mupdate(solver[38;5;241m=[39m[38;5;28mdict[39m(order_by[38;5;241m=[39m[38;5;124m'[39m[38;5;124m-num_active_qubits[39m[38;5;124m'[39m))
+[0;32m--> 188[0m [38;5;28mself[39m[38;5;241m.[39mclient [38;5;241m=[39m [43mClient[49m[38;5;241;43m.[39;49m[43mfrom_config[49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mconfig[49m[43m)[49m
+[1;32m    189[0m [38;5;28mself[39m[38;5;241m.[39msolver [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mclient[38;5;241m.[39mget_solver()
+[1;32m    191[0m [38;5;28mself[39m[38;5;241m.[39mfailover [38;5;241m=[39m failover
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/cloud/client/base.py:374[0m, in [0;36mClient.from_config[0;34m(cls, config_file, profile, client, **kwargs)[0m
+[1;32m    371[0m _client [38;5;241m=[39m config[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mclient[39m[38;5;124m'[39m, [38;5;28;01mNone[39;00m) [38;5;129;01mor[39;00m [38;5;124m'[39m[38;5;124mbase[39m[38;5;124m'[39m
+[1;32m    373[0m logger[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mCreating [39m[38;5;132;01m%s[39;00m[38;5;124m.Client() with: [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, _client, config)
+[0;32m--> 374[0m [38;5;28;01mreturn[39;00m [43m_clients[49m[43m[[49m[43m_client[49m[43m][49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mconfig[49m[43m)[49m
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/cloud/events.py:105[0m, in [0;36mdispatches_events.__call__.<locals>.wrapped[0;34m(*pargs, **kwargs)[0m
+[1;32m    103[0m dispatch_event([38;5;28mself[39m[38;5;241m.[39mbefore_eventname, obj[38;5;241m=[39mobj, args[38;5;241m=[39margs)
+[1;32m    104[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 105[0m     rval [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43mpargs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    106[0m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m exc:
+[1;32m    107[0m     dispatch_event([38;5;28mself[39m[38;5;241m.[39mafter_eventname, obj[38;5;241m=[39mobj, args[38;5;241m=[39margs, exception[38;5;241m=[39mexc)
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/dwave/cloud/client/base.py:477[0m, in [0;36mClient.__init__[0;34m(self, *args, **kwargs)[0m
+[1;32m    475[0m token [38;5;241m=[39m options[[38;5;124m'[39m[38;5;124mtoken[39m[38;5;124m'[39m]
+[1;32m    476[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m token:
+[0;32m--> 477[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mAPI token not defined[39m[38;5;124m"[39m)
+[1;32m    479[0m [38;5;66;03m# parse optional client certificate[39;00m
+[1;32m    480[0m client_cert [38;5;241m=[39m options[[38;5;124m'[39m[38;5;124mclient_cert[39m[38;5;124m'[39m]
+
+[0;31mValueError[0m: API token not defined
+ValueError: API token not defined
+
