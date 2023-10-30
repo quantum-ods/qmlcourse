@@ -1326,7 +1326,7 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyscf.gto.mole.Mole at 0x7f9834fb0310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyscf.gto.mole.Mole at 0x7f2574798550&gt;
 </pre></div>
 </div>
 </div>
@@ -1517,10 +1517,10 @@ E_{n} = -\frac{1}{n^2} \frac{me^4}{2\hbar^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -0.49999478458371
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -0.499994784583709
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Better hydrogen ground state energy: -13.605551204286888 eV
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Better hydrogen ground state energy: -13.60555120428688 eV
 </pre></div>
 </div>
 </div>
@@ -1740,6 +1740,9 @@ Initial guess density matrix may have large error.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 3
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    H   0.000000   0.000000   0.238130    0.000000  0.000000  0.158753
@@ -1789,6 +1792,10 @@ Initial guess density matrix may have large error.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 4: E = -1.07060402058  dE = -0.0112593  norm(grad) = 0.484325
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/pyscf/dft/libxc.py:771: UserWarning: Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, corresponding to the original definition by Stephens et al. (issue 1480) and the same as the B3LYP functional in Gaussian. To restore the VWN5 definition, you can put the setting &quot;B3LYP_WITH_VWN5 = True&quot; in pyscf_conf.py
+  warnings.warn(&#39;Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, &#39;
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 5
@@ -1863,10 +1870,6 @@ Initial guess density matrix may have large error.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- RHF_Scanner gradients ---------------
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/pyscf/dft/libxc.py:771: UserWarning: Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, corresponding to the original definition by Stephens et al. (issue 1480) and the same as the B3LYP functional in Gaussian. To restore the VWN5 definition, you can put the setting &quot;B3LYP_WITH_VWN5 = True&quot; in pyscf_conf.py
-  warnings.warn(&#39;Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, &#39;
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
 0 H     0.0000000000     0.0000000000     0.0316379732
 1 H     0.0000000000     0.0000000000    -0.0316379732
@@ -1894,6 +1897,9 @@ Initial guess density matrix may have large error.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- RHF_Scanner gradients ---------------
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
 0 H     0.0000000000     0.0000000000    -0.0052580454
 1 H     0.0000000000     0.0000000000     0.0052580454
@@ -1919,6 +1925,9 @@ Initial guess density matrix may have large error.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- RHF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
@@ -1954,11 +1963,14 @@ Initial guess density matrix may have large error.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 10: E = -1.11750588508  dE = -1.57033e-07  norm(grad) = 8.9889e-06
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -1.11750588508088
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hydrogen molecule, incorrect ground state energy: -24.78613211532389 eV
-Hydrogen molecule, optimized ground state energy: -30.40888427110039 eV
+Hydrogen molecule, optimized ground state energy: -30.408884271100373 eV
 </pre></div>
 </div>
 </div>
