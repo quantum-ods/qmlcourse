@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from qiskit import Aer
+
+aer_sim = Aer.get_backend('aer_simulator')
+result = aer_sim.run(qc).result()
+counts = result.get_counts(qc)
+
+print(
+    f"message was '{message}' -> the measurement result is {counts}"
+    " (<- NOTE: the keys are little-endian!)"
+)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mImportError[0m                               Traceback (most recent call last)
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/qiskit/__init__.py:123[0m, in [0;36mAerWrapper.__getattr__[0;34m(self, attr)[0m
+[1;32m    122[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 123[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m[38;5;21;01m.[39;00m[38;5;21;01mproviders[39;00m [38;5;28;01mimport[39;00m aer
+[1;32m    125[0m     [38;5;28mself[39m[38;5;241m.[39maer [38;5;241m=[39m aer[38;5;241m.[39mAer
+
+[0;31mImportError[0m: cannot import name 'aer' from 'qiskit.providers' (/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/qiskit/providers/__init__.py)
+
+The above exception was the direct cause of the following exception:
+
+[0;31mMissingOptionalLibraryError[0m               Traceback (most recent call last)
+Cell [0;32mIn[2], line 3[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mqiskit[39;00m [38;5;28;01mimport[39;00m Aer
+[0;32m----> 3[0m aer_sim [38;5;241m=[39m [43mAer[49m[38;5;241;43m.[39;49m[43mget_backend[49m([38;5;124m'[39m[38;5;124maer_simulator[39m[38;5;124m'[39m)
+[1;32m      4[0m result [38;5;241m=[39m aer_sim[38;5;241m.[39mrun(qc)[38;5;241m.[39mresult()
+[1;32m      5[0m counts [38;5;241m=[39m result[38;5;241m.[39mget_counts(qc)
+
+File [0;32m~/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/qiskit/__init__.py:134[0m, in [0;36mAerWrapper.__getattr__[0;34m(self, attr)[0m
+[1;32m    126[0m         warnings[38;5;241m.[39mwarn(
+[1;32m    127[0m             [38;5;124m"[39m[38;5;124mThe qiskit.Aer entry point will be deprecated in a future release and [39m[38;5;124m"[39m
+[1;32m    128[0m             [38;5;124m"[39m[38;5;124msubsequently removed. Instead you should use this [39m[38;5;124m"[39m
+[0;32m   (...)[0m
+[1;32m    131[0m             stacklevel[38;5;241m=[39m[38;5;241m2[39m,
+[1;32m    132[0m         )
+[1;32m    133[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m [38;5;28;01mas[39;00m ex:
+[0;32m--> 134[0m         [38;5;28;01mraise[39;00m MissingOptionalLibraryError(
+[1;32m    135[0m             [38;5;124m"[39m[38;5;124mqiskit-aer[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mAer provider[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mpip install qiskit-aer[39m[38;5;124m"[39m
+[1;32m    136[0m         ) [38;5;28;01mfrom[39;00m [38;5;21;01mex[39;00m
+[1;32m    137[0m [38;5;28;01mreturn[39;00m [38;5;28mgetattr[39m([38;5;28mself[39m[38;5;241m.[39maer, attr)
+
+[0;31mMissingOptionalLibraryError[0m: "The 'qiskit-aer' library is required to use 'Aer provider'. You can install it with 'pip install qiskit-aer'."
+MissingOptionalLibraryError: "The 'qiskit-aer' library is required to use 'Aer provider'. You can install it with 'pip install qiskit-aer'."
+
