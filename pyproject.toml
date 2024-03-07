@@ -33,6 +33,7 @@ Jinja2 = "3.0.3"
 future = "0.18.3"
 pyscf = "^2.4.0"
 pyberny = "^0.6.3"
+tensorflow-io-gcs-filesystem = "0.34.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
