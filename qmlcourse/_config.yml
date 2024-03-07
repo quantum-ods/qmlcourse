@@ -57,7 +57,7 @@ parse:
     - dollarmath
     - tasklist
     - deflist
-    - fieldlist
+    # - fieldlist
     # - physics
 
 bibtex_bibfiles:
