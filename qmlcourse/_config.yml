@@ -54,6 +54,10 @@ sphinx:
 parse:
   myst_enable_extensions:
     - amsmath
+    - dollarmath
+    - tasklist
+    - deflist
+    - fieldlist
     - physics
 
 bibtex_bibfiles:
