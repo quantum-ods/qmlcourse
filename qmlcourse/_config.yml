@@ -58,7 +58,7 @@ parse:
     - tasklist
     - deflist
     - fieldlist
-    - physics
+    # - physics
 
 bibtex_bibfiles:
   - _bibliography/references.bib
