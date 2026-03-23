@@ -35,7 +35,7 @@ jobs:
           args: -v -tsvg **.plantuml
 
       - name: push diagrams to runing branch
-        uses: EndBug/add-and-commit@v9.1.4
+        uses: EndBug/add-and-commit@v10.0.0
         with:
           message: auto-generate `**.svg` for `**.plantuml`
 
