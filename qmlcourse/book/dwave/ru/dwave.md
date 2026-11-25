@@ -14,6 +14,10 @@ kernelspec:
 
 # D-Wave: квантовый отжиг, оптимизация и семплинг
 
+```{warning}
+Обновлено в 2026 году: для запуска кода этой лекции нужен персональный `API Token` облачного сервиса `D-Wave Leap`, поэтому код не исполняется при сборке курса и показан без результатов. Чтобы запустить примеры самостоятельно, установите `dwave-ocean-sdk` и получите токен в [D-Wave Leap](https://cloud.dwavesys.com/leap/). API библиотек `D-Wave` с момента написания лекции могло измениться.
+```
+
 Автор(ы):
 
 - [Березутский Александр](https://github.com/meandmytram)
@@ -104,6 +108,7 @@ $$
 Импортируем нужные библиотеки.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 import dwavebinarycsp
 from dwave.system import DWaveSampler, EmbeddingComposite
 import networkx as nx
@@ -121,6 +126,7 @@ import matplotlib.pyplot as plt
 | YT  | Yukon                 |
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 provinces = ["AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT"]
 neighbors = [("AB", "BC"), ("AB", "NT"), ("AB", "SK"), ("BC", "NT"), ("BC", "YT"),
              ("MB", "NU"), ("MB", "ON"), ("MB", "SK"), ("NB", "NS"), ("NB", "QC"),
@@ -132,6 +138,7 @@ neighbors = [("AB", "BC"), ("AB", "NT"), ("AB", "SK"), ("BC", "NT"), ("BC", "YT"
 Теперь займемся ограничениями. Следующая функция выражает ограничение того, что соседние вершины в графе не могут быть одного и того же цвета. Область ее определения и значения -- булевы переменные.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 def not_both_1(v: bool, u: bool) -> bool:
     return not (v and u)
 ```
@@ -139,6 +146,7 @@ def not_both_1(v: bool, u: bool) -> bool:
 Зададим конфигурации цветов.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 one_color_configurations = {(0, 0, 0, 1), (0, 0, 1, 0), (0, 1, 0, 0), (1, 0, 0, 0)}
 colors = len(one_color_configurations)
 ```
@@ -149,6 +157,7 @@ colors = len(one_color_configurations)
 - каждая ей соседняя не может иметь такой же цвет.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 csp = dwavebinarycsp.ConstraintSatisfactionProblem(dwavebinarycsp.BINARY)
 
 for province in provinces:
@@ -165,12 +174,14 @@ for neighbor in neighbors:
 Конвертируем модель из `CSP` в `BQM` (`Binary Quadratic Model`) -- бинарную квадратичную модель. Это модель Изинга, в которой значения спинов $\sigma_i = 0.5 * (x_i + 1)$. Таким образом, каждая провинция Канады и ее цвет будет кодироваться четырьмя спинами, один из которых направлен вверх (вниз), пока остальные направлены вниз (вверх).
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 bqm = dwavebinarycsp.stitch(csp)
 ```
 
 Создадим семплер, передав в него `API Token`, создав прежде переменное окружение `DWAVE_TOKEN`, к примеру, в терминале посредством `export DWAVE_TOKEN=insert_api_token`:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 import os
 
 base_sampler = DWaveSampler(token=os.environ["DWAVE_TOKEN"])
@@ -179,6 +190,7 @@ base_sampler = DWaveSampler(token=os.environ["DWAVE_TOKEN"])
 Дадим задание квантовому семплеру на $1000$.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 sampler = EmbeddingComposite(base_sampler)
 sampleset = sampler.sample(bqm, num_reads=1000, label="Canada Map Coloring")
 ```
@@ -186,6 +198,7 @@ sampleset = sampler.sample(bqm, num_reads=1000, label="Canada Map Coloring")
 Проверим, что было найдено решение задачи,
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 sample = sampleset.first.sample
 if not csp.check(sample):
     print("Failed to color map. Try sampling again.")
@@ -196,6 +209,7 @@ else:
 Мы получили словарь `sample`, который будет выглядеть следующим образом: его ключи будут кодировать провинцию и цвет, а значения -- бинарные переменные, означающие раскрашена ли провинция этим цветом. Этот словарь -- семпл из состояния, полученного при решении данной задачи методом квантового отжига. Построим визуализацию решения в виде графа с раскрашенными вершинами.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 from typing import List
 from typing import Tuple
 from typing import Dict

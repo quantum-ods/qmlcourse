@@ -30,26 +30,34 @@ kernelspec:
 ### Импорты
 
 ```{code-cell} ipython3
+import qiskit
+import qiskit_aer
 from qiskit import QuantumCircuit
-from qiskit.providers.aer import QasmSimulator
+from qiskit_aer import AerSimulator
 
-from qiskit import version
-print(f"Qiskit version: {version.get_version_info()}")
+print(f"Qiskit version: {qiskit.__version__}")
+print(f"Qiskit Aer version: {qiskit_aer.__version__}")
 ```
 
 ### Симулятор
 
-Для запуска мы будем использовать симулятор квантового компьютера `QasmSimulator`:
+Для запуска мы будем использовать симулятор квантового компьютера `AerSimulator` из пакета `qiskit-aer`:
 
 ```{code-cell} ipython3
-simulator = QasmSimulator()
+simulator = AerSimulator()
 ```
 
-В `Qiskit` поддерживается несколько симуляторов, например:
+`AerSimulator` поддерживает несколько методов симуляции, которые выбираются аргументом `method`, например:
 
-- [UnitarySimulator](https://qiskit.org/documentation/stubs/qiskit.providers.aer.UnitarySimulator.html#qiskit.providers.aer.UnitarySimulator) -- симулятор унитарной динамики идеальной схемы;
-- [StatevectorSimulator](https://qiskit.org/documentation/stubs/qiskit.providers.aer.StatevectorSimulator.html#qiskit.providers.aer.StatevectorSimulator) -- симулятор волновой функции идеальной схемы;
-- [QasmSimulator](https://qiskit.org/documentation/stubs/qiskit.providers.aer.QasmSimulator.html#qiskit.providers.aer.QasmSimulator) -- симулятор, который моделирует шумы;
+- `"statevector"` -- симулятор волновой функции идеальной схемы;
+- `"unitary"` -- симулятор унитарной динамики идеальной схемы;
+- `"density_matrix"` -- симулятор матрицы плотности, который позволяет моделировать шумы.
+
+Полный список есть в [документации Qiskit Aer](https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.AerSimulator.html).
+
+```{note}
+Обновлено в 2026 году: в первой версии лекции использовались отдельные классы `QasmSimulator`, `StatevectorSimulator` и `UnitarySimulator` из модуля `qiskit.providers.aer`. В актуальных версиях `Qiskit` симуляторы вынесены в отдельный пакет `qiskit-aer` и объединены в `AerSimulator`.
+```
 
 Мы использовали лишь один из них. В целом, модуль `qiskit.providers` предоставляет базовые абстракции, которые позволяют запускать наш код на разных backend, включая реальные квантовые компьютеры, просто поменяв одну строчку в коде.
 

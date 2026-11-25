@@ -246,10 +246,11 @@ exact = nk.exact.lanczos_ed(op)[0]
 
 ```{code-cell} ipython3
 sampler = nk.sampler.MetropolisLocal(hi)
-model = nk.models.Jastrow(dtype=complex)
+model = nk.models.Jastrow(param_dtype=complex)
+vstate = nk.vqs.MCState(sampler, model, n_samples=1008)
 optimizer = nk.optimizer.Sgd(learning_rate=0.05)
 sr = nk.optimizer.SR(diag_shift=0.01)
-vmc = nk.driver.VMC(op, optimizer, sampler, model, n_samples=1008, preconditioner=sr)
+vmc = nk.driver.VMC(op, optimizer, variational_state=vstate, preconditioner=sr)
 ```
 
 ```{note}
@@ -291,9 +292,10 @@ plt.show()
 
 ```{code-cell} ipython3
 model = nk.models.RBM()
+vstate = nk.vqs.MCState(sampler, model, n_samples=1000)
 optimizer = nk.optimizer.Sgd(learning_rate=0.05)
 sr = nk.optimizer.SR(diag_shift=0.01)
-vmc = nk.driver.VMC(op, optimizer, sampler, model, n_samples=1000, preconditioner=sr)
+vmc = nk.driver.VMC(op, optimizer, variational_state=vstate, preconditioner=sr)
 
 logger = nk.logging.RuntimeLog()
 vmc.run(50, out=logger, show_progress=False)

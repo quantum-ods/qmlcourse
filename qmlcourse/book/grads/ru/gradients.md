@@ -220,7 +220,14 @@ for i in range(75):
     batch = np.random.randint(0, len(x), (10,))
     x_batch = x[batch, :]
     y_batch = y[batch]
-    q = opt.step(lambda q_: cost(q_, x_batch, y_batch), q)
+    # веса схемы и смещение передаем отдельными аргументами,
+    # чтобы оптимизатор считал градиент по обоим
+    w, b = opt.step(
+        lambda w_, b_: cost((w_, b_), x_batch, y_batch),
+        q[0],
+        np.array(q[1], requires_grad=True),
+    )
+    q = (w, b)
 
     if i % 5 == 0:
         ii.append(i)
@@ -280,7 +287,7 @@ def grad_i(q, f0, cost, x, y, i):
 В качестве эталона возьмем тот градиент, который нам считает `Autograd`:
 
 ```{code-cell} ipython3
-grad = qml.grad(cost, argnum=0)
+grad = qml.grad(cost, argnums=0)
 ```
 
 Сравним первые пять значений `Autograd` с нашим наивным алгоритмом, взяв $\Delta = 0.05$:

@@ -130,8 +130,10 @@ qc.measure(qr[0], crz)
 qc.measure(qr[1], crx)
 
 # Шаг 6 - применяются гейт X и гейт Z в завиимости от того, какое из измерений дает результат 1.
-qc.x(qr[2]).c_if(crx, 1)
-qc.z(qr[2]).c_if(crz, 1)
+with qc.if_test((crx, 1)):
+    qc.x(qr[2])
+with qc.if_test((crz, 1)):
+    qc.z(qr[2])
 
 qc.draw()
 ```

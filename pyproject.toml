@@ -1,39 +1,32 @@
-[tool.poetry]
+[project]
 name = "qmlcourse"
-version = "2.0.0"
-description = ""
-authors = ["Quantum Machine Learning Community Course <qmlcourse.ods@gmail.com>"]
+version = "3.0.0"
+description = "An adaptive and practical course about Quantum Machine Learning (ODS Quantum community)"
+authors = [{ name = "Quantum Machine Learning Community Course", email = "qmlcourse.ods@gmail.com" }]
 license = "CC-BY-4.0"
+readme = "readme.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # book toolchain
+    "jupyter-book>=2.1",
+    "ipykernel",
+    # libraries used in lecture code cells
+    "matplotlib",
+    "networkx",
+    "netket",
+    "numpy",
+    "pennylane",
+    "pyberny",
+    "pylatexenc",
+    "pyscf",
+    "qiskit",
+    "qiskit-aer",
+    "scikit-learn",
+    "scipy",
+    "sympy",
+    # classical head of the quantum convolution lecture (qnn/qconv), JAX backend
+    "keras>=3",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.8,<=3.9"
-cirq = "0.11.0"
-dwave-system = "^1.10.0"
-dwavebinarycsp = "^0.1.3"
-jupyter-book = "0.13.1"
-matplotlib = "^3.7.0"
-networkx = "^2.6.3"
-numpy = "1.22"
-paramiko = "^3.2.0"
-penaltymodel-maxgap = "^0.5.5"
-PennyLane = "0.20.0"
-pylatexenc = "^2.10"
-pyppeteer  = "^0.2.6"
-pyyaml  = "^6.0.1"
-qiskit = "^0.31.0"
-scikit-learn = "^1.3.2"
-scp = "^0.14.5"
-sympy = "1.8"
-netket = "^3.8"
-sphinx-sitemap = "^2.4.0"
-sphinx-jupyterbook-latex = "^0.4.6"
-tensorflow = "2.8.4"
-tensorflow-quantum = "0.6.0"
-Jinja2 = "3.0.3"
-future = "0.18.3"
-pyscf = "^2.4.0"
-pyberny = "^0.6.3"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+package = false

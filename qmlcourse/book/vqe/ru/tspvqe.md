@@ -328,7 +328,7 @@ print(f"SciPy solution (total cost): {scipy_solution_cost}")
 import pennylane as qml
 
 numer_stability_const = 0.1
-ham = qml.SparseHamiltonian(op * numer_stability_const, wires=list(range(9)))
+ham = qml.SparseHamiltonian(sparse.csr_matrix(op * numer_stability_const), wires=list(range(9)))
 ```
 
 Далее необходимо выбрать _ansatz_. Современные квантовые процессоры обычно имеют вид решетки, типа такого:
@@ -385,16 +385,15 @@ def feed_forward(params, wires=size):
 Теперь надо сгенерировать параметры и выбрать метод их оптимизации. В этот раз давайте воспользуемся алгоритмом `Momentum`, так называемым "ускоренным" градиентным спуском:
 
 ```{code-cell} ipython3
+from pennylane import numpy as pnp
+
+np.random.seed(0)
 opt = qml.MomentumOptimizer()
-params = tuple(
-    tuple(
-        (
-            np.random.rand() * 2 * np.pi,
-            np.random.rand() * 2 * np.pi,
-        )
-        for _ in range(size)
-    )
-    for _ in range(num_layers + 1)
+# параметры должны быть массивом `pennylane.numpy` с `requires_grad=True`,
+# иначе оптимизатор не будет считать по ним градиент
+params = pnp.array(
+    np.random.rand(num_layers + 1, size, 2) * 2 * np.pi,
+    requires_grad=True,
 )
 ```
 
@@ -472,6 +471,10 @@ print(f"Quantum solution (total cost): {q_solution_cost}")
 ```
 
 Ура, получился тот же ответ, что и в `SciPy`/`NetworkX`. Значит самописный **VQE** работает правильно.
+
+```{note}
+**VQE** -- это эвристический алгоритм, и результат зависит от начальных значений параметров. При другой инициализации (попробуйте поменять `np.random.seed`) оптимизация может застрять в локальном минимуме и вернуть неоптимальный маршрут.
+```
 
 ## Заключение
 

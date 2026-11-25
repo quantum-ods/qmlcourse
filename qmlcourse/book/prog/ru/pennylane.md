@@ -40,13 +40,15 @@ import pennylane as qml
 from pennylane import numpy as np
 qml.drawer.use_style("default")
 
-dev = qml.device("default.qubit", shots=1000, wires=2)
+dev = qml.device("default.qubit", wires=2)
+SHOTS = 1000
+
 def make_entanglement():
     qml.Hadamard(wires=0)
     qml.CNOT(wires=[0, 1])
     return qml.probs(wires=[0, 1])
 
-circuit = qml.QNode(make_entanglement, dev)
+circuit = qml.QNode(make_entanglement, dev, shots=SHOTS)
 circuit()
 ```
 
@@ -58,10 +60,12 @@ fig.show()
 Работая с библиотекой PennyLane для математических операций, можно использовать интерфейс `NumPy`, но при этом также пользоваться преимуществами автоматического дифференцирования, которое обеспечивает <a href="https://github.com/HIPS/autograd">autograd</a>.
 Именно поэтому мы не импортировали `NumPy` обычным способом: `import numpy as np`, а сделали это так: `from pennylane import numpy as np`.
 
+Здесь `shots` -- это число запусков схемы (и измерений), по которым оцениваются вероятности.
+
 Второй способ создания квантовых узлов -- с помощью декоратора `QNode`. Пропускаем импорт библиотек и создание устройства, так как в начале код тот же самый:
 
 ```{code-cell} ipython3
-@qml.qnode(dev)
+@qml.qnode(dev, shots=SHOTS)
 def circuit():
     qml.Hadamard(wires=0)
     qml.CNOT(wires=[0, 1])
@@ -72,6 +76,10 @@ print(circuit())
 
 В данном примере мы взяли двухкубитную систему и создали запутанное состояние, а затем с помощью метода `probs` вычислили вероятности получения состояний $|00\rangle$, $|01\rangle$, $|10\rangle$, $|11\rangle$.
 
+```{note}
+Обновлено в 2026 году: в первой версии лекции число запусков задавалось при создании устройства (`qml.device(..., shots=1000)`) и менялось через `dev.shots`. В актуальных версиях `PennyLane` так делать нельзя: число запусков задается для конкретного квантового узла через аргумент `shots` у `qml.QNode` / `qml.qnode` (или через трансформацию `qml.set_shots`).
+```
+
 ## Операторы
 
 В квантовой функции можно применять операторы X, Y, Z, S, T (`qml.PauliX`, `qml.PauliY`, `qml.PauliZ`, `qml.S`, `qml.T` соответственно), а также операторы, в которых можно задавать угол вращения вокруг одной из осей в радианах: `qml.RX`, `qml.RY`, `qml.RZ`. Здесь и далее будем использовать `qml` как псевдоним библиотеки `PennyLane`.
@@ -81,7 +89,7 @@ print(circuit())
 $$0.5 \cdot 1 + 0.5 \cdot (-1) = 0$$
 
 ```{code-cell} ipython3
-@qml.qnode(dev)
+@qml.qnode(dev, shots=SHOTS)
 def circuit(x):
     qml.RX(x, wires=0)
     return qml.expval(qml.PauliZ(0))
@@ -94,7 +102,7 @@ circuit(np.pi/2)
 $$1 \cdot 1 + 0 \cdot (-1) = 1$$
 
 ```{code-cell} ipython3
-@qml.qnode(dev)
+@qml.qnode(dev, shots=SHOTS)
 def circuit(x):
     qml.RY(x, wires=0)
     return qml.expval(qml.PauliX(0))
@@ -102,16 +110,16 @@ def circuit(x):
 circuit(np.pi/2)
 ```
 
-В начале этого урока мы создали устройство, которое создает и запускает одну и ту же схему 1000 раз, каждый раз производя измерения. Поменяем этот параметр:
+До сих пор мы запускали одну и ту же схему 1000 раз, каждый раз производя измерения. Поменяем этот параметр:
 
 ```{code-cell} ipython3
-dev.shots = 5
+SHOTS = 5
 ```
 
 Посмотрим на результат каждого из этих пяти запусков и измерений для `qml.PauliZ`. Квантовая схема будет простой: применим к кубиту с индексом 1 оператор Адамара:
 
 ```{code-cell} ipython3
-@qml.qnode(dev)
+@qml.qnode(dev, shots=SHOTS)
 def circuit():
     qml.Hadamard(wires=1)
     return qml.sample(qml.PauliZ([1]))
@@ -124,7 +132,7 @@ circuit()
 Если вместо `qml.PauliZ` брать сэмплы для `qml.PauliX`, то результат все время будет один и тот же: 1, что соответствует состоянию $|+\rangle$ (вектор базиса Адамара).
 
 ```{code-cell} ipython3
-@qml.qnode(dev)
+@qml.qnode(dev, shots=SHOTS)
 def circuit():
     qml.Hadamard(wires=1)
     return qml.sample(qml.PauliX([1]))
@@ -147,16 +155,12 @@ U = np.array([[1, 0, 0, 0],
               [0, 0, 0, 1]])
 ```
 
-Создадим заново устройство, при этом зададим число запусков схемы как `shots=1`: чтобы убедиться, что все работает правильно, нам будет достаточно одного запуска.
-
-```{code-cell} ipython3
-dev = qml.device("default.qubit", shots=1, wires=2)
-```
+Зададим число запусков схемы как `shots=1`: чтобы убедиться, что все работает правильно, нам будет достаточно одного запуска.
 
 Создадим и запустим схему, в которой перед применением операции SWAP, реализованной с помощью `qml.QubitUnitary`, один кубит будет находиться в состоянии 1, а другой -- в состоянии 0.
 
 ```{code-cell} ipython3
-@qml.qnode(dev)
+@qml.qnode(dev, shots=1)
 def circuit(do_swap):
     qml.PauliX(wires=0)
     if do_swap:

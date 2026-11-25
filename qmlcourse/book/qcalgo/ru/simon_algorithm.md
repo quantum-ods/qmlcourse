@@ -225,7 +225,7 @@ from typing import Tuple, List
 
 n = 3
 
-dev = qml.device("default.qubit", shots=128, wires=n*2)
+dev = qml.device("default.qubit", wires=n*2)
 
 def simon_start(N: int) -> None:
   for i in range(N):
@@ -239,7 +239,7 @@ def simon_after_oracle(N: int) -> None:
     qml.Hadamard(wires=i)
 
 
-@qml.qnode(dev)
+@qml.qnode(dev, shots=128)
 def simon_circuit(N: int) -> Tuple[List[List[int]], List[List[int]]]:
   simon_start(N)
   simon_oracle(N)

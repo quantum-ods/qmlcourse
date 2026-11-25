@@ -224,7 +224,7 @@ $$
 import pennylane as qml
 from pennylane import numpy as np
 
-dev = qml.device("default.qubit", shots=1, wires=2)
+dev = qml.device("default.qubit", wires=2)
 ```
 
 Теперь создадим функции для черного ящика. Обратите внимание, что здесь уже учтено сложение по модулю $2$ результата функции с состоянием второго кубита:
@@ -264,7 +264,7 @@ def random_black_box(black_boxes_dict):
 А теперь самое важное -- сам алгоритм Дойча:
 
 ```{code-cell} ipython3
-@qml.qnode(dev, interface=None)
+@qml.qnode(dev, interface=None, shots=1)
 def circuit(black_box_name):
     qml.Hadamard(wires=0)
     qml.PauliX(wires=1)
