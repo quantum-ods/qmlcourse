@@ -14,6 +14,10 @@ kernelspec:
 
 # Cirq & TFQ
 
+```{danger}
+Обновлено в 2026 году: фреймворк `TensorFlow Quantum` устарел и больше не поддерживается -- его нельзя установить с актуальными версиями `Python` и `TensorFlow`. Код в этой лекции не исполняется при сборке курса и оставлен в историческом виде. Для практики используйте `PennyLane` (см. [лекцию про PennyLane](../../prog/ru/pennylane.md)).
+```
+
 Автор(ы):
 
 - [Синченко Семен](https://github.com/SemyonSinchenko)
@@ -44,6 +48,7 @@ kernelspec:
 Для начала импортируем `cirq`.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 import cirq
 ```
 
@@ -59,12 +64,14 @@ import cirq
 Поэтому в нем все строится вокруг работы с решеткой кубитов -- объектом `cirq.GridQubit`. Давайте создадим кубит на решетке, который имеет координаты $(0, 0)$:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 qubit = cirq.GridQubit(0, 0)
 ```
 
 Следующей важной концепцией в `Cirq` является непосредственно квантовая схема. Давайте создадим схему, которая переводит кубит в суперпозицию состояний $\ket{0}$ и $\ket{1}$ и измеряет его:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 circuit = cirq.Circuit()
 circuit.append(cirq.H(qubit))
 circuit.append(cirq.measure(qubit))
@@ -76,12 +83,14 @@ print(circuit)
 Теперь создадим квантовый симулятор, который посчитает нам результат этой простой схемы на классическом компьютере:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 sim = cirq.Simulator()
 ```
 
 Как мы знаем, результат измерения такой схемы равен 50% для состояния $\ket{0}$, то есть если мы будем сэмплировать, то должны получать $\sim 0.5$. Проверим это с разным числом сэмплов:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 print(f"5 сэмплов: {sim.sample(circuit, repetitions=5).mean()}")
 print(f"\n100 сэмплов: {sim.sample(circuit, repetitions=100).mean()}")
 print(f"\n1000 сэмплов: {sim.sample(circuit, repetitions=1000).mean()}")
@@ -94,6 +103,7 @@ print(f"\n1000 сэмплов: {sim.sample(circuit, repetitions=1000).mean()}")
 Также у нас есть опция запустить схему через метод `run`. Может показаться, что это то же самое, но на самом деле в отличие от `sample`, метод `run` возвращает результат в несколько ином виде; а еще он позволяет запускать программу на реальном квантовом компьютере `Goolge` или их новых квантовых симуляторах на TPU:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 print(sim.run(circuit, repetitions=25))
 ```
 
@@ -106,6 +116,7 @@ print(sim.run(circuit, repetitions=25))
 Мы будем использовать `Tensorflow` и `Tensorflow Quantum`.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 import os
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 import tensorflow as tf
@@ -117,6 +128,7 @@ import tensorflow_quantum as tfq
 Давайте попробуем решить игрушечную задачку классификации простой гибридной квантово-классической нейронной сетью. У нас будет один квантовый слой и один классический слой. В качестве задачи сгенерируем простенький набор данных, используя рутины `scikit-learn`. Сразу переведем входящие признаки в диапазон от нуля до $\pi$.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 from sklearn.datasets import make_classification
 import numpy as np
 
@@ -135,6 +147,7 @@ x[:, 1] = normalize(x[:, 1])
 Посмотрим на эти данные:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(6, 4))
@@ -148,6 +161,7 @@ plt.show()
 `Tensorflow Quantum` позволяет "превращать" параметризированные схемы `Cirq` в слои нейронных сетей `Tensorflow`. Но для начала нам все равно потребуется схема. Давайте объявим пару кубитов.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 qubits = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
 print(qubits)
 ```
@@ -157,6 +171,7 @@ print(qubits)
 Определим входной слой, который будет кодировать наши классические данные в квантовые. Сразу закодируем данные. Так как `Tensorflow` работает с тензорами, то нам необходимо будет преобразовать схемы в тензор. Для этого есть специальная функция `convert_to_tensor`.
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 def data2circuit(x):
     input_circuit = cirq.Circuit()
 
@@ -173,6 +188,7 @@ x_input = tfq.convert_to_tensor([data2circuit(xi) for xi in x])
 Для создания параметризованных схем в `Tensorflow Quantum` используются символы из библиотеки символьных вычислений [`sympy`](https://www.sympy.org/en/index.html). Давайте объявим несколько параметров и создадим схему:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 from sympy import symbols
 
 params = symbols("w1, w2, w3, w4")
@@ -201,6 +217,7 @@ print(trainable_circuit)
 В качестве операторов, которые мы будем измерять, воспользуемся парой $\hat{XY}$ и $\hat{YX}$ для наших кубитов:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 ops = [cirq.X.on(qubits[0]) * cirq.Y.on(qubits[1]), cirq.Y.on(qubits[0]) * cirq.X.on(qubits[1])]
 ```
 
@@ -211,24 +228,28 @@ ops = [cirq.X.on(qubits[0]) * cirq.Y.on(qubits[1]), cirq.Y.on(qubits[0]) * cirq.
 - зафиксируем случайный генератор
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 tf.random.set_seed(42)
 ```
 
 - входной тензор -- это в нашем случае тензор типа `string`, так как это квантовые схемы
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 cirq_inputs = tf.keras.Input(shape=(), dtype=tf.dtypes.string)
 ```
 
 - квантовый слой
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 quantum_layer = tfq.layers.PQC(trainable_circuit, ops)(cirq_inputs)
 ```
 
 - классический слой и выходной слой
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 dense_layer = tf.keras.layers.Dense(2, activation="relu")(quantum_layer)
 output_layer = tf.keras.layers.Dense(1, activation="sigmoid")(dense_layer)
 ```
@@ -236,6 +257,7 @@ output_layer = tf.keras.layers.Dense(1, activation="sigmoid")(dense_layer)
 - компилируем модель и смотрим, что получилось. И сразу указываем метрики, которые хотим отслеживать
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 model = tf.keras.Model(inputs=cirq_inputs, outputs=output_layer)
 model.compile(
     optimizer=tf.keras.optimizers.SGD(learning_rate=0.1),
@@ -253,6 +275,7 @@ model.summary()
 Наша нейросеть имеет случайные начальные параметры. Давайте посмотрим, что она предсказывает до обучения:
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 preds = model(x_input).numpy()
 
 plt.figure(figsize=(6, 4))
@@ -266,6 +289,7 @@ plt.show()
 - запустим обучение
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 %%time
 model.fit(x=x_input, y=y, epochs=200, verbose=0)
 ```
@@ -273,6 +297,7 @@ model.fit(x=x_input, y=y, epochs=200, verbose=0)
 - визуализируем логи обучения
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 f, ax = plt.subplots(2, figsize=(6, 6))
 ax[0].plot(model.history.history["binary_accuracy"])
 ax[1].plot(model.history.history["binary_crossentropy"])
@@ -282,6 +307,7 @@ plt.show()
 - визуализируем предсказания
 
 ```{code-cell} ipython3
+:tags: [skip-execution]
 preds_after_training = model(x_input).numpy()
 plt.figure(figsize=(6, 4))
 

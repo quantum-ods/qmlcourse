@@ -106,9 +106,9 @@ qc.draw()
 Запускаем схему на симуляторе:
 
 ```{code-cell} ipython3
-from qiskit import Aer
+from qiskit_aer import AerSimulator
 
-aer_sim = Aer.get_backend('aer_simulator')
+aer_sim = AerSimulator()
 result = aer_sim.run(qc).result()
 counts = result.get_counts(qc)
 

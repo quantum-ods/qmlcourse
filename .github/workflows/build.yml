@@ -1,0 +1,78 @@
+name: build
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [ master ]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      # the site is served from https://<owner>.github.io/<repo>/
+      BASE_URL: /${{ github.event.repository.name }}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+
+      - name: set up node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: set up uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: install dependencies
+        run: uv sync --frozen
+
+      - name: restore execution cache
+        uses: actions/cache@v4
+        with:
+          path: qmlcourse/_build/execute
+          key: execute-${{ hashFiles('uv.lock') }}-${{ hashFiles('qmlcourse/book/**/*.md') }}
+          restore-keys: |
+            execute-${{ hashFiles('uv.lock') }}-
+
+      - name: build the book
+        working-directory: qmlcourse
+        run: uv run jupyter-book build --html --execute --ci
+
+      - name: check for failing code cells
+        run: uv run python scripts/check_execution_errors.py qmlcourse/_build/site/content
+
+      - name: upload pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: qmlcourse/_build/html
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v4

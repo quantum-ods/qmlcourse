@@ -114,7 +114,7 @@ N_SPINS = 10
 N_LAYERS = 2
 
 device = qml.device("default.qubit", wires=N_SPINS)
-ham = qml.SparseHamiltonian(op, wires=list(range(N_SPINS)), id="Hamiltonian")
+ham = qml.SparseHamiltonian(sparse.csr_matrix(op), wires=list(range(N_SPINS)))
 
 def layer(params):
     for i in range(N_SPINS):

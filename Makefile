@@ -1,34 +1,25 @@
 .ONESHELL:
 SHELL = /bin/bash
 
-export PATH := $(HOME)/.poetry/bin:$(PATH)
+BOOK_DIR = qmlcourse
 
-install-ubuntu-latest: install-python-poetry-ubuntu install-python-dependencies
-install-macos-latest: install-python-poetry-macos install-python-dependencies
+.PHONY: install build serve check clean
 
-install-python-poetry-ubuntu:
-	sudo apt update
-	sudo apt install curl wget python3.8 -y
-	sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
-	sudo apt install python3-distutils -y
-	curl -sSL https://install.python-poetry.org | python3
+# requires uv: https://docs.astral.sh/uv/ and Node.js >= 20
+install:
+	uv sync --frozen
 
-#	curl "http://vergil.chemistry.gatech.edu/psicode-download/Psi4conda-1.4rc3-py38-Linux-x86_64.sh" -o Psi4conda-1.4rc3-py38.sh --keepalive-time 2
+# static html site with executed code cells -> qmlcourse/_build/html
+build:
+	cd $(BOOK_DIR) && uv run jupyter-book build --html --execute
 
-install-python-poetry-macos:
-	brew update
-	brew install zlib pyenv poetry
+# local dev server with live reload
+serve:
+	cd $(BOOK_DIR) && uv run jupyter-book start --execute
 
-	pyenv install 3.8.10
-	pyenv local 3.8.10
+# fail if any code cell raised an error during the last build
+check:
+	uv run python scripts/check_execution_errors.py $(BOOK_DIR)/_build/site/content
 
-#	curl "http://vergil.chemistry.gatech.edu/psicode-download/Psi4conda-1.4rc3-py38-MacOSX-x86_64.sh" -o Psi4conda-1.4rc3-py38.sh --keepalive-time 2
-
-install-python-dependencies:
-#	poetry env use python3.8
-	poetry env list
-	poetry install --no-interaction --no-root
-
-build-linux-macos:
-#	cd $(HOME)/psi4conda/etc/profile.d/ && source conda.sh && conda activate && cd - && poetry run psi4 --test
-	poetry run jupyter-book build ./qmlcourse
+clean:
+	rm -rf $(BOOK_DIR)/_build

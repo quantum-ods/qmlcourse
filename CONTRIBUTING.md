@@ -93,13 +93,29 @@ Matplotlib figures should be
 
 ### Building the project
 
-To watch your result (after `git push`) you can build `Jupyter Book` automatically by GitHub Action: in the [action page](https://github.com/quantum-ods/qmlcourse/actions/workflows/cd-stage.yml) choose your branch and press `Run workflow`. After ~15min visit the [stage book](https://qmlc-web-page-stage.netlify.app/) to find your ended result.
+The book is built with [Jupyter Book 2](https://jupyterbook.org) (the [MyST](https://mystmd.org) engine). Code cells are executed during the build. You need [uv](https://docs.astral.sh/uv/) and Node.js >= 20:
+
+```shell
+make install   # create the environment from uv.lock
+make serve     # local server with live reload at http://localhost:3000
+make build     # static site -> qmlcourse/_build/html
+make check     # fail if any code cell raised an error in the last build
+```
+
+Every Pull Request is built by the [`build`](./.github/workflows/build.yml) GitHub Action; pushes to `master` are deployed to GitHub Pages.
+
+Cells that cannot run in CI (dead frameworks, cloud services requiring a token) must be tagged:
+
+````markdown
+```{code-cell} ipython3
+:tags: [skip-execution]
+...
+```
+````
 
 ### Chapters and headers
 
-Chapters and headers in markdown must exactly follow the main structure of the book (into [`_toc.yml`](./qmlcourse/_toc.yml)). Read [this](https://jupyterbook.org/customize/toc.html#how-headers-and-sections-map-onto-to-book-structure) if you have problems with this.
-
-Russian & English version lectures add after comment `# :ru:` & `# :en:` accordingly.
+The table of contents lives in the `toc` section of [`myst.yml`](./qmlcourse/myst.yml). Read [this](https://mystmd.org/guide/table-of-contents) if you have problems with it.
 
 > **Note**
 >
@@ -169,10 +185,10 @@ The preferred way to commit your changes is to:
 
 *This part not necessarily, the reviewers will do it for you*
 
-Before the final `git push` you should install the [pre-commit](https://pre-commit.com/#installation). To execute pre-commit, run (if using poetry)
+Before the final `git push` you should install the [pre-commit](https://pre-commit.com/#installation). To execute pre-commit, run
 
-```{shell}
-poetry run pre-commit run --all-files
+```shell
+uvx pre-commit run --all-files
 ```
 
 After command execution, some files automatically can be changed and then repeat the command (to be sure) and push.
